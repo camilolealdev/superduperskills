@@ -1,76 +1,110 @@
-import os, re, json, glob
-from collections import OrderedDict
+#!/usr/bin/env python3
+"""
+Build script for superduperskills repo.
+- Scans all skill repos, deduplicates by name
+- Bundles SKILL.md files into skills/
+- Generates SKILLS-INDEX.md
+"""
+import os, re, glob, json, shutil
 
-CATEGORIES = {
-    r'^(ab-testing|ad-creative|ads|analytics|aso|churn-prevention|co-marketing|community-marketing|cro|customer-research|email|free-tools|image|launch|lead-magnet|marketing-|onboarding|paywalls|popups|pricing|product-marketing|referrals|signup|ai-seo)': 'Marketing & Growth',
-    r'^(video|hyperframes|gsap|waapi|animejs|lottie|three|css-animations|remotion|walkthrough-video|website-to-hyperframes)': 'Video & Animation',
-    r'^(frontend-design|design|ui-ux|banner|brand|slides|ckm:|teach-impeccable|quieter|bolder|polish|overdrive|optimize|normalize|harden|extract|distill|delight|critique|colorize|clarify|arrange|animate|adapt|audit|typeset|onboard|color-palette|icon-set|favicon|design-system|design-review|landing-page|product-showcase|impeccable|critique)': 'Design & UX',
-    r'^(python-pro|rust-engineer|golang-pro|csharp|dotnet|java-architect|spring-boot|nestjs|nextjs|react|vue|angular|flutter|swift|kotlin|php-pro|typescript-pro|javascript-pro|nodejs|fastapi|django|laravel|rails|sql-pro|pandas|database-optimizer|postgres|microservices|api-designer|graphql|websocket|backend|fullstack|code-reviewer|debugging|test-master|spec-miner|legacy-modernizer|architecture-designer|feature-forge|cli-developer|chaos-engineer|embedded-systems|game-developer|rag-architect|ml-pipeline|fine-tuning|prompt-engineer|mcp-developer)': 'Development & Backend',
-    r'^(docker|devops|terraform|kubernetes|cloud-architect|sre|monitoring|cloudflare|d1-|d1-drizzle|hono-|vite-flare|tanstack|cloudflare-api|github-release|git-workflow|git-commit|cicd)': 'DevOps & Cloud',
-    r'^(voltagent|composio|mcp-builder|elevenlabs|create-voltagent|nemoclaw|gws-|google-apps-script|google-chat|agent-browser)': 'AI & Agents',
-    r'^(seo|keyword|schema|content-brief|content-gap|content-quality|content-refresher|on-page|technical-seo|meta-optimizer|rank-tracker|backlink|domain-authority|competitor-analysis|geo-content|ai-visibility|entity-optimizer|memory-management|alert-manager|performance-reporter|programmatic-seo|cannibalization|internal-link|site-architecture)': 'SEO & Content',
-    r'^(cold-email|sales-enablement|proposal-writer|resume-cover-letter|award-application|strategy-document)': 'Sales & Comms',
-    r'^(ln-|github-pr|github-merge|github-review)': 'Project Management',
-    r'^(business-english|us-business-english|uk-business-english|aussie-business-english|nz-business-english|copy-editing|copywriting|content-strategy)': 'Writing & Content',
-}
-
-def parse_skill(path, repo_label):
-    with open(path, 'r', encoding='utf-8') as f:
-        content = f.read()
-    m = re.search(r'^---\s*\nname:\s*(.+?)\n', content, re.MULTILINE)
-    name = m.group(1).strip() if m else os.path.basename(os.path.dirname(path))
-    m = re.search(r'^description:\s*"(.+?)"', content, re.MULTILINE | re.DOTALL)
-    desc = m.group(1).strip() if m else ''
-    short = (desc[:120] + '...') if len(desc) > 120 else desc
-    return name, short
-
-base_dirs = [
-    (os.path.expanduser('~/.agents/skills'), 'agents', '~/.agents/skills'),
-    (os.path.expanduser('~/.config/opencode/skills'), 'opencode', '~/.config/opencode/skills'),
-    (os.path.expanduser('~/.claude/skills'), 'claude', '~/.claude/skills'),
-]
+BASE = os.path.expanduser('~/Documents')
+REPO_SKILLS = os.path.join(BASE, 'skills')
 
 ORDER = {'agents': 0, 'opencode': 1, 'claude': 2}
+
+SKILL_DIRS = [
+    ('agents', os.path.expanduser('~/.agents/skills')),
+    ('opencode', os.path.expanduser('~/.config/opencode/skills')),
+    ('claude', os.path.expanduser('~/.claude/skills')),
+]
+
+def parse_skill(path):
+    with open(path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    front = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+    name = os.path.basename(os.path.dirname(path))
+    desc = ''
+    if front:
+        for line in front.group(1).split('\n'):
+            if line.startswith('name:'):
+                name = line.split(':', 1)[1].strip().strip('"\'')
+            elif line.startswith('description:'):
+                desc = line.split(':', 1)[1].strip().strip('"\'')
+    if len(desc) > 200:
+        desc = desc[:197] + '...'
+    return name, desc, content
+
+# Collect all skills, deduplicate by name
 skills = {}
-
-for base, repo, prefix in base_dirs:
-    if not os.path.isdir(base):
+for repo, base_dir in SKILL_DIRS:
+    if not os.path.isdir(base_dir):
+        print(f'Warning: {base_dir} not found, skipping')
         continue
-    for skill_file in glob.glob(os.path.join(base, '**', 'SKILL.md'), recursive=True):
-        name, desc = parse_skill(skill_file, repo)
-        rel = os.path.relpath(skill_file, os.path.dirname(base))
-        rel = rel.replace('\\', '/')
-        path = f'{prefix}/{rel}'
+    for fp in glob.glob(os.path.join(base_dir, '**', 'SKILL.md'), recursive=True):
+        name, desc, content = parse_skill(fp)
         if name not in skills or ORDER.get(repo, 9) < ORDER.get(skills[name]['repo'], 9):
-            skills[name] = {'name': name, 'description': desc, 'path': path, 'repo': repo}
+            rel = os.path.relpath(os.path.dirname(fp), base_dir)
+            rel = rel.replace('\\', '/')
+            skills[name] = {
+                'name': name,
+                'description': desc,
+                'rel_path': f'{rel}/SKILL.md',
+                'repo': repo,
+                'content': content,
+            }
 
+# Write skills to repo
+os.makedirs(REPO_SKILLS, exist_ok=True)
+for name, data in skills.items():
+    dest_dir = os.path.join(REPO_SKILLS, name)
+    os.makedirs(dest_dir, exist_ok=True)
+    with open(os.path.join(dest_dir, 'SKILL.md'), 'w', encoding='utf-8') as f:
+        f.write(data['content'])
+
+# Generate SKILLS-INDEX.md
 sorted_skills = sorted(skills.values(), key=lambda x: x['name'].lower())
 
-categorized = OrderedDict()
+CATEGORIES = [
+    (r'^(ab-testing|ad-creative|ads|analytics|aso|churn-prevention|co-marketing|community-marketing|cro|customer-research|emails?|free-tools|image|launch|lead-magnet|marketing-|onboarding|paywalls|popups?|pricing|product-marketing|referrals?|signup|ai-seo)', 'Marketing & Growth'),
+    (r'^(video|hyperframes|gsap|waapi|animejs|lottie|three|css-animations|remotion-to-hyperframes|walkthrough-video|website-to-hyperframes|hyperframes-)', 'Video & Animation'),
+    (r'^(frontend-design|design|ui-ux|banner|brand|slides|ckm:|teach-impeccable|quieter|bolder|polish|overdrive|optimize|normalize|harden|extract|distill|delight|critique|colorize|clarify|arrange|animate|adapt|audit|typeset|onboard|color-palette|icon-set|favicon|design-system|design-review|landing-page|product-showcase|impeccable)', 'Design & UX'),
+    (r'^(python-pro|rust-engineer|golang-pro|csharp|dotnet|java-architect|spring-boot|nestjs|nextjs|react|vue|angular|flutter|swift|kotlin|php-pro|typescript-pro|javascript-pro|nodejs|fastapi|django|laravel|rails|sql-pro|pandas|database-optimizer|postgres|microservices|api-designer|graphql|websocket|backend|fullstack|code-reviewer|debugging|test-master|spec-miner|legacy-modernizer|architecture-designer|feature-forge|cli-developer|chaos-engineer|embedded-systems|game-developer|rag-architect|ml-pipeline|fine-tuning|prompt-engineer|mcp-developer|playwright-expert|atlassian-mcp|fastapi-expert|sql-pro)', 'Development & Backend'),
+    (r'^(docker|devops|terraform|kubernetes|cloud-architect|sre|monitoring|cloudflare|d1-|d1-drizzle|hono-|vite-flare|tanstack-start|cloudflare-api|github-release|git-workflow|git-commit|cicd|github-|git-|container)', 'DevOps & Cloud'),
+    (r'^(voltagent|composio|mcp-builder|elevenlabs|create-voltagent|nemoclaw|gws-|google-apps-script|google-chat|agent-browser|prompt-architect|prompt-improver|pinokio)', 'AI & Agents'),
+    (r'^(seo|keyword|schema|content-brief|content-gap|content-quality|content-refresher|on-page|technical-seo|meta-optimizer|rank-tracker|backlink|domain-authority|content-auditor|competitor-analysis|geo-content|ai-visibility|entity-optimizer|memory-management|alert-manager|performance-reporter|programmatic-seo|cannibalization|internal-link|site-architecture)', 'SEO & Content'),
+    (r'^(cold-email|sales-enablement|proposal-writer|resume-cover-letter|award-application|strategy-document)', 'Sales & Comms'),
+    (r'^(ln-|task-|todo)', 'Project Management'),
+    (r'^(us-business-english|uk-business-english|aussie-business-english|nz-business-english|copy-editing|copywriting|content-strategy)', 'Writing & Content'),
+]
+
+def categorize(name):
+    for pat, cat in CATEGORIES:
+        if re.search(pat, name, re.IGNORECASE):
+            return cat
+    return 'Other'
+
+categorized = {}
 for s in sorted_skills:
-    cat = 'Other'
-    for pattern, category in CATEGORIES.items():
-        if re.search(pattern, s['name'], re.IGNORECASE):
-            cat = category
-            break
+    cat = categorize(s['name'])
     categorized.setdefault(cat, []).append(s)
+
 cat_order = ['Marketing & Growth', 'Video & Animation', 'Design & UX', 'Development & Backend',
              'DevOps & Cloud', 'AI & Agents', 'SEO & Content', 'Sales & Comms',
              'Project Management', 'Writing & Content', 'Other']
 
-lines = []
-lines.append('# Skills Index\n')
-lines.append(f'Total unique skills: **{len(sorted_skills)}**\n')
-lines.append('## Origin Repos\n')
-lines.append('| Repo | Location | Count |')
-lines.append('|------|----------|-------|')
-for repo, label in [('agents', '~/.agents/skills/'), ('opencode', '~/.config/opencode/skills/'), ('claude', '~/.claude/skills/')]:
-    count = sum(1 for s in sorted_skills if s['repo'] == repo)
-    lines.append(f'| **{repo}** | `{label}` | {count} |')
-lines.append('')
-lines.append('---\n')
-lines.append('## By Category\n')
+lines = [
+    '# Skills Index\n',
+    f'Total unique skills: **{len(sorted_skills)}**\n',
+    '## Origin Repos\n',
+    '| Repo | Location | Count |',
+    '|------|----------|-------|',
+]
+for repo_name, label in [('agents', '~/.agents/skills/'), ('opencode', '~/.config/opencode/skills/'), ('claude', '~/.claude/skills/')]:
+    count = sum(1 for s in sorted_skills if s['repo'] == repo_name)
+    lines.append(f'| **{repo_name}** | `{label}` | {count} |')
+lines.extend(['', '---', ''])
 
+lines.append('## By Category\n')
 for cat in cat_order:
     if cat not in categorized:
         continue
@@ -79,7 +113,7 @@ for cat in cat_order:
     lines.append('| Skill | Description | Location |')
     lines.append('|-------|-------------|----------|')
     for s in items:
-        lines.append(f'| **{s["name"]}** | {s["description"]} | `{s["path"]}` |')
+        lines.append(f'| **{s["name"]}** | {s["description"]} | `skills/{s["name"]}/SKILL.md` |')
     lines.append('')
 
 lines.append('---\n')
@@ -89,7 +123,8 @@ lines.append('|---|-------|-------------|--------|')
 for i, s in enumerate(sorted_skills, 1):
     lines.append(f'| {i} | **{s["name"]}** | {s["description"]} | {s["repo"]} |')
 
-output = '\n'.join(lines)
-with open(os.path.expanduser('~/Documents/SKILLS-INDEX.md'), 'w', encoding='utf-8') as f:
-    f.write(output)
-print(f'Done. {len(sorted_skills)} skills written.')
+with open(os.path.join(BASE, 'SKILLS-INDEX.md'), 'w', encoding='utf-8') as f:
+    f.write('\n'.join(lines))
+
+print(f'Done. {len(sorted_skills)} skills bundled into skills/')
+print(f'SKILLS-INDEX.md updated.')
