@@ -5,7 +5,8 @@ Build script for superduperskills repo.
 - Bundles SKILL.md files into skills/
 - Generates SKILLS-INDEX.md with GitHub repo info
 """
-import os, re, glob, json, shutil, subprocess
+import os, re, json, shutil, subprocess
+from pathlib import Path
 
 BASE = os.path.expanduser('~/Documents')
 REPO_SKILLS = os.path.join(BASE, 'skills')
@@ -80,10 +81,10 @@ for repo, base_dir in SKILL_DIRS:
     if not os.path.isdir(base_dir):
         print(f'Warning: {base_dir} not found, skipping')
         continue
-    for fp in glob.glob(os.path.join(base_dir, '**', 'SKILL.md'), recursive=True):
-        name, desc, content = parse_skill(fp)
+    for fp in Path(base_dir).rglob('SKILL.md'):
+        name, desc, content = parse_skill(str(fp))
         if name not in skills or ORDER.get(repo, 9) < ORDER.get(skills[name]['repo'], 9):
-            rel = os.path.relpath(os.path.dirname(fp), base_dir)
+            rel = os.path.relpath(str(fp.parent), base_dir)
             rel = rel.replace('\\', '/')
 
             # Determine GitHub URL
@@ -100,7 +101,7 @@ for repo, base_dir in SKILL_DIRS:
 
             # Also try git remote as fallback for opencode/claude
             if not github_url and repo in ('opencode', 'claude'):
-                skill_dir = os.path.dirname(fp)
+                skill_dir = str(fp.parent)
                 # Walk up to find a .git dir
                 d = skill_dir
                 while d and d != base_dir and len(d) > len(base_dir):
@@ -118,10 +119,16 @@ for repo, base_dir in SKILL_DIRS:
                 'content': content,
             }
 
+def safe_dirname(name):
+    """Convert skill name to safe directory name (Windows-compatible)."""
+    for ch in '<>:"/\\|?*':
+        name = name.replace(ch, '-')
+    return name
+
 # Write skills to repo
 os.makedirs(REPO_SKILLS, exist_ok=True)
 for name, data in skills.items():
-    dest_dir = os.path.join(REPO_SKILLS, name)
+    dest_dir = os.path.join(REPO_SKILLS, safe_dirname(name))
     os.makedirs(dest_dir, exist_ok=True)
     with open(os.path.join(dest_dir, 'SKILL.md'), 'w', encoding='utf-8') as f:
         f.write(data['content'])
@@ -179,7 +186,7 @@ for cat in cat_order:
     lines.append('|-------|-------------|--------|----------|')
     for s in items:
         gh = f'`{s["github_url"]}`' if s['github_url'] else ''
-        lines.append(f'| **{s["name"]}** | {s["description"]} | {gh} | `skills/{s["name"]}/SKILL.md` |')
+        lines.append(f'| **{s["name"]}** | {s["description"]} | {gh} | `skills/{safe_dirname(s["name"])}/SKILL.md` |')
     lines.append('')
 
 lines.append('---\n')
