@@ -3,9 +3,9 @@
 Build script for superduperskills repo.
 - Scans all skill repos, deduplicates by name
 - Bundles SKILL.md files into skills/
-- Generates SKILLS-INDEX.md
+- Generates SKILLS-INDEX.md with GitHub repo info
 """
-import os, re, glob, json, shutil
+import os, re, glob, json, shutil, subprocess
 
 BASE = os.path.expanduser('~/Documents')
 REPO_SKILLS = os.path.join(BASE, 'skills')
@@ -17,6 +17,46 @@ SKILL_DIRS = [
     ('opencode', os.path.expanduser('~/.config/opencode/skills')),
     ('claude', os.path.expanduser('~/.claude/skills')),
 ]
+
+GITHUB_URLS = {
+    # git subdirectory -> GitHub URL (for opencode/claude repos)
+    'backend-arch': 'https://github.com/levnikolaevich/claude-code-skills',
+    'backend-skills': 'https://github.com/Jeffallan/claude-skills',
+    'frontend-jezweb': 'https://github.com/jezweb/claude-skills',
+    'impeccable': 'https://github.com/pbakaus/impeccable',
+    'seo': 'https://github.com/ccforseo/seo-claude-code-skills',
+    'seo-agrici': 'https://github.com/AgriciDaniel/claude-seo',
+    'seo-ccforseo': 'https://github.com/ccforseo/seo-claude-code-skills',
+    'seo-geo': 'https://github.com/aaron-he-zhu/seo-geo-claude-skills',
+    'testcontainers': 'https://github.com/testcontainers/claude-skills',
+    'ui-ux-pro-max': 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
+    'git-cicd': 'https://github.com/fvadicamo/dev-agent-skills',
+    'docker': 'https://github.com/wrsmith108/docker-claude-skill',
+    'prompt-architect': 'https://github.com/ckelsoe/claude-skill-prompt-architect',
+    'prompt-coach': 'https://github.com/hancengiz/claude-code-prompt-coach-skill',
+    'token-optimizer': 'https://github.com/severity1/claude-code-prompt-improver',
+}
+
+# Load skill-lock.json for agents GitHub URLs
+AGENTS_GITHUB = {}
+lock_path = os.path.expanduser('~/.agents/.skill-lock.json')
+if os.path.isfile(lock_path):
+    with open(lock_path) as f:
+        lock = json.load(f)
+    for name, info in lock.get('skills', {}).items():
+        if info.get('sourceType') == 'github':
+            url = info.get('sourceUrl', '').replace('.git', '').rstrip('/')
+            AGENTS_GITHUB[name] = url
+
+def get_git_remote(dir_path):
+    try:
+        r = subprocess.run(['git', 'remote', 'get-url', 'origin'],
+                           cwd=dir_path, capture_output=True, text=True, timeout=5)
+        if r.returncode == 0:
+            return r.stdout.strip().replace('.git', '').rstrip('/')
+    except:
+        pass
+    return ''
 
 def parse_skill(path):
     with open(path, 'r', encoding='utf-8') as f:
@@ -45,11 +85,36 @@ for repo, base_dir in SKILL_DIRS:
         if name not in skills or ORDER.get(repo, 9) < ORDER.get(skills[name]['repo'], 9):
             rel = os.path.relpath(os.path.dirname(fp), base_dir)
             rel = rel.replace('\\', '/')
+
+            # Determine GitHub URL
+            github_url = ''
+            if repo == 'agents':
+                github_url = AGENTS_GITHUB.get(name, '')
+            else:
+                # Try matching subdirectory in GITHUB_URLS
+                top_dir = rel.split('/')[0] if '/' in rel else ''
+                if top_dir and top_dir in GITHUB_URLS:
+                    github_url = GITHUB_URLS[top_dir]
+                elif name in GITHUB_URLS:
+                    github_url = GITHUB_URLS[name]
+
+            # Also try git remote as fallback for opencode/claude
+            if not github_url and repo in ('opencode', 'claude'):
+                skill_dir = os.path.dirname(fp)
+                # Walk up to find a .git dir
+                d = skill_dir
+                while d and d != base_dir and len(d) > len(base_dir):
+                    if os.path.isdir(os.path.join(d, '.git')):
+                        github_url = get_git_remote(d)
+                        break
+                    d = os.path.dirname(d)
+
             skills[name] = {
                 'name': name,
                 'description': desc,
                 'rel_path': f'{rel}/SKILL.md',
                 'repo': repo,
+                'github_url': github_url,
                 'content': content,
             }
 
@@ -110,18 +175,20 @@ for cat in cat_order:
         continue
     items = categorized[cat]
     lines.append(f'### {cat} ({len(items)})\n')
-    lines.append('| Skill | Description | Location |')
-    lines.append('|-------|-------------|----------|')
+    lines.append('| Skill | Description | GitHub | Location |')
+    lines.append('|-------|-------------|--------|----------|')
     for s in items:
-        lines.append(f'| **{s["name"]}** | {s["description"]} | `skills/{s["name"]}/SKILL.md` |')
+        gh = f'`{s["github_url"]}`' if s['github_url'] else ''
+        lines.append(f'| **{s["name"]}** | {s["description"]} | {gh} | `skills/{s["name"]}/SKILL.md` |')
     lines.append('')
 
 lines.append('---\n')
 lines.append('## All Skills (Alphabetical)\n')
-lines.append('| # | Skill | Description | Origin |')
-lines.append('|---|-------|-------------|--------|')
+lines.append('| # | Skill | Description | GitHub | Origin |')
+lines.append('|---|-------|-------------|--------|--------|')
 for i, s in enumerate(sorted_skills, 1):
-    lines.append(f'| {i} | **{s["name"]}** | {s["description"]} | {s["repo"]} |')
+    gh = s['github_url'] if s['github_url'] else '-'
+    lines.append(f'| {i} | **{s["name"]}** | {s["description"]} | {gh} | {s["repo"]} |')
 
 with open(os.path.join(BASE, 'SKILLS-INDEX.md'), 'w', encoding='utf-8') as f:
     f.write('\n'.join(lines))
