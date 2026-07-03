@@ -93,7 +93,7 @@ for repo, base_dir in SKILL_DIRS:
                 github_url = AGENTS_GITHUB.get(name, '')
             else:
                 # Try matching subdirectory in GITHUB_URLS
-                top_dir = rel.split('/')[0] if '/' in rel else ''
+                top_dir = rel.split('/')[0] if '/' in rel else rel
                 if top_dir and top_dir in GITHUB_URLS:
                     github_url = GITHUB_URLS[top_dir]
                 elif name in GITHUB_URLS:
