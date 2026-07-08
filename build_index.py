@@ -7,7 +7,7 @@ Build script for superduperskills repo.
 """
 import os, re, glob, json, shutil, subprocess
 
-BASE = os.path.expanduser('~/Documents')
+BASE = os.path.dirname(os.path.abspath(__file__))
 REPO_SKILLS = os.path.join(BASE, 'skills')
 
 ORDER = {'agents': 0, 'opencode': 1, 'claude': 2}
@@ -109,8 +109,11 @@ for repo, base_dir in SKILL_DIRS:
                         break
                     d = os.path.dirname(d)
 
+            dir_name = re.sub(r'[<>:"/\\|?*]', '-', name)
+
             skills[name] = {
                 'name': name,
+                'dir_name': dir_name,
                 'description': desc,
                 'rel_path': f'{rel}/SKILL.md',
                 'repo': repo,
@@ -121,7 +124,7 @@ for repo, base_dir in SKILL_DIRS:
 # Write skills to repo
 os.makedirs(REPO_SKILLS, exist_ok=True)
 for name, data in skills.items():
-    dest_dir = os.path.join(REPO_SKILLS, name)
+    dest_dir = os.path.join(REPO_SKILLS, data['dir_name'])
     os.makedirs(dest_dir, exist_ok=True)
     with open(os.path.join(dest_dir, 'SKILL.md'), 'w', encoding='utf-8') as f:
         f.write(data['content'])
@@ -179,7 +182,7 @@ for cat in cat_order:
     lines.append('|-------|-------------|--------|----------|')
     for s in items:
         gh = f'`{s["github_url"]}`' if s['github_url'] else ''
-        lines.append(f'| **{s["name"]}** | {s["description"]} | {gh} | `skills/{s["name"]}/SKILL.md` |')
+        lines.append(f'| **{s["name"]}** | {s["description"]} | {gh} | `skills/{s["dir_name"]}/SKILL.md` |')
     lines.append('')
 
 lines.append('---\n')

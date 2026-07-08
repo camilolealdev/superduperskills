@@ -12,3 +12,5 @@
 !install.ps1
 !skills/
 !skills/**
+!installers/
+!installers/**

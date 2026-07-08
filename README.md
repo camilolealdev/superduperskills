@@ -23,6 +23,8 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 | `install.sh` | Instalador para Linux/macOS/Git Bash |
 | `install.ps1` | Instalador para Windows PowerShell |
 | `build_index.py` | Script para regenerar el bundle desde las fuentes |
+| `installers/install-claude-plugins.ps1` | Setup de maquina nueva para Claude Code: plugins (Superpowers, Caveman, token-optimizer), y clonado de skill-libraries de backend, frontend, UI/UX, seguridad, testing y debugging |
+| `installers/install-opencode-plugins.ps1` | Equivalente para OpenCode: plugins npm + opencode.json de empresa + mismas skill-libraries |
 
 ## Total de Skills
 
@@ -48,6 +50,29 @@ Clona el repo y ejecuta el instalador:
 ```
 
 El instalador copia (o symlinkea) cada skill desde `skills/<nombre>/SKILL.md` al directorio del agente correspondiente (`~/.claude/skills/`, `~/.gemini/skills/`, `~/.codex/skills/`). Los skills existentes se saltan para no sobrescribir personalizaciones.
+
+### Setup de maquina nueva (plugins + skill-libraries por categoria)
+
+Si estas configurando una maquina desde cero y quieres tambien plugins de marketplace y las skill-libraries externas (no solo el bundle de este repo), usa:
+
+```powershell
+.\installers\install-claude-plugins.ps1     # Claude Code: Superpowers, Caveman, token-optimizer + clones
+.\installers\install-opencode-plugins.ps1   # OpenCode: plugins npm + opencode.json de empresa + clones
+```
+
+Ambos clonan skill-libraries reales ya rastreadas por este repo, organizadas por categoria:
+
+| Categoria | Fuentes clonadas |
+|-----------|------------------|
+| **Backend** | jeffallan/claude-skills, supabase/agent-skills, backend-arch (levnikolaevich/claude-code-skills) |
+| **Frontend** | mingrath/awesome-claude-skills, jezweb/claude-skills |
+| **UI/UX** | pbakaus/impeccable, nextlevelbuilder/ui-ux-pro-max-skill |
+| **Seguridad** | BehiSecc/awesome-claude-skills, jeffallan-skills (secure-code-guardian), backend-arch (ln-621/ln-760) |
+| **Testing** | testcontainers/claude-skills, backend-arch (ln-63x auditores de cobertura) |
+| **Debugging** | jeffallan-skills (debugging-wizard), backend-arch (ln-514 test-log-analyzer) |
+| **CI/CD** | fvadicamo/dev-agent-skills, harness/harness-skills, antigravity-fullstack-hq |
+
+Despues de clonar, corre `python build_index.py` para que estas skills entren al bundle de este repo (ver siguiente seccion).
 
 ## Actualizar el Bundle
 
