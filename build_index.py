@@ -5,7 +5,8 @@ Build script for superduperskills repo.
 - Bundles SKILL.md files into skills/
 - Generates SKILLS-INDEX.md with GitHub repo info
 """
-import os, re, glob, json, shutil, subprocess
+import os, re, json, shutil, subprocess
+from pathlib import Path
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 REPO_SKILLS = os.path.join(BASE, 'skills')
@@ -32,6 +33,13 @@ GITHUB_URLS = {
     'ui-ux-pro-max': 'https://github.com/nextlevelbuilder/ui-ux-pro-max-skill',
     'git-cicd': 'https://github.com/fvadicamo/dev-agent-skills',
     'docker': 'https://github.com/wrsmith108/docker-claude-skill',
+    # === NEW: high-star public repos ===
+    'addyosmani': 'https://github.com/addyosmani/agent-skills',
+    'taste': 'https://github.com/Leonxlnx/taste-skill',
+    'ponytail': 'https://github.com/DietrichGebert/ponytail',
+    'planning-with-files': 'https://github.com/OthmanAdi/planning-with-files',
+    'alirezarezvani': 'https://github.com/alirezarezvani/claude-skills',
+    'drawio': 'https://github.com/Agents365-ai/drawio-skill',
     'prompt-architect': 'https://github.com/ckelsoe/claude-skill-prompt-architect',
     'prompt-coach': 'https://github.com/hancengiz/claude-code-prompt-coach-skill',
     'token-optimizer': 'https://github.com/severity1/claude-code-prompt-improver',
@@ -80,10 +88,10 @@ for repo, base_dir in SKILL_DIRS:
     if not os.path.isdir(base_dir):
         print(f'Warning: {base_dir} not found, skipping')
         continue
-    for fp in glob.glob(os.path.join(base_dir, '**', 'SKILL.md'), recursive=True):
-        name, desc, content = parse_skill(fp)
+    for fp in Path(base_dir).rglob('SKILL.md'):
+        name, desc, content = parse_skill(str(fp))
         if name not in skills or ORDER.get(repo, 9) < ORDER.get(skills[name]['repo'], 9):
-            rel = os.path.relpath(os.path.dirname(fp), base_dir)
+            rel = os.path.relpath(str(fp.parent), base_dir)
             rel = rel.replace('\\', '/')
 
             # Determine GitHub URL
@@ -92,7 +100,7 @@ for repo, base_dir in SKILL_DIRS:
                 github_url = AGENTS_GITHUB.get(name, '')
             else:
                 # Try matching subdirectory in GITHUB_URLS
-                top_dir = rel.split('/')[0] if '/' in rel else ''
+                top_dir = rel.split('/')[0] if '/' in rel else rel
                 if top_dir and top_dir in GITHUB_URLS:
                     github_url = GITHUB_URLS[top_dir]
                 elif name in GITHUB_URLS:
@@ -100,7 +108,7 @@ for repo, base_dir in SKILL_DIRS:
 
             # Also try git remote as fallback for opencode/claude
             if not github_url and repo in ('opencode', 'claude'):
-                skill_dir = os.path.dirname(fp)
+                skill_dir = str(fp.parent)
                 # Walk up to find a .git dir
                 d = skill_dir
                 while d and d != base_dir and len(d) > len(base_dir):
@@ -133,16 +141,19 @@ for name, data in skills.items():
 sorted_skills = sorted(skills.values(), key=lambda x: x['name'].lower())
 
 CATEGORIES = [
-    (r'^(ab-testing|ad-creative|ads|analytics|aso|churn-prevention|co-marketing|community-marketing|cro|customer-research|emails?|free-tools|image|launch|lead-magnet|marketing-|onboarding|paywalls|popups?|pricing|product-marketing|referrals?|signup|ai-seo)', 'Marketing & Growth'),
+    (r'^(ab-testing|ad-creative|ads|analytics|aso|churn-prevention|co-marketing|community-marketing|cro|customer-research|emails?|free-tools|image|launch|lead-magnet|marketing-|onboarding|paywalls|popups?|pricing|product-marketing|referrals?|signup|ai-seo|app-store-optimization)', 'Marketing & Growth'),
     (r'^(video|hyperframes|gsap|waapi|animejs|lottie|three|css-animations|remotion-to-hyperframes|walkthrough-video|website-to-hyperframes|hyperframes-)', 'Video & Animation'),
-    (r'^(frontend-design|design|ui-ux|banner|brand|slides|ckm:|teach-impeccable|quieter|bolder|polish|overdrive|optimize|normalize|harden|extract|distill|delight|critique|colorize|clarify|arrange|animate|adapt|audit|typeset|onboard|color-palette|icon-set|favicon|design-system|design-review|landing-page|product-showcase|impeccable)', 'Design & UX'),
-    (r'^(python-pro|rust-engineer|golang-pro|csharp|dotnet|java-architect|spring-boot|nestjs|nextjs|react|vue|angular|flutter|swift|kotlin|php-pro|typescript-pro|javascript-pro|nodejs|fastapi|django|laravel|rails|sql-pro|pandas|database-optimizer|postgres|microservices|api-designer|graphql|websocket|backend|fullstack|code-reviewer|debugging|test-master|spec-miner|legacy-modernizer|architecture-designer|feature-forge|cli-developer|chaos-engineer|embedded-systems|game-developer|rag-architect|ml-pipeline|fine-tuning|prompt-engineer|mcp-developer|playwright-expert|atlassian-mcp|fastapi-expert|sql-pro)', 'Development & Backend'),
-    (r'^(docker|devops|terraform|kubernetes|cloud-architect|sre|monitoring|cloudflare|d1-|d1-drizzle|hono-|vite-flare|tanstack-start|cloudflare-api|github-release|git-workflow|git-commit|cicd|github-|git-|container)', 'DevOps & Cloud'),
-    (r'^(voltagent|composio|mcp-builder|elevenlabs|create-voltagent|nemoclaw|gws-|google-apps-script|google-chat|agent-browser|prompt-architect|prompt-improver|pinokio)', 'AI & Agents'),
-    (r'^(seo|keyword|schema|content-brief|content-gap|content-quality|content-refresher|on-page|technical-seo|meta-optimizer|rank-tracker|backlink|domain-authority|content-auditor|competitor-analysis|geo-content|ai-visibility|entity-optimizer|memory-management|alert-manager|performance-reporter|programmatic-seo|cannibalization|internal-link|site-architecture)', 'SEO & Content'),
-    (r'^(cold-email|sales-enablement|proposal-writer|resume-cover-letter|award-application|strategy-document)', 'Sales & Comms'),
-    (r'^(ln-|task-|todo)', 'Project Management'),
-    (r'^(us-business-english|uk-business-english|aussie-business-english|nz-business-english|copy-editing|copywriting|content-strategy)', 'Writing & Content'),
+    (r'^(frontend-design|design|design-taste|ui-ux|banner|brand|slides|ckm:|teach-impeccable|quieter|bolder|polish|overdrive|optimize|normalize|harden|extract|distill|delight|critique|colorize|clarify|arrange|animate|adapt|audit|typeset|onboard|color-palette|icon-set|favicon|design-system|design-review|landing-page|product-showcase|impeccable|taste-|brandkit|imagegen-|a11y-|high-end-visual|minimalist-ui|industrial-brutalist|stitch-design|ponytail)', 'Design & UX'),
+    (r'^(python-pro|rust-engineer|golang-pro|csharp|dotnet|java-architect|spring-boot|nestjs|nextjs|react|vue|angular|flutter|swift|kotlin|php-pro|typescript-pro|javascript-pro|nodejs|fastapi|django|laravel|rails|sql-pro|pandas|database-optimizer|postgres|microservices|api-designer|graphql|websocket|backend|fullstack|code-reviewer|debugging|test-master|spec-miner|legacy-modernizer|architecture-designer|feature-forge|cli-developer|chaos-engineer|embedded-systems|game-developer|rag-architect|ml-pipeline|fine-tuning|prompt-engineer|mcp-developer|playwright-expert|atlassian-mcp|fastapi-expert|api-|code-|cicd|ci-cd|browser-testing|frontend-engineering|fullstack-|observability|security-|database-|schema-|performance-|testing-|debug-|source-driven|doubt-driven|test-driven|incremental|spec-driven|shipping|source-code|adversarial-reviewer|interview-me|ai-security|encryption|caching-|orm-|migration-|open-source|app-development|mobile-development|game-development|engineering|cmd-|grill-|karpathy)', 'Development & Backend'),
+    (r'^(docker|devops|terraform|kubernetes|cloud-architect|sre|monitoring|cloudflare|d1-|d1-drizzle|hono-|vite-flare|tanstack-start|cloudflare-api|github-release|git-workflow|git-commit|cicd|github-|git-|container|aws-|azure-|gcp-|cloud-|deploy-|infrastructure|incident-management|disaster-recovery|load-testing|incident)', 'DevOps & Cloud'),
+    (r'^(voltagent|composio|mcp-builder|elevenlabs|create-voltagent|nemoclaw|gws-|google-apps-script|google-chat|agent-browser|prompt-architect|prompt-improver|pinokio|agent-|ai-|llm|rag|chatbot|autonomous|autoresearch|google-|atlassian)', 'AI & Agents'),
+    (r'^(seo|keyword|schema|content-brief|content-gap|content-quality|content-refresher|on-page|technical-seo|meta-optimizer|rank-tracker|backlink|domain-authority|content-auditor|competitor-analysis|geo-content|ai-visibility|entity-optimizer|memory-management|alert-manager|performance-reporter|programmatic-seo|cannibalization|internal-link|site-architecture|aeo)', 'SEO & Content'),
+    (r'^(cold-email|sales-enablement|proposal-writer|resume-cover-letter|award-application|strategy-document|sales-|pitch-deck|investor-|fundraising|cold-calling)', 'Sales & Comms'),
+    (r'^(ln-|task-|todo|planning-|pi-planning|idea-refine|context-engineering|using-agent-skills|doc-|documentation|meeting-|standup|retrospective|daily-|weekly-|sprint-|backlog|roadmap|stakeholder)', 'Project Management'),
+    (r'^(us-business-english|uk-business-english|aussie-business-english|nz-business-english|copy-editing|copywriting|content-strategy|cs-|content-|blog-|article-|newsletter|social-media|copy-|email-|messaging|internal-comms|wiki-|changelog|release-notes|md$|md-|inbox)', 'Writing & Content'),
+    (r'^(board|boardroom|chief-|ceo-|cto-|cfo-|cmo-|coo-|cpo-|ciso|c-level|founder-|business-|strategy-|revenue-|finance-|financial-|commercial|startup|competitive|product-|pm-|growth|lob-|enterprise|corporate|competitor)', 'Business & Strategy'),
+    (r'^(compliance|gdpr|ccpa|hippa|fda|soc-|iso-|legal-|ai-act|regulation|policy|risk-|audit-|governance|data-privacy|data-protection)', 'Compliance & Legal'),
+    (r'^(loop-|md-|inbox-|andreessen|behuman|full-|brainstorm|career|hiring|recruiting|hr-|people-|culture|onboarding-|training|learning-|mentoring|coaching)', 'Productivity & People'),
 ]
 
 def categorize(name):
@@ -158,7 +169,8 @@ for s in sorted_skills:
 
 cat_order = ['Marketing & Growth', 'Video & Animation', 'Design & UX', 'Development & Backend',
              'DevOps & Cloud', 'AI & Agents', 'SEO & Content', 'Sales & Comms',
-             'Project Management', 'Writing & Content', 'Other']
+             'Project Management', 'Writing & Content', 'Business & Strategy',
+             'Compliance & Legal', 'Productivity & People', 'Other']
 
 lines = [
     '# Skills Index\n',
