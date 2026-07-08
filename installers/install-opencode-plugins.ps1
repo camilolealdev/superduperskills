@@ -182,6 +182,11 @@ $skillRepos = @(
         dest = "$ocSkillsDir\ui-ux-pro-max-skills"
     },
     @{
+        name = "ux-ui-agent-skills (444 stars: design tokens DTCG, 138 design systems, WCAG 2.2)"
+        repo = "https://github.com/plugin87/ux-ui-agent-skills.git"
+        dest = "$ocSkillsDir\ux-ui-agent-skills"
+    },
+    @{
         name = "supabase agent-skills (backend/DB: Auth, Postgres, Edge Functions, Realtime)"
         repo = "https://github.com/supabase/agent-skills.git"
         dest = "$ocSkillsDir\supabase-skills"
@@ -192,9 +197,19 @@ $skillRepos = @(
         dest = "$ocSkillsDir\testcontainers-skills"
     },
     @{
+        name = "agentic-qe (408 stars: QA fleet completo, contract/E2E/API testing, a11y)"
+        repo = "https://github.com/proffesor-for-testing/agentic-qe.git"
+        dest = "$ocSkillsDir\agentic-qe-skills"
+    },
+    @{
         name = "levnikolaevich backend-arch (pipeline agile, auditorias de seguridad/testing/debug, ln-*)"
         repo = "https://github.com/levnikolaevich/claude-code-skills.git"
         dest = "$ocSkillsDir\backend-arch-skills"
+    },
+    @{
+        name = "ring (202 stars: TDD, systematic debugging, code review, 10-gate dev cycle)"
+        repo = "https://github.com/LerianStudio/ring.git"
+        dest = "$ocSkillsDir\ring-skills"
     },
     @{
         name = "dev-agent-skills (git workflow, CI/CD, PR review)"
@@ -205,6 +220,11 @@ $skillRepos = @(
         name = "BehiSecc (OWASP, STRIDE threat modeling, secret scanning)"
         repo = "https://github.com/BehiSecc/awesome-claude-skills.git"
         dest = "$ocSkillsDir\behisecc-security-skills"
+    },
+    @{
+        name = "claude-code-owasp (277 stars: OWASP Top 10:2025, ASVS 5.0, Agentic AI security)"
+        repo = "https://github.com/agamm/claude-code-owasp.git"
+        dest = "$ocSkillsDir\owasp-security-skills"
     },
     @{
         name = "antigravity-fullstack-hq (10 agentes: frontend, backend, db, architect...)"
@@ -241,10 +261,11 @@ foreach ($r in $skillRepos) {
 Write-Title "5. SEGURIDAD, TESTING Y DEBUG"
 
 $catNotes = @(
-    "SEGURIDAD  -- jeffallan-skills/secure-code-guardian, behisecc-security-skills, backend-arch-skills/ln-621 y ln-760",
-    "TESTING    -- testcontainers-skills, jeffallan-skills/test-master, backend-arch-skills/ln-63x (auditores de cobertura)",
-    "DEBUG      -- jeffallan-skills/debugging-wizard, backend-arch-skills/ln-514 (test-log-analyzer)",
-    "FRONTEND   -- jezweb-skills, mingrath-skills, impeccable-skills, ui-ux-pro-max-skills",
+    "SEGURIDAD  -- owasp-security-skills (277★), behisecc-security-skills, jeffallan-skills/secure-code-guardian, backend-arch-skills/ln-621 y ln-760",
+    "TESTING    -- agentic-qe-skills (408★), testcontainers-skills, jeffallan-skills/test-master, backend-arch-skills/ln-63x",
+    "DEBUG      -- ring-skills (202★, systematic-debugging/TDD), jeffallan-skills/debugging-wizard, backend-arch-skills/ln-514",
+    "UI/UX      -- ux-ui-agent-skills (444★, design tokens/WCAG), impeccable-skills, ui-ux-pro-max-skills",
+    "FRONTEND   -- jezweb-skills, mingrath-skills",
     "BACKEND    -- jeffallan-skills (lenguajes/frameworks), supabase-skills, backend-arch-skills"
 )
 foreach ($n in $catNotes) { Write-Info "  - $n" }

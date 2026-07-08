@@ -66,11 +66,13 @@ Ambos clonan skill-libraries reales ya rastreadas por este repo, organizadas por
 |-----------|------------------|
 | **Backend** | jeffallan/claude-skills, supabase/agent-skills, backend-arch (levnikolaevich/claude-code-skills) |
 | **Frontend** | mingrath/awesome-claude-skills, jezweb/claude-skills |
-| **UI/UX** | pbakaus/impeccable, nextlevelbuilder/ui-ux-pro-max-skill |
-| **Seguridad** | BehiSecc/awesome-claude-skills, jeffallan-skills (secure-code-guardian), backend-arch (ln-621/ln-760) |
-| **Testing** | testcontainers/claude-skills, backend-arch (ln-63x auditores de cobertura) |
-| **Debugging** | jeffallan-skills (debugging-wizard), backend-arch (ln-514 test-log-analyzer) |
+| **UI/UX** | plugin87/ux-ui-agent-skills (★444), nextlevelbuilder/ui-ux-pro-max-skill, pbakaus/impeccable |
+| **Seguridad** | agamm/claude-code-owasp (★277), BehiSecc/awesome-claude-skills (★9.7k), jeffallan-skills (secure-code-guardian), backend-arch (ln-621/ln-760) |
+| **Testing** | proffesor-for-testing/agentic-qe (★408), testcontainers/claude-skills, backend-arch (ln-63x auditores de cobertura) |
+| **Debugging** | LerianStudio/ring (★202, TDD + systematic-debugging), jeffallan-skills (debugging-wizard), backend-arch (ln-514 test-log-analyzer) |
 | **CI/CD** | fvadicamo/dev-agent-skills, harness/harness-skills, antigravity-fullstack-hq |
+
+Las fuentes con estrellas anotadas se eligieron verificando el conteo real via `gh api repos/<owner>/<repo>` (no solo ranking de busqueda) para priorizar mantenimiento activo y adopcion real sobre listados genericos.
 
 Despues de clonar, corre `python build_index.py` para que estas skills entren al bundle de este repo (ver siguiente seccion).
 

@@ -177,6 +177,11 @@ $skillRepos = @(
         dest = "$env:USERPROFILE\.claude\skills\ui-ux-pro-max-skills"
     },
     @{
+        name = "ux-ui-agent-skills (444 stars: design tokens DTCG, 138 design systems, WCAG 2.2)"
+        repo = "https://github.com/plugin87/ux-ui-agent-skills.git"
+        dest = "$env:USERPROFILE\.claude\skills\ux-ui-agent-skills"
+    },
+    @{
         name = "supabase agent-skills (backend/DB: Auth, Postgres, Edge Functions, Realtime)"
         repo = "https://github.com/supabase/agent-skills.git"
         dest = "$env:USERPROFILE\.claude\skills\supabase-skills"
@@ -187,9 +192,19 @@ $skillRepos = @(
         dest = "$env:USERPROFILE\.claude\skills\testcontainers-skills"
     },
     @{
+        name = "agentic-qe (408 stars: QA fleet completo, contract/E2E/API testing, a11y)"
+        repo = "https://github.com/proffesor-for-testing/agentic-qe.git"
+        dest = "$env:USERPROFILE\.claude\skills\agentic-qe-skills"
+    },
+    @{
         name = "levnikolaevich backend-arch (pipeline agile, auditorias de seguridad/testing/debug, ln-*)"
         repo = "https://github.com/levnikolaevich/claude-code-skills.git"
         dest = "$env:USERPROFILE\.claude\skills\backend-arch-skills"
+    },
+    @{
+        name = "ring (202 stars: TDD, systematic debugging, code review, 10-gate dev cycle)"
+        repo = "https://github.com/LerianStudio/ring.git"
+        dest = "$env:USERPROFILE\.claude\skills\ring-skills"
     },
     @{
         name = "dev-agent-skills (git workflow, CI/CD, PR review)"
@@ -200,6 +215,11 @@ $skillRepos = @(
         name = "BehiSecc (OWASP, STRIDE threat modeling, secret scanning)"
         repo = "https://github.com/BehiSecc/awesome-claude-skills.git"
         dest = "$env:USERPROFILE\.claude\skills\behisecc-security-skills"
+    },
+    @{
+        name = "claude-code-owasp (277 stars: OWASP Top 10:2025, ASVS 5.0, Agentic AI security)"
+        repo = "https://github.com/agamm/claude-code-owasp.git"
+        dest = "$env:USERPROFILE\.claude\skills\owasp-security-skills"
     },
     @{
         name = "antigravity-fullstack-hq (10 agentes: frontend, backend, db, architect, security...)"
@@ -244,11 +264,11 @@ try {
 }
 
 $secNote = @(
-    "owasp-security      -- OWASP Top 10:2025, ASVS 5.0, 20+ lenguajes (jeffallan-skills)",
-    "skill-threat-model  -- STRIDE, PenTest, 8 fases de analisis (behisecc-security-skills)",
-    "secure-code-guardian-- JWT, bcrypt, CSP, CORS, SQLi prevention (jeffallan-skills)",
-    "ln-621/ln-760       -- security-auditor / security-setup (backend-arch-skills)",
-    "varlock             -- secrets nunca en sesiones, logs ni git"
+    "owasp-security       -- OWASP Top 10:2025, ASVS 5.0, Agentic AI security (owasp-security-skills, 277 stars)",
+    "skill-threat-model   -- STRIDE, PenTest, 8 fases de analisis (behisecc-security-skills)",
+    "secure-code-guardian -- JWT, bcrypt, CSP, CORS, SQLi prevention (jeffallan-skills)",
+    "ln-621/ln-760        -- security-auditor / security-setup (backend-arch-skills)",
+    "varlock              -- secrets nunca en sesiones, logs ni git"
 )
 Write-Info "Skills de seguridad disponibles tras el clonado:"
 foreach ($n in $secNote) { Write-Info "  - $n" }
@@ -259,8 +279,10 @@ foreach ($n in $secNote) { Write-Info "  - $n" }
 Write-Title "7. TESTING & DEBUGGING"
 
 $testNote = @(
+    "agentic-qe-skills            -- QA fleet (408 stars): contract/E2E/API testing, a11y-ally, coverage",
     "test-master, senior-qa       -- unit/integration/E2E, Jest, Playwright, Vitest",
     "testcontainers-skills        -- contenedores de integracion .NET / Go",
+    "ring-skills                  -- systematic-debugging, TDD, 10-gate dev cycle (202 stars)",
     "debugging-wizard             -- stack traces, root cause analysis, log correlation",
     "ln-404/ln-514/ln-63x         -- test-executor, test-log-analyzer, auditores de cobertura (backend-arch-skills)",
     "chaos-engineer               -- inyeccion de fallos, game days"
