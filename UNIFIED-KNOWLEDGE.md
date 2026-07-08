@@ -4,6 +4,11 @@
 > Cada skill pertenece a una o más **áreas de conocimiento**, permitiendo búsqueda
 > multidimensional. Skills duplicadas se marcan con `[dup:N]` y se listan sus fuentes.
 
+> **Nota de vigencia:** esta taxonomía se curó a mano sobre una foto de **402** skills y
+> referencia rutas de una máquina anterior (p. ej. `Documents/.opencode/skills/`). El repo
+> ahora bundlea **1180** skills — usa [`SKILLS-INDEX.md`](SKILLS-INDEX.md) (auto-regenerado por
+> `build_index.py`) como fuente de verdad actual para conteo, rutas y GitHub de origen.
+
 ---
 
 ## Mapa de Duplicados

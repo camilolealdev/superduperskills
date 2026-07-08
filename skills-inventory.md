@@ -1,7 +1,12 @@
-# Claude Code Skills â€” Complete Inventory
+# Claude Code Skills — Complete Inventory
 
 > Generated from all installed skill repositories.
 > Organized by domain for easy reference.
+
+> **Nota de vigencia:** este documento fue curado a mano sobre una foto de **402** skills.
+> El repo ahora bundlea **1180** skills (ver [`SKILLS-INDEX.md`](SKILLS-INDEX.md), regenerado
+> por `build_index.py`). Las tablas de abajo siguen siendo útiles como mapa narrativo por
+> dominio, pero para el conteo/listado exacto y actualizado usa `SKILLS-INDEX.md`.
 
 ---
 
