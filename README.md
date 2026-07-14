@@ -28,7 +28,7 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 
 ## Total de Skills
 
-**1180** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
+**1181** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
 
 | Categoría | Cantidad |
 |-----------|----------|
@@ -45,7 +45,7 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 | Sales & Comms | 7 |
 | Productivity & People | 7 |
 | Video & Animation | 15 |
-| Other | 542 |
+| Other | 543 |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 
@@ -89,6 +89,7 @@ Ambos clonan skill-libraries reales ya rastreadas por este repo, organizadas por
 | **Seguridad** | agamm/claude-code-owasp (★277), BehiSecc/awesome-claude-skills (★9.7k), jeffallan-skills (secure-code-guardian), backend-arch (ln-621/ln-760) |
 | **Testing** | proffesor-for-testing/agentic-qe (★408), testcontainers/claude-skills, backend-arch (ln-63x auditores de cobertura) |
 | **Debugging** | LerianStudio/ring (★202, TDD + systematic-debugging), jeffallan-skills (debugging-wizard), backend-arch (ln-514 test-log-analyzer) |
+| **Calidad / Simplicidad** | DietrichGebert/ponytail (★82.9k — anti-over-engineering, YAGNI, ponytail-review/audit/debt/gain) |
 | **CI/CD** | fvadicamo/dev-agent-skills, harness/harness-skills, antigravity-fullstack-hq |
 
 Las fuentes con estrellas anotadas se eligieron verificando el conteo real via `gh api repos/<owner>/<repo>` (no solo ranking de busqueda) para priorizar mantenimiento activo y adopcion real sobre listados genericos.

@@ -212,6 +212,11 @@ $skillRepos = @(
         dest = "$ocSkillsDir\ring-skills"
     },
     @{
+        name = "ponytail (82.9k stars: anti-over-engineering, YAGNI, code simplicity/review/audit)"
+        repo = "https://github.com/DietrichGebert/ponytail.git"
+        dest = "$ocSkillsDir\ponytail-skills"
+    },
+    @{
         name = "dev-agent-skills (git workflow, CI/CD, PR review)"
         repo = "https://github.com/fvadicamo/dev-agent-skills.git"
         dest = "$ocSkillsDir\git-cicd-skills"

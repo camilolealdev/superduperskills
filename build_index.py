@@ -37,6 +37,11 @@ GITHUB_URLS = {
     'addyosmani': 'https://github.com/addyosmani/agent-skills',
     'taste': 'https://github.com/Leonxlnx/taste-skill',
     'ponytail': 'https://github.com/DietrichGebert/ponytail',
+    'ponytail-audit': 'https://github.com/DietrichGebert/ponytail',
+    'ponytail-debt': 'https://github.com/DietrichGebert/ponytail',
+    'ponytail-gain': 'https://github.com/DietrichGebert/ponytail',
+    'ponytail-help': 'https://github.com/DietrichGebert/ponytail',
+    'ponytail-review': 'https://github.com/DietrichGebert/ponytail',
     'planning-with-files': 'https://github.com/OthmanAdi/planning-with-files',
     'alirezarezvani': 'https://github.com/alirezarezvani/claude-skills',
     'drawio': 'https://github.com/Agents365-ai/drawio-skill',
@@ -73,13 +78,29 @@ def parse_skill(path):
     name = os.path.basename(os.path.dirname(path))
     desc = ''
     if front:
-        for line in front.group(1).split('\n'):
+        lines = front.group(1).split('\n')
+        i = 0
+        while i < len(lines):
+            line = lines[i]
             if line.startswith('name:'):
                 name = line.split(':', 1)[1].strip().strip('"\'')
             elif line.startswith('description:'):
-                desc = line.split(':', 1)[1].strip().strip('"\'')
+                value = line.split(':', 1)[1].strip()
+                if value in ('>', '>-', '>+', '|', '|-', '|+'):
+                    # YAML block scalar: description text is on subsequent indented lines
+                    block_lines = []
+                    i += 1
+                    while i < len(lines) and (lines[i].startswith((' ', '\t')) or not lines[i].strip()):
+                        block_lines.append(lines[i].strip())
+                        i += 1
+                    i -= 1
+                    desc = ' '.join(l for l in block_lines if l)
+                else:
+                    desc = value.strip('"\'')
+            i += 1
     if len(desc) > 200:
         desc = desc[:197] + '...'
+    desc = desc.replace('|', '\\|').replace('\n', ' ')
     return name, desc, content
 
 # Collect all skills, deduplicate by name

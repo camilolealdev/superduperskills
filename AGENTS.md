@@ -36,6 +36,7 @@ testcontainers-skills/      # Testing de integración .NET y Go
 agentic-qe-skills/          # QA fleet: contract/E2E/API testing, a11y (★408)
 backend-arch-skills/        # Pipeline agile + auditorías de seguridad/testing/debug (ln-*)
 ring-skills/                # TDD, systematic-debugging, code review, 10-gate dev cycle (★202)
+ponytail-skills/            # Anti-over-engineering, YAGNI, code simplicity (★82.9k)
 git-cicd-skills/            # Git workflow, CI/CD, PR review
 behisecc-security-skills/   # OWASP, STRIDE threat modeling, secret scanning
 owasp-security-skills/      # OWASP Top 10:2025, ASVS 5.0, Agentic AI security (★277)
