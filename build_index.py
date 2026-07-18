@@ -36,6 +36,9 @@ GITHUB_URLS = {
     # === NEW: high-star public repos ===
     'addyosmani': 'https://github.com/addyosmani/agent-skills',
     'taste': 'https://github.com/Leonxlnx/taste-skill',
+    'design-taste-frontend': 'https://github.com/Leonxlnx/taste-skill',
+    'design-taste-frontend-v1': 'https://github.com/Leonxlnx/taste-skill',
+    'taste-skill-v1': 'https://github.com/Leonxlnx/taste-skill',
     'ponytail': 'https://github.com/DietrichGebert/ponytail',
     'ponytail-audit': 'https://github.com/DietrichGebert/ponytail',
     'ponytail-debt': 'https://github.com/DietrichGebert/ponytail',

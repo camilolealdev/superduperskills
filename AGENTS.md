@@ -31,6 +31,11 @@ jezweb-skills/              # Frontend, Cloudflare, Shopify, WordPress, D1
 impeccable-skills/          # Suite de mejora de diseño/UI (polish, harden, adapt, critique)
 ui-ux-pro-max-skills/       # Brand, banners, slides, design tokens
 ux-ui-agent-skills/         # Design tokens DTCG, 138 design systems, WCAG 2.2 (★444)
+wondelai-skills/            # refactoring-ui, hooked-ux, ux-heuristics, lean-ux, top-design + biz strategy (★1.7k)
+taste-skills/               # design-taste-frontend, brandkit, minimalist/brutalist anti-slop (★64.9k)
+excalidraw-diagram-skills/  # Diagramas Excalidraw para arquitectura/flujos (★4.1k)
+anthropics-skills/          # canvas-design, theme-factory, frontend-design, mcp-builder (oficial Anthropic)
+humanizer-skills/           # Quita marcas de escritura generada por IA (★29.7k)
 supabase-skills/            # Backend/DB: Auth, Postgres, Edge Functions, Realtime
 testcontainers-skills/      # Testing de integración .NET y Go
 agentic-qe-skills/          # QA fleet: contract/E2E/API testing, a11y (★408)

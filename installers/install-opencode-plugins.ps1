@@ -182,6 +182,31 @@ $skillRepos = @(
         dest = "$ocSkillsDir\ui-ux-pro-max-skills"
     },
     @{
+        name = "wondelai (1.7k stars: refactoring-ui, hooked-ux, ux-heuristics, lean-ux, made-to-stick, top-design + biz strategy)"
+        repo = "https://github.com/wondelai/skills.git"
+        dest = "$ocSkillsDir\wondelai-skills"
+    },
+    @{
+        name = "taste-skill (64.9k stars: anti-slop design taste, brandkit, minimalist/brutalist variants)"
+        repo = "https://github.com/Leonxlnx/taste-skill.git"
+        dest = "$ocSkillsDir\taste-skills"
+    },
+    @{
+        name = "excalidraw-diagram-skill (4.1k stars: diagramas Excalidraw para arquitectura/flujos)"
+        repo = "https://github.com/coleam00/excalidraw-diagram-skill.git"
+        dest = "$ocSkillsDir\excalidraw-diagram-skills"
+    },
+    @{
+        name = "anthropics/skills (oficial: canvas-design, theme-factory, frontend-design, brand-guidelines, mcp-builder)"
+        repo = "https://github.com/anthropics/skills.git"
+        dest = "$ocSkillsDir\anthropics-skills"
+    },
+    @{
+        name = "humanizer (29.7k stars: quita marcas de escritura generada por IA)"
+        repo = "https://github.com/blader/humanizer.git"
+        dest = "$ocSkillsDir\humanizer-skills"
+    },
+    @{
         name = "ux-ui-agent-skills (444 stars: design tokens DTCG, 138 design systems, WCAG 2.2)"
         repo = "https://github.com/plugin87/ux-ui-agent-skills.git"
         dest = "$ocSkillsDir\ux-ui-agent-skills"

@@ -28,16 +28,16 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 
 ## Total de Skills
 
-**1181** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
+**1256** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
 
 | Categoría | Cantidad |
 |-----------|----------|
-| Project Management | 146 |
+| Project Management | 147 |
 | Development & Backend | 121 |
 | Writing & Content | 58 |
-| Design & UX | 57 |
+| Design & UX | 60 |
 | Business & Strategy | 53 |
-| Marketing & Growth | 49 |
+| Marketing & Growth | 51 |
 | SEO & Content | 47 |
 | DevOps & Cloud | 38 |
 | AI & Agents | 29 |
@@ -45,7 +45,7 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 | Sales & Comms | 7 |
 | Productivity & People | 7 |
 | Video & Animation | 15 |
-| Other | 543 |
+| Other | 612 |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 
@@ -85,7 +85,7 @@ Ambos clonan skill-libraries reales ya rastreadas por este repo, organizadas por
 |-----------|------------------|
 | **Backend** | jeffallan/claude-skills, supabase/agent-skills, backend-arch (levnikolaevich/claude-code-skills) |
 | **Frontend** | mingrath/awesome-claude-skills, jezweb/claude-skills |
-| **UI/UX** | plugin87/ux-ui-agent-skills (★444), nextlevelbuilder/ui-ux-pro-max-skill, pbakaus/impeccable |
+| **UI/UX** | plugin87/ux-ui-agent-skills (★444), nextlevelbuilder/ui-ux-pro-max-skill, pbakaus/impeccable, wondelai/skills (★1.7k — refactoring-ui, hooked-ux, ux-heuristics, lean-ux, top-design), anthropics/skills oficial (★ canvas-design, theme-factory), Leonxlnx/taste-skill (★64.9k — anti-slop), coleam00/excalidraw-diagram-skill (★4.1k), blader/humanizer (★29.7k) |
 | **Seguridad** | agamm/claude-code-owasp (★277), BehiSecc/awesome-claude-skills (★9.7k), jeffallan-skills (secure-code-guardian), backend-arch (ln-621/ln-760) |
 | **Testing** | proffesor-for-testing/agentic-qe (★408), testcontainers/claude-skills, backend-arch (ln-63x auditores de cobertura) |
 | **Debugging** | LerianStudio/ring (★202, TDD + systematic-debugging), jeffallan-skills (debugging-wizard), backend-arch (ln-514 test-log-analyzer) |
