@@ -28,16 +28,16 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 
 ## Total de Skills
 
-**1256** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
+**1260** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
 
 | Categoría | Cantidad |
 |-----------|----------|
 | Project Management | 147 |
 | Development & Backend | 121 |
 | Writing & Content | 58 |
-| Design & UX | 60 |
+| Design & UX | 61 |
 | Business & Strategy | 53 |
-| Marketing & Growth | 51 |
+| Marketing & Growth | 52 |
 | SEO & Content | 47 |
 | DevOps & Cloud | 38 |
 | AI & Agents | 29 |
@@ -45,7 +45,7 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 | Sales & Comms | 7 |
 | Productivity & People | 7 |
 | Video & Animation | 15 |
-| Other | 612 |
+| Other | 614 |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 
