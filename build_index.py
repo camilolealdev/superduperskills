@@ -150,16 +150,19 @@ for repo, base_dir in SKILL_DIRS:
                 'rel_path': f'{rel}/SKILL.md',
                 'repo': repo,
                 'github_url': github_url,
+                'source_dir': str(fp.parent),
                 'content': content,
             }
 
-# Write skills to repo
+# Write skills to repo — mirror the whole skill directory (SKILL.md plus any
+# references/scripts/assets), not just SKILL.md, so supporting files survive.
 os.makedirs(REPO_SKILLS, exist_ok=True)
+ignore_git = shutil.ignore_patterns('.git')
 for name, data in skills.items():
     dest_dir = os.path.join(REPO_SKILLS, data['dir_name'])
-    os.makedirs(dest_dir, exist_ok=True)
-    with open(os.path.join(dest_dir, 'SKILL.md'), 'w', encoding='utf-8') as f:
-        f.write(data['content'])
+    if os.path.isdir(dest_dir):
+        shutil.rmtree(dest_dir)
+    shutil.copytree(data['source_dir'], dest_dir, ignore=ignore_git)
 
 # Generate SKILLS-INDEX.md
 sorted_skills = sorted(skills.values(), key=lambda x: x['name'].lower())

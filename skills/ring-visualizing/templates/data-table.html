@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Requirements audit - Lerian Studio</title>
+<!--
+  Reference template for the visual-explainer skill: data tables.
+  Pattern reference only. Start generated artifacts from standard.html,
+  then adapt this structure to the user's source data. Do not copy this
+  sample title, requirements, metrics, statuses, or rows unless present in
+  the user request or source material.
+
+  Lerian sunglow palette - brand-aligned with the standard foundation.
+  Key patterns demonstrated:
+  - Sunglow brand palette with semantic status colors
+  - Optional source-backed summary cells above the table, only when metrics exist
+  - Collapsible <details> section (replaces static callout)
+  - Depth tiers: elevated source summary, default table, collapsible for secondary
+  - Real <table> element with sticky header, alternating rows
+  - Status indicator badges (match, gap, partial)
+  - Text wrapping in wide columns, code references in cells
+  - Summary footer row with aggregate status
+  - Staggered row animation via --i variable
+  - Both light and dark themes via prefers-color-scheme
+  - Responsive horizontal scroll wrapper
+  - Standard Lerian header and footer
+-->
+
+<!-- ========== FONTS ========== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   LERIAN STANDARD FOUNDATION
+   All visual-explainer outputs MUST start from these tokens and base styles.
+   ========================================================================== */
+
+/* ========== DESIGN TOKENS: LIGHT MODE ========== */
+
+:root {
+  /* --- Fonts --- */
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* --- Backgrounds --- */
+  --bg: oklch(96.7% 0.001 286.4);          /* page background (zinc-100) */
+  --surface: oklch(99% 0.002 286.4);       /* cards, panels */
+  --surface-elevated: oklch(98.5% 0.003 286.4); /* modals, popovers */
+  --surface-muted: oklch(91.9% 0.004 286.3); /* subtle backgrounds, muted areas */
+
+  /* --- Text --- */
+  --text: oklch(27.4% 0.006 286.0);        /* primary text (zinc-800) */
+  --text-secondary: oklch(44.2% 0.017 285.8); /* secondary text (zinc-600) */
+  --text-muted: oklch(70.5% 0.015 286.1);  /* placeholder, meta (zinc-400) */
+  --text-inverse: oklch(96.7% 0.001 286.4); /* text on dark backgrounds */
+
+  /* --- Brand Accent (Sunglow) --- */
+  --accent: oklch(84.8% 0.166 88.9);       /* primary brand yellow */
+  --accent-dim: rgba(253, 203, 40, 0.15);
+  --accent-hover: rgba(253, 203, 40, 0.7);
+  --accent-text: oklch(27.4% 0.006 286.0); /* text color on accent bg */
+
+  /* --- Semantic Status --- */
+  --success: oklch(62.7% 0.194 149.2);
+  --success-bg: oklch(98.2% 0.018 155.8);
+  --success-dim: rgba(22, 163, 74, 0.12);
+  --warning: oklch(79.5% 0.162 86.0);
+  --warning-bg: oklch(98.7% 0.026 102.2);
+  --warning-dim: rgba(234, 179, 8, 0.15);
+  --error: oklch(63.7% 0.208 25.3);
+  --error-bg: oklch(97.1% 0.013 17.4);
+  --error-dim: rgba(239, 68, 68, 0.12);
+  --info: oklch(54.6% 0.215 262.9);
+  --info-bg: oklch(97% 0.014 254.6);
+  --info-dim: rgba(37, 99, 235, 0.12);
+
+  /* --- Extended Palette (diagram variety) --- */
+  --sunglow-400: oklch(84.8% 0.166 88.9);
+  --sunglow-500: oklch(76.7% 0.159 83.8);
+  --sunglow-100: oklch(96.8% 0.083 96.6);
+  --de-york-400: oklch(75.6% 0.147 150.0);
+  --de-york-600: oklch(55% 0.138 149.0);
+  --de-york-100: oklch(95% 0.052 150.0);
+  --tangerine-400: oklch(78.4% 0.106 43.7);
+  --tangerine-500: oklch(66.5% 0.176 38.6);
+  --tangerine-100: oklch(93.6% 0.039 42.4);
+  --cod-gray-400: oklch(59.3% 0.025 13.0);
+  --cod-gray-600: oklch(43.7% 0.023 13.6);
+
+  /* --- Borders --- */
+  --border: oklch(91.9% 0.004 286.3);     /* default border (zinc-200) */
+  --border-strong: oklch(87.1% 0.006 286.3); /* input borders (zinc-300) */
+  --border-subtle: rgba(0, 0, 0, 0.05);   /* very faint separators */
+
+  /* --- Shadows (product-console) --- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 0px 32px rgba(0, 0, 0, 0.04);
+
+  /* --- Radius --- */
+  --radius: 8px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+}
+
+
+/* ========== DESIGN TOKENS: DARK MODE ========== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(27.4% 0.006 286.0);
+    --surface: oklch(37% 0.013 285.8);
+    --surface-elevated: oklch(44.2% 0.017 285.8);
+    --surface-muted: oklch(44.2% 0.017 285.8);
+
+    --text: oklch(96.7% 0.001 286.4);
+    --text-secondary: oklch(70.5% 0.015 286.1);
+    --text-muted: oklch(55.2% 0.016 285.9);
+    --text-inverse: oklch(27.4% 0.006 286.0);
+
+    --accent: oklch(84.8% 0.166 88.9);
+    --accent-dim: rgba(253, 203, 40, 0.2);
+    --accent-text: oklch(27.4% 0.006 286.0);
+
+    --border: oklch(44.2% 0.017 285.8);
+    --border-strong: oklch(55.2% 0.016 285.9);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0px 4px 8px rgba(0, 0, 0, 0.4), 0px 0px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+/* ========== RESET & BASE ========== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 30% 0%, var(--accent-dim) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 100%, var(--success-dim) 0%, transparent 40%);
+  padding: 40px 20px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ========== ANIMATIONS ========== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate {
+  opacity: 0;
+  animation: fadeUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 0.05s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ========== CONTAINER ========== */
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
+/* ========== LERIAN HEADER ========== */
+
+.lerian-header {
+  margin-bottom: 32px;
+}
+
+.lerian-header a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.lerian-header a:hover {
+  color: var(--accent);
+}
+
+.lerian-header .logo-mark {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+
+/* ========== CONTENT HEADER ========== */
+
+h1 {
+  font-family: var(--font-body);
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  margin-bottom: 32px;
+}
+
+
+/* ========== LEGEND ========== */
+
+.legend {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
+.legend-swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+
+/* ========== TABLE WRAPPER ========== */
+
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* ========== TABLE ========== */
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+/* Header */
+.data-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.data-table th {
+  background: var(--surface-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+  text-align: left;
+  padding: 14px 16px;
+  border-bottom: 2px solid var(--border-strong);
+  white-space: nowrap;
+}
+
+/* Cells */
+.data-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  vertical-align: top;
+}
+
+.data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Wide text column */
+.data-table .wide {
+  min-width: 220px;
+  max-width: 440px;
+}
+
+/* Alternating rows */
+.data-table tbody tr:nth-child(even) {
+  background: var(--accent-dim);
+}
+
+/* Row hover + animation stagger */
+.data-table tbody tr {
+  transition: background 0.15s ease;
+  animation: fadeUp 0.5s ease-out forwards;
+  animation-delay: calc(var(--i, 0) * 0.05s);
+  opacity: 0;
+}
+
+.data-table tbody tr:hover {
+  background: rgba(253, 203, 40, 0.06);
+}
+
+@media (prefers-color-scheme: dark) {
+  .data-table tbody tr:hover {
+    background: rgba(253, 203, 40, 0.08);
+  }
+}
+
+/* Code in cells */
+.data-table code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--accent-dim);
+  color: var(--accent-text);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .data-table code {
+    color: var(--accent);
+  }
+}
+
+/* Secondary text */
+.data-table small {
+  display: block;
+  color: var(--text-secondary);
+  font-size: 11px;
+  margin-top: 3px;
+}
+
+
+/* ========== STATUS BADGES (template-specific) ========== */
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.status--match {
+  background: var(--success-dim);
+  color: var(--success);
+}
+
+.status--gap {
+  background: var(--error-dim);
+  color: var(--error);
+}
+
+.status--partial {
+  background: var(--warning-dim);
+  color: var(--warning);
+}
+
+/* Dot before status text */
+.status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+
+/* ========== STANDARD BADGES (utility system) ========== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.badge-success { background: var(--success-bg); color: #166534; }
+.badge-warning { background: var(--warning-bg); color: #854d0e; }
+.badge-error   { background: var(--error-bg);   color: #991b1b; }
+.badge-info    { background: var(--info-bg);     color: #1e40af; }
+.badge-accent  { background: var(--accent-dim);  color: var(--accent-text); }
+.badge-neutral { background: var(--surface-muted); color: var(--text-secondary); }
+
+@media (prefers-color-scheme: dark) {
+  .badge-success { color: #bbf7d0; }
+  .badge-warning { color: #fef08a; }
+  .badge-error   { color: #fecaca; }
+  .badge-info    { color: #bfdbfe; }
+}
+
+
+/* ========== FOOTER ROW ========== */
+
+.data-table tfoot td {
+  background: var(--surface-muted);
+  font-weight: 600;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  border-top: 2px solid var(--border-strong);
+  border-bottom: none;
+  padding: 14px 16px;
+}
+
+
+/* ========== SOURCE-BACKED SUMMARY ========== */
+
+.source-summary-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.source-summary-card {
+  background: var(--surface-elevated, var(--surface));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+}
+
+.source-summary-card__value {
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.source-summary-card__value--green { color: var(--success); }
+.source-summary-card__value--red { color: var(--error); }
+.source-summary-card__value--orange { color: var(--warning); }
+
+.source-summary-card__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+
+/* ========== COLLAPSIBLE ========== */
+
+details.collapsible {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+details.collapsible summary {
+  padding: 14px 20px;
+  background: var(--surface);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  transition: background 0.15s ease;
+}
+
+details.collapsible summary:hover {
+  background: var(--surface-elevated, var(--surface));
+}
+
+details.collapsible summary::-webkit-details-marker { display: none; }
+
+details.collapsible summary::before {
+  content: '\25B8';
+  font-size: 11px;
+  color: var(--text-muted);
+  transition: transform 0.15s ease;
+}
+
+details.collapsible[open] summary::before {
+  transform: rotate(90deg);
+}
+
+details.collapsible .collapsible__body {
+  padding: 16px 20px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+details.collapsible .collapsible__body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+details.collapsible .collapsible__body code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--accent-dim);
+  color: var(--accent-text);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  details.collapsible .collapsible__body code {
+    color: var(--accent);
+  }
+}
+
+
+/* ========== LERIAN FOOTER ========== */
+
+.lerian-footer {
+  margin-top: 64px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
+/* Full-bleed background via pseudo-element */
+.lerian-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  z-index: -1;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand .logo-mark {
+  height: 20px;
+  width: auto;
+  color: var(--text);
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.footer-company {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.footer-link {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.footer-generated {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.footer-generated strong {
+  font-weight: 600;
+}
+
+.footer-date {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  body { padding: 16px; }
+  h1 { font-size: 28px; }
+  .data-table th,
+  .data-table td { padding: 10px 12px; }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-meta {
+    align-items: flex-start;
+  }
+}
+
+
+/* ========== PRINT ========== */
+
+@media print {
+  body {
+    background: oklch(98.8% 0.004 92);
+    color: oklch(24% 0.012 70);
+    padding: 20px;
+  }
+
+  .table-wrap,
+  .source-summary-card,
+  details.collapsible {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .lerian-header {
+    margin-bottom: 16px;
+  }
+
+  .lerian-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ddd;
+    background: oklch(98.8% 0.004 92);
+    padding: 12px 20px;
+  }
+
+  .lerian-footer::before {
+    display: none;
+  }
+
+  .animate {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .data-table tbody tr {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .logo-mark {
+    color: #27272A !important;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ========== HEADER ========== -->
+
+  <header class="lerian-header">
+    <a href="https://lerian.studio" aria-label="Lerian Studio">
+      <svg class="logo-mark" viewBox="0 0 1090.88 280" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M619.42,29.69c0,15.43-10.87,27.93-27.93,27.93s-27.93-12.51-27.93-27.93,10.86-27.93,27.92-27.93,27.93,12.51,27.93,27.93h0ZM158.64,242.4v33.54H12.13v-33.55h48.36c3.16,0,5.73-2.57,5.73-5.73V87.77c0-3.16-2.57-5.73-5.73-5.73H7.85v-34.31h98.33v188.94c0,3.16,2.57,5.73,5.73,5.73h46.74ZM168.85,179.86c0,58.52,37.29,98.33,99.47,98.33,49.15,0,79.7-30.6,86.27-67.08h-40.69c-6.29,24.54-26.97,33.91-48.61,33.91-48.85,0-53.41-45.18-53.83-55-.04-1.02.77-1.87,1.79-1.87h143.61c.76-5.26,1.13-10.42,1.13-15.44,0-32.71-20.25-91.92-95.33-91.92-57.04,0-93.8,41.26-93.81,99.07ZM314.47,158.39l-99.49.02c-1.08,0-1.94-.96-1.78-2.02,4.49-31.28,30.98-42.82,50.98-42.82,33.88,0,48.71,21.59,52.08,42.79.17,1.08-.69,2.04-1.78,2.04h0ZM867.2,83.16h0s0,0,0,0h0ZM826.87,83.16h40.33v192.83h-40.32v-24.53c0-3.09-3.92-4.41-5.79-1.95-.18.23-.35.47-.53.71h0s0,.02,0,.02h0c-.11.16-.23.32-.35.47-7.92,10.56-20.68,27.53-56.24,27.53-60.83,0-91.19-46.33-91.19-98.7,0-61.42,40.37-98.72,91.17-98.72,36.73,0,48.44,15.73,56.64,26.75l.49.66c1.86,2.49,5.81,1.18,5.81-1.93v-23.14ZM770.75,115.48c34.78,0,56.14,27.81,56.14,64.8h0c0,42-26.32,63.68-56.14,63.68-34.83,0-56.14-27.43-56.14-64.43,0-42.07,26.11-64.05,56.14-64.05ZM1063.39,101.7c14.42,14.06,21.64,36.67,21.64,67.8v106.25h-41.06v-103.99c0-43.98-22.35-56.14-45.96-56.14-31.99,0-51.6,23.22-51.6,62.92v97.21h-40.68V83.15h39.93v25.07c0,3.11,3.95,4.4,5.82,1.92,8.55-11.4,26.72-29.52,55.98-29.52,37.55,0,55.75,20.88,55.93,21.08ZM657.42,275.94v-33.54h0s-37.37,0-37.37,0c-3.16,0-5.73-2.57-5.73-5.73V83.14h-81.34v34.31h37.54c3.16,0,5.73,2.57,5.73,5.73v113.48c0,3.16-2.57,5.73-5.73,5.73h-38.14v33.55h125.03ZM499.27,119.27c0,.13-.1.23-.23.23h0s-36.31,0-36.31,0c-28.68,0-28.65,24.99-28.64,43.62,0,.46,0,.92,0,1.37v111.24c0,.13-.1.23-.23.23h-41.01c-.13,0-.23-.1-.23-.23V83.27c0-.13.1-.23.23-.23h36.49c.13,0,.23.1.23.23v24.03c0,4.05,5.24,5.65,7.49,2.28.22-.32.43-.64.65-.97,8.18-12.25,18.71-28.02,52.51-28.02h9.05v38.68Z"/>
+      </svg>
+    </a>
+  </header>
+
+
+  <h1 class="animate" style="--i:0">Requirements audit</h1>
+  <p class="subtitle animate" style="--i:1">source requirements vs. implementation plan: point-by-point review</p>
+
+  <!-- Source-backed demo summary slots. Replace values and labels with facts from the source material, or remove this row. -->
+  <div class="source-summary-row animate" style="--i:2">
+    <div class="source-summary-card">
+      <div class="source-summary-card__value">14</div>
+      <div class="source-summary-card__label">Items reviewed</div>
+    </div>
+    <div class="source-summary-card">
+      <div class="source-summary-card__value source-summary-card__value--green">13</div>
+      <div class="source-summary-card__label">Match</div>
+    </div>
+    <div class="source-summary-card">
+      <div class="source-summary-card__value source-summary-card__value--red">1</div>
+      <div class="source-summary-card__label">Gap</div>
+    </div>
+    <div class="source-summary-card">
+      <div class="source-summary-card__value" style="color:var(--accent)">93%</div>
+      <div class="source-summary-card__label">Coverage</div>
+    </div>
+  </div>
+
+  <div class="legend animate" style="--i:3">
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--success)"></div> Match</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--error)"></div> Gap</div>
+    <div class="legend-item"><div class="legend-swatch" style="background:var(--warning)"></div> Partial</div>
+  </div>
+
+  <div class="table-wrap animate" style="--i:4">
+    <div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th class="wide">Request</th>
+            <th class="wide">Plan</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="--i:4">
+            <td class="wide">Scope: <code>product-detail-template</code> only</td>
+            <td class="wide">Plan limits all changes to the named template.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:5">
+            <td class="wide">Target delivery window captured in source brief</td>
+            <td class="wide">Plan header repeats the same delivery window.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:6">
+            <td class="wide">Update notification button label and modal text</td>
+            <td class="wide">Button text + modal description configurable via settings.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:7">
+            <td class="wide">Use the vendor SDK to trigger notification events</td>
+            <td class="wide">Uses <code>openInlineForm</code>, <code>openModal</code>, <code>removeInlineForm</code>.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:8">
+            <td class="wide">Custom button + modal with text settings in buy buttons block</td>
+            <td class="wide">Schema settings in <code>buy_buttons</code> block.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:9">
+            <td class="wide">Default values preserve current behavior when empty</td>
+            <td class="wide">Blank settings keep the existing notification behavior.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:10">
+            <td class="wide">Only display for unavailable variants</td>
+            <td class="wide">DOM-based sold-out detection.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:11">
+            <td class="wide">Exclude products with <code>exclude-notify</code> tag</td>
+            <td class="wide">Checked in both PDP and PLP Liquid.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:12">
+            <td class="wide"><code>openInlineForm</code> loads the vendor form in the modal</td>
+            <td class="wide">PDP modal uses <code>openInlineForm</code>.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:13">
+            <td class="wide">Updated button label from the source brief</td>
+            <td class="wide">Pre-populated in template JSON.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:14">
+            <td class="wide">Updated modal copy from the source brief</td>
+            <td class="wide"><code>bis_modal_description</code> setting.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:15">
+            <td class="wide">Deployment target named in the source brief</td>
+            <td class="wide">Environment ID is included as a placeholder value.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:16">
+            <td class="wide">Changes made locally</td>
+            <td class="wide">Local dev + theme push.</td>
+            <td><span class="status status--match">Match</span></td>
+          </tr>
+          <tr style="--i:17">
+            <td class="wide">Run <code>vendor:notify-modal:submitted</code> when form is submitted</td>
+            <td class="wide">Not mentioned in plan.
+              <small>When using <code>openInlineForm</code> inside a custom modal, unclear if the vendor SDK fires this event automatically or if manual dispatch is needed.</small>
+            </td>
+            <td><span class="status status--gap">Gap</span></td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td>14 items reviewed</td>
+            <td></td>
+            <td>13 match &middot; 1 gap</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+
+  <details class="collapsible animate" style="--i:19">
+    <summary>Gap analysis detail</summary>
+    <div class="collapsible__body">
+      <strong>Gap: <code>vendor:notify-modal:submitted</code> event.</strong>
+      The source brief requires an event on form submission. The plan uses <code>openInlineForm</code> inside a custom modal, but does not address whether the vendor SDK dispatches this event automatically in that context. If analytics or downstream automations listen for it, missing it could silently break the submission pipeline. Recommend adding an explicit <code>dispatchEvent</code> call as a safety net.
+    </div>
+  </details>
+
+
+  <!-- ========== FOOTER ========== -->
+
+  <footer class="lerian-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <svg class="logo-mark" viewBox="0 0 1090.88 280" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" d="M619.42,29.69c0,15.43-10.87,27.93-27.93,27.93s-27.93-12.51-27.93-27.93,10.86-27.93,27.92-27.93,27.93,12.51,27.93,27.93h0ZM158.64,242.4v33.54H12.13v-33.55h48.36c3.16,0,5.73-2.57,5.73-5.73V87.77c0-3.16-2.57-5.73-5.73-5.73H7.85v-34.31h98.33v188.94c0,3.16,2.57,5.73,5.73,5.73h46.74ZM168.85,179.86c0,58.52,37.29,98.33,99.47,98.33,49.15,0,79.7-30.6,86.27-67.08h-40.69c-6.29,24.54-26.97,33.91-48.61,33.91-48.85,0-53.41-45.18-53.83-55-.04-1.02.77-1.87,1.79-1.87h143.61c.76-5.26,1.13-10.42,1.13-15.44,0-32.71-20.25-91.92-95.33-91.92-57.04,0-93.8,41.26-93.81,99.07ZM314.47,158.39l-99.49.02c-1.08,0-1.94-.96-1.78-2.02,4.49-31.28,30.98-42.82,50.98-42.82,33.88,0,48.71,21.59,52.08,42.79.17,1.08-.69,2.04-1.78,2.04h0ZM867.2,83.16h0s0,0,0,0h0ZM826.87,83.16h40.33v192.83h-40.32v-24.53c0-3.09-3.92-4.41-5.79-1.95-.18.23-.35.47-.53.71h0s0,.02,0,.02h0c-.11.16-.23.32-.35.47-7.92,10.56-20.68,27.53-56.24,27.53-60.83,0-91.19-46.33-91.19-98.7,0-61.42,40.37-98.72,91.17-98.72,36.73,0,48.44,15.73,56.64,26.75l.49.66c1.86,2.49,5.81,1.18,5.81-1.93v-23.14ZM770.75,115.48c34.78,0,56.14,27.81,56.14,64.8h0c0,42-26.32,63.68-56.14,63.68-34.83,0-56.14-27.43-56.14-64.43,0-42.07,26.11-64.05,56.14-64.05ZM1063.39,101.7c14.42,14.06,21.64,36.67,21.64,67.8v106.25h-41.06v-103.99c0-43.98-22.35-56.14-45.96-56.14-31.99,0-51.6,23.22-51.6,62.92v97.21h-40.68V83.15h39.93v25.07c0,3.11,3.95,4.4,5.82,1.92,8.55-11.4,26.72-29.52,55.98-29.52,37.55,0,55.75,20.88,55.93,21.08ZM657.42,275.94v-33.54h0s-37.37,0-37.37,0c-3.16,0-5.73-2.57-5.73-5.73V83.14h-81.34v34.31h37.54c3.16,0,5.73,2.57,5.73,5.73v113.48c0,3.16-2.57,5.73-5.73,5.73h-38.14v33.55h125.03ZM499.27,119.27c0,.13-.1.23-.23.23h0s-36.31,0-36.31,0c-28.68,0-28.65,24.99-28.64,43.62,0,.46,0,.92,0,1.37v111.24c0,.13-.1.23-.23.23h-41.01c-.13,0-.23-.1-.23-.23V83.27c0-.13.1-.23.23-.23h36.49c.13,0,.23.1.23.23v24.03c0,4.05,5.24,5.65,7.49,2.28.22-.32.43-.64.65-.97,8.18-12.25,18.71-28.02,52.51-28.02h9.05v38.68Z"/>
+        </svg>
+        <div class="footer-brand-text">
+          <span class="footer-company">Lerian Studio</span>
+          <a href="https://lerian.studio" class="footer-link">lerian.studio</a>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <span class="footer-generated"><strong>Generated with Ring</strong></span>
+        <span class="footer-date"></span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<!-- ========== DATE AUTO-FILL ========== -->
+<script>
+  var footerDate = document.querySelector('.footer-date');
+  if (footerDate) footerDate.textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+</script>
+
+</body>
+</html>

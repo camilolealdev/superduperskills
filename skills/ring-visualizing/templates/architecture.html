@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System architecture - Lerian Studio</title>
+<!--
+  Reference template for the visual-explainer skill: CSS Grid architecture layout.
+  Pattern reference only. Start generated artifacts from standard.html,
+  then adapt this structure to the user's source data. Do not copy this
+  sample title, entities, statuses, or flows unless present in the user
+  request or source material.
+
+  Lerian standard branding - sunglow accent, de-york greens, tangerine warmth,
+  cod-gray neutrals, semantic status colors from the Lerian design system.
+  Key patterns demonstrated:
+  - Lerian standard palette (sunglow + de-york + tangerine + cod-gray)
+  - Depth tiers: hero (input sources), default (mid sections), recessed (callout)
+  - Asymmetric background atmosphere (off-center gradient mesh)
+  - Large heading (38px) for typographic contrast
+  - Section cards with semantic top accents and dot labels
+  - Vertical flow arrows between sections (inline SVG)
+  - Horizontal pipeline with step boxes and arrow separators
+  - Parallel branch within a pipeline
+  - Color-coded legend, three-column output row
+  - Staggered fade-in via --i CSS variable (works with interleaved elements)
+  - Reduced motion respect, responsive single-column fallback
+  - Standard Lerian header and footer branding
+-->
+
+<!-- ========== FONTS ========== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================================
+   LERIAN STANDARD FOUNDATION
+   All visual-explainer outputs MUST start from these tokens and base styles.
+   ========================================================================== */
+
+/* ========== DESIGN TOKENS: LIGHT MODE ========== */
+
+:root {
+  /* --- Fonts --- */
+  --font-body: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', ui-monospace, monospace;
+
+  /* --- Backgrounds --- */
+  --bg: oklch(96.7% 0.001 286.4);          /* page background (zinc-100) */
+  --surface: oklch(99% 0.002 286.4);       /* cards, panels */
+  --surface-elevated: oklch(98.5% 0.003 286.4); /* modals, popovers */
+  --surface-muted: oklch(91.9% 0.004 286.3); /* subtle backgrounds, muted areas */
+
+  /* --- Text --- */
+  --text: oklch(27.4% 0.006 286.0);        /* primary text (zinc-800) */
+  --text-secondary: oklch(44.2% 0.017 285.8); /* secondary text (zinc-600) */
+  --text-muted: oklch(70.5% 0.015 286.1);  /* placeholder, meta (zinc-400) */
+  --text-inverse: oklch(96.7% 0.001 286.4); /* text on dark backgrounds */
+
+  /* --- Brand Accent (Sunglow) --- */
+  --accent: oklch(84.8% 0.166 88.9);       /* primary brand yellow */
+  --accent-dim: rgba(253, 203, 40, 0.15);
+  --accent-hover: rgba(253, 203, 40, 0.7);
+  --accent-text: oklch(27.4% 0.006 286.0); /* text color on accent bg */
+
+  /* --- Semantic Status --- */
+  --success: oklch(62.7% 0.194 149.2);
+  --success-bg: oklch(98.2% 0.018 155.8);
+  --success-dim: rgba(22, 163, 74, 0.12);
+  --warning: oklch(79.5% 0.162 86.0);
+  --warning-bg: oklch(98.7% 0.026 102.2);
+  --warning-dim: rgba(234, 179, 8, 0.15);
+  --error: oklch(63.7% 0.208 25.3);
+  --error-bg: oklch(97.1% 0.013 17.4);
+  --error-dim: rgba(239, 68, 68, 0.12);
+  --info: oklch(54.6% 0.215 262.9);
+  --info-bg: oklch(97% 0.014 254.6);
+  --info-dim: rgba(37, 99, 235, 0.12);
+
+  /* --- Extended Palette (diagram variety) --- */
+  --sunglow-400: oklch(84.8% 0.166 88.9);
+  --sunglow-500: oklch(76.7% 0.159 83.8);
+  --sunglow-100: oklch(96.8% 0.083 96.6);
+  --de-york-400: oklch(75.6% 0.147 150.0);
+  --de-york-600: oklch(55% 0.138 149.0);
+  --de-york-100: oklch(95% 0.052 150.0);
+  --tangerine-400: oklch(78.4% 0.106 43.7);
+  --tangerine-500: oklch(66.5% 0.176 38.6);
+  --tangerine-100: oklch(93.6% 0.039 42.4);
+  --cod-gray-400: oklch(59.3% 0.025 13.0);
+  --cod-gray-600: oklch(43.7% 0.023 13.6);
+
+  /* --- Borders --- */
+  --border: oklch(91.9% 0.004 286.3);     /* default border (zinc-200) */
+  --border-strong: oklch(87.1% 0.006 286.3); /* input borders (zinc-300) */
+  --border-subtle: rgba(0, 0, 0, 0.05);   /* very faint separators */
+
+  /* --- Shadows (product-console) --- */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0px 4px 8px rgba(0, 0, 0, 0.12), 0px 0px 32px rgba(0, 0, 0, 0.04);
+
+  /* --- Radius --- */
+  --radius: 8px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+}
+
+
+/* ========== DESIGN TOKENS: DARK MODE ========== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: oklch(27.4% 0.006 286.0);
+    --surface: oklch(37% 0.013 285.8);
+    --surface-elevated: oklch(44.2% 0.017 285.8);
+    --surface-muted: oklch(44.2% 0.017 285.8);
+
+    --text: oklch(96.7% 0.001 286.4);
+    --text-secondary: oklch(70.5% 0.015 286.1);
+    --text-muted: oklch(55.2% 0.016 285.9);
+    --text-inverse: oklch(27.4% 0.006 286.0);
+
+    --accent: oklch(84.8% 0.166 88.9);
+    --accent-dim: rgba(253, 203, 40, 0.2);
+    --accent-text: oklch(27.4% 0.006 286.0);
+
+    --border: oklch(44.2% 0.017 285.8);
+    --border-strong: oklch(55.2% 0.016 285.9);
+    --border-subtle: rgba(255, 255, 255, 0.06);
+
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0px 2px 4px rgba(0, 0, 0, 0.3), 0px 10px 20px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0px 4px 8px rgba(0, 0, 0, 0.4), 0px 0px 32px rgba(0, 0, 0, 0.15);
+  }
+}
+
+
+/* ========== RESET + BASE ========== */
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 0%, var(--accent-dim) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 100%, rgba(146, 126, 129, 0.15) 0%, transparent 40%);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  padding: 40px 20px;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ========== HEADER ========== */
+
+.lerian-header {
+  max-width: 1100px;
+  margin: 0 auto 32px;
+}
+
+.lerian-header a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.lerian-header a:hover {
+  color: var(--accent);
+}
+
+.lerian-header .logo-mark {
+  width: 100px;
+  height: auto;
+  display: block;
+}
+
+
+/* ========== FOOTER ========== */
+
+.lerian-footer {
+  max-width: 1100px;
+  margin: 64px auto 0;
+  padding: 24px 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+}
+
+/* Full-bleed background via pseudo-element */
+.lerian-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  height: 100%;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  z-index: -1;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.footer-brand .logo-mark {
+  height: 20px;
+  width: auto;
+  color: var(--text);
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.footer-company {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.footer-link {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent);
+}
+
+.footer-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.footer-generated {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.footer-generated strong {
+  font-weight: 600;
+}
+
+.footer-date {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+
+/* ========== ANIMATION ========== */
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.section, .flow-arrow {
+  animation: fadeUp 0.5s ease-out both;
+  animation-delay: calc(var(--i, 0) * 0.05s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ========== TYPOGRAPHY ========== */
+
+h1 {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 6px;
+  text-wrap: balance;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 40px;
+  font-family: var(--font-mono);
+}
+
+
+/* ========== LAYOUT ========== */
+
+.diagram {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* ========== SECTION CARD ========== */
+
+.section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.section--hero {
+  background: var(--surface-elevated);
+  border-color: color-mix(in srgb, var(--border) 50%, var(--accent) 50%);
+  box-shadow: var(--shadow-md);
+  padding: 28px 32px;
+}
+
+.section--recessed {
+  background: var(--surface-muted);
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-label .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* Color variants using Lerian extended palette */
+.section--accent { border-color: var(--accent-dim); }
+.section--accent .section-label { color: var(--accent); }
+.section--accent .section-label .dot { background: var(--accent); }
+
+.section--green { border-color: rgba(91, 205, 134, 0.15); }
+.section--green .section-label { color: var(--de-york-400); }
+.section--green .section-label .dot { background: var(--de-york-400); }
+
+.section--orange { border-color: rgba(240, 110, 67, 0.15); }
+.section--orange .section-label { color: var(--tangerine-500); }
+.section--orange .section-label .dot { background: var(--tangerine-500); }
+
+.section--sage { border-color: rgba(146, 126, 129, 0.15); }
+.section--sage .section-label { color: var(--cod-gray-400); }
+.section--sage .section-label .dot { background: var(--cod-gray-400); }
+
+.section--teal { border-color: var(--info-dim); }
+.section--teal .section-label { color: var(--info); }
+.section--teal .section-label .dot { background: var(--info); }
+
+.section--plum { border-color: var(--error-dim); }
+.section--plum .section-label { color: var(--error); }
+.section--plum .section-label .dot { background: var(--error); }
+
+
+/* ========== INNER GRID ========== */
+
+.inner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.inner-card {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+.inner-card .title {
+  font-weight: 600;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.inner-card .desc {
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.inner-card code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+
+/* ========== FLOW ARROW ========== */
+
+.flow-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 4px 0;
+}
+
+.flow-arrow svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--border-strong);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+
+/* ========== PIPELINE ========== */
+
+.pipeline {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.pipeline-step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  min-width: 120px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.pipeline-step .step-num {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.pipeline-step .step-name {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.pipeline-step .step-detail {
+  font-size: 10px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+/* Step color variants using Lerian extended palette */
+.pipeline-step--teal { border-color: var(--info-dim); }
+.pipeline-step--teal .step-num { color: var(--info); }
+
+.pipeline-step--sage { border-color: rgba(146, 126, 129, 0.15); }
+.pipeline-step--sage .step-num { color: var(--cod-gray-400); }
+
+.pipeline-step--orange { border-color: rgba(240, 110, 67, 0.15); }
+.pipeline-step--orange .step-num { color: var(--tangerine-500); }
+
+.pipeline-step--green { border-color: rgba(91, 205, 134, 0.15); }
+.pipeline-step--green .step-num { color: var(--de-york-400); }
+
+.pipeline-arrow {
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+  color: var(--border-strong);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.pipeline-parallel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+
+/* ========== THREE COLUMN ROW ========== */
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+
+/* ========== LIST ========== */
+
+.node-list {
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.node-list li {
+  padding-left: 14px;
+  position: relative;
+}
+
+.node-list li::before {
+  content: '\203A';
+  color: var(--text-muted);
+  font-weight: 600;
+  position: absolute;
+  left: 0;
+}
+
+.node-list code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+
+/* ========== CALLOUT ========== */
+
+.callout {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--accent);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.callout strong { color: var(--text); font-weight: 600; }
+
+.callout code {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+
+/* ========== LEGEND ========== */
+
+.legend {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-family: var(--font-mono);
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+
+/* ========== SOURCE PILLS ========== */
+
+.sources {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.source {
+  background: var(--surface-muted);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 18px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: border-color 0.2s;
+}
+
+.source:hover { border-color: var(--border-strong); }
+
+
+/* ========== RESPONSIVE ========== */
+
+@media (max-width: 768px) {
+  body { padding: 20px; }
+  h1 { font-size: 28px; }
+  .inner-grid { grid-template-columns: 1fr; }
+  .three-col { grid-template-columns: 1fr; }
+  .pipeline { flex-wrap: wrap; gap: 6px; }
+  .pipeline-arrow { display: none; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .footer-meta { align-items: flex-start; }
+}
+
+
+/* ========== PRINT ========== */
+
+@media print {
+  body {
+    background: oklch(98.8% 0.004 92);
+    color: oklch(24% 0.012 70);
+    padding: 20px;
+  }
+
+  .section {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+
+  .lerian-header {
+    margin-bottom: 16px;
+  }
+
+  .lerian-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #ddd;
+    background: oklch(98.8% 0.004 92);
+    padding: 12px 20px;
+  }
+
+  .lerian-footer::before {
+    display: none;
+  }
+
+  .section, .flow-arrow {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .logo-mark {
+    color: #27272A !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+
+<header class="lerian-header">
+  <a href="https://lerian.studio" aria-label="Lerian Studio">
+    <svg class="logo-mark" viewBox="0 0 1090.88 280" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" d="M619.42,29.69c0,15.43-10.87,27.93-27.93,27.93s-27.93-12.51-27.93-27.93,10.86-27.93,27.92-27.93,27.93,12.51,27.93,27.93h0ZM158.64,242.4v33.54H12.13v-33.55h48.36c3.16,0,5.73-2.57,5.73-5.73V87.77c0-3.16-2.57-5.73-5.73-5.73H7.85v-34.31h98.33v188.94c0,3.16,2.57,5.73,5.73,5.73h46.74ZM168.85,179.86c0,58.52,37.29,98.33,99.47,98.33,49.15,0,79.7-30.6,86.27-67.08h-40.69c-6.29,24.54-26.97,33.91-48.61,33.91-48.85,0-53.41-45.18-53.83-55-.04-1.02.77-1.87,1.79-1.87h143.61c.76-5.26,1.13-10.42,1.13-15.44,0-32.71-20.25-91.92-95.33-91.92-57.04,0-93.8,41.26-93.81,99.07ZM314.47,158.39l-99.49.02c-1.08,0-1.94-.96-1.78-2.02,4.49-31.28,30.98-42.82,50.98-42.82,33.88,0,48.71,21.59,52.08,42.79.17,1.08-.69,2.04-1.78,2.04h0ZM867.2,83.16h0s0,0,0,0h0ZM826.87,83.16h40.33v192.83h-40.32v-24.53c0-3.09-3.92-4.41-5.79-1.95-.18.23-.35.47-.53.71h0s0,.02,0,.02h0c-.11.16-.23.32-.35.47-7.92,10.56-20.68,27.53-56.24,27.53-60.83,0-91.19-46.33-91.19-98.7,0-61.42,40.37-98.72,91.17-98.72,36.73,0,48.44,15.73,56.64,26.75l.49.66c1.86,2.49,5.81,1.18,5.81-1.93v-23.14ZM770.75,115.48c34.78,0,56.14,27.81,56.14,64.8h0c0,42-26.32,63.68-56.14,63.68-34.83,0-56.14-27.43-56.14-64.43,0-42.07,26.11-64.05,56.14-64.05ZM1063.39,101.7c14.42,14.06,21.64,36.67,21.64,67.8v106.25h-41.06v-103.99c0-43.98-22.35-56.14-45.96-56.14-31.99,0-51.6,23.22-51.6,62.92v97.21h-40.68V83.15h39.93v25.07c0,3.11,3.95,4.4,5.82,1.92,8.55-11.4,26.72-29.52,55.98-29.52,37.55,0,55.75,20.88,55.93,21.08ZM657.42,275.94v-33.54h0s-37.37,0-37.37,0c-3.16,0-5.73-2.57-5.73-5.73V83.14h-81.34v34.31h37.54c3.16,0,5.73,2.57,5.73,5.73v113.48c0,3.16-2.57,5.73-5.73,5.73h-38.14v33.55h125.03ZM499.27,119.27c0,.13-.1.23-.23.23h0s-36.31,0-36.31,0c-28.68,0-28.65,24.99-28.64,43.62,0,.46,0,.92,0,1.37v111.24c0,.13-.1.23-.23.23h-41.01c-.13,0-.23-.1-.23-.23V83.27c0-.13.1-.23.23-.23h36.49c.13,0,.23.1.23.23v24.03c0,4.05,5.24,5.65,7.49,2.28.22-.32.43-.64.65-.97,8.18-12.25,18.71-28.02,52.51-28.02h9.05v38.68Z"/>
+    </svg>
+  </a>
+</header>
+
+
+<h1>System architecture</h1>
+<p class="subtitle">reference template: architecture diagram pattern</p>
+
+<div class="diagram">
+
+  <!-- Source pills row: hero depth for the entry point -->
+  <div class="section section--hero" style="--i:0">
+    <div class="section-label"><span class="dot" style="background:var(--text-muted)"></span> Input sources</div>
+    <div class="sources">
+      <div class="source"><span>💬</span> Slack</div>
+      <div class="source"><span>🐙</span> GitHub</div>
+      <div class="source"><span>📧</span> Email</div>
+    </div>
+  </div>
+
+  <!-- Flow arrow -->
+  <div class="flow-arrow" style="--i:1">
+    <svg viewBox="0 0 20 20"><path d="M10 4 L10 16 M6 12 L10 16 L14 12"/></svg>
+    incoming events
+  </div>
+
+  <!-- Gateway section with inner grid -->
+  <div class="section section--accent" style="--i:2">
+    <div class="section-label"><span class="dot"></span> Gateway layer</div>
+    <div class="inner-grid">
+      <div class="inner-card">
+        <div class="title">Router</div>
+        <div class="desc">Routes messages to agents via <code>resolveRoute()</code></div>
+      </div>
+      <div class="inner-card">
+        <div class="title">HTTP server</div>
+        <div class="desc">Plugin routes + handlers for webhooks and API</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow" style="--i:3">
+    <svg viewBox="0 0 20 20"><path d="M10 4 L10 16 M6 12 L10 16 L14 12"/></svg>
+    pipeline entry
+  </div>
+
+  <!-- Pipeline section -->
+  <div class="section section--green" style="--i:4">
+    <div class="section-label"><span class="dot"></span> Processing pipeline</div>
+    <div class="legend" style="margin-bottom:14px">
+      <div class="legend-item"><div class="legend-swatch" style="background:var(--info-dim);border:1px solid var(--info)"></div>no LLM</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(146, 126, 129, 0.15);border:1px solid var(--cod-gray-400)"></div>LLM call</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(240, 110, 67, 0.15);border:1px solid var(--tangerine-500)"></div>embedding</div>
+      <div class="legend-item"><div class="legend-swatch" style="background:rgba(91, 205, 134, 0.15);border:1px solid var(--de-york-400)"></div>DB write</div>
+    </div>
+    <div class="pipeline">
+      <div class="pipeline-step pipeline-step--teal">
+        <div class="step-num">STEP 0</div>
+        <div class="step-name">Pre-filter</div>
+        <div class="step-detail">Allowlist, bots,<br>dedup check</div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step pipeline-step--sage">
+        <div class="step-num">STEP 1</div>
+        <div class="step-name">Relevance</div>
+        <div class="step-detail">Cheap LLM<br>boolean check</div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step pipeline-step--sage">
+        <div class="step-num">STEP 2</div>
+        <div class="step-name">Classify</div>
+        <div class="step-detail">JSON schema<br>validated output</div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-parallel">
+        <div class="pipeline-step pipeline-step--orange">
+          <div class="step-num">STEP 3</div>
+          <div class="step-name">Embed</div>
+          <div class="step-detail">Vector embedding</div>
+        </div>
+        <div class="pipeline-step pipeline-step--teal">
+          <div class="step-num">STEP 5</div>
+          <div class="step-name">Enrich</div>
+          <div class="step-detail">User resolution</div>
+        </div>
+      </div>
+      <div class="pipeline-arrow">&rarr;</div>
+      <div class="pipeline-step pipeline-step--green">
+        <div class="step-num">STEP 4</div>
+        <div class="step-name">Cluster</div>
+        <div class="step-detail">Cosine similarity<br>+ INSERT</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow" style="--i:5">
+    <svg viewBox="0 0 20 20"><path d="M10 4 L10 16 M6 12 L10 16 L14 12"/></svg>
+    stored and queryable
+  </div>
+
+  <!-- Database section -->
+  <div class="section section--orange" style="--i:6">
+    <div class="section-label"><span class="dot"></span> Database</div>
+    <div class="inner-grid">
+      <div class="inner-card">
+        <div class="title">feedback_items</div>
+        <div class="desc">Classification, embedding, cluster assignment, source dedup</div>
+      </div>
+      <div class="inner-card">
+        <div class="title">clusters</div>
+        <div class="desc">Centroid vectors, trends, ticket links, severity rollup</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flow-arrow" style="--i:7">
+    <svg viewBox="0 0 20 20"><path d="M10 4 L10 16 M6 12 L10 16 L14 12"/></svg>
+    consumed by
+  </div>
+
+  <!-- Three column output -->
+  <div class="three-col">
+    <div class="section section--sage" style="--i:8">
+      <div class="section-label"><span class="dot"></span> Agent tools</div>
+      <ul class="node-list">
+        <li><code>search</code> semantic vector search</li>
+        <li><code>clusters</code> browse and filter</li>
+        <li><code>stats</code> aggregate metrics</li>
+      </ul>
+    </div>
+    <div class="section section--plum" style="--i:9">
+      <div class="section-label"><span class="dot"></span> Actions</div>
+      <ul class="node-list">
+        <li>Create tickets from clusters</li>
+        <li>Notify customers on ship</li>
+        <li>Generate release notes</li>
+      </ul>
+    </div>
+    <div class="section section--teal" style="--i:10">
+      <div class="section-label"><span class="dot"></span> Dashboard</div>
+      <ul class="node-list">
+        <li>Metrics overview</li>
+        <li>Feedback stream</li>
+        <li>NL chat interface</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Callout: recessed depth for secondary info -->
+  <div class="callout section section--recessed" style="--i:11">
+    <strong>Multi-tenant</strong>: Each agent gets an isolated database at
+    <code>{agentDir}/intelligence/feedback.db</code> with per-agent config overlay
+    and credential isolation.
+  </div>
+
+</div>
+
+
+<!-- ========== FOOTER ========== -->
+
+<footer class="lerian-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <svg class="logo-mark" viewBox="0 0 1090.88 280" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M619.42,29.69c0,15.43-10.87,27.93-27.93,27.93s-27.93-12.51-27.93-27.93,10.86-27.93,27.92-27.93,27.93,12.51,27.93,27.93h0ZM158.64,242.4v33.54H12.13v-33.55h48.36c3.16,0,5.73-2.57,5.73-5.73V87.77c0-3.16-2.57-5.73-5.73-5.73H7.85v-34.31h98.33v188.94c0,3.16,2.57,5.73,5.73,5.73h46.74ZM168.85,179.86c0,58.52,37.29,98.33,99.47,98.33,49.15,0,79.7-30.6,86.27-67.08h-40.69c-6.29,24.54-26.97,33.91-48.61,33.91-48.85,0-53.41-45.18-53.83-55-.04-1.02.77-1.87,1.79-1.87h143.61c.76-5.26,1.13-10.42,1.13-15.44,0-32.71-20.25-91.92-95.33-91.92-57.04,0-93.8,41.26-93.81,99.07ZM314.47,158.39l-99.49.02c-1.08,0-1.94-.96-1.78-2.02,4.49-31.28,30.98-42.82,50.98-42.82,33.88,0,48.71,21.59,52.08,42.79.17,1.08-.69,2.04-1.78,2.04h0ZM867.2,83.16h0s0,0,0,0h0ZM826.87,83.16h40.33v192.83h-40.32v-24.53c0-3.09-3.92-4.41-5.79-1.95-.18.23-.35.47-.53.71h0s0,.02,0,.02h0c-.11.16-.23.32-.35.47-7.92,10.56-20.68,27.53-56.24,27.53-60.83,0-91.19-46.33-91.19-98.7,0-61.42,40.37-98.72,91.17-98.72,36.73,0,48.44,15.73,56.64,26.75l.49.66c1.86,2.49,5.81,1.18,5.81-1.93v-23.14ZM770.75,115.48c34.78,0,56.14,27.81,56.14,64.8h0c0,42-26.32,63.68-56.14,63.68-34.83,0-56.14-27.43-56.14-64.43,0-42.07,26.11-64.05,56.14-64.05ZM1063.39,101.7c14.42,14.06,21.64,36.67,21.64,67.8v106.25h-41.06v-103.99c0-43.98-22.35-56.14-45.96-56.14-31.99,0-51.6,23.22-51.6,62.92v97.21h-40.68V83.15h39.93v25.07c0,3.11,3.95,4.4,5.82,1.92,8.55-11.4,26.72-29.52,55.98-29.52,37.55,0,55.75,20.88,55.93,21.08ZM657.42,275.94v-33.54h0s-37.37,0-37.37,0c-3.16,0-5.73-2.57-5.73-5.73V83.14h-81.34v34.31h37.54c3.16,0,5.73,2.57,5.73,5.73v113.48c0,3.16-2.57,5.73-5.73,5.73h-38.14v33.55h125.03ZM499.27,119.27c0,.13-.1.23-.23.23h0s-36.31,0-36.31,0c-28.68,0-28.65,24.99-28.64,43.62,0,.46,0,.92,0,1.37v111.24c0,.13-.1.23-.23.23h-41.01c-.13,0-.23-.1-.23-.23V83.27c0-.13.1-.23.23-.23h36.49c.13,0,.23.1.23.23v24.03c0,4.05,5.24,5.65,7.49,2.28.22-.32.43-.64.65-.97,8.18-12.25,18.71-28.02,52.51-28.02h9.05v38.68Z"/>
+      </svg>
+      <div class="footer-brand-text">
+        <span class="footer-company">Lerian Studio</span>
+        <a href="https://lerian.studio" class="footer-link">lerian.studio</a>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <span class="footer-generated"><strong>Generated with Ring</strong></span>
+      <span class="footer-date"></span>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== DATE AUTO-FILL ========== -->
+<script>
+  var footerDate = document.querySelector('.footer-date');
+  if (footerDate) footerDate.textContent = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+</script>
+
+</body>
+</html>
