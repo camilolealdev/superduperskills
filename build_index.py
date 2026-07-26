@@ -114,7 +114,27 @@ for repo, base_dir in SKILL_DIRS:
         continue
     for fp in Path(base_dir).rglob('SKILL.md'):
         name, desc, content = parse_skill(str(fp))
-        if name not in skills or ORDER.get(repo, 9) < ORDER.get(skills[name]['repo'], 9):
+        candidate_order = ORDER.get(repo, 9)
+        candidate_richness = sum(1 for _ in fp.parent.rglob('*') if _.is_file())
+        candidate_path = str(fp).replace('\\', '/')
+        candidate_official = 'anthropics-skills' in candidate_path or 'claude-plugins-official' in candidate_path
+        if name not in skills:
+            take_it = True
+        else:
+            existing_order = ORDER.get(skills[name]['repo'], 9)
+            existing_official = skills[name].get('official', False)
+            if candidate_order != existing_order:
+                take_it = candidate_order < existing_order
+            elif candidate_official != existing_official:
+                # First-party Anthropic skills win ties over third-party repos
+                # that happen to reuse the same generic skill name.
+                take_it = candidate_official
+            else:
+                # Same priority tier: prefer whichever copy has more supporting
+                # files, so the pick is deterministic regardless of directory
+                # scan order (which shifts whenever sibling dirs are added).
+                take_it = candidate_richness > skills[name].get('richness', 0)
+        if take_it:
             rel = os.path.relpath(str(fp.parent), base_dir)
             rel = rel.replace('\\', '/')
 
@@ -151,6 +171,8 @@ for repo, base_dir in SKILL_DIRS:
                 'repo': repo,
                 'github_url': github_url,
                 'source_dir': str(fp.parent),
+                'richness': candidate_richness,
+                'official': candidate_official,
                 'content': content,
             }
 

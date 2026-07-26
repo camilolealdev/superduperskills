@@ -237,6 +237,46 @@ $skillRepos = @(
         dest = "$env:USERPROFILE\.claude\skills\ponytail-skills"
     },
     @{
+        name = "project-architect (251 stars: SPECIFICATION/IMPLEMENTATION/TASKS/BRANDING = PRD+TRD+dev-plan+UI)"
+        repo = "https://github.com/ersinkoc/project-architect.git"
+        dest = "$env:USERPROFILE\.claude\skills\project-architect-skills"
+    },
+    @{
+        name = "the-architect (374 stars: entrevista por fases, genera blueprint + CLAUDE.md del proyecto objetivo)"
+        repo = "https://github.com/Hainrixz/the-architect.git"
+        dest = "$env:USERPROFILE\.claude\skills\the-architect-skills"
+    },
+    @{
+        name = "mattpocock/skills (189k stars: to-spec/PRD, wayfinder, implement, domain-modeling, tdd, diagnosing-bugs)"
+        repo = "https://github.com/mattpocock/skills.git"
+        dest = "$env:USERPROFILE\.claude\skills\mattpocock-skills"
+    },
+    @{
+        name = "andrej-karpathy-skills (196k stars: karpathy-guidelines, anti-overengineering)"
+        repo = "https://github.com/multica-ai/andrej-karpathy-skills.git"
+        dest = "$env:USERPROFILE\.claude\skills\karpathy-skills-repo"
+    },
+    @{
+        name = "claude-ads (7.5k stars: auditorias de ads en 12 plataformas: Google, Meta, Amazon, Apple, TikTok...)"
+        repo = "https://github.com/AgriciDaniel/claude-ads.git"
+        dest = "$env:USERPROFILE\.claude\skills\claude-ads-skills"
+    },
+    @{
+        name = "claudekit-skills (2.2k stars: 45 skills variados de ClaudeKit.cc)"
+        repo = "https://github.com/mrgoonie/claudekit-skills.git"
+        dest = "$env:USERPROFILE\.claude\skills\claudekit-skills"
+    },
+    @{
+        name = "notebooklm-skill (7.5k stars: automatiza Google NotebookLM via browser)"
+        repo = "https://github.com/PleasePrompto/notebooklm-skill.git"
+        dest = "$env:USERPROFILE\.claude\skills\notebooklm-skill-repo"
+    },
+    @{
+        name = "claude-code-prompt-improver (1.8k stars: mejora prompts vagos antes de ejecutar)"
+        repo = "https://github.com/severity1/claude-code-prompt-improver.git"
+        dest = "$env:USERPROFILE\.claude\skills\prompt-improver-skill-repo"
+    },
+    @{
         name = "dev-agent-skills (git workflow, CI/CD, PR review)"
         repo = "https://github.com/fvadicamo/dev-agent-skills.git"
         dest = "$env:USERPROFILE\.claude\skills\git-cicd-skills"
@@ -278,6 +318,62 @@ foreach ($r in $skillRepos) {
         Pop-Location
         Write-OK "Actualizado -> $($r.dest)"
     }
+}
+
+# the-architect ships as a CLAUDE.md-driven agent with no native SKILL.md —
+# write the wrapper so Claude Code's skill discovery (and build_index.py) can find it.
+$architectSkillMd = "$env:USERPROFILE\.claude\skills\the-architect-skills\SKILL.md"
+if ((Test-Path "$env:USERPROFILE\.claude\skills\the-architect-skills") -and -not (Test-Path $architectSkillMd)) {
+    Write-Step "Escribiendo wrapper SKILL.md para the-architect"
+    $architectSkillContent = @'
+---
+name: the-architect
+description: >
+  Interviews the user about what they want to build (phased discovery Q&A), classifies the
+  project into an archetype (SaaS webapp, marketing site, mobile app, API backend, internal
+  tool, content platform), and produces a self-contained blueprint .md that another Claude
+  Code instance can build autonomously — plus a ready-to-paste CLAUDE.md for the target
+  project. Use when the user wants to plan a new project from scratch, needs an
+  architecture.md / project blueprint, wants tech-stack recommendations with trade-off
+  analysis, or asks "help me design this before I start coding". Complements
+  project-architect (which produces SPECIFICATION/IMPLEMENTATION/TASKS/BRANDING docs) —
+  use the-architect when the ask is specifically "interview me and generate the blueprint +
+  CLAUDE.md for a brand-new project", and project-architect when the ask is "write a formal
+  spec/implementation-plan/task-breakdown".
+metadata:
+  source: https://github.com/Hainrixz/the-architect
+  original_format: CLAUDE.md-driven agent (no native SKILL.md) — wrapped here so the
+    superduperskills bundler and Claude Code's skill discovery can find it.
+---
+
+# The Architect
+
+This skill's full operating protocol lives in [`CLAUDE.md`](CLAUDE.md) in this same
+directory — read it in full before starting. Summary of the flow:
+
+1. **Phase 1 — Discovery**: read `questions/phase-1-discovery.md`, ask 2-3 questions at a
+   time, classify the project into an archetype from `knowledge/archetypes/`.
+2. **Phase 2 — Deep dive**: read `questions/phase-2-branches.md` for the identified
+   archetype, ask 3-5 targeted questions, consult `knowledge/building-blocks/*.md` for
+   specific decisions (auth, database, deployment, frontend stack, etc.).
+3. **Phase 3 — Architecture**: read `questions/phase-3-confirmation.md`, propose the tech
+   stack and architecture with rationale, confirm with the user.
+4. **Phase 4 — Generate**: write the blueprint from `templates/blueprint-template.md` into
+   `output/`, including a complete `CLAUDE.md` for the target project (using
+   `templates/claude-md-template.md`) and a "Skills to Use During Build" table populated
+   from `knowledge/skills-registry.md`.
+
+`knowledge/stack-compatibility.md` has compatibility rules between stack choices to check
+before finalizing recommendations.
+
+**Project-specific note:** when populating "Skills to Use During Build", always check
+whether the target environment has `caveman`, `ponytail`, `harness`, `graphify`, or other
+token-efficiency/quality skills installed and include them in the recommendation table
+alongside the domain-specific ones from `knowledge/skills-registry.md` — that registry lists
+generic upstream skills and won't know about a specific machine's local install.
+'@
+    Set-Content -Path $architectSkillMd -Value $architectSkillContent
+    Write-OK "Wrapper creado -> $architectSkillMd"
 }
 
 # ─────────────────────────────────────────────

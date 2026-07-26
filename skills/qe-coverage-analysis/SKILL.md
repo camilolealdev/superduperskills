@@ -2,13 +2,6 @@
 name: "qe-coverage-analysis"
 description: "Analyzes test coverage data (Istanbul, c8, lcov) to identify uncovered lines, branches, and functions with risk-weighted gap detection. Use when analyzing coverage reports, identifying coverage gaps, comparing coverage between branches, or prioritizing which untested code to cover first."
 trust_tier: 3
-allowed-tools:
-  - Read
-  - Bash
-  - Grep
-  - Glob
-  - mcp__agentic-qe__coverage_analyze_sublinear
-  - mcp__agentic-qe__qe_coverage_gaps
 validation:
   schema_path: schemas/output.json
   validator_path: scripts/validate-config.json

@@ -2,17 +2,12 @@
 name: "qe-quality-assessment"
 description: "Evaluates code quality through complexity analysis, lint results, code smell detection, and test health metrics. Use when assessing deployment readiness, configuring quality gates, scoring a codebase for release, or generating quality reports with pass/fail verdicts."
 trust_tier: 3
-allowed-tools:
-  - Read
-  - Bash
-  - Grep
-  - Glob
-  - mcp__agentic-qe__quality_assess
 validation:
   schema_path: schemas/output.json
   validator_path: scripts/validate-config.json
   eval_path: evals/qe-quality-assessment.yaml
 ---
+
 # QE Quality Assessment
 
 ## Purpose

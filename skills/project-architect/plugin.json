@@ -1,0 +1,8 @@
+{
+  "name": "project-architect",
+  "version": "1.1.0",
+  "description": "Documentation-first project planning that produces agent-ready prompts. Generates interconnected docs (SPECIFICATION, IMPLEMENTATION, TASKS, BRANDING) plus a self-contained, single-shot PROMPT.md for execution by any coding agent (WrongStack, Claude Code, Cursor, and more).",
+  "skills": [
+    "SKILL.md"
+  ]
+}

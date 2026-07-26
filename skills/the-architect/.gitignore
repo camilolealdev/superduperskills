@@ -1,0 +1,16 @@
+# Generated blueprints (user-specific, not for repo)
+output/*.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Claude Code project settings
+.claude/
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~

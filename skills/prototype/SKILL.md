@@ -1,25 +1,26 @@
 ---
 name: prototype
-description: Move an idea up the fidelity ladder (content-first → wireframe → low-fi → high-fi → code) with a validation plan at each level, plus user-journey mapping and usability-testing scripts. Use when the user wants to prototype, wireframe, map a user flow, or plan/run usability testing.
+description: Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like.
 ---
 
-# Skill: Prototype & Research
+# Prototype
 
-Guide work through the right fidelity level with validation.
+A prototype is **throwaway code that answers a question**. The question decides the shape.
 
-## Steps
-1. Read `workflows/prototyping.md` (5-level fidelity ladder, journey mapping template, usability-testing script, sample data).
-2. Identify the current need and pick the **lowest** fidelity that answers it — never skip levels:
-   - Content-first (info needs) → Wireframe (layout/nav) → Low-fi (task completion) → High-fi (visual/a11y) → Code (feasibility/perf).
-3. For flows: produce a user-journey map with decision points, error paths, and edge cases.
-4. For validation: define the usability test (tasks, success criteria, 5-user rule) using the script.
-5. High-fi/code steps pull tokens (`tokens/*`), components (`components/*`), taste (`taste/*`), and a11y (`accessibility/*`).
+## Pick a branch
 
-## Output
-The artifact at the chosen fidelity + an explicit "what we validate next" plan.
+Identify which question is being answered — from the user's prompt, the surrounding code, or by asking if the user is around:
 
-## Verification (before declaring done)
-- The fidelity matches the question being answered — no level skipped.
-- Flows include decision points, **error paths, and edge cases** (empty/loading/overflow), not just the happy path.
-- A concrete validation step is named (tasks + success criteria), not "test later".
-- High-fi/code artifacts pass the same token + a11y bar as `design-code` (no hardcoded values, contrast, states).
+- **"Does this logic / state model feel right?"** → [LOGIC.md](LOGIC.md). Build a tiny interactive terminal app that pushes the state machine through cases that are hard to reason about on paper.
+- **"What should this look like?"** → [UI.md](UI.md). Generate several radically different UI variations on a single route, switchable via a URL search param and a floating bottom bar.
+
+The two branches produce very different artifacts — getting this wrong wastes the whole prototype. If the question is genuinely ambiguous and the user isn't reachable, default to whichever branch better matches the surrounding code (a backend module → logic; a page or component → UI) and state the assumption at the top of the prototype.
+
+## Rules that apply to both
+
+1. **Throwaway from day one, and clearly marked as such.** Locate the prototype code close to where it will actually be used (next to the module or page it's prototyping for) so context is obvious — but name it so a casual reader can see it's a prototype, not production. For throwaway UI routes, obey whatever routing convention the project already uses; don't invent a new top-level structure.
+2. **One command to run.** Whatever the project's existing task runner supports — `pnpm <name>`, `python <path>`, `bun <path>`, etc. The user must be able to start it without thinking.
+3. **No persistence by default.** State lives in memory. Persistence is the thing the prototype is _checking_, not something it should depend on. If the question explicitly involves a database, hit a scratch DB or a local file with a clear "PROTOTYPE — wipe me" name.
+4. **Skip the polish.** No tests, no error handling beyond what makes the prototype _runnable_, no abstractions. The point is to learn something fast.
+5. **Surface the state.** After every action (logic) or on every variant switch (UI), print or render the full relevant state so the user can see what changed.
+6. **Capture it when done.** Fold any validated decision into the real code, then capture the prototype itself as a **primary source**: commit it to a throwaway branch, out of main, and leave a context pointer to that branch on the implementation issue. Capture the answer too — the verdict and the question it settled — in the issue or a commit. The main branch keeps only the validated decision.

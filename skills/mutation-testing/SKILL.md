@@ -13,13 +13,6 @@ quick_reference_card: true
 tags: [mutation, stryker, test-quality, kill-rate, assertions, effectiveness]
 # ADR-056 Trust Tier 3 Validation
 trust_tier: 3
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Grep
-  - Glob
 validation:
   schema_path: schemas/output.json
   validator_path: scripts/validate-config.json
