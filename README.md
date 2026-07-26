@@ -10,6 +10,8 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 | **opencode** | `~/.config/opencode/skills/` | SEO, frontend/backend, Cloudflare, diseño, testing, pipeline |
 | **claude** | `~/.claude/skills/` | Lenguajes, frameworks, DevOps, infraestructura |
 
+Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) como ~26 skill-libraries clonadas explícitamente por los instaladores de este repo (mingrath, jeffallan, wondelai, taste-skill, mattpocock/skills, the-architect, etc.). El listado completo con conteo de estrellas y qué trae cada una vive en [`AGENTS.md`](AGENTS.md#directorios-donde-buscar-skills).
+
 ## Archivos del Repo
 
 | Archivo | Descripción |
@@ -17,7 +19,7 @@ Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Cod
 | `SKILLS-INDEX.md` | Índice completo con todas las skills, descripciones y rutas |
 | `UNIFIED-KNOWLEDGE.md` | Taxonomía multi-conocimiento unificada |
 | `skills-inventory.md` | Inventario detallado por repositorio de origen |
-| `skills-lock.json` | Lock de skills instaladas |
+| `skills-lock.json` | Snapshot congelado de una instalación antigua (fuentes ajenas a las de este repo) — no se regenera con `build_index.py`, es legado histórico, no una fuente de verdad actual |
 | `AGENTS.md` | Instrucciones de recuperación para cualquier agente |
 | `skills/` | Bundles de todos los SKILL.md listos para instalar |
 | `install.sh` | Instalador para Linux/macOS/Git Bash |
