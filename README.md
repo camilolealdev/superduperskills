@@ -27,6 +27,12 @@ Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) co
 | `build_index.py` | Script para regenerar el bundle desde las fuentes |
 | `installers/install-claude-plugins.ps1` | Setup de maquina nueva para Claude Code: plugins (Superpowers, Caveman, token-optimizer), y clonado de skill-libraries de backend, frontend, UI/UX, seguridad, testing y debugging |
 | `installers/install-opencode-plugins.ps1` | Equivalente para OpenCode: plugins npm + opencode.json de empresa + mismas skill-libraries |
+| `hooks/session-start-skill-picker.sh` | Hook real de Claude Code — al iniciar sesión en un proyecto sin skills confirmados, obliga a presentar un menú y esperar confirmación antes de codear |
+| `templates/skill-confirmation-block.md` | Bloque de texto para pegar en el `CLAUDE.md` de un proyecto — refuerzo escrito de la misma regla de confirmación de skills |
+
+## Confirmación de skills al iniciar un proyecto
+
+¿Quieres que Claude siempre pregunte qué skills usar antes de escribir código, en vez de improvisar? Ver [`hooks/README.md`](hooks/README.md) — trae un hook `SessionStart` real (instalable por proyecto o global) que obliga a presentar un menú categorizado y esperar tu confirmación, más un bloque de refuerzo para el `CLAUDE.md` del proyecto. Los defaults siempre propuestos: `caveman`, `ponytail`, `harness`, `graphify`, y un skill de token-efficiency.
 
 ## Total de Skills
 
