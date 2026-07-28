@@ -1,0 +1,41 @@
+{
+  "skill_name": "startup-idea",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I had an idea: I want to create an app that connects dog owners to walkers in their neighborhood. Like an Uber for dog walkers. I think there's a market because everyone I know complains that they don't have anyone to leave their dog with when they travel or work all day. Is it worth pursuing?",
+      "expected_output": "Analise completa que va alem do pressure test: precisa avaliar urgencia do problema, comportamento atual do cliente, dinamica de marketplace, monetizacao/take rate, risco operacional e de confianca, forma de conquistar os primeiros 10 clientes, MVP realista e veredito claro sobre a tese.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I'm a nutritionist and I want to create a SaaS platform for nutrition clinics to manage meal plans, appointments and patient follow-up. I already talked to 5 clinic owners and they all said they use Excel spreadsheets today. I want to know if I should move forward and how to get my first customers.",
+      "expected_output": "Analise que reconheca o estagio mais avancado, trate planilha como prova de dor real, avalie nicho de entrada, competicao com softwares existentes como Nutrium, pricing plausivel, posicionamento da oferta, plano de aquisicao founder-led e proximos experimentos de validacao comercial.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "I have a startup idea: an AI tool that automatically generates legal contracts for freelancers. No lawyers needed. The freelancer describes the project and the tool creates a customized contract. I'm a software engineer with no legal background. What do you think?",
+      "expected_output": "Response in English. It should deliver a severe but useful analysis covering founder-market fit, regulatory/compliance risk, user trust, real buyer motivation, competitive alternatives, monetization logic, MVP scope reduction, and a clear verdict that distinguishes between a bad startup thesis and a potentially viable narrower wedge.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "prompt": "I want to create a startup to help e-commerce SMBs predict stock rupture with AI. The idea would be to connect Shopify, ERP and ads to predict when a product will run out and suggest reorder. I have access to 12 merchants because I work at a performance agency, but none of them explicitly asked for this yet. If it makes sense, I also want to understand what initial offer to sell and how to use content to generate demand.",
+      "expected_output": "Analise em portugues cobrindo founder advantage, se a dor e realmente prioritaria para o lojista, qual nicho inicial atacar, quem compra, como cobrar, oferta inicial viavel, tese de conteudo/distribuicao, primeiros 10 clientes, ideia saliente para o nicho e quais sinais provariam que existe uma startup aqui em vez de apenas um servico com camada de software.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "prompt": "We are building a startup for independent psychologists to sell WhatsApp follow-up programs with AI doing check-ins between sessions. I understand the product part reasonably well, but everyone says something similar in the mental health market. I want a brutal analysis of the idea and, if it still makes sense, I need to leave with a positioning angle that is memorable without sounding too salesy.",
+      "expected_output": "Analise em portugues que nao pare em dor e monetizacao. Deve avaliar saturacao competitiva, risco regulatorio e clinico, clareza da oferta, smallest viable audience, ideia saliente ou signature surprise plausivel e deixar explicito se ainda e cedo demais para trabalhar branding profundo.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "prompt": "I have a B2B startup that helps companies improve internal onboarding with AI agents, knowledge base, training and analytics. But the more I explain, the more it seems like I serve any company with any enablement problem. I want a complete analysis of the thesis and mainly help to figure out what would be my smallest viable market, what story this audience already believes and how to build a content path until it becomes something they recommend without me having to push so hard.",
+      "expected_output": "Analise em portugues cobrindo tese de produto, risco de categoria ampla demais, smallest viable audience psicografico, worldview e status do comprador, exclusion principle, permission ladder inicial, possivel shareable artifact e um veredito sobre se a startup esta tentando atingir gente demais cedo demais.",
+      "files": []
+    }
+  ]
+}

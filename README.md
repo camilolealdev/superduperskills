@@ -36,24 +36,24 @@ Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) co
 
 ## Total de Skills
 
-**1366** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
+**1419** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
 
 | Categoría | Cantidad |
 |-----------|----------|
 | Project Management | 147 |
-| Development & Backend | 125 |
+| Development & Backend | 126 |
 | Writing & Content | 58 |
-| Design & UX | 62 |
-| Business & Strategy | 53 |
+| Design & UX | 63 |
+| Business & Strategy | 55 |
 | Marketing & Growth | 85 |
 | SEO & Content | 47 |
 | DevOps & Cloud | 40 |
-| AI & Agents | 31 |
+| AI & Agents | 55 |
 | Compliance & Legal | 11 |
 | Sales & Comms | 7 |
-| Productivity & People | 8 |
+| Productivity & People | 9 |
 | Video & Animation | 16 |
-| Other | 676 |
+| Other | 700 |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 
@@ -93,7 +93,7 @@ Ambos clonan skill-libraries reales ya rastreadas por este repo, organizadas por
 |-----------|------------------|
 | **Backend** | jeffallan/claude-skills, supabase/agent-skills, backend-arch (levnikolaevich/claude-code-skills) |
 | **Frontend** | mingrath/awesome-claude-skills, jezweb/claude-skills |
-| **UI/UX** | plugin87/ux-ui-agent-skills (★444), nextlevelbuilder/ui-ux-pro-max-skill, pbakaus/impeccable, wondelai/skills (★1.7k — refactoring-ui, hooked-ux, ux-heuristics, lean-ux, top-design), anthropics/skills oficial (★ canvas-design, theme-factory), Leonxlnx/taste-skill (★64.9k — anti-slop), coleam00/excalidraw-diagram-skill (★4.1k), blader/humanizer (★29.7k) |
+| **UI/UX** | plugin87/ux-ui-agent-skills (★444), nextlevelbuilder/ui-ux-pro-max-skill, pbakaus/impeccable, wondelai/skills (★1.7k — refactoring-ui, hooked-ux, ux-heuristics, lean-ux, top-design), anthropics/skills oficial (★ canvas-design, theme-factory), Leonxlnx/taste-skill (★64.9k — anti-slop), coleam00/excalidraw-diagram-skill (★4.1k), blader/humanizer (★29.7k), ibelick/ui-skills (★6.6k — baseline-ui, fixing-motion-performance, fixing-accessibility), VoltAgent/awesome-design-md (★105k — 74 DESIGN.md de marcas conocidas), fabricioctelles/skills (★38 — design-md-validator) |
 | **Seguridad** | agamm/claude-code-owasp (★277), BehiSecc/awesome-claude-skills (★9.7k), jeffallan-skills (secure-code-guardian), backend-arch (ln-621/ln-760) |
 | **Testing** | proffesor-for-testing/agentic-qe (★408), testcontainers/claude-skills, backend-arch (ln-63x auditores de cobertura) |
 | **Debugging** | LerianStudio/ring (★202, TDD + systematic-debugging), jeffallan-skills (debugging-wizard), backend-arch (ln-514 test-log-analyzer) |

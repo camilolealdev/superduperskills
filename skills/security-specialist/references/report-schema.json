@@ -1,0 +1,126 @@
+{
+  "$comment": "Schema para findings.json estruturado. validate-findings.cjs lê este arquivo diretamente.",
+  "output_schema": {
+    "oneOf": [
+      {
+        "type": "object",
+        "description": "Vulnerabilidade confirmada — report completo e verificado independentemente.",
+        "properties": {
+          "verdict": { "type": "string", "const": "confirmed" },
+          "title": { "type": "string", "description": "Título conciso e padronizado para a vulnerabilidade." },
+          "description": { "type": "string", "description": "Explicação completa da vulnerabilidade. Inclua detalhes de reprodução (PoC input, configuração, output observado) aqui." },
+          "root_cause": { "type": "string", "description": "Uma frase usando template: '[function_or_component] em [file] não [ação ausente], permitindo [consequência]'. DEVE incluir nome de function/component e file." },
+          "intended_behavior": { "type": "string", "description": "O que o dev tentou construir? Explique a lógica de negócio pretendida, não-vulnerável." },
+          "trace": {
+            "type": "array",
+            "minItems": 2,
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": { "type": "string", "enum": ["entrypoint", "propagation", "sink"] },
+                "file": { "type": "string", "description": "Caminho exato relativo à raiz do repositório." },
+                "line": { "type": "integer" },
+                "scope": { "type": "string", "description": "Nome de function ou method. Sem parênteses, sem argumentos." },
+                "description": { "type": "string", "description": "Descrição factual do state change ou data movement." }
+              },
+              "required": ["kind", "file", "line", "scope", "description"],
+              "additionalProperties": false
+            },
+            "description": "Trace sequencial do entrypoint ao sink, verificado contra source code real. Primeiro step deve ser kind 'entrypoint' e último deve ser kind 'sink'."
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "kind": { "type": "string", "enum": ["authentication_level", "authorization_role", "user_interaction", "system_configuration", "network_routing", "environmental_dependency", "data_state", "timing_dependency", "third_party_dependency"] },
+                "description": { "type": "string" }
+              },
+              "required": ["kind", "description"],
+              "additionalProperties": false
+            },
+            "description": "Pré-requisitos factuais para exploração. Array vazio se explorável por default."
+          },
+          "execution": {
+            "type": "object",
+            "properties": {
+              "attacker_perspective": { "type": "string", "description": "Quem é o atacante e seu starting point." },
+              "payloads": { "type": "array", "items": { "type": "string" }, "description": "Inputs maliciosos específicos, HTTP requests, ou scripts." },
+              "instructions": { "type": "array", "items": { "type": "string" }, "description": "Array linear de todas ações do atacante do setup até exploração." },
+              "expected_result": { "type": "string", "description": "Resultado observável confirmando exploração bem-sucedida." }
+            },
+            "required": ["attacker_perspective", "payloads", "instructions", "expected_result"],
+            "additionalProperties": false
+          },
+          "remediation": {
+            "type": "object",
+            "properties": {
+              "strategy": { "type": "string", "description": "Explicação high-level do fix." },
+              "code_changes": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "file_name": { "type": "string" },
+                    "fixed_code": { "type": "string" }
+                  },
+                  "required": ["file_name", "fixed_code"],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": ["strategy"],
+            "additionalProperties": false
+          },
+          "severity": {
+            "type": "object",
+            "properties": {
+              "likelihood": {
+                "type": "object",
+                "properties": {
+                  "score": { "type": "string", "enum": ["informational", "low", "medium", "high", "critical"] },
+                  "reason": { "type": "string" }
+                },
+                "required": ["score", "reason"],
+                "additionalProperties": false
+              },
+              "impact": {
+                "type": "object",
+                "properties": {
+                  "score": { "type": "string", "enum": ["informational", "low", "medium", "high", "critical"] },
+                  "reason": { "type": "string" }
+                },
+                "required": ["score", "reason"],
+                "additionalProperties": false
+              },
+              "overall_severity": { "type": "string", "enum": ["informational", "low", "medium", "high", "critical"] }
+            },
+            "required": ["likelihood", "impact", "overall_severity"],
+            "additionalProperties": false
+          },
+          "confidence": {
+            "type": "object",
+            "properties": {
+              "score": { "type": "string", "enum": ["low", "medium", "high"] },
+              "reason": { "type": "string", "description": "Por que você deu essa confidence. Mencione missing files, complex routing, ou ambiguous data flows." }
+            },
+            "required": ["score", "reason"],
+            "additionalProperties": false
+          }
+        },
+        "required": ["verdict", "title", "description", "root_cause", "intended_behavior", "trace", "conditions", "execution", "remediation", "severity", "confidence"],
+        "additionalProperties": false
+      },
+      {
+        "type": "object",
+        "description": "Finding rejeitado — o comportamento descrito é factualmente incorreto ou o code path não existe.",
+        "properties": {
+          "verdict": { "type": "string", "const": "rejected" },
+          "reason": { "type": "string", "description": "Explique quais claims específicos no finding estão factualmente errados." }
+        },
+        "required": ["verdict", "reason"],
+        "additionalProperties": false
+      }
+    ]
+  }
+}

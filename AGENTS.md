@@ -55,6 +55,18 @@ behisecc-security-skills/   # OWASP, STRIDE threat modeling, secret scanning
 owasp-security-skills/      # OWASP Top 10:2025, ASVS 5.0, Agentic AI security (★277)
 antigravity-fullstack-hq/   # 10 agentes: frontend, backend, db, architect, security
 harness-skills/             # CI/CD oficial Harness.io
+ui-skills-repo/             # baseline-ui, fixing-motion-performance, fixing-accessibility (★6.6k)
+awesome-design-md-repo/     # 74 DESIGN.md de marcas conocidas, wrapper SKILL.md propio (★105k)
+fabricioctelles-skills/     # design-md-validator + otros (★38)
+```
+
+Skills propias (no vienen de un repo externo, escritas para este usuario):
+
+```
+neuro-persuasion-toolkit/   # Neuromarketing/neuroventas para copy, ads, SEO/SEM/MEO
+design-void/                # Design system cyber-brutalismo reverse-engineered
+web/                        # Constructor de sitios con assets de Forkads (/web)
+token-savings/              # Confirma skills relevantes antes de trabajar (ahorro de tokens)
 ```
 
 ## Comando para cargar skills

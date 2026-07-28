@@ -300,6 +300,21 @@ $skillRepos = @(
         name = "harness-skills (CI/CD oficial Harness.io, 23+ skills)"
         repo = "https://github.com/harness/harness-skills.git"
         dest = "$env:USERPROFILE\.claude\skills\harness-skills"
+    },
+    @{
+        name = "ui-skills (6.6k stars: baseline-ui, fixing-motion-performance, fixing-accessibility)"
+        repo = "https://github.com/ibelick/ui-skills.git"
+        dest = "$env:USERPROFILE\.claude\skills\ui-skills-repo"
+    },
+    @{
+        name = "awesome-design-md (105k stars: 74 DESIGN.md de marcas conocidas)"
+        repo = "https://github.com/VoltAgent/awesome-design-md.git"
+        dest = "$env:USERPROFILE\.claude\skills\awesome-design-md-repo"
+    },
+    @{
+        name = "fabricioctelles/skills (38 stars: design-md-validator y otros)"
+        repo = "https://github.com/fabricioctelles/skills.git"
+        dest = "$env:USERPROFILE\.claude\skills\fabricioctelles-skills"
     }
 )
 
