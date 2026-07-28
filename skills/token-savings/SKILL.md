@@ -45,13 +45,17 @@ cada turno y evita que el modelo "pruebe" skills irrelevantes.
 1. **Si existe `.claude/.skills-selected.json`**, léelo y muéstraselo al
    usuario como la selección vigente. Pregunta si quiere ajustarla antes
    de continuar — no repitas todo el proceso de cero si no es necesario.
-2. **Si no existe**, infiere el dominio del proyecto (package.json,
-   requirements.txt, go.mod, código existente, o el objetivo declarado del
-   usuario si el proyecto es nuevo).
+2. **Si no existe**, infiere el dominio del proyecto por evidencia real, no
+   suposición: `package.json`/React/Tailwind/Astro → frontend; Express/
+   FastAPI/Django/Rails/Go → backend; `wp-config.php` → WordPress;
+   `docker-compose.yml`/VPS → infra/DevOps; archivos de SEO/marketing →
+   growth; webhooks/n8n → automatización; tests/CI → testing. O el objetivo
+   declarado del usuario si el proyecto es nuevo.
 3. Arma un menú corto (8-15, no el catálogo completo) de skills instalados
    relevantes a ese dominio — revisa `~/.claude/skills/`,
    `~/.config/opencode/skills/`, o `SKILLS-INDEX.md` de `superduperskills`
-   si el repo está disponible.
+   si el repo está disponible. Marca cuáles vienen de evidencia real del
+   repo y cuáles son sugerencia genérica.
 4. **Incluye siempre por defecto**, sin importar el dominio (el usuario
    puede quitarlos, no los omitas de la propuesta):
    - `caveman` — respuestas comprimidas
@@ -62,11 +66,19 @@ cada turno y evita que el modelo "pruebe" skills irrelevantes.
      `token-optimizer`) — nota: esos comprimen lo que el modelo escribe;
      este skill reduce lo que el modelo carga/reconsidera. Son complementarios,
      no reemplazos entre sí.
-5. Confirma con el usuario (`AskUserQuestion` o lista numerada).
+5. Confirma con el usuario (`AskUserQuestion` o lista numerada). Menciona
+   que puede decir "usa solo core" (vuelve al núcleo de eficiencia
+   solamente) o "ignora recomendaciones esta sesión" (apaga sugerencias
+   nuevas por el resto de la sesión).
 6. Guarda la selección en `.claude/.skills-selected.json`:
    `{"selected": ["skill-a", "skill-b", ...], "confirmed_at": "<fecha ISO>"}`.
 7. Reporta en una línea cuántos skills quedaron seleccionados vs. cuántos
    había disponibles para ese dominio, como evidencia del ahorro.
+8. **A mitad de sesión**: si el foco cambia de dominio (ej. de UI a deploy)
+   y el usuario no pidió ignorar recomendaciones, pregunta una sola vez si
+   agregar los skills nuevos relevantes — no repitas el menú completo,
+   propone solo la diferencia. No vuelvas a preguntar por un dominio ya
+   rechazado en esta sesión.
 
 ## Relación con el resto del sistema
 

@@ -36,26 +36,26 @@ Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) co
 
 ## Total de Skills
 
-**1419** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
+**2552** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
 
 | Categoría | Cantidad | Qué incluye |
 |-----------|----------|-------------|
-| Development & Backend | 174 | Lenguajes, frameworks backend, APIs, DB, `senior-*`, arquitectura |
-| Testing & QA | 139 | `qe-*` (fleet de QA), TDD, coverage, mutation/contract/E2E testing |
+| DevOps & Cloud | 201 | Docker, Kubernetes, Terraform, CI/CD, Cloudflare, Wrangler, incidentes |
+| Development & Backend | 185 | Lenguajes, frameworks backend, APIs, DB, `senior-*`, arquitectura |
+| Project Management | 150 | Pipeline ágil (`ln-*`), planning, sprints, retros, roadmaps |
 | Engineering Practices | 143 | `ring:*` (workflow de ingeniería), clean-code, DDD, code review, skill-creator |
-| Project Management | 146 | Pipeline ágil (`ln-*`), planning, sprints, retros, roadmaps |
-| Marketing & Growth | 126 | Ads (12 plataformas), CRO, growth, ASO, positioning frameworks |
-| Design & UX | 108 | Frontend-design, design systems, anti-slop (`ponytail`, `taste-*`), DESIGN.md library |
-| Business & Strategy | 102 | C-level advisors, estrategia, finanzas, producto, competencia |
-| AI & Agents | 84 | MCP servers, agentes, RAG, prompt engineering, LLM tooling |
-| DevOps & Cloud | 47 | Docker, Kubernetes, Terraform, CI/CD, Cloudflare, incidentes |
-| SEO & Content | 47 | Keyword research, schema markup, technical SEO, GEO/AI-visibility |
-| Writing & Content | 58 | Copywriting, copy-editing, inglés de negocios, comunicación interna |
+| Testing & QA | 140 | `qe-*` (fleet de QA), TDD, coverage, mutation/contract/E2E testing |
+| Marketing & Growth | 135 | Ads (12 plataformas), CRO, growth, ASO, positioning frameworks |
+| Design & UX | 113 | Frontend-design, design systems, anti-slop (`ponytail`, `taste-*`), DESIGN.md library |
+| Business & Strategy | 103 | C-level advisors, estrategia, finanzas, producto, competencia |
+| AI & Agents | 100 | MCP servers, agentes, RAG, prompt engineering, LLM tooling |
+| Writing & Content | 69 | Copywriting, copy-editing, inglés de negocios, comunicación interna |
+| SEO & Content | 58 | Keyword research, schema markup, technical SEO, GEO/AI-visibility |
 | Compliance & Legal | 33 | GDPR, SOC2, ISO, auditorías regulatorias |
 | Productivity & People | 9 | Onboarding, hiring, coaching, cultura de equipo |
-| Sales & Comms | 7 | Cold email, propuestas comerciales, pitch decks |
 | Video & Animation | 16 | GSAP, Lottie, Three.js, producción de video |
-| Other | 180 | Skills muy específicos que no calzan limpio en ninguna categoría de arriba; ver `SKILLS-INDEX.md` |
+| Sales & Comms | 7 | Cold email, propuestas comerciales, pitch decks |
+| Other | 1090 | Skills muy específicos, más 2 colecciones agregadoras masivas (ComposioHQ y alirezarezvani, ~1600 skills combinadas) que cubren territorio propio y todavía no calzan en las categorías de arriba; ver `SKILLS-INDEX.md` |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 
@@ -103,7 +103,10 @@ Ambos clonan skill-libraries reales ya rastreadas por este repo, organizadas por
 | **Planificacion / Arquitectura** | ersinkoc/project-architect (★251 — SPECIFICATION/IMPLEMENTATION/TASKS/BRANDING = PRD+TRD+dev-plan+UI), Hainrixz/the-architect (★374 — entrevista fases, genera blueprint + CLAUDE.md del proyecto objetivo), mattpocock/skills (★189k — to-spec, wayfinder, implement, domain-modeling, tdd, diagnosing-bugs, code-review) |
 | **Anti-slop / Estandares de codigo** | multica-ai/andrej-karpathy-skills (★196k — karpathy-guidelines, anti-overengineering) |
 | **Ads / Marketing pago** | AgriciDaniel/claude-ads (★7.5k — auditorias en 12 plataformas: Google, Meta, Amazon, Apple, TikTok, LinkedIn, etc.) |
-| **Coleccion general** | mrgoonie/claudekit-skills (★2.2k — 45 skills variados) |
+| **Coleccion general** | mrgoonie/claudekit-skills (★2.2k), ComposioHQ/awesome-claude-skills (★71.2k), alirezarezvani/claude-skills (★23.4k), openai/skills (★24.3k, oficial) |
+| **Memoria persistente** | thedotmack/claude-mem (★88.8k — contexto entre sesiones) |
+| **SEO (fuente adicional)** | AgriciDaniel/claude-seo (★12.6k) |
+| **Cloud oficial** | microsoft/skills (★2.8k, oficial), cloudflare/skills (★2.5k, oficial) |
 | **CI/CD** | fvadicamo/dev-agent-skills, harness/harness-skills, antigravity-fullstack-hq |
 
 Las fuentes con estrellas anotadas se eligieron verificando el conteo real via `gh api repos/<owner>/<repo>` (no solo ranking de busqueda) para priorizar mantenimiento activo y adopcion real sobre listados genericos.

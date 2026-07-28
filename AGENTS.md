@@ -58,6 +58,13 @@ harness-skills/             # CI/CD oficial Harness.io
 ui-skills-repo/             # baseline-ui, fixing-motion-performance, fixing-accessibility (★6.6k)
 awesome-design-md-repo/     # 74 DESIGN.md de marcas conocidas, wrapper SKILL.md propio (★105k)
 fabricioctelles-skills/     # design-md-validator + otros (★38)
+claude-mem-repo/            # Memoria/contexto persistente entre sesiones (★88.8k)
+composio-awesome-skills/    # Coleccion masiva (864 SKILL.md) (★71.2k)
+openai-skills-repo/         # Coleccion oficial OpenAI (★24.3k)
+alirezarezvani-skills/      # Coleccion masiva (798 SKILL.md) (★23.4k)
+claude-seo-repo/            # SEO tecnico, local, schema, GEO/AEO (★12.6k)
+microsoft-skills-repo/      # Coleccion oficial Microsoft (★2.8k)
+cloudflare-skills-repo/     # Workers, Pages, D1, R2, Durable Objects (★2.5k, oficial)
 ```
 
 Skills propias (no vienen de un repo externo, escritas para este usuario):
