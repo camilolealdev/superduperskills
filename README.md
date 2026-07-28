@@ -40,6 +40,7 @@ Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) co
 
 | Categoría | Cantidad | Qué incluye |
 |-----------|----------|-------------|
+| Integrations & Automation | 823 | Conectores por app (`<app>-automation`): Ahrefs, Shopify, Apify, Zoho, QuickBooks, etc. |
 | DevOps & Cloud | 201 | Docker, Kubernetes, Terraform, CI/CD, Cloudflare, Wrangler, incidentes |
 | Development & Backend | 185 | Lenguajes, frameworks backend, APIs, DB, `senior-*`, arquitectura |
 | Project Management | 150 | Pipeline ágil (`ln-*`), planning, sprints, retros, roadmaps |
@@ -52,10 +53,10 @@ Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) co
 | Writing & Content | 69 | Copywriting, copy-editing, inglés de negocios, comunicación interna |
 | SEO & Content | 58 | Keyword research, schema markup, technical SEO, GEO/AI-visibility |
 | Compliance & Legal | 33 | GDPR, SOC2, ISO, auditorías regulatorias |
-| Productivity & People | 9 | Onboarding, hiring, coaching, cultura de equipo |
 | Video & Animation | 16 | GSAP, Lottie, Three.js, producción de video |
+| Productivity & People | 9 | Onboarding, hiring, coaching, cultura de equipo |
 | Sales & Comms | 7 | Cold email, propuestas comerciales, pitch decks |
-| Other | 1090 | Skills muy específicos, más 2 colecciones agregadoras masivas (ComposioHQ y alirezarezvani, ~1600 skills combinadas) que cubren territorio propio y todavía no calzan en las categorías de arriba; ver `SKILLS-INDEX.md` |
+| Other | 267 | Skills genuinamente sin categoría limpia; ver `SKILLS-INDEX.md` |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 

@@ -205,6 +205,7 @@ CATEGORIES = [
     (r'^(loop-|md-|inbox-|andreessen|behuman|full-|brainstorm|career|hiring|recruiting|hr-|people-|culture|onboarding-|training|learning-|mentoring|coaching)', 'Productivity & People'),
     (r'^(qe-|qcsd-|test-|^tdd$|tdd-guide|tdd-london-chicago|strict-tdd|mutation-testing|contract-testing|^coverage$|coverage-drop-investigator|coverage-guard|exploratory-testing|context-driven-testing|compatibility-testing|localization-testing|mobile-testing|holistic-testing|middleware-testing|visual-testing|webapp-testing|web-testing|^vitest$|playwright-pro|^pw$|skill-tester|skill-evaluation|sherlock-review|shift-left-testing|shift-right-testing|regression-testing|pentest-validation|^qa$|e2e-flow-verifier|diagnosing-bugs|systematic-debugging|root-cause|^no-skip$|freeze-tests|stress-test|testcontainers|testrail|debug-loop|n8n-.*-testing)', 'Testing & QA'),
     (r'^(ring:|ring-|pragmatic-programmer|clean-code|clean-architecture|domain-driven-design|domain-modeling|refactoring-patterns|working-with-legacy-code|software-design-philosophy|^system-design$|codebase-design|codebase-onboarding|monorepo-navigator|^tech-debt|remove-technical-debt|improve-codebase-architecture|ubiquitous-language|team-topologies|xp-practices|sparc-methodology|^wayfinder$|^implement$|^prototype$|spec-to-repo|^to-spec$|^to-tickets$|^to-questionnaire$|request-refactor-plan|resolving-merge-conflicts|^pr-review|^handoff$|claude-handoff|batch-grill-me|^grilling$|^ask-matt$|setup-matt-pocock|writing-great-skills|write-a-skill|skill-creator|skill-builder|skill-security-auditor|skill-stats|creating-skills|find-skills|template-skill|sample-skill|^init$|^setup$|^spawn$|^run$|^execute$|^fix$|focused-fix|^decide$|^reflect$|^remember$|self-eval|self-improving-agent|^loop$|iterative-loop|^merge$|^generate$|^report$|^status$|^roast$|^teach$|^wizard$)', 'Engineering Practices'),
+    (r'(-automation$| Automation$)|^(figma-|notion-|slack-|m365-|microsoft-|entra-|gh-|connect-apps|zapier|make-com)', 'Integrations & Automation'),
 ]
 
 def categorize(name):
@@ -220,8 +221,9 @@ for s in sorted_skills:
 
 cat_order = ['Marketing & Growth', 'Video & Animation', 'Design & UX', 'Development & Backend',
              'Testing & QA', 'Engineering Practices', 'DevOps & Cloud', 'AI & Agents',
-             'SEO & Content', 'Sales & Comms', 'Project Management', 'Writing & Content',
-             'Business & Strategy', 'Compliance & Legal', 'Productivity & People', 'Other']
+             'Integrations & Automation', 'SEO & Content', 'Sales & Comms', 'Project Management',
+             'Writing & Content', 'Business & Strategy', 'Compliance & Legal',
+             'Productivity & People', 'Other']
 
 lines = [
     '# Skills Index\n',
