@@ -38,22 +38,22 @@ Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) co
 
 **1419** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
 
-| Categoría | Cantidad |
-|-----------|----------|
-| Project Management | 147 |
-| Development & Backend | 126 |
-| Writing & Content | 58 |
-| Design & UX | 63 |
-| Business & Strategy | 55 |
-| Marketing & Growth | 85 |
-| SEO & Content | 47 |
-| DevOps & Cloud | 40 |
-| AI & Agents | 55 |
-| Compliance & Legal | 11 |
-| Sales & Comms | 7 |
-| Productivity & People | 9 |
-| Video & Animation | 16 |
-| Other | 700 |
+| Categoría | Cantidad | Qué incluye |
+|-----------|----------|-------------|
+| Project Management | 147 | Pipeline ágil (`ln-*`), planning, sprints, retros, roadmaps, stakeholders |
+| Development & Backend | 126 | Lenguajes (Python, Rust, Go, TS...), frameworks backend, APIs, DB, testing, debugging, arquitectura |
+| Writing & Content | 58 | Copywriting, copy-editing, inglés de negocios, contenido, changelogs, comunicación interna |
+| Design & UX | 63 | Frontend-design, design systems, UI/UX, accesibilidad, anti-slop (`ponytail`, `taste-*`), design tokens |
+| Business & Strategy | 55 | C-level advisors (CEO/CTO/CFO...), estrategia, finanzas, producto, competencia |
+| Marketing & Growth | 85 | Ads (12 plataformas), CRO, SEO técnico, email, growth, ASO |
+| SEO & Content | 47 | Keyword research, schema markup, technical SEO, content briefs, GEO/AI-visibility |
+| DevOps & Cloud | 40 | Docker, Kubernetes, Terraform, CI/CD, Cloudflare, incidentes, observabilidad |
+| AI & Agents | 55 | MCP servers, agentes, RAG, prompt engineering, LLM tooling |
+| Compliance & Legal | 11 | GDPR, SOC2, ISO, auditorías regulatorias |
+| Sales & Comms | 7 | Cold email, propuestas comerciales, pitch decks |
+| Productivity & People | 9 | Onboarding, hiring, coaching, cultura de equipo |
+| Video & Animation | 16 | GSAP, Lottie, Three.js, producción de video |
+| Other | 700 | El resto — mayormente skills muy específicos (`qe-*` de QA, `ring-*` de engineering practices, C-level, compliance de nicho) que no calzan limpio en las categorías de arriba; ver `SKILLS-INDEX.md` para el detalle exacto |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 
