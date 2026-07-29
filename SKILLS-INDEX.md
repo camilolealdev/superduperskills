@@ -14,7 +14,7 @@ Total unique skills: **2552**
 
 ## By Category
 
-### Marketing & Growth (135)
+### Marketing & Growth (140)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -153,8 +153,13 @@ Total unique skills: **2552**
 | **webinar-marketing** | When the user wants to plan, promote, run, or improve a webinar or virtual event to generate and convert demand. Use when the user mentions 'webinar,' 'virtual event,' 'online event,' 'live demo,' ... |  | `skills/webinar-marketing/SKILL.md` |
 | **x-twitter-growth** | X/Twitter growth engine for building audience, crafting viral content, and analyzing engagement. Use when the user wants to grow on X/Twitter, write tweets or threads, analyze their X profile, rese... |  | `skills/x-twitter-growth/SKILL.md` |
 | **youtube-full** | Use when the user needs YouTube transcripts, video search, channel browsing, playlist extraction, or content monitoring. Trigger phrases: 'get the transcript for', 'search YouTube for', 'what are t... |  | `skills/youtube-full/SKILL.md` |
+| **ab-test-setup** | When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions "A/B test," "split test," "experiment," "test this change," "variant copy," "multivariat... |  | `skills/ab-test-setup/SKILL.md` |
+| **experiment-designer** | Use when planning product experiments, writing testable hypotheses, estimating sample size, prioritizing tests, or interpreting A/B outcomes with practical statistical rigor. |  | `skills/experiment-designer/SKILL.md` |
+| **free-tool-strategy** | When the user wants to build a free tool for marketing — lead generation, SEO value, or brand awareness. Use when they mention 'engineering as marketing,' 'free tool,' 'calculator,' 'generator,' 'c... |  | `skills/free-tool-strategy/SKILL.md` |
+| **neuro-persuasion-toolkit** | Aplica neurociencia del comportamiento y neuromarketing a copy, anuncios, SEO/SEM/MEO, propuestas comerciales y scripts de ventas (frías, consultivas, cierres). Úsalo siempre que el usuario esté es... |  | `skills/neuro-persuasion-toolkit/SKILL.md` |
+| **twitter-algorithm-optimizer** | Analyze and optimize tweets for maximum reach using Twitter's open-source algorithm insights. Rewrite and edit user tweets to improve engagement and visibility based on how the recommendation syste... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/twitter-algorithm-optimizer/SKILL.md` |
 
-### Video & Animation (16)
+### Video & Animation (18)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -174,8 +179,10 @@ Total unique skills: **2552**
 | **waapi** | Web Animations API adapter patterns for HyperFrames. Use when authoring element.animate() motion, Animation currentTime seeking, document.getAnimations(), KeyframeEffect timing, fill modes, or nati... |  | `skills/waapi/SKILL.md` |
 | **walkthrough-video** | Generate professional walkthrough videos from app screenshots or live sites using Remotion. Smooth transitions, zoom effects, text overlays, and optional voiceover narration. Produces MP4 videos fo... |  | `skills/walkthrough-video/SKILL.md` |
 | **website-to-hyperframes** | Capture a website and create a HyperFrames video from it. Use when: (1) a user provides a URL and wants a video, (2) someone says "capture this site", "turn this into a video", "make a promo from m... |  | `skills/website-to-hyperframes/SKILL.md` |
+| **demo-video** | Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions. Orchestrates playwright,... |  | `skills/demo-video/SKILL.md` |
+| **youtube-downloader** | Download YouTube videos with customizable quality and format options. Use this skill when the user asks to download, save, or grab YouTube videos. Supports various quality settings (best, 1080p, 72... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/youtube-downloader/SKILL.md` |
 
-### Design & UX (113)
+### Design & UX (120)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -292,8 +299,15 @@ Total unique skills: **2552**
 | **web-artifacts-builder** | Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state ma... | `https://github.com/anthropics/skills` | `skills/web-artifacts-builder/SKILL.md` |
 | **web-design-guidelines** | Web design best practices, accessibility, responsive layout, color contrast. Use when auditing a UI for a11y compliance, designing responsive layouts, or establishing design standards across a web ... |  | `skills/web-design-guidelines/SKILL.md` |
 | **web-typography** | Select, pair, and implement typefaces for web projects. Use when the user mentions "font pairing", "which typeface", "line height", "responsive typography", "web font loading", "type hierarchy", "v... | `https://github.com/wondelai/skills` | `skills/web-typography/SKILL.md` |
+| **algorithmic-art** | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields,... | `https://github.com/anthropics/skills` | `skills/algorithmic-art/SKILL.md` |
+| **epic-design** | Build immersive, cinematic 2.5D interactive websites using scroll storytelling, parallax depth, text animations, and premium scroll effects — no WebGL required. Use this skill for any web design ta... |  | `skills/epic-design/SKILL.md` |
+| **frontend-ui-dark-ts** | Build dark-themed React applications using Tailwind CSS with custom theming, glassmorphism effects, and Framer Motion animations. Use when creating dashboards, admin panels, or data-rich interfaces... | `https://github.com/microsoft/skills` | `skills/frontend-ui-dark-ts/SKILL.md` |
+| **lean-ux** | Apply lean thinking to UX: hypothesis-driven design, collaborative sketching, and rapid experiments instead of heavy deliverables. Use when the user mentions "Lean UX", "design hypothesis", "outcom... | `https://github.com/wondelai/skills` | `skills/lean-ux/SKILL.md` |
+| **redesign** | Upgrade an existing website or app to premium quality without breaking functionality — audit the current design, identify generic/AI tells, then apply taste and system rules surgically. Use when th... |  | `skills/redesign/SKILL.md` |
+| **redesign-existing-projects** | Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any C... |  | `skills/redesign-existing-projects/SKILL.md` |
+| **web** | Builds a complete website using visual assets generated with Forkads (saved in assets/) and a brief written in content/brief.md. Use when the user writes "/web" or says "read the web skill and buil... |  | `skills/web/SKILL.md` |
 
-### Development & Backend (185)
+### Development & Backend (206)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -482,8 +496,29 @@ Total unique skills: **2552**
 | **wordpress-elementor** | Edit Elementor pages and manage templates on WordPress sites. Workflow: identify page, choose editing method (browser or WP-CLI), execute, verify. Use when editing Elementor pages, updating text in... |  | `skills/wordpress-elementor/SKILL.md` |
 | **wordpress-pro** | Develops custom WordPress themes and plugins, creates and registers Gutenberg blocks and block patterns, configures WooCommerce stores, implements WordPress REST API endpoints, applies security har... |  | `skills/wordpress-pro/SKILL.md` |
 | **wordpress-setup** | Connect to a WordPress site via WP-CLI over SSH or REST API. Workflow: check CLI, test SSH connection, set up auth, verify access, save config. Use when connecting to a WordPress site, setting up W... |  | `skills/wordpress-setup/SKILL.md` |
+| **artifacts-builder** | Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state ma... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/artifacts-builder/SKILL.md` |
+| **cli-creator** | Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ... | `https://github.com/openai/skills` | `skills/cli-creator/SKILL.md` |
+| **databases** | Work with MongoDB (document database, BSON documents, aggregation pipelines, Atlas cloud) and PostgreSQL (relational database, SQL queries, psql CLI, pgAdmin). Use when designing database schemas, ... | `https://github.com/mrgoonie/claudekit-skills` | `skills/databases/SKILL.md` |
+| **db-seed** | Generate database seed scripts with realistic sample data. Reads Drizzle schemas or SQL migrations, respects foreign key ordering, produces idempotent TypeScript or SQL seed files. Handles D1 batch... |  | `skills/db-seed/SKILL.md` |
+| **plugin-creator** | Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use... | `https://github.com/openai/skills` | `skills/plugin-creator/SKILL.md` |
+| **project-docs** | Generate project documentation from codebase analysis — ARCHITECTURE.md, API_ENDPOINTS.md, DATABASE_SCHEMA.md. Reads source code, schema files, routes, and config to produce accurate, structured do... |  | `skills/project-docs/SKILL.md` |
+| **saas-scaffolder** | Generates complete, production-ready SaaS project boilerplate including authentication, database schemas, billing integration, API routes, and a working dashboard using Next.js 14+ App Router, Type... |  | `skills/saas-scaffolder/SKILL.md` |
+| **scaffold-exercises** | Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course s... | `https://github.com/mattpocock/skills` | `skills/scaffold-exercises/SKILL.md` |
+| **screenshot** | Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-l... | `https://github.com/openai/skills` | `skills/screenshot/SKILL.md` |
+| **ui-widget-developer** | Build MCP servers for Copilot Chat using the OpenAI Apps SDK or MCP Apps SDK widget rendering support (any language). Use this skill when: - Creating MCP servers that integrate with M365 Copilot de... | `https://github.com/microsoft/skills` | `skills/ui-widget-developer/SKILL.md` |
+| **V3 CLI Modernization** | CLI modernization and hooks system enhancement for claude-flow v3. Implements interactive prompts, command decomposition, enhanced hooks integration, and intelligent workflow automation. |  | `skills/V3 CLI Modernization/SKILL.md` |
+| **V3 Core Implementation** | Core module implementation for claude-flow v3. Implements DDD domains, clean architecture patterns, dependency injection, and modular TypeScript codebase with comprehensive testing. |  | `skills/V3 Core Implementation/SKILL.md` |
+| **V3 DDD Architecture** | Domain-Driven Design architecture for claude-flow v3. Implements modular, bounded context architecture with clean separation of concerns and microkernel pattern. |  | `skills/V3 DDD Architecture/SKILL.md` |
+| **V3 Deep Integration** | Deep agentic-flow@alpha integration implementing ADR-001. Eliminates 10,000+ duplicate lines by building claude-flow as specialized extension rather than parallel implementation. |  | `skills/V3 Deep Integration/SKILL.md` |
+| **V3 MCP Optimization** | MCP server optimization and transport layer enhancement for claude-flow v3. Implements connection pooling, load balancing, tool registry optimization, and performance monitoring for sub-100ms respo... |  | `skills/V3 MCP Optimization/SKILL.md` |
+| **V3 Memory Unification** | Unify 6+ memory systems into AgentDB with HNSW indexing for 150x-12,500x search improvements. Implements ADR-006 (Unified Memory Service) and ADR-009 (Hybrid Memory Backend). |  | `skills/V3 Memory Unification/SKILL.md` |
+| **V3 Performance Optimization** | Achieve aggressive v3 performance targets: 2.49x-7.47x Flash Attention speedup, 150x-12,500x search improvements, 50-75% memory reduction. Comprehensive benchmarking and optimization suite. |  | `skills/V3 Performance Optimization/SKILL.md` |
+| **V3 Security Overhaul** | Complete security architecture overhaul for claude-flow v3. Addresses critical CVEs (CVE-1, CVE-2, CVE-3) and implements secure-by-default patterns. Use for security-first v3 implementation. |  | `skills/V3 Security Overhaul/SKILL.md` |
+| **V3 Swarm Coordination** | 15-agent hierarchical mesh coordination for v3 implementation. Orchestrates parallel execution across security, core, and integration domains following 10 ADRs with 14-week timeline. |  | `skills/V3 Swarm Coordination/SKILL.md` |
+| **web-frameworks** | Build modern full-stack web applications with Next.js (App Router, Server Components, RSC, PPR, SSR, SSG, ISR), Turborepo (monorepo management, task pipelines, remote caching, parallel execution), ... | `https://github.com/mrgoonie/claudekit-skills` | `skills/web-frameworks/SKILL.md` |
+| **zustand-store-ts** | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reacti... | `https://github.com/microsoft/skills` | `skills/zustand-store-ts/SKILL.md` |
 
-### Testing & QA (140)
+### Testing & QA (156)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -627,8 +662,24 @@ Total unique skills: **2552**
 | **vitest** | Set up Vitest testing in any project — detects project type (Cloudflare Workers, React, Node), generates vitest.config.ts, test setup, utilities, and sample tests. Also covers mocking patterns, cov... |  | `skills/vitest/SKILL.md` |
 | **web-testing** | Web testing with Playwright, Vitest, k6. E2E/unit/integration/load/security/visual/a11y testing. Use for test automation, flakiness, Core Web Vitals, mobile gestures, cross-browser. | `https://github.com/mrgoonie/claudekit-skills` | `skills/web-testing/SKILL.md` |
 | **webapp-testing** | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browse... | `https://github.com/anthropics/skills` | `skills/webapp-testing/SKILL.md` |
+| **accessibility-testing** | WCAG 2.2 compliance testing, screen reader validation, and inclusive design verification. Use when ensuring legal compliance (ADA, Section 508), testing for disabilities, or building accessible app... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/accessibility-testing/SKILL.md` |
+| **agentic-quality-engineering** | Use when orchestrating QE agents, understanding PACTS principles, configuring the AQE v3 fleet, or leveraging AI agents as force multipliers for quality work. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/agentic-quality-engineering/SKILL.md` |
+| **browserstack** | Run tests on BrowserStack. Use when user mentions "browserstack", "cross-browser", "cloud testing", "browser matrix", "test on safari", "test on firefox", or "browser compatibility". |  | `skills/browserstack/SKILL.md` |
+| **bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/bug-reporting-excellence/SKILL.md` |
+| **consultancy-practices** | Apply effective software quality consultancy practices. Use when consulting, advising clients, or establishing consultancy workflows. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/consultancy-practices/SKILL.md` |
+| **migrate** | Migrate from Cypress or Selenium to Playwright. Use when user mentions "cypress", "selenium", "migrate tests", "convert tests", "switch to playwright", "move from cypress", or "replace selenium". |  | `skills/migrate/SKILL.md` |
+| **playwright** | Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wra... | `https://github.com/openai/skills` | `skills/playwright/SKILL.md` |
+| **playwright-interactive** | Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging. | `https://github.com/openai/skills` | `skills/playwright-interactive/SKILL.md` |
+| **quality-metrics** | Tracks quality metrics including defect density, test effectiveness ratio, DORA metrics, and mean time to detection. Use when establishing quality dashboards, defining KPIs, evaluating test suite e... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/quality-metrics/SKILL.md` |
+| **red-team** | Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations. Covers MITRE ATT&CK kill-chain planning, technique scoring, choke point iden... |  | `skills/red-team/SKILL.md` |
+| **sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... |  | `skills/sfdipot-product-factors/SKILL.md` |
+| **six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/six-thinking-hats/SKILL.md` |
+| **testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/testability-scoring/SKILL.md` |
+| **validation-pipeline** | Runs multi-stage validation gates with per-step scoring, pass/fail verdicts, and aggregate quality reports. Use when validating requirements, code, or artifacts through structured gate enforcement ... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/validation-pipeline/SKILL.md` |
+| **Verification & Quality Assurance** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/Verification & Quality Assurance/SKILL.md` |
+| **wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/wms-testing-patterns/SKILL.md` |
 
-### Engineering Practices (168)
+### Engineering Practices (187)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -800,8 +851,27 @@ Total unique skills: **2552**
 | **writing-great-skills** | Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable. | `https://github.com/mattpocock/skills` | `skills/writing-great-skills/SKILL.md` |
 | **xp-practices** | Apply XP practices including pair programming, ensemble programming, continuous integration, and sustainable pace. Use when implementing agile development practices, improving team collaboration, o... |  | `skills/xp-practices/SKILL.md` |
 | **yeet** | Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`). | `https://github.com/openai/skills` | `skills/yeet/SKILL.md` |
+| **Defense-in-Depth Validation** | Validate at every layer data passes through to make bugs impossible | `https://github.com/mrgoonie/claudekit-skills` | `skills/Defense-in-Depth Validation/SKILL.md` |
+| **deprecation-and-migration** | Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset exi... |  | `skills/deprecation-and-migration/SKILL.md` |
+| **fork-discipline** | Audit and enforce the core/client boundary in multi-client projects. Detects where shared platform code is tangled with client-specific code, finds hardcoded client checks, config files that replac... |  | `skills/fork-discipline/SKILL.md` |
+| **improve-code-quality** | Guided journey from a working-but-untested vibe-coded prototype to a production-ready product with tests, clean structure, a business-rules boundary, and resilience at scale. Orchestrates nine skil... | `https://github.com/wondelai/skills` | `skills/improve-code-quality/SKILL.md` |
+| **minimalist** | Use when the user asks to write code efficiently, avoid over-engineering, reduce dependencies, or prevent unnecessary abstractions. Enforces a strict efficiency ladder: YAGNI, reuse, stdlib, native... | `https://github.com/alirezarezvani/claude-skills` | `skills/minimalist/SKILL.md` |
+| **named-persona-adversarial-review** | Code review through the lens of real engineers' documented philosophies (Torvalds, Thompson, Carmack, Kent Beck, Jobs, Cagan). Complements abstract-role adversarial review with named, sourced persp... |  | `skills/named-persona-adversarial-review/SKILL.md` |
+| **Pair Programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... |  | `skills/Pair Programming/SKILL.md` |
+| **pair-programming** | Provides AI navigator for pair programming sessions with real-time code review, TDD guidance, and quality monitoring. Use when pair programming with AI assistance, practicing TDD with a navigator, ... |  | `skills/pair-programming/SKILL.md` |
+| **project-health** | All-in-one project configuration and health management. Sets up new projects (settings.local.json, CLAUDE.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leak... |  | `skills/project-health/SKILL.md` |
+| **Root Cause Tracing** | Systematically trace bugs backward through call stack to find original trigger | `https://github.com/mrgoonie/claudekit-skills` | `skills/Root Cause Tracing/SKILL.md` |
+| **setup-pre-commit** | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add com... | `https://github.com/mattpocock/skills` | `skills/setup-pre-commit/SKILL.md` |
+| **setup-ts-deep-modules** | Wire dependency-cruiser into a TypeScript repo so each package is a deep module — implementation hidden in subfolders, reachable only through its entry-point files. User-invoked. | `https://github.com/mattpocock/skills` | `skills/setup-ts-deep-modules/SKILL.md` |
+| **skills-chaos-engineering** |  |  | `skills/skills-chaos-engineering/SKILL.md` |
+| **skills-feature-flags-architect** |  |  | `skills/skills-feature-flags-architect/SKILL.md` |
+| **software-architecture** | System design patterns, Clean Architecture, SOLID principles, domain modeling. Use when making architectural decisions, designing new modules, refactoring a tangled codebase, or reviewing system de... |  | `skills/software-architecture/SKILL.md` |
+| **strict-api** | Use when the user says 'no hallucinations', 'verify APIs', 'reality check', or 'don't invent functions'. Prevents the agent from calling methods, imports, or variables that do not provably exist in... | `https://github.com/alirezarezvani/claude-skills` | `skills/strict-api/SKILL.md` |
+| **Systematic Debugging** | Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions. | `https://github.com/mrgoonie/claudekit-skills` | `skills/Systematic Debugging/SKILL.md` |
+| **Verification Before Completion** | Run verification commands and confirm output before claiming success | `https://github.com/mrgoonie/claudekit-skills` | `skills/Verification Before Completion/SKILL.md` |
+| **When Stuck - Problem-Solving Dispatch** | Dispatch to the right problem-solving technique based on how you're stuck | `https://github.com/mrgoonie/claudekit-skills` | `skills/When Stuck - Problem-Solving Dispatch/SKILL.md` |
 
-### DevOps & Cloud (221)
+### DevOps & Cloud (234)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -1026,8 +1096,21 @@ Total unique skills: **2552**
 | **winui-app** | Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityT... | `https://github.com/openai/skills` | `skills/winui-app/SKILL.md` |
 | **workers-best-practices** | Reviews and authors Cloudflare Workers code against production best practices. Load when writing new Workers, reviewing Worker code, configuring wrangler.jsonc, or checking for common Workers anti-... | `https://github.com/cloudflare/skills` | `skills/workers-best-practices/SKILL.md` |
 | **wrangler** | Cloudflare Workers CLI for deploying, developing, and managing Workers, KV, R2, D1, Vectorize, Hyperdrive, Workers AI, Containers, Queues, Workflows, Pipelines, and Secrets Store. Load before runni... | `https://github.com/cloudflare/skills` | `skills/wrangler/SKILL.md` |
+| **customize** | Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI ... | `https://github.com/microsoft/skills` | `skills/customize/SKILL.md` |
+| **performance** | Optimize UI performance against Core Web Vitals — LCP, INP, CLS — with loading/code-split strategy, layout-shift prevention, and animation performance rules. Use when the user wants to improve spee... |  | `skills/performance/SKILL.md` |
+| **prepare** |  | `https://github.com/microsoft/skills` | `skills/prepare/SKILL.md` |
+| **preset** | Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR:... | `https://github.com/microsoft/skills` | `skills/preset/SKILL.md` |
+| **release** | End-to-end npm release workflow with verification gates and hardcoded-version protection |  | `skills/release/SKILL.md` |
+| **release-it** | Build production-ready systems with stability patterns: circuit breakers, bulkheads, timeouts, and retry logic. Use when the user mentions "production outage", "circuit breaker", "deployment pipeli... | `https://github.com/wondelai/skills` | `skills/release-it/SKILL.md` |
+| **ship-gate** | Pre-production audit that scans a codebase for security, database, deployment, code quality, AI/LLM, dependency, frontend, and observability issues. Intercepts deploy commands and blocks until crit... |  | `skills/ship-gate/SKILL.md` |
+| **skills-kubernetes-operator** |  |  | `skills/skills-kubernetes-operator/SKILL.md` |
+| **skills-slo-architect** |  |  | `skills/skills-slo-architect/SKILL.md` |
+| **slo-architect** | Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE... |  | `skills/slo-architect/SKILL.md` |
+| **slo-design** |  |  | `skills/slo-design/SKILL.md` |
+| **version-bump** | Automated semantic versioning and release workflow for Claude Code plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging,... | `https://github.com/thedotmack/claude-mem` | `skills/version-bump/SKILL.md` |
+| **web-perf** | Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (LCP, INP, CLS) and supplementary metrics (FCP, TBT, Speed Index), identifies render-blocking resources, network depende... | `https://github.com/cloudflare/skills` | `skills/web-perf/SKILL.md` |
 
-### AI & Agents (124)
+### AI & Agents (147)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -1155,8 +1238,31 @@ Total unique skills: **2552**
 | **voltagent-docs-bundle** | Look up VoltAgent documentation embedded in node_modules/@voltagent/core/docs for version-matched docs. Use for API signatures, guides, and examples. |  | `skills/voltagent-docs-bundle/SKILL.md` |
 | **workflow-builder** | Design and write deterministic multi-agent workflow scripts (.js files in .claude/workflows/) for Claude Code's Workflow tool. Use when a user wants to build, create, author, scaffold, or run a cus... |  | `skills/workflow-builder/SKILL.md` |
 | **zero-hallucination-coder** | Runs a disciplined Discuss -> Map -> Decompose -> Execute -> Verify loop that grounds code in verified structure — no invented APIs, no assumed imports, no placeholder code — with a lazy-senior-dev... |  | `skills/zero-hallucination-coder/SKILL.md` |
+| **do** | Execute a phased implementation plan using subagents. Use when asked to execute, run, or carry out a plan — especially one created by make-plan. | `https://github.com/thedotmack/claude-mem` | `skills/do/SKILL.md` |
+| **eval** | Evaluate and rank agent results by metric or LLM judge for an AgentHub session. Use when the user runs /hub:eval or asks to score, compare, or pick a winner among completed AgentHub agents. |  | `skills/eval/SKILL.md` |
+| **finetuning** | Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. ... | `https://github.com/microsoft/skills` | `skills/finetuning/SKILL.md` |
+| **graphify** | Use for any question about a codebase, its architecture, file relationships, or project content — especially when graphify-out/ exists, where the question should be treated as a graphify query firs... |  | `skills/graphify/SKILL.md` |
+| **how-it-works** | Explain how claude-mem captures observations, when memory injection kicks in, and where data lives. Use when the user asks "how does claude-mem work?" or "what is this thing doing?". | `https://github.com/thedotmack/claude-mem` | `skills/how-it-works/SKILL.md` |
+| **improve** | Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. Strictly read-only on source code — never implements, fixes,... |  | `skills/improve/SKILL.md` |
+| **podcast-generation** | Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creatio... | `https://github.com/microsoft/skills` | `skills/podcast-generation/SKILL.md` |
+| **Prompt Coach** | Analyze your Claude Code session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer. |  | `skills/Prompt Coach/SKILL.md` |
+| **prompt-governance** | Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for product... |  | `skills/prompt-governance/SKILL.md` |
+| **resume** | Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment. |  | `skills/resume/SKILL.md` |
+| **review** | Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics. Use when the user runs /si:review or asks what has been learned and what should be prom... |  | `skills/review/SKILL.md` |
+| **Skill Builder** | Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, g... |  | `skills/Skill Builder/SKILL.md` |
+| **skill-installer** | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep... | `https://github.com/openai/skills` | `skills/skill-installer/SKILL.md` |
+| **skill-share** | A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/skill-share/SKILL.md` |
+| **skills-handoff** |  |  | `skills/skills-handoff/SKILL.md` |
+| **skills-init** |  |  | `skills/skills-init/SKILL.md` |
+| **skills-review** |  |  | `skills/skills-review/SKILL.md` |
+| **skills-run** |  |  | `skills/skills-run/SKILL.md` |
+| **speech** | Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_spee... | `https://github.com/openai/skills` | `skills/speech/SKILL.md` |
+| **stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows |  | `skills/stream-chain/SKILL.md` |
+| **timeline-report** | Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from claude-mem's timeline. Use when asked for a timeline report, project history analysis, dev... | `https://github.com/thedotmack/claude-mem` | `skills/timeline-report/SKILL.md` |
+| **transcribe** | Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in inte... | `https://github.com/openai/skills` | `skills/transcribe/SKILL.md` |
+| **wowerpoint** | Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as share... | `https://github.com/thedotmack/claude-mem` | `skills/wowerpoint/SKILL.md` |
 
-### Integrations & Automation (823)
+### Integrations & Automation (824)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -1983,6 +2089,7 @@ Total unique skills: **2552**
 | **zoominfo-automation** | Automate Zoominfo tasks via Rube MCP (Composio). Always search tools first for current schemas. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/zoominfo-automation/SKILL.md` |
 | **zylvie-automation** | Automate Zylvie tasks via Rube MCP (Composio). Always search tools first for current schemas. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/zylvie-automation/SKILL.md` |
 | **zyte-api-automation** | Automate Zyte API tasks via Rube MCP (Composio). Always search tools first for current schemas. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/zyte-api-automation/SKILL.md` |
+| **connect** | Connect Claude to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/connect/SKILL.md` |
 
 ### SEO & Content (58)
 
@@ -2047,7 +2154,7 @@ Total unique skills: **2552**
 | **site-architecture** | When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking. Also use when the user mentions "sitemap," "site map," "visual sitem... |  | `skills/site-architecture/SKILL.md` |
 | **technical-seo-checker** | Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. \"My site is slow\" / \"Google找不到\" / \"网站打不开\". 技术SEO/网站速度/爬虫/索引/CWV テクニカルSEO/サイト速度 기술SEO/사이트속도 SEO t... |  | `skills/technical-seo-checker/SKILL.md` |
 
-### Sales & Comms (7)
+### Sales & Comms (8)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2058,8 +2165,9 @@ Total unique skills: **2552**
 | **sales-enablement** | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-be... |  | `skills/sales-enablement/SKILL.md` |
 | **sales-engineer** | Analyzes RFP/RFI responses for coverage gaps, builds competitive feature comparison matrices, and plans proof-of-concept (POC) engagements for pre-sales engineering. Use when responding to RFPs, bi... |  | `skills/sales-engineer/SKILL.md` |
 | **strategy-document** | Write structured strategic documents for small and medium businesses. Produces SWOT analyses, lean business plans, OKRs, and competitive analyses. Each mode has a defined structure and quality bar.... |  | `skills/strategy-document/SKILL.md` |
+| **lead-research-assistant** | Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business develo... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/lead-research-assistant/SKILL.md` |
 
-### Project Management (150)
+### Project Management (155)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2213,8 +2321,13 @@ Total unique skills: **2552**
 | **using-agent-skills** | Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are di... |  | `skills/using-agent-skills/SKILL.md` |
 | **weekly-digests** | Generate a serial week-by-week narrative digest of a project's full claude-mem timeline. Splits the timeline into per-ISO-week files, then runs one consecutive subagent per week — each receiving th... | `https://github.com/thedotmack/claude-mem` | `skills/weekly-digests/SKILL.md` |
 | **weekly-review** | Use when someone wants to run a weekly review, close open loops, audit stalled projects and commitments, get their system back to trusted, restart a lapsed review habit, or says "/cs:weekly-review"... | `https://github.com/alirezarezvani/claude-skills` | `skills/weekly-review/SKILL.md` |
+| **agile-product-owner** | Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use when writing user stories, creating ... |  | `skills/agile-product-owner/SKILL.md` |
+| **oh-my-issues** | Cluster a GitHub issue backlog by root cause into a small set of plan-master issues, redirect children with a standardized comment, and bundle architectural-fix PRs that close clusters atomically. ... | `https://github.com/thedotmack/claude-mem` | `skills/oh-my-issues/SKILL.md` |
+| **project-architect** | Documentation-first project planning that produces implementation-ready blueprints and single-shot coding agent prompts. Generates 4 interconnected docs — SPECIFICATION.md, IMPLEMENTATION.md, TASKS... | `https://github.com/ersinkoc/project-architect` | `skills/project-architect/SKILL.md` |
+| **the-architect** | Interviews the user about what they want to build (phased discovery Q&A), classifies the project into an archetype (SaaS webapp, marketing site, mobile app, API backend, internal tool, content plat... | `https://github.com/Hainrixz/the-architect` | `skills/the-architect/SKILL.md` |
+| **triage** | Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. | `https://github.com/mattpocock/skills` | `skills/triage/SKILL.md` |
 
-### Writing & Content (69)
+### Writing & Content (80)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2287,8 +2400,19 @@ Total unique skills: **2552**
 | **wiki-query** |  |  | `skills/wiki-query/SKILL.md` |
 | **wiki-researcher** | Conducts multi-turn iterative deep research on specific topics within a codebase with zero tolerance for shallow analysis. Use when the user wants an in-depth investigation, needs to understand how... | `https://github.com/microsoft/skills` | `skills/wiki-researcher/SKILL.md` |
 | **wiki-vitepress** | Packages generated wiki Markdown into a VitePress static site with dark theme, dark-mode Mermaid diagrams with click-to-zoom, and production build output. Use when the user wants to create a browsa... | `https://github.com/microsoft/skills` | `skills/wiki-vitepress/SKILL.md` |
+| **app-docs** | Generate complete user documentation for a web app with screenshots. Browses the app via browser automation, screenshots every screen, and produces a structured user guide with step-by-step instruc... |  | `skills/app-docs/SKILL.md` |
+| **edit-article** | Edit and improve articles by restructuring sections, improving clarity, and tightening prose. Use when user wants to edit, revise, or improve an article draft. | `https://github.com/mattpocock/skills` | `skills/edit-article/SKILL.md` |
+| **human-ai** | Rewrites English text to sound human, natural, and undetectable by AI detection tools. Removes machine language patterns and AI slop, restores semantic entropy, and injects voice and personality. U... | `https://github.com/fabricioctelles/skills` | `skills/human-ai/SKILL.md` |
+| **humanizar** | Reescreve textos em português brasileiro para soarem mais humanos e naturais, reduzindo padrões típicos de escrita gerada por IA sem alterar fatos, argumento ou intenção. Use quando o texto em PT-B... | `https://github.com/fabricioctelles/skills` | `skills/humanizar/SKILL.md` |
+| **humanizer** | Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive "Signs of AI writing" guide. D... | `https://github.com/blader/humanizer` | `skills/humanizer/SKILL.md` |
+| **litreview** | Academic literature orientation skill that searches papers via free keyless APIs (PubMed E-utilities + OpenAlex) by default — with the Consensus MCP as an optional enhancement lane when connected —... |  | `skills/litreview/SKILL.md` |
+| **syllabus** | Generates a curated supplementary reading list from any course syllabus using Consensus academic search. Grill-me intake (syllabus input format + course audience + year range) plus a grouping forci... |  | `skills/syllabus/SKILL.md` |
+| **technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/technical-writing/SKILL.md` |
+| **writing-beats** | Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it. | `https://github.com/mattpocock/skills` | `skills/writing-beats/SKILL.md` |
+| **writing-fragments** | Writing, explore — mine raw fragments, no structure yet. | `https://github.com/mattpocock/skills` | `skills/writing-fragments/SKILL.md` |
+| **writing-shape** | Writing, exploit — shape raw material into an article, paragraph by paragraph. | `https://github.com/mattpocock/skills` | `skills/writing-shape/SKILL.md` |
 
-### Business & Strategy (126)
+### Business & Strategy (145)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2418,8 +2542,27 @@ Total unique skills: **2552**
 | **vendor-management** | Use when reviewing, scoring, or auditing third-party SaaS / vendor relationships — running a vendor scorecard with industry tuning, tracking SLA compliance with credit-claim flags, classifying thir... |  | `skills/vendor-management/SKILL.md` |
 | **vpe-advisor** | VP of Engineering advisory for startups: delivery throughput (DORA 4 metrics + bottleneck identification), engineering hiring funnel (sourcing → screen → onsite → offer conversion + time-to-fill + ... |  | `skills/vpe-advisor/SKILL.md` |
 | **vpe-review** | /cs:vpe-review <plan> — Throughput-first VP of Engineering interrogation of any plan that touches delivery, eng hiring, team structure, or production discipline. Use when cycle time balloons, DORA ... |  | `skills/vpe-review/SKILL.md` |
+| **brief** | /cs:brief <topic> — Generate a one-page strategy brief from an office-hours intake. First step in the strategic sprint pipeline. Use when a strategic question needs to be framed before boardroom de... |  | `skills/brief/SKILL.md` |
+| **Collision-Zone Thinking** | Force unrelated concepts together to discover emergent properties - "What if we treated X like Y? | `https://github.com/mrgoonie/claudekit-skills` | `skills/Collision-Zone Thinking/SKILL.md` |
+| **domain-name-brainstormer** | Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/domain-name-brainstormer/SKILL.md` |
+| **dossier** | Decision-grade entity research skill — produces a hypothesis-tested dossier on a specific company, person, nonprofit, or government org, not a generic profile. Forcing intake makes the user state t... |  | `skills/dossier/SKILL.md` |
+| **freeze** | /cs:freeze <decision> <days> — Lock a strategic decision for a cooldown period to prevent impulse reversal. Mirrors gstack's safety primitives for the business layer. Use when an irreversible decis... |  | `skills/freeze/SKILL.md` |
+| **grants** | NIH grant research skill for clinical researchers. Grill-me intake (research idea + career stage + preliminary data + environment + submission posture + known institute targets) locks down the fund... |  | `skills/grants/SKILL.md` |
+| **internal-narrative** | Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed... |  | `skills/internal-narrative/SKILL.md` |
+| **interview-system-designer** | This skill should be used when the user asks to "design interview processes", "create hiring pipelines", "calibrate interview loops", "generate interview questions", "design competency matrices", "... |  | `skills/interview-system-designer/SKILL.md` |
+| **Inversion Exercise** | Flip core assumptions to reveal hidden constraints and alternative approaches - "what if the opposite were true? | `https://github.com/mrgoonie/claudekit-skills` | `skills/Inversion Exercise/SKILL.md` |
+| **knowledge-ops** | Use when a Head of Ops, Knowledge Manager, or TPM-Internal needs to author, validate, or clean up company SOPs and internal runbooks (procurement intake, vendor offboarding, incident-comms cascade,... |  | `skills/knowledge-ops/SKILL.md` |
+| **Meta-Pattern Recognition** | Spot patterns appearing in 3+ domains to find universal principles | `https://github.com/mrgoonie/claudekit-skills` | `skills/Meta-Pattern Recognition/SKILL.md` |
+| **post-mortem** | /cs:post-mortem <decision> — Honest retrospective on an executed decision, scored against original assumptions and dissent. Closes the strategic sprint loop. Use when a decision hits its 90-day rev... |  | `skills/post-mortem/SKILL.md` |
+| **postmortem** | /em:postmortem — Honest analysis of what went wrong. Use after a failed launch, missed quarter, or bad hire to run a blameless 5-Whys retrospective with a change register — e.g. dissecting why the ... |  | `skills/postmortem/SKILL.md` |
+| **process-mapper** | Use when a BizOps lead, COO, or process-improvement owner needs to document an end-to-end business process (procurement, employee onboarding, incident handoff, customer-onboarding, claims adjudicat... |  | `skills/process-mapper/SKILL.md` |
+| **pulse** | Multi-source recency research skill that takes the pulse of any topic across Reddit, Hacker News, the open web, and optionally X/Twitter within a configurable recent window (default 30 days). Forci... |  | `skills/pulse/SKILL.md` |
+| **research** | Default entry point for any research request — a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, grants... |  | `skills/research/SKILL.md` |
+| **Scale Game** | Test at extremes (1000x bigger/smaller, instant/year-long) to expose fundamental truths hidden at normal scales | `https://github.com/mrgoonie/claudekit-skills` | `skills/Scale Game/SKILL.md` |
+| **Simplification Cascades** | Find one insight that eliminates multiple components - "if this is true, we don't need X, Y, or Z | `https://github.com/mrgoonie/claudekit-skills` | `skills/Simplification Cascades/SKILL.md` |
+| **skills-arquiteto-de-empresa** |  | `https://github.com/alirezarezvani/claude-skills` | `skills/skills-arquiteto-de-empresa/SKILL.md` |
 
-### Compliance & Legal (33)
+### Compliance & Legal (37)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2456,8 +2599,12 @@ Total unique skills: **2552**
 | **soc2-audit-prep** | /cs:soc2-audit-prep <scope> — SOC 2 Type II readiness 6-question forcing interrogation. Observation-period focused. Use before Type II observation begins, mid-period checkpoint, or pre-field-test m... |  | `skills/soc2-audit-prep/SKILL.md` |
 | **soc2-compliance** | Use when the user asks to prepare for SOC 2 audits, map Trust Service Criteria, build control matrices, collect audit evidence, perform gap analysis, or assess SOC 2 Type I vs Type II readiness. |  | `skills/soc2-compliance/SKILL.md` |
 | **threat-detection** | Use when hunting for threats in an environment, analyzing IOCs, or detecting behavioral anomalies in telemetry. Covers hypothesis-driven threat hunting, IOC sweep generation, z-score anomaly detect... |  | `skills/threat-detection/SKILL.md` |
+| **capa-officer** | CAPA system management for medical device QMS. Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA metrics. Use when running CAPA investigations, 5-Why anal... |  | `skills/capa-officer/SKILL.md` |
+| **quality-documentation-manager** | Document control system management for medical device QMS. Covers document numbering, version control, change management, and 21 CFR Part 11 compliance. Use when working on document control procedu... |  | `skills/quality-documentation-manager/SKILL.md` |
+| **skills-eu-ai-act-specialist** |  |  | `skills/skills-eu-ai-act-specialist/SKILL.md` |
+| **skills-iso42001-specialist** |  |  | `skills/skills-iso42001-specialist/SKILL.md` |
 
-### Productivity & People (9)
+### Productivity & People (25)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2470,186 +2617,39 @@ Total unique skills: **2552**
 | **loop-architect** | Design well-structured agent loops with best-practice coaching and cross-model review gates before you run them. Use when the user wants to design, build, or set up an agent loop, iterative agent w... | `https://github.com/fabricioctelles/skills` | `skills/loop-architect/SKILL.md` |
 | **loop-library** | Discover, find, compare, audit, repair, adapt, and design repeatable AI-agent loops with explicit triggers, actions, verification, stopping conditions, guardrails, and handoffs. Use when a user ask... |  | `skills/loop-library/SKILL.md` |
 | **loop-me** | Grill me about specs for the workflows I want to build, within this workspace. | `https://github.com/mattpocock/skills` | `skills/loop-me/SKILL.md` |
-
-### Other (175)
-
-| Skill | Description | GitHub | Location |
-|-------|-------------|--------|----------|
-| **ab-test-setup** | When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions "A/B test," "split test," "experiment," "test this change," "variant copy," "multivariat... |  | `skills/ab-test-setup/SKILL.md` |
-| **accessibility-testing** | WCAG 2.2 compliance testing, screen reader validation, and inclusive design verification. Use when ensuring legal compliance (ADA, Section 508), testing for disabilities, or building accessible app... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/accessibility-testing/SKILL.md` |
-| **agentic-quality-engineering** | Use when orchestrating QE agents, understanding PACTS principles, configuring the AQE v3 fleet, or leveraging AI agents as force multipliers for quality work. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/agentic-quality-engineering/SKILL.md` |
-| **agile-product-owner** | Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use when writing user stories, creating ... |  | `skills/agile-product-owner/SKILL.md` |
-| **algorithmic-art** | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields,... | `https://github.com/anthropics/skills` | `skills/algorithmic-art/SKILL.md` |
-| **app-docs** | Generate complete user documentation for a web app with screenshots. Browses the app via browser automation, screenshots every screen, and produces a structured user guide with step-by-step instruc... |  | `skills/app-docs/SKILL.md` |
-| **artifacts-builder** | Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state ma... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/artifacts-builder/SKILL.md` |
-| **brief** | /cs:brief <topic> — Generate a one-page strategy brief from an office-hours intake. First step in the strategic sprint pipeline. Use when a strategic question needs to be framed before boardroom de... |  | `skills/brief/SKILL.md` |
-| **browserstack** | Run tests on BrowserStack. Use when user mentions "browserstack", "cross-browser", "cloud testing", "browser matrix", "test on safari", "test on firefox", or "browser compatibility". |  | `skills/browserstack/SKILL.md` |
-| **bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/bug-reporting-excellence/SKILL.md` |
-| **capa-officer** | CAPA system management for medical device QMS. Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA metrics. Use when running CAPA investigations, 5-Why anal... |  | `skills/capa-officer/SKILL.md` |
 | **capture** | Captures and organizes chaotic brain dumps into a structured, actionable system with zero information loss. Use this skill whenever the user says 'capture this', 'brain dump', 'let me dump some ide... |  | `skills/capture/SKILL.md` |
-| **chaos-experiment** |  |  | `skills/chaos-experiment/SKILL.md` |
-| **cli-creator** | Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ... | `https://github.com/openai/skills` | `skills/cli-creator/SKILL.md` |
 | **collab-proof** | Use when you want to understand what Claude contributed vs what you drove in a session. Triggers on: /collab-proof, session retrospective, ai contribution analysis, collaboration evidence, what did... |  | `skills/collab-proof/SKILL.md` |
-| **Collision-Zone Thinking** | Force unrelated concepts together to discover emergent properties - "What if we treated X like Y? | `https://github.com/mrgoonie/claudekit-skills` | `skills/Collision-Zone Thinking/SKILL.md` |
-| **connect** | Connect Claude to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/connect/SKILL.md` |
-| **consultancy-practices** | Apply effective software quality consultancy practices. Use when consulting, advising clients, or establishing consultancy workflows. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/consultancy-practices/SKILL.md` |
-| **customize** | Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI ... | `https://github.com/microsoft/skills` | `skills/customize/SKILL.md` |
-| **databases** | Work with MongoDB (document database, BSON documents, aggregation pipelines, Atlas cloud) and PostgreSQL (relational database, SQL queries, psql CLI, pgAdmin). Use when designing database schemas, ... | `https://github.com/mrgoonie/claudekit-skills` | `skills/databases/SKILL.md` |
-| **db-seed** | Generate database seed scripts with realistic sample data. Reads Drizzle schemas or SQL migrations, respects foreign key ordering, produces idempotent TypeScript or SQL seed files. Handles D1 batch... |  | `skills/db-seed/SKILL.md` |
-| **Defense-in-Depth Validation** | Validate at every layer data passes through to make bugs impossible | `https://github.com/mrgoonie/claudekit-skills` | `skills/Defense-in-Depth Validation/SKILL.md` |
-| **demo-video** | Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions. Orchestrates playwright,... |  | `skills/demo-video/SKILL.md` |
-| **deprecation-and-migration** | Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset exi... |  | `skills/deprecation-and-migration/SKILL.md` |
-| **do** | Execute a phased implementation plan using subagents. Use when asked to execute, run, or carry out a plan — especially one created by make-plan. | `https://github.com/thedotmack/claude-mem` | `skills/do/SKILL.md` |
 | **docx** | Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document... | `https://github.com/anthropics/skills` | `skills/docx/SKILL.md` |
 | **docx-official** | Generating Word documents programmatically with docx library in Node.js. Use when generating .docx reports, contracts, invoices, or any structured Word document from data. |  | `skills/docx-official/SKILL.md` |
-| **domain-name-brainstormer** | Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/domain-name-brainstormer/SKILL.md` |
-| **dossier** | Decision-grade entity research skill — produces a hypothesis-tested dossier on a specific company, person, nonprofit, or government org, not a generic profile. Forcing intake makes the user state t... |  | `skills/dossier/SKILL.md` |
-| **edit-article** | Edit and improve articles by restructuring sections, improving clarity, and tightening prose. Use when user wants to edit, revise, or improve an article draft. | `https://github.com/mattpocock/skills` | `skills/edit-article/SKILL.md` |
-| **epic-design** | Build immersive, cinematic 2.5D interactive websites using scroll storytelling, parallax depth, text animations, and premium scroll effects — no WebGL required. Use this skill for any web design ta... |  | `skills/epic-design/SKILL.md` |
-| **eval** | Evaluate and rank agent results by metric or LLM judge for an AgentHub session. Use when the user runs /hub:eval or asks to score, compare, or pick a winner among completed AgentHub agents. |  | `skills/eval/SKILL.md` |
-| **experiment-designer** | Use when planning product experiments, writing testable hypotheses, estimating sample size, prioritizing tests, or interpreting A/B outcomes with practical statistical rigor. |  | `skills/experiment-designer/SKILL.md` |
 | **file-organizer** | Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load ... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/file-organizer/SKILL.md` |
-| **finetuning** | Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. ... | `https://github.com/microsoft/skills` | `skills/finetuning/SKILL.md` |
-| **flag-cleanup** |  |  | `skills/flag-cleanup/SKILL.md` |
-| **fork-discipline** | Audit and enforce the core/client boundary in multi-client projects. Detects where shared platform code is tangled with client-specific code, finds hardcoded client checks, config files that replac... |  | `skills/fork-discipline/SKILL.md` |
-| **free-tool-strategy** | When the user wants to build a free tool for marketing — lead generation, SEO value, or brand awareness. Use when they mention 'engineering as marketing,' 'free tool,' 'calculator,' 'generator,' 'c... |  | `skills/free-tool-strategy/SKILL.md` |
-| **freeze** | /cs:freeze <decision> <days> — Lock a strategic decision for a cooldown period to prevent impulse reversal. Mirrors gstack's safety primitives for the business layer. Use when an irreversible decis... |  | `skills/freeze/SKILL.md` |
-| **frontend-ui-dark-ts** | Build dark-themed React applications using Tailwind CSS with custom theming, glassmorphism effects, and Framer Motion animations. Use when creating dashboards, admin panels, or data-rich interfaces... | `https://github.com/microsoft/skills` | `skills/frontend-ui-dark-ts/SKILL.md` |
-| **grants** | NIH grant research skill for clinical researchers. Grill-me intake (research idea + career stage + preliminary data + environment + submission posture + known institute targets) locks down the fund... |  | `skills/grants/SKILL.md` |
-| **graphify** | Use for any question about a codebase, its architecture, file relationships, or project content — especially when graphify-out/ exists, where the question should be treated as a graphify query firs... |  | `skills/graphify/SKILL.md` |
-| **how-it-works** | Explain how claude-mem captures observations, when memory injection kicks in, and where data lives. Use when the user asks "how does claude-mem work?" or "what is this thing doing?". | `https://github.com/thedotmack/claude-mem` | `skills/how-it-works/SKILL.md` |
-| **human-ai** | Rewrites English text to sound human, natural, and undetectable by AI detection tools. Removes machine language patterns and AI slop, restores semantic entropy, and injects voice and personality. U... | `https://github.com/fabricioctelles/skills` | `skills/human-ai/SKILL.md` |
-| **humanizar** | Reescreve textos em português brasileiro para soarem mais humanos e naturais, reduzindo padrões típicos de escrita gerada por IA sem alterar fatos, argumento ou intenção. Use quando o texto em PT-B... | `https://github.com/fabricioctelles/skills` | `skills/humanizar/SKILL.md` |
-| **humanizer** | Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive "Signs of AI writing" guide. D... | `https://github.com/blader/humanizer` | `skills/humanizer/SKILL.md` |
-| **improve** | Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. Strictly read-only on source code — never implements, fixes,... |  | `skills/improve/SKILL.md` |
-| **improve-code-quality** | Guided journey from a working-but-untested vibe-coded prototype to a production-ready product with tests, clean structure, a business-rules boundary, and resilience at scale. Orchestrates nine skil... | `https://github.com/wondelai/skills` | `skills/improve-code-quality/SKILL.md` |
-| **internal-narrative** | Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed... |  | `skills/internal-narrative/SKILL.md` |
-| **interview-system-designer** | This skill should be used when the user asks to "design interview processes", "create hiring pipelines", "calibrate interview loops", "generate interview questions", "design competency matrices", "... |  | `skills/interview-system-designer/SKILL.md` |
-| **Inversion Exercise** | Flip core assumptions to reveal hidden constraints and alternative approaches - "what if the opposite were true? | `https://github.com/mrgoonie/claudekit-skills` | `skills/Inversion Exercise/SKILL.md` |
 | **invoice-organizer** | Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours ... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/invoice-organizer/SKILL.md` |
-| **knowledge-ops** | Use when a Head of Ops, Knowledge Manager, or TPM-Internal needs to author, validate, or clean up company SOPs and internal runbooks (procurement intake, vendor offboarding, incident-comms cascade,... |  | `skills/knowledge-ops/SKILL.md` |
-| **lead-research-assistant** | Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business develo... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/lead-research-assistant/SKILL.md` |
-| **lean-ux** | Apply lean thinking to UX: hypothesis-driven design, collaborative sketching, and rapid experiments instead of heavy deliverables. Use when the user mentions "Lean UX", "design hypothesis", "outcom... | `https://github.com/wondelai/skills` | `skills/lean-ux/SKILL.md` |
-| **litreview** | Academic literature orientation skill that searches papers via free keyless APIs (PubMed E-utilities + OpenAlex) by default — with the Consensus MCP as an optional enhancement lane when connected —... |  | `skills/litreview/SKILL.md` |
 | **meetings** | Use when someone wants to decide whether a meeting is worth calling, price a meeting in dollars, build a timeboxed agenda with desired outcomes, or turn messy meeting notes into owned action items ... | `https://github.com/alirezarezvani/claude-skills` | `skills/meetings/SKILL.md` |
-| **Meta-Pattern Recognition** | Spot patterns appearing in 3+ domains to find universal principles | `https://github.com/mrgoonie/claudekit-skills` | `skills/Meta-Pattern Recognition/SKILL.md` |
-| **migrate** | Migrate from Cypress or Selenium to Playwright. Use when user mentions "cypress", "selenium", "migrate tests", "convert tests", "switch to playwright", "move from cypress", or "replace selenium". |  | `skills/migrate/SKILL.md` |
-| **minimalist** | Use when the user asks to write code efficiently, avoid over-engineering, reduce dependencies, or prevent unnecessary abstractions. Enforces a strict efficiency ladder: YAGNI, reuse, stdlib, native... | `https://github.com/alirezarezvani/claude-skills` | `skills/minimalist/SKILL.md` |
-| **named-persona-adversarial-review** | Code review through the lens of real engineers' documented philosophies (Torvalds, Thompson, Carmack, Kent Beck, Jobs, Cagan). Complements abstract-role adversarial review with named, sourced persp... |  | `skills/named-persona-adversarial-review/SKILL.md` |
-| **neuro-persuasion-toolkit** | Aplica neurociencia del comportamiento y neuromarketing a copy, anuncios, SEO/SEM/MEO, propuestas comerciales y scripts de ventas (frías, consultivas, cierres). Úsalo siempre que el usuario esté es... |  | `skills/neuro-persuasion-toolkit/SKILL.md` |
-| **oh-my-issues** | Cluster a GitHub issue backlog by root cause into a small set of plan-master issues, redirect children with a standardized comment, and bundle architectural-fix PRs that close clusters atomically. ... | `https://github.com/thedotmack/claude-mem` | `skills/oh-my-issues/SKILL.md` |
-| **Pair Programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... |  | `skills/Pair Programming/SKILL.md` |
-| **pair-programming** | Provides AI navigator for pair programming sessions with real-time code review, TDD guidance, and quality monitoring. Use when pair programming with AI assistance, practicing TDD with a navigator, ... |  | `skills/pair-programming/SKILL.md` |
 | **parcel-tracking** | Track parcels and check delivery status for Australian and international couriers. Searches Gmail for dispatch/shipping emails and provides tracking links for all major Australian couriers includin... |  | `skills/parcel-tracking/SKILL.md` |
 | **pdf** | Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, r... | `https://github.com/anthropics/skills` | `skills/pdf/SKILL.md` |
 | **pdf-official** | Generating PDFs with pdfkit or puppeteer in Node.js. Use when generating PDF reports, invoices, certificates, or any printable document from data or HTML templates. |  | `skills/pdf-official/SKILL.md` |
-| **performance** | Optimize UI performance against Core Web Vitals — LCP, INP, CLS — with loading/code-split strategy, layout-shift prevention, and animation performance rules. Use when the user wants to improve spee... |  | `skills/performance/SKILL.md` |
-| **persona** |  |  | `skills/persona/SKILL.md` |
-| **pipeline** |  |  | `skills/pipeline/SKILL.md` |
-| **playwright** | Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wra... | `https://github.com/openai/skills` | `skills/playwright/SKILL.md` |
-| **playwright-interactive** | Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging. | `https://github.com/openai/skills` | `skills/playwright-interactive/SKILL.md` |
-| **plugin-creator** | Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use... | `https://github.com/openai/skills` | `skills/plugin-creator/SKILL.md` |
-| **podcast-generation** | Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creatio... | `https://github.com/microsoft/skills` | `skills/podcast-generation/SKILL.md` |
-| **post-mortem** | /cs:post-mortem <decision> — Honest retrospective on an executed decision, scored against original assumptions and dissent. Closes the strategic sprint loop. Use when a decision hits its 90-day rev... |  | `skills/post-mortem/SKILL.md` |
-| **postmortem** | /em:postmortem — Honest analysis of what went wrong. Use after a failed launch, missed quarter, or bad hire to run a blameless 5-Whys retrospective with a change register — e.g. dissecting why the ... |  | `skills/postmortem/SKILL.md` |
 | **pptx** | Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting... | `https://github.com/anthropics/skills` | `skills/pptx/SKILL.md` |
 | **pptx-official** | Generating PowerPoint presentations with pptxgenjs in Node.js. Use when creating automated presentations, slide decks, pitch decks, or reports in .pptx format from data. |  | `skills/pptx-official/SKILL.md` |
-| **prd** |  |  | `skills/prd/SKILL.md` |
-| **prepare** |  | `https://github.com/microsoft/skills` | `skills/prepare/SKILL.md` |
-| **preset** | Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR:... | `https://github.com/microsoft/skills` | `skills/preset/SKILL.md` |
-| **process-mapper** | Use when a BizOps lead, COO, or process-improvement owner needs to document an end-to-end business process (procurement, employee onboarding, incident handoff, customer-onboarding, claims adjudicat... |  | `skills/process-mapper/SKILL.md` |
-| **project-architect** | Documentation-first project planning that produces implementation-ready blueprints and single-shot coding agent prompts. Generates 4 interconnected docs — SPECIFICATION.md, IMPLEMENTATION.md, TASKS... | `https://github.com/ersinkoc/project-architect` | `skills/project-architect/SKILL.md` |
-| **project-docs** | Generate project documentation from codebase analysis — ARCHITECTURE.md, API_ENDPOINTS.md, DATABASE_SCHEMA.md. Reads source code, schema files, routes, and config to produce accurate, structured do... |  | `skills/project-docs/SKILL.md` |
-| **project-health** | All-in-one project configuration and health management. Sets up new projects (settings.local.json, CLAUDE.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leak... |  | `skills/project-health/SKILL.md` |
-| **Prompt Coach** | Analyze your Claude Code session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer. |  | `skills/Prompt Coach/SKILL.md` |
-| **prompt-governance** | Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for product... |  | `skills/prompt-governance/SKILL.md` |
-| **pulse** | Multi-source recency research skill that takes the pulse of any topic across Reddit, Hacker News, the open web, and optionally X/Twitter within a configurable recent window (default 30 days). Forci... |  | `skills/pulse/SKILL.md` |
-| **quality-documentation-manager** | Document control system management for medical device QMS. Covers document numbering, version control, change management, and 21 CFR Part 11 compliance. Use when working on document control procedu... |  | `skills/quality-documentation-manager/SKILL.md` |
-| **quality-metrics** | Tracks quality metrics including defect density, test effectiveness ratio, DORA metrics, and mean time to detection. Use when establishing quality dashboards, defining KPIs, evaluating test suite e... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/quality-metrics/SKILL.md` |
-| **README** |  |  | `skills/README/SKILL.md` |
-| **red-team** | Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations. Covers MITRE ATT&CK kill-chain planning, technique scoring, choke point iden... |  | `skills/red-team/SKILL.md` |
-| **redesign** | Upgrade an existing website or app to premium quality without breaking functionality — audit the current design, identify generic/AI tells, then apply taste and system rules surgically. Use when th... |  | `skills/redesign/SKILL.md` |
-| **redesign-existing-projects** | Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any C... |  | `skills/redesign-existing-projects/SKILL.md` |
-| **release** | End-to-end npm release workflow with verification gates and hardcoded-version protection |  | `skills/release/SKILL.md` |
-| **release-it** | Build production-ready systems with stability patterns: circuit breakers, bulkheads, timeouts, and retry logic. Use when the user mentions "production outage", "circuit breaker", "deployment pipeli... | `https://github.com/wondelai/skills` | `skills/release-it/SKILL.md` |
-| **research** | Default entry point for any research request — a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, grants... |  | `skills/research/SKILL.md` |
-| **resume** | Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment. |  | `skills/resume/SKILL.md` |
 | **resume-ats-beater** | Este skill deve ser usado para reescrever currículos com foco em compatibilidade ATS e impacto para recrutadores, e/ou auditar perfis LinkedIn para maximizar visibilidade e conversão profissional. ... | `https://github.com/fabricioctelles/skills` | `skills/resume-ats-beater/SKILL.md` |
-| **retro** |  |  | `skills/retro/SKILL.md` |
-| **review** | Analyze auto-memory for promotion candidates, stale entries, consolidation opportunities, and health metrics. Use when the user runs /si:review or asks what has been learned and what should be prom... |  | `skills/review/SKILL.md` |
-| **Root Cause Tracing** | Systematically trace bugs backward through call stack to find original trigger | `https://github.com/mrgoonie/claudekit-skills` | `skills/Root Cause Tracing/SKILL.md` |
-| **saas-scaffolder** | Generates complete, production-ready SaaS project boilerplate including authentication, database schemas, billing integration, API routes, and a working dashboard using Next.js 14+ App Router, Type... |  | `skills/saas-scaffolder/SKILL.md` |
-| **scaffold** |  | `https://github.com/microsoft/skills` | `skills/scaffold/SKILL.md` |
-| **scaffold-exercises** | Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course s... | `https://github.com/mattpocock/skills` | `skills/scaffold-exercises/SKILL.md` |
-| **Scale Game** | Test at extremes (1000x bigger/smaller, instant/year-long) to expose fundamental truths hidden at normal scales | `https://github.com/mrgoonie/claudekit-skills` | `skills/Scale Game/SKILL.md` |
-| **screenshot** | Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-l... | `https://github.com/openai/skills` | `skills/screenshot/SKILL.md` |
-| **setup-pre-commit** | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add com... | `https://github.com/mattpocock/skills` | `skills/setup-pre-commit/SKILL.md` |
-| **setup-ts-deep-modules** | Wire dependency-cruiser into a TypeScript repo so each package is a deep module — implementation hidden in subfolders, reachable only through its entry-point files. User-invoked. | `https://github.com/mattpocock/skills` | `skills/setup-ts-deep-modules/SKILL.md` |
-| **sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... |  | `skills/sfdipot-product-factors/SKILL.md` |
-| **ship-gate** | Pre-production audit that scans a codebase for security, database, deployment, code quality, AI/LLM, dependency, frontend, and observability issues. Intercepts deploy commands and blocks until crit... |  | `skills/ship-gate/SKILL.md` |
-| **Simplification Cascades** | Find one insight that eliminates multiple components - "if this is true, we don't need X, Y, or Z | `https://github.com/mrgoonie/claudekit-skills` | `skills/Simplification Cascades/SKILL.md` |
-| **six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/six-thinking-hats/SKILL.md` |
-| **Skill Builder** | Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, g... |  | `skills/Skill Builder/SKILL.md` |
-| **skill-installer** | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep... | `https://github.com/openai/skills` | `skills/skill-installer/SKILL.md` |
-| **skill-share** | A skill that creates new Claude skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery. | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/skill-share/SKILL.md` |
-| **skills-arquiteto-de-empresa** |  | `https://github.com/alirezarezvani/claude-skills` | `skills/skills-arquiteto-de-empresa/SKILL.md` |
-| **skills-chaos-engineering** |  |  | `skills/skills-chaos-engineering/SKILL.md` |
-| **skills-eu-ai-act-specialist** |  |  | `skills/skills-eu-ai-act-specialist/SKILL.md` |
-| **skills-feature-flags-architect** |  |  | `skills/skills-feature-flags-architect/SKILL.md` |
-| **skills-handoff** |  |  | `skills/skills-handoff/SKILL.md` |
-| **skills-init** |  |  | `skills/skills-init/SKILL.md` |
-| **skills-iso42001-specialist** |  |  | `skills/skills-iso42001-specialist/SKILL.md` |
-| **skills-kubernetes-operator** |  |  | `skills/skills-kubernetes-operator/SKILL.md` |
-| **skills-review** |  |  | `skills/skills-review/SKILL.md` |
-| **skills-run** |  |  | `skills/skills-run/SKILL.md` |
-| **skills-slo-architect** |  |  | `skills/skills-slo-architect/SKILL.md` |
-| **skills-status** |  |  | `skills/skills-status/SKILL.md` |
-| **skills-status-2** |  |  | `skills/skills-status-2/SKILL.md` |
-| **slo-architect** | Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE... |  | `skills/slo-architect/SKILL.md` |
-| **slo-design** |  |  | `skills/slo-design/SKILL.md` |
-| **software-architecture** | System design patterns, Clean Architecture, SOLID principles, domain modeling. Use when making architectural decisions, designing new modules, refactoring a tangled codebase, or reviewing system de... |  | `skills/software-architecture/SKILL.md` |
-| **speech** | Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_spee... | `https://github.com/openai/skills` | `skills/speech/SKILL.md` |
-| **stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows |  | `skills/stream-chain/SKILL.md` |
-| **strict-api** | Use when the user says 'no hallucinations', 'verify APIs', 'reality check', or 'don't invent functions'. Prevents the agent from calling methods, imports, or variables that do not provably exist in... | `https://github.com/alirezarezvani/claude-skills` | `skills/strict-api/SKILL.md` |
-| **syllabus** | Generates a curated supplementary reading list from any course syllabus using Consensus academic search. Grill-me intake (syllabus input format + course audience + year range) plus a grouping forci... |  | `skills/syllabus/SKILL.md` |
-| **Systematic Debugging** | Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions. | `https://github.com/mrgoonie/claudekit-skills` | `skills/Systematic Debugging/SKILL.md` |
 | **tailored-resume-generator** | Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements to maximize interview chances | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/tailored-resume-generator/SKILL.md` |
-| **technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/technical-writing/SKILL.md` |
-| **TEMPLATE** |  |  | `skills/TEMPLATE/SKILL.md` |
-| **testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/testability-scoring/SKILL.md` |
-| **the-architect** | Interviews the user about what they want to build (phased discovery Q&A), classifies the project into an archetype (SaaS webapp, marketing site, mobile app, API backend, internal tool, content plat... | `https://github.com/Hainrixz/the-architect` | `skills/the-architect/SKILL.md` |
-| **timeline-report** | Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from claude-mem's timeline. Use when asked for a timeline report, project history analysis, dev... | `https://github.com/thedotmack/claude-mem` | `skills/timeline-report/SKILL.md` |
-| **transcribe** | Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in inte... | `https://github.com/openai/skills` | `skills/transcribe/SKILL.md` |
-| **triage** | Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. | `https://github.com/mattpocock/skills` | `skills/triage/SKILL.md` |
-| **twitter-algorithm-optimizer** | Analyze and optimize tweets for maximum reach using Twitter's open-source algorithm insights. Rewrite and edit user tweets to improve engagement and visibility based on how the recommendation syste... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/twitter-algorithm-optimizer/SKILL.md` |
-| **ui-widget-developer** | Build MCP servers for Copilot Chat using the OpenAI Apps SDK or MCP Apps SDK widget rendering support (any language). Use this skill when: - Creating MCP servers that integrate with M365 Copilot de... | `https://github.com/microsoft/skills` | `skills/ui-widget-developer/SKILL.md` |
-| **user-story** |  |  | `skills/user-story/SKILL.md` |
-| **V3 CLI Modernization** | CLI modernization and hooks system enhancement for claude-flow v3. Implements interactive prompts, command decomposition, enhanced hooks integration, and intelligent workflow automation. |  | `skills/V3 CLI Modernization/SKILL.md` |
-| **V3 Core Implementation** | Core module implementation for claude-flow v3. Implements DDD domains, clean architecture patterns, dependency injection, and modular TypeScript codebase with comprehensive testing. |  | `skills/V3 Core Implementation/SKILL.md` |
-| **V3 DDD Architecture** | Domain-Driven Design architecture for claude-flow v3. Implements modular, bounded context architecture with clean separation of concerns and microkernel pattern. |  | `skills/V3 DDD Architecture/SKILL.md` |
-| **V3 Deep Integration** | Deep agentic-flow@alpha integration implementing ADR-001. Eliminates 10,000+ duplicate lines by building claude-flow as specialized extension rather than parallel implementation. |  | `skills/V3 Deep Integration/SKILL.md` |
-| **V3 MCP Optimization** | MCP server optimization and transport layer enhancement for claude-flow v3. Implements connection pooling, load balancing, tool registry optimization, and performance monitoring for sub-100ms respo... |  | `skills/V3 MCP Optimization/SKILL.md` |
-| **V3 Memory Unification** | Unify 6+ memory systems into AgentDB with HNSW indexing for 150x-12,500x search improvements. Implements ADR-006 (Unified Memory Service) and ADR-009 (Hybrid Memory Backend). |  | `skills/V3 Memory Unification/SKILL.md` |
-| **V3 Performance Optimization** | Achieve aggressive v3 performance targets: 2.49x-7.47x Flash Attention speedup, 150x-12,500x search improvements, 50-75% memory reduction. Comprehensive benchmarking and optimization suite. |  | `skills/V3 Performance Optimization/SKILL.md` |
-| **V3 Security Overhaul** | Complete security architecture overhaul for claude-flow v3. Addresses critical CVEs (CVE-1, CVE-2, CVE-3) and implements secure-by-default patterns. Use for security-first v3 implementation. |  | `skills/V3 Security Overhaul/SKILL.md` |
-| **V3 Swarm Coordination** | 15-agent hierarchical mesh coordination for v3 implementation. Orchestrates parallel execution across security, core, and integration domains following 10 ADRs with 14-week timeline. |  | `skills/V3 Swarm Coordination/SKILL.md` |
-| **validation-pipeline** | Runs multi-stage validation gates with per-step scoring, pass/fail verdicts, and aggregate quality reports. Use when validating requirements, code, or artifacts through structured gate enforcement ... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/validation-pipeline/SKILL.md` |
-| **Verification & Quality Assurance** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/Verification & Quality Assurance/SKILL.md` |
-| **Verification Before Completion** | Run verification commands and confirm output before claiming success | `https://github.com/mrgoonie/claudekit-skills` | `skills/Verification Before Completion/SKILL.md` |
-| **version-bump** | Automated semantic versioning and release workflow for Claude Code plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging,... | `https://github.com/thedotmack/claude-mem` | `skills/version-bump/SKILL.md` |
-| **web** | Builds a complete website using visual assets generated with Forkads (saved in assets/) and a brief written in content/brief.md. Use when the user writes "/web" or says "read the web skill and buil... |  | `skills/web/SKILL.md` |
-| **web-frameworks** | Build modern full-stack web applications with Next.js (App Router, Server Components, RSC, PPR, SSR, SSG, ISR), Turborepo (monorepo management, task pipelines, remote caching, parallel execution), ... | `https://github.com/mrgoonie/claudekit-skills` | `skills/web-frameworks/SKILL.md` |
-| **web-perf** | Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (LCP, INP, CLS) and supplementary metrics (FCP, TBT, Speed Index), identifies render-blocking resources, network depende... | `https://github.com/cloudflare/skills` | `skills/web-perf/SKILL.md` |
-| **When Stuck - Problem-Solving Dispatch** | Dispatch to the right problem-solving technique based on how you're stuck | `https://github.com/mrgoonie/claudekit-skills` | `skills/When Stuck - Problem-Solving Dispatch/SKILL.md` |
-| **wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... | `https://github.com/proffesor-for-testing/agentic-qe` | `skills/wms-testing-patterns/SKILL.md` |
-| **wowerpoint** | Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as share... | `https://github.com/thedotmack/claude-mem` | `skills/wowerpoint/SKILL.md` |
-| **writing-beats** | Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it. | `https://github.com/mattpocock/skills` | `skills/writing-beats/SKILL.md` |
-| **writing-fragments** | Writing, explore — mine raw fragments, no structure yet. | `https://github.com/mattpocock/skills` | `skills/writing-fragments/SKILL.md` |
-| **writing-shape** | Writing, exploit — shape raw material into an article, paragraph by paragraph. | `https://github.com/mattpocock/skills` | `skills/writing-shape/SKILL.md` |
 | **xlsx** | Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file ... | `https://github.com/anthropics/skills` | `skills/xlsx/SKILL.md` |
 | **xlsx-official** | Generating Excel files with xlsx/exceljs in Node.js. Use when generating .xlsx reports, data exports, dashboards, or spreadsheets from database data. |  | `skills/xlsx-official/SKILL.md` |
-| **youtube-downloader** | Download YouTube videos with customizable quality and format options. Use this skill when the user asks to download, save, or grab YouTube videos. Supports various quality settings (best, 1080p, 72... | `https://github.com/ComposioHQ/awesome-claude-skills` | `skills/youtube-downloader/SKILL.md` |
-| **zustand-store-ts** | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reacti... | `https://github.com/microsoft/skills` | `skills/zustand-store-ts/SKILL.md` |
+
+### Other (12)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **chaos-experiment** |  |  | `skills/chaos-experiment/SKILL.md` |
+| **flag-cleanup** |  |  | `skills/flag-cleanup/SKILL.md` |
+| **persona** |  |  | `skills/persona/SKILL.md` |
+| **pipeline** |  |  | `skills/pipeline/SKILL.md` |
+| **prd** |  |  | `skills/prd/SKILL.md` |
+| **README** |  |  | `skills/README/SKILL.md` |
+| **retro** |  |  | `skills/retro/SKILL.md` |
+| **scaffold** |  | `https://github.com/microsoft/skills` | `skills/scaffold/SKILL.md` |
+| **skills-status** |  |  | `skills/skills-status/SKILL.md` |
+| **skills-status-2** |  |  | `skills/skills-status-2/SKILL.md` |
+| **TEMPLATE** |  |  | `skills/TEMPLATE/SKILL.md` |
+| **user-story** |  |  | `skills/user-story/SKILL.md` |
 
 ---
 

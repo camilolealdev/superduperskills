@@ -1,6 +1,10 @@
 # SuperDuperSkills
 
+![SuperDuperSkills](assets/hero.png)
+
 Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Codex CLI y otros agentes de IA.
+
+🔗 [Landing del repo](docs/index.html) — resumen visual de categorías, fuentes e instalación.
 
 ## Repositorios de Skills
 
@@ -40,23 +44,23 @@ Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) co
 
 | Categoría | Cantidad | Qué incluye |
 |-----------|----------|-------------|
-| Integrations & Automation | 823 | Conectores por app (`<app>-automation`): Ahrefs, Shopify, Apify, Zoho, QuickBooks, etc. |
-| DevOps & Cloud | 221 | Docker, Kubernetes, Terraform, CI/CD, Cloudflare, Wrangler, deploys, incidentes |
-| Development & Backend | 185 | Lenguajes, frameworks backend, APIs, DB, `senior-*`, arquitectura |
-| Project Management | 150 | Pipeline ágil (`ln-*`), planning, sprints, retros, roadmaps |
-| Engineering Practices | 168 | `ring:*`, `caveman-*`, `token-*`, clean-code, DDD, code review, skill-creator |
-| Testing & QA | 140 | `qe-*` (fleet de QA), TDD, coverage, mutation/contract/E2E testing |
-| Business & Strategy | 126 | C-level advisors, estrategia, finanzas, producto, create/grow/improve-app |
-| AI & Agents | 124 | MCP servers, agentes, RAG, prompt engineering, LLM tooling |
-| Marketing & Growth | 135 | Ads (12 plataformas), CRO, growth, ASO, positioning frameworks |
-| Design & UX | 113 | Frontend-design, design systems, anti-slop (`ponytail`, `taste-*`), DESIGN.md library |
-| Writing & Content | 69 | Copywriting, copy-editing, inglés de negocios, comunicación interna |
+| Integrations & Automation | 824 | Conectores por app (`<app>-automation`): Ahrefs, Shopify, Apify, Zoho, QuickBooks, etc. |
+| DevOps & Cloud | 234 | Docker, Kubernetes, Terraform, CI/CD, Cloudflare, Wrangler, deploys, incidentes |
+| Development & Backend | 206 | Lenguajes, frameworks backend, APIs, DB, `senior-*`, arquitectura |
+| Engineering Practices | 187 | `ring:*`, `caveman-*`, `token-*`, clean-code, DDD, code review, skill-creator |
+| Testing & QA | 156 | `qe-*` (fleet de QA), TDD, coverage, mutation/contract/E2E testing |
+| Project Management | 155 | Pipeline ágil (`ln-*`), planning, sprints, retros, roadmaps |
+| Business & Strategy | 145 | C-level advisors, estrategia, finanzas, producto, create/grow/improve-app |
+| AI & Agents | 147 | MCP servers, agentes, RAG, prompt engineering, LLM tooling |
+| Marketing & Growth | 140 | Ads (12 plataformas), CRO, growth, ASO, positioning frameworks |
+| Design & UX | 120 | Frontend-design, design systems, anti-slop (`ponytail`, `taste-*`), DESIGN.md library |
+| Writing & Content | 80 | Copywriting, copy-editing, inglés de negocios, comunicación interna |
 | SEO & Content | 58 | Keyword research, schema markup, technical SEO, GEO/AI-visibility |
-| Compliance & Legal | 33 | GDPR, SOC2, ISO, auditorías regulatorias |
-| Video & Animation | 16 | GSAP, Lottie, Three.js, producción de video |
-| Productivity & People | 9 | Onboarding, hiring, coaching, cultura de equipo |
-| Sales & Comms | 7 | Cold email, propuestas comerciales, pitch decks |
-| Other | 175 | Skills genuinamente sin categoría limpia; ver `SKILLS-INDEX.md` |
+| Compliance & Legal | 37 | GDPR, SOC2, ISO, auditorías regulatorias |
+| Video & Animation | 18 | GSAP, Lottie, Three.js, producción de video |
+| Productivity & People | 25 | Onboarding, hiring, coaching, cultura de equipo, office tools (pdf/xlsx/docx/pptx) |
+| Sales & Comms | 8 | Cold email, propuestas comerciales, pitch decks |
+| Other | 12 | Genuine remainder: README, TEMPLATE, empty-description one-offs |
 
 El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
 

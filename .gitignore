@@ -19,3 +19,7 @@
 !hooks/**
 !templates/
 !templates/**
+!docs/
+!docs/**
+!assets/
+!assets/**
