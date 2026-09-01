@@ -1,6 +1,11 @@
 # 🚀 SuperDuperSkills
 
 <p align="center">
+  <img src="https://github.com/camilolealdev/superduperskills/actions/workflows/build-site.yml/badge.svg" alt="Build & Deploy Site" />
+  <a href="https://camilolealdev.github.io/superduperskills/"><img src="https://img.shields.io/badge/Live-Site-00f2fe?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Live Site" /></a>
+</p>
+
+<p align="center">
   <img src="docs/assets/hero-dashboard.jpg" alt="SuperDuperSkills Hero Dashboard" width="100%" />
 </p>
 

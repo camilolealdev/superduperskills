@@ -1,0 +1,75 @@
+name: PR Preview Deploy
+
+on:
+  pull_request:
+    paths:
+      - 'web/**'
+      - 'docs/**'
+    types: [opened, synchronize, reopened, closed]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    if: github.event.action != 'closed'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install html-minifier-terser
+        run: npm install -g html-minifier-terser
+
+      - name: Build preview
+        run: |
+          cp web/skills-site.html preview/index.html
+          cp web/icon.svg preview/ 2>/dev/null || true
+          cp web/manifest.json preview/ 2>/dev/null || true
+          npx --yes html-minifier-terser \
+            --collapse-whitespace \
+            --remove-comments \
+            --remove-redundant-attributes \
+            --minify-css true \
+            --minify-js true \
+            -o preview/index.min.html \
+            web/skills-site.html
+
+      - name: Deploy preview
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./preview
+          destination_dir: pr-${{ github.event.pull_request.number }}
+          keep_files: true
+
+      - name: Comment on PR
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          issue-number: ${{ github.event.pull_request.number }}
+          body: |
+            ## 🚀 Preview Deployed
+
+            **Live preview:** [View →](https://camilolealdev.github.io/superduperskills/pr-${{ github.event.pull_request.number }}/index.html)
+
+            > Built from `${{ github.event.pull_request.head.sha }}`
+
+  cleanup:
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+
+      - name: Remove preview directory
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          rm -rf pr-${{ github.event.pull_request.number }}
+          git add -A
+          git diff --staged --quiet || git commit -m "chore: cleanup preview pr-${{ github.event.pull_request.number }}"
+          git push
