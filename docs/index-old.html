@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SuperDuperSkills — Índice de Skills</title>
+<style>
+  :root {
+    --ink: #1B1F1C;
+    --paper: #EEEAE0;
+    --paper-raised: #E4DFD1;
+    --moss: #3F5D45;
+    --moss-deep: #2C4732;
+    --ochre: #B07F1F;
+    --rule: rgba(27, 31, 28, 0.16);
+    --rule-strong: rgba(27, 31, 28, 0.32);
+    --shadow: rgba(27, 31, 28, 0.12);
+
+    --font-display: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #EDE9DD;
+    --paper: #15181A;
+    --paper-raised: #1C2023;
+    --moss: #7DA688;
+    --moss-deep: #A6C7AE;
+    --ochre: #E0AC4F;
+    --rule: rgba(237, 233, 221, 0.14);
+    --rule-strong: rgba(237, 233, 221, 0.28);
+    --shadow: rgba(0, 0, 0, 0.4);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #EDE9DD;
+      --paper: #15181A;
+      --paper-raised: #1C2023;
+      --moss: #7DA688;
+      --moss-deep: #A6C7AE;
+      --ochre: #E0AC4F;
+      --rule: rgba(237, 233, 221, 0.14);
+      --rule-strong: rgba(237, 233, 221, 0.28);
+      --shadow: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  a { color: var(--moss-deep); }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    text-wrap: balance;
+    margin: 0;
+  }
+
+  code, .mono, .num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .masthead {
+    border-bottom: 1px solid var(--rule-strong);
+    padding: 20px 0;
+  }
+  .masthead .wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .mark {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+  }
+  .mark .dot { color: var(--ochre); }
+  .masthead nav {
+    display: flex;
+    gap: 22px;
+    font-size: 0.88rem;
+  }
+  .masthead nav a {
+    text-decoration: none;
+    color: var(--ink);
+    opacity: 0.7;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  .masthead nav a:hover { opacity: 1; border-bottom-color: var(--ochre); }
+
+  .hero { padding: 56px 0 40px; }
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 18px;
+  }
+  .hero-img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid var(--rule-strong);
+    margin-bottom: 32px;
+    display: none;
+  }
+  .hero-img[src] { display: block; }
+  .hero h1 {
+    font-size: clamp(2.3rem, 5vw, 3.4rem);
+    line-height: 1.08;
+    font-weight: 700;
+    max-width: 15ch;
+  }
+  .hero .stamp {
+    color: var(--ochre);
+    font-variant-numeric: tabular-nums;
+  }
+  .hero p.lede {
+    max-width: 52ch;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    opacity: 0.85;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 3px;
+    display: inline-block;
+    border: 1px solid var(--rule-strong);
+  }
+  .btn-primary {
+    background: var(--moss);
+    color: var(--paper);
+    border-color: var(--moss);
+  }
+  .btn-primary:hover { background: var(--moss-deep); border-color: var(--moss-deep); }
+  .btn-ghost { color: var(--ink); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  .ledger {
+    border-top: 1px solid var(--rule-strong);
+    border-bottom: 1px solid var(--rule-strong);
+    background: var(--paper-raised);
+  }
+  .ledger .wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+  .ledger-item {
+    padding: 26px 20px;
+    border-right: 1px solid var(--rule);
+    text-align: center;
+  }
+  .ledger-item:last-child { border-right: none; }
+  .ledger-num {
+    font-size: 1.9rem;
+    font-weight: 700;
+    color: var(--moss-deep);
+  }
+  .ledger-label {
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-top: 4px;
+  }
+
+  section { padding: 64px 0; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--rule-strong);
+    padding-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .section-head h2 { font-size: 1.5rem; }
+  .section-head .tag {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--moss);
+  }
+
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .cat-card {
+    background: var(--paper);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .cat-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+  }
+  .cat-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+  }
+  .cat-count {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--ochre);
+    flex-shrink: 0;
+  }
+  .cat-card p {
+    margin: 0;
+    font-size: 0.86rem;
+    opacity: 0.72;
+    line-height: 1.5;
+  }
+
+  .specimen-list { display: flex; flex-direction: column; }
+  .specimen {
+    display: grid;
+    grid-template-columns: 90px 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .specimen:first-child { border-top: 1px solid var(--rule); }
+  .specimen-star {
+    font-family: var(--font-mono);
+    font-size: 0.92rem;
+    color: var(--moss-deep);
+    font-weight: 600;
+  }
+  .specimen-name { font-size: 0.98rem; }
+  .specimen-name code { font-size: 0.9rem; opacity: 0.85; }
+  .specimen-desc {
+    display: block;
+    font-size: 0.83rem;
+    opacity: 0.65;
+    margin-top: 2px;
+  }
+  .specimen-tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ochre);
+    border: 1px solid var(--ochre);
+    padding: 3px 9px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--moss);
+    display: block;
+    margin-bottom: 10px;
+  }
+  .step h3 { font-size: 1.05rem; margin-bottom: 8px; }
+  .step p { margin: 0; font-size: 0.9rem; opacity: 0.72; }
+
+  .terminal {
+    background: var(--ink);
+    color: var(--paper);
+    border-radius: 6px;
+    padding: 22px 24px;
+    font-family: var(--font-mono);
+    font-size: 0.86rem;
+    overflow-x: auto;
+    line-height: 1.7;
+  }
+  .terminal .prompt { color: var(--ochre); }
+  .terminal .comment { opacity: 0.5; }
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 14px;
+  }
+  .tab {
+    font-family: var(--font-mono);
+    font-size: 0.76rem;
+    padding: 6px 14px;
+    border-radius: 3px 3px 0 0;
+    background: var(--paper-raised);
+    border: 1px solid var(--rule-strong);
+    border-bottom: none;
+    cursor: default;
+    opacity: 0.55;
+  }
+  .tab.active { opacity: 1; background: var(--paper); }
+
+  footer {
+    border-top: 1px solid var(--rule-strong);
+    padding: 36px 0 48px;
+  }
+  footer .wrap {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.82rem;
+    opacity: 0.65;
+  }
+  footer a { color: inherit; }
+
+  @media (max-width: 720px) {
+    .ledger .wrap { grid-template-columns: repeat(2, 1fr); }
+    .ledger-item:nth-child(2) { border-right: none; }
+    .steps { grid-template-columns: 1fr; }
+    .specimen { grid-template-columns: 60px 1fr; }
+    .specimen-tag { grid-column: 1 / -1; justify-self: start; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="mark">superduperskills<span class="dot">.</span></div>
+    <nav>
+      <a href="#categorias">Categorías</a>
+      <a href="#fuentes">Fuentes</a>
+      <a href="#instalar">Instalar</a>
+      <a href="https://github.com/camilolealdev/superduperskills">GitHub ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-img" src="../assets/hero.png" alt="SuperDuperSkills" onerror="this.removeAttribute('src')">
+      <div class="hero-eyebrow">Índice · Claude Code · OpenCode · Gemini CLI</div>
+      <h1>Un catálogo de <span class="stamp">2552</span> skills, no 2552 carpetas sueltas.</h1>
+      <p class="lede">
+        SuperDuperSkills recopila, deduplica y categoriza skills de más de 30 fuentes
+        externas verificadas — desde repos de 196 mil estrellas hasta herramientas propias —
+        en un solo bundle instalable.
+      </p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#instalar">Instalar el bundle</a>
+        <a class="btn btn-ghost" href="https://github.com/camilolealdev/superduperskills">Ver en GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="ledger">
+    <div class="wrap">
+      <div class="ledger-item">
+        <div class="ledger-num num">2552</div>
+        <div class="ledger-label">Skills únicos</div>
+      </div>
+      <div class="ledger-item">
+        <div class="ledger-num num">17</div>
+        <div class="ledger-label">Categorías</div>
+      </div>
+      <div class="ledger-item">
+        <div class="ledger-num num">32+</div>
+        <div class="ledger-label">Fuentes verificadas</div>
+      </div>
+      <div class="ledger-item">
+        <div class="ledger-num num">4</div>
+        <div class="ledger-label">Skills propios</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="categorias">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Categorías</h2>
+        <span class="tag">build_index.py · regenerado automáticamente</span>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Integrations &amp; Automation</h3><span class="cat-count num">824</span></div>
+          <p>Conectores por app: Ahrefs, Shopify, Apify, Zoho, QuickBooks y más</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>DevOps &amp; Cloud</h3><span class="cat-count num">234</span></div>
+          <p>Docker, Kubernetes, Terraform, CI/CD, Cloudflare, deploys, incidentes</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Development &amp; Backend</h3><span class="cat-count num">206</span></div>
+          <p>Lenguajes, frameworks backend, APIs, bases de datos, arquitectura</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Engineering Practices</h3><span class="cat-count num">187</span></div>
+          <p>Workflow de ingeniería, caveman-*, token-*, clean-code, code review</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Testing &amp; QA</h3><span class="cat-count num">156</span></div>
+          <p>Fleet de QA, TDD, coverage, mutation/contract/E2E testing</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Project Management</h3><span class="cat-count num">155</span></div>
+          <p>Pipeline ágil, planning, sprints, retros, roadmaps</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>AI &amp; Agents</h3><span class="cat-count num">147</span></div>
+          <p>Servidores MCP, agentes, RAG, prompt engineering</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Business &amp; Strategy</h3><span class="cat-count num">145</span></div>
+          <p>Asesores C-level, estrategia, finanzas, create/grow/improve-app</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Marketing &amp; Growth</h3><span class="cat-count num">140</span></div>
+          <p>Ads en 12 plataformas, CRO, growth, ASO</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Design &amp; UX</h3><span class="cat-count num">120</span></div>
+          <p>Frontend-design, design systems, anti-slop, librería DESIGN.md</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Writing &amp; Content</h3><span class="cat-count num">80</span></div>
+          <p>Copywriting, copy-editing, comunicación interna</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>SEO &amp; Content</h3><span class="cat-count num">58</span></div>
+          <p>Keyword research, schema markup, GEO/AI-visibility</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Compliance &amp; Legal</h3><span class="cat-count num">37</span></div>
+          <p>GDPR, SOC2, ISO, auditorías regulatorias</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Video &amp; Animation</h3><span class="cat-count num">18</span></div>
+          <p>GSAP, Lottie, Three.js, producción de video</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Productivity &amp; People</h3><span class="cat-count num">25</span></div>
+          <p>Onboarding, hiring, coaching, cultura, office tools</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Sales &amp; Comms</h3><span class="cat-count num">8</span></div>
+          <p>Cold email, propuestas comerciales, pitch decks</p>
+        </div>
+        <div class="cat-card">
+          <div class="cat-card-top"><h3>Other</h3><span class="cat-count num">12</span></div>
+          <p>Remanente genuino: README, TEMPLATE, one-offs sin descripción</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fuentes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Fuentes destacadas</h2>
+        <span class="tag">verificadas por estrellas reales, no ranking de búsqueda</span>
+      </div>
+      <div class="specimen-list">
+        <div class="specimen">
+          <span class="specimen-star num">196k★</span>
+          <div class="specimen-name"><code>andrej-karpathy-skills</code><span class="specimen-desc">Guías anti-overengineering derivadas de observaciones de Karpathy sobre LLM coding</span></div>
+          <span class="specimen-tag">Anti-slop</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">189k★</span>
+          <div class="specimen-name"><code>mattpocock/skills</code><span class="specimen-desc">to-spec, wayfinder, TDD, domain-modeling, code review</span></div>
+          <span class="specimen-tag">Ingeniería</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">105k★</span>
+          <div class="specimen-name"><code>awesome-design-md</code><span class="specimen-desc">74 archivos DESIGN.md documentando sistemas de diseño de marcas conocidas</span></div>
+          <span class="specimen-tag">Diseño</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">88.8k★</span>
+          <div class="specimen-name"><code>claude-mem</code><span class="specimen-desc">Memoria y contexto persistente entre sesiones</span></div>
+          <span class="specimen-tag">Memoria</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">82.9k★</span>
+          <div class="specimen-name"><code>ponytail</code><span class="specimen-desc">YAGNI aplicado: la escalera de "¿esto necesita existir?" antes de escribir código</span></div>
+          <span class="specimen-tag">Simplicidad</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">71.2k★</span>
+          <div class="specimen-name"><code>awesome-claude-skills</code><span class="specimen-desc">Colección general — descubrir skills y plugins</span></div>
+          <span class="specimen-tag">Colección</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">64.9k★</span>
+          <div class="specimen-name"><code>taste-skill</code><span class="specimen-desc">Diseño anti-genérico: brandkit, variantes minimalista y brutalista</span></div>
+          <span class="specimen-tag">Diseño</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="candidatos">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Candidatos a instalar</h2>
+        <span class="tag">investigado — aún no clonado ni contado en el índice</span>
+      </div>
+      <p style="max-width:60ch;opacity:.72;font-size:.92rem;margin:0 0 24px;">
+        Sales &amp; Comms (8), Compliance &amp; Legal (37) y SEO &amp; Content (58) son las categorías más
+        delgadas del bundle. Estas fuentes cubrirían el hueco en la próxima ronda de <code>install.ps1</code>.
+      </p>
+      <div class="specimen-list">
+        <div class="specimen">
+          <span class="specimen-star num">GTM</span>
+          <div class="specimen-name"><code>sales-skills/sales</code><span class="specimen-desc">CRM, outbound, note-takers, enrichment, email marketing, social listening</span></div>
+          <span class="specimen-tag">Sales &amp; Comms</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">GTM</span>
+          <div class="specimen-name"><code>louisblythe/Sales-Skills</code><span class="specimen-desc">Playbooks, ICP, sales call analysis, analytics, sales engineering</span></div>
+          <span class="specimen-tag">Sales &amp; Comms</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">GRC</span>
+          <div class="specimen-name"><code>Sushegaad/Claude-Skills-GRC</code><span class="specimen-desc">ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, DORA, CMMC 2.0</span></div>
+          <span class="specimen-tag">Compliance</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">GRC</span>
+          <div class="specimen-name"><code>scytale-labs/GRC-Claude-Skills</code><span class="specimen-desc">10 skills packaged for engineers, security practitioners, auditors</span></div>
+          <span class="specimen-tag">Compliance</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">25+18</span>
+          <div class="specimen-name"><code>AgriciDaniel/claude-seo</code><span class="specimen-desc">25 sub-skills + 18 sub-agents: technical SEO, E-E-A-T, GEO/AEO, backlinks, local, i18n</span></div>
+          <span class="specimen-tag">SEO</span>
+        </div>
+        <div class="specimen">
+          <span class="specimen-star num">MCP</span>
+          <div class="specimen-name"><code>seranking/seo-skills</code><span class="specimen-desc">Content briefs, AI-search share of voice, backlink gaps, keyword clusters, schema</span></div>
+          <span class="specimen-tag">SEO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Cómo funciona</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Clonar</h3>
+          <p>El repo trae el bundle completo en <code>skills/</code>, listo para instalar sin depender de las fuentes originales.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Instalar</h3>
+          <p><code>install.ps1</code> o <code>install.sh</code> copian cada skill al directorio del agente correspondiente.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Confirmar</h3>
+          <p>Un hook <code>SessionStart</code> pregunta qué skills usar por proyecto antes de escribir código — evita cargar de más.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="instalar">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Instalación</h2>
+      </div>
+      <div class="tabs">
+        <div class="tab active">powershell</div>
+        <div class="tab">bash</div>
+      </div>
+      <div class="terminal">
+<span class="comment"># Todos los agentes detectados</span>
+<span class="prompt">PS&gt;</span> .\install.ps1 -Target all
+
+<span class="comment"># Solo Claude Code</span>
+<span class="prompt">PS&gt;</span> .\install.ps1 -Target claude
+
+<span class="comment"># Regenerar el índice después de instalar más fuentes</span>
+<span class="prompt">PS&gt;</span> python build_index.py</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>SuperDuperSkills — regenerado con <code>build_index.py</code></span>
+    <span><a href="https://github.com/camilolealdev/superduperskills">github.com/camilolealdev/superduperskills</a></span>
+  </div>
+</footer>
+
+</body>
+</html>

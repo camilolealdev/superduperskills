@@ -1,638 +1,1591 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SuperDuperSkills — Índice de Skills</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SuperDuperSkills — Catálogo de 2,638 Skills para IA</title>
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="SuperDuperSkills — Catálogo de 2,638 Skills para IA">
+<meta property="og:description" content="Inventario unificado de skills multi-agente: Claude Code, Gemini CLI, Codex. 17 categorías, 30+ fuentes verificadas, instalable en 30 segundos.">
+<meta property="og:image" content="https://raw.githubusercontent.com/camilolealdev/superduperskills/master/assets/og-image.png">
+<meta property="og:url" content="https://camilolealdev.github.io/superduperskills/">
+<meta property="og:site_name" content="SuperDuperSkills">
+<meta property="og:locale" content="es_LA">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SuperDuperSkills — Catálogo de 2,638 Skills para IA">
+<meta name="twitter:description" content="Inventario unificado de skills multi-agente: Claude Code, Gemini CLI, Codex. 17 categorías, 30+ fuentes.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/camilolealdev/superduperskills/master/assets/og-image.png">
+
+<!-- Favicon -->
+
+<meta name="theme-color" content="#0c0e13">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SuperDuperSkills">
+<meta name="description" content="Catálogo de 2,638 skills para agentes de IA. Claude Code, Gemini CLI, Codex. 17 categorías, 30+ fuentes.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --ink: #1B1F1C;
-    --paper: #EEEAE0;
-    --paper-raised: #E4DFD1;
-    --moss: #3F5D45;
-    --moss-deep: #2C4732;
-    --ochre: #B07F1F;
-    --rule: rgba(27, 31, 28, 0.16);
-    --rule-strong: rgba(27, 31, 28, 0.32);
-    --shadow: rgba(27, 31, 28, 0.12);
+/* ═══════════════════════════════════════════
+   TOKENS
+   ═══════════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
-    --font-display: Charter, "Iowan Old Style", "Palatino Linotype", Georgia, serif;
-    --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    --font-mono: ui-monospace, "SF Mono", "Cascadia Code", Consolas, monospace;
-  }
+:root {
+  --bg: #0c0e13;
+  --surface: rgba(22,25,34,0.55);
+  --surface-raised: rgba(30,34,48,0.7);
+  --ink: #e8e6e1;
+  --ink-muted: #8b8d97;
+  --accent: #00e5a0;
+  --accent-alt: #6c5ce7;
+  --comic-red: #ff6b6b;
+  --comic-yellow: #ffd93d;
+  --comic-blue: #4facfe;
+  --comic-pink: #e100ff;
+  --border: rgba(255,255,255,0.06);
+  --border-glass: rgba(255,255,255,0.08);
+  --glow: rgba(0,229,160,0.15);
+  --font-display: 'Bangers', cursive;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  /* Emil Kowalski easing curves */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
 
-  :root[data-theme="dark"] {
-    --ink: #EDE9DD;
-    --paper: #15181A;
-    --paper-raised: #1C2023;
-    --moss: #7DA688;
-    --moss-deep: #A6C7AE;
-    --ochre: #E0AC4F;
-    --rule: rgba(237, 233, 221, 0.14);
-    --rule-strong: rgba(237, 233, 221, 0.28);
-    --shadow: rgba(0, 0, 0, 0.4);
-  }
+html { scroll-behavior: smooth; }
 
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --ink: #EDE9DD;
-      --paper: #15181A;
-      --paper-raised: #1C2023;
-      --moss: #7DA688;
-      --moss-deep: #A6C7AE;
-      --ochre: #E0AC4F;
-      --rule: rgba(237, 233, 221, 0.14);
-      --rule-strong: rgba(237, 233, 221, 0.28);
-      --shadow: rgba(0, 0, 0, 0.4);
-    }
-  }
+/* Light mode tokens */
+html[data-theme="light"] {
+  --bg: #f5f4f0;
+  --surface: rgba(255,255,255,0.6);
+  --surface-raised: rgba(255,255,255,0.8);
+  --ink: #1a1c1e;
+  --ink-muted: #6b6e76;
+  --border: rgba(0,0,0,0.06);
+  --border-glass: rgba(0,0,0,0.08);
+  --glow: rgba(0,180,120,0.12);
+}
+html[data-theme="light"] body {
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(0,180,120,0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 30%, rgba(79,172,254,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(108,92,231,0.03) 0%, transparent 50%);
+}
+html[data-theme="light"] body::before {
+  background-image: radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px);
+}
+html[data-theme="light"] .onboarding-overlay {
+  background: rgba(245,244,240,0.88);
+}
+html[data-theme="light"] header {
+  background: rgba(245,244,240,0.6);
+}
+html[data-theme="light"] .search-input,
+html[data-theme="light"] .filter-chip,
+html[data-theme="light"] .iso-card,
+html[data-theme="light"] .comic-panel,
+html[data-theme="light"] .terminal-block {
+  background: rgba(255,255,255,0.55);
+  border-color: rgba(0,0,0,0.08);
+}
+html[data-theme="light"] .terminal-block {
+  background: rgba(30,32,38,0.9);
+}
+html[data-theme="light"] .step-dot {
+  background: rgba(0,0,0,0.12);
+}
+html[data-theme="light"] .speech-bubble {
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(0,0,0,0.1);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+html[data-theme="light"] .modal-backdrop {
+  background: rgba(245,244,240,0.7);
+}
+html[data-theme="light"] .modal-content {
+  background: rgba(255,255,255,0.85);
+  border-color: rgba(0,0,0,0.08);
+}
+html[data-theme="light"] .theme-toggle svg { color: var(--ink); }
 
-  * { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(0,229,160,0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 30%, rgba(79,172,254,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(108,92,231,0.05) 0%, transparent 50%);
+  color: var(--ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.55;
-    -webkit-font-smoothing: antialiased;
-  }
+/* Halftone — fixed, pointer-events-none, cheap */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.012) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+  z-index: 9999;
+}
 
-  .wrap {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 28px;
-  }
+/* ═══════════════════════════════════════════
+   PARTICLE CANVAS
+   ═══════════════════════════════════════════ */
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
 
-  a { color: var(--moss-deep); }
+/* ═══════════════════════════════════════════
+   ONBOARDING
+   ═══════════════════════════════════════════ */
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: rgba(12,14,19,0.85);
+  backdrop-filter: blur(30px) saturate(1.2);
+  -webkit-backdrop-filter: blur(30px) saturate(1.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s var(--ease-out), visibility 0.4s;
+}
+.onboarding-overlay.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.onboarding-content { text-align: center; max-width: 560px; padding: 2rem; }
 
-  h1, h2, h3 {
-    font-family: var(--font-display);
-    text-wrap: balance;
-    margin: 0;
-  }
+.onboarding-step { display: none; }
+.onboarding-step.active {
+  display: block;
+  animation: stepEnter 0.45s var(--ease-out) forwards;
+}
+@keyframes stepEnter {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
 
-  code, .mono, .num {
-    font-family: var(--font-mono);
-    font-variant-numeric: tabular-nums;
-  }
+.onboarding-step .step-icon { font-size: 3.5rem; margin-bottom: 0.75rem; display: block; }
+.onboarding-step h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, var(--accent), var(--comic-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.onboarding-step p {
+  color: var(--ink-muted);
+  font-size: 1rem;
+  max-width: 42ch;
+  margin: 0 auto 1.5rem;
+}
 
-  .masthead {
-    border-bottom: 1px solid var(--rule-strong);
-    padding: 20px 0;
-  }
-  .masthead .wrap {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-  }
-  .mark {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 1.05rem;
-    letter-spacing: 0.02em;
-  }
-  .mark .dot { color: var(--ochre); }
-  .masthead nav {
-    display: flex;
-    gap: 22px;
-    font-size: 0.88rem;
-  }
-  .masthead nav a {
-    text-decoration: none;
-    color: var(--ink);
-    opacity: 0.7;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-  }
-  .masthead nav a:hover { opacity: 1; border-bottom-color: var(--ochre); }
+.step-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 1.5rem; }
+.step-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: all 0.3s var(--ease-out);
+}
+.step-dot.active {
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--glow);
+  width: 20px;
+  border-radius: 3px;
+}
 
-  .hero { padding: 56px 0 40px; }
-  .hero-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--moss);
-    margin-bottom: 18px;
-  }
-  .hero-img {
-    width: 100%;
-    max-height: 320px;
-    object-fit: cover;
-    border-radius: 6px;
-    border: 1px solid var(--rule-strong);
-    margin-bottom: 32px;
-    display: none;
-  }
-  .hero-img[src] { display: block; }
-  .hero h1 {
-    font-size: clamp(2.3rem, 5vw, 3.4rem);
-    line-height: 1.08;
-    font-weight: 700;
-    max-width: 15ch;
-  }
-  .hero .stamp {
-    color: var(--ochre);
-    font-variant-numeric: tabular-nums;
-  }
-  .hero p.lede {
-    max-width: 52ch;
-    font-size: 1.1rem;
-    margin-top: 20px;
-    opacity: 0.85;
-  }
-  .hero-actions {
-    display: flex;
-    gap: 14px;
-    margin-top: 32px;
-    flex-wrap: wrap;
-  }
-  .btn {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    text-decoration: none;
-    padding: 11px 20px;
-    border-radius: 3px;
-    display: inline-block;
-    border: 1px solid var(--rule-strong);
-  }
-  .btn-primary {
-    background: var(--moss);
-    color: var(--paper);
-    border-color: var(--moss);
-  }
-  .btn-primary:hover { background: var(--moss-deep); border-color: var(--moss-deep); }
-  .btn-ghost { color: var(--ink); }
-  .btn-ghost:hover { border-color: var(--ink); }
+.btn-skip {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border-glass);
+  padding: 7px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+}
+.btn-skip:hover { color: var(--ink); border-color: rgba(255,255,255,0.15); }
 
-  .ledger {
-    border-top: 1px solid var(--rule-strong);
-    border-bottom: 1px solid var(--rule-strong);
-    background: var(--paper-raised);
-  }
-  .ledger .wrap {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-  }
-  .ledger-item {
-    padding: 26px 20px;
-    border-right: 1px solid var(--rule);
-    text-align: center;
-  }
-  .ledger-item:last-child { border-right: none; }
-  .ledger-num {
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: var(--moss-deep);
-  }
-  .ledger-label {
-    font-size: 0.76rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    opacity: 0.65;
-    margin-top: 4px;
-  }
+.btn-next {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  color: var(--bg);
+  background: linear-gradient(135deg, var(--accent), var(--comic-blue));
+  border: none;
+  padding: 11px 32px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.16s var(--ease-out), box-shadow 0.2s var(--ease-out);
+  margin-top: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0,229,160,0.25);
+}
+.btn-next:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,229,160,0.35); }
+.btn-next:active { transform: scale(0.97); }
 
-  section { padding: 64px 0; }
-  .section-head {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 16px;
-    margin-bottom: 30px;
-    border-bottom: 1px solid var(--rule-strong);
-    padding-bottom: 14px;
-    flex-wrap: wrap;
-  }
-  .section-head h2 { font-size: 1.5rem; }
-  .section-head .tag {
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--moss);
-  }
+/* ═══════════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════════ */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(20px) saturate(1.4);
+  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  background: rgba(12,14,19,0.5);
+  border-bottom: 1px solid var(--border);
+  padding: 0.85rem 2rem;
+}
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+}
+.brand span { color: var(--accent); }
+.header-stats {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+.header-stats .num { color: var(--accent); font-weight: 700; }
+.header-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+  padding: 5px 12px;
+  border: 1px solid var(--border-glass);
+  border-radius: 6px;
+  transition: all 0.2s var(--ease-out);
+}
+.header-link:hover { color: var(--accent); border-color: var(--accent); }
+.header-link svg { width: 14px; height: 14px; }
 
-  .cat-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-    gap: 1px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
-  }
-  .cat-card {
-    background: var(--paper);
-    padding: 20px 22px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .cat-card-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 10px;
-  }
-  .cat-card h3 {
-    font-size: 1rem;
-    font-weight: 700;
-  }
-  .cat-count {
-    font-family: var(--font-mono);
-    font-size: 0.95rem;
-    color: var(--ochre);
-    flex-shrink: 0;
-  }
-  .cat-card p {
-    margin: 0;
-    font-size: 0.86rem;
-    opacity: 0.72;
-    line-height: 1.5;
-  }
+/* ═══════════════════════════════════════════
+   HERO
+   ═══════════════════════════════════════════ */
+.hero {
+  padding: 3.5rem 2rem 1.5rem;
+  text-align: center;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 500px; height: 250px;
+  background: radial-gradient(ellipse, var(--glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 6vw, 4.2rem);
+  letter-spacing: 0.05em;
+  line-height: 1.1;
+  position: relative; z-index: 1;
+}
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--accent), var(--comic-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero .subtitle {
+  font-size: 1rem;
+  color: var(--ink-muted);
+  max-width: 46ch;
+  margin: 0.75rem auto 0;
+  position: relative; z-index: 1;
+}
 
-  .specimen-list { display: flex; flex-direction: column; }
-  .specimen {
-    display: grid;
-    grid-template-columns: 90px 1fr auto;
-    gap: 18px;
-    align-items: center;
-    padding: 16px 0;
-    border-bottom: 1px solid var(--rule);
-  }
-  .specimen:first-child { border-top: 1px solid var(--rule); }
-  .specimen-star {
-    font-family: var(--font-mono);
-    font-size: 0.92rem;
-    color: var(--moss-deep);
-    font-weight: 600;
-  }
-  .specimen-name { font-size: 0.98rem; }
-  .specimen-name code { font-size: 0.9rem; opacity: 0.85; }
-  .specimen-desc {
-    display: block;
-    font-size: 0.83rem;
-    opacity: 0.65;
-    margin-top: 2px;
-  }
-  .specimen-tag {
-    font-family: var(--font-mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--ochre);
-    border: 1px solid var(--ochre);
-    padding: 3px 9px;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
+/* ═══════════════════════════════════════════
+   SECTIONS
+   ═══════════════════════════════════════════ */
+.iso-section {
+  padding: 1.5rem 2rem 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.iso-section-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.iso-section-title .dot { color: var(--accent); }
+.iso-section-sub {
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  margin-bottom: 1.25rem;
+}
 
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-  }
-  .step-num {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    color: var(--moss);
-    display: block;
-    margin-bottom: 10px;
-  }
-  .step h3 { font-size: 1.05rem; margin-bottom: 8px; }
-  .step p { margin: 0; font-size: 0.9rem; opacity: 0.72; }
+/* ═══════════════════════════════════════════
+   SEARCH & FILTER
+   ═══════════════════════════════════════════ */
+.search-bar {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.search-input-wrap {
+  flex: 1; min-width: 200px;
+  position: relative;
+}
+.search-input-wrap svg {
+  position: absolute; left: 12px; top: 50%;
+  transform: translateY(-50%);
+  width: 14px; height: 14px;
+  color: var(--ink-muted);
+  pointer-events: none;
+}
+.search-input {
+  width: 100%;
+  padding: 9px 12px 9px 36px;
+  background: var(--surface);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-glass);
+  border-radius: 10px;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  outline: none;
+  transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+.search-input::placeholder { color: var(--ink-muted); opacity: 0.5; }
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0,229,160,0.1);
+}
 
-  .terminal {
-    background: var(--ink);
-    color: var(--paper);
-    border-radius: 6px;
-    padding: 22px 24px;
-    font-family: var(--font-mono);
-    font-size: 0.86rem;
-    overflow-x: auto;
-    line-height: 1.7;
-  }
-  .terminal .prompt { color: var(--ochre); }
-  .terminal .comment { opacity: 0.5; }
-  .tabs {
-    display: flex;
-    gap: 4px;
-    margin-bottom: 14px;
-  }
-  .tab {
-    font-family: var(--font-mono);
-    font-size: 0.76rem;
-    padding: 6px 14px;
-    border-radius: 3px 3px 0 0;
-    background: var(--paper-raised);
-    border: 1px solid var(--rule-strong);
-    border-bottom: none;
-    cursor: default;
-    opacity: 0.55;
-  }
-  .tab.active { opacity: 1; background: var(--paper); }
+.filter-chips { display: flex; gap: 5px; flex-wrap: wrap; }
+.filter-chip {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 4px 10px;
+  border-radius: 20px;
+  border: 1px solid var(--border-glass);
+  background: var(--surface);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+  white-space: nowrap;
+}
+.filter-chip:hover { border-color: rgba(255,255,255,0.15); color: var(--ink); }
+.filter-chip.active {
+  background: rgba(0,229,160,0.12);
+  border-color: var(--accent);
+  color: var(--accent);
+}
 
-  footer {
-    border-top: 1px solid var(--rule-strong);
-    padding: 36px 0 48px;
-  }
-  footer .wrap {
-    display: flex;
-    justify-content: space-between;
-    gap: 16px;
-    flex-wrap: wrap;
-    font-size: 0.82rem;
-    opacity: 0.65;
-  }
-  footer a { color: inherit; }
+.search-count {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.4rem;
+}
+.search-count .num { color: var(--accent); font-weight: 700; }
 
-  @media (max-width: 720px) {
-    .ledger .wrap { grid-template-columns: repeat(2, 1fr); }
-    .ledger-item:nth-child(2) { border-right: none; }
-    .steps { grid-template-columns: 1fr; }
-    .specimen { grid-template-columns: 60px 1fr; }
-    .specimen-tag { grid-column: 1 / -1; justify-self: start; }
-  }
+/* ═══════════════════════════════════════════
+   CARD GRID
+   ═══════════════════════════════════════════ */
+.iso-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 10px;
+}
+
+/* Card — glassmorphism with solid fallback */
+.iso-card {
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(1.3);
+  -webkit-backdrop-filter: blur(16px) saturate(1.3);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 1.25rem;
+  position: relative;
+  cursor: default;
+  transition: transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
+}
+.iso-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.12);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+.iso-card:active { transform: scale(0.98); }
+
+/* Colored top accent line */
+.iso-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 12px; right: 12px;
+  height: 2px;
+  border-radius: 0 0 2px 2px;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease-out);
+}
+.iso-card:hover::before { opacity: 1; }
+.iso-card[data-color="green"]::before { background: var(--accent); }
+.iso-card[data-color="blue"]::before { background: var(--comic-blue); }
+.iso-card[data-color="purple"]::before { background: var(--accent-alt); }
+.iso-card[data-color="red"]::before { background: var(--comic-red); }
+.iso-card[data-color="yellow"]::before { background: var(--comic-yellow); }
+.iso-card[data-color="pink"]::before { background: var(--comic-pink); }
+
+.iso-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.6rem;
+}
+.iso-card-icon { font-size: 1.5rem; }
+.iso-card-count {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.04);
+}
+
+/* Animated counter — starts at 0, reveals on scroll */
+.iso-card-count[data-target] {
+  transition: transform 0.2s var(--ease-out);
+}
+.iso-card-count.counting {
+  transform: scale(1.08);
+}
+.iso-card h3 {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+.iso-card > .iso-card-face > p {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+}
+.iso-card-detail {
+  font-size: 0.7rem;
+  color: var(--ink-muted);
+  opacity: 0.6;
+  margin-top: 0.3rem;
+  line-height: 1.4;
+}
+
+/* Tags */
+.iso-card-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 0.5rem; }
+.iso-tag {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  color: var(--ink-muted);
+  border: 1px solid rgba(255,255,255,0.06);
+  white-space: nowrap;
+}
+
+/* Progress bar */
+.iso-bar-wrap {
+  margin-top: 0.6rem;
+  height: 2px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 1px;
+  overflow: hidden;
+}
+.iso-bar { height: 100%; border-radius: 1px; }
+.iso-card[data-color="green"] .iso-bar { background: var(--accent); }
+.iso-card[data-color="blue"] .iso-bar { background: var(--comic-blue); }
+.iso-card[data-color="purple"] .iso-bar { background: var(--accent-alt); }
+.iso-card[data-color="red"] .iso-bar { background: var(--comic-red); }
+.iso-card[data-color="yellow"] .iso-bar { background: var(--comic-yellow); }
+.iso-card[data-color="pink"] .iso-bar { background: var(--comic-pink); }
+
+.iso-card.hidden-card { display: none; }
+
+/* Speech bubble tooltip */
+.speech-bubble {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: var(--surface-raised);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.7rem;
+  color: var(--ink);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+  z-index: 10;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+}
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%; left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: rgba(255,255,255,0.1);
+}
+.iso-card:hover .speech-bubble {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* ═══════════════════════════════════════════
+   COMIC PANELS
+   ═══════════════════════════════════════════ */
+.comic-panels {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+@media (max-width: 768px) { .comic-panels { grid-template-columns: 1fr; } }
+
+.comic-panel {
+  background: var(--surface);
+  backdrop-filter: blur(16px) saturate(1.2);
+  -webkit-backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 1.75rem;
+  position: relative;
+  text-align: center;
+  transition: transform 0.2s var(--ease-out);
+}
+.comic-panel:hover { transform: translateY(-1px); }
+.comic-panel:active { transform: scale(0.98); }
+.comic-panel-num {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--accent);
+  opacity: 0.1;
+  position: absolute;
+  top: 6px; right: 10px;
+  line-height: 1;
+}
+.comic-panel-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.comic-panel h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+.comic-panel p {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  max-width: 28ch;
+  margin: 0 auto;
+}
+.comic-panel code {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  background: rgba(0,229,160,0.08);
+  color: var(--accent);
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-top: 0.6rem;
+}
+
+/* ═══════════════════════════════════════════
+   TERMINAL
+   ═══════════════════════════════════════════ */
+.install-section {
+  padding: 2rem 2rem 4rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.terminal-block {
+  background: rgba(10,12,16,0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glass);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+}
+.terminal-header {
+  display: flex; gap: 5px;
+  padding: 9px 12px;
+  background: rgba(255,255,255,0.02);
+  border-bottom: 1px solid var(--border);
+}
+.terminal-dot { width: 9px; height: 9px; border-radius: 50%; }
+.terminal-dot:nth-child(1) { background: #ff5f57; }
+.terminal-dot:nth-child(2) { background: #febc2e; }
+.terminal-dot:nth-child(3) { background: #28c840; }
+.terminal-body {
+  padding: 1.1rem 1.25rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #a7f3d0;
+  overflow-x: auto;
+}
+.terminal-body .prompt { color: var(--accent); }
+.terminal-body .comment { color: var(--ink-muted); }
+.terminal-body .cmd { color: var(--comic-yellow); }
+.terminal-body .flag { color: var(--comic-blue); }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════ */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* ═══════════════════════════════════════════
+   THEME TOGGLE
+   ═══════════════════════════════════════════ */
+.theme-toggle {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-glass);
+  border-radius: 8px;
+  width: 34px; height: 34px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+  color: var(--ink-muted);
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: rgba(255,255,255,0.15); color: var(--ink); }
+.theme-toggle:active { transform: scale(0.93); }
+.theme-toggle svg { width: 16px; height: 16px; }
+.theme-toggle .icon-moon { display: block; }
+.theme-toggle .icon-sun { display: none; }
+html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
+
+/* ═══════════════════════════════════════════
+   MODAL
+   ═══════════════════════════════════════════ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  background: rgba(12,14,19,0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s var(--ease-out), visibility 0.25s;
+}
+.modal-backdrop.open { opacity: 1; visibility: visible; }
+.modal-content {
+  background: var(--surface);
+  backdrop-filter: blur(20px) saturate(1.3);
+  -webkit-backdrop-filter: blur(20px) saturate(1.3);
+  border: 1px solid var(--border-glass);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 480px;
+  width: 90%;
+  position: relative;
+  transform: scale(0.95) translateY(8px);
+  transition: transform 0.3s var(--ease-out);
+}
+.modal-backdrop.open .modal-content {
+  transform: scale(1) translateY(0);
+}
+.modal-close {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-glass);
+  border-radius: 6px;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  color: var(--ink-muted);
+  font-size: 1rem;
+  transition: all 0.15s var(--ease-out);
+}
+.modal-close:hover { color: var(--ink); border-color: rgba(255,255,255,0.15); }
+.modal-close:active { transform: scale(0.9); }
+.modal-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.modal-title {
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+.modal-count {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.modal-desc {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+.modal-examples {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+.modal-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1rem; }
+.modal-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  padding: 3px 9px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  color: var(--ink-muted);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.modal-bar-wrap {
+  height: 4px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.modal-bar { height: 100%; border-radius: 2px; }
+.iso-card { cursor: pointer; }
+
+/* ═══════════════════════════════════════════
+   SCROLL REVEAL — entry from scale(0.95) + opacity
+   Emil: never animate from scale(0)
+   ═══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px) scale(0.98);
+  transition: opacity 0.45s var(--ease-out), transform 0.45s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+/* Stagger: 40ms between items — Emil recommends 30-80ms */
+.iso-grid .reveal:nth-child(2) { transition-delay: 0.04s; }
+.iso-grid .reveal:nth-child(3) { transition-delay: 0.08s; }
+.iso-grid .reveal:nth-child(4) { transition-delay: 0.12s; }
+.iso-grid .reveal:nth-child(5) { transition-delay: 0.16s; }
+.iso-grid .reveal:nth-child(6) { transition-delay: 0.2s; }
+.iso-grid .reveal:nth-child(7) { transition-delay: 0.24s; }
+.iso-grid .reveal:nth-child(8) { transition-delay: 0.28s; }
+.iso-grid .reveal:nth-child(9) { transition-delay: 0.32s; }
+.iso-grid .reveal:nth-child(10) { transition-delay: 0.36s; }
+.iso-grid .reveal:nth-child(11) { transition-delay: 0.4s; }
+.iso-grid .reveal:nth-child(12) { transition-delay: 0.44s; }
+.iso-grid .reveal:nth-child(13) { transition-delay: 0.48s; }
+.iso-grid .reveal:nth-child(14) { transition-delay: 0.52s; }
+.iso-grid .reveal:nth-child(15) { transition-delay: 0.56s; }
+.iso-grid .reveal:nth-child(16) { transition-delay: 0.6s; }
+.iso-grid .reveal:nth-child(17) { transition-delay: 0.64s; }
+
+/* ═══════════════════════════════════════════
+   PREFERS-REDUCED-MOTION
+   ═══════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .onboarding-step.active { animation: none; }
+  .iso-card { transition: none; }
+  .comic-panel { transition: none; }
+  .filter-chip { transition: none; }
+  .btn-next { transition: none; }
+  .speech-bubble { transition: none; }
+  #particles { display: none; }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════ */
+@media (max-width: 600px) {
+  header { padding: 0.65rem 1rem; }
+  .header-stats { display: none; }
+  .hero { padding: 2rem 1rem 1rem; }
+  .iso-section { padding: 1rem 1rem 2rem; }
+  .iso-grid { grid-template-columns: 1fr; }
+  .install-section { padding: 1.5rem 1rem 2.5rem; }
+  .search-bar { flex-direction: column; align-items: stretch; }
+  .filter-chips { justify-content: center; }
+}
 </style>
 </head>
 <body>
 
-<header class="masthead">
-  <div class="wrap">
-    <div class="mark">superduperskills<span class="dot">.</span></div>
-    <nav>
-      <a href="#categorias">Categorías</a>
-      <a href="#fuentes">Fuentes</a>
-      <a href="#instalar">Instalar</a>
-      <a href="https://github.com/camilolealdev/superduperskills">GitHub ↗</a>
-    </nav>
+<canvas id="particles"></canvas>
+
+<!-- ═══════════════════════════════════════
+     ONBOARDING
+     ═══════════════════════════════════════ -->
+<div class="onboarding-overlay" id="onboarding">
+  <div class="onboarding-content">
+    <div class="onboarding-step active" data-step="0">
+      <span class="step-icon">⚡</span>
+      <h2>Welcome to SuperDuperSkills</h2>
+      <p>Un catálogo masivo de skills para agentes de IA — Claude Code, Gemini CLI, Codex y más.</p>
+    </div>
+    <div class="onboarding-step" data-step="1">
+      <span class="step-icon">🧩</span>
+      <h2>2,638 Skills Únicos</h2>
+      <p>Deduplicados de 30+ fuentes verificadas. Organizados en 17 categorías.</p>
+    </div>
+    <div class="onboarding-step" data-step="2">
+      <span class="step-icon">🎯</span>
+      <h2>Suite Core Obligatoria</h2>
+      <p>8 skills fundamentales que todo agente debe invocar antes de escribir código.</p>
+    </div>
+    <div class="onboarding-step" data-step="3">
+      <span class="step-icon">🚀</span>
+      <h2>Instala en 30 Segundos</h2>
+      <p>Un solo comando para instalar todos los skills en tu agente favorito.</p>
+    </div>
+    <div class="step-dots">
+      <div class="step-dot active"></div>
+      <div class="step-dot"></div>
+      <div class="step-dot"></div>
+      <div class="step-dot"></div>
+    </div>
+    <button class="btn-next" id="btn-next">Next →</button>
+    <br>
+    <button class="btn-skip" id="btn-skip">Skip</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════ -->
+<header>
+  <div class="header-inner">
+    <div class="brand">SuperDuper<span>Skills</span></div>
+    <div class="header-stats">
+      <span><span class="num">2,638</span> skills</span>
+      <span><span class="num">17</span> cats</span>
+      <a class="header-link" href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="wrap">
-      <img class="hero-img" src="../assets/hero.png" alt="SuperDuperSkills" onerror="this.removeAttribute('src')">
-      <div class="hero-eyebrow">Índice · Claude Code · OpenCode · Gemini CLI</div>
-      <h1>Un catálogo de <span class="stamp">2552</span> skills, no 2552 carpetas sueltas.</h1>
-      <p class="lede">
-        SuperDuperSkills recopila, deduplica y categoriza skills de más de 30 fuentes
-        externas verificadas — desde repos de 196 mil estrellas hasta herramientas propias —
-        en un solo bundle instalable.
-      </p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#instalar">Instalar el bundle</a>
-        <a class="btn btn-ghost" href="https://github.com/camilolealdev/superduperskills">Ver en GitHub</a>
+<!-- ═══════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════ -->
+<section class="hero">
+  <h1>Catálogo <span class="highlight">Isométrico</span></h1>
+  <p class="subtitle">2,638 habilidades organizadas por categoría, fuente y relevancia.</p>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CATEGORIES
+     ═══════════════════════════════════════ -->
+<section class="iso-section reveal">
+  <h2 class="iso-section-title"><span class="dot">●</span> Categorías</h2>
+  <p class="iso-section-sub">build_index.py · auto-generated</p>
+
+  <div class="search-bar">
+    <div class="search-input-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" id="searchInput" type="text" placeholder="Search categories...">
+    </div>
+    <div class="filter-chips" id="filterChips">
+      <button class="filter-chip active" data-filter="all">All</button>
+      <button class="filter-chip" data-filter="dev">Dev</button>
+      <button class="filter-chip" data-filter="design">Design</button>
+      <button class="filter-chip" data-filter="marketing">Marketing</button>
+      <button class="filter-chip" data-filter="infra">Infra</button>
+      <button class="filter-chip" data-filter="ai">AI</button>
+    </div>
+  </div>
+  <div class="search-count" id="searchCount"><span class="num">17</span> categories</div>
+
+  <div class="iso-grid" id="categoryGrid">
+
+    <div class="iso-card reveal" data-color="green" data-tags="integrations,automation,saas,connectors">
+      <div class="iso-card-face">
+        <div class="speech-bubble">824 conectores</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🔌</span>
+          <span class="iso-card-count" style="color:var(--accent)" data-target="824">0</span>
+        </div>
+        <h3>Integrations & Automation</h3>
+        <p>Conectores por app listos para invocar: automatiza flujos entre herramientas.</p>
+        <div class="iso-card-detail">Shopify · Ahrefs · Apify · Zoho · QuickBooks · Composio · +800</div>
+        <div class="iso-card-tags"><span class="iso-tag">SaaS</span><span class="iso-tag">API</span><span class="iso-tag">MCP</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:100%"></div></div>
       </div>
     </div>
-  </section>
 
-  <div class="ledger">
-    <div class="wrap">
-      <div class="ledger-item">
-        <div class="ledger-num num">2552</div>
-        <div class="ledger-label">Skills únicos</div>
+    <div class="iso-card reveal" data-color="blue" data-tags="devops,cloud,infrastructure,docker,kubernetes">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Docker → K8s → Cloud</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">☁️</span>
+          <span class="iso-card-count" style="color:var(--comic-blue)" data-target="234">0</span>
+        </div>
+        <h3>DevOps & Cloud</h3>
+        <p>Infraestructura como código, containers, orquestación y deployment.</p>
+        <div class="iso-card-detail">Docker · Kubernetes · Terraform · GitHub Actions · AWS</div>
+        <div class="iso-card-tags"><span class="iso-tag">IaC</span><span class="iso-tag">GitOps</span><span class="iso-tag">CI/CD</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:28%"></div></div>
       </div>
-      <div class="ledger-item">
-        <div class="ledger-num num">17</div>
-        <div class="ledger-label">Categorías</div>
+    </div>
+
+    <div class="iso-card reveal" data-color="purple" data-tags="backend,frontend,languages,frameworks">
+      <div class="iso-card-face">
+        <div class="speech-bubble">APIs + DB + Arch</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">⚙️</span>
+          <span class="iso-card-count" style="color:var(--accent-alt)" data-target="206">0</span>
+        </div>
+        <h3>Development & Backend</h3>
+        <p>Lenguajes, frameworks y patrones de arquitectura para sistemas robustos.</p>
+        <div class="iso-card-detail">React · Next.js · NestJS · Django · Go · Rust · Swift</div>
+        <div class="iso-card-tags"><span class="iso-tag">Fullstack</span><span class="iso-tag">APIs</span><span class="iso-tag">DB</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:25%"></div></div>
       </div>
-      <div class="ledger-item">
-        <div class="ledger-num num">32+</div>
-        <div class="ledger-label">Fuentes verificadas</div>
+    </div>
+
+    <div class="iso-card reveal" data-color="green" data-tags="engineering,quality,code-review,clean-code">
+      <div class="iso-card-face">
+        <div class="speech-bubble">YAGNI → Clean → Review</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🔧</span>
+          <span class="iso-card-count" style="color:var(--accent)" data-target="187">0</span>
+        </div>
+        <h3>Engineering Practices</h3>
+        <p>Disciplina de ingeniería: compresión, simplicidad extrema, limpieza.</p>
+        <div class="iso-card-detail">caveman · ponytail · clean-code · code-review · token-efficiency</div>
+        <div class="iso-card-tags"><span class="iso-tag">YAGNI</span><span class="iso-tag">KISS</span><span class="iso-tag">DRY</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:23%"></div></div>
       </div>
-      <div class="ledger-item">
-        <div class="ledger-num num">4</div>
-        <div class="ledger-label">Skills propios</div>
+    </div>
+
+    <div class="iso-card reveal" data-color="red" data-tags="testing,qa,tdd,e2e,coverage">
+      <div class="iso-card-face">
+        <div class="speech-bubble">TDD + E2E + Contract</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🧪</span>
+          <span class="iso-card-count" style="color:var(--comic-red)" data-target="156">0</span>
+        </div>
+        <h3>Testing & QA</h3>
+        <p>Fleet completa de QA: unit tests hasta chaos engineering.</p>
+        <div class="iso-card-detail">Playwright · Jest · Pytest · Mutation · Contract · TDD</div>
+        <div class="iso-card-tags"><span class="iso-tag">Unit</span><span class="iso-tag">E2E</span><span class="iso-tag">Chaos</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:19%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="yellow" data-tags="project-management,agile,sprints,roadmaps">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Sprints + Retros</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">📋</span>
+          <span class="iso-card-count" style="color:var(--comic-yellow)" data-target="155">0</span>
+        </div>
+        <h3>Project Management</h3>
+        <p>Pipeline ágil end-to-end: planificación hasta retrospective.</p>
+        <div class="iso-card-detail">Scrum · Kanban · JQL · Linear · Velocity · Retros</div>
+        <div class="iso-card-tags"><span class="iso-tag">Scrum</span><span class="iso-tag">OKRs</span><span class="iso-tag">Jira</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:19%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="pink" data-tags="ai,agents,llm,mcp,rag">
+      <div class="iso-card-face">
+        <div class="speech-bubble">MCP + RAG + Agents</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🤖</span>
+          <span class="iso-card-count" style="color:var(--comic-pink)" data-target="147">0</span>
+        </div>
+        <h3>AI & Agents</h3>
+        <p>Agentes, servidores MCP, pipelines RAG y orquestación multi-agente.</p>
+        <div class="iso-card-detail">MCP · RAG · Prompt Engineering · LangChain · Vector DBs</div>
+        <div class="iso-card-tags"><span class="iso-tag">LLM</span><span class="iso-tag">RAG</span><span class="iso-tag">Agents</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:18%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="blue" data-tags="business,strategy,startup,finance">
+      <div class="iso-card-face">
+        <div class="speech-bubble">C-Suite + Strategy</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">💼</span>
+          <span class="iso-card-count" style="color:var(--comic-blue)" data-target="145">0</span>
+        </div>
+        <h3>Business & Strategy</h3>
+        <p>Asesores ejecutivos virtuales y frameworks estratégicos.</p>
+        <div class="iso-card-detail">CFO · CMO · CRO · CTO · Lean Startup · Blue Ocean</div>
+        <div class="iso-card-tags"><span class="iso-tag">Startup</span><span class="iso-tag">Finance</span><span class="iso-tag">GTM</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:17%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="yellow" data-tags="marketing,growth,ads,cro,aso">
+      <div class="iso-card-face">
+        <div class="speech-bubble">12 ad platforms</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">📈</span>
+          <span class="iso-card-count" style="color:var(--comic-yellow)" data-target="140">0</span>
+        </div>
+        <h3>Marketing & Growth</h3>
+        <p>Publicidad multi-plataforma, CRO y estrategias de crecimiento.</p>
+        <div class="iso-card-detail">Google Ads · Meta · LinkedIn · TikTok · CRO · ASO</div>
+        <div class="iso-card-tags"><span class="iso-tag">PPC</span><span class="iso-tag">SEO</span><span class="iso-tag">Growth</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:17%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="purple" data-tags="design,ux,ui,frontend,accessibility">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Anti-slop design</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🎨</span>
+          <span class="iso-card-count" style="color:var(--accent-alt)" data-target="120">0</span>
+        </div>
+        <h3>Design & UX</h3>
+        <p>Diseño premium, tokens, anti-genericismo y librería de marcas.</p>
+        <div class="iso-card-detail">design-taste · apply-aesthetic · DESIGN.md · WCAG</div>
+        <div class="iso-card-tags"><span class="iso-tag">Systems</span><span class="iso-tag">Tokens</span><span class="iso-tag">A11y</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:14%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="green" data-tags="writing,content,copywriting,editing">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Copy → Humanize</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">✍️</span>
+          <span class="iso-card-count" style="color:var(--accent)" data-target="80">0</span>
+        </div>
+        <h3>Writing & Content</h3>
+        <p>Redacción profesional, edición y comunicación técnica.</p>
+        <div class="iso-card-detail">Copywriting · Humanizer · Technical Writing · UX Writing</div>
+        <div class="iso-card-tags"><span class="iso-tag">Copy</span><span class="iso-tag">Docs</span><span class="iso-tag">Voice</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:10%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="blue" data-tags="seo,geo,keywords,schema,technical-seo">
+      <div class="iso-card-face">
+        <div class="speech-bubble">GEO + Schema</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🔍</span>
+          <span class="iso-card-count" style="color:var(--comic-blue)" data-target="58">0</span>
+        </div>
+        <h3>SEO & Content</h3>
+        <p>SEO técnico, estructurado para motores de AI.</p>
+        <div class="iso-card-detail">Keyword Research · Schema · GEO/AEO · E-E-A-T</div>
+        <div class="iso-card-tags"><span class="iso-tag">Technical</span><span class="iso-tag">GEO</span><span class="iso-tag">AI SEO</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:7%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="red" data-tags="compliance,legal,security,regulatory">
+      <div class="iso-card-face">
+        <div class="speech-bubble">GDPR + SOC2</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🛡️</span>
+          <span class="iso-card-count" style="color:var(--comic-red)" data-target="37">0</span>
+        </div>
+        <h3>Compliance & Legal</h3>
+        <p>Cumplimiento regulatorio y auditorías de seguridad.</p>
+        <div class="iso-card-detail">GDPR · SOC 2 · ISO 27001 · HIPAA · EU AI Act</div>
+        <div class="iso-card-tags"><span class="iso-tag">GDPR</span><span class="iso-tag">SOC2</span><span class="iso-tag">ISO</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:4.5%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="pink" data-tags="video,animation,gsap,threejs,lottie">
+      <div class="iso-card-face">
+        <div class="speech-bubble">GSAP + Three.js</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">🎬</span>
+          <span class="iso-card-count" style="color:var(--comic-pink)" data-target="18">0</span>
+        </div>
+        <h3>Video & Animation</h3>
+        <p>Producción de video, animaciones web y 3D.</p>
+        <div class="iso-card-detail">GSAP · Lottie · Three.js · HyperFrames · Remotion</div>
+        <div class="iso-card-tags"><span class="iso-tag">Motion</span><span class="iso-tag">3D</span><span class="iso-tag">Video</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:2.2%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="yellow" data-tags="productivity,people,hiring,culture">
+      <div class="iso-card-face">
+        <div class="speech-bubble">People + Ops</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">👥</span>
+          <span class="iso-card-count" style="color:var(--comic-yellow)" data-target="25">0</span>
+        </div>
+        <h3>Productivity & People</h3>
+        <p>Gestión de personas, cultura y productividad.</p>
+        <div class="iso-card-detail">Onboarding · Hiring · Coaching · Culture · Office Tools</div>
+        <div class="iso-card-tags"><span class="iso-tag">HR</span><span class="iso-tag">Culture</span><span class="iso-tag">Docs</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:3%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="green" data-tags="sales,comms,cold-email,proposals">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Cold → Pitch → Close</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">💬</span>
+          <span class="iso-card-count" style="color:var(--accent)" data-target="8">0</span>
+        </div>
+        <h3>Sales & Comms</h3>
+        <p>Outbound, propuestas y comunicación de ventas.</p>
+        <div class="iso-card-detail">Cold Email · Proposals · SOW · NDA · Pitch Decks</div>
+        <div class="iso-card-tags"><span class="iso-tag">Outbound</span><span class="iso-tag">Proposals</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:1%"></div></div>
+      </div>
+    </div>
+
+    <div class="iso-card reveal" data-color="blue" data-tags="other,misc,templates">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Remanente</div>
+        <div class="iso-card-top">
+          <span class="iso-card-icon">📦</span>
+          <span class="iso-card-count" style="color:var(--comic-blue)" data-target="12">0</span>
+        </div>
+        <h3>Other</h3>
+        <p>Skills misceláneos: READMEs, templates y utilidades.</p>
+        <div class="iso-card-tags"><span class="iso-tag">Templates</span><span class="iso-tag">Misc</span></div>
+        <div class="iso-bar-wrap"><div class="iso-bar" style="width:1.5%"></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     HOW IT WORKS
+     ═══════════════════════════════════════ -->
+<section class="iso-section reveal">
+  <h2 class="iso-section-title"><span class="dot">●</span> Cómo Funciona</h2>
+  <p class="iso-section-sub">3 pasos para tener todos los skills listos</p>
+
+  <div class="comic-panels">
+    <div class="comic-panel reveal">
+      <span class="comic-panel-num">01</span>
+      <div class="comic-panel-icon">📦</div>
+      <h3>Clonar</h3>
+      <p>El repo trae el bundle completo en <code>skills/</code>.</p>
+      <code>git clone</code>
+    </div>
+    <div class="comic-panel reveal">
+      <span class="comic-panel-num">02</span>
+      <div class="comic-panel-icon">⚡</div>
+      <h3>Instalar</h3>
+      <p>Un script copia cada skill al directorio de tu agente.</p>
+      <code>.\install.ps1 -Target all</code>
+    </div>
+    <div class="comic-panel reveal">
+      <span class="comic-panel-num">03</span>
+      <div class="comic-panel-icon">✅</div>
+      <h3>Confirmar</h3>
+      <p>Un hook <code>SessionStart</code> pregunta qué skills usar.</p>
+      <code>token-savings</code>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     CORE SUITE
+     ═══════════════════════════════════════ -->
+<section class="iso-section reveal">
+  <h2 class="iso-section-title"><span class="dot">●</span> Suite Core</h2>
+  <p class="iso-section-sub">Los 8 skills que TODO agente debe invocar primero</p>
+
+  <div class="iso-grid">
+    <div class="iso-card reveal" data-color="green">
+      <div class="iso-card-face">
+        <div class="speech-bubble">−75% tokens</div>
+        <div class="iso-card-top"><span class="iso-card-icon">🪨</span><span class="iso-card-count" style="color:var(--accent)">CORE</span></div>
+        <h3>caveman</h3>
+        <p>Comunicación ultra-compresa. 0% pérdida de precisión.</p>
+      </div>
+    </div>
+    <div class="iso-card reveal" data-color="blue">
+      <div class="iso-card-face">
+        <div class="speech-bubble">stdlib > deps</div>
+        <div class="iso-card-top"><span class="iso-card-icon">📏</span><span class="iso-card-count" style="color:var(--comic-blue)">CORE</span></div>
+        <h3>ponytail</h3>
+        <p>Escala de pereza YAGNI. ¿Una línea?</p>
+      </div>
+    </div>
+    <div class="iso-card reveal" data-color="purple">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Spec → Tasks</div>
+        <div class="iso-card-top"><span class="iso-card-icon">📐</span><span class="iso-card-count" style="color:var(--accent-alt)">CORE</span></div>
+        <h3>spec-kit</h3>
+        <p>Specs antes de código, tareas antes de specs.</p>
+      </div>
+    </div>
+    <div class="iso-card reveal" data-color="yellow">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Context budget</div>
+        <div class="iso-card-top"><span class="iso-card-icon">💰</span><span class="iso-card-count" style="color:var(--comic-yellow)">CORE</span></div>
+        <h3>token-savings</h3>
+        <p>Confirma skills por proyecto antes de empezar.</p>
+      </div>
+    </div>
+    <div class="iso-card reveal" data-color="red">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Test harness</div>
+        <div class="iso-card-top"><span class="iso-card-icon">🎰</span><span class="iso-card-count" style="color:var(--comic-red)">CORE</span></div>
+        <h3>harness</h3>
+        <p>Verificación continua antes de declarar done.</p>
+      </div>
+    </div>
+    <div class="iso-card reveal" data-color="pink">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Between sessions</div>
+        <div class="iso-card-top"><span class="iso-card-icon">🧠</span><span class="iso-card-count" style="color:var(--comic-pink)">CORE</span></div>
+        <h3>claude-mem</h3>
+        <p>Memoria persistente entre sesiones.</p>
+      </div>
+    </div>
+    <div class="iso-card reveal" data-color="green">
+      <div class="iso-card-face">
+        <div class="speech-bubble">−90% logs</div>
+        <div class="iso-card-top"><span class="iso-card-icon">🦀</span><span class="iso-card-count" style="color:var(--accent)">CORE</span></div>
+        <h3>rtk</h3>
+        <p>Rust Token Killer. Filtra logs de terminal.</p>
+      </div>
+    </div>
+    <div class="iso-card reveal" data-color="blue">
+      <div class="iso-card-face">
+        <div class="speech-bubble">Knowledge graph</div>
+        <div class="iso-card-top"><span class="iso-card-icon">🕸️</span><span class="iso-card-count" style="color:var(--comic-blue)">CORE</span></div>
+        <h3>graphify</h3>
+        <p>Grafo de conocimiento del código.</p>
       </div>
     </div>
   </div>
+</section>
 
-  <section id="categorias">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Categorías</h2>
-        <span class="tag">build_index.py · regenerado automáticamente</span>
-      </div>
-      <div class="cat-grid">
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Integrations &amp; Automation</h3><span class="cat-count num">824</span></div>
-          <p>Conectores por app: Ahrefs, Shopify, Apify, Zoho, QuickBooks y más</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>DevOps &amp; Cloud</h3><span class="cat-count num">234</span></div>
-          <p>Docker, Kubernetes, Terraform, CI/CD, Cloudflare, deploys, incidentes</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Development &amp; Backend</h3><span class="cat-count num">206</span></div>
-          <p>Lenguajes, frameworks backend, APIs, bases de datos, arquitectura</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Engineering Practices</h3><span class="cat-count num">187</span></div>
-          <p>Workflow de ingeniería, caveman-*, token-*, clean-code, code review</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Testing &amp; QA</h3><span class="cat-count num">156</span></div>
-          <p>Fleet de QA, TDD, coverage, mutation/contract/E2E testing</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Project Management</h3><span class="cat-count num">155</span></div>
-          <p>Pipeline ágil, planning, sprints, retros, roadmaps</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>AI &amp; Agents</h3><span class="cat-count num">147</span></div>
-          <p>Servidores MCP, agentes, RAG, prompt engineering</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Business &amp; Strategy</h3><span class="cat-count num">145</span></div>
-          <p>Asesores C-level, estrategia, finanzas, create/grow/improve-app</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Marketing &amp; Growth</h3><span class="cat-count num">140</span></div>
-          <p>Ads en 12 plataformas, CRO, growth, ASO</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Design &amp; UX</h3><span class="cat-count num">120</span></div>
-          <p>Frontend-design, design systems, anti-slop, librería DESIGN.md</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Writing &amp; Content</h3><span class="cat-count num">80</span></div>
-          <p>Copywriting, copy-editing, comunicación interna</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>SEO &amp; Content</h3><span class="cat-count num">58</span></div>
-          <p>Keyword research, schema markup, GEO/AI-visibility</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Compliance &amp; Legal</h3><span class="cat-count num">37</span></div>
-          <p>GDPR, SOC2, ISO, auditorías regulatorias</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Video &amp; Animation</h3><span class="cat-count num">18</span></div>
-          <p>GSAP, Lottie, Three.js, producción de video</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Productivity &amp; People</h3><span class="cat-count num">25</span></div>
-          <p>Onboarding, hiring, coaching, cultura, office tools</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Sales &amp; Comms</h3><span class="cat-count num">8</span></div>
-          <p>Cold email, propuestas comerciales, pitch decks</p>
-        </div>
-        <div class="cat-card">
-          <div class="cat-card-top"><h3>Other</h3><span class="cat-count num">12</span></div>
-          <p>Remanente genuino: README, TEMPLATE, one-offs sin descripción</p>
-        </div>
-      </div>
+<!-- ═══════════════════════════════════════
+     INSTALL
+     ═══════════════════════════════════════ -->
+<section class="install-section reveal">
+  <h2 class="iso-section-title"><span class="dot">●</span> Instalación</h2>
+  <p class="iso-section-sub" style="margin-bottom:1.25rem;">Un comando para instalar todo</p>
+  <div class="terminal-block">
+    <div class="terminal-header">
+      <div class="terminal-dot"></div>
+      <div class="terminal-dot"></div>
+      <div class="terminal-dot"></div>
     </div>
-  </section>
+    <div class="terminal-body">
+<span class="comment"># Windows</span>
+<span class="prompt">PS&gt;</span> <span class="cmd">.\install.ps1</span> <span class="flag">-Target all</span>
 
-  <section id="fuentes">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Fuentes destacadas</h2>
-        <span class="tag">verificadas por estrellas reales, no ranking de búsqueda</span>
-      </div>
-      <div class="specimen-list">
-        <div class="specimen">
-          <span class="specimen-star num">196k★</span>
-          <div class="specimen-name"><code>andrej-karpathy-skills</code><span class="specimen-desc">Guías anti-overengineering derivadas de observaciones de Karpathy sobre LLM coding</span></div>
-          <span class="specimen-tag">Anti-slop</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">189k★</span>
-          <div class="specimen-name"><code>mattpocock/skills</code><span class="specimen-desc">to-spec, wayfinder, TDD, domain-modeling, code review</span></div>
-          <span class="specimen-tag">Ingeniería</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">105k★</span>
-          <div class="specimen-name"><code>awesome-design-md</code><span class="specimen-desc">74 archivos DESIGN.md documentando sistemas de diseño de marcas conocidas</span></div>
-          <span class="specimen-tag">Diseño</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">88.8k★</span>
-          <div class="specimen-name"><code>claude-mem</code><span class="specimen-desc">Memoria y contexto persistente entre sesiones</span></div>
-          <span class="specimen-tag">Memoria</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">82.9k★</span>
-          <div class="specimen-name"><code>ponytail</code><span class="specimen-desc">YAGNI aplicado: la escalera de "¿esto necesita existir?" antes de escribir código</span></div>
-          <span class="specimen-tag">Simplicidad</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">71.2k★</span>
-          <div class="specimen-name"><code>awesome-claude-skills</code><span class="specimen-desc">Colección general — descubrir skills y plugins</span></div>
-          <span class="specimen-tag">Colección</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">64.9k★</span>
-          <div class="specimen-name"><code>taste-skill</code><span class="specimen-desc">Diseño anti-genérico: brandkit, variantes minimalista y brutalista</span></div>
-          <span class="specimen-tag">Diseño</span>
-        </div>
-      </div>
+<span class="comment"># Linux / macOS</span>
+<span class="prompt">$</span> <span class="cmd">./install.sh</span> <span class="flag">--target claude</span>
+
+<span class="comment"># Dry run</span>
+<span class="prompt">$</span> <span class="cmd">./install.sh</span> <span class="flag">--dry-run</span>
+
+<span class="comment"># Regenerate index</span>
+<span class="prompt">$</span> <span class="cmd">python</span> build_index.py
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="candidatos">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Candidatos a instalar</h2>
-        <span class="tag">investigado — aún no clonado ni contado en el índice</span>
-      </div>
-      <p style="max-width:60ch;opacity:.72;font-size:.92rem;margin:0 0 24px;">
-        Sales &amp; Comms (8), Compliance &amp; Legal (37) y SEO &amp; Content (58) son las categorías más
-        delgadas del bundle. Estas fuentes cubrirían el hueco en la próxima ronda de <code>install.ps1</code>.
-      </p>
-      <div class="specimen-list">
-        <div class="specimen">
-          <span class="specimen-star num">GTM</span>
-          <div class="specimen-name"><code>sales-skills/sales</code><span class="specimen-desc">CRM, outbound, note-takers, enrichment, email marketing, social listening</span></div>
-          <span class="specimen-tag">Sales &amp; Comms</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">GTM</span>
-          <div class="specimen-name"><code>louisblythe/Sales-Skills</code><span class="specimen-desc">Playbooks, ICP, sales call analysis, analytics, sales engineering</span></div>
-          <span class="specimen-tag">Sales &amp; Comms</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">GRC</span>
-          <div class="specimen-name"><code>Sushegaad/Claude-Skills-GRC</code><span class="specimen-desc">ISO 27001, SOC 2, FedRAMP, GDPR, HIPAA, NIST CSF, PCI DSS, DORA, CMMC 2.0</span></div>
-          <span class="specimen-tag">Compliance</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">GRC</span>
-          <div class="specimen-name"><code>scytale-labs/GRC-Claude-Skills</code><span class="specimen-desc">10 skills packaged for engineers, security practitioners, auditors</span></div>
-          <span class="specimen-tag">Compliance</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">25+18</span>
-          <div class="specimen-name"><code>AgriciDaniel/claude-seo</code><span class="specimen-desc">25 sub-skills + 18 sub-agents: technical SEO, E-E-A-T, GEO/AEO, backlinks, local, i18n</span></div>
-          <span class="specimen-tag">SEO</span>
-        </div>
-        <div class="specimen">
-          <span class="specimen-star num">MCP</span>
-          <div class="specimen-name"><code>seranking/seo-skills</code><span class="specimen-desc">Content briefs, AI-search share of voice, backlink gaps, keyword clusters, schema</span></div>
-          <span class="specimen-tag">SEO</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Cómo funciona</h2>
-      </div>
-      <div class="steps">
-        <div class="step">
-          <span class="step-num">01</span>
-          <h3>Clonar</h3>
-          <p>El repo trae el bundle completo en <code>skills/</code>, listo para instalar sin depender de las fuentes originales.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">02</span>
-          <h3>Instalar</h3>
-          <p><code>install.ps1</code> o <code>install.sh</code> copian cada skill al directorio del agente correspondiente.</p>
-        </div>
-        <div class="step">
-          <span class="step-num">03</span>
-          <h3>Confirmar</h3>
-          <p>Un hook <code>SessionStart</code> pregunta qué skills usar por proyecto antes de escribir código — evita cargar de más.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="instalar">
-    <div class="wrap">
-      <div class="section-head">
-        <h2>Instalación</h2>
-      </div>
-      <div class="tabs">
-        <div class="tab active">powershell</div>
-        <div class="tab">bash</div>
-      </div>
-      <div class="terminal">
-<span class="comment"># Todos los agentes detectados</span>
-<span class="prompt">PS&gt;</span> .\install.ps1 -Target all
-
-<span class="comment"># Solo Claude Code</span>
-<span class="prompt">PS&gt;</span> .\install.ps1 -Target claude
-
-<span class="comment"># Regenerar el índice después de instalar más fuentes</span>
-<span class="prompt">PS&gt;</span> python build_index.py</div>
-    </div>
-  </section>
-</main>
+<!-- MODAL -->
+<div class="modal-backdrop" id="modal">
+  <div class="modal-content">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div class="modal-icon" id="modalIcon"></div>
+    <div class="modal-title" id="modalTitle"></div>
+    <div class="modal-count" id="modalCount"></div>
+    <div class="modal-desc" id="modalDesc"></div>
+    <div class="modal-examples" id="modalExamples"></div>
+    <div class="modal-tags" id="modalTags"></div>
+    <div class="modal-bar-wrap"><div class="modal-bar" id="modalBar"></div></div>
+  </div>
+</div>
 
 <footer>
-  <div class="wrap">
-    <span>SuperDuperSkills — regenerado con <code>build_index.py</code></span>
-    <span><a href="https://github.com/camilolealdev/superduperskills">github.com/camilolealdev/superduperskills</a></span>
-  </div>
+  <p>SuperDuperSkills · <a href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener">github.com/camilolealdev/superduperskills ↗</a></p>
 </footer>
 
+<script>
+(() => {
+  // ─── ONBOARDING ───
+  const overlay = document.getElementById('onboarding');
+  const steps = overlay.querySelectorAll('.onboarding-step');
+  const dots = overlay.querySelectorAll('.step-dot');
+  const btnNext = document.getElementById('btn-next');
+  const btnSkip = document.getElementById('btn-skip');
+  let current = 0;
+
+  function showStep(i) {
+    steps.forEach(s => s.classList.remove('active'));
+    dots.forEach(d => d.classList.remove('active'));
+    steps[i].classList.add('active');
+    dots[i].classList.add('active');
+    btnNext.textContent = i === steps.length - 1 ? "Let's go!" : 'Next →';
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (current < steps.length - 1) { current++; showStep(current); }
+    else { overlay.classList.add('hidden'); }
+  });
+  btnSkip.addEventListener('click', () => overlay.classList.add('hidden'));
+
+  // ─── SCROLL REVEAL ───
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ─── KEYBOARD ───
+  document.addEventListener('keydown', e => {
+    if (overlay.classList.contains('hidden')) return;
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btnNext.click(); }
+    if (e.key === 'Escape') overlay.classList.add('hidden');
+  });
+
+  // ─── SEARCH & FILTER ───
+  const searchInput = document.getElementById('searchInput');
+  const filterChips = document.querySelectorAll('.filter-chip');
+  const categoryGrid = document.getElementById('categoryGrid');
+  const searchCount = document.getElementById('searchCount');
+  let activeFilter = 'all';
+
+  const filterGroups = {
+    dev: ['backend','frontend','engineering','testing','qa','development','architecture','code-review','clean-code','yagni','tdd','e2e','coverage'],
+    design: ['design','ux','ui','frontend','accessibility','tokens','writing','copywriting','content','editing'],
+    marketing: ['marketing','growth','seo','geo','aso','cro','ads','copywriting','sales','comms','cold-email'],
+    infra: ['devops','cloud','infrastructure','docker','kubernetes','ci-cd','integrations','automation','saas','connectors'],
+    ai: ['ai','agents','llm','mcp','rag','prompt-engineering','compliance','legal','security','regulatory']
+  };
+
+  function filterCards() {
+    const q = searchInput.value.toLowerCase().trim();
+    const cards = categoryGrid.querySelectorAll('.iso-card');
+    let n = 0;
+    cards.forEach(card => {
+      const text = (card.querySelector('h3').textContent + ' ' + card.querySelector('p').textContent + ' ' + (card.dataset.tags || '')).toLowerCase();
+      const ok = (!q || text.includes(q)) && (activeFilter === 'all' || (filterGroups[activeFilter] || []).some(f => text.includes(f)));
+      card.classList.toggle('hidden-card', !ok);
+      if (ok) n++;
+    });
+    searchCount.innerHTML = '<span class="num">' + n + '</span> categor' + (n === 1 ? 'y' : 'ies');
+  }
+
+  searchInput.addEventListener('input', filterCards);
+  filterChips.forEach(c => c.addEventListener('click', () => {
+    filterChips.forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    activeFilter = c.dataset.filter;
+    filterCards();
+  }));
+
+  // ─── ANIMATED COUNTERS ───
+  const counters = document.querySelectorAll('.iso-card-count[data-target]');
+  const counterObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      counterObserver.unobserve(el);
+      const target = parseInt(el.dataset.target, 10);
+      if (isNaN(target)) return;
+      const duration = 600;
+      const start = performance.now();
+      el.classList.add('counting');
+      function tick(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // ease-out curve
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        el.textContent = current.toLocaleString();
+        if (progress < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          el.textContent = target.toLocaleString();
+          el.classList.remove('counting');
+        }
+      }
+      requestAnimationFrame(tick);
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ─── THEME TOGGLE ───
+  const themeToggle = document.getElementById('themeToggle');
+  const savedTheme = localStorage.getItem('sds-theme');
+  if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+  else if (matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-theme', 'light');
+
+  themeToggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('sds-theme', next);
+  });
+
+  // ─── MODAL ───
+  const modal = document.getElementById('modal');
+  const modalClose = document.getElementById('modalClose');
+  const colorMap = { green: 'var(--accent)', blue: 'var(--comic-blue)', purple: 'var(--accent-alt)', red: 'var(--comic-red)', yellow: 'var(--comic-yellow)', pink: 'var(--comic-pink)' };
+
+  categoryGrid.addEventListener('click', e => {
+    const card = e.target.closest('.iso-card');
+    if (!card || card.classList.contains('hidden-card')) return;
+    const color = card.dataset.color || 'green';
+    document.getElementById('modalIcon').textContent = card.querySelector('.iso-card-icon').textContent;
+    document.getElementById('modalTitle').textContent = card.querySelector('h3').textContent;
+    const countEl = card.querySelector('.iso-card-count');
+    const mc = document.getElementById('modalCount');
+    mc.textContent = countEl.textContent + ' skills';
+    mc.style.color = colorMap[color] || 'var(--accent)';
+    document.getElementById('modalDesc').textContent = card.querySelector('p').textContent;
+    document.getElementById('modalExamples').textContent = card.querySelector('.iso-card-detail')?.textContent || '';
+    const tags = card.querySelectorAll('.iso-tag');
+    document.getElementById('modalTags').innerHTML = Array.from(tags).map(t => '<span class="modal-tag">' + t.textContent + '</span>').join('');
+    const bar = card.querySelector('.iso-bar');
+    const mb = document.getElementById('modalBar');
+    mb.style.width = bar ? bar.style.width : '0%';
+    mb.style.background = colorMap[color] || 'var(--accent)';
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  });
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
+
+  // ─── PARTICLES ───
+  const canvas = document.getElementById('particles');
+  const ctx = canvas.getContext('2d');
+  let particles = [];
+  const COUNT = 35;
+  const COLORS = ['rgba(0,229,160,0.12)','rgba(79,172,254,0.1)','rgba(108,92,231,0.08)','rgba(225,0,255,0.06)'];
+
+  function resize() { canvas.width = innerWidth; canvas.height = innerHeight; }
+  addEventListener('resize', resize);
+  resize();
+
+  for (let i = 0; i < COUNT; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.5,
+      dx: (Math.random() - 0.5) * 0.25,
+      dy: (Math.random() - 0.5) * 0.25,
+      color: COLORS[Math.floor(Math.random() * COLORS.length)]
+    });
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.fill();
+      p.x += p.dx; p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    });
+    for (let i = 0; i < particles.length; i++) {
+      for (let j = i + 1; j < particles.length; j++) {
+        const dx = particles[i].x - particles[j].x;
+        const dy = particles[i].y - particles[j].y;
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 140) {
+          ctx.beginPath();
+          ctx.moveTo(particles[i].x, particles[i].y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.strokeStyle = 'rgba(255,255,255,' + (0.025 * (1 - d / 140)) + ')';
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
 </body>
 </html>
