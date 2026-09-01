@@ -57,13 +57,13 @@ El Orquestador evalúa la estructura del proyecto y realiza una **entrevista o e
 ### Diagrama del Flujo de Trabajo:
 
 ```mermaid
-flowchart TD
-    A["1. Inspección de Codebase / Entrevista Socrática"] --> B["2. Carga Incondicional: ALWAYS-FIRST CORE SUITE"]
-    B --> C["3. Selección Interactiva de Skills del Usuario (CLI / Web UI)"]
-    C --> D["4. Generación de Manifiesto Activo (.agents/ACTIVE-SKILLS.json)"]
-    D --> E["5. PUERTA MANDATORIA: view_file(SKILL.md) por cada Skill Activa"]
-    E --> F["6. Invocación de Triggers de Arquitectura (Archify / 3-Commits)"]
-    F --> G["7. Construcción y Codificación de Alta Precisión"]
+graph TD
+    A[1. Inspeccion de Codebase y Entrevista] --> B[2. Carga Suite Core Always-First]
+    B --> C[3. Seleccion Interactiva CLI o Web UI]
+    C --> D[4. Generacion Manifiesto ACTIVE-SKILLS]
+    D --> E[5. Lectura Obligatoria view_file SKILL.md]
+    E --> F[6. Trigger Arquitectura Archify 3-Commits]
+    F --> G[7. Codificacion de Alta Precision]
 ```
 
 1. **Inspección Automática / Entrevista Socrática**: Detecta archivos de configuración (`package.json`, `requirements.txt`, `go.mod`, `pubspec.yaml`, `Dockerfile`).
