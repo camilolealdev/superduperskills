@@ -1,0 +1,61 @@
+name: Build & Deploy Site
+
+on:
+  push:
+    paths:
+      - 'web/skills-site.html'
+      - 'web/build.sh'
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install terser
+        run: npm install -g terser
+
+      - name: Minify HTML
+        working-directory: web
+        run: |
+          npx --yes html-minifier-terser \
+            --collapse-whitespace \
+            --remove-comments \
+            --remove-redundant-attributes \
+            --remove-script-type-attributes \
+            --remove-style-link-type-attributes \
+            --minify-css true \
+            --minify-js true \
+            -o skills-site.min.html \
+            skills-site.html
+          echo "Original: $(wc -c < skills-site.html) bytes"
+          echo "Minified: $(wc -c < skills-site.min.html) bytes"
+
+      - name: Copy to docs/
+        run: |
+          cp web/skills-site.html docs/index.html
+          cp web/skills-site.min.html docs/index.min.html
+          cp web/icon.svg docs/icon.svg 2>/dev/null || true
+          cp web/manifest.json docs/manifest.json 2>/dev/null || true
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/index.html docs/index.min.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: rebuild minified site [skip ci]"
+            git push
+          fi

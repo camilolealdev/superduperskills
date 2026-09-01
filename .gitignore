@@ -23,3 +23,7 @@
 !docs/**
 !assets/
 !assets/**
+!.github/
+!.github/**
+!web/
+!web/**
