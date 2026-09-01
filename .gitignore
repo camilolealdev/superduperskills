@@ -37,3 +37,11 @@
 !package.json
 !bin/
 !bin/**
+!index.html
+!robots.txt
+!sitemap.xml
+!og-image.png
+!icon.svg
+!manifest.json
+!icon-192.png
+!icon-512.png
