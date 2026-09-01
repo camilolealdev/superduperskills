@@ -1,0 +1,44 @@
+{
+  "name": "superduperskills",
+  "version": "3.0.0",
+  "description": "The Ultimate Multi-Agent Skills Hub & Governance Suite (2,700+ Curated AI Agent Skills for Claude, Gemini, Cursor, Codex)",
+  "main": "bin/superduperskills.js",
+  "bin": {
+    "superduperskills": "./bin/superduperskills.js",
+    "sds": "./bin/superduperskills.js"
+  },
+  "scripts": {
+    "start": "node ./bin/superduperskills.js",
+    "scan": "node ./bin/superduperskills.js scan",
+    "list": "node ./bin/superduperskills.js list",
+    "sync": "node ./bin/superduperskills.js sync",
+    "audit": "node ./bin/superduperskills.js audit",
+    "wizard": "node ./bin/superduperskills.js wizard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/camilolealdev/superduperskills.git"
+  },
+  "keywords": [
+    "ai",
+    "skills",
+    "agents",
+    "claude-code",
+    "gemini-cli",
+    "cursor-rules",
+    "agentic-ai",
+    "yagni",
+    "anti-slop",
+    "emil-kowalski",
+    "prompt-engineering"
+  ],
+  "author": "camilolealdev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/camilolealdev/superduperskills/issues"
+  },
+  "homepage": "https://superduperskills.vercel.app",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

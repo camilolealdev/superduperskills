@@ -34,3 +34,6 @@
 !web/
 !web/**
 !vercel.json
+!package.json
+!bin/
+!bin/**

@@ -144,10 +144,17 @@ Workflows TDD, Playwright E2E, integraciones con Gemini SDK, HuggingFace y evalu
 
 ---
 
-## 💻 Centro de Comando & CLI Agentico
+## 💻 Centro de Comando & CLI Agentico (NPX / PNPM / Python)
 
-### Lanzar el CLI Interactivo (TUI):
+### ⚡ Ejecución Inmediata (Zero-Install con NPX o PNPM):
 ```bash
+# Con NPX:
+npx superduperskills
+
+# Con PNPM:
+pnpm dlx superduperskills
+
+# O con Python nativo:
 python scripts/superduper_cli.py
 ```
 
