@@ -1,131 +1,160 @@
-# SuperDuperSkills
+# 🚀 SuperDuperSkills
 
-![SuperDuperSkills](assets/hero.png)
+<p align="center">
+  <img src="docs/assets/hero-dashboard.jpg" alt="SuperDuperSkills Hero Dashboard" width="100%" />
+</p>
 
-Inventario centralizado de skills multi-agente para Claude Code, Gemini CLI, Codex CLI y otros agentes de IA.
+<p align="center">
+  <a href="https://github.com/camilolealdev/superduperskills"><img src="https://img.shields.io/badge/Skills--Catalog-2%2C705%2B-00f2fe?style=for-the-badge&logo=ai&logoColor=black" alt="Catalog Size" /></a>
+  <a href="AGENTS.md"><img src="https://img.shields.io/badge/Agent--Protocol-Mandatory-7f00ff?style=for-the-badge&logo=github&logoColor=white" alt="Agent Protocol" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-10b981?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="License" /></a>
+  <a href="docs/index.html"><img src="https://img.shields.io/badge/Web--UI-Interactive-e100ff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web UI" /></a>
+</p>
 
-🔗 [Landing del repo](docs/index.html) — resumen visual de categorías, fuentes e instalación.
+<h3 align="center">
+  <em>Universal Multi-CLI AI Agent Skills Ecosystem & Interactive Project Qualification Engine</em>
+</h3>
 
-## Repositorios de Skills
+---
 
-| Repo | Ruta | Origen |
-|------|------|--------|
-| **agents** | `~/.agents/skills/` | Skills de productividad, marketing, video, HyperFrames |
-| **opencode** | `~/.config/opencode/skills/` | SEO, frontend/backend, Cloudflare, diseño, testing, pipeline |
-| **claude** | `~/.claude/skills/` | Lenguajes, frameworks, DevOps, infraestructura |
+## 📑 Tabla de Contenidos
 
-Estos 3 directorios contienen tanto skills individuales (marketplace/plugins) como ~26 skill-libraries clonadas explícitamente por los instaladores de este repo (mingrath, jeffallan, wondelai, taste-skill, mattpocock/skills, the-architect, etc.). El listado completo con conteo de estrellas y qué trae cada una vive en [`AGENTS.md`](AGENTS.md#directorios-donde-buscar-skills).
+- [Visión General & Compatibilidad Multi-CLI](#-visión-general--compatibilidad-multi-cli)
+- [Arquitectura del Orquestador de Agentes](#-arquitectura-del-orquestador-de-agentes)
+- [Sistema Dual de Cualificación (CLI + Web UI)](#-sistema-dual-de-cualificación-cli--web-ui)
+- [Categorías de Habilidades e Infografía](#-categorías-de-habilidades-e-infografía)
+- [Suite Core de Invocación Obligatoria (Always-First)](#-suite-core-de-invocación-obligatoria-always-first)
+- [Paquetes e Integraciones Clave](#-paquetes-e-integraciones-clave)
+- [Guía de Instalación por CLI Host](#-guía-de-instalación-por-cli-host)
 
-## Archivos del Repo
+---
 
-| Archivo | Descripción |
-|---------|-------------|
-| `SKILLS-INDEX.md` | Índice completo con todas las skills, descripciones y rutas |
-| `UNIFIED-KNOWLEDGE.md` | Taxonomía multi-conocimiento unificada |
-| `skills-inventory.md` | Inventario detallado por repositorio de origen |
-| `skills-lock.json` | Snapshot congelado de una instalación antigua (fuentes ajenas a las de este repo) — no se regenera con `build_index.py`, es legado histórico, no una fuente de verdad actual |
-| `AGENTS.md` | Instrucciones de recuperación para cualquier agente |
-| `skills/` | Bundles de todos los SKILL.md listos para instalar |
-| `install.sh` | Instalador para Linux/macOS/Git Bash |
-| `install.ps1` | Instalador para Windows PowerShell |
-| `build_index.py` | Script para regenerar el bundle desde las fuentes |
-| `installers/install-claude-plugins.ps1` | Setup de maquina nueva para Claude Code: plugins (Superpowers, Caveman, token-optimizer), y clonado de skill-libraries de backend, frontend, UI/UX, seguridad, testing y debugging |
-| `installers/install-opencode-plugins.ps1` | Equivalente para OpenCode: plugins npm + opencode.json de empresa + mismas skill-libraries |
-| `hooks/session-start-skill-picker.sh` | Hook real de Claude Code — al iniciar sesión en un proyecto sin skills confirmados, obliga a presentar un menú y esperar confirmación antes de codear |
-| `templates/skill-confirmation-block.md` | Bloque de texto para pegar en el `CLAUDE.md` de un proyecto — refuerzo escrito de la misma regla de confirmación de skills |
+## 🌐 Visión General & Compatibilidad Multi-CLI
 
-## Confirmación de skills al iniciar un proyecto
+**SuperDuperSkills** es totalmente compatible de forma nativa con los **ejecutores y harnesses de IA más populares del mundo**:
 
-¿Quieres que Claude siempre pregunte qué skills usar antes de escribir código, en vez de improvisar? Ver [`hooks/README.md`](hooks/README.md) — trae un hook `SessionStart` real (instalable por proyecto o global) que obliga a presentar un menú categorizado y esperar tu confirmación, más un bloque de refuerzo para el `CLAUDE.md` del proyecto. Los defaults siempre propuestos: `caveman`, `ponytail`, `harness`, `graphify`, y un skill de token-efficiency.
+| Harness / AI CLI | Ruta de Skills Local | Protocolo / Integración |
+|------------------|----------------------|-------------------------|
+| **Claude Code** | `~/.claude/skills/` | Plugin Marketplace & Hooks |
+| **Gemini CLI / Antigravity (AGY)** | `~/.gemini/antigravity-ide/` / `~/.agents/skills/` | Direct AGY Skill SDK & Auto-load |
+| **OpenAI Codex CLI** | `~/.codex/skills/` | Codex Plugins & Hooks |
+| **Cursor Agent** | `.cursor/skills/` / `~/.cursor/skills/` | Rules for AI & Agent Skills |
+| **OpenCode** | `~/.config/opencode/skills/` | opencode.json & NPM plugins |
+| **Grok Build CLI** | `.grok/skills/` | Grok Plugin Trust System |
+| **Devin CLI** | `~/.devin/skills/` | Devin Plugin Marketplace |
+| **Kimi Code & Factory Droid** | `~/.droid/skills/` | Native Skill Specification |
 
-## Total de Skills
+---
 
-**2552** skills únicos deduplicados entre los 3 repositorios (última regeneración via `build_index.py`).
+## 🏗️ Arquitectura del Orquestador de Agentes
 
-| Categoría | Cantidad | Qué incluye |
-|-----------|----------|-------------|
-| Integrations & Automation | 824 | Conectores por app (`<app>-automation`): Ahrefs, Shopify, Apify, Zoho, QuickBooks, etc. |
-| DevOps & Cloud | 234 | Docker, Kubernetes, Terraform, CI/CD, Cloudflare, Wrangler, deploys, incidentes |
-| Development & Backend | 206 | Lenguajes, frameworks backend, APIs, DB, `senior-*`, arquitectura |
-| Engineering Practices | 187 | `ring:*`, `caveman-*`, `token-*`, clean-code, DDD, code review, skill-creator |
-| Testing & QA | 156 | `qe-*` (fleet de QA), TDD, coverage, mutation/contract/E2E testing |
-| Project Management | 155 | Pipeline ágil (`ln-*`), planning, sprints, retros, roadmaps |
-| Business & Strategy | 145 | C-level advisors, estrategia, finanzas, producto, create/grow/improve-app |
-| AI & Agents | 147 | MCP servers, agentes, RAG, prompt engineering, LLM tooling |
-| Marketing & Growth | 140 | Ads (12 plataformas), CRO, growth, ASO, positioning frameworks |
-| Design & UX | 120 | Frontend-design, design systems, anti-slop (`ponytail`, `taste-*`), DESIGN.md library |
-| Writing & Content | 80 | Copywriting, copy-editing, inglés de negocios, comunicación interna |
-| SEO & Content | 58 | Keyword research, schema markup, technical SEO, GEO/AI-visibility |
-| Compliance & Legal | 37 | GDPR, SOC2, ISO, auditorías regulatorias |
-| Video & Animation | 18 | GSAP, Lottie, Three.js, producción de video |
-| Productivity & People | 25 | Onboarding, hiring, coaching, cultura de equipo, office tools (pdf/xlsx/docx/pptx) |
-| Sales & Comms | 8 | Cold email, propuestas comerciales, pitch decks |
-| Other | 12 | Genuine remainder: README, TEMPLATE, empty-description one-offs |
+El Orquestador evalúa la estructura del proyecto y realiza una **entrevista o escaneo automático** para determinar los objetivos reales del usuario antes de permitir la generación de código.
 
-El desglose completo (skill por skill, con GitHub y ruta) vive en [`SKILLS-INDEX.md`](SKILLS-INDEX.md) — se regenera automáticamente y es la fuente de verdad actual. `skills-inventory.md` y `UNIFIED-KNOWLEDGE.md` son una curaduría más profunda pero corresponden a una foto anterior (402 skills); úsalos para contexto narrativo, no para el conteo.
+<p align="center">
+  <img src="docs/assets/orchestrator-diagram.jpg" alt="Orchestrator Architecture Diagram" width="100%" />
+</p>
 
-## Instalación
+### Diagrama del Flujo de Trabajo:
 
-Clona el repo y ejecuta el instalador:
+```mermaid
+flowchart TD
+    A["1. Inspección de Codebase / Entrevista Socrática"] --> B["2. Carga Incondicional: ALWAYS-FIRST CORE SUITE"]
+    B --> C["3. Selección Interactiva de Skills del Usuario (CLI / Web UI)"]
+    C --> D["4. Generación de Manifiesto Activo (.agents/ACTIVE-SKILLS.json)"]
+    D --> E["5. PUERTA MANDATORIA: view_file(SKILL.md) por cada Skill Activa"]
+    E --> F["6. Invocación de Triggers de Arquitectura (Archify / 3-Commits)"]
+    F --> G["7. Construcción y Codificación de Alta Precisión"]
+```
 
-### Windows (PowerShell)
+1. **Inspección Automática / Entrevista Socrática**: Detecta archivos de configuración (`package.json`, `requirements.txt`, `go.mod`, `pubspec.yaml`, `Dockerfile`).
+2. **Carga Incondicional Core**: Siempre añade las 9 skills de infraestructura y compresión antes de cualquier otra regla.
+3. **Generación de Manifiesto (`.agents/ACTIVE-SKILLS.json`)**: Registra la fase del proyecto, los objetivos clave y las rutas locales exactas.
+4. **Puerta de Lectura Obligatoria (`view_file`)**: Ningún agente AI puede escribir código sin haber leído con `view_file` el archivo `SKILL.md` de cada skill cualificada.
+
+---
+
+## 🎨 Categorías de Habilidades e Infografía
+
+SuperDuperSkills agrupa sus **2,705+ habilidades** en 5 categorías fundamentales:
+
+<p align="center">
+  <img src="docs/assets/categories-infographic.jpg" alt="Skill Categories Infographic" width="100%" />
+</p>
+
+### 1. Suite Core (8 Pilares + Archify)
+Optimizaciones de compresión de tokens, arquitectura YAGNI, memoria persistente entre sesiones y diagramas de arquitectura interactivos.
+
+### 2. Design & UI Craft Anti-Slop
+Criterios de diseño e ingeniería de Emil Kowalski (11 skills), Impeccable (23 comandos), Taste Skill y Apple HIG.
+
+### 3. Seguridad OWASP & Vulnerabilidades
+Auditorías de código, escaneo de secretos, threat modeling y mejores prácticas de seguridad en GenAI.
+
+### 4. Backend & DevOps
+Patrones en Node.js, Python, Go, .NET, Docker, Kubernetes, Cloudflare Workers y pipelines de CI/CD.
+
+### 5. GenAI & Testing
+Workflows TDD, Playwright E2E, integraciones con Gemini SDK, HuggingFace y evaluadores de modelos.
+
+---
+
+## ⚡ Suite Core de Invocación Obligatoria (Always-First)
+
+> [!IMPORTANT]
+> **REGLA DE ORDEN DE EJECUCIÓN:** Todo agente AI debe invocar y consultar de primero esta suite:
+
+| # | Skill | Propósito & Invocación |
+|---|-------|------------------------|
+| **1** | `caveman` | Compresión de salida (-75% tokens sin perder precisión técnica). |
+| **2** | `ponytail` | Escala YAGNI (stdlib > deps nativas > código mínimo). |
+| **3** | `spec-kit` / `spec-driven` | Especificación previa basada en [GitHub Spec Kit](https://github.com/github/spec-kit). |
+| **4** | `token-savings` | Confirma selección de skills para mantener el prompt metadata magro. |
+| **5** | `harness` / `agent-harness` | Define arneses de pruebas y validación continua. |
+| **6** | `claude-mem` | Memoria persistente de decisiones arquitectónicas entre sesiones. |
+| **7** | `rtk` | Proxy de terminal (Rust Token Killer) que comprime logs entre 60% y 90%. |
+| **8** | `graphify` | Grafo de conocimiento del código para responder dependencias sin re-leer archivos. |
+| **9** | `archify` | **Trigger Obligatorio**: Lectura mandatoria con `view_file` cada **3 commits de arquitectura**. |
+
+---
+
+## 🚀 Paquetes e Integraciones Clave
+
+- 📐 **`tt-a1i/archify`**: Diagramas interactivos de arquitectura (`docs/architecture.html`).
+- 📚 **`openclaw/technical-documentation`**: Especificación técnica y 5 playbooks de gobernanza.
+- 🎨 **`emilkowalski/skills`**: 11 habilidades de UI y animación (`emil-design-eng`, `animate`, `animate-expo`, `ask-sonner`...).
+- 💎 **`pbakaus/impeccable`**: Suite de 23 comandos de interfaz (`/impeccable polish`, `critique`, `bolder`, `harden`...).
+- ⚡ **`obra/superpowers`**: 6 habilidades de metodología ágil de ingeniería.
+- 🔥 **`Leonxlnx/taste-skill`**: Framework anti-slop frontend.
+
+---
+
+## 💻 Guía de Instalación por CLI Host
+
+### En Windows (PowerShell):
 ```powershell
-.\install.ps1 -Target claude    # Solo Claude Code
-.\install.ps1 -Target all       # Todos los agentes
-.\install.ps1 -Mode symlink     # Usar symlinks en vez de copia
+.\install.ps1
 ```
 
-### Linux / macOS / Git Bash
+### En Linux / macOS / Git Bash:
 ```bash
-./install.sh                    # Todos los agentes detectados
-./install.sh --target claude    # Solo Claude Code
-./install.sh --mode symlink     # Symlinks en vez de copia
-./install.sh --dry-run          # Vista previa sin instalar
+chmod +x install.sh
+./install.sh
 ```
 
-El instalador copia (o symlinkea) cada skill desde `skills/<nombre>/SKILL.md` al directorio del agente correspondiente (`~/.claude/skills/`, `~/.gemini/skills/`, `~/.codex/skills/`). Los skills existentes se saltan para no sobrescribir personalizaciones.
-
-### Setup de maquina nueva (plugins + skill-libraries por categoria)
-
-Si estas configurando una maquina desde cero y quieres tambien plugins de marketplace y las skill-libraries externas (no solo el bundle de este repo), usa:
-
-```powershell
-.\installers\install-claude-plugins.ps1     # Claude Code: Superpowers, Caveman, token-optimizer + clones
-.\installers\install-opencode-plugins.ps1   # OpenCode: plugins npm + opencode.json de empresa + clones
-```
-
-Ambos clonan skill-libraries reales ya rastreadas por este repo, organizadas por categoria:
-
-| Categoria | Fuentes clonadas |
-|-----------|------------------|
-| **Backend** | jeffallan/claude-skills, supabase/agent-skills, backend-arch (levnikolaevich/claude-code-skills) |
-| **Frontend** | mingrath/awesome-claude-skills, jezweb/claude-skills |
-| **UI/UX** | plugin87/ux-ui-agent-skills (★444), nextlevelbuilder/ui-ux-pro-max-skill, pbakaus/impeccable, wondelai/skills (★1.7k — refactoring-ui, hooked-ux, ux-heuristics, lean-ux, top-design), anthropics/skills oficial (★ canvas-design, theme-factory), Leonxlnx/taste-skill (★64.9k — anti-slop), coleam00/excalidraw-diagram-skill (★4.1k), blader/humanizer (★29.7k), ibelick/ui-skills (★6.6k — baseline-ui, fixing-motion-performance, fixing-accessibility), VoltAgent/awesome-design-md (★105k — 74 DESIGN.md de marcas conocidas), fabricioctelles/skills (★38 — design-md-validator) |
-| **Seguridad** | agamm/claude-code-owasp (★277), BehiSecc/awesome-claude-skills (★9.7k), jeffallan-skills (secure-code-guardian), backend-arch (ln-621/ln-760) |
-| **Testing** | proffesor-for-testing/agentic-qe (★408), testcontainers/claude-skills, backend-arch (ln-63x auditores de cobertura) |
-| **Debugging** | LerianStudio/ring (★202, TDD + systematic-debugging), jeffallan-skills (debugging-wizard), backend-arch (ln-514 test-log-analyzer) |
-| **Calidad / Simplicidad** | DietrichGebert/ponytail (★82.9k — anti-over-engineering, YAGNI, ponytail-review/audit/debt/gain) |
-| **Planificacion / Arquitectura** | ersinkoc/project-architect (★251 — SPECIFICATION/IMPLEMENTATION/TASKS/BRANDING = PRD+TRD+dev-plan+UI), Hainrixz/the-architect (★374 — entrevista fases, genera blueprint + CLAUDE.md del proyecto objetivo), mattpocock/skills (★189k — to-spec, wayfinder, implement, domain-modeling, tdd, diagnosing-bugs, code-review) |
-| **Anti-slop / Estandares de codigo** | multica-ai/andrej-karpathy-skills (★196k — karpathy-guidelines, anti-overengineering) |
-| **Ads / Marketing pago** | AgriciDaniel/claude-ads (★7.5k — auditorias en 12 plataformas: Google, Meta, Amazon, Apple, TikTok, LinkedIn, etc.) |
-| **Coleccion general** | mrgoonie/claudekit-skills (★2.2k), ComposioHQ/awesome-claude-skills (★71.2k), alirezarezvani/claude-skills (★23.4k), openai/skills (★24.3k, oficial) |
-| **Memoria persistente** | thedotmack/claude-mem (★88.8k — contexto entre sesiones) |
-| **SEO (fuente adicional)** | AgriciDaniel/claude-seo (★12.6k) |
-| **Cloud oficial** | microsoft/skills (★2.8k, oficial), cloudflare/skills (★2.5k, oficial) |
-| **CI/CD** | fvadicamo/dev-agent-skills, harness/harness-skills, antigravity-fullstack-hq |
-
-Las fuentes con estrellas anotadas se eligieron verificando el conteo real via `gh api repos/<owner>/<repo>` (no solo ranking de busqueda) para priorizar mantenimiento activo y adopcion real sobre listados genericos.
-
-Despues de clonar, corre `python build_index.py` para que estas skills entren al bundle de este repo (ver siguiente seccion).
-
-## Actualizar el Bundle
-
+### Ejecutar Cualificador Interactivo:
 ```bash
-python build_index.py
+python scripts/qualify_project.py
 ```
 
-Escanea `~/.agents/skills/`, `~/.config/opencode/skills/` y `~/.claude/skills/`, deduplica por nombre, y regenera `skills/` y `SKILLS-INDEX.md`. Luego commit y push para actualizar el repo.
+---
 
-## Uso
+## 📂 Mapa del Repositorio
 
-Cada skill es un archivo `SKILL.md` dentro de su directorio. Los agentes cargan estos skills según la tarea. Consulta `SKILLS-INDEX.md` para buscar por nombre o categoría.
+| Ruta / Archivo | Descripción |
+|----------------|-------------|
+| [`AGENTS.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/AGENTS.md) | Guía mandatoria global para agentes (Suite Core + Protocolos de Cualificación). |
+| [`SKILLS-INDEX.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/SKILLS-INDEX.md) | Índice deduplicado con las 2,705+ skills indexadas. |
+| [`UNIFIED-KNOWLEDGE.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/UNIFIED-KNOWLEDGE.md) | Taxonomía multi-conocimiento unificada. |
+| [`scripts/qualify_project.py`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/scripts/qualify_project.py) | Wizard CLI de cualificación de proyectos. |
+| [`web/qualifier.html`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/web/qualifier.html) | Dashboard web interactivo Glassmorphism. |
+| [`skills/`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/skills/) | Directorio raíz de paquetes `SKILL.md`. |
