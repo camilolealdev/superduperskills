@@ -25,6 +25,12 @@
 !assets/**
 !.github/
 !.github/**
+!scripts/
+!scripts/**
+!.agents/
+!.agents/**
+!.cursor/
+!.cursor/**
 !web/
 !web/**
 !vercel.json
