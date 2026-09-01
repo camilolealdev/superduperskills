@@ -3,51 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SuperDuperSkills — Catálogo de 2,638 Skills para IA</title>
+<title>SuperDuperSkills — 2,638 AI Agent Skills Catalog</title>
+<meta name="description" content="Unified catalog of 2,638 deduplicated skills for AI agents: Claude Code, Gemini CLI, Codex. 17 categories, 30+ verified sources, install in 30 seconds.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://superduperskills.vercel.app/">
+<link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="SuperDuperSkills — Catálogo de 2,638 Skills para IA">
-<meta property="og:description" content="Inventario unificado de skills multi-agente: Claude Code, Gemini CLI, Codex. 17 categorías, 30+ fuentes verificadas, instalable en 30 segundos.">
-<meta property="og:image" content="https://raw.githubusercontent.com/camilolealdev/superduperskills/master/assets/og-image.png">
-<meta property="og:url" content="https://camilolealdev.github.io/superduperskills/">
+<meta property="og:title" content="SuperDuperSkills — 2,638 AI Agent Skills Catalog">
+<meta property="og:description" content="Unified catalog of 2,638 deduplicated skills for AI agents. 17 categories, 30+ verified sources.">
+<meta property="og:image" content="https://superduperskills.vercel.app/og-image.png">
+<meta property="og:url" content="https://superduperskills.vercel.app/">
 <meta property="og:site_name" content="SuperDuperSkills">
-<meta property="og:locale" content="es_LA">
+<meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SuperDuperSkills — Catálogo de 2,638 Skills para IA">
-<meta name="twitter:description" content="Inventario unificado de skills multi-agente: Claude Code, Gemini CLI, Codex. 17 categorías, 30+ fuentes.">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/camilolealdev/superduperskills/master/assets/og-image.png">
+<meta name="twitter:title" content="SuperDuperSkills — 2,638 AI Agent Skills">
+<meta name="twitter:description" content="Unified catalog of 2,638 deduplicated skills for AI agents. 17 categories, 30+ sources.">
+<meta name="twitter:image" content="https://superduperskills.vercel.app/og-image.png">
+<meta name="twitter:site" content="@camilolealdev">
+<meta name="twitter:creator" content="@camilolealdev">
 
-<!-- Favicon -->
+<!-- OG Rich Media -->
+<meta property="og:video" content="https://superduperskills.vercel.app/og-video.mp4">
+<meta property="og:video:type" content="video/mp4">
+<meta property="og:video:width" content="1280">
+<meta property="og:video:height" content="720">
+<meta property="og:audio" content="https://superduperskills.vercel.app/og-audio.mp3">
+<meta property="og:audio:type" content="audio/mpeg">
+<meta property="og:audio:title" content="SuperDuperSkills Overview">
 
-<meta name="theme-color" content="#0c0e13">
+<!-- Additional Meta -->
+<meta property="og:logo" content="https://superduperskills.vercel.app/icon.svg">
+<meta property="og:see_also" content="https://github.com/camilolealdev/superduperskills">
 
 <!-- PWA -->
+<meta name="theme-color" content="#0c0e13">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/svg+xml" href="icon.svg">
 <link rel="apple-touch-icon" href="icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="SuperDuperSkills">
-<meta name="description" content="Catálogo de 2,638 skills para agentes de IA. Claude Code, Gemini CLI, Codex. 17 categorías, 30+ fuentes.">
 
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "SuperDuperSkills",
+  "url": "https://superduperskills.vercel.app/",
+  "description": "Unified catalog of 2,638 deduplicated skills for AI agents: Claude Code, Gemini CLI, Codex.",
+  "applicationCategory": "DeveloperApplication",
+  "operatingSystem": "Cross-platform",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": { "@type": "Person", "name": "Camilo Leal", "url": "https://github.com/camilolealdev" }
+}
+</script>
+
+<!-- Performance: preconnect + font-display:swap -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet">
+
 <style>
 /* ═══════════════════════════════════════════
-   TOKENS
+   TOKENS — Refactoring UI scale: 4/8/16/24/32/48/64
    ═══════════════════════════════════════════ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root {
+  /* Spacing scale */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px;
+
+  /* Colors — tinted grays, not pure */
   --bg: #0c0e13;
   --surface: rgba(22,25,34,0.55);
   --surface-raised: rgba(30,34,48,0.7);
   --ink: #e8e6e1;
   --ink-muted: #8b8d97;
+  --ink-faint: #5a5c64;
   --accent: #00e5a0;
   --accent-alt: #6c5ce7;
   --comic-red: #ff6b6b;
@@ -57,24 +96,33 @@
   --border: rgba(255,255,255,0.06);
   --border-glass: rgba(255,255,255,0.08);
   --glow: rgba(0,229,160,0.15);
+
+  /* Typography — modular scale ~1.2 */
   --font-display: 'Bangers', cursive;
   --font-body: 'Space Grotesk', sans-serif;
   --font-mono: 'Space Mono', monospace;
+
   /* Emil Kowalski easing curves */
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Shadow scale — Refactoring UI */
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+  --shadow-xl: 0 20px 25px rgba(0,0,0,0.15);
 }
 
 html { scroll-behavior: smooth; }
 
-/* Light mode tokens */
+/* Light mode */
 html[data-theme="light"] {
   --bg: #f5f4f0;
   --surface: rgba(255,255,255,0.6);
   --surface-raised: rgba(255,255,255,0.8);
   --ink: #1a1c1e;
   --ink-muted: #6b6e76;
+  --ink-faint: #9ca0a8;
   --border: rgba(0,0,0,0.06);
   --border-glass: rgba(0,0,0,0.08);
   --glow: rgba(0,180,120,0.12);
@@ -88,12 +136,8 @@ html[data-theme="light"] body {
 html[data-theme="light"] body::before {
   background-image: radial-gradient(circle, rgba(0,0,0,0.02) 1px, transparent 1px);
 }
-html[data-theme="light"] .onboarding-overlay {
-  background: rgba(245,244,240,0.88);
-}
-html[data-theme="light"] header {
-  background: rgba(245,244,240,0.6);
-}
+html[data-theme="light"] .onboarding-overlay { background: rgba(245,244,240,0.88); }
+html[data-theme="light"] header { background: rgba(245,244,240,0.6); }
 html[data-theme="light"] .search-input,
 html[data-theme="light"] .filter-chip,
 html[data-theme="light"] .iso-card,
@@ -102,20 +146,14 @@ html[data-theme="light"] .terminal-block {
   background: rgba(255,255,255,0.55);
   border-color: rgba(0,0,0,0.08);
 }
-html[data-theme="light"] .terminal-block {
-  background: rgba(30,32,38,0.9);
-}
-html[data-theme="light"] .step-dot {
-  background: rgba(0,0,0,0.12);
-}
+html[data-theme="light"] .terminal-block { background: rgba(30,32,38,0.9); }
+html[data-theme="light"] .step-dot { background: rgba(0,0,0,0.12); }
 html[data-theme="light"] .speech-bubble {
   background: rgba(255,255,255,0.85);
   border-color: rgba(0,0,0,0.1);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-md);
 }
-html[data-theme="light"] .modal-backdrop {
-  background: rgba(245,244,240,0.7);
-}
+html[data-theme="light"] .modal-backdrop { background: rgba(245,244,240,0.7); }
 html[data-theme="light"] .modal-content {
   background: rgba(255,255,255,0.85);
   border-color: rgba(0,0,0,0.08);
@@ -177,7 +215,7 @@ body::before {
   visibility: hidden;
   pointer-events: none;
 }
-.onboarding-content { text-align: center; max-width: 560px; padding: 2rem; }
+.onboarding-content { text-align: center; max-width: 560px; padding: var(--sp-8); }
 
 .onboarding-step { display: none; }
 .onboarding-step.active {
@@ -189,12 +227,13 @@ body::before {
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-.onboarding-step .step-icon { font-size: 3.5rem; margin-bottom: 0.75rem; display: block; }
+.onboarding-step .step-icon { font-size: 3.5rem; margin-bottom: var(--sp-3); display: block; }
 .onboarding-step h2 {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 5vw, 2.8rem);
   letter-spacing: 0.04em;
-  margin-bottom: 0.6rem;
+  line-height: 1.1;
+  margin-bottom: var(--sp-2);
   background: linear-gradient(135deg, var(--accent), var(--comic-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -202,11 +241,12 @@ body::before {
 .onboarding-step p {
   color: var(--ink-muted);
   font-size: 1rem;
+  line-height: 1.6;
   max-width: 42ch;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto var(--sp-6);
 }
 
-.step-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: 1.5rem; }
+.step-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: var(--sp-6); }
 .step-dot {
   width: 6px; height: 6px;
   border-radius: 50%;
@@ -226,7 +266,7 @@ body::before {
   color: var(--ink-muted);
   background: rgba(255,255,255,0.04);
   border: 1px solid var(--border-glass);
-  padding: 7px 18px;
+  padding: 7px var(--sp-5);
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.2s var(--ease-out);
@@ -240,11 +280,11 @@ body::before {
   color: var(--bg);
   background: linear-gradient(135deg, var(--accent), var(--comic-blue));
   border: none;
-  padding: 11px 32px;
+  padding: 11px var(--sp-8);
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.16s var(--ease-out), box-shadow 0.2s var(--ease-out);
-  margin-top: 0.75rem;
+  margin-top: var(--sp-3);
   box-shadow: 0 4px 16px rgba(0,229,160,0.25);
 }
 .btn-next:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,229,160,0.35); }
@@ -261,7 +301,7 @@ header {
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   background: rgba(12,14,19,0.5);
   border-bottom: 1px solid var(--border);
-  padding: 0.85rem 2rem;
+  padding: var(--sp-3) var(--sp-8);
 }
 .header-inner {
   max-width: 1200px;
@@ -282,7 +322,7 @@ header {
   font-size: 0.75rem;
   color: var(--ink-muted);
   display: flex;
-  gap: 1.25rem;
+  gap: var(--sp-5);
   align-items: center;
 }
 .header-stats .num { color: var(--accent); font-weight: 700; }
@@ -303,11 +343,12 @@ header {
 .header-link svg { width: 14px; height: 14px; }
 
 /* ═══════════════════════════════════════════
-   HERO
+   HERO — left-aligned per Refactoring UI
    ═══════════════════════════════════════════ */
 .hero {
-  padding: 3.5rem 2rem 1.5rem;
-  text-align: center;
+  padding: var(--sp-12) var(--sp-8) var(--sp-6);
+  max-width: 1200px;
+  margin: 0 auto;
   position: relative;
 }
 .hero::after {
@@ -323,7 +364,7 @@ header {
   font-family: var(--font-display);
   font-size: clamp(2.2rem, 6vw, 4.2rem);
   letter-spacing: 0.05em;
-  line-height: 1.1;
+  line-height: 1.05;
   position: relative; z-index: 1;
 }
 .hero h1 .highlight {
@@ -332,18 +373,19 @@ header {
   -webkit-text-fill-color: transparent;
 }
 .hero .subtitle {
-  font-size: 1rem;
+  font-size: 1.05rem;
   color: var(--ink-muted);
   max-width: 46ch;
-  margin: 0.75rem auto 0;
+  margin: var(--sp-3) 0 0;
   position: relative; z-index: 1;
+  line-height: 1.6;
 }
 
 /* ═══════════════════════════════════════════
    SECTIONS
    ═══════════════════════════════════════════ */
 .iso-section {
-  padding: 1.5rem 2rem 3rem;
+  padding: var(--sp-6) var(--sp-8) var(--sp-12);
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -351,17 +393,18 @@ header {
   font-family: var(--font-display);
   font-size: 1.6rem;
   letter-spacing: 0.04em;
-  margin-bottom: 0.4rem;
+  line-height: 1.1;
+  margin-bottom: var(--sp-1);
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--sp-2);
 }
 .iso-section-title .dot { color: var(--accent); }
 .iso-section-sub {
   color: var(--ink-muted);
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: var(--sp-5);
 }
 
 /* ═══════════════════════════════════════════
@@ -369,10 +412,10 @@ header {
    ═══════════════════════════════════════════ */
 .search-bar {
   display: flex;
-  gap: 0.6rem;
+  gap: var(--sp-2);
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 1rem;
+  margin-bottom: var(--sp-4);
 }
 .search-input-wrap {
   flex: 1; min-width: 200px;
@@ -420,7 +463,9 @@ header {
   transition: all 0.2s var(--ease-out);
   white-space: nowrap;
 }
-.filter-chip:hover { border-color: rgba(255,255,255,0.15); color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .filter-chip:hover { border-color: rgba(255,255,255,0.15); color: var(--ink); }
+}
 .filter-chip.active {
   background: rgba(0,229,160,0.12);
   border-color: var(--accent);
@@ -431,7 +476,7 @@ header {
   font-family: var(--font-mono);
   font-size: 0.7rem;
   color: var(--ink-muted);
-  margin-bottom: 0.4rem;
+  margin-bottom: var(--sp-2);
 }
 .search-count .num { color: var(--accent); font-weight: 700; }
 
@@ -441,7 +486,7 @@ header {
 .iso-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 10px;
+  gap: var(--sp-3);
 }
 
 /* Card — glassmorphism with solid fallback */
@@ -451,15 +496,17 @@ header {
   -webkit-backdrop-filter: blur(16px) saturate(1.3);
   border: 1px solid var(--border-glass);
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: var(--sp-5);
   position: relative;
-  cursor: default;
+  cursor: pointer;
   transition: transform 0.25s var(--ease-out), border-color 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out);
 }
-.iso-card:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255,255,255,0.12);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.05);
+@media (hover: hover) and (pointer: fine) {
+  .iso-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.12);
+    box-shadow: var(--shadow-lg), inset 0 1px 0 rgba(255,255,255,0.05);
+  }
 }
 .iso-card:active { transform: scale(0.98); }
 
@@ -473,7 +520,9 @@ header {
   opacity: 0;
   transition: opacity 0.25s var(--ease-out);
 }
-.iso-card:hover::before { opacity: 1; }
+@media (hover: hover) and (pointer: fine) {
+  .iso-card:hover::before { opacity: 1; }
+}
 .iso-card[data-color="green"]::before { background: var(--accent); }
 .iso-card[data-color="blue"]::before { background: var(--comic-blue); }
 .iso-card[data-color="purple"]::before { background: var(--accent-alt); }
@@ -485,7 +534,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 0.6rem;
+  margin-bottom: var(--sp-2);
 }
 .iso-card-icon { font-size: 1.5rem; }
 .iso-card-count {
@@ -497,7 +546,7 @@ header {
   background: rgba(255,255,255,0.04);
 }
 
-/* Animated counter — starts at 0, reveals on scroll */
+/* Animated counter */
 .iso-card-count[data-target] {
   transition: transform 0.2s var(--ease-out);
 }
@@ -508,7 +557,8 @@ header {
   font-family: var(--font-body);
   font-size: 0.92rem;
   font-weight: 700;
-  margin-bottom: 0.3rem;
+  line-height: 1.25;
+  margin-bottom: var(--sp-1);
 }
 .iso-card > .iso-card-face > p {
   font-size: 0.78rem;
@@ -517,14 +567,13 @@ header {
 }
 .iso-card-detail {
   font-size: 0.7rem;
-  color: var(--ink-muted);
-  opacity: 0.6;
-  margin-top: 0.3rem;
+  color: var(--ink-faint);
+  margin-top: var(--sp-1);
   line-height: 1.4;
 }
 
 /* Tags */
-.iso-card-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 0.5rem; }
+.iso-card-tags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: var(--sp-2); }
 .iso-tag {
   font-family: var(--font-mono);
   font-size: 0.6rem;
@@ -538,7 +587,7 @@ header {
 
 /* Progress bar */
 .iso-bar-wrap {
-  margin-top: 0.6rem;
+  margin-top: var(--sp-2);
   height: 2px;
   background: rgba(255,255,255,0.04);
   border-radius: 1px;
@@ -573,7 +622,7 @@ header {
   pointer-events: none;
   transition: opacity 0.2s var(--ease-out), transform 0.2s var(--ease-out);
   z-index: 10;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  box-shadow: var(--shadow-lg);
 }
 .speech-bubble::after {
   content: '';
@@ -583,9 +632,11 @@ header {
   border: 5px solid transparent;
   border-top-color: rgba(255,255,255,0.1);
 }
-.iso-card:hover .speech-bubble {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
+@media (hover: hover) and (pointer: fine) {
+  .iso-card:hover .speech-bubble {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
 }
 
 /* ═══════════════════════════════════════════
@@ -594,7 +645,7 @@ header {
 .comic-panels {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: var(--sp-3);
 }
 @media (max-width: 768px) { .comic-panels { grid-template-columns: 1fr; } }
 
@@ -604,12 +655,14 @@ header {
   -webkit-backdrop-filter: blur(16px) saturate(1.2);
   border: 1px solid var(--border-glass);
   border-radius: 12px;
-  padding: 1.75rem;
+  padding: var(--sp-7);
   position: relative;
   text-align: center;
   transition: transform 0.2s var(--ease-out);
 }
-.comic-panel:hover { transform: translateY(-1px); }
+@media (hover: hover) and (pointer: fine) {
+  .comic-panel:hover { transform: translateY(-1px); }
+}
 .comic-panel:active { transform: scale(0.98); }
 .comic-panel-num {
   font-family: var(--font-display);
@@ -620,18 +673,20 @@ header {
   top: 6px; right: 10px;
   line-height: 1;
 }
-.comic-panel-icon { font-size: 2rem; margin-bottom: 0.75rem; }
+.comic-panel-icon { font-size: 2rem; margin-bottom: var(--sp-3); }
 .comic-panel h3 {
   font-family: var(--font-display);
   font-size: 1.1rem;
   letter-spacing: 0.04em;
-  margin-bottom: 0.4rem;
+  line-height: 1.1;
+  margin-bottom: var(--sp-1);
 }
 .comic-panel p {
   font-size: 0.8rem;
   color: var(--ink-muted);
   max-width: 28ch;
   margin: 0 auto;
+  line-height: 1.5;
 }
 .comic-panel code {
   display: inline-block;
@@ -641,14 +696,14 @@ header {
   color: var(--accent);
   padding: 2px 7px;
   border-radius: 4px;
-  margin-top: 0.6rem;
+  margin-top: var(--sp-2);
 }
 
 /* ═══════════════════════════════════════════
    TERMINAL
    ═══════════════════════════════════════════ */
 .install-section {
-  padding: 2rem 2rem 4rem;
+  padding: var(--sp-8) var(--sp-8) var(--sp-16);
   max-width: 760px;
   margin: 0 auto;
 }
@@ -659,7 +714,7 @@ header {
   border: 1px solid var(--border-glass);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  box-shadow: var(--shadow-xl);
 }
 .terminal-header {
   display: flex; gap: 5px;
@@ -672,7 +727,7 @@ header {
 .terminal-dot:nth-child(2) { background: #febc2e; }
 .terminal-dot:nth-child(3) { background: #28c840; }
 .terminal-body {
-  padding: 1.1rem 1.25rem;
+  padding: var(--sp-5) var(--sp-6);
   font-family: var(--font-mono);
   font-size: 0.8rem;
   line-height: 1.8;
@@ -689,7 +744,7 @@ header {
    ═══════════════════════════════════════════ */
 footer {
   border-top: 1px solid var(--border);
-  padding: 1.5rem 2rem;
+  padding: var(--sp-6) var(--sp-8);
   text-align: center;
   font-size: 0.75rem;
   color: var(--ink-muted);
@@ -744,7 +799,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
   -webkit-backdrop-filter: blur(20px) saturate(1.3);
   border: 1px solid var(--border-glass);
   border-radius: 16px;
-  padding: 2rem;
+  padding: var(--sp-8);
   max-width: 480px;
   width: 90%;
   position: relative;
@@ -769,34 +824,34 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 }
 .modal-close:hover { color: var(--ink); border-color: rgba(255,255,255,0.15); }
 .modal-close:active { transform: scale(0.9); }
-.modal-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.modal-icon { font-size: 2.5rem; margin-bottom: var(--sp-3); }
 .modal-title {
   font-family: var(--font-body);
   font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 0.4rem;
+  margin-bottom: var(--sp-1);
 }
 .modal-count {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   font-weight: 700;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--sp-3);
 }
 .modal-desc {
   font-size: 0.88rem;
   color: var(--ink-muted);
   line-height: 1.6;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--sp-3);
 }
 .modal-examples {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--ink-muted);
   opacity: 0.7;
-  margin-bottom: 0.75rem;
+  margin-bottom: var(--sp-3);
   line-height: 1.6;
 }
-.modal-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1rem; }
+.modal-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: var(--sp-4); }
 .modal-tag {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -813,11 +868,9 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
   overflow: hidden;
 }
 .modal-bar { height: 100%; border-radius: 2px; }
-.iso-card { cursor: pointer; }
 
 /* ═══════════════════════════════════════════
-   SCROLL REVEAL — entry from scale(0.95) + opacity
-   Emil: never animate from scale(0)
+   SCROLL REVEAL — Emil: never from scale(0)
    ═══════════════════════════════════════════ */
 .reveal {
   opacity: 0;
@@ -828,7 +881,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
   opacity: 1;
   transform: translateY(0) scale(1);
 }
-/* Stagger: 40ms between items — Emil recommends 30-80ms */
+/* Stagger: 40ms — Emil recommends 30-80ms */
 .iso-grid .reveal:nth-child(2) { transition-delay: 0.04s; }
 .iso-grid .reveal:nth-child(3) { transition-delay: 0.08s; }
 .iso-grid .reveal:nth-child(4) { transition-delay: 0.12s; }
@@ -852,11 +905,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .onboarding-step.active { animation: none; }
-  .iso-card { transition: none; }
-  .comic-panel { transition: none; }
-  .filter-chip { transition: none; }
-  .btn-next { transition: none; }
-  .speech-bubble { transition: none; }
+  .iso-card, .comic-panel, .filter-chip, .btn-next, .speech-bubble { transition: none; }
   #particles { display: none; }
 }
 
@@ -864,12 +913,12 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
    RESPONSIVE
    ═══════════════════════════════════════════ */
 @media (max-width: 600px) {
-  header { padding: 0.65rem 1rem; }
+  header { padding: var(--sp-2) var(--sp-4); }
   .header-stats { display: none; }
-  .hero { padding: 2rem 1rem 1rem; }
-  .iso-section { padding: 1rem 1rem 2rem; }
+  .hero { padding: var(--sp-8) var(--sp-4) var(--sp-4); }
+  .iso-section { padding: var(--sp-4) var(--sp-4) var(--sp-8); }
   .iso-grid { grid-template-columns: 1fr; }
-  .install-section { padding: 1.5rem 1rem 2.5rem; }
+  .install-section { padding: var(--sp-6) var(--sp-4) var(--sp-10); }
   .search-bar { flex-direction: column; align-items: stretch; }
   .filter-chips { justify-content: center; }
 }
@@ -877,34 +926,32 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 </head>
 <body>
 
-<canvas id="particles"></canvas>
+<canvas id="particles" aria-hidden="true"></canvas>
 
-<!-- ═══════════════════════════════════════
-     ONBOARDING
-     ═══════════════════════════════════════ -->
-<div class="onboarding-overlay" id="onboarding">
+<!-- ONBOARDING -->
+<div class="onboarding-overlay" id="onboarding" role="dialog" aria-label="Welcome tutorial">
   <div class="onboarding-content">
     <div class="onboarding-step active" data-step="0">
-      <span class="step-icon">⚡</span>
-      <h2>Welcome to SuperDuperSkills</h2>
-      <p>Un catálogo masivo de skills para agentes de IA — Claude Code, Gemini CLI, Codex y más.</p>
+      <span class="step-icon" aria-hidden="true">⚡</span>
+      <h2>One Catalog, Every Agent</h2>
+      <p>2,638 deduplicated skills for Claude Code, Gemini CLI, Codex, and more — one install, every CLI.</p>
     </div>
     <div class="onboarding-step" data-step="1">
-      <span class="step-icon">🧩</span>
-      <h2>2,638 Skills Únicos</h2>
-      <p>Deduplicados de 30+ fuentes verificadas. Organizados en 17 categorías.</p>
+      <span class="step-icon" aria-hidden="true">🧩</span>
+      <h2>2,638 Skills. Zero Duplicates.</h2>
+      <p>Pulled from 30+ verified sources, deduplicated and organized into 17 categories.</p>
     </div>
     <div class="onboarding-step" data-step="2">
-      <span class="step-icon">🎯</span>
-      <h2>Suite Core Obligatoria</h2>
-      <p>8 skills fundamentales que todo agente debe invocar antes de escribir código.</p>
+      <span class="step-icon" aria-hidden="true">🎯</span>
+      <h2>Core Suite First</h2>
+      <p>8 mandatory skills every agent should invoke before writing a single line of code.</p>
     </div>
     <div class="onboarding-step" data-step="3">
-      <span class="step-icon">🚀</span>
-      <h2>Instala en 30 Segundos</h2>
-      <p>Un solo comando para instalar todos los skills en tu agente favorito.</p>
+      <span class="step-icon" aria-hidden="true">🚀</span>
+      <h2>Install in 30 Seconds</h2>
+      <p>One command. All skills. Your favorite CLI. Done.</p>
     </div>
-    <div class="step-dots">
+    <div class="step-dots" aria-hidden="true">
       <div class="step-dot active"></div>
       <div class="step-dot"></div>
       <div class="step-dot"></div>
@@ -916,48 +963,42 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════
-     HEADER
-     ═══════════════════════════════════════ -->
+<!-- HEADER -->
 <header>
   <div class="header-inner">
     <div class="brand">SuperDuper<span>Skills</span></div>
     <div class="header-stats">
       <span><span class="num">2,638</span> skills</span>
-      <span><span class="num">17</span> cats</span>
-      <a class="header-link" href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      <span><span class="num">17</span> categories</span>
+      <a class="header-link" href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         GitHub
       </a>
-      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light theme">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero">
-  <h1>Catálogo <span class="highlight">Isométrico</span></h1>
-  <p class="subtitle">2,638 habilidades organizadas por categoría, fuente y relevancia.</p>
+  <h1>The <span class="highlight">Complete</span> AI Skills Catalog</h1>
+  <p class="subtitle">2,638 deduplicated skills across 17 categories. One install for Claude Code, Gemini CLI, Codex, and every major AI agent.</p>
 </section>
 
-<!-- ═══════════════════════════════════════
-     CATEGORIES
-     ═══════════════════════════════════════ -->
-<section class="iso-section reveal">
-  <h2 class="iso-section-title"><span class="dot">●</span> Categorías</h2>
-  <p class="iso-section-sub">build_index.py · auto-generated</p>
+<!-- CATEGORIES -->
+<section class="iso-section reveal" aria-labelledby="cat-title">
+  <h2 class="iso-section-title" id="cat-title"><span class="dot" aria-hidden="true">●</span> Categories</h2>
+  <p class="iso-section-sub">build_index.py · auto-generated from 30+ sources</p>
 
   <div class="search-bar">
     <div class="search-input-wrap">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input class="search-input" id="searchInput" type="text" placeholder="Search categories...">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input class="search-input" id="searchInput" type="search" placeholder="Search categories..." aria-label="Search categories">
     </div>
-    <div class="filter-chips" id="filterChips">
+    <div class="filter-chips" id="filterChips" role="group" aria-label="Category filters">
       <button class="filter-chip active" data-filter="all">All</button>
       <button class="filter-chip" data-filter="dev">Dev</button>
       <button class="filter-chip" data-filter="design">Design</button>
@@ -966,380 +1007,374 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
       <button class="filter-chip" data-filter="ai">AI</button>
     </div>
   </div>
-  <div class="search-count" id="searchCount"><span class="num">17</span> categories</div>
+  <div class="search-count" id="searchCount" aria-live="polite"><span class="num">17</span> categories</div>
 
-  <div class="iso-grid" id="categoryGrid">
+  <div class="iso-grid" id="categoryGrid" role="list">
 
-    <div class="iso-card reveal" data-color="green" data-tags="integrations,automation,saas,connectors">
+    <article class="iso-card reveal" data-color="green" data-tags="integrations,automation,saas,connectors" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">824 conectores</div>
+        <div class="speech-bubble" aria-hidden="true">824 connectors</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🔌</span>
+          <span class="iso-card-icon" aria-hidden="true">🔌</span>
           <span class="iso-card-count" style="color:var(--accent)" data-target="824">0</span>
         </div>
         <h3>Integrations & Automation</h3>
-        <p>Conectores por app listos para invocar: automatiza flujos entre herramientas.</p>
+        <p>Ready-to-invoke connectors for 800+ SaaS tools. Automate workflows across your stack.</p>
         <div class="iso-card-detail">Shopify · Ahrefs · Apify · Zoho · QuickBooks · Composio · +800</div>
         <div class="iso-card-tags"><span class="iso-tag">SaaS</span><span class="iso-tag">API</span><span class="iso-tag">MCP</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:100%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="blue" data-tags="devops,cloud,infrastructure,docker,kubernetes">
+    <article class="iso-card reveal" data-color="blue" data-tags="devops,cloud,infrastructure,docker,kubernetes" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">Docker → K8s → Cloud</div>
+        <div class="speech-bubble" aria-hidden="true">Docker → K8s → Cloud</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">☁️</span>
+          <span class="iso-card-icon" aria-hidden="true">☁️</span>
           <span class="iso-card-count" style="color:var(--comic-blue)" data-target="234">0</span>
         </div>
         <h3>DevOps & Cloud</h3>
-        <p>Infraestructura como código, containers, orquestación y deployment.</p>
+        <p>Infrastructure as code, containers, orchestration, and zero-downtime deployments.</p>
         <div class="iso-card-detail">Docker · Kubernetes · Terraform · GitHub Actions · AWS</div>
         <div class="iso-card-tags"><span class="iso-tag">IaC</span><span class="iso-tag">GitOps</span><span class="iso-tag">CI/CD</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:28%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="purple" data-tags="backend,frontend,languages,frameworks">
+    <article class="iso-card reveal" data-color="purple" data-tags="backend,frontend,languages,frameworks" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">APIs + DB + Arch</div>
+        <div class="speech-bubble" aria-hidden="true">APIs + DB + Arch</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">⚙️</span>
+          <span class="iso-card-icon" aria-hidden="true">⚙️</span>
           <span class="iso-card-count" style="color:var(--accent-alt)" data-target="206">0</span>
         </div>
         <h3>Development & Backend</h3>
-        <p>Lenguajes, frameworks y patrones de arquitectura para sistemas robustos.</p>
+        <p>Languages, frameworks, and architecture patterns for production-grade systems.</p>
         <div class="iso-card-detail">React · Next.js · NestJS · Django · Go · Rust · Swift</div>
         <div class="iso-card-tags"><span class="iso-tag">Fullstack</span><span class="iso-tag">APIs</span><span class="iso-tag">DB</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:25%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="green" data-tags="engineering,quality,code-review,clean-code">
+    <article class="iso-card reveal" data-color="green" data-tags="engineering,quality,code-review,clean-code" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">YAGNI → Clean → Review</div>
+        <div class="speech-bubble" aria-hidden="true">YAGNI → Clean → Review</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🔧</span>
+          <span class="iso-card-icon" aria-hidden="true">🔧</span>
           <span class="iso-card-count" style="color:var(--accent)" data-target="187">0</span>
         </div>
         <h3>Engineering Practices</h3>
-        <p>Disciplina de ingeniería: compresión, simplicidad extrema, limpieza.</p>
+        <p>Extreme simplicity, compression, clean code, and ruthless code review.</p>
         <div class="iso-card-detail">caveman · ponytail · clean-code · code-review · token-efficiency</div>
         <div class="iso-card-tags"><span class="iso-tag">YAGNI</span><span class="iso-tag">KISS</span><span class="iso-tag">DRY</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:23%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="red" data-tags="testing,qa,tdd,e2e,coverage">
+    <article class="iso-card reveal" data-color="red" data-tags="testing,qa,tdd,e2e,coverage" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">TDD + E2E + Contract</div>
+        <div class="speech-bubble" aria-hidden="true">TDD + E2E + Contract</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🧪</span>
+          <span class="iso-card-icon" aria-hidden="true">🧪</span>
           <span class="iso-card-count" style="color:var(--comic-red)" data-target="156">0</span>
         </div>
         <h3>Testing & QA</h3>
-        <p>Fleet completa de QA: unit tests hasta chaos engineering.</p>
+        <p>Full QA fleet: unit tests, E2E, contract testing, through chaos engineering.</p>
         <div class="iso-card-detail">Playwright · Jest · Pytest · Mutation · Contract · TDD</div>
         <div class="iso-card-tags"><span class="iso-tag">Unit</span><span class="iso-tag">E2E</span><span class="iso-tag">Chaos</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:19%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="yellow" data-tags="project-management,agile,sprints,roadmaps">
+    <article class="iso-card reveal" data-color="yellow" data-tags="project-management,agile,sprints,roadmaps" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">Sprints + Retros</div>
+        <div class="speech-bubble" aria-hidden="true">Sprints + Retros</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">📋</span>
+          <span class="iso-card-icon" aria-hidden="true">📋</span>
           <span class="iso-card-count" style="color:var(--comic-yellow)" data-target="155">0</span>
         </div>
         <h3>Project Management</h3>
-        <p>Pipeline ágil end-to-end: planificación hasta retrospective.</p>
+        <p>End-to-end agile pipeline: planning through retrospective.</p>
         <div class="iso-card-detail">Scrum · Kanban · JQL · Linear · Velocity · Retros</div>
         <div class="iso-card-tags"><span class="iso-tag">Scrum</span><span class="iso-tag">OKRs</span><span class="iso-tag">Jira</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:19%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="pink" data-tags="ai,agents,llm,mcp,rag">
+    <article class="iso-card reveal" data-color="pink" data-tags="ai,agents,llm,mcp,rag" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">MCP + RAG + Agents</div>
+        <div class="speech-bubble" aria-hidden="true">MCP + RAG + Agents</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🤖</span>
+          <span class="iso-card-icon" aria-hidden="true">🤖</span>
           <span class="iso-card-count" style="color:var(--comic-pink)" data-target="147">0</span>
         </div>
         <h3>AI & Agents</h3>
-        <p>Agentes, servidores MCP, pipelines RAG y orquestación multi-agente.</p>
+        <p>MCP servers, RAG pipelines, prompt engineering, and multi-agent orchestration.</p>
         <div class="iso-card-detail">MCP · RAG · Prompt Engineering · LangChain · Vector DBs</div>
         <div class="iso-card-tags"><span class="iso-tag">LLM</span><span class="iso-tag">RAG</span><span class="iso-tag">Agents</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:18%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="blue" data-tags="business,strategy,startup,finance">
+    <article class="iso-card reveal" data-color="blue" data-tags="business,strategy,startup,finance" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">C-Suite + Strategy</div>
+        <div class="speech-bubble" aria-hidden="true">C-Suite + Strategy</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">💼</span>
+          <span class="iso-card-icon" aria-hidden="true">💼</span>
           <span class="iso-card-count" style="color:var(--comic-blue)" data-target="145">0</span>
         </div>
         <h3>Business & Strategy</h3>
-        <p>Asesores ejecutivos virtuales y frameworks estratégicos.</p>
+        <p>Virtual executive advisors and strategic frameworks for founders.</p>
         <div class="iso-card-detail">CFO · CMO · CRO · CTO · Lean Startup · Blue Ocean</div>
         <div class="iso-card-tags"><span class="iso-tag">Startup</span><span class="iso-tag">Finance</span><span class="iso-tag">GTM</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:17%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="yellow" data-tags="marketing,growth,ads,cro,aso">
+    <article class="iso-card reveal" data-color="yellow" data-tags="marketing,growth,ads,cro,aso" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">12 ad platforms</div>
+        <div class="speech-bubble" aria-hidden="true">12 ad platforms</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">📈</span>
+          <span class="iso-card-icon" aria-hidden="true">📈</span>
           <span class="iso-card-count" style="color:var(--comic-yellow)" data-target="140">0</span>
         </div>
         <h3>Marketing & Growth</h3>
-        <p>Publicidad multi-plataforma, CRO y estrategias de crecimiento.</p>
+        <p>Multi-platform advertising, CRO, and growth strategies that compound.</p>
         <div class="iso-card-detail">Google Ads · Meta · LinkedIn · TikTok · CRO · ASO</div>
         <div class="iso-card-tags"><span class="iso-tag">PPC</span><span class="iso-tag">SEO</span><span class="iso-tag">Growth</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:17%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="purple" data-tags="design,ux,ui,frontend,accessibility">
+    <article class="iso-card reveal" data-color="purple" data-tags="design,ux,ui,frontend,accessibility" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">Anti-slop design</div>
+        <div class="speech-bubble" aria-hidden="true">Anti-slop design</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🎨</span>
+          <span class="iso-card-icon" aria-hidden="true">🎨</span>
           <span class="iso-card-count" style="color:var(--accent-alt)" data-target="120">0</span>
         </div>
         <h3>Design & UX</h3>
-        <p>Diseño premium, tokens, anti-genericismo y librería de marcas.</p>
+        <p>Premium design systems, tokens, anti-generic patterns, and brand libraries.</p>
         <div class="iso-card-detail">design-taste · apply-aesthetic · DESIGN.md · WCAG</div>
         <div class="iso-card-tags"><span class="iso-tag">Systems</span><span class="iso-tag">Tokens</span><span class="iso-tag">A11y</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:14%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="green" data-tags="writing,content,copywriting,editing">
+    <article class="iso-card reveal" data-color="green" data-tags="writing,content,copywriting,editing" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">Copy → Humanize</div>
+        <div class="speech-bubble" aria-hidden="true">Copy → Humanize</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">✍️</span>
+          <span class="iso-card-icon" aria-hidden="true">✍️</span>
           <span class="iso-card-count" style="color:var(--accent)" data-target="80">0</span>
         </div>
         <h3>Writing & Content</h3>
-        <p>Redacción profesional, edición y comunicación técnica.</p>
+        <p>Professional writing, editing, and technical communication that lands.</p>
         <div class="iso-card-detail">Copywriting · Humanizer · Technical Writing · UX Writing</div>
         <div class="iso-card-tags"><span class="iso-tag">Copy</span><span class="iso-tag">Docs</span><span class="iso-tag">Voice</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:10%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="blue" data-tags="seo,geo,keywords,schema,technical-seo">
+    <article class="iso-card reveal" data-color="blue" data-tags="seo,geo,keywords,schema,technical-seo" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">GEO + Schema</div>
+        <div class="speech-bubble" aria-hidden="true">GEO + Schema</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🔍</span>
+          <span class="iso-card-icon" aria-hidden="true">🔍</span>
           <span class="iso-card-count" style="color:var(--comic-blue)" data-target="58">0</span>
         </div>
         <h3>SEO & Content</h3>
-        <p>SEO técnico, estructurado para motores de AI.</p>
+        <p>Technical SEO, structured data, and AI search engine optimization.</p>
         <div class="iso-card-detail">Keyword Research · Schema · GEO/AEO · E-E-A-T</div>
         <div class="iso-card-tags"><span class="iso-tag">Technical</span><span class="iso-tag">GEO</span><span class="iso-tag">AI SEO</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:7%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="red" data-tags="compliance,legal,security,regulatory">
+    <article class="iso-card reveal" data-color="red" data-tags="compliance,legal,security,regulatory" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">GDPR + SOC2</div>
+        <div class="speech-bubble" aria-hidden="true">GDPR + SOC2</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🛡️</span>
+          <span class="iso-card-icon" aria-hidden="true">🛡️</span>
           <span class="iso-card-count" style="color:var(--comic-red)" data-target="37">0</span>
         </div>
         <h3>Compliance & Legal</h3>
-        <p>Cumplimiento regulatorio y auditorías de seguridad.</p>
+        <p>Regulatory compliance and security audit automation.</p>
         <div class="iso-card-detail">GDPR · SOC 2 · ISO 27001 · HIPAA · EU AI Act</div>
         <div class="iso-card-tags"><span class="iso-tag">GDPR</span><span class="iso-tag">SOC2</span><span class="iso-tag">ISO</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:4.5%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="pink" data-tags="video,animation,gsap,threejs,lottie">
+    <article class="iso-card reveal" data-color="pink" data-tags="video,animation,gsap,threejs,lottie" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">GSAP + Three.js</div>
+        <div class="speech-bubble" aria-hidden="true">GSAP + Three.js</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">🎬</span>
+          <span class="iso-card-icon" aria-hidden="true">🎬</span>
           <span class="iso-card-count" style="color:var(--comic-pink)" data-target="18">0</span>
         </div>
         <h3>Video & Animation</h3>
-        <p>Producción de video, animaciones web y 3D.</p>
+        <p>Video production, web animations, and 3D experiences.</p>
         <div class="iso-card-detail">GSAP · Lottie · Three.js · HyperFrames · Remotion</div>
         <div class="iso-card-tags"><span class="iso-tag">Motion</span><span class="iso-tag">3D</span><span class="iso-tag">Video</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:2.2%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="yellow" data-tags="productivity,people,hiring,culture">
+    <article class="iso-card reveal" data-color="yellow" data-tags="productivity,people,hiring,culture" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">People + Ops</div>
+        <div class="speech-bubble" aria-hidden="true">People + Ops</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">👥</span>
+          <span class="iso-card-icon" aria-hidden="true">👥</span>
           <span class="iso-card-count" style="color:var(--comic-yellow)" data-target="25">0</span>
         </div>
         <h3>Productivity & People</h3>
-        <p>Gestión de personas, cultura y productividad.</p>
+        <p>People management, culture, and team productivity systems.</p>
         <div class="iso-card-detail">Onboarding · Hiring · Coaching · Culture · Office Tools</div>
         <div class="iso-card-tags"><span class="iso-tag">HR</span><span class="iso-tag">Culture</span><span class="iso-tag">Docs</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:3%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="green" data-tags="sales,comms,cold-email,proposals">
+    <article class="iso-card reveal" data-color="green" data-tags="sales,comms,cold-email,proposals" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">Cold → Pitch → Close</div>
+        <div class="speech-bubble" aria-hidden="true">Cold → Pitch → Close</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">💬</span>
+          <span class="iso-card-icon" aria-hidden="true">💬</span>
           <span class="iso-card-count" style="color:var(--accent)" data-target="8">0</span>
         </div>
         <h3>Sales & Comms</h3>
-        <p>Outbound, propuestas y comunicación de ventas.</p>
+        <p>Outbound sequences, proposals, and sales communication.</p>
         <div class="iso-card-detail">Cold Email · Proposals · SOW · NDA · Pitch Decks</div>
         <div class="iso-card-tags"><span class="iso-tag">Outbound</span><span class="iso-tag">Proposals</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:1%"></div></div>
       </div>
-    </div>
+    </article>
 
-    <div class="iso-card reveal" data-color="blue" data-tags="other,misc,templates">
+    <article class="iso-card reveal" data-color="blue" data-tags="other,misc,templates" role="listitem">
       <div class="iso-card-face">
-        <div class="speech-bubble">Remanente</div>
+        <div class="speech-bubble" aria-hidden="true">Catch-all</div>
         <div class="iso-card-top">
-          <span class="iso-card-icon">📦</span>
+          <span class="iso-card-icon" aria-hidden="true">📦</span>
           <span class="iso-card-count" style="color:var(--comic-blue)" data-target="12">0</span>
         </div>
         <h3>Other</h3>
-        <p>Skills misceláneos: READMEs, templates y utilidades.</p>
+        <p>Miscellaneous skills: READMEs, templates, and utilities.</p>
         <div class="iso-card-tags"><span class="iso-tag">Templates</span><span class="iso-tag">Misc</span></div>
         <div class="iso-bar-wrap"><div class="iso-bar" style="width:1.5%"></div></div>
       </div>
-    </div>
+    </article>
 
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     HOW IT WORKS
-     ═══════════════════════════════════════ -->
-<section class="iso-section reveal">
-  <h2 class="iso-section-title"><span class="dot">●</span> Cómo Funciona</h2>
-  <p class="iso-section-sub">3 pasos para tener todos los skills listos</p>
+<!-- HOW IT WORKS -->
+<section class="iso-section reveal" aria-labelledby="how-title">
+  <h2 class="iso-section-title" id="how-title"><span class="dot" aria-hidden="true">●</span> How It Works</h2>
+  <p class="iso-section-sub">Three steps to all skills ready</p>
 
   <div class="comic-panels">
     <div class="comic-panel reveal">
-      <span class="comic-panel-num">01</span>
-      <div class="comic-panel-icon">📦</div>
-      <h3>Clonar</h3>
-      <p>El repo trae el bundle completo en <code>skills/</code>.</p>
+      <span class="comic-panel-num" aria-hidden="true">01</span>
+      <div class="comic-panel-icon" aria-hidden="true">📦</div>
+      <h3>Clone</h3>
+      <p>The repo ships the full bundle in <code>skills/</code>.</p>
       <code>git clone</code>
     </div>
     <div class="comic-panel reveal">
-      <span class="comic-panel-num">02</span>
-      <div class="comic-panel-icon">⚡</div>
-      <h3>Instalar</h3>
-      <p>Un script copia cada skill al directorio de tu agente.</p>
+      <span class="comic-panel-num" aria-hidden="true">02</span>
+      <div class="comic-panel-icon" aria-hidden="true">⚡</div>
+      <h3>Install</h3>
+      <p>One script copies every skill to your agent's directory.</p>
       <code>.\install.ps1 -Target all</code>
     </div>
     <div class="comic-panel reveal">
-      <span class="comic-panel-num">03</span>
-      <div class="comic-panel-icon">✅</div>
-      <h3>Confirmar</h3>
-      <p>Un hook <code>SessionStart</code> pregunta qué skills usar.</p>
+      <span class="comic-panel-num" aria-hidden="true">03</span>
+      <div class="comic-panel-icon" aria-hidden="true">✅</div>
+      <h3>Confirm</h3>
+      <p>A <code>SessionStart</code> hook asks which skills to load.</p>
       <code>token-savings</code>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     CORE SUITE
-     ═══════════════════════════════════════ -->
-<section class="iso-section reveal">
-  <h2 class="iso-section-title"><span class="dot">●</span> Suite Core</h2>
-  <p class="iso-section-sub">Los 8 skills que TODO agente debe invocar primero</p>
+<!-- CORE SUITE -->
+<section class="iso-section reveal" aria-labelledby="core-title">
+  <h2 class="iso-section-title" id="core-title"><span class="dot" aria-hidden="true">●</span> Core Suite</h2>
+  <p class="iso-section-sub">The 8 skills every agent must invoke first</p>
 
   <div class="iso-grid">
     <div class="iso-card reveal" data-color="green">
       <div class="iso-card-face">
-        <div class="speech-bubble">−75% tokens</div>
-        <div class="iso-card-top"><span class="iso-card-icon">🪨</span><span class="iso-card-count" style="color:var(--accent)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">−75% tokens</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">🪨</span><span class="iso-card-count" style="color:var(--accent)">CORE</span></div>
         <h3>caveman</h3>
-        <p>Comunicación ultra-compresa. 0% pérdida de precisión.</p>
+        <p>Ultra-compressed communication. Zero precision loss.</p>
       </div>
     </div>
     <div class="iso-card reveal" data-color="blue">
       <div class="iso-card-face">
-        <div class="speech-bubble">stdlib > deps</div>
-        <div class="iso-card-top"><span class="iso-card-icon">📏</span><span class="iso-card-count" style="color:var(--comic-blue)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">stdlib > deps</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">📏</span><span class="iso-card-count" style="color:var(--comic-blue)">CORE</span></div>
         <h3>ponytail</h3>
-        <p>Escala de pereza YAGNI. ¿Una línea?</p>
+        <p>YAGNI laziness scale. One line before fifty.</p>
       </div>
     </div>
     <div class="iso-card reveal" data-color="purple">
       <div class="iso-card-face">
-        <div class="speech-bubble">Spec → Tasks</div>
-        <div class="iso-card-top"><span class="iso-card-icon">📐</span><span class="iso-card-count" style="color:var(--accent-alt)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">Spec → Tasks</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">📐</span><span class="iso-card-count" style="color:var(--accent-alt)">CORE</span></div>
         <h3>spec-kit</h3>
-        <p>Specs antes de código, tareas antes de specs.</p>
+        <p>Specs before code. Tasks before specs.</p>
       </div>
     </div>
     <div class="iso-card reveal" data-color="yellow">
       <div class="iso-card-face">
-        <div class="speech-bubble">Context budget</div>
-        <div class="iso-card-top"><span class="iso-card-icon">💰</span><span class="iso-card-count" style="color:var(--comic-yellow)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">Context budget</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">💰</span><span class="iso-card-count" style="color:var(--comic-yellow)">CORE</span></div>
         <h3>token-savings</h3>
-        <p>Confirma skills por proyecto antes de empezar.</p>
+        <p>Confirm relevant skills per project before starting.</p>
       </div>
     </div>
     <div class="iso-card reveal" data-color="red">
       <div class="iso-card-face">
-        <div class="speech-bubble">Test harness</div>
-        <div class="iso-card-top"><span class="iso-card-icon">🎰</span><span class="iso-card-count" style="color:var(--comic-red)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">Test harness</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">🎰</span><span class="iso-card-count" style="color:var(--comic-red)">CORE</span></div>
         <h3>harness</h3>
-        <p>Verificación continua antes de declarar done.</p>
+        <p>Continuous verification before declaring done.</p>
       </div>
     </div>
     <div class="iso-card reveal" data-color="pink">
       <div class="iso-card-face">
-        <div class="speech-bubble">Between sessions</div>
-        <div class="iso-card-top"><span class="iso-card-icon">🧠</span><span class="iso-card-count" style="color:var(--comic-pink)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">Between sessions</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">🧠</span><span class="iso-card-count" style="color:var(--comic-pink)">CORE</span></div>
         <h3>claude-mem</h3>
-        <p>Memoria persistente entre sesiones.</p>
+        <p>Persistent memory across sessions.</p>
       </div>
     </div>
     <div class="iso-card reveal" data-color="green">
       <div class="iso-card-face">
-        <div class="speech-bubble">−90% logs</div>
-        <div class="iso-card-top"><span class="iso-card-icon">🦀</span><span class="iso-card-count" style="color:var(--accent)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">−90% logs</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">🦀</span><span class="iso-card-count" style="color:var(--accent)">CORE</span></div>
         <h3>rtk</h3>
-        <p>Rust Token Killer. Filtra logs de terminal.</p>
+        <p>Rust Token Killer. Filters terminal noise.</p>
       </div>
     </div>
     <div class="iso-card reveal" data-color="blue">
       <div class="iso-card-face">
-        <div class="speech-bubble">Knowledge graph</div>
-        <div class="iso-card-top"><span class="iso-card-icon">🕸️</span><span class="iso-card-count" style="color:var(--comic-blue)">CORE</span></div>
+        <div class="speech-bubble" aria-hidden="true">Knowledge graph</div>
+        <div class="iso-card-top"><span class="iso-card-icon" aria-hidden="true">🕸️</span><span class="iso-card-count" style="color:var(--comic-blue)">CORE</span></div>
         <h3>graphify</h3>
-        <p>Grafo de conocimiento del código.</p>
+        <p>Code knowledge graph for dependency queries.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════
-     INSTALL
-     ═══════════════════════════════════════ -->
-<section class="install-section reveal">
-  <h2 class="iso-section-title"><span class="dot">●</span> Instalación</h2>
-  <p class="iso-section-sub" style="margin-bottom:1.25rem;">Un comando para instalar todo</p>
+<!-- INSTALL -->
+<section class="install-section reveal" aria-labelledby="install-title">
+  <h2 class="iso-section-title" id="install-title"><span class="dot" aria-hidden="true">●</span> Install</h2>
+  <p class="iso-section-sub" style="margin-bottom:var(--sp-5);">One command to install everything</p>
   <div class="terminal-block">
     <div class="terminal-header">
       <div class="terminal-dot"></div>
@@ -1363,9 +1398,9 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 </section>
 
 <!-- MODAL -->
-<div class="modal-backdrop" id="modal">
+<div class="modal-backdrop" id="modal" role="dialog" aria-modal="true" aria-label="Category details">
   <div class="modal-content">
-    <button class="modal-close" id="modalClose">✕</button>
+    <button class="modal-close" id="modalClose" aria-label="Close">✕</button>
     <div class="modal-icon" id="modalIcon"></div>
     <div class="modal-title" id="modalTitle"></div>
     <div class="modal-count" id="modalCount"></div>
@@ -1377,7 +1412,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 </div>
 
 <footer>
-  <p>SuperDuperSkills · <a href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener">github.com/camilolealdev/superduperskills ↗</a></p>
+  <p>SuperDuperSkills · <a href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener noreferrer">github.com/camilolealdev/superduperskills ↗</a></p>
 </footer>
 
 <script>
@@ -1470,10 +1505,9 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
       function tick(now) {
         const elapsed = now - start;
         const progress = Math.min(elapsed / duration, 1);
-        // ease-out curve
         const eased = 1 - Math.pow(1 - progress, 3);
-        const current = Math.round(eased * target);
-        el.textContent = current.toLocaleString();
+        const val = Math.round(eased * target);
+        el.textContent = val.toLocaleString();
         if (progress < 1) {
           requestAnimationFrame(tick);
         } else {

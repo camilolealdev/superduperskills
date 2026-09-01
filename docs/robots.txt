@@ -1,0 +1,44 @@
+# SuperDuperSkills — robots.txt
+# Allow search indexing, manage AI training crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://superduperskills.vercel.app/sitemap.xml
+
+# ─── AI Training Crawlers ───
+# These crawl for model training. Blocking them prevents
+# your content from being used to train AI models, but
+# does NOT prevent AI search from citing your pages.
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# ─── Standard Bots ───
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /

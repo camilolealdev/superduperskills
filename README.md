@@ -119,6 +119,16 @@ Workflows TDD, Playwright E2E, integraciones con Gemini SDK, HuggingFace y evalu
 | **7** | `rtk` | Proxy de terminal (Rust Token Killer) que comprime logs entre 60% y 90%. |
 | **8** | `graphify` | Grafo de conocimiento del código para responder dependencias sin re-leer archivos. |
 | **9** | `archify` | **Trigger Obligatorio**: Lectura mandatoria con `view_file` cada **3 commits de arquitectura**. |
+| **10** | `skill-seekers` | Ingesta y búsqueda activa de habilidades desde repositorios remotos. |
+| **11** | `skill-vault` | Almacenamiento y versión congelada de la bóveda de skills. |
+| **12** | `all-deploy` | Scripts de despliegue universal (VPS Docker, Vercel, Railway, Cloudflare). |
+| **13** | `context-mode` | Compresión dinámica y gestión limpia del contexto de sesión. |
+| **14** | `aprende-skill` | Asimilación rápida y síntesis de nuevos dominios técnicos. |
+| **15** | `agentshield` | Desinfección de prompts, secretos y prevención de comandos destructivos. |
+| **16** | `modo-tdah` | Respuestas directas, ultra-concisas y ejecución sin explicaciones infladas. |
+| **17** | `agentic-awesome-skills` | Patrones curados para agentes autónomos y multi-agente. |
+| **18** | `gsd-core` | Framework Get Shit Done para avanzar objetivos sin bloqueos. |
+| **19** | `i-have-adhd` | Formateo Action-First: respuesta sin rodeos, pasos numerados y metas claras. |
 
 ---
 
@@ -130,25 +140,39 @@ Workflows TDD, Playwright E2E, integraciones con Gemini SDK, HuggingFace y evalu
 - 💎 **`pbakaus/impeccable`**: Suite de 23 comandos de interfaz (`/impeccable polish`, `critique`, `bolder`, `harden`...).
 - ⚡ **`obra/superpowers`**: 6 habilidades de metodología ágil de ingeniería.
 - 🔥 **`Leonxlnx/taste-skill`**: Framework anti-slop frontend.
+- 🎭 **`nolly-studio/cult-ui` & `alchaincyf/huashu-design`**: Componentes visuales de vanguardia y micro-detalles.
 
 ---
 
-## 💻 Guía de Instalación por CLI Host
+## 💻 Centro de Comando & CLI Agentico
 
-### En Windows (PowerShell):
-```powershell
-.\install.ps1
+### Lanzar el CLI Interactivo (TUI):
+```bash
+python scripts/superduper_cli.py
 ```
 
-### En Linux / macOS / Git Bash:
+### Comandos Rápidos del CLI:
 ```bash
-chmod +x install.sh
-./install.sh
-```
+# 🔍 Escaneo profundo de stack, frameworks y dependencias del repo
+python scripts/superduper_cli.py scan
 
-### Ejecutar Cualificador Interactivo:
-```bash
-python scripts/qualify_project.py
+# 📋 Listar skills activas en el manifiesto
+python scripts/superduper_cli.py list
+
+# 🎛️ Activar / Desactivar una skill específica
+python scripts/superduper_cli.py toggle emil-design-eng
+
+# 🔎 Buscar en la bóveda de 2,700+ skills
+python scripts/superduper_cli.py search "nextjs"
+
+# 📥 Ingestar skill remota con Skill Seekers
+python scripts/superduper_cli.py ingest "https://github.com/autor/nueva-skill"
+
+# 🔄 Sincronizar configuraciones Multi-CLI (Cursor, Claude, OpenCode)
+python scripts/superduper_cli.py sync
+
+# 🧪 Auditar presencia física de SKILL.md de las habilidades activas
+python scripts/superduper_cli.py audit
 ```
 
 ---
@@ -160,6 +184,8 @@ python scripts/qualify_project.py
 | [`AGENTS.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/AGENTS.md) | Guía mandatoria global para agentes (Suite Core + Protocolos de Cualificación). |
 | [`SKILLS-INDEX.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/SKILLS-INDEX.md) | Índice deduplicado con las 2,705+ skills indexadas. |
 | [`UNIFIED-KNOWLEDGE.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/UNIFIED-KNOWLEDGE.md) | Taxonomía multi-conocimiento unificada. |
-| [`scripts/qualify_project.py`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/scripts/qualify_project.py) | Wizard CLI de cualificación de proyectos. |
+| [`scripts/superduper_cli.py`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/scripts/superduper_cli.py) | **Centro de Control & CLI Agentico** (Discovery, Toggles, Vault Search & Multi-CLI Sync). |
+| [`scripts/qualify_project.py`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/scripts/qualify_project.py) | Wizard interactivo socrático de cualificación. |
 | [`web/qualifier.html`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/web/qualifier.html) | Dashboard web interactivo Glassmorphism. |
 | [`skills/`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/skills/) | Directorio raíz de paquetes `SKILL.md`. |
+

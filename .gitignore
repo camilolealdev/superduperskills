@@ -27,3 +27,4 @@
 !.github/**
 !web/
 !web/**
+!vercel.json
