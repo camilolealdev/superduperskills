@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,15 +25,6 @@
 <meta name="twitter:image" content="https://superduperskills.vercel.app/og-image.png">
 <meta name="twitter:site" content="@camilolealdev">
 <meta name="twitter:creator" content="@camilolealdev">
-
-<!-- OG Rich Media -->
-<meta property="og:video" content="https://superduperskills.vercel.app/og-video.mp4">
-<meta property="og:video:type" content="video/mp4">
-<meta property="og:video:width" content="1280">
-<meta property="og:video:height" content="720">
-<meta property="og:audio" content="https://superduperskills.vercel.app/og-audio.mp3">
-<meta property="og:audio:type" content="audio/mpeg">
-<meta property="og:audio:title" content="SuperDuperSkills Overview">
 
 <!-- Additional Meta -->
 <meta property="og:logo" content="https://superduperskills.vercel.app/icon.svg">
@@ -66,7 +57,8 @@
 <!-- Performance: preconnect + font-display:swap -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet"></noscript>
 
 <style>
 /* ═══════════════════════════════════════════
@@ -707,6 +699,41 @@ header {
   max-width: 760px;
   margin: 0 auto;
 }
+
+/* Install tabs */
+.install-tabs {
+  display: flex;
+  gap: var(--sp-1);
+  margin-bottom: var(--sp-5);
+  background: var(--surface);
+  border-radius: 10px;
+  padding: 3px;
+  border: 1px solid var(--border-glass);
+}
+.install-tab {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  padding: 8px var(--sp-4);
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+}
+@media (hover: hover) and (pointer: fine) {
+  .install-tab:hover { color: var(--ink); background: rgba(255,255,255,0.04); }
+}
+.install-tab.active {
+  background: rgba(0,229,160,0.12);
+  color: var(--accent);
+  font-weight: 700;
+}
+.install-tab:active { transform: scale(0.97); }
+
+.install-panel { display: none; }
+.install-panel.active { display: block; animation: stepEnter 0.3s var(--ease-out); }
 .terminal-block {
   background: rgba(10,12,16,0.7);
   backdrop-filter: blur(20px);
@@ -1374,14 +1401,92 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 <!-- INSTALL -->
 <section class="install-section reveal" aria-labelledby="install-title">
   <h2 class="iso-section-title" id="install-title"><span class="dot" aria-hidden="true">●</span> Install</h2>
-  <p class="iso-section-sub" style="margin-bottom:var(--sp-5);">One command to install everything</p>
-  <div class="terminal-block">
-    <div class="terminal-header">
-      <div class="terminal-dot"></div>
-      <div class="terminal-dot"></div>
-      <div class="terminal-dot"></div>
+  <p class="iso-section-sub" style="margin-bottom:var(--sp-5);">Choose your installation method</p>
+
+  <!-- npm/pnpm tabs -->
+  <div class="install-tabs" id="installTabs">
+    <button class="install-tab active" data-tab="npm">npm</button>
+    <button class="install-tab" data-tab="pnpm">pnpm</button>
+    <button class="install-tab" data-tab="bun">bun</button>
+    <button class="install-tab" data-tab="clone">Clone</button>
+  </div>
+
+  <div class="install-panels">
+    <!-- npm -->
+    <div class="install-panel active" data-panel="npm">
+      <div class="terminal-block">
+        <div class="terminal-header">
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+        </div>
+        <div class="terminal-body">
+<span class="comment"># Install globally</span>
+<span class="prompt">$</span> <span class="cmd">npm</span> <span class="flag">install -g superduperskills</span>
+
+<span class="comment"># Or run directly</span>
+<span class="prompt">$</span> <span class="cmd">npx</span> <span class="flag">superduperskills</span>
+
+<span class="comment"># Scan skills</span>
+<span class="prompt">$</span> <span class="cmd">sds</span> <span class="flag">scan</span>
+        </div>
+      </div>
     </div>
-    <div class="terminal-body">
+
+    <!-- pnpm -->
+    <div class="install-panel" data-panel="pnpm">
+      <div class="terminal-block">
+        <div class="terminal-header">
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+        </div>
+        <div class="terminal-body">
+<span class="comment"># Install globally</span>
+<span class="prompt">$</span> <span class="cmd">pnpm</span> <span class="flag">add -g superduperskills</span>
+
+<span class="comment"># Or run directly</span>
+<span class="prompt">$</span> <span class="cmd">pnpm</span> <span class="flag">dlx superduperskills</span>
+
+<span class="comment"># Scan skills</span>
+<span class="prompt">$</span> <span class="cmd">sds</span> <span class="flag">scan</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- bun -->
+    <div class="install-panel" data-panel="bun">
+      <div class="terminal-block">
+        <div class="terminal-header">
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+        </div>
+        <div class="terminal-body">
+<span class="comment"># Install globally</span>
+<span class="prompt">$</span> <span class="cmd">bun</span> <span class="flag">add -g superduperskills</span>
+
+<span class="comment"># Or run directly</span>
+<span class="prompt">$</span> <span class="cmd">bunx</span> <span class="flag">superduperskills</span>
+
+<span class="comment"># Scan skills</span>
+<span class="prompt">$</span> <span class="cmd">sds</span> <span class="flag">scan</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clone -->
+    <div class="install-panel" data-panel="clone">
+      <div class="terminal-block">
+        <div class="terminal-header">
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+          <div class="terminal-dot"></div>
+        </div>
+        <div class="terminal-body">
+<span class="comment"># Clone the repo</span>
+<span class="prompt">$</span> <span class="cmd">git</span> <span class="flag">clone https://github.com/camilolealdev/superduperskills.git</span>
+
 <span class="comment"># Windows</span>
 <span class="prompt">PS&gt;</span> <span class="cmd">.\install.ps1</span> <span class="flag">-Target all</span>
 
@@ -1390,9 +1495,8 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 
 <span class="comment"># Dry run</span>
 <span class="prompt">$</span> <span class="cmd">./install.sh</span> <span class="flag">--dry-run</span>
-
-<span class="comment"># Regenerate index</span>
-<span class="prompt">$</span> <span class="cmd">python</span> build_index.py
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1417,6 +1521,18 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 
 <script>
 (() => {
+  // ─── INSTALL TABS ───
+  const tabs = document.querySelectorAll('.install-tab');
+  const panels = document.querySelectorAll('.install-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector('[data-panel="' + tab.dataset.tab + '"]').classList.add('active');
+    });
+  });
+
   // ─── ONBOARDING ───
   const overlay = document.getElementById('onboarding');
   const steps = overlay.querySelectorAll('.onboarding-step');
