@@ -658,7 +658,8 @@ def run_interactive_tui():
         elif choice == '7':
             view_compliance_audit()
         elif choice == '8':
-            import scripts.qualify_project as qp
+            sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+            import qualify_project as qp
             qp.run_interactive_wizard()
             input(f"\n{C.GREEN}Presiona ENTER para volver al menú principal...{C.RESET}")
         elif choice == '0' or choice.lower() in ['q', 'exit']:
@@ -906,7 +907,8 @@ def main():
         audit = MultiCLISync.audit_compliance()
         print(json.dumps(audit, indent=2))
     elif args.command == "wizard":
-        import scripts.qualify_project as qp
+        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+        import qualify_project as qp
         qp.run_interactive_wizard()
 
 if __name__ == '__main__':
