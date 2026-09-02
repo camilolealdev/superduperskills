@@ -1,6 +1,6 @@
 {
   "name": "superduperskills",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "The Ultimate Multi-Agent Skills Hub & Governance Suite (2,700+ Curated AI Agent Skills for Claude, Gemini, Cursor, Codex)",
   "main": "bin/superduperskills.js",
   "bin": {
@@ -13,7 +13,14 @@
     "list": "node ./bin/superduperskills.js list",
     "sync": "node ./bin/superduperskills.js sync",
     "audit": "node ./bin/superduperskills.js audit",
-    "wizard": "node ./bin/superduperskills.js wizard"
+    "wizard": "node ./bin/superduperskills.js wizard",
+    "init": "node ./bin/superduperskills.js init",
+    "doctor": "node ./bin/superduperskills.js doctor",
+    "stats": "node ./bin/superduperskills.js stats",
+    "export": "node ./bin/superduperskills.js export",
+    "desktop": "node ./bin/superduperskills.js desktop setup",
+    "completions": "node ./bin/superduperskills.js completions install",
+    "completions:show": "node ./bin/superduperskills.js completions show"
   },
   "repository": {
     "type": "git",

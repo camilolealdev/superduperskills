@@ -37,6 +37,10 @@
 !package.json
 !bin/
 !bin/**
+!completions/
+!completions/**
+!pyproject.toml
+!setup.py
 !index.html
 !robots.txt
 !sitemap.xml
