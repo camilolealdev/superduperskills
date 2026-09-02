@@ -45,3 +45,7 @@
 !manifest.json
 !icon-192.png
 !icon-512.png
+
+# Python bytecode caches leak in under force-included dirs (scripts/, skills/**) above
+**/__pycache__/
+*.pyc
