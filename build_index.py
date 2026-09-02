@@ -5,7 +5,7 @@ Build script for superduperskills repo.
 - Bundles SKILL.md files into skills/
 - Generates SKILLS-INDEX.md with GitHub repo info
 """
-import os, re, json, shutil, subprocess
+import os, re, json, shutil, stat, subprocess
 from pathlib import Path
 
 BASE = os.path.dirname(os.path.abspath(__file__))
@@ -180,9 +180,25 @@ for repo, base_dir in SKILL_DIRS:
 # references/scripts/assets), not just SKILL.md, so supporting files survive.
 os.makedirs(REPO_SKILLS, exist_ok=True)
 ignore_git = shutil.ignore_patterns('.git')
+def _is_link_or_junction(path):
+    """True for symlinks and Windows NTFS junctions (mount-point reparse
+    points). shutil.rmtree refuses both, so callers must unlink() instead."""
+    try:
+        st = os.lstat(path)
+    except OSError:
+        return False
+    if stat.S_ISLNK(st.st_mode):
+        return True
+    attrs = getattr(st, 'st_file_attributes', 0)
+    return bool(attrs & getattr(stat, 'FILE_ATTRIBUTE_REPARSE_POINT', 0))
+
 for name, data in skills.items():
     dest_dir = os.path.join(REPO_SKILLS, data['dir_name'])
-    if os.path.isdir(dest_dir):
+    if _is_link_or_junction(dest_dir):
+        # Junction/symlink (e.g. from `npx skills add`): unlink the link
+        # itself, never rmtree through it into whatever it points at.
+        os.rmdir(dest_dir)
+    elif os.path.isdir(dest_dir):
         shutil.rmtree(dest_dir)
     shutil.copytree(data['source_dir'], dest_dir, ignore=ignore_git)
 
