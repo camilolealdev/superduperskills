@@ -1,8 +1,8 @@
 {
   "name": "SuperDuperSkills",
   "short_name": "SDS",
-  "description": "Catálogo de 2,638 skills para agentes de IA — Claude Code, Gemini CLI, Codex.",
-  "start_url": "/skills-site.html",
+  "description": "Catálogo de 2,608 skills para agentes de IA — Claude Code, Gemini CLI, Codex.",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#0c0e13",
   "theme_color": "#0c0e13",

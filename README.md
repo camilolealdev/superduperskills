@@ -80,7 +80,7 @@ graph TD
 
 ## 🎨 Categorías de Habilidades e Infografía
 
-SuperDuperSkills agrupa sus **2,705+ habilidades** en 5 categorías fundamentales:
+SuperDuperSkills agrupa sus **2,608+ habilidades** en 5 categorías fundamentales:
 
 <p align="center">
   <img src="docs/assets/categories-infographic.jpg" alt="Skill Categories Infographic" width="100%" />
@@ -169,7 +169,7 @@ python scripts/superduper_cli.py list
 # 🎛️ Activar / Desactivar una skill específica
 python scripts/superduper_cli.py toggle emil-design-eng
 
-# 🔎 Buscar en la bóveda de 2,700+ skills
+# 🔎 Buscar en la bóveda de 2,608+ skills
 python scripts/superduper_cli.py search "nextjs"
 
 # 📥 Ingestar skill remota con Skill Seekers
@@ -189,7 +189,7 @@ python scripts/superduper_cli.py audit
 | Ruta / Archivo | Descripción |
 |----------------|-------------|
 | [`AGENTS.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/AGENTS.md) | Guía mandatoria global para agentes (Suite Core + Protocolos de Cualificación). |
-| [`SKILLS-INDEX.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/SKILLS-INDEX.md) | Índice deduplicado con las 2,705+ skills indexadas. |
+| [`SKILLS-INDEX.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/SKILLS-INDEX.md) | Índice deduplicado con las 2,608+ skills indexadas. |
 | [`UNIFIED-KNOWLEDGE.md`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/UNIFIED-KNOWLEDGE.md) | Taxonomía multi-conocimiento unificada. |
 | [`scripts/superduper_cli.py`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/scripts/superduper_cli.py) | **Centro de Control & CLI Agentico** (Discovery, Toggles, Vault Search & Multi-CLI Sync). |
 | [`scripts/qualify_project.py`](file:///g:/Nueva%20carpeta/Documentos/superduperskills/scripts/qualify_project.py) | Wizard interactivo socrático de cualificación. |

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SuperDuperSkills — 2,638 AI Agent Skills Catalog</title>
-<meta name="description" content="Unified catalog of 2,638 deduplicated skills for AI agents: Claude Code, Gemini CLI, Codex. 17 categories, 30+ verified sources, install in 30 seconds.">
+<title>SuperDuperSkills — 2,608 AI Agent Skills Catalog</title>
+<meta name="description" content="Unified catalog of 2,608 deduplicated skills for AI agents: Claude Code, Gemini CLI, Codex. 17 categories, 30+ verified sources, install in 30 seconds.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://superduperskills.vercel.app/">
 <link rel="sitemap" type="application/xml" href="/sitemap.xml">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="SuperDuperSkills — 2,638 AI Agent Skills Catalog">
-<meta property="og:description" content="Unified catalog of 2,638 deduplicated skills for AI agents. 17 categories, 30+ verified sources.">
+<meta property="og:title" content="SuperDuperSkills — 2,608 AI Agent Skills Catalog">
+<meta property="og:description" content="Unified catalog of 2,608 deduplicated skills for AI agents. 17 categories, 30+ verified sources.">
 <meta property="og:image" content="https://superduperskills.vercel.app/og-image.png">
 <meta property="og:url" content="https://superduperskills.vercel.app/">
 <meta property="og:site_name" content="SuperDuperSkills">
@@ -20,8 +20,8 @@
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="SuperDuperSkills — 2,638 AI Agent Skills">
-<meta name="twitter:description" content="Unified catalog of 2,638 deduplicated skills for AI agents. 17 categories, 30+ sources.">
+<meta name="twitter:title" content="SuperDuperSkills — 2,608 AI Agent Skills">
+<meta name="twitter:description" content="Unified catalog of 2,608 deduplicated skills for AI agents. 17 categories, 30+ sources.">
 <meta name="twitter:image" content="https://superduperskills.vercel.app/og-image.png">
 <meta name="twitter:site" content="@camilolealdev">
 <meta name="twitter:creator" content="@camilolealdev">
@@ -46,7 +46,7 @@
   "@type": "WebApplication",
   "name": "SuperDuperSkills",
   "url": "https://superduperskills.vercel.app/",
-  "description": "Unified catalog of 2,638 deduplicated skills for AI agents: Claude Code, Gemini CLI, Codex.",
+  "description": "Unified catalog of 2,608 deduplicated skills for AI agents: Claude Code, Gemini CLI, Codex.",
   "applicationCategory": "DeveloperApplication",
   "operatingSystem": "Cross-platform",
   "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
@@ -106,6 +106,11 @@
 }
 
 html { scroll-behavior: smooth; }
+
+:where(a, button, input, [tabindex]):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
 /* Light mode */
 html[data-theme="light"] {
@@ -930,6 +935,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
    PREFERS-REDUCED-MOTION
    ═══════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
   .onboarding-step.active { animation: none; }
   .iso-card, .comic-panel, .filter-chip, .btn-next, .speech-bubble { transition: none; }
@@ -948,6 +954,8 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
   .install-section { padding: var(--sp-6) var(--sp-4) var(--sp-10); }
   .search-bar { flex-direction: column; align-items: stretch; }
   .filter-chips { justify-content: center; }
+  .install-tabs { overflow-x: auto; }
+  .install-tab { flex: 0 0 auto; min-width: 96px; }
 }
 </style>
 </head>
@@ -961,11 +969,11 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
     <div class="onboarding-step active" data-step="0">
       <span class="step-icon" aria-hidden="true">⚡</span>
       <h2>One Catalog, Every Agent</h2>
-      <p>2,638 deduplicated skills for Claude Code, Gemini CLI, Codex, and more — one install, every CLI.</p>
+      <p>2,608 deduplicated skills for Claude Code, Gemini CLI, Codex, and more — one install, every CLI.</p>
     </div>
     <div class="onboarding-step" data-step="1">
       <span class="step-icon" aria-hidden="true">🧩</span>
-      <h2>2,638 Skills. Zero Duplicates.</h2>
+      <h2>2,608 Skills. Zero Duplicates.</h2>
       <p>Pulled from 30+ verified sources, deduplicated and organized into 17 categories.</p>
     </div>
     <div class="onboarding-step" data-step="2">
@@ -995,7 +1003,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
   <div class="header-inner">
     <div class="brand">SuperDuper<span>Skills</span></div>
     <div class="header-stats">
-      <span><span class="num">2,638</span> skills</span>
+      <span><span class="num">2,608</span> skills</span>
       <span><span class="num">17</span> categories</span>
       <a class="header-link" href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -1012,7 +1020,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 <!-- HERO -->
 <section class="hero">
   <h1>The <span class="highlight">Complete</span> AI Skills Catalog</h1>
-  <p class="subtitle">2,638 deduplicated skills across 17 categories. One install for Claude Code, Gemini CLI, Codex, and every major AI agent.</p>
+  <p class="subtitle">2,608 deduplicated skills across 17 categories. One install for Claude Code, Gemini CLI, Codex, and every major AI agent.</p>
 </section>
 
 <!-- CATEGORIES -->
