@@ -1,0 +1,29 @@
+---
+description: SuperDuperSkills Active Matrix Rules
+globs: *
+---
+
+# SuperDuperSkills — Active Matrix Governance
+
+Before editing code, the Cursor Agent MUST consult and execute `view_file` on:
+- `skills/caveman/SKILL.md` (Output Compression (-75% token reduction))
+- `skills/ponytail/SKILL.md` (YAGNI & Simplicity Architecture (Minimal Diffs))
+- `skills/spec-kit/SKILL.md` (Spec-Driven Development & Task Breakdown)
+- `skills/token-savings/SKILL.md` (Context Budget & Skill Filtering)
+- `skills/harness/SKILL.md` (Automated Verification & Test Harness Loop)
+- `skills/claude-mem/SKILL.md` (Persistent Session & Architecture Memory)
+- `skills/rtk/SKILL.md` (Terminal Log Compression (Rust Token Killer))
+- `skills/graphify/SKILL.md` (Codebase Knowledge Graph Indexing)
+- `skills/archify/SKILL.md` (Interactive System Diagrams (Trigger: 3 Commits))
+- `skills/skill-seekers/SKILL.md` (Ingesta & Búsqueda Activa de Skills Remotas)
+- `skills/skill-vault/SKILL.md` (Bóveda Persistente de Skills)
+- `skills/all-deploy/SKILL.md` (Despliegues Universales Multicloud)
+- `skills/context-mode/SKILL.md` (Gestión & Compresión de Ventana de Contexto)
+- `skills/aprende-skill/SKILL.md` (Aprendizaje Acelerado Agentico)
+- `skills/agentshield/SKILL.md` (Escudo de Seguridad & Prompt Sanitization)
+- `skills/modo-tdah/SKILL.md` (Ejecución Ultra-Focalizada sin Explicaciones Infladas)
+- `skills/agentic-awesome-skills/SKILL.md` (Catálogo de Patrones Agenticos Autónomos)
+- `skills/gsd-core/SKILL.md` (Get Shit Done (GSD) Execution Framework)
+- `skills/i-have-adhd/SKILL.md` (Formateo de Salida Action-First)
+- `skills/emil-design-eng/SKILL.md` (Habilitada interactivamente por el usuario.)
+- `skills/mi-skill/SKILL.md` (Habilitada interactivamente por el usuario.)

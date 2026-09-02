@@ -1,0 +1,160 @@
+{
+  "project_name": "superduperskills",
+  "project_phase": "0-to-1 MVP / Desarrollo Activo",
+  "objectives": [
+    "YAGNI Architecture",
+    "UI Polish",
+    "Automated Testing",
+    "Security Compliance"
+  ],
+  "active_skills": [
+    {
+      "name": "caveman",
+      "category": "CORE",
+      "reason": "Output Compression (-75% token reduction)",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "ponytail",
+      "category": "CORE",
+      "reason": "YAGNI & Simplicity Architecture (Minimal Diffs)",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "spec-kit",
+      "category": "CORE",
+      "reason": "Spec-Driven Development & Task Breakdown",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "token-savings",
+      "category": "CORE",
+      "reason": "Context Budget & Skill Filtering",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "harness",
+      "category": "CORE",
+      "reason": "Automated Verification & Test Harness Loop",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "claude-mem",
+      "category": "CORE",
+      "reason": "Persistent Session & Architecture Memory",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "rtk",
+      "category": "CORE",
+      "reason": "Terminal Log Compression (Rust Token Killer)",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "graphify",
+      "category": "CORE",
+      "reason": "Codebase Knowledge Graph Indexing",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "archify",
+      "category": "CORE",
+      "reason": "Interactive System Diagrams (Trigger: 3 Commits)",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "skill-seekers",
+      "category": "CORE",
+      "reason": "Ingesta & Búsqueda Activa de Skills Remotas",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "skill-vault",
+      "category": "CORE",
+      "reason": "Bóveda Persistente de Skills",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "all-deploy",
+      "category": "CORE",
+      "reason": "Despliegues Universales Multicloud",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "context-mode",
+      "category": "CORE",
+      "reason": "Gestión & Compresión de Ventana de Contexto",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "aprende-skill",
+      "category": "CORE",
+      "reason": "Aprendizaje Acelerado Agentico",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "agentshield",
+      "category": "CORE",
+      "reason": "Escudo de Seguridad & Prompt Sanitization",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "modo-tdah",
+      "category": "CORE",
+      "reason": "Ejecución Ultra-Focalizada sin Explicaciones Infladas",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "agentic-awesome-skills",
+      "category": "CORE",
+      "reason": "Catálogo de Patrones Agenticos Autónomos",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "gsd-core",
+      "category": "CORE",
+      "reason": "Get Shit Done (GSD) Execution Framework",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "i-have-adhd",
+      "category": "CORE",
+      "reason": "Formateo de Salida Action-First",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "emil-design-eng",
+      "category": "USER_SELECTED",
+      "reason": "Habilitada interactivamente por el usuario.",
+      "is_core": false,
+      "mandatory_view": true
+    },
+    {
+      "name": "mi-skill",
+      "category": "USER_SELECTED",
+      "reason": "Habilitada interactivamente por el usuario.",
+      "is_core": false,
+      "mandatory_view": true
+    }
+  ],
+  "mandatory_protocol": "EL AGENTE AI DEBE INVOCAR view_file EN CADA SKILL.md ANTES DE ESCRIBIR CÓDIGO."
+}
