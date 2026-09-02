@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SuperDuperSkills — Qualify & Skill Selector</title>
+  <meta name="description" content="Qualify a project and generate a focused SuperDuperSkills manifest from the 2,608-skill catalog.">
+  <meta name="theme-color" content="#0c0e13">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet"></noscript>
+  <style>
+    :root {
+      --bg: #0c0e13;
+      --surface: rgba(22, 25, 34, 0.55);
+      --surface-raised: rgba(30, 34, 48, 0.7);
+      --ink: #e8e6e1;
+      --ink-muted: #8b8d97;
+      --accent: #00e5a0;
+      --accent-alt: #6c5ce7;
+      --comic-blue: #4facfe;
+      --comic-pink: #e100ff;
+      --border: rgba(255,255,255,0.06);
+      --border-glass: rgba(255,255,255,0.08);
+      --font-display: 'Bangers', cursive;
+      --font-body: 'Space Grotesk', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+      outline: 2px solid var(--accent-cyan);
+      outline-offset: 3px;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(at 0% 0%, rgba(79, 172, 254, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(127, 0, 255, 0.15) 0px, transparent 50%);
+      color: var(--ink);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border-card);
+      backdrop-filter: blur(12px);
+      background: rgba(12, 14, 19, 0.72);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--comic-blue));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.2rem;
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0, 229, 160, 0.25);
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, #fff, var(--text-muted));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge {
+      background: rgba(0, 229, 160, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 229, 160, 0.3);
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 1300px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 2rem;
+    }
+
+    @media (max-width: 1024px) {
+      main { grid-template-columns: 1fr; }
+    }
+
+    .glass-card {
+      background: var(--surface);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 1.75rem;
+      backdrop-filter: blur(16px) saturate(1.2);
+      box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+      margin-bottom: 1.5rem;
+    }
+
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--accent);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .opt-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .opt-card:hover {
+      border-color: var(--accent);
+      background: rgba(0, 229, 160, 0.05);
+      transform: translateY(-2px);
+    }
+
+    .opt-card.selected {
+      border-color: var(--accent);
+      background: linear-gradient(135deg, rgba(0, 229, 160, 0.15), rgba(108, 92, 231, 0.15));
+      box-shadow: 0 0 15px rgba(0, 229, 160, 0.2);
+    }
+
+    .opt-icon { font-size: 1.25rem; }
+    .opt-label { font-size: 0.9rem; font-weight: 600; }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-height: 550px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .skills-list::-webkit-scrollbar {
+      width: 6px;
+    }
+    .skills-list::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+    }
+
+    .skill-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .skill-name {
+      font-family: var(--font-mono);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .skill-cat {
+      font-size: 0.75rem;
+      color: var(--ink-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+    }
+
+    .mandatory-badge {
+      font-size: 0.7rem;
+      background: rgba(0, 229, 160, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(16, 185, 129, 0.3);
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 0.85rem;
+      border-radius: 10px;
+      border: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--comic-blue));
+      color: #000;
+      box-shadow: 0 4px 20px rgba(0, 229, 160, 0.25);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    .code-block {
+      background: rgba(10, 12, 16, 0.82);
+      border: 1px solid var(--border-glass);
+      border-radius: 10px;
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #a7f3d0;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      max-height: 200px;
+    }
+    @media (max-width: 600px) {
+      header { padding: 1rem; }
+      .brand-title { font-size: 1rem; }
+      .brand-logo { width: 34px; height: 34px; }
+      .badge { font-size: 0.68rem; padding: 0.2rem 0.5rem; }
+      main { margin: 1rem auto; padding: 0 1rem; gap: 1rem; }
+      .glass-card { padding: 1.25rem; border-radius: 12px; }
+      .options-grid { grid-template-columns: 1fr; }
+      .skill-item { align-items: flex-start; gap: 0.75rem; }
+      .skill-cat, .mandatory-badge { font-size: 0.62rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="brand">
+      <div class="brand-logo">S</div>
+      <div class="brand-title">SuperDuperSkills Qualifier</div>
+    </div>
+    <div class="badge">2,608 Skills Indexadas</div>
+  </header>
+
+  <main>
+    <section>
+      <!-- Phase Selection -->
+      <div class="glass-card">
+        <div class="card-title">1. Fase & Enfoque del Proyecto</div>
+        <div class="options-grid" id="phase-grid">
+          <div class="opt-card selected" onclick="selectPhase(this, 'MVP')">
+            <span class="opt-icon">🚀</span>
+            <span class="opt-label">0-to-1 MVP / Creación</span>
+          </div>
+          <div class="opt-card" onclick="selectPhase(this, 'Refactor')">
+            <span class="opt-icon">🧹</span>
+            <span class="opt-label">Refactorización & Deuda</span>
+          </div>
+          <div class="opt-card" onclick="selectPhase(this, 'UI')">
+            <span class="opt-icon">🎨</span>
+            <span class="opt-label">Diseño Visual & Polish</span>
+          </div>
+          <div class="opt-card" onclick="selectPhase(this, 'Security')">
+            <span class="opt-icon">🛡️</span>
+            <span class="opt-label">Seguridad & OWASP</span>
+          </div>
+          <div class="opt-card" onclick="selectPhase(this, 'DevOps')">
+            <span class="opt-icon">⚡</span>
+            <span class="opt-label">Producción & CI/CD</span>
+          </div>
+          <div class="opt-card" onclick="selectPhase(this, 'Orchestration')">
+            <span class="opt-icon">🤖</span>
+            <span class="opt-label">Multi-Agent System</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Objectives -->
+      <div class="glass-card">
+        <div class="card-title">2. Objetivos Clave de la Sesión</div>
+        <div class="options-grid" id="obj-grid">
+          <div class="opt-card selected" onclick="toggleObjective(this, 'yagni')">
+            <span class="opt-icon">📏</span>
+            <span class="opt-label">Arquitectura YAGNI</span>
+          </div>
+          <div class="opt-card selected" onclick="toggleObjective(this, 'ui-design')">
+            <span class="opt-icon">✨</span>
+            <span class="opt-label">UI Editorial / Anti-Slop</span>
+          </div>
+          <div class="opt-card" onclick="toggleObjective(this, 'tests')">
+            <span class="opt-icon">🧪</span>
+            <span class="opt-label">Pruebas TDD & E2E</span>
+          </div>
+          <div class="opt-card" onclick="toggleObjective(this, 'copywriting')">
+            <span class="opt-icon">📝</span>
+            <span class="opt-label">De-Slop Humanizer</span>
+          </div>
+          <div class="opt-card" onclick="toggleObjective(this, 'gtm')">
+            <span class="opt-icon">📈</span>
+            <span class="opt-label">Estrategia GTM & SEO</span>
+          </div>
+          <div class="opt-card" onclick="toggleObjective(this, 'genai')">
+            <span class="opt-icon">🧠</span>
+            <span class="opt-label">Integración GenAI</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Side Panel: Active Suite -->
+    <aside>
+      <div class="glass-card">
+        <div class="card-title">📋 Suite de Skills Cualificadas</div>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+          Invocación directa y lectura obligatoria de cada <code>SKILL.md</code> antes de iniciar código.
+        </p>
+
+        <div class="skills-list" id="skills-container">
+          <!-- Populated by JS -->
+        </div>
+
+        <button class="btn btn-primary" style="margin-top: 1.5rem;" onclick="exportManifest()">
+          💾 Guardar Manifiesto .agents/ACTIVE-SKILLS.json
+        </button>
+      </div>
+
+      <div class="glass-card">
+        <div class="card-title">📜 Vista Previa Manifiesto</div>
+        <div class="code-block" id="json-preview">
+          // Manifiesto cualificado listo
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <script>
+    let activePhase = 'MVP';
+    let activeObjectives = new Set(['yagni', 'ui-design']);
+
+    const coreSkills = [
+      { name: 'caveman', cat: 'CORE', reason: 'Output Compression (-75%)' },
+      { name: 'ponytail', cat: 'CORE', reason: 'YAGNI Architecture' },
+      { name: 'spec-kit', cat: 'CORE', reason: 'Spec-Driven Dev' },
+      { name: 'token-savings', cat: 'CORE', reason: 'Context Budget' },
+      { name: 'harness', cat: 'CORE', reason: 'Automated Test Harness' },
+      { name: 'claude-mem', cat: 'CORE', reason: 'Persistent Memory' },
+      { name: 'rtk', cat: 'CORE', reason: 'Terminal Log Filter' },
+      { name: 'graphify', cat: 'CORE', reason: 'Codebase Knowledge Graph' },
+      { name: 'archify', cat: 'CORE', reason: 'Interactive Architecture Maps (Trigger: 3 Commits)' },
+      { name: 'skill-seekers', cat: 'CORE', reason: 'Ingesta & Búsqueda Activa de Skills' },
+      { name: 'skill-vault', cat: 'CORE', reason: 'Bóveda Persistente de Skills' },
+      { name: 'all-deploy', cat: 'CORE', reason: 'Despliegues Universales Multicloud' },
+      { name: 'context-mode', cat: 'CORE', reason: 'Gestión & Compresión de Contexto' },
+      { name: 'aprende-skill', cat: 'CORE', reason: 'Aprendizaje Acelerado Agentico' },
+      { name: 'agentshield', cat: 'CORE', reason: 'Escudo de Seguridad & Prompt Sanitization' },
+      { name: 'modo-tdah', cat: 'CORE', reason: 'Ejecución Ultra-Focalizada sin Explicaciones Infladas' },
+      { name: 'agentic-awesome-skills', cat: 'CORE', reason: 'Catálogo de Patrones Agenticos Autónomos' },
+      { name: 'gsd-core', cat: 'CORE', reason: 'Get Shit Done (GSD) Execution Framework' },
+      { name: 'i-have-adhd', cat: 'CORE', reason: 'Formateo de Salida Amigable ADHD (Acciones Primero)' }
+    ];
+
+    function selectPhase(el, phase) {
+      document.querySelectorAll('#phase-grid .opt-card').forEach(c => c.classList.remove('selected'));
+      el.classList.add('selected');
+      activePhase = phase;
+      updateSkills();
+    }
+
+    function toggleObjective(el, obj) {
+      if (activeObjectives.has(obj)) {
+        activeObjectives.delete(obj);
+        el.classList.remove('selected');
+      } else {
+        activeObjectives.add(obj);
+        el.classList.add('selected');
+      }
+      updateSkills();
+    }
+
+    function updateSkills() {
+      const skills = [...coreSkills];
+
+      if (activePhase === 'MVP') {
+        skills.push({ name: 'orch-build-mvp', cat: 'FASE', reason: 'Construcción vertical MVP' });
+        skills.push({ name: 'spec-driven-development', cat: 'FASE', reason: 'Especificación previa' });
+      } else if (activePhase === 'Refactor') {
+        skills.push({ name: 'refactor', cat: 'FASE', reason: 'Refactorización quirúrgica' });
+        skills.push({ name: 'reducing-entropy', cat: 'FASE', reason: 'Reducción de tamaño codebase' });
+      } else if (activePhase === 'UI') {
+        skills.push({ name: 'design-taste-frontend', cat: 'FASE', reason: 'UI Anti-slop landing pages' });
+        skills.push({ name: 'emil-design-eng', cat: 'FASE', reason: 'Pulido de componentes UI' });
+      } else if (activePhase === 'Security') {
+        skills.push({ name: 'security-review', cat: 'FASE', reason: 'Escaneo de vulnerabilidades' });
+      }
+
+      if (activeObjectives.has('ui-design')) {
+        skills.push({ name: 'high-end-visual-design', cat: 'OBJETIVO', reason: 'Aesthetic agency-grade UI' });
+        skills.push({ name: 'gsap-framer-scroll-animation', cat: 'OBJETIVO', reason: 'Animaciones scroll & reveals' });
+      }
+      if (activeObjectives.has('tests')) {
+        skills.push({ name: 'tdd-workflow', cat: 'OBJETIVO', reason: 'Workflow TDD 80%+ Cobertura' });
+        skills.push({ name: 'e2e-testing', cat: 'OBJETIVO', reason: 'Pruebas Playwright E2E' });
+      }
+      if (activeObjectives.has('copywriting')) {
+        skills.push({ name: 'humanizer', cat: 'OBJETIVO', reason: 'Tono humano sin IA slop' });
+      }
+      if (activeObjectives.has('gtm')) {
+        skills.push({ name: 'gtm-0-to-1-launch', cat: 'OBJETIVO', reason: 'Estrategia GTM & SEO' });
+      }
+      if (activeObjectives.has('genai')) {
+        skills.push({ name: 'gemini-api-dev', cat: 'OBJETIVO', reason: 'Gemini Multimodal SDK' });
+      }
+
+      const container = document.getElementById('skills-container');
+      container.innerHTML = skills.map(s => `
+        <div class="skill-item">
+          <div>
+            <div class="skill-name">${s.name}</div>
+            <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem;">${s.reason}</div>
+          </div>
+          <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem;">
+            <span class="skill-cat">${s.cat}</span>
+            <span class="mandatory-badge">Lectura obligatoria</span>
+          </div>
+        </div>
+      `).join('');
+
+      const manifestObj = {
+        phase: activePhase,
+        objectives: Array.from(activeObjectives),
+        active_skills: skills.map(s => s.name),
+        mandatory_protocol: "view_file(SKILL.md) mandatorio antes de escribir código"
+      };
+
+      document.getElementById('json-preview').innerText = JSON.stringify(manifestObj, null, 2);
+    }
+
+    function exportManifest() {
+      const text = document.getElementById('json-preview').innerText;
+      const blob = new Blob([text], { type: 'application/json' });
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'ACTIVE-SKILLS.json';
+      a.click();
+      alert('Manifiesto cualificado exportado como ACTIVE-SKILLS.json');
+    }
+
+    // Init
+    updateSkills();
+  </script>
+</body>
+</html>
