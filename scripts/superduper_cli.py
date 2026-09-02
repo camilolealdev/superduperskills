@@ -101,6 +101,7 @@ CATEGORY_REGISTRY = {
             ("pick-ui-library", "Selección inteligente de librería UI sin sobrecarga"),
             ("prototype", "Prototipado rápido de interfaces de alta fidelidad"),
             ("ask-sonner", "Patrones y troubleshooting del sistema de toasts Sonner"),
+            ("clone-website", "Reverse-engineer y clonado pixel-perfect de sitios via agentes builder"),
             ("impeccable", "Suite Paul Bakaus (23 comandos de UI design polish)"),
             ("taste-skill", "Framework frontend anti-slop y jerarquía tipográfica"),
             ("cult-ui", "Componentes UI con estética brutalista y audaz"),
