@@ -5,7 +5,7 @@ disable-model-invocation: true
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Scope Decomposer (Top Orchestrator)
 
@@ -132,7 +132,7 @@ Do NOT use if:
 
 ### Auto-Discovery
 
-**Team ID**: Auto-discovered from `docs/tasks/kanban_board.md` Linear Configuration table (see CLAUDE.md "Configuration Auto-Discovery").
+**Team ID**: Auto-discovered from `docs/tasks/kanban_board.md` Linear Configuration table (see AGENTS.md "Configuration Auto-Discovery").
 
 **Fallback:** If kanban_board.md missing → ln-210-epic-coordinator will ask user directly
 

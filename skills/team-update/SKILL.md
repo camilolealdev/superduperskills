@@ -1,7 +1,7 @@
 ---
 name: team-update
 description: "Post project updates to team chat, gather feedback, triage responses, and plan next steps. Adapts to available tools (chat, git, issues, tasks). First run discovers tools and saves a playbook; subsequent runs execute from the playbook. Trigger with 'team update', 'post update', 'sync with team', 'standup', 'check team chat', 'feedback loop', 'project update', 'what did the team say'."
-compatibility: claude-code-only
+compatibility: Codex-only
 allowed-tools: "*"
 ---
 
@@ -11,7 +11,7 @@ Post project updates to team chat, read and triage feedback, and plan next steps
 
 ## The Playbook Pattern
 
-This skill uses a **playbook** file at `.claude/team-update-playbook.md` in the project root.
+This skill uses a **playbook** file at `.Codex/team-update-playbook.md` in the project root.
 
 - **First run**: Discover available tools, ask the user for preferences, execute, save a playbook
 - **Subsequent runs**: Read the playbook, skip discovery, execute directly
@@ -23,7 +23,7 @@ The playbook is plain markdown the user can edit. It captures tool configuration
 
 ## Phase 0: Playbook Check
 
-Check if `.claude/team-update-playbook.md` exists in the project root.
+Check if `.Codex/team-update-playbook.md` exists in the project root.
 
 **If it exists**: Read it. All tool configuration, channel info, message style, and triage rules are in there. Jump to Phase 1 with known config.
 
@@ -62,11 +62,11 @@ After discovery, ask the user to confirm:
 
 ### Save Playbook
 
-After discovery + user preferences, save the playbook to `.claude/team-update-playbook.md`.
+After discovery + user preferences, save the playbook to `.Codex/team-update-playbook.md`.
 
 Read [references/playbook-format.md](references/playbook-format.md) for the full template. Fill in all sections with discovered tools and user preferences. If a capability was not found, note it as "Not available" in the playbook.
 
-Ensure `.claude/` is in `.gitignore` (the playbook contains space IDs and preferences that shouldn't be committed).
+Ensure `.Codex/` is in `.gitignore` (the playbook contains space IDs and preferences that shouldn't be committed).
 
 ---
 

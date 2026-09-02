@@ -320,9 +320,9 @@ After each security scan, append results to `run-history.json` in this skill dir
 ```bash
 node -e "
 const fs = require('fs');
-const h = JSON.parse(fs.readFileSync('.claude/skills/security-testing/run-history.json'));
+const h = JSON.parse(fs.readFileSync('.Codex/skills/security-testing/run-history.json'));
 h.runs.push({date: new Date().toISOString().split('T')[0], scan_types: ['sast','deps'], findings: {critical: 0, high: 0, medium: 0, low: 0}});
-fs.writeFileSync('.claude/skills/security-testing/run-history.json', JSON.stringify(h, null, 2));
+fs.writeFileSync('.Codex/skills/security-testing/run-history.json', JSON.stringify(h, null, 2));
 "
 ```
 Read `run-history.json` before each scan — track finding count by severity over time. Alert if critical findings increase.

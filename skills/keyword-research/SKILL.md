@@ -3,8 +3,8 @@ name: keyword-research
 description: 'Find high-value SEO keywords: search volume, difficulty, intent, topic clusters. "What should I write about" / "找选题" / "帮我挖词". 关键词研究/长尾词/搜索量/内容选题 キーワード調査/検索ボリューム 키워드분석/검색량 investigación palabras clave'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -104,8 +104,8 @@ metadata:
 # Keyword Research
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 Discovers, analyzes, and prioritizes keywords for SEO and GEO content strategies. Identifies high-value opportunities based on search volume, competition, intent, and business relevance.
@@ -137,7 +137,7 @@ Use this whenever the task needs reusable market intelligence that should influe
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Basic Keyword Research
 
@@ -169,16 +169,16 @@ What keywords is [competitor URL] ranking for that I should target?
 
 **Expected output**: a prioritized research brief, evidence-backed findings, and a short handoff summary ready for `memory/research/`.
 
-- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing research deliverable plus a reusable summary that can be stored under `memory/research/`.
-- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `CLAUDE.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
+- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `AGENTS.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
 - **Next handoff**: use the `Next Best Skill` below when the findings are ready to drive action.
 
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console connected:**
 Automatically pull historical search volume data, keyword difficulty scores, SERP analysis, current rankings from ~~search console, and competitor keyword overlap. The skill will fetch seed keyword metrics, related keyword suggestions, and search trend data.
@@ -356,7 +356,7 @@ When a user requests keyword research:
 
    Produce a report containing: Executive Summary, Top Keyword Opportunities (Quick Wins, Growth, GEO), Topic Clusters, Content Calendar, and Next Steps.
 
-   > **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/example-report.md) for the full report template and example.
+   > **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/keyword-research/references/example-report.md) for the full report template and example.
 
 ## Validation Checkpoints
 
@@ -375,7 +375,7 @@ When a user requests keyword research:
 
 ## Example
 
-> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/example-report.md) for a complete example report for "project management software for small businesses".
+> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/keyword-research/references/example-report.md) for a complete example report for "project management software for small businesses".
 
 ### Advanced Usage
 
@@ -412,11 +412,11 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Keyword Intent Taxonomy](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/keyword-intent-taxonomy.md) — Complete intent classification with signal words and content strategies
-- [Topic Cluster Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/topic-cluster-templates.md) — Hub-and-spoke architecture templates for pillar and cluster content
-- [Keyword Prioritization Framework](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/keyword-prioritization-framework.md) — Priority scoring matrix, categories, and seasonal keyword patterns
-- [Example Report](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/references/example-report.md) — Complete example keyword research report for project management software
+- [Keyword Intent Taxonomy](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/keyword-research/references/keyword-intent-taxonomy.md) — Complete intent classification with signal words and content strategies
+- [Topic Cluster Templates](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/keyword-research/references/topic-cluster-templates.md) — Hub-and-spoke architecture templates for pillar and cluster content
+- [Keyword Prioritization Framework](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/keyword-research/references/keyword-prioritization-framework.md) — Priority scoring matrix, categories, and seasonal keyword patterns
+- [Example Report](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/keyword-research/references/example-report.md) — Complete example keyword research report for project management software
 
 ## Next Best Skill
 
-- **Primary**: [competitor-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/SKILL.md) — turn keyword opportunities into a competitive benchmark.
+- **Primary**: [competitor-analysis](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/competitor-analysis/SKILL.md) — turn keyword opportunities into a competitive benchmark.

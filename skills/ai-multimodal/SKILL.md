@@ -102,9 +102,9 @@ Process audio, images, videos, documents, and generate images using Google Gemin
 The skill checks for `GEMINI_API_KEY` in this order:
 1. Process environment: `export GEMINI_API_KEY="your-key"`
 2. Project root: `.env`
-3. `.claude/.env`
-4. `.claude/skills/.env`
-5. `.claude/skills/ai-multimodal/.env`
+3. `.Codex/.env`
+4. `.Codex/skills/.env`
+5. `.Codex/skills/ai-multimodal/.env`
 
 **Get API key**: https://aistudio.google.com/apikey
 

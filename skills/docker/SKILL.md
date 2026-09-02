@@ -76,10 +76,10 @@ bun <script>
 docker exec <container-name> <command>
 ```
 
-**Note:** Use `docker exec` WITHOUT the `-it` flag in Claude Code:
+**Note:** Use `docker exec` WITHOUT the `-it` flag in Codex:
 
 ```bash
-# Correct (works in Claude Code)
+# Correct (works in Codex)
 docker exec my-project-dev-1 npm run build
 
 # Wrong (fails with "not a TTY")
@@ -284,7 +284,7 @@ For automated health monitoring and CI integration, see **[health-checks.md](hea
 
 ---
 
-## Integration with Claude Code
+## Integration with Codex
 
 | Task | Action |
 |------|--------|
@@ -316,7 +316,7 @@ Provides automated enforcement of Docker-first policy:
 - Can auto-transform commands to run inside container
 - Configurable allowlist for safe host commands
 
-Install: `git clone https://github.com/wrsmith108/docker-enforce.git ~/.claude/skills/docker-enforce`
+Install: `git clone https://github.com/wrsmith108/docker-enforce.git ~/.Codex/skills/docker-enforce`
 
 ---
 

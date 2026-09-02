@@ -1,11 +1,11 @@
 ---
 name: connect-apps
-description: Connect Claude to external apps like Gmail, Slack, GitHub. Use this skill when the user wants to send emails, create issues, post messages, or take actions in external services.
+description: Connect Codex to external apps like Gmail, Slack, GitHub. Use this skill when the user wants to send emails, create issues, post messages, or take actions in external services.
 ---
 
 # Connect Apps
 
-Connect Claude to 1000+ apps. Actually send emails, create issues, post messages - not just generate text about it.
+Connect Codex to 1000+ apps. Actually send emails, create issues, post messages - not just generate text about it.
 
 ## Quick Start
 
@@ -23,12 +23,12 @@ Connect Claude to 1000+ apps. Actually send emails, create issues, post messages
 
 This will:
 - Ask for your free API key (get one at [platform.composio.dev](https://platform.composio.dev/?utm_source=Github&utm_content=AwesomeSkills))
-- Configure Claude's connection to 1000+ apps
+- Configure Codex's connection to 1000+ apps
 - Take about 60 seconds
 
 ### Step 3: Try It!
 
-After setup, restart Claude Code and try:
+After setup, restart Codex and try:
 
 ```
 Send me a test email at YOUR_EMAIL@example.com
@@ -38,7 +38,7 @@ If it works, you're connected!
 
 ## What You Can Do
 
-| Ask Claude to... | What happens |
+| Ask Codex to... | What happens |
 |------------------|--------------|
 | "Send email to sarah@acme.com about the launch" | Actually sends the email |
 | "Create GitHub issue: fix login bug" | Creates the issue |
@@ -56,7 +56,7 @@ If it works, you're connected!
 
 ## How It Works
 
-1. You ask Claude to do something
+1. You ask Codex to do something
 2. Composio Tool Router finds the right tool
 3. First time? You'll authorize via OAuth (one-time)
 4. Action executes and returns result
@@ -64,7 +64,7 @@ If it works, you're connected!
 ## Troubleshooting
 
 - **"Plugin not found"** → Make sure you ran `/plugin install composio-toolrouter`
-- **"Need to authorize"** → Click the OAuth link Claude provides, then say "done"
+- **"Need to authorize"** → Click the OAuth link Codex provides, then say "done"
 - **Action failed** → Check you have permissions in the target app
 
 ---

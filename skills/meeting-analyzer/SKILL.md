@@ -5,7 +5,7 @@ description: Analyzes meeting transcripts and recordings to surface behavioral p
 
 # Meeting Insights Analyzer
 
-> Originally contributed by [maximcoding](https://github.com/maximcoding) — enhanced and integrated by the claude-skills team.
+> Originally contributed by [maximcoding](https://github.com/maximcoding) — enhanced and integrated by the Codex-skills team.
 
 Transform meeting transcripts into concrete, evidence-backed feedback on communication patterns, leadership behaviors, and interpersonal dynamics.
 

@@ -4,8 +4,8 @@ description: 'Publish-readiness gate: 80-item CORE-EEAT audit with weighted scor
 version: "5.1.0"
 license: Apache-2.0
 allowed-tools: WebFetch
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -66,11 +66,11 @@ metadata:
 
 # Content Quality Auditor
 
-> Based on [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/core-eeat-content-benchmark). Full benchmark reference: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)
+> Based on [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/core-eeat-content-benchmark). Full benchmark reference: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md)
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill evaluates content quality across 80 standardized criteria organized in 8 dimensions. It produces a comprehensive audit report with per-item scoring, dimension and system scores, weighted totals by content type, and a prioritized action plan.
@@ -104,7 +104,7 @@ Use this when content needs a quality check before publishing — even if the us
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a publish verdict and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a publish verdict and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Audit Content
 
@@ -138,14 +138,14 @@ Audit my content vs competitor: [your content] vs [competitor content]
 
 **Expected output**: a CORE-EEAT audit report, a publish-readiness verdict, and a short handoff summary ready for `memory/audits/content/`.
 
-- **Reads**: the target content, content type, supporting evidence, and any prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: the target content, content type, supporting evidence, and any prior decisions from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing audit report plus a reusable summary that can be stored under `memory/audits/content/`.
 - **Promotes**: veto items and publish blockers to `memory/hot-cache.md` (auto-saved, no user confirmation needed). Top improvement priorities to `memory/open-loops.md`.
 - **Next handoff**: use the `Next Best Skill` below once the verdict is clear.
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~web crawler + ~~SEO tool connected:**
 Automatically fetch page content, extract HTML structure, check schema markup, verify internal/external links, and pull competitor content for comparison.
@@ -184,7 +184,7 @@ If any veto item triggers, flag it prominently at the top of the report and reco
 
 ### Step 2: CORE Audit (40 items)
 
-Evaluate each item against the criteria in [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md).
+Evaluate each item against the criteria in [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md).
 
 Score each item:
 - **Pass** = 10 points (fully meets criteria)
@@ -221,7 +221,7 @@ Repeat the same table format for **O** (Organization), **R** (Referenceability),
 
 Repeat the same table format for **Ept** (Expertise), **A** (Authority), and **T** (Trust), scoring all 10 items per dimension.
 
-See [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/references/item-reference.md) for the complete 80-item ID lookup table and site-level item handling notes.
+See [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/references/item-reference.md) for the complete 80-item ID lookup table and site-level item handling notes.
 
 ### Step 4: Scoring & Report
 
@@ -361,7 +361,7 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ## Example
 
-See [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/references/item-reference.md) for a complete scored example showing the C dimension with all 10 items, priority improvements, and weighted scoring.
+See [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/references/item-reference.md) for a complete scored example showing the C dimension with all 10 items, priority improvements, and weighted scoring.
 
 ## Tips for Success
 
@@ -372,13 +372,13 @@ See [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-claud
 4. **Some EEAT items need site-level data** — Don't penalize content for things only observable at the site level (backlinks, brand recognition)
 5. **Use the weighted score, not just the raw average** — A product review with strong Exclusivity matters more than strong Authority
 6. **Re-audit after improvements** — Run again to verify score improvements and catch regressions
-7. **Pair with CITE for domain-level context** — A high content score on a low-authority domain signals a different priority than the reverse; run [domain-authority-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/SKILL.md) for the full 120-item picture
+7. **Pair with CITE for domain-level context** — A high content score on a low-authority domain signals a different priority than the reverse; run [domain-authority-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/domain-authority-auditor/SKILL.md) for the full 120-item picture
 
 ## Reference Materials
 
-- [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md) — Full 80-item benchmark with dimension definitions, scoring criteria, and GEO-First item markers
-- [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/references/item-reference.md) — All 80 item IDs in a compact lookup table + site-level item handling notes + scored example report
+- [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md) — Full 80-item benchmark with dimension definitions, scoring criteria, and GEO-First item markers
+- [references/item-reference.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/references/item-reference.md) — All 80 item IDs in a compact lookup table + site-level item handling notes + scored example report
 
 ## Next Best Skill
 
-- **Primary**: [content-refresher](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/SKILL.md) — turn failed checks into a concrete rewrite plan.
+- **Primary**: [content-refresher](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/SKILL.md) — turn failed checks into a concrete rewrite plan.

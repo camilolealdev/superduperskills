@@ -11,7 +11,7 @@ metadata:
 
 # Syllabus — Course Supplementary Reading List
 
-> **Portability:** Requires a Consensus MCP connection, Node.js with `docx` package, and file reading capability for the syllabus. Works in Claude Code CLI natively. In Claude.ai with Consensus MCP + Code Execution + file upload, the workflow is supported.
+> **Portability:** Requires a Consensus MCP connection, Node.js with `docx` package, and file reading capability for the syllabus. Works in Codex CLI natively. In Codex.ai with Consensus MCP + Code Execution + file upload, the workflow is supported.
 
 For an instructor or student with a course syllabus, produce a professional supplementary reading list as `.docx` containing recent peer-reviewed papers per course section.
 

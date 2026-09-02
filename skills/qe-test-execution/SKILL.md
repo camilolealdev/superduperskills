@@ -188,7 +188,7 @@ interface ExecutionResults {
 
 ## Gotchas
 
-- Full test suites may OOM in containers — the rule "don't run full suite" was violated 20x despite being in CLAUDE.md. Fix: make suite lightweight, don't just add more rules
+- Full test suites may OOM in containers — the rule "don't run full suite" was violated 20x despite being in AGENTS.md. Fix: make suite lightweight, don't just add more rules
 - Fewer focused agents (3-4) outperform many vague ones (6-8) — always include verification command in each agent prompt
 - New model releases can shift agent behavior mid-sprint — rules followed yesterday may be ignored today after model update
 - Running all tests in parallel can mask flaky tests — use `--workers=1` for initial diagnosis

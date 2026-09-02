@@ -1,7 +1,7 @@
 ---
 name: skill-evaluation
 description: >
-  Evaluate any agent skill against a merged framework — Anthropic's Claude Code
+  Evaluate any agent skill against a merged framework — Anthropic's Codex
   best practices plus Matt Pocock's writing-great-skills methodology — across
   4 axes (Trigger, Structure, Steering, Pruning). Produces an evidence-cited
   scorecard (0–100), a weighted overall score, and diagnosed failure modes
@@ -25,7 +25,7 @@ definitions), read `references/mechanics.md` before scoring those axes.
 
 ## Source
 
-- [Lessons from building Claude Code: How we use skills](https://claude.com/blog/lessons-from-building-claude-code-how-we-use-skills) — Anthropic, Jun 2026
+- [Lessons from building Codex: How we use skills](https://Codex.com/blog/lessons-from-building-Codex-how-we-use-skills) — Anthropic, Jun 2026
 - "The Missing Manual: How to Write Great Skills" — Matt Pocock, AI Engineer World's Fair 2026 ([video](https://www.youtube.com/watch?v=UNzCG3lw6O0)), and his `writing-great-skills` skill
 
 ## Parameters

@@ -1,52 +1,56 @@
 ---
 name: seo-backlinks
-description: >
-  Backlink profile analysis: referring domains, anchor text distribution,
-  toxic link detection, competitor gap analysis. Requires DataForSEO extension.
-  Use when user says "backlinks", "link profile", "referring domains",
-  "anchor text", "toxic links", "link gap", "link building",
-  "disavow", or "backlink audit".
-user-invokable: true
+description: "Backlink profile analysis: referring domains, anchor text distribution, toxic link detection, competitor gap analysis. Works with free APIs (Moz, Bing Webmaster, Common Crawl) and DataForSEO extension. Use when user says backlinks, link profile, referring domains, anchor text, toxic links, link gap, link building, disavow, or backlink audit."
+user-invocable: true
 argument-hint: "<url>"
 license: MIT
-compatibility: "Requires DataForSEO MCP server (extension)"
+compatibility: "Free: Common Crawl + verify always available. Optional: Moz API, Bing Webmaster (free signup). Premium: DataForSEO extension."
 metadata:
   author: AgriciDaniel
-  version: "1.7.2"
+  version: "2.2.4"
   category: seo
 ---
 
 # Backlink Profile Analysis
 
-This skill requires the DataForSEO extension:
-```bash
-./extensions/dataforseo/install.sh
-```
+## Source Detection
 
-**Check availability:** Before using backlink tools, verify the DataForSEO MCP server
-is connected by checking if `dataforseo_backlinks_summary` or similar tools are available.
-If unavailable, inform the user and provide install instructions.
+Before analysis, detect available data sources:
+
+1. **DataForSEO MCP** (premium): Check if `dataforseo_backlinks_summary` tool is available
+2. **Moz API** (free signup): `Codex-seo run backlinks_auth.py --check moz --json`
+3. **Bing Webmaster** (free signup): `Codex-seo run backlinks_auth.py --check bing --json`
+4. **Common Crawl** (always available): Domain-level graph with PageRank
+5. **Verification Crawler** (always available): Checks if known backlinks still exist
+
+Run `Codex-seo run backlinks_auth.py --check --json` to detect all sources at once.
+
+If no sources are configured beyond the always-available tier:
+- Still produce a report using Common Crawl domain metrics
+- Suggest: "Run `/seo backlinks setup` to add free Moz and Bing API keys for richer data"
 
 ## Quick Reference
 
 | Command | Purpose |
 |---------|---------|
-| `/seo backlinks <url>` | Full backlink profile analysis |
+| `/seo backlinks <url>` | Full backlink profile analysis (uses all available sources) |
 | `/seo backlinks gap <url1> <url2>` | Competitor backlink gap analysis |
 | `/seo backlinks toxic <url>` | Toxic link detection and disavow recommendations |
-| `/seo backlinks new <url>` | New and lost backlinks (recent changes) |
+| `/seo backlinks new <url>` | New and lost backlinks (DataForSEO only) |
+| `/seo backlinks verify <url> --links <file>` | Verify known backlinks still exist |
+| `/seo backlinks setup` | Show setup instructions for free backlink APIs |
 
 ## Analysis Framework
 
-When analyzing a backlink profile, produce all 7 sections below.
+Produce all 7 sections below. Each section lists data sources in preference order.
 
 ### 1. Profile Overview
 
-Use `dataforseo_backlinks_summary` to get:
-- Total backlinks and referring domains
-- Domain rank / authority score
-- Follow vs nofollow ratio
-- Historical trend (growing, stable, or declining)
+**DataForSEO:** `dataforseo_backlinks_summary` → total backlinks, referring domains, domain rank, follow ratio, trend.
+
+**Moz API:** `Codex-seo run moz_api.py metrics <url> --json` → Domain Authority, Page Authority, Spam Score, linking root domains, external links.
+
+**Common Crawl:** `Codex-seo run commoncrawl_graph.py <domain> --json` → PageRank, harmonic centrality, and low-confidence rank/presence data.
 
 **Scoring:**
 
@@ -59,7 +63,11 @@ Use `dataforseo_backlinks_summary` to get:
 
 ### 2. Anchor Text Distribution
 
-Use `dataforseo_backlinks_anchors` to analyze anchor text patterns.
+**DataForSEO:** `dataforseo_backlinks_anchors`
+
+**Moz API:** `Codex-seo run moz_api.py anchors <url> --json`
+
+**Bing Webmaster:** `Codex-seo run bing_webmaster.py links <url> --json` (extract anchor text from link details)
 
 **Healthy distribution benchmarks:**
 
@@ -72,56 +80,53 @@ Use `dataforseo_backlinks_anchors` to analyze anchor text patterns.
 | Partial match keyword | 5-15% | >25% |
 | Long-tail / natural | 5-15% | N/A |
 
-Flag if exact-match anchors exceed 15% -- this is a Google Penguin risk signal.
+Flag if exact-match anchors exceed 15% as a review heuristic; it may indicate unnatural or link-spam patterns.
 
 ### 3. Referring Domain Quality
 
-Use `dataforseo_backlinks_referring_domains` to assess link quality.
+**DataForSEO:** `dataforseo_backlinks_referring_domains`
+
+**Moz API:** `Codex-seo run moz_api.py domains <url> --json` → domains with DA scores
+
+**Common Crawl:** `Codex-seo run commoncrawl_graph.py <domain> --json` → domain-level rank/presence data, no verified referring-domain counts
 
 Analyze:
 - **TLD distribution**: .edu, .gov, .org = high authority. Excessive .xyz, .info = low quality
 - **Country distribution**: Match target market. 80%+ from irrelevant countries = PBN signal
-- **Language distribution**: Should match site language. Foreign-language links can be spam
 - **Domain rank distribution**: Healthy profiles have links from all authority tiers
 - **Follow/nofollow per domain**: Sites that only nofollow = limited SEO value
 
 ### 4. Toxic Link Detection
 
-Identify potentially harmful backlinks using these patterns:
+**DataForSEO:** `dataforseo_backlinks_bulk_spam_score` + toxic patterns from reference
+
+**Moz API:** Raw vendor spam_score from `Codex-seo run moz_api.py metrics <url> --json` (source-label the value; apply thresholds only if verified against current Moz docs)
+
+**Verification Crawler:** `Codex-seo run verify_backlinks.py --target <url> --links <file> --json` (verify suspicious links still exist)
 
 **High-risk indicators (flag immediately):**
 - Links from known PBN (Private Blog Network) domains
 - Unnatural anchor text patterns (100% exact match from a domain)
 - Links from penalized or deindexed domains
 - Mass directory submissions (50+ directory links)
-- Comment spam links (forum/blog comment backlinks at scale)
 - Link farms (sites with 10K+ outbound links per page)
-- Foreign-language links to English sites (unless intentional)
 - Paid link patterns (footer/sidebar links across all pages of a domain)
 
 **Medium-risk indicators (review manually):**
 - Links from unrelated niches
-- Reciprocal link patterns (A links to B, B links to A)
+- Reciprocal link patterns
 - Links from thin content pages (<100 words)
 - Excessive links from a single domain (>50 backlinks from 1 domain)
 
-**Output:**
-```
-Toxic Link Report
-=================
-Total backlinks analyzed: X
-Potentially toxic: Y (Z%)
-
-High Risk (recommend disavow):
-  [list with domain, reason, anchor text]
-
-Medium Risk (review manually):
-  [list with domain, reason, anchor text]
-```
+Load `../seo/references/backlink-quality.md` for the full 30 toxic patterns and disavow criteria.
 
 ### 5. Top Pages by Backlinks
 
-Use `dataforseo_backlinks_backlinks` with target type "page" to find:
+**DataForSEO:** `dataforseo_backlinks_backlinks` with target type "page"
+
+**Moz API:** `Codex-seo run moz_api.py pages <domain> --json`
+
+Find:
 - Which pages attract the most backlinks
 - Pages with high-authority links (link magnets)
 - Pages with zero backlinks (internal linking opportunities)
@@ -129,30 +134,27 @@ Use `dataforseo_backlinks_backlinks` with target type "page" to find:
 
 ### 6. Competitor Gap Analysis
 
-For `/seo backlinks gap <url1> <url2>`:
+**DataForSEO:** `dataforseo_backlinks_referring_domains` for both domains, then compare
 
-Use `dataforseo_backlinks_referring_domains` for both domains and compare:
+**Bing Webmaster:** `Codex-seo run bing_webmaster.py compare <url1> <url2> --json`
+only when both properties are registered and accessible to the same Bing API
+account. For arbitrary competitors, use DataForSEO, Moz, or Common Crawl.
+
+**Moz API:** Compare DA/PA between domains via `Codex-seo run moz_api.py metrics <url> --json` for each
+
+Output:
 - Domains linking to competitor but NOT to target = link building opportunities
 - Domains linking to both = validate existing relationships
 - Domains linking only to target = competitive advantage
-
-**Output:**
-```
-Competitor Gap: example.com vs competitor.com
-=============================================
-Competitor has links from X domains you don't
-You have links from Y domains competitor doesn't
-
-Top 20 Link Building Opportunities:
-  [domain, authority, anchor used for competitor, contact suggestion]
-```
+- Top 20 link building opportunities with domain authority
 
 ### 7. New and Lost Backlinks
 
-Use `dataforseo_backlinks_backlinks` with date filters to track:
-- New backlinks in last 30/60/90 days
-- Lost backlinks in last 30/60/90 days
-- Link velocity (new per month trend)
+**DataForSEO only:** `dataforseo_backlinks_backlinks` with date filters for 30/60/90 day changes
+
+**Verification Crawler:** For known links, verify current status with `Codex-seo run verify_backlinks.py --target <url> --links <file> --json`
+
+**Note:** Free sources cannot track new/lost links over time. If this section is requested without DataForSEO, inform the user: "Link velocity tracking requires the DataForSEO extension. Free sources provide point-in-time snapshots only."
 
 **Red flags:**
 - Sudden spike in new links (possible negative SEO attack)
@@ -161,30 +163,43 @@ Use `dataforseo_backlinks_backlinks` with date filters to track:
 
 ## Backlink Health Score
 
-Calculate a 0-100 score based on:
+Calculate a 0-100 score. When mixing sources, apply confidence weighting:
 
-| Factor | Weight | Scoring |
-|--------|--------|---------|
-| Referring domain count | 20% | Scale based on industry benchmarks |
-| Domain quality distribution | 20% | % from authority domains (DR 40+) |
-| Anchor text naturalness | 15% | Penalty for over-optimization |
-| Toxic link ratio | 20% | <2% = full score, >10% = 0 |
-| Link velocity trend | 10% | Growing = full, declining = partial |
-| Follow/nofollow ratio | 5% | >60% follow = full score |
-| Geographic relevance | 10% | % from target market countries |
+| Factor | Weight | Sources (preference order) | Confidence |
+|--------|--------|---------------------------|------------|
+| Referring domain count | 20% | DataForSEO > Moz | 1.0 / 0.85 |
+| Domain quality distribution | 20% | DataForSEO > Moz DA distribution | 1.0 / 0.85 |
+| Anchor text naturalness | 15% | DataForSEO > Moz > Bing anchors | 1.0 / 0.85 / 0.70 |
+| Toxic link ratio | 20% | DataForSEO > Moz spam score | 1.0 / 0.85 |
+| Link velocity trend | 10% | DataForSEO only | 1.0 |
+| Follow/nofollow ratio | 5% | DataForSEO > Bing details | 1.0 / 0.70 |
+| Geographic relevance | 10% | DataForSEO > Bing country | 1.0 / 0.70 |
+
+**Data sufficiency gate:** Count how many of the 7 factors have at least one data source available.
+- **4+ factors with data:** Produce a numeric 0-100 score (redistribute missing weights proportionally)
+- **Fewer than 4 factors:** Do NOT produce a numeric score. Instead display:
+  ```
+  Backlink Health Score: INSUFFICIENT DATA (X/7 factors scored)
+  ```
+  Show individual factor scores that ARE available with their source and confidence.
+  Recommend: "Configure Moz API (free) for a scoreable profile. Run `/seo backlinks setup`"
+
+When only CC is available, do not produce a numeric score; report low-confidence rank/presence data only.
+A numeric score with fewer than 4 data sources is **misleading**, it implies poor health when
+the reality is we simply lack data.
 
 ## Output Format
 
-### Backlink Health Score: XX/100
+### Backlink Health Score: XX/100 (or INSUFFICIENT DATA)
 
-| Section | Status | Score |
-|---------|--------|-------|
-| Profile Overview | pass/warn/fail | XX/100 |
-| Anchor Distribution | pass/warn/fail | XX/100 |
-| Referring Domain Quality | pass/warn/fail | XX/100 |
-| Toxic Links | pass/warn/fail | XX/100 |
-| Top Pages | info | N/A |
-| Link Velocity | pass/warn/fail | XX/100 |
+| Section | Status | Score | Data Source |
+|---------|--------|-------|-------------|
+| Profile Overview | pass/warn/fail | XX/100 | Moz (0.85) |
+| Anchor Distribution | pass/warn/fail | XX/100 | Moz (0.85) |
+| Referring Domain Quality | pass/warn/fail | XX/100 | CC (0.50) |
+| Toxic Links | pass/warn/fail | XX/100 | Moz Spam (0.85) |
+| Top Pages | info | N/A | Moz (0.85) |
+| Link Velocity | pass/warn/fail | XX/100 | DataForSEO only |
 
 ### Critical Issues (fix immediately)
 ### High Priority (fix within 1 month)
@@ -195,16 +210,58 @@ Calculate a 0-100 score based on:
 
 | Error | Cause | Resolution |
 |-------|-------|-----------|
-| DataForSEO tools unavailable | Extension not installed | Run `./extensions/dataforseo/install.sh` |
+| No sources configured | No API keys, no DataForSEO | Run `/seo backlinks setup` |
+| Moz rate limit | Free tier: 1 req/10s | Wait 10 seconds, retry. Built into script. |
+| Bing site not verified | Site not verified in Bing | Verify at https://www.bing.com/webmasters |
+| CC download timeout | Large graph file, slow connection | Use `--timeout 180` flag |
+| DataForSEO unavailable | Extension not installed | Run `./extensions/dataforseo/install.sh` |
 | No backlink data returned | Domain too new or very small | Note: small sites may have <10 backlinks |
-| API credits insufficient | DataForSEO balance low | Check balance at app.dataforseo.com |
 
-**Graceful fallback:** If DataForSEO is unavailable:
-1. Inform user that backlink analysis requires the DataForSEO extension
-2. Offer to check robots.txt and sitemap for basic link signals instead
-3. Suggest manual tools: Ahrefs Webmaster Tools (free), Google Search Console Links report
+**Fallback cascade:**
+1. DataForSEO available? → Use as primary (confidence: 1.0)
+2. Moz configured? → Use for DA/PA/spam/anchors (confidence: 0.85)
+3. Bing configured? → Use for registered-property links and comparison only
+   when both properties are accessible (confidence: 0.70)
+4. Always: Common Crawl for domain-level metrics (confidence: 0.50)
+5. Always: Verification crawler for known link checks (confidence: 0.95)
+6. Nothing works? → "Run `/seo backlinks setup` to configure free APIs"
+
+## Pre-Delivery Review (MANDATORY)
+
+Before presenting any backlink analysis to the user, run this checklist internally.
+Do NOT skip this step. Fix any issues found before showing the report.
+
+### Fact-Check Every Claim
+- [ ] **Schema claims**: Did parse_html return `@type` for each block? If any `@type` is missing,
+      re-check, it may use `@graph` wrapper (valid JSON-LD, not malformed).
+- [ ] **"link_removed" findings**: Is the page JS-rendered? If `unverifiable_js`, say so, never
+      report a JS-rendered page as "link removed" (that's a false negative).
+- [ ] **H1 findings**: Are any H1s in the `h1_suspicious` list? If so, note they are likely
+      counters/stats, not semantic headings.
+- [ ] **Reciprocal links**: If site A links to site B AND B links back to A, flag it as a
+      reciprocal link pattern. Check outbound links against verified inbound sources.
+- [ ] **Health score**: Are 4+ of 7 factors scored? If not, report INSUFFICIENT DATA, never
+      show a misleading numeric score.
+
+### Verify Data Source Labels
+- [ ] Every metric in the report has a source label (e.g., "Parsed (0.95)", "CC (0.50)")
+- [ ] Every "not found" result distinguishes between "not crawled" vs "below threshold" vs "error"
+- [ ] Social media pages flagged as `unverifiable_js` (not `link_removed`)
+
+### Cross-Check Consistency
+- [ ] Platform detection matches actual signals (check for wp-content, shopify CDN, etc.)
+- [ ] Referring domain count in summary matches the actual verified links list
+- [ ] No claim is presented without a data source backing it
+
+If ANY check fails, fix the finding before presenting. Never present inferred data as fact.
+
+## Post-Analysis
+
+After completing any backlink analysis command, always offer:
+"Generate a professional PDF report? Use `/seo google report`"
 
 ## Reference Documentation
 
 Load on demand (do NOT load at startup):
-- `references/backlink-quality.md` -- Detailed toxic link patterns and scoring methodology
+- `skills/seo/references/backlink-quality.md` -- Detailed toxic link patterns and scoring methodology (shared reference, load when analyzing toxic links or spam scores)
+- `skills/seo/references/free-backlink-sources.md` -- Source comparison, confidence weighting, setup guides (shared reference, load when configuring free backlink APIs)

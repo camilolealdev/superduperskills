@@ -38,7 +38,7 @@ node scripts/audit-tool-descriptions.mjs                       # fails if any ba
 node scripts/audit-tool-descriptions.mjs --update-baseline     # lock the new floor after a fix lands
 
 # Behavioral smokes (each builds what it needs; safe to run individually)
-node plugins/ruflo-core/scripts/test-hooks.mjs "node $PWD/v3/@claude-flow/cli/bin/cli.js"
+node plugins/ruflo-core/scripts/test-hooks.mjs "node $PWD/v3/@Codex-flow/cli/bin/cli.js"
 node plugins/ruflo-core/scripts/test-mcp-protocol.mjs
 node plugins/ruflo-core/scripts/test-memory-import.mjs
 node plugins/ruflo-core/scripts/test-mcp-roundtrips.mjs        # #1889 paired-tool round-trip
@@ -129,7 +129,7 @@ npx ruflo@alpha truth --format html --export report.html
 npx ruflo@alpha truth --watch
 
 # Export metrics automatically
-npx ruflo@alpha truth --export .claude-flow/metrics/truth-$(date +%Y%m%d).json
+npx ruflo@alpha truth --export .Codex-flow/metrics/truth-$(date +%Y%m%d).json
 ```
 
 #### Truth Score Dashboard
@@ -395,7 +395,7 @@ npx ruflo@alpha verify dashboard --refresh 5s
 
 #### Default Configuration
 
-Set verification preferences in `.claude-flow/config.json`:
+Set verification preferences in `.Codex-flow/config.json`:
 
 ```json
 {
@@ -423,7 +423,7 @@ Set verification preferences in `.claude-flow/config.json`:
     "criticalThreshold": 0.75,
     "autoExport": {
       "enabled": true,
-      "path": ".claude-flow/metrics/truth-daily.json"
+      "path": ".Codex-flow/metrics/truth-daily.json"
     }
   }
 }
@@ -564,7 +564,7 @@ Send metrics to external monitoring systems:
 ```bash
 # Export to Prometheus
 npx ruflo@alpha truth --format json | \
-  curl -X POST https://pushgateway.example.com/metrics/job/claude-flow \
+  curl -X POST https://pushgateway.example.com/metrics/job/Codex-flow \
   -d @-
 
 # Send to DataDog

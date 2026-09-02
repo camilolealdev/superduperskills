@@ -129,7 +129,7 @@ loaded one at a time to avoid "lost in the middle" context degradation.
 
 ### Execution Instructions
 
-1. Use the Read tool to load the current step file (e.g., `Read({ file_path: ".claude/skills/qcsd-cicd-swarm/steps/01-flag-detection.md" })`)
+1. Use the Read tool to load the current step file (e.g., `Read({ file_path: ".Codex/skills/qcsd-cicd-swarm/steps/01-flag-detection.md" })`)
 2. Execute the step's instructions completely
 3. Verify all success criteria are met before proceeding
 4. Pass the step's output as context to the next step
@@ -197,7 +197,7 @@ skip to step N. Ensure you have the required prerequisite data from prior steps.
 
 | Model | When to Use | Agent Spawn |
 |-------|-------------|-------------|
-| **Task Tool** (PRIMARY) | Claude Code sessions | `Task({ subagent_type, run_in_background: true })` |
+| **Task Tool** (PRIMARY) | Codex sessions | `Task({ subagent_type, run_in_background: true })` |
 | **MCP Tools** | MCP server available | `fleet_init({})` / `task_submit({})` |
 | **CLI** | Terminal/scripts | `swarm init` / `agent spawn` |
 

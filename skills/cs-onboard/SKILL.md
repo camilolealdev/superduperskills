@@ -1,6 +1,6 @@
 ---
 name: "cs-onboard"
-description: "Founder onboarding interview that captures company context across 7 dimensions. Invoke with /cs:setup for initial interview or /cs:update for quarterly refresh. Generates ~/.claude/company-context.md used by all C-suite advisor skills. Use when setting up the C-suite advisors for the first time, or when company context is missing or more than 90 days old — e.g. after a fundraise or pivot."
+description: "Founder onboarding interview that captures company context across 7 dimensions. Invoke with /cs:setup for initial interview or /cs:update for quarterly refresh. Generates ~/.Codex/company-context.md used by all C-suite advisor skills. Use when setting up the C-suite advisors for the first time, or when company context is missing or more than 90 days old — e.g. after a fundraise or pivot."
 license: MIT
 metadata:
   version: 1.0.0
@@ -72,7 +72,7 @@ Key probe: *"What does success look like for you personally — separate from th
 
 ## Output: company-context.md
 
-After the interview, generate `~/.claude/company-context.md` using `templates/company-context-template.md`.
+After the interview, generate `~/.Codex/company-context.md` using `templates/company-context-template.md`.
 
 Fill every section. Write `[not captured]` for unknowns — never leave blank. Add timestamp, mark as `fresh`.
 
@@ -101,7 +101,7 @@ Update the context file, refresh timestamp, reset to `fresh`.
 
 ## Context File Location
 
-`~/.claude/company-context.md` — single source of truth for all C-suite skills. Do not move it. Do not create duplicates.
+`~/.Codex/company-context.md` — single source of truth for all C-suite skills. Do not move it. Do not create duplicates.
 
 ## References
 - `templates/company-context-template.md` — blank template for output

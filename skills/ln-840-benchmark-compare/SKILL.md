@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 8XX Optimization -> 840 Benchmark
 
-Run a clean A/B benchmark in Claude Code: one session with built-in tools only, one with `hex-line`. The benchmark is scenario-based, diff-validated, and manifest-driven. It measures activation, correctness, time, cost, and tokens.
+Run a clean A/B benchmark in Codex: one session with built-in tools only, one with `hex-line`. The benchmark is scenario-based, diff-validated, and manifest-driven. It measures activation, correctness, time, cost, and tokens.
 
 ---
 
@@ -26,7 +26,7 @@ Run a clean A/B benchmark in Claude Code: one session with built-in tools only, 
 
 ## Prerequisites
 
-- `claude --version` succeeds
+- `Codex --version` succeeds
 - `git` succeeds
 - `mcp/hex-line-mcp/server.mjs` exists
 - `mcp/hex-line-mcp/hook.mjs` exists
@@ -97,8 +97,8 @@ If preflight fails, the benchmark is invalid and must stop before scenarios run.
 For each `##` scenario in `goals.md`:
 1. generate a standalone prompt file
 2. create two clean worktrees from the same commit
-3. run built-in Claude session
-4. run hex-line Claude session
+3. run built-in Codex session
+4. run hex-line Codex session
 5. save `.jsonl` logs and `.diff.txt` artifacts
 6. remove both worktrees
 

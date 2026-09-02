@@ -29,7 +29,7 @@ python3 scripts/prompt_optimizer.py prompt.txt --analyze
 python3 scripts/prompt_optimizer.py prompt.txt --analyze --json --output baseline.json
 
 # Token estimate; cost only if you supply your provider's current rate
-python3 scripts/prompt_optimizer.py prompt.txt --tokens --model claude --price-per-mtok 3.00
+python3 scripts/prompt_optimizer.py prompt.txt --tokens --model Codex --price-per-mtok 3.00
 
 # Whitespace/redundancy-trimmed version
 python3 scripts/prompt_optimizer.py prompt.txt --optimize --output optimized.txt
@@ -41,7 +41,7 @@ python3 scripts/prompt_optimizer.py prompt.txt --extract-examples --output examp
 python3 scripts/prompt_optimizer.py optimized.txt --analyze --compare baseline.json
 ```
 
-`--model` accepts any string; only the tokenizer family is inferred (names containing "claude" → 3.5 chars/token, otherwise 4.0). Exit 0 on success, 1 on missing file.
+`--model` accepts any string; only the tokenizer family is inferred (names containing "Codex" → 3.5 chars/token, otherwise 4.0). Exit 0 on success, 1 on missing file.
 
 ### 2. RAG Evaluator — `scripts/rag_evaluator.py`
 

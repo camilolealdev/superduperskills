@@ -4,7 +4,7 @@ description: >
   SERP-based semantic topic clustering for content architecture planning. Groups
   keywords by actual Google SERP overlap (not text similarity), designs hub-and-spoke
   content clusters with internal link matrices, and generates interactive
-  visualizations. Optionally executes content creation if claude-blog is installed.
+  visualizations. Optionally executes content creation if Codex-blog is installed.
   Use when user says "topic cluster", "content cluster", "semantic clustering",
   "pillar page", "hub and spoke", "content architecture", "keyword grouping",
   or "cluster plan".
@@ -35,7 +35,7 @@ interactive cluster map visualizations.
 |---------|-------------|
 | `/seo cluster plan <seed-keyword>` | Full planning workflow: expand, cluster, architect, visualize |
 | `/seo cluster plan --from strategy` | Import from existing `/seo plan` output |
-| `/seo cluster execute` | Execute plan: create content via claude-blog or output briefs |
+| `/seo cluster execute` | Execute plan: create content via Codex-blog or output briefs |
 | `/seo cluster map` | Regenerate the interactive cluster visualization |
 
 ---
@@ -80,7 +80,7 @@ the full algorithm.
 - Skip pairs where both are long-tail variants of the same head term (assume same cluster)
 
 **DataForSEO integration:** If DataForSEO MCP is available, use `serp_organic_live_advanced`
-instead of WebSearch for SERP data. Run `claude-seo run dataforseo_costs.py check serp_organic_live_advanced --count N`
+instead of WebSearch for SERP data. Run `Codex-seo run dataforseo_costs.py check serp_organic_live_advanced --count N`
 before each batch. If `"status": "needs_approval"`, show cost estimate and ask user.
 If `"status": "blocked"`, fall back to WebSearch.
 
@@ -195,13 +195,13 @@ current directory. Run `/seo plan` first, or provide a seed keyword for fresh cl
 
 When `/seo cluster execute` is invoked:
 
-### Check for claude-blog
+### Check for Codex-blog
 
 ```
-Test: Does ~/.claude/skills/blog/SKILL.md exist?
+Test: Does ~/.Codex/skills/blog/SKILL.md exist?
 ```
 
-**If claude-blog IS installed:**
+**If Codex-blog IS installed:**
 
 1. Load `references/execution-workflow.md` for the full algorithm
 2. Read `cluster-plan.json` from the current directory
@@ -218,7 +218,7 @@ Test: Does ~/.claude/skills/blog/SKILL.md exist?
    and inject the new post's URL
 7. After all posts are written, generate the cluster scorecard
 
-**If claude-blog is NOT installed:**
+**If Codex-blog is NOT installed:**
 
 1. Generate detailed content briefs for each post in the cluster plan
 2. Each brief includes:
@@ -230,7 +230,7 @@ Test: Does ~/.claude/skills/blog/SKILL.md exist?
    - Key points to cover
    - Competing pages to differentiate from
 3. Write briefs to `cluster-briefs/` directory as individual markdown files
-4. Inform user: "Install [claude-blog](https://github.com/AgriciDaniel/claude-blog)
+4. Inform user: "Install [Codex-blog](https://github.com/AgriciDaniel/Codex-blog)
    to auto-create content. Briefs saved to `cluster-briefs/`."
 
 ---
@@ -273,7 +273,7 @@ All outputs are written to the current working directory:
 | `cluster-plan.json` | Machine-readable cluster plan (full data) |
 | `cluster-plan.md` | Human-readable cluster plan summary |
 | `cluster-map.html` | Interactive SVG visualization |
-| `cluster-briefs/` | Content briefs (if no claude-blog) |
+| `cluster-briefs/` | Content briefs (if no Codex-blog) |
 | `cluster-scorecard.md` | Post-execution quality report |
 
 ---
@@ -302,7 +302,7 @@ After cluster planning or execution completes, offer:
 | "SERP data unavailable" | WebSearch and DataForSEO both failing | Retry after 30s; if persistent, use intent-only clustering with warning |
 | "No strategy file found" | `--from strategy` but no plan exists | Prompt user to run `/seo plan` first |
 | "cluster-plan.json not found" | Execute without planning | Prompt user to run `/seo cluster plan` first |
-| "claude-blog not installed" | Execute attempted without blog skill | Generate content briefs instead; suggest installation |
+| "Codex-blog not installed" | Execute attempted without blog skill | Generate content briefs instead; suggest installation |
 | "DataForSEO budget exceeded" | Cost check returned "blocked" | Fall back to WebSearch; inform user |
 | "Duplicate primary keywords" | Cannibalization detected | Merge affected posts or reassign keywords |
 | "Orphan page detected" | Post missing incoming links | Add links from nearest cluster siblings |
@@ -312,7 +312,7 @@ After cluster planning or execution completes, offer:
 
 ## Security
 
-- All URLs fetched via `claude-seo run render_page.py <url> --mode auto` (SPA-aware SSRF protection via `url_safety`)
+- All URLs fetched via `Codex-seo run render_page.py <url> --mode auto` (SPA-aware SSRF protection via `url_safety`)
 - No credentials stored or transmitted
 - Output files contain no PII or API keys
 - DataForSEO cost checks run before every API call

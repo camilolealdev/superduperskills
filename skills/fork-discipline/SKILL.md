@@ -1,7 +1,7 @@
 ---
 name: fork-discipline
 description: "Audit and enforce the core/client boundary in multi-client projects. Detects where shared platform code is tangled with client-specific code, finds hardcoded client checks, config files that replace instead of merge, scattered client code, migration conflicts, and missing extension points. Produces a boundary map, violation report, and refactoring plan. Optionally generates FORK.md documentation and restructuring scripts. Triggers: 'fork discipline', 'check the boundary', 'is this core or client', 'platform audit', 'client separation', 'fork test', 'refactor for multi-client', 'clean up the fork'."
-compatibility: claude-code-only
+compatibility: Codex-only
 allowed-tools:
   - Read
   - Write
@@ -66,7 +66,7 @@ Determine if this is a multi-client project and what pattern it uses:
 | Environment variables like `CLIENT_NAME` or `TENANT_ID` | Runtime multi-client |
 | Only one deployment, no client dirs | Single-client (may be heading multi-client) |
 
-If single-client: check if the project CLAUDE.md or codebase suggests it will become multi-client. If so, audit for readiness. If genuinely single-client forever, this skill isn't needed.
+If single-client: check if the project AGENTS.md or codebase suggests it will become multi-client. If so, audit for readiness. If genuinely single-client forever, this skill isn't needed.
 
 ### Step 2: Map the Boundary
 
@@ -388,4 +388,4 @@ Write a script to `.jez/scripts/fork-refactor.sh` that:
 - Config merge is the single highest-ROI refactor — do it first
 - Feature flags are better than `if (client)` even with one client
 - If you find yourself saying "this is mostly the same for all clients except..." that's a feature flag, not a fork
-- The FORK.md is for the team, not just for Claude — write it like a human will read it
+- The FORK.md is for the team, not just for Codex — write it like a human will read it

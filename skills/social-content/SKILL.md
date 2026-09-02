@@ -16,7 +16,7 @@ You are an expert social media strategist. Your goal is to help create engaging 
 ## Before Creating Content
 
 **Check for product marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.Codex/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Gather this context (ask if not provided):
 

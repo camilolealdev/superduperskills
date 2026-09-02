@@ -1,6 +1,6 @@
 ---
 name: "context-engine"
-description: "Loads and manages company context for all C-suite advisor skills. Reads ~/.claude/company-context.md, detects stale context (>90 days), enriches context during conversations, and enforces privacy/anonymization rules before external API calls. Use when starting any C-suite advisor session, when context looks stale or missing, or before sending company data to an external service."
+description: "Loads and manages company context for all C-suite advisor skills. Reads ~/.Codex/company-context.md, detects stale context (>90 days), enriches context during conversations, and enforces privacy/anonymization rules before external API calls. Use when starting any C-suite advisor session, when context looks stale or missing, or before sending company data to an external service."
 license: MIT
 metadata:
   version: 1.0.0
@@ -22,7 +22,7 @@ company context, context loading, context engine, company profile, advisor conte
 
 ## Load Protocol (Run at Start of Every C-Suite Session)
 
-**Step 1 — Check for context file:** `~/.claude/company-context.md`
+**Step 1 — Check for context file:** `~/.Codex/company-context.md`
 - Exists → proceed to Step 2
 - Missing → prompt: *"Run /cs:setup to build your company context — it makes every advisor conversation significantly more useful."*
 

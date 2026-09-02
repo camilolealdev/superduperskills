@@ -1,17 +1,17 @@
 ---
 name: "promote"
-description: "Graduate a proven pattern from auto-memory (MEMORY.md) to CLAUDE.md or .claude/rules/ for permanent enforcement. Use when the user runs /si:promote or asks to make a learned behavior permanent."
+description: "Graduate a proven pattern from auto-memory (MEMORY.md) to AGENTS.md or .Codex/rules/ for permanent enforcement. Use when the user runs /si:promote or asks to make a learned behavior permanent."
 ---
 
 # /si:promote — Graduate Learnings to Rules
 
-Moves a proven pattern from Claude's auto-memory into the project's rule system, where it becomes an enforced instruction rather than a background note.
+Moves a proven pattern from Codex's auto-memory into the project's rule system, where it becomes an enforced instruction rather than a background note.
 
 ## Usage
 
 ```
 /si:promote <pattern description>                    # Auto-detect best target
-/si:promote <pattern> --target claude.md             # Promote to CLAUDE.md
+/si:promote <pattern> --target AGENTS.md             # Promote to AGENTS.md
 /si:promote <pattern> --target rules/testing.md      # Promote to scoped rule
 /si:promote <pattern> --target rules/api.md --paths "src/api/**/*.ts"  # Scoped with paths
 ```
@@ -21,14 +21,14 @@ Moves a proven pattern from Claude's auto-memory into the project's rule system,
 ### Step 1: Understand the pattern
 
 Parse the user's description. If vague, ask one clarifying question:
-- "What specific behavior should Claude follow?"
+- "What specific behavior should Codex follow?"
 - "Does this apply to all files or specific paths?"
 
 ### Step 2: Find the pattern in auto-memory
 
 ```bash
 # Search MEMORY.md for related entries
-MEMORY_DIR="$HOME/.claude/projects/$(pwd | sed 's|/|%2F|g; s|%2F|/|; s|^/||')/memory"
+MEMORY_DIR="$HOME/.Codex/projects/$(pwd | sed 's|/|%2F|g; s|%2F|/|; s|^/||')/memory"
 grep -ni "<keywords>" "$MEMORY_DIR/MEMORY.md"
 ```
 
@@ -38,20 +38,20 @@ Show the matching entries and confirm they're what the user means.
 
 | Pattern scope | Target | Example |
 |---|---|---|
-| Applies to entire project | `./CLAUDE.md` | "Use pnpm, not npm" |
-| Applies to specific file types | `.claude/rules/<topic>.md` | "API handlers need validation" |
-| Applies to all your projects | `~/.claude/CLAUDE.md` | "Prefer explicit error handling" |
+| Applies to entire project | `./AGENTS.md` | "Use pnpm, not npm" |
+| Applies to specific file types | `.Codex/rules/<topic>.md` | "API handlers need validation" |
+| Applies to all your projects | `~/.Codex/AGENTS.md` | "Prefer explicit error handling" |
 
 If the user didn't specify a target, recommend one based on scope.
 
 ### Step 4: Distill into a concise rule
 
-Transform the learning from auto-memory's note format into CLAUDE.md's instruction format:
+Transform the learning from auto-memory's note format into AGENTS.md's instruction format:
 
 **Before** (MEMORY.md — descriptive):
 > The project uses pnpm workspaces. When I tried npm install it failed. The lock file is pnpm-lock.yaml. Must use pnpm install for dependencies.
 
-**After** (CLAUDE.md — prescriptive):
+**After** (AGENTS.md — prescriptive):
 ```markdown
 ## Build & Dependencies
 - Package manager: pnpm (not npm). Use `pnpm install`.
@@ -65,13 +65,13 @@ Transform the learning from auto-memory's note format into CLAUDE.md's instructi
 
 ### Step 5: Write to target
 
-**For CLAUDE.md:**
-1. Read existing CLAUDE.md
+**For AGENTS.md:**
+1. Read existing AGENTS.md
 2. Find the appropriate section (or create one)
 3. Append the new rule under the right heading
-4. If file would exceed 200 lines, suggest using `.claude/rules/` instead
+4. If file would exceed 200 lines, suggest using `.Codex/rules/` instead
 
-**For `.claude/rules/`:**
+**For `.Codex/rules/`:**
 1. Create the file if it doesn't exist
 2. Add YAML frontmatter with `paths` if scoped
 3. Write the rule content
@@ -110,14 +110,14 @@ Rule: "{{distilled rule}}"
 Source: MEMORY.md line {{n}} (removed)
 MEMORY.md: {{lines}}/200 lines remaining
 
-The pattern is now an enforced instruction. Claude will follow it in all future sessions.
+The pattern is now an enforced instruction. Codex will follow it in all future sessions.
 ```
 
 ## Promotion Decision Guide
 
 ### Promote when:
 - Pattern appeared 3+ times in auto-memory
-- You corrected Claude about it more than once
+- You corrected Codex about it more than once
 - It's a project convention that any contributor should know
 - It prevents a recurring mistake
 
@@ -127,9 +127,9 @@ The pattern is now an enforced instruction. Claude will follow it in all future 
 - It might change soon (e.g., during a migration)
 - It's already covered by existing rules
 
-### CLAUDE.md vs .claude/rules/
+### AGENTS.md vs .Codex/rules/
 
-| Use CLAUDE.md for | Use .claude/rules/ for |
+| Use AGENTS.md for | Use .Codex/rules/ for |
 |---|---|
 | Global project rules | File-type-specific patterns |
 | Build commands | Testing conventions |
@@ -138,7 +138,7 @@ The pattern is now an enforced instruction. Claude will follow it in all future 
 
 ## Tips
 
-- Keep CLAUDE.md under 200 lines — use rules/ for overflow
+- Keep AGENTS.md under 200 lines — use rules/ for overflow
 - One rule per line is easier to maintain than paragraphs
 - Include the concrete command, not just the concept
 - Review promoted rules quarterly — remove what's no longer relevant

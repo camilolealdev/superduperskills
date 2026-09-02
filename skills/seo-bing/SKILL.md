@@ -3,7 +3,7 @@ name: seo-bing
 description: Bing Webmaster Tools + IndexNow extension. Microsoft Copilot citations are fed by the Bing index; this skill makes Bing visibility, link data, and IndexNow URL submission first-class.
 metadata:
   version: "2.2.4"
-compatibility: "Requires BING_WEBMASTER_API_KEY and (optionally) INDEXNOW_KEY in ~/.claude/settings.json env. Run extensions/bing-webmaster/install.sh to configure."
+compatibility: "Requires BING_WEBMASTER_API_KEY and (optionally) INDEXNOW_KEY in ~/.Codex/settings.json env. Run extensions/bing-webmaster/install.sh to configure."
 ---
 
 # seo-bing
@@ -24,11 +24,11 @@ specifically for **Amazon/Bing/Naver/Seznam.cz/Yandex/Yep indexing** and
 
 | Command | Underlying script |
 |---|---|
-| `/seo bing links <url>` | `claude-seo run bing_webmaster.py links <url>` |
-| `/seo bing compare <urlA> <urlB>` | `claude-seo run bing_webmaster.py compare <urlA> <urlB>`; both properties must be registered to the API account |
-| `/seo bing submit <url>` (single URL) | `claude-seo run indexnow_submit.py --host ... --urls <url>` |
-| `/seo bing submit-batch <file>` | `claude-seo run indexnow_submit.py --host ... --urls-file <file>` |
-| `/seo bing verify-indexnow` | `claude-seo run indexnow_submit.py --host ... --verify-only` |
+| `/seo bing links <url>` | `Codex-seo run bing_webmaster.py links <url>` |
+| `/seo bing compare <urlA> <urlB>` | `Codex-seo run bing_webmaster.py compare <urlA> <urlB>`; both properties must be registered to the API account |
+| `/seo bing submit <url>` (single URL) | `Codex-seo run indexnow_submit.py --host ... --urls <url>` |
+| `/seo bing submit-batch <file>` | `Codex-seo run indexnow_submit.py --host ... --urls-file <file>` |
+| `/seo bing verify-indexnow` | `Codex-seo run indexnow_submit.py --host ... --verify-only` |
 
 ## When this skill applies
 

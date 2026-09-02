@@ -10,7 +10,7 @@ metadata:
 
 # Reflect — Mid-Conversation Reassessment
 
-> **Portability:** Pure-reasoning skill. No external tools required. Works in Claude Code CLI + Claude.ai web natively. Most portable in the v2 collection.
+> **Portability:** Pure-reasoning skill. No external tools required. Works in Codex CLI + Codex.ai web natively. Most portable in the v2 collection.
 
 When invoked mid-conversation, this skill **pauses execution** and produces a frank reassessment of where the conversation has been heading. Output is **flowing analysis (no headers, conversational tone)** covering macro perspective, gap analysis, reflective inquiry, bias check, and contextual alignment. The skill ends with a clear directional recommendation: **continue, pivot, or pause to answer a specific question**.
 

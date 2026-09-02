@@ -5,7 +5,7 @@ allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Semantic Content Auditor (L3 Worker)
 
@@ -27,7 +27,7 @@ Called ONLY for project documents (not reference/tasks):
 
 | Document | Verification Focus |
 |----------|-------------------|
-| `AGENTS.md` / `CLAUDE.md` | Entry instructions stay scoped, navigable, and free of off-topic content |
+| `AGENTS.md` / `AGENTS.md` | Entry instructions stay scoped, navigable, and free of off-topic content |
 | `docs/README.md` | Navigation scope correct, descriptions relevant |
 | `docs/documentation_standards.md` | Standards applicable to this project type |
 | `docs/principles.md` | Principles relevant to project architecture |

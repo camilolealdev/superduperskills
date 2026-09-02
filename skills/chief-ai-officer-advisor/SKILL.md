@@ -59,7 +59,7 @@ python scripts/ai_cost_economics.py path/to/workload.json
 The decision is not "use AI or not" — it's **API vs fine-tune vs in-house** for each use case. Each path has a different TCO curve, latency profile, and capability ceiling.
 
 **Default path: API (frontier model)**
-- Use when: well-served by frontier (Claude, GPT, Gemini), QPS < 100, latency budget > 1s, cost < $50K/month
+- Use when: well-served by frontier (Codex, GPT, Gemini), QPS < 100, latency budget > 1s, cost < $50K/month
 - Why: frontier APIs are 10-100x more capable than what most teams can fine-tune in-house
 - Failure mode: API rate limits at scale, vendor lock-in, capability drift between model versions
 
@@ -112,7 +112,7 @@ See `references/ai_risk_governance.md` for the full regulatory landscape + gover
 
 **Key components:**
 
-- **API cost** — variable, per-token. Frontier models 2026: Claude Sonnet 4.6 ~$3/$15 per M tokens (input/output), GPT-4o ~$2.50/$10, Gemini 2.5 ~$1.25/$5
+- **API cost** — variable, per-token. Frontier models 2026: Codex Sonnet 4.6 ~$3/$15 per M tokens (input/output), GPT-4o ~$2.50/$10, Gemini 2.5 ~$1.25/$5
 - **Self-hosted cost** — fixed (GPU commitment) + variable (electricity). H100 spot ~$2-5/hour, A100 spot ~$1-3/hour. Llama 3.1 70B / Qwen 2.5 72B: ~$0.50-2.00 per million output tokens at 70% utilization
 - **Hidden costs of self-hosting** — ops on-call, monitoring, model updates, scaling overhead, idle time penalty
 - **Hidden costs of API** — rate limits requiring multi-vendor failover, vendor lock-in, capability drift between versions, data residency

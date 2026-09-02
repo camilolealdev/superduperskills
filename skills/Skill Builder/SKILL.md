@@ -1,17 +1,17 @@
 ---
 name: "Skill Builder"
-description: "Create new Claude Code Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generate skill templates, or understand the Claude Skills specification."
+description: "Create new Codex Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generate skill templates, or understand the Codex Skills specification."
 ---
 
 # Skill Builder
 
 ## What This Skill Does
 
-Creates production-ready Claude Code Skills with proper YAML frontmatter, progressive disclosure architecture, and complete file/folder structure. This skill guides you through building skills that Claude can autonomously discover and use across all surfaces (Claude.ai, Claude Code, SDK, API).
+Creates production-ready Codex Skills with proper YAML frontmatter, progressive disclosure architecture, and complete file/folder structure. This skill guides you through building skills that Codex can autonomously discover and use across all surfaces (Codex.ai, Codex, SDK, API).
 
 ## Prerequisites
 
-- Claude Code 2.0+ or Claude.ai with Skills support
+- Codex 2.0+ or Codex.ai with Skills support
 - Basic understanding of Markdown and YAML
 - Text editor or IDE
 
@@ -21,13 +21,13 @@ Creates production-ready Claude Code Skills with proper YAML frontmatter, progre
 
 ```bash
 # 1. Create skill directory (MUST be at top level, NOT in subdirectories!)
-mkdir -p ~/.claude/skills/my-first-skill
+mkdir -p ~/.Codex/skills/my-first-skill
 
 # 2. Create SKILL.md with proper format
-cat > ~/.claude/skills/my-first-skill/SKILL.md << 'EOF'
+cat > ~/.Codex/skills/my-first-skill/SKILL.md << 'EOF'
 ---
 name: "My First Skill"
-description: "Brief description of what this skill does and when Claude should use it. Maximum 1024 characters."
+description: "Brief description of what this skill does and when Codex should use it. Maximum 1024 characters."
 ---
 
 # My First Skill
@@ -40,7 +40,7 @@ description: "Brief description of what this skill does and when Claude should u
 EOF
 
 # 3. Verify skill is detected
-# Restart Claude Code or refresh Claude.ai
+# Restart Codex or refresh Codex.ai
 ```
 
 ---
@@ -55,7 +55,7 @@ Every SKILL.md **must** start with YAML frontmatter containing exactly two requi
 ---
 name: "Skill Name"                    # REQUIRED: Max 64 chars
 description: "What this skill does    # REQUIRED: Max 1024 chars
-and when Claude should use it."       # Include BOTH what & when
+and when Codex should use it."       # Include BOTH what & when
 ---
 ```
 
@@ -65,7 +65,7 @@ and when Claude should use it."       # Include BOTH what & when
 - **Type**: String
 - **Max Length**: 64 characters
 - **Format**: Human-friendly display name
-- **Usage**: Shown in skill lists, UI, and loaded into Claude's system prompt
+- **Usage**: Shown in skill lists, UI, and loaded into Codex's system prompt
 - **Best Practice**: Use Title Case, be concise and descriptive
 - **Examples**:
   - ✅ "API Documentation Generator"
@@ -80,8 +80,8 @@ and when Claude should use it."       # Include BOTH what & when
 - **Format**: Plain text or minimal markdown
 - **Content**: MUST include:
   1. **What** the skill does (functionality)
-  2. **When** Claude should invoke it (trigger conditions)
-- **Usage**: Loaded into Claude's system prompt for autonomous matching
+  2. **When** Codex should invoke it (trigger conditions)
+- **Usage**: Loaded into Codex's system prompt for autonomous matching
 - **Best Practice**: Front-load key trigger words, be specific about use cases
 - **Examples**:
   - ✅ "Generate OpenAPI 3.0 documentation from Express.js routes. Use when creating API docs, documenting endpoints, or building API specifications."
@@ -117,7 +117,7 @@ tags: ["dev", "api"]   # NOT part of spec
 ---
 ```
 
-**Critical**: Only `name` and `description` are used by Claude. Additional fields are ignored.
+**Critical**: Only `name` and `description` are used by Codex. Additional fields are ignored.
 
 ---
 
@@ -125,17 +125,17 @@ tags: ["dev", "api"]   # NOT part of spec
 
 #### Minimal Skill (Required)
 ```
-~/.claude/skills/                    # Personal skills location
+~/.Codex/skills/                    # Personal skills location
 └── my-skill/                        # Skill directory (MUST be at top level!)
     └── SKILL.md                     # REQUIRED: Main skill file
 ```
 
-**IMPORTANT**: Skills MUST be directly under `~/.claude/skills/[skill-name]/`.
-Claude Code does NOT support nested subdirectories or namespaces!
+**IMPORTANT**: Skills MUST be directly under `~/.Codex/skills/[skill-name]/`.
+Codex does NOT support nested subdirectories or namespaces!
 
 #### Full-Featured Skill (Recommended)
 ```
-~/.claude/skills/
+~/.Codex/skills/
 └── my-skill/                        # Top-level skill directory
         ├── SKILL.md                 # REQUIRED: Main skill file
         ├── README.md                # Optional: Human-readable docs
@@ -161,20 +161,20 @@ Claude Code does NOT support nested subdirectories or namespaces!
 
 **Personal Skills** (available across all projects):
 ```
-~/.claude/skills/
+~/.Codex/skills/
 └── [your-skills]/
 ```
-- **Path**: `~/.claude/skills/` or `$HOME/.claude/skills/`
+- **Path**: `~/.Codex/skills/` or `$HOME/.Codex/skills/`
 - **Scope**: Available in all projects for this user
 - **Version Control**: NOT committed to git (outside repo)
 - **Use Case**: Personal productivity tools, custom workflows
 
 **Project Skills** (team-shared, version controlled):
 ```
-<project-root>/.claude/skills/
+<project-root>/.Codex/skills/
 └── [team-skills]/
 ```
-- **Path**: `.claude/skills/` in project root
+- **Path**: `.Codex/skills/` in project root
 - **Scope**: Available only in this project
 - **Version Control**: SHOULD be committed to git
 - **Use Case**: Team workflows, project-specific tools, shared knowledge
@@ -183,10 +183,10 @@ Claude Code does NOT support nested subdirectories or namespaces!
 
 ### 🎯 Progressive Disclosure Architecture
 
-Claude Code uses a **3-level progressive disclosure system** to scale to 100+ skills without context penalty:
+Codex uses a **3-level progressive disclosure system** to scale to 100+ skills without context penalty:
 
 #### Level 1: Metadata (Name + Description)
-**Loaded**: At Claude Code startup, always
+**Loaded**: At Codex startup, always
 **Size**: ~200 chars per skill
 **Purpose**: Enable autonomous skill matching
 **Context**: Loaded into system prompt for ALL skills
@@ -220,10 +220,10 @@ description: "Creates REST APIs..."   # ~50 chars
 ```
 
 #### Level 3+: Referenced Files
-**Loaded**: On-demand as Claude navigates
+**Loaded**: On-demand as Codex navigates
 **Size**: Variable (KB to MB)
 **Purpose**: Deep reference, examples, schemas
-**Context**: Loaded only when Claude accesses specific files
+**Context**: Loaded only when Codex accesses specific files
 
 ```markdown
 # In SKILL.md
@@ -231,7 +231,7 @@ See [Advanced Configuration](docs/ADVANCED.md) for complex scenarios.
 See [API Reference](docs/API_REFERENCE.md) for complete documentation.
 Use template: `resources/templates/api-template.js`
 
-# Claude will load these files ONLY if needed
+# Codex will load these files ONLY if needed
 ```
 
 **Benefit**: Install 100+ skills with ~6KB context. Only active skill content (1-10KB) enters context.
@@ -416,7 +416,7 @@ For complex scenarios like HOCs, render props, or custom hooks, see [ADVANCED.md
 
 #### Scripts Directory
 
-**Purpose**: Executable scripts that Claude can run
+**Purpose**: Executable scripts that Codex can run
 **Location**: `scripts/` in skill directory
 **Usage**: Referenced from SKILL.md
 
@@ -485,7 +485,7 @@ See working examples in `resources/examples/`:
 
 ### 🔗 File References and Navigation
 
-Claude can navigate to referenced files automatically. Use these patterns:
+Codex can navigate to referenced files automatically. Use these patterns:
 
 #### Markdown Links
 ```markdown
@@ -510,7 +510,7 @@ See `resources/examples/config.json`:
 ```
 ```
 
-**Best Practice**: Keep SKILL.md lean (~2-5KB). Move lengthy content to separate files and reference them. Claude will load only what's needed.
+**Best Practice**: Keep SKILL.md lean (~2-5KB). Move lengthy content to separate files and reference them. Codex will load only what's needed.
 
 ---
 
@@ -528,9 +528,9 @@ Before publishing a skill, verify:
 
 **File Structure**:
 - [ ] SKILL.md exists in skill directory
-- [ ] Directory is DIRECTLY in `~/.claude/skills/[skill-name]/` or `.claude/skills/[skill-name]/`
+- [ ] Directory is DIRECTLY in `~/.Codex/skills/[skill-name]/` or `.Codex/skills/[skill-name]/`
 - [ ] Uses clear, descriptive directory name
-- [ ] **NO nested subdirectories** (Claude Code requires top-level structure)
+- [ ] **NO nested subdirectories** (Codex requires top-level structure)
 
 **Content Quality**:
 - [ ] Level 1 (Overview) is brief and clear
@@ -547,7 +547,7 @@ Before publishing a skill, verify:
 - [ ] Clear navigation between levels
 
 **Testing**:
-- [ ] Skill appears in Claude's skill list
+- [ ] Skill appears in Codex's skill list
 - [ ] Description triggers on relevant queries
 - [ ] Instructions are clear and actionable
 - [ ] Scripts execute successfully (if included)
@@ -888,9 +888,9 @@ See `resources/templates/` for available component templates.
 ## Learn More
 
 ### Official Resources
-- [Anthropic Agent Skills Documentation](https://docs.claude.com/en/docs/agents-and-tools/agent-skills)
+- [Anthropic Agent Skills Documentation](https://docs.Codex.com/en/docs/agents-and-tools/agent-skills)
 - [GitHub Skills Repository](https://github.com/anthropics/skills)
-- [Claude Code Documentation](https://docs.claude.com/en/docs/claude-code)
+- [Codex Documentation](https://docs.Codex.com/en/docs/Codex)
 
 ### Community
 - [Skills Marketplace](https://github.com/anthropics/skills) - Browse community skills

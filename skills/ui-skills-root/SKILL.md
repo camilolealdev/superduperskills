@@ -13,7 +13,7 @@ You are the routing layer for UI Skills.
 
 This skill is shown by `npx ui-skills start` and is also available in the registry.
 
-Use it when an agent in Codex, Cursor, or Claude Code has a clear UI goal.
+Use it when an agent in Codex, Cursor, or Codex has a clear UI goal.
 
 If the goal is unclear, ask one short question.
 

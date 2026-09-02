@@ -1,6 +1,6 @@
 ---
 name: "research-summarizer"
-description: "Structured research summarization agent skill for non-dev users. Handles academic papers, web articles, reports, and documentation. Extracts key findings, generates comparative analyses, and produces properly formatted citations. Use when: user wants to summarize a research paper, compare multiple sources, extract citations from documents, or create structured research briefs. Plugin for Claude Code, Codex, Gemini CLI, and OpenClaw."
+description: "Structured research summarization agent skill for non-dev users. Handles academic papers, web articles, reports, and documentation. Extracts key findings, generates comparative analyses, and produces properly formatted citations. Use when: user wants to summarize a research paper, compare multiple sources, extract citations from documents, or create structured research briefs. Plugin for Codex, Codex, Gemini CLI, and OpenClaw."
 license: MIT
 metadata:
   version: 1.0.0
@@ -252,11 +252,11 @@ Flag these without being asked:
 
 ### One-liner (any tool)
 ```bash
-git clone https://github.com/alirezarezvani/claude-skills.git
-cp -r claude-skills/product-team/research-summarizer ~/.claude/skills/
+git clone https://github.com/alirezarezvani/Codex-skills.git
+cp -r Codex-skills/product-team/research-summarizer ~/.Codex/skills/
 ```
 
-### Multi-tool install (run from the claude-skills repo root)
+### Multi-tool install (run from the Codex-skills repo root)
 ```bash
 ./scripts/convert.sh --skill research-summarizer --tool codex|gemini|cursor|windsurf|openclaw
 ```

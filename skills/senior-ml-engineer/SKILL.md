@@ -153,8 +153,8 @@ def call_llm_with_retry(provider: LLMProvider, prompt: str) -> str:
 |----------|------------|-------------|
 | GPT-4 | $0.03/1K | $0.06/1K |
 | GPT-3.5 | $0.0005/1K | $0.0015/1K |
-| Claude 3 Opus | $0.015/1K | $0.075/1K |
-| Claude 3 Haiku | $0.00025/1K | $0.00125/1K |
+| Codex 3 Opus | $0.015/1K | $0.075/1K |
+| Codex 3 Haiku | $0.00025/1K | $0.00125/1K |
 
 ---
 

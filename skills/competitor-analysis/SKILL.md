@@ -3,8 +3,8 @@ name: competitor-analysis
 description: 'Analyze competitor SEO/GEO: keywords, content, backlinks, AI citations, traffic share. "Why do they outrank me" / "竞品怎么做的" / "他们排名为什么比我高". 竞品分析/竞争对手/排名差距 ライバル分析/競合チェック 경쟁분석 análisis competidores'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -79,8 +79,8 @@ metadata:
 # Competitor Analysis
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill provides comprehensive analysis of competitor SEO and GEO strategies, revealing what's working in your market and identifying opportunities to outperform the competition.
@@ -113,7 +113,7 @@ Use this whenever the task needs reusable market intelligence that should influe
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Basic Competitor Analysis
 
@@ -145,16 +145,16 @@ How is [competitor] getting cited in AI responses? What can I learn?
 
 **Expected output**: a prioritized research brief, evidence-backed findings, and a short handoff summary ready for `memory/research/`.
 
-- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing research deliverable plus a reusable summary that can be stored under `memory/research/`.
-- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `CLAUDE.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
+- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `AGENTS.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
 - **Next handoff**: use the `Next Best Skill` below when the findings are ready to drive action.
 
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~analytics + ~~AI monitor connected:**
 Automatically pull competitor keyword rankings, backlink profiles, top performing content, domain authority metrics from ~~SEO tool. Compare against your site's metrics from ~~analytics and ~~search console. Check AI citation patterns for both your site and competitors using ~~AI monitor.
@@ -223,7 +223,7 @@ When a user requests competitor analysis:
 
    Produce a final report with: Executive Summary, Competitive Landscape comparison table, CITE domain authority comparison, Strengths to Learn From, Weaknesses to Exploit, Keyword Opportunities, Content Strategy Recommendations, and Action Plan (Immediate / Short-term / Long-term).
 
-   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/references/analysis-templates.md) for detailed templates for each step.
+   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/competitor-analysis/references/analysis-templates.md) for detailed templates for each step.
 
 ## Validation Checkpoints
 
@@ -242,7 +242,7 @@ When a user requests competitor analysis:
 
 ## Example
 
-> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/references/example-report.md) for a complete example analyzing HubSpot's marketing keyword dominance.
+> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/competitor-analysis/references/example-report.md) for a complete example analyzing HubSpot's marketing keyword dominance.
 
 ## Advanced Analysis Types
 
@@ -297,11 +297,11 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Analysis Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/references/analysis-templates.md) — Detailed templates for each analysis step (profile, keywords, content, backlinks, technical, GEO, synthesis)
-- [Battlecard Template](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/references/battlecard-template.md) — Quick-reference competitive battlecard for sales and marketing teams
-- [Positioning Frameworks](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/references/positioning-frameworks.md) — Positioning maps, messaging matrices, narrative analysis, and differentiation frameworks
-- [Example Report](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/competitor-analysis/references/example-report.md) — Complete example analyzing HubSpot's marketing keyword dominance
+- [Analysis Templates](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/competitor-analysis/references/analysis-templates.md) — Detailed templates for each analysis step (profile, keywords, content, backlinks, technical, GEO, synthesis)
+- [Battlecard Template](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/competitor-analysis/references/battlecard-template.md) — Quick-reference competitive battlecard for sales and marketing teams
+- [Positioning Frameworks](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/competitor-analysis/references/positioning-frameworks.md) — Positioning maps, messaging matrices, narrative analysis, and differentiation frameworks
+- [Example Report](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/competitor-analysis/references/example-report.md) — Complete example analyzing HubSpot's marketing keyword dominance
 
 ## Next Best Skill
 
-- **Primary**: [content-gap-analysis](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/content-gap-analysis/SKILL.md) — turn competitor findings into a focused opportunity map.
+- **Primary**: [content-gap-analysis](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/content-gap-analysis/SKILL.md) — turn competitor findings into a focused opportunity map.

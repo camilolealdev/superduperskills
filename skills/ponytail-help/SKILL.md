@@ -32,7 +32,7 @@ Level sticks until changed or session end.
 | **ponytail-gain** | `/ponytail-gain` | Measured-impact scoreboard: less code, less cost, more speed. |
 | **ponytail-help** | `/ponytail-help` | This card. |
 
-Codex uses `@ponytail`, `@ponytail-review`, and `@ponytail-help`; Claude Code
+Codex uses `@ponytail`, `@ponytail-review`, and `@ponytail-help`; Codex
 and OpenCode use the slash-command forms above (OpenCode ships all six as
 slash commands).
 
@@ -62,9 +62,9 @@ Resolution: env var > config file > `full`.
 
 ## Update
 
-Enable auto-update once: open `/plugin`, go to Marketplaces, pick ponytail, Enable auto-update. Claude Code then pulls new versions at startup (run `/reload-plugins` when it prompts). Manual refresh: `/plugin marketplace update ponytail` then `/reload-plugins`.
+Enable auto-update once: open `/plugin`, go to Marketplaces, pick ponytail, Enable auto-update. Codex then pulls new versions at startup (run `/reload-plugins` when it prompts). Manual refresh: `/plugin marketplace update ponytail` then `/reload-plugins`.
 
-If `/plugin` is not recognized, your Claude Code is out of date. Update it (`npm install -g @anthropic-ai/claude-code@latest`, or `brew upgrade claude-code`) and restart. Other hosts use their own update flow.
+If `/plugin` is not recognized, your Codex is out of date. Update it (`npm install -g @anthropic-ai/Codex@latest`, or `brew upgrade Codex`) and restart. Other hosts use their own update flow.
 
 ## More
 

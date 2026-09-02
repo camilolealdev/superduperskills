@@ -8,7 +8,7 @@ description: Design a UI component spec to the house quality bar — anatomy, va
 Produce a complete component specification matching the project format.
 
 ## Steps
-1. Read `CLAUDE.md` → "Component Guidelines" (quality bar, the 8-state table) and "Atomic Design".
+1. Read `AGENTS.md` → "Component Guidelines" (quality bar, the 8-state table) and "Atomic Design".
 2. Check if it already exists: `components/atoms.md`, `molecules.md`, `organisms.md`, `templates.md`, `navigation.md`, `feedback.md`, `forms-advanced.md`, `overlays.md`. Match the existing spec format.
 3. Pull the ARIA pattern from `accessibility/aria-patterns.md` and contrast/target rules from `accessibility/wcag-checklist.md`.
 4. Map every value to tokens (`tokens/*.json`) — sizes via `sizing.json`, states via `states.json`.
@@ -19,7 +19,7 @@ Produce a complete component specification matching the project format.
 Spec with: anatomy diagram, variants table, sizes table, all 8 applicable states, token mapping, accessibility (role/keyboard/SR), and a note to render via `frameworks/adapter-protocol.md`.
 
 ## Accuracy — verify every state, don't assume (mandatory when code is produced)
-A component is only "correct" when **every variant × state** renders right — not just the resting default. Build a **states harness**: render the component in each applicable state (default, hover, focus, active, disabled, loading `aria-busy`, error `aria-invalid`, selected `aria-pressed`/`aria-selected`) × each variant in one HTML file (see `examples/component-states/button.html`). Then RUN the gates and report their real output (CLAUDE.md → Verification Protocol):
+A component is only "correct" when **every variant × state** renders right — not just the resting default. Build a **states harness**: render the component in each applicable state (default, hover, focus, active, disabled, loading `aria-busy`, error `aria-invalid`, selected `aria-pressed`/`aria-selected`) × each variant in one HTML file (see `examples/component-states/button.html`). Then RUN the gates and report their real output (AGENTS.md → Verification Protocol):
 - `node scripts/verify_states.mjs <harness> [--dark]` — contrast of every element in default/hover/focus
 - `node scripts/axe_audit.mjs <harness> [--dark]` — ARIA/role/name/label correctness
 - `node scripts/measure_render.mjs <harness> [--dark]` — every text element AA

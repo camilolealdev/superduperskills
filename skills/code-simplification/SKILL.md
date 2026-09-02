@@ -5,7 +5,7 @@ description: Simplifies code for clarity. Use when refactoring code for clarity 
 
 # Code Simplification
 
-> Inspired by the [Claude Code Simplifier plugin](https://github.com/anthropics/claude-plugins-official/blob/main/plugins/code-simplifier/agents/code-simplifier.md). Adapted here as a model-agnostic, process-driven skill for any AI coding agent.
+> Inspired by the [Codex Simplifier plugin](https://github.com/anthropics/Codex-plugins-official/blob/main/plugins/code-simplifier/agents/code-simplifier.md). Adapted here as a model-agnostic, process-driven skill for any AI coding agent.
 
 ## Overview
 
@@ -46,7 +46,7 @@ ASK BEFORE EVERY CHANGE:
 Simplification means making code more consistent with the codebase, not imposing external preferences. Before simplifying:
 
 ```
-1. Read CLAUDE.md / project conventions
+1. Read AGENTS.md / project conventions
 2. Study how neighboring code handles similar patterns
 3. Match the project's style for:
    - Import ordering and module system
@@ -325,7 +325,7 @@ After completing a simplification pass:
 - [ ] Linter/formatter passes (no style regressions)
 - [ ] Each simplification is a reviewable, incremental change
 - [ ] The diff is clean — no unrelated changes mixed in
-- [ ] Simplified code follows project conventions (checked against CLAUDE.md or equivalent)
+- [ ] Simplified code follows project conventions (checked against AGENTS.md or equivalent)
 - [ ] No error handling was removed or weakened
 - [ ] No dead code was left behind (unused imports, unreachable branches)
 - [ ] A teammate or review agent would approve the change as a net improvement

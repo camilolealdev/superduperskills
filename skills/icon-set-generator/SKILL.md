@@ -10,7 +10,7 @@ description: >
   "I need icons", "website icons", "project icons", or any request for consistent visual
   assets for a web project. This skill produces individual SVG files with a consistent
   style engine, not generic icon library lookups.
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Icon Set Generator

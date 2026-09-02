@@ -1,11 +1,11 @@
 ---
 name: security-guidance
-description: PreToolUse security-anti-pattern hook for Claude Code. Catches 12 common security risks (command injection, XSS, SQL injection, unsafe deserialization, GitHub Actions workflow injection, eval/new Function code injection) BEFORE the Edit/Write/MultiEdit operation completes. Session-state caching prevents duplicate warnings on the same file+rule combo. Stdlib only — no dependencies. Use when you want a safety net during Claude Code sessions that touch security-sensitive code (auth, payments, user input handling, IaC). Disable with ENABLE_SECURITY_REMINDER=0 if you need to perform a verified-safe operation that would otherwise trip a pattern. Triggers — "add security hook", "block unsafe code", "detect command injection before write", "prevent SQL injection patterns", "security warning hook".
+description: PreToolUse security-anti-pattern hook for Codex. Catches 12 common security risks (command injection, XSS, SQL injection, unsafe deserialization, GitHub Actions workflow injection, eval/new Function code injection) BEFORE the Edit/Write/MultiEdit operation completes. Session-state caching prevents duplicate warnings on the same file+rule combo. Stdlib only — no dependencies. Use when you want a safety net during Codex sessions that touch security-sensitive code (auth, payments, user input handling, IaC). Disable with ENABLE_SECURITY_REMINDER=0 if you need to perform a verified-safe operation that would otherwise trip a pattern. Triggers — "add security hook", "block unsafe code", "detect command injection before write", "prevent SQL injection patterns", "security warning hook".
 ---
 
 # Security Guidance Hook
 
-**A PreToolUse hook that blocks 12 common security anti-patterns before Claude Code writes them.**
+**A PreToolUse hook that blocks 12 common security anti-patterns before Codex writes them.**
 
 This skill is a **hook**, not a slash command. Once installed, it runs automatically before every `Edit`, `Write`, or `MultiEdit` operation and warns + blocks if it detects a known dangerous pattern.
 
@@ -33,26 +33,26 @@ The hook scans both:
 
 ## How It Works
 
-1. Claude Code is about to run `Edit`, `Write`, or `MultiEdit`
+1. Codex is about to run `Edit`, `Write`, or `MultiEdit`
 2. PreToolUse hook fires → invokes `security_reminder_hook.py` with the tool input as JSON on stdin
 3. The hook extracts file_path + content + checks against the pattern table
 4. If a pattern matches AND this warning hasn't been shown for this file+rule in this session:
-   - Print the warning to stderr (Claude sees it)
+   - Print the warning to stderr (Codex sees it)
    - Exit code 2 → blocks the tool call
-   - Save the warning key to `~/.claude/security_warnings_state_<session>.json`
+   - Save the warning key to `~/.Codex/security_warnings_state_<session>.json`
 5. If a pattern matches BUT the warning was already shown this session:
-   - Allow the tool call (exit code 0) — Claude already saw the warning once
+   - Allow the tool call (exit code 0) — Codex already saw the warning once
 6. If no pattern matches:
    - Allow the tool call (exit code 0)
 
 ## Installation
 
-This plugin ships as a Claude Code plugin with `hooks.json` wiring:
+This plugin ships as a Codex plugin with `hooks.json` wiring:
 
 ```bash
-# In Claude Code:
-/plugin marketplace add alirezarezvani/claude-skills
-/plugin install security-guidance@claude-code-skills
+# In Codex:
+/plugin marketplace add alirezarezvani/Codex-skills
+/plugin install security-guidance@Codex-skills
 ```
 
 Once installed, no further configuration needed — the hook runs automatically.
@@ -62,7 +62,7 @@ Once installed, no further configuration needed — the hook runs automatically.
 Disable per-session via environment variable:
 
 ```bash
-ENABLE_SECURITY_REMINDER=0 claude
+ENABLE_SECURITY_REMINDER=0 Codex
 # Hook is bypassed for this session
 ```
 
@@ -92,35 +92,35 @@ For 90%+ of cases, substring detection is sufficient. If you need stricter detec
 
 ## State Files
 
-The hook caches "warning shown" state in `~/.claude/security_warnings_state_<session_id>.json`. These files:
+The hook caches "warning shown" state in `~/.Codex/security_warnings_state_<session_id>.json`. These files:
 
 - Are auto-cleaned after 30 days (10% chance per hook invocation)
-- Are session-scoped (each Claude session gets its own)
+- Are session-scoped (each Codex session gets its own)
 - Contain a JSON list of `<file_path>-<rule_name>` keys
 
-You can safely delete `~/.claude/security_warnings_state_*.json` files at any time — the hook regenerates them on next run.
+You can safely delete `~/.Codex/security_warnings_state_*.json` files at any time — the hook regenerates them on next run.
 
 ## Debug Log
 
-The hook writes to `~/.claude/security-warnings-log.txt` for debugging hook misfires:
+The hook writes to `~/.Codex/security-warnings-log.txt` for debugging hook misfires:
 
 ```bash
-tail -f ~/.claude/security-warnings-log.txt
+tail -f ~/.Codex/security-warnings-log.txt
 # Shows JSON decode errors, state-file save failures, etc.
 ```
 
-(Upstream version wrote to `/tmp/security-warnings-log.txt` — we moved it to `~/.claude/` for persistence across reboots.)
+(Upstream version wrote to `/tmp/security-warnings-log.txt` — we moved it to `~/.Codex/` for persistence across reboots.)
 
 ## Source + Attribution
 
-This plugin is ported from David Dworken's MIT-licensed implementation in [`alirezarezvani/aeo-box`](https://github.com/alirezarezvani/aeo-box/tree/main/.claude/plugins/security-guidance).
+This plugin is ported from David Dworken's MIT-licensed implementation in [`alirezarezvani/aeo-box`](https://github.com/alirezarezvani/aeo-box/tree/main/.Codex/plugins/security-guidance).
 
 **Verbatim:** the original 9 patterns (GitHub Actions, child_process.exec, new Function, eval, dangerouslySetInnerHTML, document.write, innerHTML, pickle, os.system) are preserved with their exact warning text.
 
 **Modifications:**
 - Added 3 patterns: `subprocess shell=True`, SQL injection via f-string or `.format`, `yaml.unsafe_load`
-- Debug log moved from `/tmp/security-warnings-log.txt` → `~/.claude/security-warnings-log.txt`
-- Restructured as a claude-skills plugin with `attribution` block in `plugin.json`
+- Debug log moved from `/tmp/security-warnings-log.txt` → `~/.Codex/security-warnings-log.txt`
+- Restructured as a Codex-skills plugin with `attribution` block in `plugin.json`
 
 ## Anti-Patterns
 
@@ -156,5 +156,5 @@ The cache prevents nag-spam but is per-session. Don't rely on "I dismissed this 
 ---
 
 **Version:** 2.7.3
-**Source:** Ported from [`alirezarezvani/aeo-box`](https://github.com/alirezarezvani/aeo-box) `.claude/plugins/security-guidance/` (originally by David Dworken at Anthropic, MIT)
+**Source:** Ported from [`alirezarezvani/aeo-box`](https://github.com/alirezarezvani/aeo-box) `.Codex/plugins/security-guidance/` (originally by David Dworken at Anthropic, MIT)
 **License:** MIT

@@ -1,7 +1,7 @@
 ---
 name: vite-flare-starter
 description: "Scaffold a full-stack Cloudflare app from vite-flare-starter — React 19, Hono, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui, TanStack Query, R2, Workers AI. Run setup.sh to clone, configure, and deploy."
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Vite Flare Starter
@@ -168,7 +168,7 @@ git commit -m "Initial commit from vite-flare-starter"
 
 1. **Google OAuth** (if using): Go to Google Cloud Console, create OAuth 2.0 Client ID, add redirect URI `http://localhost:5173/api/auth/callback/google`, copy Client ID and Secret to `.dev.vars`
 2. **Favicon**: Replace `public/favicon.svg`
-3. **CLAUDE.md**: Update project description, remove vite-flare-starter references
+3. **AGENTS.md**: Update project description, remove vite-flare-starter references
 4. **index.html**: Update `<title>` and meta description
 
 ### Step 4: Verify Locally
@@ -287,5 +287,5 @@ Control features via environment variables: `VITE_FEATURE_STYLE_GUIDE=true`, `VI
 - [ ] Remote database migrated (`pnpm db:migrate:remote`)
 - [ ] No `vite-flare-starter` references in config files
 - [ ] Favicon replaced
-- [ ] CLAUDE.md updated
+- [ ] AGENTS.md updated
 - [ ] `.dev.vars` is NOT committed (check `.gitignore`)

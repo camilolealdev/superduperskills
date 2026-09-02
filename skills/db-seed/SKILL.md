@@ -8,7 +8,7 @@ allowed-tools:
   - Glob
   - Grep
   - Bash
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Database Seed Generator

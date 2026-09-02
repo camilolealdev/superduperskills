@@ -25,7 +25,7 @@ Git worktrees create isolated workspaces sharing the same repository for paralle
 ## Directory Selection (priority order)
 
 1. Existing `.worktrees/` or `worktrees/` directory
-2. CLAUDE.md preference (`grep -i "worktree.*director" CLAUDE.md`)
+2. AGENTS.md preference (`grep -i "worktree.*director" AGENTS.md`)
 3. Ask user: `.worktrees/` (project-local, hidden) OR `~/.config/ring/worktrees/<project>/` (global)
 
 ```bash
@@ -73,7 +73,7 @@ npm test / cargo test / pytest / go test ./...
 |-----------|--------|
 | `.worktrees/` exists | Use it (verify .gitignore) |
 | Both `.worktrees/` and `worktrees/` exist | Use `.worktrees/` |
-| Neither exists | Check CLAUDE.md → ask user |
+| Neither exists | Check AGENTS.md → ask user |
 | Directory not in .gitignore | Add immediately + commit |
 | Tests fail during baseline | Report failures + ask |
 

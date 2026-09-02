@@ -22,7 +22,7 @@ gh pr view <pr-number>
 Read the complete diff and PR description. Do not skim — read every changed file.
 
 ### 2. Scope Check
-- Only analyze AQE/QE skills (NOT Claude Flow platform skills)
+- Only analyze AQE/QE skills (NOT Codex Flow platform skills)
 - Platform skills to EXCLUDE: v3-*, flow-nexus-*, agentdb-*, reasoningbank-*, swarm-*, github-*, hive-mind-advanced, hooks-automation, iterative-loop, stream-chain, skill-builder, sparc-methodology, pair-programming, release, debug-loop, aqe-v2-v3-migration
 - If the PR touches skills, verify the count/scope matches expectations (~78 AQE skills)
 - Flag any platform skill changes that may have leaked into an AQE-focused PR

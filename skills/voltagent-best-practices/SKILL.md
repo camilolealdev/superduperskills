@@ -50,7 +50,7 @@ const agent = new Agent({
 });
 ```
 
-Model format is `provider/model` (for example `openai/gpt-4o-mini` or `anthropic/claude-3-5-sonnet`).
+Model format is `provider/model` (for example `openai/gpt-4o-mini` or `anthropic/Codex-3-5-sonnet`).
 
 ### Basic Workflow
 

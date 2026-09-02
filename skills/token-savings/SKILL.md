@@ -34,7 +34,7 @@ cada turno y evita que el modelo "pruebe" skills irrelevantes.
 
 - Al empezar un proyecto nuevo (si el hook `session-start-skill-picker.sh`
   ya está instalado, esto ya corrió automáticamente — revisa si existe
-  `.claude/.skills-selected.json` antes de repetir el trabajo).
+  `.Codex/.skills-selected.json` antes de repetir el trabajo).
 - Cuando el usuario pide explícitamente ahorrar tokens u optimizar el uso
   de skills a mitad de proyecto.
 - Cuando cambias de dominio dentro del mismo proyecto (ej. pasas de
@@ -42,7 +42,7 @@ cada turno y evita que el modelo "pruebe" skills irrelevantes.
 
 ## Pasos
 
-1. **Si existe `.claude/.skills-selected.json`**, léelo y muéstraselo al
+1. **Si existe `.Codex/.skills-selected.json`**, léelo y muéstraselo al
    usuario como la selección vigente. Pregunta si quiere ajustarla antes
    de continuar — no repitas todo el proceso de cero si no es necesario.
 2. **Si no existe**, infiere el dominio del proyecto por evidencia real, no
@@ -52,7 +52,7 @@ cada turno y evita que el modelo "pruebe" skills irrelevantes.
    growth; webhooks/n8n → automatización; tests/CI → testing. O el objetivo
    declarado del usuario si el proyecto es nuevo.
 3. Arma un menú corto (8-15, no el catálogo completo) de skills instalados
-   relevantes a ese dominio — revisa `~/.claude/skills/`,
+   relevantes a ese dominio — revisa `~/.Codex/skills/`,
    `~/.config/opencode/skills/`, o `SKILLS-INDEX.md` de `superduperskills`
    si el repo está disponible. Marca cuáles vienen de evidencia real del
    repo y cuáles son sugerencia genérica.
@@ -70,7 +70,7 @@ cada turno y evita que el modelo "pruebe" skills irrelevantes.
    que puede decir "usa solo core" (vuelve al núcleo de eficiencia
    solamente) o "ignora recomendaciones esta sesión" (apaga sugerencias
    nuevas por el resto de la sesión).
-6. Guarda la selección en `.claude/.skills-selected.json`:
+6. Guarda la selección en `.Codex/.skills-selected.json`:
    `{"selected": ["skill-a", "skill-b", ...], "confirmed_at": "<fecha ISO>"}`.
 7. Reporta en una línea cuántos skills quedaron seleccionados vs. cuántos
    había disponibles para ese dominio, como evidencia del ahorro.
@@ -85,7 +85,7 @@ cada turno y evita que el modelo "pruebe" skills irrelevantes.
 - `hooks/session-start-skill-picker.sh` (en `superduperskills`) — versión
   automática de este mismo flujo, disparada por un hook `SessionStart` real.
 - `templates/skill-confirmation-block.md` — la misma regla en texto, para
-  pegar en el `CLAUDE.md` de un proyecto como respaldo si el hook no está
+  pegar en el `AGENTS.md` de un proyecto como respaldo si el hook no está
   instalado.
 - Esta skill es la versión invocable a demanda de las dos anteriores —
   úsala cuando quieras re-confirmar sin depender de que el hook exista en

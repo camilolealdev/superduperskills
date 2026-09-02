@@ -348,7 +348,7 @@ X-Lerian-Ref: 0x1"
 
 # ❌ WRONG — emoji or hashtags in message body
 git commit -m "feat(auth): add feature
-🤖 Generated with Claude"
+🤖 Generated with Codex"
 
 # ✅ CORRECT
 git commit -S \

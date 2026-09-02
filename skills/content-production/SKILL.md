@@ -18,7 +18,7 @@ This is the execution engine — not the strategy layer. You're here to build, n
 ## Before Starting
 
 **Check for context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. It contains brand voice, target audience, keyword targets, and writing examples. Use what's there — only ask for what's missing.
+If `.Codex/product-marketing-context.md` exists, read it before asking questions. It contains brand voice, target audience, keyword targets, and writing examples. Use what's there — only ask for what's missing.
 
 Gather this context (ask in one shot, don't drip):
 
@@ -174,7 +174,7 @@ Manual checks:
 
 ### Brand Voice Pass
 
-Check the draft against the brand's voice profile (from `.claude/product-marketing-context.md`):
+Check the draft against the brand's voice profile (from `.Codex/product-marketing-context.md`):
 
 ```bash
 python3 scripts/brand_voice_analyzer.py draft.md --format json

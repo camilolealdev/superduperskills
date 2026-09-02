@@ -18,7 +18,7 @@ A webinar is a funnel, not an event. Registrations are cheap; attention and acti
 ## Before Starting
 
 **Check for context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. Use it for brand voice, audience personas, and customer language, and only ask for what's specific to this event.
+If `.Codex/product-marketing-context.md` exists, read it before asking questions. Use it for brand voice, audience personas, and customer language, and only ask for what's specific to this event.
 
 Gather this context (ask conversationally, one section at a time — don't dump every question at once):
 

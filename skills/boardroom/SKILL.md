@@ -53,7 +53,7 @@ Runs the `board-meeting` skill protocol across the C-suite for a single strategy
 
 ## Output: Board Memo
 
-Saved to `~/.claude/boardroom/YYYY-MM-DD-<slug>.md`:
+Saved to `~/.Codex/boardroom/YYYY-MM-DD-<slug>.md`:
 
 ```markdown
 # Board Memo: <topic>
@@ -109,7 +109,7 @@ If advisors see each other's positions before forming their own, they anchor. Ph
 
 ## Workflow
 
-1. Read brief from `~/.claude/briefs/<file>`
+1. Read brief from `~/.Codex/briefs/<file>`
 2. Identify affected roles
 3. Invoke each cs-* advisor independently (Phase 2)
 4. Collect positions

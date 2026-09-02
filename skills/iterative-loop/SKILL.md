@@ -18,7 +18,7 @@ The Iterative Loop skill implements **continuous AI-driven development loops** t
 
 ## Prerequisites
 
-- Claude Code with session management
+- Codex with session management
 - Clear completion criteria (tests, linting, metrics)
 - Version control (git) for tracking iterations
 
@@ -48,7 +48,7 @@ done
 ### AQE v3 Integration Example
 
 ```bash
-# Using claude-flow hooks for iterative task
+# Using Codex-flow hooks for iterative task
 npx --no-install ruflo hooks pre-task --description "Implement auth with iteration" --taskId "auth-impl"
 
 # Store iteration state in memory
@@ -226,7 +226,7 @@ Record metrics each iteration for trend analysis
 
 ---
 
-## Integration with Claude Flow
+## Integration with Codex Flow
 
 ### Memory-Enhanced Iteration
 
@@ -357,15 +357,15 @@ When ALL success criteria pass, output:
 
 - [tdd-london-chicago](../tdd-london-chicago/) - TDD approaches for iterative development
 - [qe-iterative-loop](../qe-iterative-loop/) - AQE v3 fleet-specific iteration patterns
-- [hooks-automation](../hooks-automation/) - Claude Flow hooks for automation
+- [hooks-automation](../hooks-automation/) - Codex Flow hooks for automation
 
 ## Resources
 
 - [Ralph Wiggum Technique](https://ghuntley.com/ralph/) - Original methodology
 - [Ralph Orchestrator](https://github.com/mikeyobrien/ralph-orchestrator) - Orchestration tools
-- [Claude Code Plugins](https://github.com/anthropics/claude-code) - Official plugins
+- [Codex Plugins](https://github.com/anthropics/Codex) - Official plugins
 
 ---
 
-**Origin**: Based on Ralph Wiggum plugin from claude-code repository (anthropics/claude-code)
-**Adapted for**: Agentic QE v3 with Claude Flow integration
+**Origin**: Based on Ralph Wiggum plugin from Codex repository (anthropics/Codex)
+**Adapted for**: Agentic QE v3 with Codex Flow integration

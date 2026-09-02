@@ -301,7 +301,7 @@ agent_assignments:
 - `api-testing-patterns`, `security-testing`, `performance-testing` - Specialized testing
 
 ## Resources
-- Agent definitions: `.claude/agents/`
+- Agent definitions: `.Codex/agents/`
 - CLI: `aqe agent --help`
 - Fleet status: `aqe fleet status`
 

@@ -14,7 +14,7 @@ ultrathink
 
 ## Description
 
-Self-eval is a Claude Code skill that produces honest, calibrated work evaluations. It replaces the default AI tendency to rate everything 4/5 with a structured two-axis scoring system, mandatory devil's advocate reasoning, and cross-session anti-inflation detection.
+Self-eval is a Codex skill that produces honest, calibrated work evaluations. It replaces the default AI tendency to rate everything 4/5 with a structured two-axis scoring system, mandatory devil's advocate reasoning, and cross-session anti-inflation detection.
 
 The core insight: AI self-assessment converges to "everything is a 4" because a single-axis score conflates task difficulty with execution quality. Self-eval separates these axes, then combines them via a fixed matrix that the model cannot override.
 
@@ -28,7 +28,7 @@ The core insight: AI self-assessment converges to "everything is a 4" because a 
 
 ## Usage
 
-After completing work in a Claude Code session:
+After completing work in a Codex session:
 
 ```
 /self-eval

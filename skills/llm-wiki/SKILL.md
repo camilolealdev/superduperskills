@@ -3,15 +3,15 @@ name: llm-wiki
 description: Use when building or maintaining a persistent personal knowledge base (second brain) in Obsidian where an LLM incrementally ingests sources, updates entity/concept pages, maintains cross-references, and keeps a synthesis current. Triggers include "second brain", "Obsidian wiki", "personal knowledge management", "ingest this paper/article/book", "build a research wiki", "compound knowledge", "Memex", or whenever the user wants knowledge to accumulate across sessions instead of being re-derived by RAG on every query.
 context: fork
 version: 2.9.0
-author: claude-code-skills
+author: Codex-skills
 license: MIT
 tags: [knowledge-management, obsidian, second-brain, pkm, rag-alternative, wiki, karpathy, memex]
-compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
+compatible_tools: [Codex, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
-# LLM Wiki — Second Brain for Claude Code + Obsidian
+# LLM Wiki — Second Brain for Codex + Obsidian
 
-Inspired by Andrej Karpathy's LLM Wiki pattern ([gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)). This skill turns Claude Code (or any agent CLI) into a disciplined wiki maintainer that **incrementally builds and maintains** a persistent, interlinked Obsidian vault as you feed it sources. The knowledge compounds — cross-references, contradictions, and synthesis are already there when you query.
+Inspired by Andrej Karpathy's LLM Wiki pattern ([gist](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f)). This skill turns Codex (or any agent CLI) into a disciplined wiki maintainer that **incrementally builds and maintains** a persistent, interlinked Obsidian vault as you feed it sources. The knowledge compounds — cross-references, contradictions, and synthesis are already there when you query.
 
 ## Core principle
 
@@ -44,13 +44,13 @@ vault/
 │   ├── sources/            # One summary page per ingested source
 │   ├── comparisons/        # Cross-source analysis pages
 │   └── synthesis/          # High-level syntheses, theses, overviews
-├── CLAUDE.md               # Schema + conventions (Claude Code)
+├── AGENTS.md               # Schema + conventions (Codex)
 └── AGENTS.md               # Same content, for Codex/Cursor/Antigravity
 ```
 
 - **Layer 1 (raw/)** — you own. LLM only reads; never writes.
 - **Layer 2 (wiki/)** — LLM owns. It creates, updates, and cross-references pages. You read it.
-- **Layer 3 (CLAUDE.md / AGENTS.md)** — the *schema*. Conventions, workflows, frontmatter rules. Co-evolved by you and the LLM.
+- **Layer 3 (AGENTS.md / AGENTS.md)** — the *schema*. Conventions, workflows, frontmatter rules. Co-evolved by you and the LLM.
 
 ## Three core operations
 
@@ -101,7 +101,7 @@ All tools are **standard library only** (no pip installs). Run with `python scri
 
 | Script | Purpose |
 |---|---|
-| `init_vault.py` | Create folder structure + seed CLAUDE.md, AGENTS.md, index.md, log.md |
+| `init_vault.py` | Create folder structure + seed AGENTS.md, AGENTS.md, index.md, log.md |
 | `ingest_source.py` | Helper: extract text/frontmatter from a source file, ready for LLM review |
 | `update_index.py` | Regenerate `index.md` from wiki page frontmatter (category, date, source count) |
 | `append_log.py` | Append a standardized log entry `## [YYYY-MM-DD] <op> \| <title>` |
@@ -112,10 +112,10 @@ All tools are **standard library only** (no pip installs). Run with `python scri
 
 ## Cross-tool compatibility
 
-The vault's **schema** lives in CLAUDE.md (Claude Code) or AGENTS.md (Codex/Cursor/Antigravity/OpenCode). The same content works in both. This plugin ships both templates. For per-tool setup instructions see `references/cross-tool-setup.md`.
+The vault's **schema** lives in AGENTS.md (Codex) or AGENTS.md (Codex/Cursor/Antigravity/OpenCode). The same content works in both. This plugin ships both templates. For per-tool setup instructions see `references/cross-tool-setup.md`.
 
 ```
-CLAUDE.md       → Claude Code
+AGENTS.md       → Codex
 AGENTS.md       → Codex CLI, Cursor, Antigravity, OpenCode, Gemini CLI
 .cursorrules    → legacy Cursor (pre-AGENTS.md)
 ```
@@ -168,7 +168,7 @@ This skill is marked `context: fork` so other skills can chain into it:
 
 ## Templates (`assets/`)
 
-- `CLAUDE.md.template`, `AGENTS.md.template`, `.cursorrules.template` — schema loaders per tool
+- `AGENTS.md.template`, `AGENTS.md.template`, `.cursorrules.template` — schema loaders per tool
 - `index.md.template`, `log.md.template` — starter index and log
 - `page-templates/` — entity, concept, source-summary, comparison, synthesis
 - `example-vault/` — small worked example you can study or copy

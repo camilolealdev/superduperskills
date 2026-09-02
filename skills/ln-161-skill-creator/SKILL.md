@@ -1,17 +1,17 @@
 ---
 name: ln-161-skill-creator
-description: "Creates .claude/commands from procedural doc sections. Use when transforming documentation prose into executable skill files."
+description: "Creates .Codex/commands from procedural doc sections. Use when transforming documentation prose into executable skill files."
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # ln-161-skill-creator
 
 **Type:** L3 Worker (standalone-capable)
 **Category:** 1XX Documentation Pipeline
 
-Creates `.claude/commands/*.md` files from procedural documentation sections. It converts procedural prose into imperative command instructions without changing the source docs.
+Creates `.Codex/commands/*.md` files from procedural documentation sections. It converts procedural prose into imperative command instructions without changing the source docs.
 
 ---
 
@@ -20,7 +20,7 @@ Creates `.claude/commands/*.md` files from procedural documentation sections. It
 | Aspect | Details |
 |--------|---------|
 | **Input** | Approved procedural sections or standalone docs scan |
-| **Output** | `.claude/commands/*.md` files in target project |
+| **Output** | `.Codex/commands/*.md` files in target project |
 | **Template** | `references/command_template.md` |
 | **Read mode** | Section-first markdown reading |
 
@@ -43,7 +43,7 @@ When invoked without `approved_sections`:
    - `tests/manual/**/*`
    - `README.md`
    - `CONTRIBUTING.md`
-3. Use `AGENTS.md`, `CLAUDE.md`, and `docs/project/.context/doc_registry.json` only to route discovery
+3. Use `AGENTS.md`, `AGENTS.md`, and `docs/project/.context/doc_registry.json` only to route discovery
 4. Classify candidate sections with the shared procedural extraction rules
 5. Present the extraction plan to the user for approval
 6. Create approved commands
@@ -106,7 +106,7 @@ For each approved section:
 | Source provenance | Implied only | Explicit `Source` section |
 | Related docs | Inline refs | `Related Documentation` section |
 
-5. Write `.claude/commands/{command_name}` if the file does not already exist
+5. Write `.Codex/commands/{command_name}` if the file does not already exist
 
 ### Phase 3: Report
 
@@ -114,7 +114,7 @@ Return:
 
 ```yaml
 created:
-  - file: .claude/commands/deploy.md
+  - file: .Codex/commands/deploy.md
     source: docs/project/runbook.md#Deployment
     lines: 85
     tools: [Bash, Read]

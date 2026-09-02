@@ -44,7 +44,7 @@ If the user provides a sitemap URL, parse it and extract all `<loc>` entries. If
 1. **Keyword + Modifier + Brand**: `Technical SEO Audit Checklist (2026) | Brand`
 2. **Number + Keyword + Benefit**: `13 SEO Skills That Cut Audit Time by 60%`
 3. **How-to + Keyword**: `How to Fix Crawl Budget Waste in 30 Minutes`
-4. **Keyword + Comparison**: `Screaming Frog vs Claude Code for Site Audits`
+4. **Keyword + Comparison**: `Screaming Frog vs Codex for Site Audits`
 
 ### CTR Boosters
 - **Numbers**: Specific numbers outperform ranges ("13" beats "10+")
@@ -77,7 +77,7 @@ If the user provides a sitemap URL, parse it and extract all `<loc>` entries. If
 ### Structure Pattern
 `[What the page covers] + [What the reader gains] + [CTA or differentiator]`
 
-Example: `Run a full technical SEO audit in Claude Code's terminal. Covers crawl errors, Core Web Vitals, schema validation, and internal links. Free skill included.`
+Example: `Run a full technical SEO audit in Codex's terminal. Covers crawl errors, Core Web Vitals, schema validation, and internal links. Free skill included.`
 
 ### Common Mistakes to Flag
 - **Duplicate descriptions**: Same description across multiple pages
@@ -92,12 +92,12 @@ For each URL analyzed, generate a visual SERP preview in this format:
 
 ```
 [SERP Preview]
-Title:  Technical SEO Audit With Claude Code (Free Skill) | ccforseo
+Title:  Technical SEO Audit With Codex (Free Skill) | ccforseo
         ─────────────────────────────────────────────────────────────
 URL:    ccforseo.com/skills/seo-audit
 Desc:   Run a complete technical SEO audit from your terminal. Covers
         crawl errors, Core Web Vitals, schema, and internal links.
-        Free Claude Code skill included.
+        Free Codex skill included.
 Chars:  Title: 57 | Description: 152
 Status: Title: OK | Description: OK
 ```
@@ -135,15 +135,15 @@ For each target keyword:
 Present as:
 
 ```
-Competitor Title Analysis: "claude code seo audit"
+Competitor Title Analysis: "Codex seo audit"
 
 | Rank | Title                                          | Chars | Keyword Position | Modifiers     |
 |------|------------------------------------------------|-------|-----------------|---------------|
-| 1    | How to Run SEO Audits With Claude Code          | 43    | Position 4      | How-to        |
-| 2    | Claude Code SEO Audit: Complete Guide (2026)    | 47    | Position 1      | Year, Guide   |
+| 1    | How to Run SEO Audits With Codex          | 43    | Position 4      | How-to        |
+| 2    | Codex SEO Audit: Complete Guide (2026)    | 47    | Position 1      | Year, Guide   |
 | 3    | Technical SEO Auditing in the Terminal           | 42    | Position 3      | None          |
 
-Gap: No results use numbers or templates. Opportunity: "13-Point SEO Audit Template for Claude Code"
+Gap: No results use numbers or templates. Opportunity: "13-Point SEO Audit Template for Codex"
 ```
 
 ## Batch Processing
@@ -160,7 +160,7 @@ When given multiple URLs:
 ```
 | URL | Current Title | Suggested Title | Chars | Current Description | Suggested Description | Chars | Target Keyword | Issues |
 |-----|--------------|-----------------|-------|--------------------|-----------------------|-------|---------------|--------|
-| /blog/seo-audit | Blog - Brand | Technical SEO Audit With Claude Code | 38 | (missing) | Run a full technical audit... | 148 | seo audit claude code | Missing desc, Brand-first |
+| /blog/seo-audit | Blog - Brand | Technical SEO Audit With Codex | 38 | (missing) | Run a full technical audit... | 148 | seo audit Codex | Missing desc, Brand-first |
 ```
 
 ## A/B Testing Recommendations
@@ -189,9 +189,9 @@ Recommend running each test for 2-4 weeks with enough impression volume for stat
 
 ```
 User: Optimize meta tags for these 3 URLs targeting these keywords:
-- /blog/site-audit → "claude code seo audit"
-- /blog/keyword-research → "keyword research claude code"
-- /skills → "claude code seo skills"
+- /blog/site-audit → "Codex seo audit"
+- /blog/keyword-research → "keyword research Codex"
+- /skills → "Codex seo skills"
 
 Assistant analyzes current tags, generates SERP previews, checks competitors,
 and outputs the recommendation table with suggested titles, descriptions,

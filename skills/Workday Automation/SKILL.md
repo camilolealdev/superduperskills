@@ -8,7 +8,7 @@ requires:
 
 # Workday Automation
 
-Automate your Workday HR operations directly from Claude Code. Look up workers, create time off requests, check absence balances, and validate time off eligibility -- all without leaving your terminal.
+Automate your Workday HR operations directly from Codex. Look up workers, create time off requests, check absence balances, and validate time off eligibility -- all without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/workday](https://composio.dev/toolkits/workday)
 
@@ -16,7 +16,7 @@ Automate your Workday HR operations directly from Claude Code. Look up workers, 
 
 ## Setup
 
-1. Add the Rube MCP server to your Claude Code config with URL: `https://rube.app/mcp`
+1. Add the Rube MCP server to your Codex config with URL: `https://rube.app/mcp`
 2. When prompted, authenticate your Workday account through the connection link provided
 3. Start automating your HR workflows with natural language
 

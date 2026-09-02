@@ -9,7 +9,7 @@ tags:
   - router
   - index
 agents:
-  - claude-code
+  - Codex
   - codex-cli
   - openclaw
 ---
@@ -22,7 +22,7 @@ This is the index skill for the marketing plugin. It does one job: route you to 
 
 ## Start Here
 
-1. **First run ever?** Use `skills/marketing-context/` to create `.claude/product-marketing-context.md`. Every other skill reads it for brand voice, personas, and competitive landscape.
+1. **First run ever?** Use `skills/marketing-context/` to create `.Codex/product-marketing-context.md`. Every other skill reads it for brand voice, personas, and competitive landscape.
 2. **Know your task?** Find it in the route table below and load only that skill's `SKILL.md`.
 3. **Ambiguous request?** Load `skills/marketing-ops/` — its routing matrix maps phrasings to skills.
 
@@ -116,6 +116,6 @@ All 59 scripts are stdlib-only; most run a demo with no args.
 ## Rules
 
 - Load ONE specialist skill per task — never bulk-load.
-- If `.claude/product-marketing-context.md` exists, read it before any marketing task.
+- If `.Codex/product-marketing-context.md` exists, read it before any marketing task.
 - `content-creator` is deprecated — use `skills/content-production/`.
 - Don't pip-install anything for these tools.

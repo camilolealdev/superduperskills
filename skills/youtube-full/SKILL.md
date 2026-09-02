@@ -8,7 +8,7 @@ license: "MIT"
 
 Covers transcript extraction, video search, channel browsing, in-channel search, playlist extraction, and new-upload monitoring via TranscriptAPI.
 
-> **Source:** Ported from [ZeroPointRepo/youtube-skills](https://github.com/ZeroPointRepo/youtube-skills) (MIT). Original skill authored by ZeroPointRepo contributors. Adapted for the claude-skills format.
+> **Source:** Ported from [ZeroPointRepo/youtube-skills](https://github.com/ZeroPointRepo/youtube-skills) (MIT). Original skill authored by ZeroPointRepo contributors. Adapted for the Codex-skills format.
 
 > **BYOK / free-tier note:** TranscriptAPI is a commercial service (BYOK — you bring your own key; 100 free credits included, no card required). For local/self-hosted extraction without an API key, use `youtube-transcript-api` (Python) or `yt-dlp` as OSS fallbacks. See [Anti-Patterns](#anti-patterns) for guidance.
 
@@ -17,7 +17,7 @@ Covers transcript extraction, video search, channel browsing, in-channel search,
 Every request to `transcriptapi.com` requires two headers:
 
 - `Authorization: Bearer $TRANSCRIPT_API_KEY`
-- `User-Agent: ClaudeCode/1.0`
+- `User-Agent: Codex/1.0`
 
 If `TRANSCRIPT_API_KEY` is not set, prompt the user to get a free key at `https://transcriptapi.com` (100 free credits, no card required) and store it as `TRANSCRIPT_API_KEY`.
 

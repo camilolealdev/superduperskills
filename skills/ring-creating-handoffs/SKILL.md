@@ -16,7 +16,7 @@ description: "Creating a handoff document that captures session state (completed
 - User simply wants to end the conversation without resuming later
 - Work is fully complete with nothing pending
 
-Creates a handoff document capturing session context, delivered via Claude Code's Plan Mode so the user gets a native "clear context and continue implementing" option.
+Creates a handoff document capturing session context, delivered via Codex's Plan Mode so the user gets a native "clear context and continue implementing" option.
 
 ## Execution Protocol (exact order, no skipping)
 

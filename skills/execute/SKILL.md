@@ -22,7 +22,7 @@ An approved decision record (output of `/cs:decide`).
 
 ## Output Plan Format
 
-Saved to `~/.claude/execution/YYYY-MM-DD-<slug>.md`:
+Saved to `~/.Codex/execution/YYYY-MM-DD-<slug>.md`:
 
 ```markdown
 # Execution Plan: <decision title>

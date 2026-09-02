@@ -5,7 +5,7 @@ description: Write internal company communications — 3P updates (Progress/Plan
 
 # Internal Comms
 
-> Originally contributed by [maximcoding](https://github.com/maximcoding) — enhanced and integrated by the claude-skills team.
+> Originally contributed by [maximcoding](https://github.com/maximcoding) — enhanced and integrated by the Codex-skills team.
 
 Write polished internal communications by loading the right reference file, gathering context, and outputting in the company's exact format.
 

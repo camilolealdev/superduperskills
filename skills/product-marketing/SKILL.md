@@ -15,7 +15,7 @@ The document is stored at `.agents/product-marketing.md`.
 
 ### Step 1: Check for Existing Context
 
-First, check if `.agents/product-marketing.md` already exists. Also check `.claude/product-marketing.md` and the legacy filename `product-marketing-context.md` (in either `.agents/` or `.claude/`) for older setups — if found anywhere other than `.agents/product-marketing.md`, offer to move it to the canonical location.
+First, check if `.agents/product-marketing.md` already exists. Also check `.Codex/product-marketing.md` and the legacy filename `product-marketing-context.md` (in either `.agents/` or `.Codex/`) for older setups — if found anywhere other than `.agents/product-marketing.md`, offer to move it to the canonical location.
 
 **If it exists:**
 - Read it and summarize what's captured

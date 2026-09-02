@@ -1,12 +1,12 @@
 ---
 name: project-health
-description: "All-in-one project configuration and health management. Sets up new projects (settings.local.json, CLAUDE.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leaked secrets, stale docs), tidies accumulated cruft, captures session learnings, and adds permission presets. Uses sub-agents for heavy analysis to keep main context clean. Trigger with 'project health', 'check project', 'setup project', 'kickoff', 'bootstrap', 'tidy permissions', 'clean settings', 'capture learnings', 'audit context', 'add python permissions', or 'init project'."
-compatibility: claude-code-only
+description: "All-in-one project configuration and health management. Sets up new projects (settings.local.json, AGENTS.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leaked secrets, stale docs), tidies accumulated cruft, captures session learnings, and adds permission presets. Uses sub-agents for heavy analysis to keep main context clean. Trigger with 'project health', 'check project', 'setup project', 'kickoff', 'bootstrap', 'tidy permissions', 'clean settings', 'capture learnings', 'audit context', 'add python permissions', or 'init project'."
+compatibility: Codex-only
 ---
 
 # Project Health
 
-One skill for everything about your project's Claude Code configuration. Run it at the start, middle, or end of a project — it figures out what's needed.
+One skill for everything about your project's Codex configuration. Run it at the start, middle, or end of a project — it figures out what's needed.
 
 **Goal**: Zero permission prompts, well-organised context files, no cruft.
 
@@ -17,7 +17,7 @@ One skill for everything about your project's Claude Code configuration. Run it 
 | "project health" / "check project" | Full audit: permissions + context + docs |
 | "setup project" / "kickoff" / "bootstrap" | New project setup from scratch |
 | "tidy permissions" / "clean settings" | Fix permissions file only |
-| "capture learnings" / "update CLAUDE.md" | Save session discoveries |
+| "capture learnings" / "update AGENTS.md" | Save session discoveries |
 | "add python" / "add docker permissions" | Add a preset to existing settings |
 | "audit context" / "audit memory" | Context-focused audit only |
 
@@ -30,7 +30,7 @@ One skill for everything about your project's Claude Code configuration. Run it 
 Launched with `Task(subagent_type: "general-purpose")`. Prompt:
 
 ```
-Read .claude/settings.local.json.
+Read .Codex/settings.local.json.
 
 **Discover connected MCP servers**: Use ToolSearch (search "mcp") and extract unique
 server prefixes from tool names (e.g. mcp__vault__secret_list → vault).
@@ -44,8 +44,8 @@ Report:
 1. MCP servers connected but NOT in settings (missing)
 2. MCP servers in settings but NOT connected (stale)
 3. Skill permissions: Bash patterns and MCP tools that installed skills need but aren't approved
-4. File access: check for Read/Edit/Write patterns for .claude/** and //tmp/**
-   in project settings, and ~/Documents/**/~/.claude/** in global settings
+4. File access: check for Read/Edit/Write patterns for .Codex/** and //tmp/**
+   in project settings, and ~/Documents/**/~/.Codex/** in global settings
 5. Leaked secrets: entries containing API keys, tokens, bearer strings, hex >20 chars, base64 >20 chars
 6. Legacy colon syntax: entries like Bash(git:*) instead of Bash(git *)
 7. Junk entries: shell fragments (Bash(do), Bash(fi), Bash(then), Bash(else), Bash(done)),
@@ -67,21 +67,21 @@ Launched with `Task(subagent_type: "general-purpose")`. Prompt:
 ```
 Audit the project context landscape at [repo-path]:
 
-1. Find all CLAUDE.md files. For each:
+1. Find all AGENTS.md files. For each:
    - Count lines (target: root 50-150, subdirs 15-50)
    - Score quality on 6 criteria (see quality-criteria.md)
    - Check for stale file/path references
    - Flag oversized files
 
-2. Find .claude/rules/ topic files. Check sizes (target: 20-80 lines).
+2. Find .Codex/rules/ topic files. Check sizes (target: 20-80 lines).
 
 3. Detect project type from files present (see project-types.md).
    Check expected docs exist (ARCHITECTURE.md, DATABASE_SCHEMA.md, etc.)
 
 4. Find public markdown (README.md, LICENSE, CONTRIBUTING.md).
-   Check for overlap with CLAUDE.md content.
+   Check for overlap with AGENTS.md content.
 
-5. Check auto-memory at ~/.claude/projects/*/memory/MEMORY.md
+5. Check auto-memory at ~/.Codex/projects/*/memory/MEMORY.md
 
 6. If Cloudflare project: find all wrangler.jsonc/wrangler.toml files.
    Check each has "observability": { "enabled": true }. Flag any missing it.
@@ -119,7 +119,7 @@ Both return summaries. The main agent combines them into one report and proposes
    ## Project Health Report
 
    **Project type**: [detected type]
-   **CLAUDE.md quality**: [score]/100 ([grade])
+   **AGENTS.md quality**: [score]/100 ([grade])
 
    ### Permissions
    - Missing MCP servers: [list]
@@ -143,7 +143,7 @@ Both return summaries. The main agent combines them into one report and proposes
 
 ## Mode 2: New Project Setup
 
-**When**: No `.claude/settings.local.json` exists, or user says "setup" / "kickoff".
+**When**: No `.Codex/settings.local.json` exists, or user says "setup" / "kickoff".
 
 ### Steps
 
@@ -168,30 +168,30 @@ Both return summaries. The main agent combines them into one report and proposes
    | `Dockerfile` or `docker-compose.yml` | docker | Docker |
    | `fly.toml` or `railway.json` or `netlify.toml` | hosted-app | Hosting Platforms |
    | `supabase/config.toml` | supabase | Hosting + Database |
-   | `.claude/agents/` or operational scripts | ops-admin | — |
+   | `.Codex/agents/` or operational scripts | ops-admin | — |
    | Empty directory | Ask the user | — |
 
    Types stack (e.g. cloudflare-worker + javascript-typescript).
 
-2. **Generate `.claude/settings.local.json`**:
+2. **Generate `.Codex/settings.local.json`**:
    - Read [references/permission-presets.md](references/permission-presets.md)
-   - Always include Universal Base (includes file access for `.claude/**`, `//tmp/**`)
+   - Always include Universal Base (includes file access for `.Codex/**`, `//tmp/**`)
    - Add detected language + deployment presets
-   - Check if global `~/.claude/settings.local.json` has home-relative file access
-     patterns (`~/Documents/**`, `~/.claude/**`). If not, suggest adding them there
+   - Check if global `~/.Codex/settings.local.json` has home-relative file access
+     patterns (`~/Documents/**`, `~/.Codex/**`). If not, suggest adding them there
      (NOT in the project file — home paths belong in global settings only)
    - **Launch Permission Auditor agent** to discover MCP servers and add per-server wildcards
    - Always include `WebSearch`, `WebFetch`
    - Always include explicit `gh` subcommands (workaround for `Bash(gh *)` bug)
    - Write with `//` comment groups
 
-3. **Generate `CLAUDE.md`**:
+3. **Generate `AGENTS.md`**:
    - Read [references/templates.md](references/templates.md)
    - Use project-type-appropriate template
 
 4. **Generate `.gitignore`**:
    - Read [references/templates.md](references/templates.md)
-   - Always include `.claude/settings.local.json`, `.claude/plans/`, `.jez/screenshots/`, `.jez/artifacts/`
+   - Always include `.Codex/settings.local.json`, `.Codex/plans/`, `.jez/screenshots/`, `.jez/artifacts/`
    - Do NOT gitignore `.jez/scripts/` — generated scripts are worth keeping
 
 5. **Optionally** (ask first): `git init` + `gh repo create`
@@ -214,12 +214,12 @@ This runs in the **main context** (not a sub-agent) because it needs access to t
 2. Decide placement:
    ```
    Applies to all projects?
-   ├── YES → ~/.claude/rules/<topic>.md
+   ├── YES → ~/.Codex/rules/<topic>.md
    └── NO  → Specific to a subdirectory?
-       ├── YES → <dir>/CLAUDE.md
+       ├── YES → <dir>/AGENTS.md
        └── NO  → Reference or operational?
            ├── Reference → docs/ or ARCHITECTURE.md
-           └── Operational → ./CLAUDE.md (root)
+           └── Operational → ./AGENTS.md (root)
    ```
 3. Draft all changes as diffs in a single batch
 4. Apply after single yes/no confirmation
@@ -231,18 +231,18 @@ This runs in the **main context** (not a sub-agent) because it needs access to t
 **When**: "add python permissions", "add docker", "add MCP servers".
 
 1. Read the preset from [references/permission-presets.md](references/permission-presets.md)
-2. Read existing `.claude/settings.local.json`
+2. Read existing `.Codex/settings.local.json`
 3. Merge without duplicating
 4. Remind: **session restart required**
 
 ## Mode 6: Restructure Context
 
-**When**: Root CLAUDE.md over 200 lines, "restructure memory".
+**When**: Root AGENTS.md over 200 lines, "restructure memory".
 
 1. Launch Context Auditor agent first
 2. Based on findings:
-   - Split oversized CLAUDE.md into `.claude/rules/<topic>.md`
-   - Extract directory-specific content to sub-directory CLAUDE.md
+   - Split oversized AGENTS.md into `.Codex/rules/<topic>.md`
+   - Extract directory-specific content to sub-directory AGENTS.md
    - Move reference material to `docs/`
    - Resolve overlaps
    - Create missing docs for project type
@@ -252,8 +252,8 @@ This runs in the **main context** (not a sub-agent) because it needs access to t
 
 | File | Target | Maximum |
 |------|--------|---------|
-| Root CLAUDE.md | 50-150 lines | 200 |
-| Sub-directory CLAUDE.md | 15-50 lines | 80 |
+| Root AGENTS.md | 50-150 lines | 200 |
+| Sub-directory AGENTS.md | 15-50 lines | 80 |
 | Rules topic file | 20-80 lines | 120 |
 
 ## Permission Syntax Quick Reference
@@ -292,7 +292,7 @@ This runs in the **main context** (not a sub-agent) because it needs access to t
 | When | Read |
 |------|------|
 | Building permission presets | [references/permission-presets.md](references/permission-presets.md) |
-| Generating CLAUDE.md, .gitignore | [references/templates.md](references/templates.md) |
-| Scoring CLAUDE.md quality | [references/quality-criteria.md](references/quality-criteria.md) |
+| Generating AGENTS.md, .gitignore | [references/templates.md](references/templates.md) |
+| Scoring AGENTS.md quality | [references/quality-criteria.md](references/quality-criteria.md) |
 | Detecting project type + expected docs | [references/project-types.md](references/project-types.md) |
 | Setting up commit capture hook | [references/commit-hook.md](references/commit-hook.md) |

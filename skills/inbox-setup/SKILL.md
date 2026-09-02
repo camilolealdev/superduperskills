@@ -194,8 +194,8 @@ Re-running on an existing setup:
 
 ## Portability
 
-- **Claude Code CLI:** Native — writes markdown files directly to filesystem.
-- **Claude.ai web:** Works with project files / artifacts. Document the alternate path: generate files as artifacts, instruct user to save to their workspace, or use connected file system if available.
+- **Codex CLI:** Native — writes markdown files directly to filesystem.
+- **Codex.ai web:** Works with project files / artifacts. Document the alternate path: generate files as artifacts, instruct user to save to their workspace, or use connected file system if available.
 
 ## Tooling
 

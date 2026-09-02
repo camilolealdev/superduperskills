@@ -32,7 +32,7 @@ Remains active for the current session only.
     "PreToolUse": [
       {
         "matcher": "Write|Edit",
-        "hook": ".claude/skills/strict-tdd/scripts/enforce-red-phase.sh",
+        "hook": ".Codex/skills/strict-tdd/scripts/enforce-red-phase.sh",
         "condition": "file matches src/**/*.{ts,js} AND NOT src/**/*.test.{ts,js}"
       }
     ]

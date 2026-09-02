@@ -112,7 +112,7 @@ This is where the skill earns its keep — and where **fabrication is forbidden*
 
 If the workspace is inaccessible:
 
-> **Connections:** No workspace accessible from here. If you're running this from Claude Code or have a project with files attached, I can fill this in. Want to share where this work lives?
+> **Connections:** No workspace accessible from here. If you're running this from Codex or have a project with files attached, I can fill this in. Want to share where this work lives?
 
 See `references/workspace_detection.md` for the per-context detection-tactic catalog.
 
@@ -156,8 +156,8 @@ The trigger is the `complexity_estimator.py` recommendation OR your judgment whe
 
 | Context | Detection method |
 |---|---|
-| Claude Code CLI | Glob for files matching dump keywords; Grep for content matches; read top-level structure. Use `scripts/workspace_inventory.py`. |
-| Claude.ai with project | Check project knowledge files for thematic overlap. List file titles; surface matches by keyword. |
+| Codex CLI | Glob for files matching dump keywords; Grep for content matches; read top-level structure. Use `scripts/workspace_inventory.py`. |
+| Codex.ai with project | Check project knowledge files for thematic overlap. List file titles; surface matches by keyword. |
 | Connected tools (Notion, Drive, etc.) | Search via MCP if available. |
 | No accessible workspace | State the limitation explicitly; ask user about their setup; do NOT fabricate. |
 

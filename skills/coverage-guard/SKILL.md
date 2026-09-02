@@ -43,7 +43,7 @@ Edit `config.json` in this skill directory to set thresholds:
     "PostToolUse": [
       {
         "matcher": "Bash",
-        "hook": ".claude/skills/coverage-guard/scripts/check-coverage.sh",
+        "hook": ".Codex/skills/coverage-guard/scripts/check-coverage.sh",
         "condition": "command contains 'jest' OR command contains 'vitest' OR command contains 'npm test'"
       }
     ]

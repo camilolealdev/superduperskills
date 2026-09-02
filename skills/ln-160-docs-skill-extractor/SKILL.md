@@ -1,10 +1,10 @@
 ---
 name: ln-160-docs-skill-extractor
-description: "Extracts procedural content from project docs into .claude/commands skills. Use when docs contain deploy, test, or troubleshoot procedures."
+description: "Extracts procedural content from project docs into .Codex/commands skills. Use when docs contain deploy, test, or troubleshoot procedures."
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # ln-160-docs-skill-extractor
 
@@ -12,7 +12,7 @@ license: MIT
 **Category:** 1XX Documentation Pipeline
 **Workers:** ln-161-skill-creator, ln-162-skill-reviewer
 
-Scans project documentation, identifies procedural content, and extracts it into executable `.claude/commands/*.md` files. Declarative documentation stays in markdown; this skill only routes procedural sections into command form.
+Scans project documentation, identifies procedural content, and extracts it into executable `.Codex/commands/*.md` files. Declarative documentation stays in markdown; this skill only routes procedural sections into command form.
 
 ---
 
@@ -21,9 +21,9 @@ Scans project documentation, identifies procedural content, and extracts it into
 | Aspect | Details |
 |--------|---------|
 | **Input** | Project docs, test docs, and optional doc registry |
-| **Output** | `.claude/commands/*.md` files in target project |
+| **Output** | `.Codex/commands/*.md` files in target project |
 | **Workers** | ln-161 creates commands, ln-162 reviews them |
-| **Source policy** | Docs-first extraction; `AGENTS.md` and `CLAUDE.md` are routing-only |
+| **Source policy** | Docs-first extraction; `AGENTS.md` and `AGENTS.md` are routing-only |
 
 ---
 
@@ -55,7 +55,7 @@ Build a docs-first inventory before extracting anything.
 
 Use these files only to route discovery and prioritize reading:
 - `AGENTS.md`
-- `CLAUDE.md`
+- `AGENTS.md`
 - `docs/project/.context/doc_registry.json` if present
 
 Do **not** extract commands from routing sources.
@@ -70,7 +70,7 @@ Scan only these sources for procedural content:
 - `CONTRIBUTING.md`
 
 Also scan:
-- `.claude/commands/*.md` to avoid duplicate command creation
+- `.Codex/commands/*.md` to avoid duplicate command creation
 
 ### Discovery Rules
 
@@ -97,7 +97,7 @@ contextStore:
     agents_md: true
     claude_md: true
     doc_registry: true
-  existing_commands: [list of .claude/commands/*.md filenames]
+  existing_commands: [list of .Codex/commands/*.md filenames]
   doc_inventory:
     - file: docs/project/runbook.md
       doc_kind: how-to
@@ -122,7 +122,7 @@ Score each candidate section with the shared procedural extraction rules.
 | THIN | Both < 3 | Skip |
 
 Filter:
-- drop sections already covered by an existing `.claude/commands/*.md`
+- drop sections already covered by an existing `.Codex/commands/*.md`
 - drop standard doc shell sections
 - prefer `DOC_KIND=how-to` when multiple sections overlap semantically
 
@@ -140,7 +140,7 @@ Found {N} procedural sections in {M} files:
 | 1 | runbook.md | how-to | Deployment | P:8/D:1 | deploy.md |
 | 2 | tests/README.md | index | Running Tests | P:7/D:2 | run-tests.md |
 
-Existing .claude/commands/ (will skip): refresh_context.md, build-and-test.md
+Existing .Codex/commands/ (will skip): refresh_context.md, build-and-test.md
 
 Include? (e.g., "1,2" or "all" or "all skip 2")
 ```
@@ -222,18 +222,18 @@ Aggregate the create and review results.
 | Review WARN | {N} |
 
 Created commands:
-- .claude/commands/deploy.md (from runbook.md#Deployment)
-- .claude/commands/run-tests.md (from tests/README.md#Running Tests)
+- .Codex/commands/deploy.md (from runbook.md#Deployment)
+- .Codex/commands/run-tests.md (from tests/README.md#Running Tests)
 ```
 
 ---
 
 ## Critical Rules
 
-- **Docs-first extraction:** Extract only from docs sources. `AGENTS.md` and `CLAUDE.md` route discovery but never become command sources.
+- **Docs-first extraction:** Extract only from docs sources. `AGENTS.md` and `AGENTS.md` route discovery but never become command sources.
 - **Section-first reading:** Use the shared markdown read protocol before full-file reads.
 - **Detect before extract:** Only extract sections classified as procedural.
-- **No duplicates:** Skip sections already covered by existing `.claude/commands/*.md`.
+- **No duplicates:** Skip sections already covered by existing `.Codex/commands/*.md`.
 - **User approval required:** Never create commands without Phase 3 confirmation.
 - **Delegate creation:** All command file writing goes through ln-161.
 - **Delegate review:** All command validation goes through ln-162.
@@ -260,7 +260,7 @@ Created commands:
 
 ## Definition of Done
 
-- [ ] Routing sources checked (`AGENTS.md`, `CLAUDE.md`, doc registry if present)
+- [ ] Routing sources checked (`AGENTS.md`, `AGENTS.md`, doc registry if present)
 - [ ] Extraction inventory built from docs-first sources
 - [ ] Every candidate section classified
 - [ ] User approved extraction plan

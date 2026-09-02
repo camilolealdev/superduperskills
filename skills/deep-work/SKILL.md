@@ -11,7 +11,7 @@ metadata:
 
 # Deep Work — Time-Block the Day, Budget the Shallow
 
-> **Portability:** Reasoning-led skill with 3 stdlib Python scripts. No external APIs, no LLM calls in scripts. Works in Claude Code CLI and Claude.ai web. The scripts fix the arithmetic; you keep the judgment.
+> **Portability:** Reasoning-led skill with 3 stdlib Python scripts. No external APIs, no LLM calls in scripts. Works in Codex CLI and Codex.ai web. The scripts fix the arithmetic; you keep the judgment.
 
 ## What this does
 

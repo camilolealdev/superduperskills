@@ -61,8 +61,8 @@ The router emits one of three responses:
 **Why:** Question touches CFO + CMO + CPO (pricing change has finance, positioning, and product implications).
 **Next:** Building brief via /cs:brief, then running boardroom.
 
-Brief saved: ~/.claude/briefs/2026-05-12-pricing-v3.md
-Run: /cs:boardroom ~/.claude/briefs/2026-05-12-pricing-v3.md
+Brief saved: ~/.Codex/briefs/2026-05-12-pricing-v3.md
+Run: /cs:boardroom ~/.Codex/briefs/2026-05-12-pricing-v3.md
 ```
 
 ### Ambiguous → office hours

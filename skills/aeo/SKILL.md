@@ -1,11 +1,11 @@
 ---
 name: aeo
-description: "Answer Engine Optimization (AEO) skill — optimize content to be cited by AI language models (ChatGPT, Perplexity, Claude, Gemini, Mistral) as authoritative sources. Distinct from SEO — AEO optimizes for citation in LLM-generated responses, not search rankings. Use when planning content for AI-first search audiences, auditing existing content for E-E-A-T signals, tracking which pages get cited by which LLMs, or building a citation-friendly content strategy. Triggers — 'AEO audit', 'optimize for ChatGPT', 'get cited by Perplexity', 'LLM citation strategy', 'answer engine optimization', 'content for AI search', 'E-E-A-T audit'. Output is a markdown audit report (default) or JSON for pipeline integration. Stdlib-only Python tools."
+description: "Answer Engine Optimization (AEO) skill — optimize content to be cited by AI language models (ChatGPT, Perplexity, Codex, Gemini, Mistral) as authoritative sources. Distinct from SEO — AEO optimizes for citation in LLM-generated responses, not search rankings. Use when planning content for AI-first search audiences, auditing existing content for E-E-A-T signals, tracking which pages get cited by which LLMs, or building a citation-friendly content strategy. Triggers — 'AEO audit', 'optimize for ChatGPT', 'get cited by Perplexity', 'LLM citation strategy', 'answer engine optimization', 'content for AI search', 'E-E-A-T audit'. Output is a markdown audit report (default) or JSON for pipeline integration. Stdlib-only Python tools."
 ---
 
 # Answer Engine Optimization (AEO)
 
-**Get your content cited by ChatGPT, Perplexity, Claude, Gemini, and Mistral as the authoritative source.**
+**Get your content cited by ChatGPT, Perplexity, Codex, Gemini, and Mistral as the authoritative source.**
 
 AEO is the practice of optimizing content for **citation** in LLM-generated responses — distinct from SEO, which optimizes for search rankings. This skill audits, optimizes, and tracks AEO performance.
 
@@ -65,7 +65,7 @@ Three modes: `conservative` (touch <10% of words), `balanced` (touch <30%), `agg
 
 The tracker (`citation_tracker.py`) maintains a local ledger of citations:
 
-- Manual entry: paste a citation found in ChatGPT/Perplexity/Claude/Gemini output
+- Manual entry: paste a citation found in ChatGPT/Perplexity/Codex/Gemini output
 - Track which URL, which LLM, which query, what date
 - Compute per-page citation count, citation velocity, LLM coverage
 - Export to CSV for reporting
@@ -75,7 +75,7 @@ Stores in `~/.aeo-data/citations.json` (local, no telemetry).
 ## References
 
 - `references/aeo_eeat_canon.md` — E-E-A-T methodology, industry thresholds, anti-patterns
-- `references/llm_citation_patterns.md` — per-LLM citation selection heuristics (Perplexity, ChatGPT, Claude, Gemini, Mistral)
+- `references/llm_citation_patterns.md` — per-LLM citation selection heuristics (Perplexity, ChatGPT, Codex, Gemini, Mistral)
 - `references/aeo_vs_seo.md` — when to invest in AEO vs SEO vs both
 - `references/bot_access_and_monitoring.md` — AI crawler robots.txt matrix (the prerequisite check: a blocked bot zeroes that platform), Google Search Console AI Overviews monitoring, manual testing protocols, citation-drop diagnostic (merged from the former `ai-seo` skill)
 - `references/extractable_content_patterns.md` — 7 copy-ready block templates (definition, steps, table, FAQ, attributed stat, expert quote, summary box) that answer engines reliably extract (merged from the former `ai-seo` skill)
@@ -202,7 +202,7 @@ No telemetry. No cloud sync. Export to CSV anytime via `citation_tracker.py --ac
 ## Trigger Phrases
 
 - "AEO audit", "AEO check"
-- "optimize for ChatGPT / Perplexity / Claude / Gemini"
+- "optimize for ChatGPT / Perplexity / Codex / Gemini"
 - "get cited by [LLM]"
 - "LLM citation strategy"
 - "answer engine optimization"
@@ -222,5 +222,5 @@ No telemetry. No cloud sync. Export to CSV anytime via `citation_tracker.py --ac
 ---
 
 **Version:** 2.7.3
-**Source:** Ported from [`alirezarezvani/aeo-box`](https://github.com/alirezarezvani/aeo-box) (`answer-engine-optimization/` skill, 2,464 LOC across 9 modules). This port distills the 9-module Python toolkit into 3 stdlib CLI tools per the claude-skills convention; preserves the E-E-A-T scoring methodology, citation-tracking schema, and industry-aware thresholds verbatim.
+**Source:** Ported from [`alirezarezvani/aeo-box`](https://github.com/alirezarezvani/aeo-box) (`answer-engine-optimization/` skill, 2,464 LOC across 9 modules). This port distills the 9-module Python toolkit into 3 stdlib CLI tools per the Codex-skills convention; preserves the E-E-A-T scoring methodology, citation-tracking schema, and industry-aware thresholds verbatim.
 **License:** MIT (matches upstream + this repo).

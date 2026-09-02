@@ -1,93 +1,73 @@
 ---
-name: "brand-guidelines"
-description: "When the user wants to apply, document, or enforce brand guidelines for any product or company. Also use when the user mentions 'brand guidelines,' 'brand colors,' 'typography,' 'logo usage,' 'brand voice,' 'visual identity,' 'tone of voice,' 'brand standards,' 'style guide,' 'brand consistency,' or 'company design standards.' Covers color systems, typography, logo rules, imagery guidelines, and tone matrix for any brand — including Anthropic's official identity."
-license: MIT
-metadata:
-  version: 1.0.0
-  author: Alireza Rezvani
-  category: marketing
-  updated: 2026-03-06
+name: brand-guidelines
+description: Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.
+license: Complete terms in LICENSE.txt
 ---
 
-# Brand Guidelines
+# Anthropic Brand Styling
 
-You are an expert in brand identity and visual design standards. Your goal is to help teams apply brand guidelines consistently across all marketing materials, products, and communications — whether working with an established brand system or building one from scratch.
+## Overview
 
-## How to Use This Skill
+To access Anthropic's official brand identity and style resources, use this skill.
 
-**Check for product marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it before applying brand standards. Use that context to tailor recommendations to the specific brand.
+**Keywords**: branding, corporate identity, visual identity, post-processing, styling, brand colors, typography, Anthropic brand, visual formatting, visual design
 
-When helping users:
-1. Identify whether they need to *apply* existing guidelines or *create* new ones
-2. For Anthropic artifacts, use the Anthropic identity system below
-3. For other brands, use the framework sections to assess and document their system
-4. Always check for consistency before creativity
+## Brand Guidelines
 
----
+### Colors
 
-## Anthropic Brand Identity
-→ See references/brand-identity-and-framework.md for details
+**Main Colors:**
 
-## Quick Audit Checklist
+- Dark: `#141413` - Primary text and dark backgrounds
+- Light: `#faf9f5` - Light backgrounds and text on dark
+- Mid Gray: `#b0aea5` - Secondary elements
+- Light Gray: `#e8e6dc` - Subtle backgrounds
 
-Use this to rapidly assess brand consistency across any asset:
+**Accent Colors:**
 
-- [ ] Colors match approved palette (no off-brand variations)
-- [ ] Fonts are correct typeface and weight
-- [ ] Logo has proper clear space and is an approved variation
-- [ ] Body text meets minimum size and contrast requirements
-- [ ] Imagery style matches brand guidelines
-- [ ] Tone matches brand voice attributes
-- [ ] No prohibited uses present (gradients on logo, wrong accent color, etc.)
-- [ ] Co-branding (if any) follows partner logo rules
+- Orange: `#d97757` - Primary accent
+- Blue: `#6a9bcc` - Secondary accent
+- Green: `#788c5d` - Tertiary accent
 
----
+### Typography
 
-## Task-Specific Questions
+- **Headings**: Poppins (with Arial fallback)
+- **Body Text**: Lora (with Georgia fallback)
+- **Note**: Fonts should be pre-installed in your environment for best results
 
-1. Are you applying existing guidelines or creating new ones?
-2. What's the output format? (Digital, print, presentation, social)
-3. Do you have existing brand assets? (Logo files, color codes, fonts)
-4. Is there a brand foundation document? (Mission, values, positioning)
-5. What's the specific inconsistency or gap you're trying to fix?
+## Features
 
----
+### Smart Font Application
 
-## Proactive Triggers
+- Applies Poppins font to headings (24pt and larger)
+- Applies Lora font to body text
+- Automatically falls back to Arial/Georgia if custom fonts unavailable
+- Preserves readability across all systems
 
-Proactively apply brand guidelines when:
+### Text Styling
 
-1. **Any visual asset requested** — Before creating any poster, slide, email, or social graphic, check if brand guidelines exist; if not, offer to establish a minimal system first.
-2. **Copy review touches tone** — When reviewing copy, cross-check against voice attributes and tone matrix, not just grammar.
-3. **New channel launch** — When a new marketing channel (TikTok, newsletter, podcast) is being set up, offer to apply the brand guidelines to that channel's specific format requirements.
-4. **Design feedback session** — When a user shares a design for feedback, run through the quick audit checklist before giving subjective opinions.
-5. **Partner or co-branded material** — Any co-branding situation should immediately trigger a review of logo clear space, sizing ratios, and color dominance rules.
+- Headings (24pt+): Poppins font
+- Body text: Lora font
+- Smart color selection based on background
+- Preserves text hierarchy and formatting
 
----
+### Shape and Accent Colors
 
-## Output Artifacts
+- Non-text shapes use accent colors
+- Cycles through orange, blue, and green accents
+- Maintains visual interest while staying on-brand
 
-| Artifact | Format | Description |
-|----------|--------|-------------|
-| Brand Audit Report | Markdown doc | Asset-by-asset compliance check against all brand dimensions |
-| Color System Reference | Table | Full palette with hex, RGB, CMYK, Pantone, and usage rules |
-| Tone Matrix | Table | Voice attributes × context combinations with example phrases |
-| Typography Scale | Table | All type roles with font, size, weight, and line-height specifications |
-| Brand Guidelines Mini-Doc | Markdown doc | Condensed brand guide covering all 7 dimensions, ready to share with contractors |
+## Technical Details
 
----
+### Font Management
 
-## Communication
+- Uses system-installed Poppins and Lora fonts when available
+- Provides automatic fallback to Arial (headings) and Georgia (body)
+- No font installation required - works with existing system fonts
+- For best results, pre-install Poppins and Lora fonts in your environment
 
-Brand consistency is not a design preference — it's a trust signal. Every deviation from guidelines erodes recognition. When auditing or creating brand materials, be specific: name the exact color code, font weight, and pixel measurement rather than giving subjective feedback. Reference `marketing-context` to ensure brand voice recommendations align with the ICP and product positioning. Quality bar: brand outputs should be specific enough that a contractor who has never worked with the brand could produce on-brand work from the artifact alone.
+### Color Application
 
----
-
-## Related Skills
-
-- **marketing-context** — USE as the brand foundation layer; brand voice and visual decisions must align with ICP, positioning, and messaging; always load first.
-- **copywriting** — USE when brand voice guidelines need to be applied to specific page or campaign copy; NOT as a substitute for defining voice attributes.
-- **content-humanizer** — USE when existing content needs to be rewritten to match brand tone without losing information; NOT for structural content work.
-- **social-content** — USE when applying brand guidelines to social-specific formats and platform constraints; NOT for cross-channel brand system design.
-- **canvas-design** — USE when brand guidelines need to be applied to visual design artifacts (posters, PDFs, graphics); NOT for copy-only brand work.
+- Uses RGB color values for precise brand matching
+- Applied via python-pptx's RGBColor class
+- Maintains color fidelity across different systems

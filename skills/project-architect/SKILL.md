@@ -14,7 +14,7 @@ description: >
 license: MIT
 compatibility: >
   Works with any coding agent that supports file read/write and user interaction.
-  Optimized for WrongStack and Claude Code, also compatible with Cursor, Gemini CLI, Codex,
+  Optimized for WrongStack and Codex, also compatible with Cursor, Gemini CLI, Codex,
   and other agentskills.io-compatible agents.
 metadata:
   author: ersinkoc
@@ -27,7 +27,7 @@ metadata:
 A documentation-first project planning system that produces **implementation-ready blueprints**
 and **agent-ready prompts**. The philosophy: think deeply, document thoroughly, then
 execute with zero ambiguity. The final PROMPT.md is self-contained and portable — hand it to
-**WrongStack**, **Claude Code**, or any agent that reads and writes files.
+**WrongStack**, **Codex**, or any agent that reads and writes files.
 
 ## Output Pipeline
 
@@ -42,7 +42,7 @@ execute with zero ambiguity. The final PROMPT.md is self-contained and portable 
 ```
 
 Each document feeds the next. The final PROMPT.md synthesizes all documents into a single
-prompt optimized for single-shot execution by any coding agent (WrongStack, Claude Code,
+prompt optimized for single-shot execution by any coding agent (WrongStack, Codex,
 Cursor, and others).
 
 ## Reference Files
@@ -124,7 +124,7 @@ Only generate if user wants it or the project is user-facing.
 Read `${CLAUDE_PLUGIN_ROOT}/references/agent-prompt.md` before generating.
 
 **This is the most critical output.** Synthesize all documents into a single-shot prompt
-that any coding agent (WrongStack, Claude Code, Cursor, …) can execute to build the entire
+that any coding agent (WrongStack, Codex, Cursor, …) can execute to build the entire
 project from scratch. The prompt must be completely self-contained, with inline code for
 complex patterns and an ordered checklist of every file to create.
 
@@ -158,7 +158,7 @@ complex patterns and an ordered checklist of every file to create.
 
 ## Plugin-Aware Integration
 
-Check if the user has other Claude Code plugins or skills installed. If they do:
+Check if the user has other Codex plugins or skills installed. If they do:
 
 - **Frontend framework planner** (react-app-planner, nextjs-app-planner, etc.) → Suggest
   using it for deeper framework decisions after architect docs are done

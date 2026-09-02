@@ -4,7 +4,7 @@ description: "Creates complete project documentation system (project docs, refer
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 **Type:** L1 Top Orchestrator
 **Category:** 1XX Documentation Pipeline
@@ -59,7 +59,7 @@ ln-100-documents-pipeline (L1 Top Orchestrator - this skill)
 This skill should be used when:
 - Start a new IT project and need complete documentation system at once
 - Use automated workflow instead of manually invoking multiple workers
-- Create entire documentation structure (`AGENTS.md` + `CLAUDE.md` -> `docs/`) in one go
+- Create entire documentation structure (`AGENTS.md` + `AGENTS.md` -> `docs/`) in one go
 - Prefer orchestrated CREATE path over manual skill chaining
 - Need automatic global cleanup (deduplication, orphaned files, consolidation)
 
@@ -205,7 +205,7 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 
 1. **Pre-flight Check** (scan existing documentation):
    - Use Glob tool to check all potential files:
-     - **Root docs** (6 files): `AGENTS.md`, `CLAUDE.md`, `docs/README.md`, `docs/documentation_standards.md`, `docs/principles.md`, `docs/tools_config.md`
+     - **Root docs** (6 files): `AGENTS.md`, `AGENTS.md`, `docs/README.md`, `docs/documentation_standards.md`, `docs/principles.md`, `docs/tools_config.md`
      - **Reference structure** (5 items): `docs/reference/README.md`, `docs/reference/adrs/`, `docs/reference/guides/`, `docs/reference/manuals/`, `docs/reference/research/`
      - **Tasks docs** (2 files): `docs/tasks/README.md`, `docs/tasks/kanban_board.md`
      - **Project docs** (up to 8 files): `docs/project/requirements.md`, `architecture.md`, `tech_stack.md`, `api_spec.md`, `database_schema.md`, `design_guidelines.md`, `infrastructure.md`, `runbook.md`
@@ -222,7 +222,7 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
      ```
 
 2. Show user what will be created:
-   - Root + Project documentation (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `documentation_standards.md` + `principles.md` + `tools_config.md` + `docs/project/` via ln-110-project-docs-coordinator)
+   - Root + Project documentation (`AGENTS.md` + `AGENTS.md` + `docs/README.md` + `documentation_standards.md` + `principles.md` + `tools_config.md` + `docs/project/` via ln-110-project-docs-coordinator)
    - Reference structure (docs/reference/ via ln-120-reference-docs-creator)
    - Task management docs (docs/tasks/ via ln-130-tasks-docs-creator)
    - Test documentation (tests/ via ln-140-test-docs-creator - optional)
@@ -251,7 +251,7 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
   - ln-113-backend-docs-creator -> 2 conditional (uses LEGACY_CONTENT.legacy_api, legacy_database)
   - ln-114-frontend-docs-creator -> 1 conditional (if hasFrontend)
   - ln-115-devops-docs-creator -> 2 docs: 1 always + 1 conditional (uses LEGACY_CONTENT.legacy_runbook, legacy_infrastructure)
-- **Output**: Root docs (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md` + `docs/tools_config.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md`, `infrastructure.md` + conditional: `api_spec.md`, `database_schema.md`, `design_guidelines.md`, `runbook.md`)
+- **Output**: Root docs (`AGENTS.md` + `AGENTS.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md` + `docs/tools_config.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md`, `infrastructure.md` + conditional: `api_spec.md`, `database_schema.md`, `design_guidelines.md`, `runbook.md`)
 - **Store**: Save `context_store` from ln-110 result (contains TECH_STACK for ln-120)
 - **Validation**: Each L3 worker validates output (SCOPE, metadata markers, top sections, Maintenance)
 - **Verify**: All documents exist before continuing
@@ -281,7 +281,7 @@ The skill follows a 5-phase orchestration workflow: **Legacy Migration (optional
 - **Condition**: User approved skill extraction in Phase 1, or invoked manually later
 - **Invocation**: `Skill(skill: "ln-160-docs-skill-extractor")` -> AUTOMATIC
 - **Input**: All docs created by ln-110 through ln-140
-- **Output**: `.claude/commands/*.md` files extracted from procedural documentation sections
+- **Output**: `.Codex/commands/*.md` files extracted from procedural documentation sections
 - **Skip**: If not approved -> can run ln-160-docs-skill-extractor later manually
 
 **Output**: Complete documentation system with coordinator + 4 workers completed and validated
@@ -320,7 +320,7 @@ Create one normalized manifest from worker outputs before any cleanup:
    ```bash
    node {skills_repo_root}/skills-catalog/shared/scripts/docs-quality/cli.mjs manifest \
      --project-root . \
-     --files "AGENTS.md,CLAUDE.md,docs/README.md,docs/project/requirements.md" \
+     --files "AGENTS.md,AGENTS.md,docs/README.md,docs/project/requirements.md" \
      --output docs/project/.audit/ln-100/docs-quality-manifest.json
    ```
 4. Keep the manifest as the Single Source of Truth for all Phase 3 quality decisions
@@ -504,7 +504,7 @@ Links:
 **Process**:
 1. List all created files with sizes:
    - `AGENTS.md` (canonical project entry point)
-   - `CLAUDE.md` (thin Anthropic compatibility shim)
+   - `AGENTS.md` (thin Anthropic compatibility shim)
    - `docs/README.md` (root documentation hub)
    - `docs/documentation_standards.md` (60 universal requirements)
    - `docs/principles.md` (11 development principles)
@@ -523,7 +523,7 @@ Links:
    - Validated cross-links (no broken links)
 
 3. Recommend next steps:
-   - "Review generated documentation (AGENTS.md/CLAUDE.md -> docs/)"
+   - "Review generated documentation (AGENTS.md/AGENTS.md -> docs/)"
    - "Run ln-210-epic-coordinator to decompose scope into Epics"
    - "Share documentation with technical stakeholders"
 
@@ -541,10 +541,10 @@ Links:
 ```
 project_root/
 |- AGENTS.md                         # Canonical project entry point (map-first root)
-|- CLAUDE.md                         # Thin Anthropic compatibility shim
+|- AGENTS.md                         # Thin Anthropic compatibility shim
 |- docs/
 |  |- README.md                     # Root documentation hub (general standards)
-|  |- documentation_standards.md    # 60 universal requirements (Claude Code + industry standards)
+|  |- documentation_standards.md    # 60 universal requirements (Codex + industry standards)
 |  |- principles.md                 # 11 development principles (Standards First, YAGNI, KISS, DRY, etc.)
 |  |- project/
 |  |  |- requirements.md           # Functional Requirements (NO NFR per project policy)
@@ -695,7 +695,7 @@ Before completing work, verify ALL checkpoints:
 - [ ] Test docs preference captured: "Include test documentation? (yes/no)"
 
 **Coordinator + Workers Invoked Sequentially (Phase 2):**
-- [ ] ln-110-project-docs-coordinator invoked -> Output verified: Root docs (`AGENTS.md` + `CLAUDE.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md` + `docs/tools_config.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md` + conditional 3-7 files)
+- [ ] ln-110-project-docs-coordinator invoked -> Output verified: Root docs (`AGENTS.md` + `AGENTS.md` + `docs/README.md` + `docs/documentation_standards.md` + `docs/principles.md` + `docs/tools_config.md`) + Project docs (`docs/project/requirements.md`, `architecture.md`, `tech_stack.md` + conditional 3-7 files)
 - [ ] ln-120-reference-docs-creator invoked -> Output verified: `docs/reference/README.md` + directories (adrs/, guides/, manuals/, research/) + justified ADRs/Guides/Manuals based on TECH_STACK
 - [ ] ln-130-tasks-docs-creator invoked -> Output verified: `docs/tasks/README.md` + optionally `kanban_board.md`
 - [ ] ln-140-test-docs-creator invoked (if enabled) -> Output verified: `tests/README.md`
@@ -727,7 +727,7 @@ Before completing work, verify ALL checkpoints:
 **Error Handling (if applicable):**
 - [ ] If any worker failed: User notified which worker failed, error message shown, manual invocation recommended, partial progress listed
 
-**Output:** Complete documentation system (`AGENTS.md` + `CLAUDE.md` + docs/ with README.md, documentation_standards.md, principles.md, tools_config.md + optionally tests/) with global cleanup (no duplicates, orphaned files reported, consolidated knowledge, validated cross-links)
+**Output:** Complete documentation system (`AGENTS.md` + `AGENTS.md` + docs/ with README.md, documentation_standards.md, principles.md, tools_config.md + optionally tests/) with global cleanup (no duplicates, orphaned files reported, consolidated knowledge, validated cross-links)
 
 ---
 

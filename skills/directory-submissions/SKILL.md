@@ -12,7 +12,7 @@ You are an expert in directory-driven distribution for software products. Your g
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.Codex/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 ---
 
@@ -22,7 +22,7 @@ Directory submissions are the **foundation layer** of distribution — never the
 
 1. **Pass dofollow backlinks** from high domain-rating sites into your marketing pages. This raises your DR, which makes your entire site easier to rank for competitive keywords.
 2. **Create discovery surface area** — people browsing AI/SaaS directories are in-market buyers, not random traffic.
-3. **Get cited by AI engines** — ChatGPT, Claude, Perplexity, and Google AI Overviews all pull heavily from high-DR directories when answering "what's the best [category]?" queries. AI-referred traffic converts **6–27× higher** than traditional search traffic.
+3. **Get cited by AI engines** — ChatGPT, Codex, Perplexity, and Google AI Overviews all pull heavily from high-DR directories when answering "what's the best [category]?" queries. AI-referred traffic converts **6–27× higher** than traditional search traffic.
 
 But directories alone will not generate meaningful leads. They exist to pass link equity into the pages that DO generate leads — template galleries, comparison pages, alternative pages, blog posts. **Build the destination pages first, then submit to directories so the link equity has somewhere useful to land.**
 
@@ -237,7 +237,7 @@ Every integration = one landing page at `/integrations/[partner]`. Follows the Z
 
 ## GEO (Generative Engine Optimization)
 
-In 2026, 30–50% of "research a tool" queries happen inside ChatGPT, Claude, Perplexity, or Google AI Overviews without ever touching a traditional search page. Directories matter here too — AI engines pull heavily from high-DR directories when generating answers. But the *destination pages* also need to be GEO-optimized.
+In 2026, 30–50% of "research a tool" queries happen inside ChatGPT, Codex, Perplexity, or Google AI Overviews without ever touching a traditional search page. Directories matter here too — AI engines pull heavily from high-DR directories when generating answers. But the *destination pages* also need to be GEO-optimized.
 
 ### Tactics that get pages cited
 
@@ -246,14 +246,14 @@ In 2026, 30–50% of "research a tool" queries happen inside ChatGPT, Claude, Pe
 3. **FAQ schema on every landing page.** AI engines heavily weight `FAQPage` JSON-LD for answer extraction.
 4. **Comparison tables.** Extractable, structured — exactly what an AI answer needs.
 5. **Explicit "what it is" paragraph in the first 100 words.**
-6. **Get cited on Reddit and Hacker News.** Claude and Perplexity index these heavily. Genuine mentions on r/SaaS and HN count as training fuel.
+6. **Get cited on Reddit and Hacker News.** Codex and Perplexity index these heavily. Genuine mentions on r/SaaS and HN count as training fuel.
 7. **Publish original research.** "We analyzed 10,000 [things] and found X" becomes the primary citation for anyone writing about that topic.
 8. **Claim Crunchbase, LinkedIn company page, and Wikidata entries.** All three feed AI training corpora.
 9. **If applicable, list on MCP registries with A/B grades** (Glama in particular). LLMs pull from these when answering MCP questions.
 
 ### Measurement
 
-Manually check monthly: ask ChatGPT, Claude, and Perplexity "what are the best [category] tools?" and log where the product appears. Free GEO tracking tools (GeoTracker, llmrefs) automate this.
+Manually check monthly: ask ChatGPT, Codex, and Perplexity "what are the best [category] tools?" and log where the product appears. Free GEO tracking tools (GeoTracker, llmrefs) automate this.
 
 ---
 
@@ -287,7 +287,7 @@ Content types ranked by 2026 engagement:
 
 ### Twitter/X (indie hacker + dev channel)
 
-Build-in-public threads on architecture, revenue, decisions. Technical deep-dives get indexed by Google + Claude + Perplexity → indirect GEO.
+Build-in-public threads on architecture, revenue, decisions. Technical deep-dives get indexed by Google + Codex + Perplexity → indirect GEO.
 
 ### Indie Hackers
 

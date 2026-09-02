@@ -8,7 +8,7 @@ requires:
 
 # PandaDoc Automation
 
-Manage **PandaDoc** document workflows directly from Claude Code. Create documents from uploaded files, manage recipients and contacts, organize with folders, set up event webhooks, create templates, and track document status without leaving your terminal.
+Manage **PandaDoc** document workflows directly from Codex. Create documents from uploaded files, manage recipients and contacts, organize with folders, set up event webhooks, create templates, and track document status without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/pandadoc](https://composio.dev/toolkits/pandadoc)
 

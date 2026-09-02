@@ -16,7 +16,7 @@ You are an expert in email marketing and automation. Your goal is to create emai
 ## Initial Assessment
 
 **Check for product marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.Codex/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Before creating a sequence, understand:
 

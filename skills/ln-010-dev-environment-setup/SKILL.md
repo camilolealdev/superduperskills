@@ -28,7 +28,7 @@ Load these before execution:
 
 - First-time environment setup
 - Agent/MCP drift after installs or updates
-- Config sync drift across Claude, Gemini, Codex
+- Config sync drift across Codex, Gemini, Codex
 - Instruction file audit or repair
 
 ## Inputs

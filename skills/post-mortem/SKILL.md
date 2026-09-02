@@ -31,7 +31,7 @@ Closes the strategic sprint loop. Scores a decision against the success and kill
 
 ## Output: Post-Mortem Record
 
-Saved to `~/.claude/postmortems/YYYY-MM-DD-<slug>.md`:
+Saved to `~/.Codex/postmortems/YYYY-MM-DD-<slug>.md`:
 
 ```markdown
 # Post-Mortem: <decision title>

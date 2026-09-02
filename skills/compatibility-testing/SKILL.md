@@ -21,7 +21,7 @@ validation:
 
 ## Browser engine
 
-Browser-driven checks (viewport emulation, responsive validation, cross-browser screenshots) should go through the **qe-browser** fleet skill (`.claude/skills/qe-browser/`). Vibium is installed by `aqe init`. Quick reference:
+Browser-driven checks (viewport emulation, responsive validation, cross-browser screenshots) should go through the **qe-browser** fleet skill (`.Codex/skills/qe-browser/`). Vibium is installed by `aqe init`. Quick reference:
 
 ```bash
 # Viewport emulation per breakpoint
@@ -36,7 +36,7 @@ vibium emulate-device "iPhone 15"
 for vp in "375 667 mobile" "768 1024 tablet" "1920 1080 desktop"; do
   read w h name <<< "$vp"
   vibium viewport $w $h
-  node .claude/skills/qe-browser/scripts/visual-diff.js --name "homepage-$name"
+  node .Codex/skills/qe-browser/scripts/visual-diff.js --name "homepage-$name"
 done
 ```
 

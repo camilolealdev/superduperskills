@@ -5,7 +5,7 @@ disable-model-invocation: true
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 **Type:** L1 Orchestrator
 **Category:** 1000 Pipeline
@@ -99,7 +99,7 @@ IF recovery.active == false:
 **MANDATORY READ:** Load `references/kanban_parser.md` for parsing patterns.
 
 1. Auto-discover `docs/tasks/kanban_board.md` (or Linear API via storage mode operations)
-2. Extract project brief from target project's CLAUDE.md (NOT skills repo):
+2. Extract project brief from target project's AGENTS.md (NOT skills repo):
    ```
    project_brief = {
      name: <from H1 or first line>,
@@ -166,7 +166,7 @@ IF storage_mode == "linear":
 
 #### 3.1 Pre-flight: Settings Verification
 
-Verify `.claude/settings.local.json` in target project:
+Verify `.Codex/settings.local.json` in target project:
 - `defaultMode` = `"bypassPermissions"` (required for Agent workers spawned by coordinators)
 
 #### 3.2 Worktree Isolation

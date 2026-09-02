@@ -6,7 +6,7 @@ license: MIT
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # ln-914-community-responder
 
@@ -106,7 +106,7 @@ Based on the question type, search for relevant information:
 |---------------|----------------|
 | "How do I..." | Grep for keywords in SKILL.md files, README.md, docs/ |
 | Bug report | Grep for mentioned function/file, check git log for recent fixes |
-| Configuration | Read docs/tools_config.md, CLAUDE.md, relevant SKILL.md |
+| Configuration | Read docs/tools_config.md, AGENTS.md, relevant SKILL.md |
 | Feature request | Check if feature already exists, grep for related patterns |
 | Installation | Read README.md installation section, plugin.json |
 

@@ -3,10 +3,10 @@ name: karpathy-coder
 description: Use when writing, reviewing, or committing code to enforce Karpathy's 4 coding principles — surface assumptions before coding, keep it simple, make surgical changes, define verifiable goals. Triggers on "review my diff", "check complexity", "am I overcomplicating this", "karpathy check", "before I commit", or any code quality concern where the LLM might be overcoding.
 context: fork
 version: 2.9.0
-author: claude-code-skills
+author: Codex-skills
 license: MIT
 tags: [code-quality, discipline, karpathy, simplicity, surgical-changes, anti-patterns, review]
-compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
+compatible_tools: [Codex, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
 # Karpathy Coder — Active Coding Discipline
@@ -96,7 +96,7 @@ All tools are stdlib-only. Run with `--help`.
 
 ## Pre-commit hook
 
-`hooks/karpathy-gate.sh` — runs `complexity_checker.py` and `diff_surgeon.py` on staged files. Warns (non-blocking) when violations are found. Wire it via `.claude/settings.json` or Husky.
+`hooks/karpathy-gate.sh` — runs `complexity_checker.py` and `diff_surgeon.py` on staged files. Warns (non-blocking) when violations are found. Wire it via `.Codex/settings.json` or Husky.
 
 ## References
 
@@ -115,11 +115,11 @@ These principles bias toward **caution over speed**. For trivial tasks (typo fix
 
 ## Cross-tool compatibility
 
-Installs via plugin for Claude Code. For other tools, copy the principles into your schema file:
+Installs via plugin for Codex. For other tools, copy the principles into your schema file:
 
 | Tool | Schema file |
 |---|---|
-| Claude Code | `CLAUDE.md` (auto-loaded by plugin) |
+| Codex | `AGENTS.md` (auto-loaded by plugin) |
 | Codex CLI | `AGENTS.md` |
 | Cursor | `AGENTS.md` or `.cursorrules` |
 | Antigravity / OpenCode / Gemini CLI | `AGENTS.md` |

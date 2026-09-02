@@ -195,7 +195,7 @@ quality_checks:
 
 - Agent truncates output on files >3000 lines — scope generation to individual modules, not entire directories
 - Components that pass unit tests individually may have zero integration wiring — always generate at least one integration test per module boundary
-- When generating tests for a new codebase, check which framework is installed (jest vs vitest vs mocha) — they have different mock APIs and Claude will use the wrong one
+- When generating tests for a new codebase, check which framework is installed (jest vs vitest vs mocha) — they have different mock APIs and Codex will use the wrong one
 - Completion theater: agent may claim "comprehensive tests generated" but leave stubs or hardcoded values — always run the generated tests before accepting
 - Fleet must be initialized before using QE agents: run `aqe health` to diagnose, or `aqe init` to re-initialize if you get "Fleet not initialized"
 

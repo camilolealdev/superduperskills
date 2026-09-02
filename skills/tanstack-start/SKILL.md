@@ -1,12 +1,12 @@
 ---
 name: tanstack-start
-description: "Build a full-stack TanStack Start app on Cloudflare Workers from scratch — SSR, file-based routing, server functions, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui. No template repo — Claude generates every file fresh per project."
-compatibility: claude-code-only
+description: "Build a full-stack TanStack Start app on Cloudflare Workers from scratch — SSR, file-based routing, server functions, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui. No template repo — Codex generates every file fresh per project."
+compatibility: Codex-only
 ---
 
 # TanStack Start on Cloudflare
 
-Build a complete full-stack app from nothing. Claude generates every file — no template clone, no scaffold command. Each project gets exactly what it needs.
+Build a complete full-stack app from nothing. Codex generates every file — no template clone, no scaffold command. Each project gets exactly what it needs.
 
 ## What You Get
 

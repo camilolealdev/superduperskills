@@ -7,7 +7,7 @@ description: "Use when writing Snowflake SQL, building data pipelines with Dynam
 
 Snowflake SQL, data pipelines, Cortex AI, and Snowpark Python development. Covers the colon-prefix rule, semi-structured data, MERGE upserts, Dynamic Tables, Streams+Tasks, Cortex AI functions, agent specs, performance tuning, and security hardening.
 
-> Originally contributed by [James Cha-Earley](https://github.com/jamescha-earley) — enhanced and integrated by the claude-skills team.
+> Originally contributed by [James Cha-Earley](https://github.com/jamescha-earley) — enhanced and integrated by the Codex-skills team.
 
 ## Quick Start
 

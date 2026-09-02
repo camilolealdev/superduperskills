@@ -30,7 +30,7 @@ Flags or blocks writes containing:
     "PreToolUse": [
       {
         "matcher": "Write|Edit",
-        "hook": ".claude/skills/security-watch/scripts/scan-security.sh"
+        "hook": ".Codex/skills/security-watch/scripts/scan-security.sh"
       }
     ]
   }

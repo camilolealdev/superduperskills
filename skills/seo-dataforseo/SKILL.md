@@ -1,30 +1,28 @@
 ---
 name: seo-dataforseo
 description: >
-  Live SEO data via DataForSEO MCP server. SERP analysis (Google, Bing, Yahoo,
-  YouTube), keyword research (volume, difficulty, intent, trends), backlink
-  profiles, on-page analysis (Lighthouse, content parsing), competitor analysis,
-  content analysis, business listings, AI visibility (ChatGPT scraper, LLM
+  Live SEO data via DataForSEO MCP server: SERP analysis, keyword research
+  (volume, difficulty, intent, trends), backlink profiles, on-page analysis,
+  competitor and content analysis, business listings, AI visibility (LLM
   mention tracking), and domain analytics. Requires DataForSEO extension
   installed. Use when user says "dataforseo", "live SERP", "keyword volume",
-  "backlink data", "competitor data", "AI visibility check", "LLM mentions",
-  or "real search data".
-user-invokable: true
+  "backlink data", "AI visibility check", or "real search data".
+user-invocable: true
 argument-hint: "[command] [query]"
 license: MIT
 compatibility: "Requires DataForSEO MCP server"
 metadata:
   author: AgriciDaniel
-  version: "1.7.0"
+  version: "2.2.4"
   category: seo
 ---
 
 # DataForSEO: Live SEO Data (Extension)
 
-Live search data via the DataForSEO MCP server. Provides real-time SERP results,
-keyword metrics, backlink profiles, on-page analysis, content analysis, business
-listings, AI visibility checking, and LLM mention tracking across
-9 API modules with 79 MCP tools.
+Live search data via the DataForSEO MCP server. Provides real-time SERP results
+(organic + images), keyword metrics, backlink profiles, on-page analysis, content
+analysis, business listings, AI visibility checking, and LLM mention tracking
+across 9 API modules with 79+ MCP tools.
 
 ## Prerequisites
 
@@ -46,11 +44,35 @@ DataForSEO charges per API call. Be efficient:
 - Cache results mentally within a session; don't re-fetch the same data
 - Warn user before running expensive operations (full backlink crawls, large keyword lists)
 
+## Cost Guardrails
+
+**Before every DataForSEO MCP call**, run cost estimation:
+```
+Codex-seo run dataforseo_costs.py check <endpoint> [--count N]
+```
+
+- If `"status": "approved"` → proceed with the API call
+- If `"status": "needs_approval"` → show the cost estimate to the user and ask for confirmation before proceeding
+- If `"status": "blocked"` → inform the user that the daily budget limit would be exceeded; do NOT proceed
+
+**After each API call completes**, log the cost:
+```
+Codex-seo run dataforseo_costs.py log <endpoint> <actual_cost>
+```
+
+**User commands for cost management:**
+- `/seo dataforseo costs today` → show today's spending breakdown
+- `/seo dataforseo costs summary` → show 7-day spending history
+- `/seo dataforseo costs config --mode threshold --threshold 0.50` → configure approval mode
+
+Load `references/cost-tiers.md` for the full pricing table, budget presets, and cost reduction tips.
+
 ## Quick Reference
 
 | Command | What it does |
 |---------|-------------|
 | `/seo dataforseo serp <keyword>` | Google organic SERP results |
+| `/seo dataforseo serp-images <keyword>` | Google Images SERP results |
 | `/seo dataforseo serp-youtube <keyword>` | YouTube search results |
 | `/seo dataforseo youtube <video_id>` | YouTube video deep analysis |
 | `/seo dataforseo keywords <seed>` | Keyword ideas and suggestions |
@@ -99,13 +121,34 @@ Fetch YouTube search results. Valuable for GEO. YouTube mentions correlate most 
 
 ### `/seo dataforseo youtube <video_id>`
 
-Deep analysis of a specific YouTube video: info, comments, and subtitles. YouTube mentions have the strongest correlation (0.737) with AI visibility, making this critical for GEO analysis.
+Deep analysis of a specific YouTube video: info, comments, and subtitles. Some third-party studies report a 0.737 correlation between YouTube mentions and AI visibility, so treat this as a methodology-dependent GEO signal.
 
 **MCP tools:** `serp_youtube_video_info_live_advanced`, `serp_youtube_video_comments_live_advanced`, `serp_youtube_video_subtitles_live_advanced`
 
 **Parameters:** video_id (the YouTube video ID, e.g., "dQw4w9WgXcQ")
 
 **Output:** Video metadata (title, channel, views, likes, description), top comments with engagement, subtitle/transcript text.
+
+### `/seo dataforseo serp-images <keyword>`
+
+Fetch live Google Images search results. See which images rank for a keyword,
+which domains dominate image results, and identify visual content opportunities.
+
+**MCP tools:** `serp_google_images_live_advanced`
+
+**Default parameters:** location_code=2840 (US), language_code=en, device=desktop, depth=100
+
+**Parameters:** keyword (required), depth (optional, max 700, billed per 100-result increment), search_param (optional, e.g. "site:example.com")
+
+**Cost warning:** Using `site:` or `filetype:` operators incurs **5x API cost**. Warn user before running filtered queries.
+
+**Output:** Position, title, alt text, source page URL, direct image URL, domain, encoded URL.
+
+**Analysis to provide:**
+- Domain dominance: which sites own the most image positions (top 10 domains by count)
+- Alt text patterns: common title/alt text patterns in top-ranking images
+- Format distribution: WebP vs JPEG vs PNG in top results (infer from image_url extension)
+- Opportunity identification: keywords where user has organic rankings but no image presence
 
 ---
 
@@ -296,7 +339,7 @@ Search business listings for local SEO competitive analysis.
 
 ### `/seo dataforseo ai-scrape <query>`
 
-Scrape what ChatGPT web search returns for a query. Real GEO visibility check: see which sources ChatGPT cites for your target keywords.
+Scrape what ChatGPT web search returns for a query. ChatGPT visibility check: see which sources ChatGPT cites for your target keywords. Check Google AI Overviews and AI Mode with GSC gen-AI reports when available.
 
 **MCP tools:** `ai_optimization_chat_gpt_scraper`
 
@@ -320,58 +363,23 @@ Track how LLMs mention brands, domains, and topics. Critical for GEO. Measures a
 
 **Output:** LLM mention count, top cited domains with frequency, top cited pages, mention trends over time, cross-platform visibility scores.
 
-**Advanced:** Use `ai_opt_llm_ment_cross_agg_metrics` for cross-model comparison (how mentions differ across ChatGPT, Claude, Perplexity, etc.).
+**Advanced:** Use `ai_opt_llm_ment_cross_agg_metrics` for cross-model comparison (how mentions differ across ChatGPT, Codex, Perplexity, etc.).
 
 ---
 
 ## Available Utility Tools
 
-These DataForSEO tools are available for internal use by the agent but do not have dedicated commands:
-
-- `serp_locations`:Location code lookups for SERP queries
-- `serp_youtube_locations`:Location code lookups for YouTube queries
-- `kw_data_google_ads_locations`:Location lookups for keyword data
-- `kw_data_dfs_trends_demography`:Demographic data for trend analysis
-- `kw_data_dfs_trends_subregion_interests`:Subregion interest data for trends
-- `kw_data_dfs_trends_explore`:DFS proprietary trends data
-- `kw_data_google_trends_categories`:Google Trends category lookups
-- `dataforseo_labs_google_keyword_overview`:Quick keyword metrics overview
-- `dataforseo_labs_google_historical_serp`:Historical SERP results for a keyword
-- `dataforseo_labs_google_serp_competitors`:Competitors for a specific SERP
-- `dataforseo_labs_google_keywords_for_site`:Keywords a site ranks for (alternative to ranked)
-- `dataforseo_labs_google_page_intersection`:Page-level intersection analysis
-- `dataforseo_labs_google_historical_rank_overview`:Historical domain rank data
-- `dataforseo_labs_google_historical_keyword_data`:Historical keyword metrics
-- `dataforseo_labs_available_filters`:Available filter options for Labs endpoints
-- `backlinks_competitors`:Find domains with similar backlink profiles
-- `backlinks_bulk_backlinks`:Bulk backlink counts for multiple targets
-- `backlinks_bulk_new_lost_referring_domains`:Bulk new/lost referring domains
-- `backlinks_bulk_new_lost_backlinks`:Bulk new/lost backlinks
-- `backlinks_bulk_ranks`:Bulk rank overview for multiple targets
-- `backlinks_bulk_referring_domains`:Bulk referring domain counts
-- `backlinks_domain_pages_summary`:Summary of pages on a domain
-- `backlinks_domain_pages`:List pages on a domain with backlink data
-- `backlinks_page_intersection`:Shared backlink sources at page level
-- `backlinks_referring_networks`:Referring network analysis
-- `backlinks_timeseries_new_lost_summary`:Track new/lost backlinks over time
-- `backlinks_bulk_pages_summary`:Bulk page summaries
-- `backlinks_available_filters`:Available filter options for Backlinks endpoints
-- `domain_analytics_whois_available_filters`:WHOIS filter options
-- `domain_analytics_technologies_available_filters`:Technology detection filter options
-- `ai_opt_kw_data_loc_and_lang`:AI optimization keyword data locations/languages
-- `ai_optimization_keyword_data_search_volume`:AI-specific keyword volume data
-- `ai_optimization_llm_response`:Direct LLM response analysis
-- `ai_optimization_llm_mentions_filters`:Available filters for LLM mentions
-- `ai_optimization_chat_gpt_scraper_locations`:Available locations for ChatGPT scraper
+Additional DataForSEO MCP tools are available for internal use but do not have dedicated commands. Load `references/tool-catalog.md` when you need to find a specific utility tool (location lookups, bulk operations, historical data, filter options).
 
 ## Cross-Skill Integration
 
-When DataForSEO MCP tools are available, other claude-seo skills can leverage live data:
+When DataForSEO MCP tools are available, other Codex-seo skills can leverage live data:
 
 - **seo-audit**:Spawn `seo-dataforseo` agent for real SERP, backlink, on-page, and listings data
 - **seo-technical**:Use `on_page_instant_pages` / `on_page_lighthouse` for real crawl data, `domain_analytics_technologies_domain_technologies` for stack detection
 - **seo-content**:Use `kw_data_google_ads_search_volume`, `dataforseo_labs_bulk_keyword_difficulty`, `dataforseo_labs_search_intent` for real keyword metrics, `content_analysis_summary` for content quality
 - **seo-page**:Use `serp_organic_live_advanced` for real SERP positions, `backlinks_summary` for link data
+- **seo-images**:Use `serp_google_images_live_advanced` for competitor image SERP data, cross-reference with on-page image audit
 - **seo-geo**:Use `ai_optimization_chat_gpt_scraper` for real ChatGPT visibility, `ai_opt_llm_ment_search` for LLM mention tracking
 - **seo-plan**:Use `dataforseo_labs_google_competitors_domain`, `dataforseo_labs_google_domain_intersection`, `dataforseo_labs_bulk_traffic_estimation` for real competitive intelligence
 
@@ -385,7 +393,7 @@ When DataForSEO MCP tools are available, other claude-seo skills can leverage li
 
 ## Output Formatting
 
-Match existing claude-seo output patterns:
+Match existing Codex-seo output patterns:
 - Use tables for comparative data
 - Prioritize issues as Critical > High > Medium > Low
 - Include specific, actionable recommendations

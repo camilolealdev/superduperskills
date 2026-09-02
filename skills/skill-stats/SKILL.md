@@ -40,7 +40,7 @@ Skill invocations are logged to `${CLAUDE_PLUGIN_DATA}/skill-usage.log`:
     "PreToolUse": [
       {
         "matcher": "Skill",
-        "hook": ".claude/skills/skill-stats/scripts/log-usage.sh"
+        "hook": ".Codex/skills/skill-stats/scripts/log-usage.sh"
       }
     ]
   }
@@ -52,7 +52,7 @@ Skill invocations are logged to `${CLAUDE_PLUGIN_DATA}/skill-usage.log`:
 ```bash
 #!/bin/bash
 # analyze-usage.sh
-LOG="${CLAUDE_PLUGIN_DATA:-$HOME/.claude/plugin-data}/skill-usage.log"
+LOG="${CLAUDE_PLUGIN_DATA:-$HOME/.Codex/plugin-data}/skill-usage.log"
 
 if [ ! -f "$LOG" ]; then
   echo "No usage data yet. Skills will be logged as they are used."

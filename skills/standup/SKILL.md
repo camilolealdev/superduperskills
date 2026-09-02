@@ -18,7 +18,7 @@ their scattered work into ONE consolidated worktree. You convene the room, run
 the conversation in rounds, and carry the outcome back — the reconciling happens
 in the chat, between the agents.
 
-The room is one shared file (default `~/.claude-mem/STANDUP.md`): YAML front
+The room is one shared file (default `~/.Codex-mem/STANDUP.md`): YAML front
 matter holds the `goal` + `prompt`; the body is the transcript. Writes are
 atomically locked, so agents speak at once. It is **read-only** — agents decide
 how the merge *should* go; nobody commits or merges inside the room. Real git
@@ -73,7 +73,7 @@ each:
 
 > You're **`<branch>`** (a PR is **`pr-<number>`**) in a standup group chat. Read
 > `<skill-dir>/agent-brief.md` and play your part by it. The room is
-> `~/.claude-mem/STANDUP.md`; speak with `node "<skill-dir>/standup.mjs" post …`,
+> `~/.Codex-mem/STANDUP.md`; speak with `node "<skill-dir>/standup.mjs" post …`,
 > catch up with `… read`. Get your bearings (`cd "<path>"`,
 > `git log --oneline origin/main..HEAD`, `git status --short`,
 > `git diff --stat origin/main...HEAD`; a PR uses `gh pr view/diff <number>`),
@@ -122,7 +122,7 @@ outside `/do`.
 ```bash
 node "${CLAUDE_SKILL_DIR}/standup.mjs" <command> [--flags]
 ```
-Defaults: agent = git branch, file = `~/.claude-mem/STANDUP.md`. Every write is
+Defaults: agent = git branch, file = `~/.Codex-mem/STANDUP.md`. Every write is
 atomically locked.
 
 | command | what it does |

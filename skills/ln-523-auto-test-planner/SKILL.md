@@ -4,7 +4,7 @@ description: "Plans automated tests (E2E/Integration/Unit) using Risk-Based Test
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Automated Test Planner
 
@@ -48,7 +48,7 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 ### Phase 1: Discovery (Automated)
 
 1. **Resolve storyId:** Run Story Resolution Chain per guide (status filter: [To Review]).
-2. Auto-discover Team ID from `docs/tasks/kanban_board.md` (see CLAUDE.md "Configuration Auto-Discovery")
+2. Auto-discover Team ID from `docs/tasks/kanban_board.md` (see AGENTS.md "Configuration Auto-Discovery")
 
 ### Phase 2: Story + Tasks Analysis (NO Dialog)
 

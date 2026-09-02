@@ -140,8 +140,8 @@ Full framework in `references/synthesis-framework.md`.
 
 Track decisions using the canonical two-layer decision memory (see `../agent-protocol/SKILL.md` → "Decision Memory (Canonical Layout)"):
 
-- **Layer 1 (raw):** `~/.claude/decisions/raw/YYYY-MM-DD-{slug}.md` — full deliberation transcript
-- **Layer 2 (approved):** `~/.claude/decisions/approved/YYYY-MM-DD-{slug}.md` — founder-approved decisions only
+- **Layer 1 (raw):** `~/.Codex/decisions/raw/YYYY-MM-DD-{slug}.md` — full deliberation transcript
+- **Layer 2 (approved):** `~/.Codex/decisions/approved/YYYY-MM-DD-{slug}.md` — founder-approved decisions only
 
 ```
 ## Decision: [Name]
@@ -152,9 +152,9 @@ Owner: [Who executes]
 Review: [When to check back]
 ```
 
-At session start: scan `~/.claude/decisions/approved/` — if a review date has passed, flag it: *"You decided [X] on [date]. Worth a check-in?"*
+At session start: scan `~/.Codex/decisions/approved/` — if a review date has passed, flag it: *"You decided [X] on [date]. Worth a check-in?"*
 
-Migration: a legacy single-file log at `~/.claude/decision-log.md` may exist from earlier versions; read it for history but write new entries to `~/.claude/decisions/`.
+Migration: a legacy single-file log at `~/.Codex/decision-log.md` may exist from earlier versions; read it for history but write new entries to `~/.Codex/decisions/`.
 
 ---
 

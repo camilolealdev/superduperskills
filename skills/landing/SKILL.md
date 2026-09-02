@@ -1,6 +1,6 @@
 ---
 name: landing
-description: "Generates a premium single-page HTML landing page with 3D CSS animations, GSAP scroll effects, and mouse-parallax depth. Forcing intake (product + elevator pitch, audience register, brand overrides, tone) locks down positioning before any copy or markup is written, so the page reflects the actual product rather than generic boilerplate. Use whenever the user says 'landing for X', 'create a landing page', 'build a landing page', 'make a landing page for X', 'I need a web page for Y', or provides product/service details and wants a polished website. Also triggers on 'promotional page', 'product page', 'one-pager', 'web presence', 'sales page'. Outputs a single self-contained HTML file (Claude Code) or HTML artifact (Claude.ai). Supports configurable brand colors via CSS custom property overrides."
+description: "Generates a premium single-page HTML landing page with 3D CSS animations, GSAP scroll effects, and mouse-parallax depth. Forcing intake (product + elevator pitch, audience register, brand overrides, tone) locks down positioning before any copy or markup is written, so the page reflects the actual product rather than generic boilerplate. Use whenever the user says 'landing for X', 'create a landing page', 'build a landing page', 'make a landing page for X', 'I need a web page for Y', or provides product/service details and wants a polished website. Also triggers on 'promotional page', 'product page', 'one-pager', 'web presence', 'sales page'. Outputs a single self-contained HTML file (Codex) or HTML artifact (Codex.ai). Supports configurable brand colors via CSS custom property overrides."
 license: MIT
 metadata:
   source_spec: "megaprompts/04-landing-megaprompt.md"
@@ -30,7 +30,7 @@ Generate a polished, self-contained `.html` landing page from a text prompt or b
 
 ## Delivery Mode
 
-In **Claude Code CLI**, write the file to disk at the specified path. In **Claude.ai web**, create an HTML artifact with the same content.
+In **Codex CLI**, write the file to disk at the specified path. In **Codex.ai web**, create an HTML artifact with the same content.
 
 ## Phase 0: Grill-Me Intake (4 forcing questions, one at a time)
 
@@ -312,8 +312,8 @@ Run `scripts/html_validator.py --file ${OUTPUT_DIR}/<slug>.html` after generatio
 
 ## Portability
 
-- **Claude Code CLI:** Native — writes HTML file directly to filesystem.
-- **Claude.ai web:** Native — produces HTML as an artifact instead of file.
+- **Codex CLI:** Native — writes HTML file directly to filesystem.
+- **Codex.ai web:** Native — produces HTML as an artifact instead of file.
 
 ## Tooling
 

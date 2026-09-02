@@ -208,10 +208,10 @@ Ready-to-use evaluation scripts. Copied into the experiment directory during set
 | `llm_judge_prompt` | `quality_score` 0-100 (higher) | System prompts, agent instructions |
 | `llm_judge_copy` | `engagement_score` 0-10 (higher) | Social posts, ad copy, emails |
 
-LLM judges call the CLI tool the user is already running (Claude, Codex, Gemini). The evaluation prompt is locked inside `evaluate.py` — the agent cannot modify it. This prevents the agent from gaming its own evaluator.
+LLM judges call the CLI tool the user is already running (Codex, Codex, Gemini). The evaluation prompt is locked inside `evaluate.py` — the agent cannot modify it. This prevents the agent from gaming its own evaluator.
 
 The user's existing subscription covers the cost:
-- Claude Code Max → unlimited Claude calls for evaluation
+- Codex Max → unlimited Codex calls for evaluation
 - Codex CLI (ChatGPT Pro) → unlimited Codex calls
 - Gemini CLI (free tier) → free evaluation calls
 
@@ -284,8 +284,8 @@ Flag these without being asked:
 
 ### One-liner (any tool)
 ```bash
-git clone https://github.com/alirezarezvani/claude-skills.git
-cp -r claude-skills/engineering/autoresearch-agent ~/.claude/skills/
+git clone https://github.com/alirezarezvani/Codex-skills.git
+cp -r Codex-skills/engineering/autoresearch-agent ~/.Codex/skills/
 ```
 
 ### Multi-tool install

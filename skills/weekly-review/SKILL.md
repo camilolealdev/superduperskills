@@ -12,8 +12,8 @@ metadata:
 # Weekly Review — GTD Loop → Trusted System
 
 > **Portability:** Reasoning-led skill with 3 stdlib Python scripts. No external APIs, no LLM calls
-> in scripts. Works in Claude Code CLI and Claude.ai web. The scripts do the inventory and the
-> gating; Claude and the user do the thinking.
+> in scripts. Works in Codex CLI and Codex.ai web. The scripts do the inventory and the
+> gating; Codex and the user do the thinking.
 
 ## What this does
 

@@ -11,7 +11,7 @@ tags:
   - revenue-operations
   - growth
 agents:
-  - claude-code
+  - Codex
   - codex-cli
   - openclaw
 ---

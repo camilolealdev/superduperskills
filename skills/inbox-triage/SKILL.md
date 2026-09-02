@@ -276,8 +276,8 @@ Skip Steps 3–6 entirely on empty inbox.
 
 ## Portability
 
-- **Claude Code CLI:** Native — uses Gmail / Outlook MCP, file tools for KB, web search for research.
-- **Claude.ai web:** Works when email MCP connector is connected (Gmail MCP available). Skill must check tool availability before assuming. If no email tool: halt with clear message.
+- **Codex CLI:** Native — uses Gmail / Outlook MCP, file tools for KB, web search for research.
+- **Codex.ai web:** Works when email MCP connector is connected (Gmail MCP available). Skill must check tool availability before assuming. If no email tool: halt with clear message.
 
 ## Tooling
 

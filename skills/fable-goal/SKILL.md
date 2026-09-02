@@ -15,13 +15,13 @@ Turn the user's ramble into one exceptional /goal prompt they can paste into a f
 
 The corollary most prompts miss: **done must be observable.** Every deliverable needs a completion condition the session can check itself — a page that loads, a script that runs on real input, a link that resolves. "Make it good" is a wish; "load each page and click every element before you ok it" is a verification loop.
 
-**Brand profile (optional).** If the user keeps one — a `brand.md` in this folder, or `~/.claude/CLAUDE.md` / `~/.claude/brand-profile.md` — read it once at the start: proof points, audience numbers, design system, asset paths, default destinations, voice rules, preferred MCPs. Pull in ONLY entries the task touches. No profile is fine; a profile just removes questions.
+**Brand profile (optional).** If the user keeps one — a `brand.md` in this folder, or `~/.Codex/AGENTS.md` / `~/.Codex/brand-profile.md` — read it once at the start: proof points, audience numbers, design system, asset paths, default destinations, voice rules, preferred MCPs. Pull in ONLY entries the task touches. No profile is fine; a profile just removes questions.
 
 ## Process
 
 ### 1. Extract what the ramble already contains
 
-People think in fragments, especially over voice-to-text. Interpret intent over literal words ("Quad MD" means CLAUDE.md, "Netlefi" means Netlify). Pull out six slots: **deliverable** (the concrete thing), **quantity**, **audience/stakes** (who sees it, real numbers), **tools named**, **quality bar** (adjectives, comparisons), **destination** (hosted link, folder, post, file).
+People think in fragments, especially over voice-to-text. Interpret intent over literal words ("Quad MD" means AGENTS.md, "Netlefi" means Netlify). Pull out six slots: **deliverable** (the concrete thing), **quantity**, **audience/stakes** (who sees it, real numbers), **tools named**, **quality bar** (adjectives, comparisons), **destination** (hosted link, folder, post, file).
 
 ### 2. Fill gaps with defaults; ask only when it matters
 

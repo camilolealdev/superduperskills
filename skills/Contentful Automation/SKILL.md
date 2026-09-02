@@ -8,7 +8,7 @@ requires:
 
 # Contentful Automation
 
-Manage your **Contentful** headless CMS spaces directly from Claude Code. List spaces, retrieve metadata, and update space configurations without leaving your terminal.
+Manage your **Contentful** headless CMS spaces directly from Codex. List spaces, retrieve metadata, and update space configurations without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/contentful](https://composio.dev/toolkits/contentful)
 

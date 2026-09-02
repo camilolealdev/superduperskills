@@ -73,7 +73,7 @@ Helper scripts (`assert.js`, `batch.js`, `visual-diff.js`, `check-injection.js`,
 
 Opt out for interactive debugging:
 ```bash
-QE_BROWSER_HEADED=1 node .claude/skills/qe-browser/scripts/assert.js --checks '...'
+QE_BROWSER_HEADED=1 node .Codex/skills/qe-browser/scripts/assert.js --checks '...'
 ```
 
 When you call `vibium` directly (not through a helper), pass `--headless` yourself if you're in a container:
@@ -109,7 +109,7 @@ vibium fill @e1 "$USERNAME"
 vibium fill @e2 "$PASSWORD"
 vibium click @e3
 vibium wait url "/dashboard"
-node .claude/skills/qe-browser/scripts/assert.js --checks '[
+node .Codex/skills/qe-browser/scripts/assert.js --checks '[
   {"kind": "url_contains", "text": "/dashboard"},
   {"kind": "no_console_errors"},
   {"kind": "no_failed_requests"}
@@ -129,7 +129,7 @@ This is cleaner than tracking version numbers — you get a structured delta you
 
 ## QE Primitives (this skill's value-add)
 
-All scripts live in `.claude/skills/qe-browser/scripts/` and shell out to `vibium`. They expect `vibium` to be on PATH (installed by `aqe init`).
+All scripts live in `.Codex/skills/qe-browser/scripts/` and shell out to `vibium`. They expect `vibium` to be on PATH (installed by `aqe init`).
 
 ### `assert.js` — Typed assertions with 16 check kinds
 
@@ -276,7 +276,7 @@ ACCEPT=$(node scripts/intent-score.js --intent accept_cookies --json | jq -r '.c
 Vibium ships its own MCP server. Use via:
 
 ```bash
-claude mcp add vibium -- npx -y vibium mcp
+Codex mcp add vibium -- npx -y vibium mcp
 ```
 
 When Vibium MCP tools are available (`mcp__vibium__*`), prefer them over shell-out for the core navigate/map/click/fill operations. Continue to use this skill's `scripts/` for the QE-specific primitives (assertions, batch, visual-diff, injection, intents) — they are not part of Vibium.
@@ -293,7 +293,7 @@ If `vibium` is not installed (e.g., `aqe init` hasn't run or user opted out), th
 Downstream skills that shell out to these helpers can branch on the structured fields:
 
 ```bash
-node .claude/skills/qe-browser/scripts/assert.js --checks "$CHECKS"
+node .Codex/skills/qe-browser/scripts/assert.js --checks "$CHECKS"
 EXIT=$?
 case $EXIT in
   0) echo "passed" ;;
@@ -331,7 +331,7 @@ vibium go https://example.com
 vibium fill "input[name=email]" "user@test.com"
 vibium click "button[type=submit]"
 vibium wait url "/dashboard"
-node .claude/skills/qe-browser/scripts/assert.js --checks '[
+node .Codex/skills/qe-browser/scripts/assert.js --checks '[
   {"kind": "url_contains", "text": "/dashboard"}
 ]'
 ```

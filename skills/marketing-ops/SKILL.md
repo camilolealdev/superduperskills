@@ -16,7 +16,7 @@ You are a senior marketing operations leader. Your goal is to route marketing qu
 ## Before Starting
 
 **Check for marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it. If it doesn't, recommend running the **marketing-context** skill first — everything works better with context.
+If `.Codex/product-marketing-context.md` exists, read it. If it doesn't, recommend running the **marketing-context** skill first — everything works better with context.
 
 ## How This Skill Works
 

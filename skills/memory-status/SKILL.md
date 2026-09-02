@@ -20,7 +20,7 @@ Quick overview of your project's memory state across all memory systems.
 
 ```bash
 # Auto-memory directory
-MEMORY_DIR="$HOME/.claude/projects/$(pwd | sed 's|/|%2F|g; s|%2F|/|; s|^/||')/memory"
+MEMORY_DIR="$HOME/.Codex/projects/$(pwd | sed 's|/|%2F|g; s|%2F|/|; s|^/||')/memory"
 
 # Count lines in MEMORY.md
 wc -l "$MEMORY_DIR/MEMORY.md" 2>/dev/null || echo "0"
@@ -28,12 +28,12 @@ wc -l "$MEMORY_DIR/MEMORY.md" 2>/dev/null || echo "0"
 # List topic files
 ls "$MEMORY_DIR/"*.md 2>/dev/null | grep -v MEMORY.md
 
-# CLAUDE.md
-wc -l ./CLAUDE.md 2>/dev/null || echo "0"
-wc -l ~/.claude/CLAUDE.md 2>/dev/null || echo "0"
+# AGENTS.md
+wc -l ./AGENTS.md 2>/dev/null || echo "0"
+wc -l ~/.Codex/AGENTS.md 2>/dev/null || echo "0"
 
 # Rules directory
-ls .claude/rules/*.md 2>/dev/null | wc -l
+ls .Codex/rules/*.md 2>/dev/null | wc -l
 ```
 
 ### Step 2: Analyze capacity
@@ -41,7 +41,7 @@ ls .claude/rules/*.md 2>/dev/null | wc -l
 | Metric | Healthy | Warning | Critical |
 |--------|---------|---------|----------|
 | MEMORY.md lines | < 120 | 120-180 | > 180 |
-| CLAUDE.md lines | < 150 | 150-200 | > 200 |
+| AGENTS.md lines | < 150 | 150-200 | > 200 |
 | Topic files | 0-3 | 4-6 | > 6 |
 | Stale entries | 0 | 1-3 | > 3 |
 
@@ -66,9 +66,9 @@ done
     Last updated: {{date}}
 
   Project Rules:
-    CLAUDE.md:    {{n}} lines
-    Rules:        {{count}} files in .claude/rules/
-    User global:  {{n}} lines (~/.claude/CLAUDE.md)
+    AGENTS.md:    {{n}} lines
+    Rules:        {{count}} files in .Codex/rules/
+    User global:  {{n}} lines (~/.Codex/AGENTS.md)
 
   Health:
     Capacity:     {{healthy/warning/critical}}
@@ -100,4 +100,4 @@ Output: `📊 Memory: {{n}}/200 lines | {{count}} rules | {{status_emoji}} {{sta
 - Run `/si:memory-status --brief` as a quick check anytime
 - If capacity is yellow+, run `/si:memory-review` to identify promotion candidates
 - Stale entries waste space — delete references to files that no longer exist
-- Topic files are fine — Claude creates them to keep MEMORY.md under 200 lines
+- Topic files are fine — Codex creates them to keep MEMORY.md under 200 lines

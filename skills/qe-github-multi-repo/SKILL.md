@@ -30,12 +30,12 @@ Cross-package integration testing and deployment coordination.
 ### Initialize Multi-Repo Coordination
 ```bash
 # Basic swarm initialization
-npx claude-flow skill run github-multi-repo init \
+npx Codex-flow skill run github-multi-repo init \
   --repos "org/frontend,org/backend,org/shared" \
   --topology hierarchical
 
 # Advanced initialization with synchronization
-npx claude-flow skill run github-multi-repo init \
+npx Codex-flow skill run github-multi-repo init \
   --repos "org/frontend,org/backend,org/shared" \
   --topology mesh \
   --shared-memory \
@@ -45,8 +45,8 @@ npx claude-flow skill run github-multi-repo init \
 ### Synchronize Packages
 ```bash
 # Synchronize package versions and dependencies
-npx claude-flow skill run github-multi-repo sync \
-  --packages "claude-code-flow,ruv-swarm" \
+npx Codex-flow skill run github-multi-repo sync \
+  --packages "Codex-flow,ruv-swarm" \
   --align-versions \
   --update-docs
 ```
@@ -54,7 +54,7 @@ npx claude-flow skill run github-multi-repo sync \
 ### Optimize Architecture
 ```bash
 # Analyze and optimize repository structure
-npx claude-flow skill run github-multi-repo optimize \
+npx Codex-flow skill run github-multi-repo optimize \
   --analyze-structure \
   --suggest-improvements \
   --create-templates
@@ -142,7 +142,7 @@ mcp__claude-flow__swarm_init({
   Task("Integration Tester", "Validate synchronization", "tester")
 
   // Read package states
-  Read("/workspaces/ruv-FANN/claude-code-flow/claude-code-flow/package.json")
+  Read("/workspaces/ruv-FANN/Codex-flow/Codex-flow/package.json")
   Read("/workspaces/ruv-FANN/ruv-swarm/npm/package.json")
 
   // Align versions using gh CLI
@@ -163,7 +163,7 @@ mcp__claude-flow__swarm_init({
     key: "sync/packages/status",
     value: {
       timestamp: Date.now(),
-      packages_synced: ["claude-code-flow", "ruv-swarm"],
+      packages_synced: ["Codex-flow", "ruv-swarm"],
       status: "synchronized"
     }
   })
@@ -171,24 +171,24 @@ mcp__claude-flow__swarm_init({
 
 #### Documentation Synchronization
 ```javascript
-// Synchronize CLAUDE.md files across packages
+// Synchronize AGENTS.md files across packages
 [Documentation Sync]:
   // Get source documentation
-  Bash(`gh api repos/:owner/:repo/contents/ruv-swarm/docs/CLAUDE.md \
-    --jq '.content' | base64 -d > /tmp/claude-source.md`)
+  Bash(`gh api repos/:owner/:repo/contents/ruv-swarm/docs/AGENTS.md \
+    --jq '.content' | base64 -d > /tmp/Codex-source.md`)
 
   // Update target documentation
-  Bash(`gh api repos/:owner/:repo/contents/claude-code-flow/CLAUDE.md \
+  Bash(`gh api repos/:owner/:repo/contents/Codex-flow/AGENTS.md \
     --method PUT \
-    -f message="docs: Synchronize CLAUDE.md" \
+    -f message="docs: Synchronize AGENTS.md" \
     -f branch="sync/documentation" \
-    -f content="$(cat /tmp/claude-source.md | base64)"`)
+    -f content="$(cat /tmp/Codex-source.md | base64)"`)
 
   // Track sync status
   mcp__claude-flow__memory_usage({
     action: "store",
     key: "sync/documentation/status",
-    value: { status: "synchronized", files: ["CLAUDE.md"] }
+    value: { status: "synchronized", files: ["AGENTS.md"] }
   })
 ```
 
@@ -201,7 +201,7 @@ mcp__claude-flow__swarm_init({
     branch: "feature/github-integration",
     files: [
       {
-        path: "claude-code-flow/.claude/commands/github/github-modes.md",
+        path: "Codex-flow/.Codex/commands/github/github-modes.md",
         content: "[GitHub modes documentation]"
       },
       {
@@ -244,7 +244,7 @@ mcp__claude-flow__swarm_init({
   Task("Best Practices Researcher", "Research architecture patterns", "researcher")
 
   // Analyze current structures
-  LS("/workspaces/ruv-FANN/claude-code-flow/claude-code-flow")
+  LS("/workspaces/ruv-FANN/Codex-flow/Codex-flow")
   LS("/workspaces/ruv-FANN/ruv-swarm/npm")
 
   // Search for best practices
@@ -259,7 +259,7 @@ mcp__claude-flow__swarm_init({
     action: "store",
     key: "architecture/analysis/results",
     value: {
-      repositories_analyzed: ["claude-code-flow", "ruv-swarm"],
+      repositories_analyzed: ["Codex-flow", "ruv-swarm"],
       optimization_areas: ["structure", "workflows", "templates"],
       recommendations: ["standardize_structure", "improve_workflows"]
     }
@@ -272,22 +272,22 @@ mcp__claude-flow__swarm_init({
 [Template Creation]:
   // Create template repository
   mcp__github__create_repository({
-    name: "claude-project-template",
-    description: "Standardized template for Claude Code projects",
+    name: "Codex-project-template",
+    description: "Standardized template for Codex projects",
     private: false,
     autoInit: true
   })
 
   // Push template structure
   mcp__github__push_files({
-    repo: "claude-project-template",
+    repo: "Codex-project-template",
     files: [
       {
-        path: ".claude/commands/github/github-modes.md",
+        path: ".Codex/commands/github/github-modes.md",
         content: "[GitHub modes template]"
       },
       {
-        path: ".claude/config.json",
+        path: ".Codex/config.json",
         content: JSON.stringify({
           version: "1.0",
           mcp_servers: {
@@ -299,13 +299,13 @@ mcp__claude-flow__swarm_init({
         })
       },
       {
-        path: "CLAUDE.md",
-        content: "[Standardized CLAUDE.md]"
+        path: "AGENTS.md",
+        content: "[Standardized AGENTS.md]"
       },
       {
         path: "package.json",
         content: JSON.stringify({
-          name: "claude-project-template",
+          name: "Codex-project-template",
           engines: { node: ">=20.0.0" },
           dependencies: { "ruv-swarm": "^1.0.11" }
         })
@@ -319,7 +319,7 @@ mcp__claude-flow__swarm_init({
 ```javascript
 // Synchronize structure across repositories
 [Structure Standardization]:
-  const repositories = ["claude-code-flow", "ruv-swarm", "claude-extensions"]
+  const repositories = ["Codex-flow", "ruv-swarm", "Codex-extensions"]
 
   // Update common files across all repositories
   repositories.forEach(repo => {
@@ -578,7 +578,7 @@ kafka:
 
 ### 1. Microservices Coordination
 ```bash
-npx claude-flow skill run github-multi-repo microservices \
+npx Codex-flow skill run github-multi-repo microservices \
   --services "auth,users,orders,payments" \
   --ensure-compatibility \
   --sync-contracts \
@@ -587,7 +587,7 @@ npx claude-flow skill run github-multi-repo microservices \
 
 ### 2. Library Updates
 ```bash
-npx claude-flow skill run github-multi-repo lib-update \
+npx Codex-flow skill run github-multi-repo lib-update \
   --library "org/shared-lib" \
   --version "2.0.0" \
   --find-consumers \
@@ -597,7 +597,7 @@ npx claude-flow skill run github-multi-repo lib-update \
 
 ### 3. Organization-Wide Changes
 ```bash
-npx claude-flow skill run github-multi-repo org-policy \
+npx Codex-flow skill run github-multi-repo org-policy \
   --policy "add-security-headers" \
   --repos "org/*" \
   --validate-compliance \
@@ -610,9 +610,9 @@ npx claude-flow skill run github-multi-repo org-policy \
 ```
 ruv-FANN/
 ├── packages/
-│   ├── claude-code-flow/
+│   ├── Codex-flow/
 │   │   ├── src/
-│   │   ├── .claude/
+│   │   ├── .Codex/
 │   │   └── package.json
 │   ├── ruv-swarm/
 │   │   ├── src/
@@ -638,7 +638,7 @@ ruv-FANN/
 
 ### Command Structure
 ```
-.claude/
+.Codex/
 ├── commands/
 │   ├── github/
 │   │   ├── github-modes.md
@@ -663,7 +663,7 @@ ruv-FANN/
 
 ### Multi-Repo Dashboard
 ```bash
-npx claude-flow skill run github-multi-repo dashboard \
+npx Codex-flow skill run github-multi-repo dashboard \
   --port 3000 \
   --metrics "agent-activity,task-progress,memory-usage" \
   --real-time
@@ -671,7 +671,7 @@ npx claude-flow skill run github-multi-repo dashboard \
 
 ### Dependency Graph
 ```bash
-npx claude-flow skill run github-multi-repo dep-graph \
+npx Codex-flow skill run github-multi-repo dep-graph \
   --format mermaid \
   --include-agents \
   --show-data-flow
@@ -679,7 +679,7 @@ npx claude-flow skill run github-multi-repo dep-graph \
 
 ### Health Monitoring
 ```bash
-npx claude-flow skill run github-multi-repo health-check \
+npx Codex-flow skill run github-multi-repo health-check \
   --repos "org/*" \
   --check "connectivity,memory,agents" \
   --alert-on-issues
@@ -719,7 +719,7 @@ npx claude-flow skill run github-multi-repo health-check \
 
 ### Caching Strategy
 ```bash
-npx claude-flow skill run github-multi-repo cache-strategy \
+npx Codex-flow skill run github-multi-repo cache-strategy \
   --analyze-patterns \
   --suggest-cache-layers \
   --implement-invalidation
@@ -727,7 +727,7 @@ npx claude-flow skill run github-multi-repo cache-strategy \
 
 ### Parallel Execution
 ```bash
-npx claude-flow skill run github-multi-repo parallel-optimize \
+npx Codex-flow skill run github-multi-repo parallel-optimize \
   --analyze-dependencies \
   --identify-parallelizable \
   --execute-optimal
@@ -735,7 +735,7 @@ npx claude-flow skill run github-multi-repo parallel-optimize \
 
 ### Resource Pooling
 ```bash
-npx claude-flow skill run github-multi-repo resource-pool \
+npx Codex-flow skill run github-multi-repo resource-pool \
   --share-agents \
   --distribute-load \
   --monitor-usage
@@ -745,7 +745,7 @@ npx claude-flow skill run github-multi-repo resource-pool \
 
 ### Connectivity Issues
 ```bash
-npx claude-flow skill run github-multi-repo diagnose-connectivity \
+npx Codex-flow skill run github-multi-repo diagnose-connectivity \
   --test-all-repos \
   --check-permissions \
   --verify-webhooks
@@ -753,7 +753,7 @@ npx claude-flow skill run github-multi-repo diagnose-connectivity \
 
 ### Memory Synchronization
 ```bash
-npx claude-flow skill run github-multi-repo debug-memory \
+npx Codex-flow skill run github-multi-repo debug-memory \
   --check-consistency \
   --identify-conflicts \
   --repair-state
@@ -761,7 +761,7 @@ npx claude-flow skill run github-multi-repo debug-memory \
 
 ### Performance Bottlenecks
 ```bash
-npx claude-flow skill run github-multi-repo perf-analysis \
+npx Codex-flow skill run github-multi-repo perf-analysis \
   --profile-operations \
   --identify-bottlenecks \
   --suggest-optimizations
@@ -771,7 +771,7 @@ npx claude-flow skill run github-multi-repo perf-analysis \
 
 ### 1. Distributed Task Queue
 ```bash
-npx claude-flow skill run github-multi-repo queue \
+npx Codex-flow skill run github-multi-repo queue \
   --backend redis \
   --workers 10 \
   --priority-routing \
@@ -780,7 +780,7 @@ npx claude-flow skill run github-multi-repo queue \
 
 ### 2. Cross-Repo Testing
 ```bash
-npx claude-flow skill run github-multi-repo test \
+npx Codex-flow skill run github-multi-repo test \
   --setup-test-env \
   --link-services \
   --run-e2e \
@@ -789,7 +789,7 @@ npx claude-flow skill run github-multi-repo test \
 
 ### 3. Monorepo Migration
 ```bash
-npx claude-flow skill run github-multi-repo to-monorepo \
+npx Codex-flow skill run github-multi-repo to-monorepo \
   --analyze-repos \
   --suggest-structure \
   --preserve-history \
@@ -800,7 +800,7 @@ npx claude-flow skill run github-multi-repo to-monorepo \
 
 ### Full-Stack Application Update
 ```bash
-npx claude-flow skill run github-multi-repo fullstack-update \
+npx Codex-flow skill run github-multi-repo fullstack-update \
   --frontend "org/web-app" \
   --backend "org/api-server" \
   --database "org/db-migrations" \
@@ -809,7 +809,7 @@ npx claude-flow skill run github-multi-repo fullstack-update \
 
 ### Cross-Team Collaboration
 ```bash
-npx claude-flow skill run github-multi-repo cross-team \
+npx Codex-flow skill run github-multi-repo cross-team \
   --teams "frontend,backend,devops" \
   --task "implement-feature-x" \
   --assign-by-expertise \
@@ -852,12 +852,12 @@ npx claude-flow skill run github-multi-repo cross-team \
 
 ## Support and Resources
 
-- Documentation: https://github.com/ruvnet/claude-flow
-- Issues: https://github.com/ruvnet/claude-flow/issues
-- Examples: `.claude/examples/github-multi-repo/`
+- Documentation: https://github.com/ruvnet/Codex-flow
+- Issues: https://github.com/ruvnet/Codex-flow/issues
+- Examples: `.Codex/examples/github-multi-repo/`
 
 ---
 
 **Version:** 1.0.0
 **Last Updated:** 2025-10-19
-**Maintainer:** Claude Flow Team
+**Maintainer:** Codex Flow Team

@@ -1,7 +1,7 @@
 ---
 name: caveman-compress
 description: >
-  Compress natural language memory files (CLAUDE.md, todos, preferences) into caveman format
+  Compress natural language memory files (AGENTS.md, todos, preferences) into caveman format
   to save input tokens. Preserves all technical substance, code, URLs, and structure.
   Compressed version overwrites the original file. Human-readable backup saved as FILE.original.md.
   Trigger: /caveman-compress FILEPATH or "compress memory file"
@@ -11,7 +11,7 @@ description: >
 
 ## Purpose
 
-Compress natural language files (CLAUDE.md, todos, preferences) into caveman-speak to reduce input tokens. Compressed version overwrites original. Human-readable backup saved as `<filename>.original.md`.
+Compress natural language files (AGENTS.md, todos, preferences) into caveman-speak to reduce input tokens. Compressed version overwrites original. Human-readable backup saved as `<filename>.original.md`.
 
 ## Trigger
 
@@ -27,9 +27,9 @@ python3 -m scripts <absolute_filepath>
 
 3. The CLI will:
 - detect file type (no tokens)
-- call Claude to compress
+- call Codex to compress
 - validate output (no tokens)
-- if errors: cherry-pick fix with Claude (targeted fixes only, no recompression)
+- if errors: cherry-pick fix with Codex (targeted fixes only, no recompression)
 - retry up to 2 times
 - if still failing after 2 retries: report error to user, leave original file untouched
 

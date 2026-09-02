@@ -3,8 +3,8 @@ name: content-refresher
 description: 'Refresh outdated posts with current stats, new sections, freshness signals to restore rankings. "Traffic is dropping" / "排名下降了" / "文章过时了". 内容更新/文章刷新/排名恢复/流量下降 コンテンツ更新 콘텐츠갱신 actualizar contenido'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -79,8 +79,8 @@ metadata:
 # Content Refresher
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This optimization skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This optimization skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill helps identify and revitalize outdated content to reclaim lost rankings and traffic. It analyzes content freshness, identifies update opportunities, and guides the refresh process for maximum SEO and GEO impact.
@@ -113,7 +113,7 @@ Use this whenever the task needs a diagnosis or repair plan that should feed dir
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Identify Content to Refresh
 
@@ -145,17 +145,17 @@ Create a content refresh strategy for [domain/topic]
 
 **Expected output**: a scored diagnosis, prioritized repair plan, and a short handoff summary ready for `memory/audits/`.
 
-- **Reads**: the current page or site state, symptoms, prior audits, and current priorities from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: the current page or site state, symptoms, prior audits, and current priorities from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing audit or optimization plan plus a reusable summary that can be stored under `memory/audits/`.
 - **Promotes**: blocking defects, repeated weaknesses, and fix priorities to `memory/open-loops.md` and `memory/decisions.md`.
 - **Next handoff**: use the `Next Best Skill` below when the repair path is clear.
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~analytics + ~~search console + ~~SEO tool connected:**
-Claude can automatically pull historical traffic trends from ~~analytics, fetch impression and ranking data from ~~search console, retrieve keyword position history from ~~SEO tool, and identify content with declining performance. This enables data-driven refresh prioritization.
+Codex can automatically pull historical traffic trends from ~~analytics, fetch impression and ranking data from ~~search console, retrieve keyword position history from ~~SEO tool, and identify content with declining performance. This enables data-driven refresh prioritization.
 
 **With manual data only:**
 Ask the user to provide:
@@ -172,7 +172,7 @@ When a user requests content refresh help:
 
 1. **CORE-EEAT Quick Score — Identify Weak Dimensions**
 
-   Before refreshing, run a quick CORE-EEAT assessment to focus effort on the weakest areas. Reference: [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)
+   Before refreshing, run a quick CORE-EEAT assessment to focus effort on the weakest areas. Reference: [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md)
 
    ```markdown
    ### CORE-EEAT Quick Assessment
@@ -199,7 +199,7 @@ When a user requests content refresh help:
 
    **Refresh Strategy**: Focus on 🔴 dimensions first, then 🟡.
 
-   _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
+   _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
    ```
 
 2. **Identify Content Refresh Candidates**
@@ -318,23 +318,23 @@ When a user requests content refresh help:
 
 5. **Create Refresh Plan** — Structural changes, content additions, statistics/links/images to update
 
-   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the full refresh plan template (Step 5).
+   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the full refresh plan template (Step 5).
 
 6. **Write Refresh Content** — Updated introduction, new sections, refreshed statistics, new FAQ section
 
-   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the refresh content writing template (Step 6).
+   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the refresh content writing template (Step 6).
 
 7. **Optimize for GEO During Refresh** — Clear definitions, quotable statements, Q&A sections, updated citations
 
-   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the GEO enhancement template (Step 7).
+   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the GEO enhancement template (Step 7).
 
 8. **Generate Republishing Strategy** — Date strategy (update/add "last updated"/keep original), technical implementation, promotion plan
 
-   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the republishing strategy template (Step 8).
+   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the republishing strategy template (Step 8).
 
 9. **Create Refresh Report** — Summary of changes, updates completed, expected outcomes, next review date
 
-   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the refresh report template (Step 9).
+   > **Reference**: See [references/refresh-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) for the refresh report template (Step 9).
 
 ## Validation Checkpoints
 
@@ -352,7 +352,7 @@ When a user requests content refresh help:
 
 ## Example
 
-> **Reference**: See [references/refresh-example.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-example.md) for a full worked example (cloud hosting refresh) and the comprehensive content refresh checklist.
+> **Reference**: See [references/refresh-example.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-example.md) for a full worked example (cloud hosting refresh) and the comprehensive content refresh checklist.
 
 ## Tips for Success
 
@@ -363,7 +363,7 @@ When a user requests content refresh help:
 5. **Schedule regular audits** - Check content health quarterly
 6. **Optimize for GEO** - Every refresh is a GEO opportunity
 
-> **Reference data**: For content decay signal taxonomy, lifecycle stages, refresh vs. rewrite decision framework, and update strategy by content type, see [references/content-decay-signals.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/content-decay-signals.md).
+> **Reference data**: For content decay signal taxonomy, lifecycle stages, refresh vs. rewrite decision framework, and update strategy by content type, see [references/content-decay-signals.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/content-decay-signals.md).
 
 
 ### Save Results
@@ -385,10 +385,10 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ## Reference Materials
 
-- [Content Decay Signals](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/content-decay-signals.md) — Decay indicators, lifecycle stages, and refresh triggers by content type
-- [Refresh Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) — Detailed output templates for steps 5-9 (refresh plan, content writing, GEO enhancement, republishing, report)
-- [Refresh Example & Checklist](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/content-refresher/references/refresh-example.md) — Full worked example and pre/post-refresh checklist
+- [Content Decay Signals](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/content-decay-signals.md) — Decay indicators, lifecycle stages, and refresh triggers by content type
+- [Refresh Templates](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-templates.md) — Detailed output templates for steps 5-9 (refresh plan, content writing, GEO enhancement, republishing, report)
+- [Refresh Example & Checklist](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/content-refresher/references/refresh-example.md) — Full worked example and pre/post-refresh checklist
 
 ## Next Best Skill
 
-- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — re-score the refreshed content before shipping.
+- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — re-score the refreshed content before shipping.

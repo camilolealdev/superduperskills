@@ -9,7 +9,7 @@ Production-grade Playwright testing toolkit for AI coding agents.
 
 ## Available Commands
 
-When installed as a Claude Code plugin, these are available as `/pw:` commands:
+When installed as a Codex plugin, these are available as `/pw:` commands:
 
 | Command | What it does |
 |---|---|

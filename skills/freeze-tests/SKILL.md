@@ -32,7 +32,7 @@ Deactivate with `/freeze-tests off`.
     "PreToolUse": [
       {
         "matcher": "Write|Edit",
-        "hook": ".claude/skills/freeze-tests/scripts/block-test-edits.sh",
+        "hook": ".Codex/skills/freeze-tests/scripts/block-test-edits.sh",
         "condition": "file matches **/*.test.* OR **/*.spec.* OR **/__tests__/** OR **/tests/**"
       }
     ]

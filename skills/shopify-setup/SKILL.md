@@ -5,7 +5,7 @@ description: >
   Workflow: install CLI, authenticate, create custom app, store access token, verify.
   Use when connecting to a Shopify store, setting up API access, or troubleshooting
   auth issues with Shopify CLI or Admin API tokens.
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Shopify Setup
@@ -52,7 +52,7 @@ Custom apps provide stable Admin API access tokens (unlike CLI session tokens wh
 
 1. Navigate to `https://{store}.myshopify.com/admin/settings/apps/development`
 2. Click **Create an app**
-3. Name it (e.g. "Claude Code Integration")
+3. Name it (e.g. "Codex Integration")
 4. Click **Configure Admin API scopes**
 5. Enable these scopes (see `references/api-scopes.md` for details):
    - `read_products`, `write_products`

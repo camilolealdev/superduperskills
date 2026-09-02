@@ -5,12 +5,12 @@ description: >
   common mistakes, validates language/region codes, and generates correct
   hreflang implementations. Use when user says "hreflang", "i18n SEO",
   "international SEO", "multi-language", "multi-region", or "language tags".
-user-invokable: true
+user-invocable: true
 argument-hint: "[url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "1.7.0"
+  version: "2.2.4"
   category: seo
 ---
 
@@ -34,25 +34,42 @@ XML sitemap implementations.
 - Check all language versions reference each other (full mesh)
 
 ### 3. x-default Tag
-- Required: designates the fallback page for unmatched languages/regions
+- Recommended when a selector/fallback URL exists: designates the fallback page for unmatched languages/regions
 - Typically points to the language selector page or English version
 - Only one x-default per set of alternates
 - Must also have return tags from all other language versions
 
 ### 4. Language Code Validation
 - Must use ISO 639-1 two-letter codes (e.g., `en`, `fr`, `de`, `ja`)
+- An **optional ISO 15924 script subtag** is the documented, official mechanism
+  for script: `zh-Hant` (Traditional) / `zh-Hans` (Simplified). Script may
+  combine with a region, e.g. `zh-Hans-US` is valid (language + script + region).
 - Common errors:
   - `eng` instead of `en` (ISO 639-2, not valid for hreflang)
   - `jp` instead of `ja` (incorrect code for Japanese)
-  - `zh` without region qualifier (ambiguous; use `zh-Hans` or `zh-Hant`)
+  - `zh` is valid but ambiguous for script-specific pages; prefer `zh-Hans` or `zh-Hant` when targeting a script
 
 ### 5. Region Code Validation
 - Optional region qualifier uses ISO 3166-1 Alpha-2 (e.g., `en-US`, `en-GB`, `pt-BR`)
 - Format: `language-REGION` (lowercase language, uppercase region)
+- A **country code alone is invalid**, you cannot specify a region without a
+  language (Google's own bad example is `be`, which is actually the Belarusian
+  *language* code, not Belgium).
 - Common errors:
-  - `en-uk` instead of `en-GB` (UK is not a valid ISO 3166-1 code)
+  - `en-uk` instead of `en-GB` (UK is not a valid ISO 3166-1 region code)
+  - `EU` / `UN` as a region (not valid ISO 3166-1 values)
   - `es-LA` (Latin America is not a country; use specific countries)
   - Region without language prefix
+
+### 5b. Geo-targeting signal hierarchy
+- Practical locale-signal heuristic: **ccTLD > hreflang annotations >
+  server location/IP > addresses/language/currency/Business Profile**. Do not
+  present this as a confirmed Google ranking order. hreflang is a
+  **hint, not a directive**. Google **ignores** locational meta tags and
+  HTML geotargeting attributes.
+- The Search Console **International Targeting report and the manual
+  country-targeting setting were removed in 2022**, do **not** recommend setting
+  country targeting in GSC; hreflang is the remaining lever.
 
 ### 6. Canonical URL Alignment
 - Hreflang tags must only appear on canonical URLs
@@ -68,7 +85,7 @@ XML sitemap implementations.
 ### 8. Cross-Domain Support
 - Hreflang works across different domains (e.g., example.com and example.de)
 - Cross-domain hreflang requires return tags on both domains
-- Verify both domains are verified in Google Search Console
+- Use Google Search Console verification for monitoring or cross-site sitemap submission when needed
 - Sitemap-based implementation recommended for cross-domain setups
 
 ## Common Mistakes
@@ -77,7 +94,7 @@ XML sitemap implementations.
 |-------|----------|-----|
 | Missing self-referencing tag | Critical | Add hreflang pointing to same page URL |
 | Missing return tags (A→B but no B→A) | Critical | Add matching return tags on all alternates |
-| Missing x-default | High | Add x-default pointing to fallback/selector page |
+| Missing x-default when fallback behavior is required | Medium | Add x-default pointing to fallback/selector page |
 | Invalid language code (e.g., `eng`) | High | Use ISO 639-1 two-letter codes |
 | Invalid region code (e.g., `en-uk`) | High | Use ISO 3166-1 Alpha-2 codes |
 | Hreflang on non-canonical URL | High | Move hreflang to canonical URL only |
@@ -162,7 +179,7 @@ Key rules:
 - Include the `xmlns:xhtml` namespace declaration
 - Every `<url>` entry must include ALL language alternates (including itself)
 - Each alternate must appear as a separate `<url>` entry with its own full set
-- Split at 50,000 URLs per sitemap file
+- Split at whichever comes first: 50,000 URLs or 50MB uncompressed per sitemap file
 
 ## Output
 
@@ -190,6 +207,60 @@ Key rules:
 - Incorrect codes to fix
 - Method migration suggestions (e.g., HTML to sitemap for scale)
 
+## Cultural Adaptation Assessment
+
+When analyzing a multi-language site, go beyond technical hreflang validation to assess
+whether the content is culturally adapted for each target market.
+
+Load `references/cultural-profiles.md` for pre-built profiles (DACH, Francophone, Hispanic, Japanese).
+
+**Assessment steps:**
+1. Identify all language versions and their target markets
+2. Load the relevant cultural profile(s)
+3. Check CTAs match cultural expectations (direct vs indirect)
+4. Check trust signals are locale-appropriate (certifications, legal pages)
+5. Check for foreign brand references on localized pages
+6. Check number/date/currency formatting consistency
+7. Flag cultural adaptation issues as Medium severity
+
+**Output:** Cultural Adaptation Score per language version (0-100) with specific findings.
+
+## Content Parity Audit
+
+**Command:** `/seo hreflang audit <directory-or-url>`
+
+Audit content parity across all language versions of a site or local content directory.
+
+Load `references/content-parity.md` for the full parity matrix and scoring methodology.
+
+**What it checks:**
+- Page existence across all declared languages
+- Section structure equivalence (H2/H3 count)
+- SEO element parity (title, meta, schema localization)
+- Word count ratio validation (DE should be 25-35% longer than EN, JA 10-25% shorter)
+- Freshness tracking (stale translations detected via timestamps)
+- Cultural marker scanning (foreign brands, wrong legal references, untranslated elements)
+
+**Output:** Parity matrix table with per-page scores and prioritized action items.
+
+## Locale Format Validation
+
+Load `references/locale-formats.md` for number, date, currency, address, and phone format
+reference tables per locale.
+
+**Checks:**
+- Number format consistency (e.g., "1,000.00" should be "1.000,00" on de-DE pages)
+- Date format matches locale expectations
+- Currency symbols and placement correct for target market
+- Phone numbers use international format with correct country code
+
+## Reference Files
+
+Load on-demand as needed (do NOT load all at startup):
+- `references/cultural-profiles.md`: DACH, Francophone, Hispanic, Japanese cultural adaptation profiles
+- `references/locale-formats.md`: Number, date, currency, address, phone format tables per locale
+- `references/content-parity.md`: Content parity audit methodology and scoring
+
 ## Error Handling
 
 | Scenario | Action |
@@ -197,3 +268,5 @@ Key rules:
 | URL unreachable (DNS failure, connection refused) | Report the error clearly. Do not guess site structure. Suggest the user verify the URL and try again. |
 | No hreflang tags found | Report the absence. Check for other internationalization signals (subdirectories, subdomains, ccTLDs) and recommend the appropriate hreflang implementation method. |
 | Invalid language/region codes detected | List each invalid code with the correct replacement. Provide a corrected hreflang tag set ready to implement. |
+| Cultural profile not available for language | Use the Default Profile checklist from cultural-profiles.md. Note that assessment is based on general guidelines, not a pre-built profile. |
+| Content parity directory empty | Report that no content files were found. Suggest verifying the directory path or providing a URL for live site analysis. |

@@ -62,7 +62,7 @@ aqe migrate
 - [ ] Run v3 tests: `aqe test`
 - [ ] Check coverage: `aqe coverage`
 - [ ] Verify patterns loaded: `aqe patterns list`
-- [ ] Test MCP integration with Claude Code
+- [ ] Test MCP integration with Codex
 
 ---
 
@@ -207,10 +207,10 @@ for (const pattern of v2Patterns) {
 3. **MCP Server**
    ```bash
    # v2
-   claude mcp add aqe -- npx aqe-mcp
+   Codex mcp add aqe -- npx aqe-mcp
 
    # v3 (same CLI name, enhanced capabilities)
-   claude mcp add aqe -- npx aqe mcp
+   Codex mcp add aqe -- npx aqe mcp
    ```
 
 ### Deprecated (Will Warn)

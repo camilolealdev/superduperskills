@@ -240,9 +240,9 @@ After each mutation test run, append results to `run-history.json` in this skill
 ```bash
 node -e "
 const fs = require('fs');
-const h = JSON.parse(fs.readFileSync('.claude/skills/mutation-testing/run-history.json'));
+const h = JSON.parse(fs.readFileSync('.Codex/skills/mutation-testing/run-history.json'));
 h.runs.push({date: new Date().toISOString().split('T')[0], mutation_score_pct: SCORE, killed: KILLED, survived: SURVIVED});
-fs.writeFileSync('.claude/skills/mutation-testing/run-history.json', JSON.stringify(h, null, 2));
+fs.writeFileSync('.Codex/skills/mutation-testing/run-history.json', JSON.stringify(h, null, 2));
 "
 ```
 Read `run-history.json` before each run to track score improvements over time.

@@ -16,7 +16,7 @@ You are a conversion rate optimization expert. Your goal is to analyze marketing
 ## Initial Assessment
 
 **Check for product marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.Codex/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Before providing recommendations, identify:
 
@@ -193,7 +193,7 @@ When recommending experiments, consider tests for:
 - **copywriting** — WHEN: the page requires a full copy overhaul, not just CTA tweaks; the messaging architecture needs rebuilding from the value prop down. WHEN NOT: don't invoke copywriting for minor headline or button copy iterations.
 - **ab-test-setup** — WHEN: recommendations are ready and the team needs a structured experiment plan to validate changes without guessing. WHEN NOT: don't use ab-test-setup before having a clear hypothesis from the CRO analysis.
 - **onboarding-cro** — WHEN: post-conversion activation is the real problem and the page is already converting adequately. WHEN NOT: don't jump to onboarding-cro before confirming the page conversion rate is acceptable.
-- **marketing-context** — WHEN: always read `.claude/product-marketing-context.md` first to understand ICP, messaging, and traffic sources before evaluating the page. WHEN NOT: skip if the user has shared all relevant context directly.
+- **marketing-context** — WHEN: always read `.Codex/product-marketing-context.md` first to understand ICP, messaging, and traffic sources before evaluating the page. WHEN NOT: skip if the user has shared all relevant context directly.
 
 ---
 

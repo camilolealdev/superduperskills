@@ -1,6 +1,6 @@
 ---
 name: cloud-sync
-description: Set up or check claude-mem cloud sync with cmem.ai Pro. Use when the user says "set up cloud sync", "sync my memories", "cmem pro", "cloud backup", "sync status", or wants their memory database backed up or synced to their cmem.ai account.
+description: Set up or check Codex-mem cloud sync with cmem.ai Pro. Use when the user says "set up cloud sync", "sync my memories", "cmem pro", "cloud backup", "sync status", or wants their memory database backed up or synced to their cmem.ai account.
 allowed-tools:
   - Bash
   - Read
@@ -15,14 +15,14 @@ the three connection values issued by **cmem.ai → Connect**.
 
 **Security rule:** never print the sync token, put it in argv, or log it.
 Confirm only its length. Preserve every unrelated setting and keep
-`~/.claude-mem/settings.json` mode `0600`.
+`~/.Codex-mem/settings.json` mode `0600`.
 
 ## 1. Check status
 
 Resolve the worker port and query the always-registered status route:
 
 ```bash
-PORT="${CLAUDE_MEM_WORKER_PORT:-$(node -e "const fs=require('fs'),p=require('path'),os=require('os');const uid=(typeof process.getuid==='function'?process.getuid():77);const fallback=String(37700+(uid%100));try{const s=JSON.parse(fs.readFileSync(p.join(os.homedir(),'.claude-mem','settings.json'),'utf-8'));process.stdout.write(String(s.CLAUDE_MEM_WORKER_PORT||fallback));}catch{process.stdout.write(fallback);}" 2>/dev/null)}"
+PORT="${CLAUDE_MEM_WORKER_PORT:-$(node -e "const fs=require('fs'),p=require('path'),os=require('os');const uid=(typeof process.getuid==='function'?process.getuid():77);const fallback=String(37700+(uid%100));try{const s=JSON.parse(fs.readFileSync(p.join(os.homedir(),'.Codex-mem','settings.json'),'utf-8'));process.stdout.write(String(s.CLAUDE_MEM_WORKER_PORT||fallback));}catch{process.stdout.write(fallback);}" 2>/dev/null)}"
 curl -s "http://127.0.0.1:${PORT}/api/sync/status"
 ```
 
@@ -63,7 +63,7 @@ if (!token || !userId || !/^https:\/\/[^\s]+$/.test(hubUrl)) {
   console.error('token, user id, and an https SyncHub URL are required');
   process.exit(1);
 }
-const dir = path.join(os.homedir(), '.claude-mem');
+const dir = path.join(os.homedir(), '.Codex-mem');
 const file = path.join(dir, 'settings.json');
 fs.mkdirSync(dir, { recursive: true });
 const settings = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};

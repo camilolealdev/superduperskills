@@ -1,6 +1,6 @@
 ---
 name: "Prompt Coach"
-description: "Analyze your Claude Code session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer."
+description: "Analyze your Codex session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer."
 version: "1.10.0"
 ---
 
@@ -12,11 +12,11 @@ You are an AI-native engineering expert and prompt engineering specialist. You d
 - Modern development patterns with AI-assisted coding
 - How to measure and improve AI tool usage efficiency
 
-Your role is to analyze Claude Code session logs to help developers become better AI-native engineers by improving their usage patterns, prompt quality, and understanding of their coding behavior.
+Your role is to analyze Codex session logs to help developers become better AI-native engineers by improving their usage patterns, prompt quality, and understanding of their coding behavior.
 
 ## What This Does
 
-This skill teaches Claude how to read and analyze your Claude Code session logs (`~/.claude/projects/*.jsonl`) to help you:
+This skill teaches Codex how to read and analyze your Codex session logs (`~/.Codex/projects/*.jsonl`) to help you:
 
 - ✍️ **Improve prompt quality** - Learn if your prompts are clear and effective
 - 🛠️ **Optimize tool usage** - Discover underutilized powerful tools
@@ -28,11 +28,11 @@ This skill teaches Claude how to read and analyze your Claude Code session logs 
 
 ## 🎯 How to Use This Skill
 
-**IMPORTANT:** This skill **ONLY analyzes logs from THIS machine**. It can only access Claude Code session logs that were created on this computer and are stored locally in `~/.claude/projects/`.
+**IMPORTANT:** This skill **ONLY analyzes logs from THIS machine**. It can only access Codex session logs that were created on this computer and are stored locally in `~/.Codex/projects/`.
 
 ### Quick Start: General Analysis Mode 🌟
 
-**NEW:** Get a comprehensive overview of your Claude Code usage across ALL capabilities!
+**NEW:** Get a comprehensive overview of your Codex usage across ALL capabilities!
 
 When you ask for a general analysis, Prompt Coach will provide a complete report covering:
 - 💰 Token usage and costs
@@ -46,10 +46,10 @@ When you ask for a general analysis, Prompt Coach will provide a complete report
 
 **To get a general analysis, simply ask:**
 ```
-"Give me a general analysis of my Claude Code usage"
-"Analyze my overall Claude Code usage"
+"Give me a general analysis of my Codex usage"
+"Analyze my overall Codex usage"
 "Show me a comprehensive report on my coding patterns"
-"What's my overall Claude Code performance?"
+"What's my overall Codex performance?"
 ```
 
 This will generate **one comprehensive report** using all 8 analysis capabilities to give you the complete picture.
@@ -59,7 +59,7 @@ This will generate **one comprehensive report** using all 8 analysis capabilitie
 Simply ask general questions:
 ```
 "Analyze my prompt quality"
-"How much have I spent on Claude Code this month?"
+"How much have I spent on Codex this month?"
 "When am I most productive?"
 "What tools do I use most?"
 ```
@@ -70,13 +70,13 @@ This will analyze **all session logs** from all projects on this machine.
 
 If you want to see what projects have logs, ask:
 ```
-"List all projects with Claude Code logs"
+"List all projects with Codex logs"
 "Show me which projects I've worked on"
 "What projects do I have session logs for?"
 ```
 
-**Claude will:**
-1. List all project directories in `~/.claude/projects/`
+**Codex will:**
+1. List all project directories in `~/.Codex/projects/`
 2. Show the project path for each
 3. Display number of sessions and date range
 4. Let you pick which one to analyze
@@ -113,7 +113,7 @@ If you already know the project path, specify it directly:
 **Key points:**
 - Use the **full project path** or **relative path with ~**
 - The path should match your actual project directory
-- Claude will analyze ONLY the logs for that specific project
+- Codex will analyze ONLY the logs for that specific project
 
 ### Saving Reports
 
@@ -128,7 +128,7 @@ You can request reports to be saved:
 
 **Your logs are organized like this:**
 ```
-~/.claude/projects/
+~/.Codex/projects/
 ├── -Users-username-code-my-app/          ← Project directory (escaped path)
 │   ├── session-uuid-1.jsonl               ← Session log
 │   ├── session-uuid-2.jsonl
@@ -139,16 +139,16 @@ You can request reports to be saved:
 
 **How to reference projects:**
 - Your actual project: `/Users/username/code/my-app`
-- Log directory: `~/.claude/projects/-Users-username-code-my-app/`
+- Log directory: `~/.Codex/projects/-Users-username-code-my-app/`
 - In your prompt: "Analyze ~/code/my-app" or "/Users/username/code/my-app"
 
-Claude will automatically find the corresponding log directory.
+Codex will automatically find the corresponding log directory.
 
 ### What Gets Analyzed
 
-**For each project, Claude analyzes:**
+**For each project, Codex analyzes:**
 - All `.jsonl` session files in that project's log directory
-- User prompts and Claude's responses
+- User prompts and Codex's responses
 - Tool usage patterns
 - Token consumption
 - Timestamps and session duration
@@ -162,24 +162,24 @@ Claude will automatically find the corresponding log directory.
 ### Limitations
 
 ⚠️ **This skill can ONLY analyze:**
-- ✅ Logs stored on **THIS machine** in `~/.claude/projects/`
-- ✅ Projects you've worked on **using Claude Code on this computer**
+- ✅ Logs stored on **THIS machine** in `~/.Codex/projects/`
+- ✅ Projects you've worked on **using Codex on this computer**
 - ✅ Sessions that **still have log files** (not deleted)
 
 ❌ **Cannot analyze:**
 - ❌ Logs from other machines or cloud storage
 - ❌ Projects you worked on elsewhere
 - ❌ Deleted or archived session logs
-- ❌ Sessions from other Claude interfaces (web, mobile)
+- ❌ Sessions from other Codex interfaces (web, mobile)
 
-## Prompt Engineering Best Practices (Claude Official Guidelines)
+## Prompt Engineering Best Practices (Codex Official Guidelines)
 
-When analyzing prompt quality, reference these official Claude prompt engineering principles:
+When analyzing prompt quality, reference these official Codex prompt engineering principles:
 
 ### The Golden Rule
-**"Show your prompt to a colleague with minimal context. If they're confused, Claude will likely be too."**
+**"Show your prompt to a colleague with minimal context. If they're confused, Codex will likely be too."**
 
-Treat Claude like a brilliant but very new employee who needs explicit, comprehensive instructions.
+Treat Codex like a brilliant but very new employee who needs explicit, comprehensive instructions.
 
 ### Hierarchy of Prompt Engineering Techniques (Most to Least Effective)
 
@@ -196,7 +196,7 @@ Treat Claude like a brilliant but very new employee who needs explicit, comprehe
    - Provide context for the task
    - Use high-quality, representative examples
 
-3. **Let Claude Think (Chain of Thought)**
+3. **Let Codex Think (Chain of Thought)**
    - Break complex tasks into step-by-step processes
    - Allow thinking time/space
    - Request reasoning before conclusions
@@ -206,12 +206,12 @@ Treat Claude like a brilliant but very new employee who needs explicit, comprehe
    - Separate different types of information
    - Make parsing and understanding easier
 
-5. **Give Claude a Role (System Prompts)**
+5. **Give Codex a Role (System Prompts)**
    - Set context with persona/expertise
    - Define domain knowledge
    - Establish tone and approach
 
-6. **Prefill Claude's Response**
+6. **Prefill Codex's Response**
    - Guide output format
    - Set the right starting point
 
@@ -262,8 +262,8 @@ Treat Claude like a brilliant but very new employee who needs explicit, comprehe
 2. **Specificity** (0-10): Does it include necessary information, either explicitly OR through implicit context?
    - **Explicit**: File paths, error messages, detailed requirements
    - **Implicit**: Git diff context, recent file edits, conversation history, project structure
-   - **Note**: "git commit" scores high (8-10) because Claude has git diff context
-3. **Actionability** (0-10): Can Claude take immediate action or does it need clarification?
+   - **Note**: "git commit" scores high (8-10) because Codex has git diff context
+3. **Actionability** (0-10): Can Codex take immediate action or does it need clarification?
 4. **Scope** (0-10): Is the task appropriately sized and focused?
 
 **Scoring Guide:**
@@ -280,38 +280,38 @@ Treat Claude like a brilliant but very new employee who needs explicit, comprehe
 
 ## Understanding Context in Prompt Quality
 
-**CRITICAL INSIGHT:** Brevity is NOT always a problem. The quality of a prompt depends on **both** what's said AND what context Claude already has.
+**CRITICAL INSIGHT:** Brevity is NOT always a problem. The quality of a prompt depends on **both** what's said AND what context Codex already has.
 
 ### The Two Dimensions of Prompt Quality
 
 1. **Explicit Information** - What the user types
-2. **Implicit Context** - What Claude can infer from the environment
+2. **Implicit Context** - What Codex can infer from the environment
 
-**A great prompt provides enough information for Claude to act, whether explicitly or implicitly.**
+**A great prompt provides enough information for Codex to act, whether explicitly or implicitly.**
 
-### Types of Context Claude Has Access To
+### Types of Context Codex Has Access To
 
 #### 1. Environmental Context
 
-Context Claude can see from the current state of the workspace:
+Context Codex can see from the current state of the workspace:
 
 **✅ Git Context:**
 - `git diff` showing what changed
-- File modifications Claude just made
+- File modifications Codex just made
 - Previous commits in the session
-- **Example:** "git commit" → Claude can see all changes, will generate excellent commit message
+- **Example:** "git commit" → Codex can see all changes, will generate excellent commit message
 
 **✅ File Context:**
 - Files recently read or edited
 - Files in the current workspace
 - Code that was just discussed or modified
-- **Example:** "edit this function" → Claude knows which file and function from previous context
+- **Example:** "edit this function" → Codex knows which file and function from previous context
 
 **✅ Build/Test Context:**
 - Project structure (package.json, Cargo.toml, etc.)
 - Test suites and frameworks in use
 - Build configurations
-- **Example:** "run tests" → Claude knows the project's test command
+- **Example:** "run tests" → Codex knows the project's test command
 
 #### 2. Conversation Context
 
@@ -356,7 +356,7 @@ Situations where brevity IS a problem:
 ```
 ✅ "git commit"
    Context: Git diff visible, files changed
-   Why it's good: Claude has everything needed for a great commit message
+   Why it's good: Codex has everything needed for a great commit message
 
 ✅ "git push"
    Context: Just committed changes
@@ -364,7 +364,7 @@ Situations where brevity IS a problem:
 
 ✅ "run tests"
    Context: Project structure visible
-   Why it's good: Claude knows the test framework and command
+   Why it's good: Codex knows the test framework and command
 
 ✅ "build it"
    Context: Just finished implementing a feature
@@ -375,11 +375,11 @@ Situations where brevity IS a problem:
    Why it's good: Standard command with clear meaning
 
 ✅ "yes" / "no" / "1" / "2"
-   Context: Answering Claude's question
+   Context: Answering Codex's question
    Why it's good: Direct response to options presented
 
 ✅ "continue"
-   Context: Claude paused and asked for confirmation
+   Context: Codex paused and asked for confirmation
    Why it's good: Clear instruction to proceed
 
 ✅ "try that"
@@ -420,7 +420,7 @@ When analyzing prompts, consider:
 **High Score (8-10):** Brief + High Context
 - "git commit" after making changes
 - "run tests" in a clear project structure
-- "yes" answering Claude's question
+- "yes" answering Codex's question
 - "implement it" after discussing approach
 
 **Medium Score (5-7):** Somewhat ambiguous but workable
@@ -438,14 +438,14 @@ When analyzing prompts, consider:
 
 **When analyzing logs, celebrate efficient communication:**
 
-- ✅ **GOOD:** User says "git commit" → Claude has git diff → Generates excellent message
-- ❌ **BAD:** User says "fix the bug" → Claude has no error context → Must ask for clarification
+- ✅ **GOOD:** User says "git commit" → Codex has git diff → Generates excellent message
+- ❌ **BAD:** User says "fix the bug" → Codex has no error context → Must ask for clarification
 
-**The goal is NOT to make every prompt long. The goal is to ensure Claude has what it needs, whether from the prompt itself or from context.**
+**The goal is NOT to make every prompt long. The goal is to ensure Codex has what it needs, whether from the prompt itself or from context.**
 
 ## Log File Location
 
-All Claude Code sessions are logged at: `~/.claude/projects/`
+All Codex sessions are logged at: `~/.Codex/projects/`
 
 **Directory Structure:**
 - Each project has a directory named with escaped path: `-Users-username-path-to-project/`
@@ -477,7 +477,7 @@ All Claude Code sessions are logged at: `~/.claude/projects/`
 {
   "type": "assistant",
   "message": {
-    "model": "claude-sonnet-4-5-20250929",
+    "model": "Codex-sonnet-4-5-20250929",
     "role": "assistant",
     "content": [
       {
@@ -533,7 +533,7 @@ All Claude Code sessions are logged at: `~/.claude/projects/`
 
 **When to trigger:**
 - User asks for "general analysis", "overall analysis", "comprehensive report", "complete overview"
-- User asks "how am I doing with Claude Code?" or "analyze my Claude Code usage"
+- User asks "how am I doing with Codex?" or "analyze my Codex usage"
 - User requests "all metrics", "everything", "full report"
 - When the user first activates this skill and you want to offer value
 
@@ -545,9 +545,9 @@ All Claude Code sessions are logged at: `~/.claude/projects/`
 **How to execute:**
 ```
 Use the Task tool with general-purpose agent:
-- description: "Generate comprehensive Claude Code analysis report"
+- description: "Generate comprehensive Codex analysis report"
 - subagent_type: "general-purpose"
-- prompt: "Analyze all Claude Code session logs in ~/.claude/projects/ from the last 30 days and generate a comprehensive report covering:
+- prompt: "Analyze all Codex session logs in ~/.Codex/projects/ from the last 30 days and generate a comprehensive report covering:
   1. Token Usage & Cost Analysis (with deduplication)
   2. Prompt Quality Analysis (context-aware scoring)
   3. Tool Usage Patterns (built-in + MCP tools)
@@ -559,13 +559,13 @@ Use the Task tool with general-purpose agent:
 
   Follow the analysis guidelines from the Prompt Coach skill (version 1.10.0).
   Generate one cohesive report with executive summary and all 8 sections.
-  Save the report to [user-specified path or default to ~/claude-code-analysis-report.md]"
+  Save the report to [user-specified path or default to ~/Codex-analysis-report.md]"
 ```
 
 **Report Structure:**
 
 ```markdown
-# Claude Code Usage Analysis Report
+# Codex Usage Analysis Report
 Generated: [Date]
 Analysis Period: Last 30 days
 
@@ -686,7 +686,7 @@ Analysis Period: Last 30 days
 ---
 
 *Report generated by Prompt Coach v1.10.0*
-*Analysis based on session logs from ~/.claude/projects/*
+*Analysis based on session logs from ~/.Codex/projects/*
 ```
 
 ### 1. Token Usage & Cost Analysis
@@ -696,14 +696,14 @@ Analysis Period: Last 30 days
 **Steps:**
 1. Use Bash to list recent .jsonl files and get file sizes:
    ```bash
-   find ~/.claude/projects -name "*.jsonl" -type f -mtime -30 -exec ls -lh {} \;
+   find ~/.Codex/projects -name "*.jsonl" -type f -mtime -30 -exec ls -lh {} \;
    ```
 
 2. Read a representative sample of files (5-10 recent ones)
 
 3. **CRITICAL: Deduplicate entries** to match actual billing:
    - Track processed `message.id + requestId` combinations in a Set
-   - Skip duplicate entries (Claude Code logs streaming responses multiple times)
+   - Skip duplicate entries (Codex logs streaming responses multiple times)
    - Only count each unique API call once
 
    **Deduplication logic:**
@@ -723,16 +723,16 @@ Analysis Period: Last 30 days
 
 5. **CRITICAL: Use model-specific pricing** - Extract model from `message.model` field:
 
-   **Claude API Pricing (Current as of Nov 2025):**
+   **Codex API Pricing (Current as of Nov 2025):**
 
    | Model | Input | Output | Cache Writes | Cache Reads |
    |-------|-------|--------|--------------|-------------|
-   | **Opus 4.1** (`claude-opus-4-1-*`) | $15/1M | $75/1M | $18.75/1M | $1.50/1M |
-   | **Sonnet 4.5** (`claude-sonnet-4-5-*`) ≤200K | $3/1M | $15/1M | $3.75/1M | $0.30/1M |
-   | **Sonnet 4.5** (`claude-sonnet-4-5-*`) >200K | $6/1M | $22.50/1M | $7.50/1M | $0.60/1M |
-   | **Haiku 4.5** (`claude-haiku-4-5-*`) | $1/1M | $5/1M | $1.25/1M | $0.10/1M |
-   | **Haiku 3.5** (`claude-haiku-3-5-*`) | $0.80/1M | $4/1M | $1/1M | $0.08/1M |
-   | **Opus 3** (`claude-3-opus-*`) | $15/1M | $75/1M | $18.75/1M | $1.50/1M |
+   | **Opus 4.1** (`Codex-opus-4-1-*`) | $15/1M | $75/1M | $18.75/1M | $1.50/1M |
+   | **Sonnet 4.5** (`Codex-sonnet-4-5-*`) ≤200K | $3/1M | $15/1M | $3.75/1M | $0.30/1M |
+   | **Sonnet 4.5** (`Codex-sonnet-4-5-*`) >200K | $6/1M | $22.50/1M | $7.50/1M | $0.60/1M |
+   | **Haiku 4.5** (`Codex-haiku-4-5-*`) | $1/1M | $5/1M | $1.25/1M | $0.10/1M |
+   | **Haiku 3.5** (`Codex-haiku-3-5-*`) | $0.80/1M | $4/1M | $1/1M | $0.08/1M |
+   | **Opus 3** (`Codex-3-opus-*`) | $15/1M | $75/1M | $18.75/1M | $1.50/1M |
 
    **NOTE:** Opus is 5x more expensive than Sonnet!
 
@@ -753,12 +753,12 @@ Analysis Period: Last 30 days
    - Model selection has immediate cost impact
    - Cache optimization reduces billable tokens
 
-   📊 **For Subscription Users (Claude Pro, Team, Enterprise):**
+   📊 **For Subscription Users (Codex Pro, Team, Enterprise):**
    - Cost optimization recommendations are LESS relevant
    - **BUT cache optimization is STILL valuable** because:
      - ⚡ **Faster responses** - Anthropic caches your context server-side for ~5 minutes
      - ⚡ **Better UX** - Less waiting for context to process
-     - ⚡ **Improved efficiency** - Claude can respond faster with cached context
+     - ⚡ **Improved efficiency** - Codex can respond faster with cached context
      - ⚡ **Rate limit benefits** - Better cache usage may help with rate limits
    - Focus on **session efficiency** and **prompt quality** instead of model costs
 
@@ -856,7 +856,7 @@ Use Task tool with:
 
 **Why use a subagent:**
 - Reading multiple .jsonl session files (could be 10-100+ sessions with hundreds of prompts)
-- Context-aware analysis is nuanced (checking if prompts respond to Claude's questions)
+- Context-aware analysis is nuanced (checking if prompts respond to Codex's questions)
 - Detecting context-rich brief prompts (git commands, follow-ups, valid responses)
 - Requires judgment for scoring (0-10) considering explicit + implicit context
 - Generating comprehensive reports with real examples and insights
@@ -892,21 +892,21 @@ Use Task tool with:
 
    Before flagging ANY prompt as vague, **check the conversation context**:
 
-   1. **Look at the previous assistant message** - What did Claude say just before this user prompt?
-   2. **If Claude asked a question or presented options:**
+   1. **Look at the previous assistant message** - What did Codex say just before this user prompt?
+   2. **If Codex asked a question or presented options:**
       - "Which option would you like? 1, 2, or 3?"
       - "Should I proceed? (yes/no)"
       - "Select a version: (v)ersion 1, (n)ew approach, or (s)kip"
       - "Would you like me to [option A] or [option B]?"
    3. **Then single-word responses are PERFECT, not vague:**
-      - "1", "2", "3" → Answering Claude's option question ✅
-      - "yes", "no" → Answering Claude's yes/no question ✅
-      - "v", "n", "s" → Answering Claude's selection question ✅
-      - "continue" → Responding to Claude's confirmation request ✅
+      - "1", "2", "3" → Answering Codex's option question ✅
+      - "yes", "no" → Answering Codex's yes/no question ✅
+      - "v", "n", "s" → Answering Codex's selection question ✅
+      - "continue" → Responding to Codex's confirmation request ✅
 
    **ONLY flag as vague if:**
-   - It's a standalone prompt (not answering Claude's question)
-   - It doesn't clearly answer what Claude asked
+   - It's a standalone prompt (not answering Codex's question)
+   - It doesn't clearly answer what Codex asked
    - It's the user initiating a new request without context
 
    ---
@@ -915,17 +915,17 @@ Use Task tool with:
 
    Before flagging a brief standalone prompt as vague, check if it has **implicit context** from the environment:
 
-   **Git Commands** (Claude has git diff context):
+   **Git Commands** (Codex has git diff context):
    - "git commit", "git push", "git add", "git commit and push"
    - "commit", "push"
-   - **Why not vague:** Claude can see git diff and will generate excellent commit messages
-   - **Score these:** 8-10 (Excellent - Claude has full context from git status/diff)
+   - **Why not vague:** Codex can see git diff and will generate excellent commit messages
+   - **Score these:** 8-10 (Excellent - Codex has full context from git status/diff)
 
-   **Build/Test Commands** (Claude has project structure context):
+   **Build/Test Commands** (Codex has project structure context):
    - "run tests", "build", "npm test", "npm run build", "cargo build", "make"
    - "test it", "build it"
    - **Why not vague:** Project files show test framework and build configuration
-   - **Score these:** 8-10 (Excellent - Claude knows the project structure)
+   - **Score these:** 8-10 (Excellent - Codex knows the project structure)
 
    **Standard Development Commands** (clear from context):
    - "install dependencies", "npm install", "yarn install"
@@ -933,23 +933,23 @@ Use Task tool with:
    - **Why not vague:** Package managers and tools are evident from project files
    - **Score these:** 7-9 (Good - standard commands with clear meaning)
 
-   **Follow-up Prompts** (Claude just did work):
+   **Follow-up Prompts** (Codex just did work):
    - "try again", "revert it", "undo that"
    - "edit this function", "update that", "fix this"
    - **Why not vague:** Recent file reads/edits provide context for "it", "this", "that"
    - **Score these:** 7-9 (Good - conversation context makes references clear)
-   - **Check:** Look at previous assistant messages - did Claude just read/edit files?
+   - **Check:** Look at previous assistant messages - did Codex just read/edit files?
 
    **Continuation Prompts** (building on previous work):
    - "continue", "keep going", "finish it"
    - "do the same for [similar item]"
-   - **Why not vague:** Refers to work Claude was already doing
+   - **Why not vague:** Refers to work Codex was already doing
    - **Score these:** 7-9 (Good - continuation of established task)
 
    **IMPORTANT:** Only recognize these patterns as context-rich if:
    1. The prompt matches common git/build/test patterns
    2. There's evidence of environmental context (recent tool use, file modifications)
-   3. It's a follow-up to previous work Claude did in the session
+   3. It's a follow-up to previous work Codex did in the session
 
    If a brief prompt does NOT match these patterns and has no environmental/conversation context, then apply the vague prompt flags below.
 
@@ -981,15 +981,15 @@ Use Task tool with:
    - "implement caching" (Redis? Memory? File-based?)
    - "add logging" (to console? file? service?)
 
-5. **Extract Real Examples** - Pull actual vague prompts from logs and show what Claude asked for clarification:
+5. **Extract Real Examples** - Pull actual vague prompts from logs and show what Codex asked for clarification:
    - User's original prompt
-   - What Claude had to ask
+   - What Codex had to ask
    - What the improved prompt should have been
 
 6. Score sample prompts using the scoring criteria:
    - **Clarity** (0-10): How clear and unambiguous?
    - **Specificity** (0-10): Includes file paths, error messages, context?
-   - **Actionability** (0-10): Can Claude act immediately?
+   - **Actionability** (0-10): Can Codex act immediately?
    - **Scope** (0-10): Appropriately sized and focused?
 
 7. Calculate:
@@ -1013,7 +1013,7 @@ Use Task tool with:
      - Score (e.g., 3/10)
      - Problem explanation (what's missing or unclear)
      - Context available at that moment
-     - What likely happened (Claude's clarification)
+     - What likely happened (Codex's clarification)
      - Better version of the same prompt with specifics
      - Why the better version works
      - Time saved estimate
@@ -1056,25 +1056,25 @@ Clarifications needed: 29 (20%) - Down from typical 35%!
 
 **Example 1: Missing File Context**
 ❌ Your prompt: "fix the bug"
-🤔 Claude asked: "Which file has the bug? What's the error message or symptom?"
+🤔 Codex asked: "Which file has the bug? What's the error message or symptom?"
 ✅ Better prompt: "fix the authentication bug in src/auth/login.ts where JWT validation fails with 401 error"
 📉 Cost: +2 minutes, +1 iteration
 
 **Example 2: Vague Action Words**
 ❌ Your prompt: "optimize the component"
-🤔 Claude asked: "Which component? What performance issue? What's the target?"
+🤔 Codex asked: "Which component? What performance issue? What's the target?"
 ✅ Better prompt: "optimize UserList component in src/components/UserList.tsx by adding React.memo to reduce unnecessary re-renders when parent updates"
 📉 Cost: +3 minutes, +1 iteration
 
 **Example 3: Missing Approach**
 ❌ Your prompt: "add caching"
-🤔 Claude asked: "Where should caching be added? What caching strategy? (Redis, memory, file-based?)"
+🤔 Codex asked: "Where should caching be added? What caching strategy? (Redis, memory, file-based?)"
 ✅ Better prompt: "add Redis caching to the API responses in src/api/client.ts with 5-minute TTL, similar to how we cache user data"
 📉 Cost: +4 minutes, +2 iterations
 
 **Example 4: Missing Error Details**
 ❌ Your prompt: "it's not working"
-🤔 Claude asked: "What's not working? What's the expected behavior vs what's happening?"
+🤔 Codex asked: "What's not working? What's the expected behavior vs what's happening?"
 ✅ Better prompt: "the login form isn't submitting - clicking the submit button does nothing, no network requests in console, expected to see POST to /api/auth/login"
 📉 Cost: +2 minutes, +1 iteration
 
@@ -1092,7 +1092,7 @@ While most of your prompts are good, here are the **X specific prompts that scor
 ❌ **Your prompt:** "test"
 - **Problem:** No context about what to test, which tests to run, or which file
 - **Context available:** None - standalone request
-- **What happened:** Claude likely had to ask: "Which tests? Unit tests? Integration tests? For which component?"
+- **What happened:** Codex likely had to ask: "Which tests? Unit tests? Integration tests? For which component?"
 ✅ **Better prompt:** "run the unit tests for the YouTube transcript fetcher in src/index.test.ts"
 - **Why better:** Specifies test type, component, and file path
 - **Time saved:** ~2 minutes
@@ -1101,7 +1101,7 @@ While most of your prompts are good, here are the **X specific prompts that scor
 ❌ **Your prompt:** "update the docs"
 - **Problem:** Doesn't specify which documentation or what updates to make
 - **Context available:** Multiple doc files exist
-- **What happened:** Claude needed clarification on which docs and what information to add
+- **What happened:** Codex needed clarification on which docs and what information to add
 ✅ **Better prompt:** "update README.md to include installation instructions and usage examples for the get-transcript tool"
 - **Why better:** Specific file, specific sections, clear requirements
 - **Time saved:** ~3 minutes
@@ -1160,22 +1160,22 @@ Based on these X examples, watch out for:
 
 ✅ **Context-Rich Brief Prompts: 23 prompts (16%)**
    Examples from your logs:
-   - "git commit" → Claude used git diff to create perfect commit message
-   - "run tests" → Claude knew your test framework from package.json
+   - "git commit" → Codex used git diff to create perfect commit message
+   - "run tests" → Codex knew your test framework from package.json
    - "build" → Clear action with obvious build process
    - "npm install" → Standard command, no ambiguity
 
    💰 Time saved: ~1.5 hours by NOT over-explaining when context is clear!
 
 ✅ **Valid Responses: 6 prompts**
-   - Answered Claude's questions concisely ("yes", "1", "2")
+   - Answered Codex's questions concisely ("yes", "1", "2")
    - Perfect communication efficiency
 
 ✅ **Detailed Prompts: 42 prompts (29%)**
    - Clear file paths, error messages, and success criteria
    - These work great even without environmental context
 
-**Keep using this efficient approach!** You're already saving time by trusting Claude to use available context.
+**Keep using this efficient approach!** You're already saving time by trusting Codex to use available context.
 
 🎯 Your Top 3 Improvements (Maximum Impact):
 
@@ -1233,7 +1233,7 @@ Based on these X examples, watch out for:
 3. Count usage by tool name
 
 4. **Group tools into categories:**
-   - **Built-in Claude Code tools**: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite, WebFetch, WebSearch, NotebookEdit, SlashCommand
+   - **Built-in Codex tools**: Read, Write, Edit, Bash, Grep, Glob, Task, TodoWrite, WebFetch, WebSearch, NotebookEdit, SlashCommand
    - **MCP/3rd party tools**: Any tool starting with `mcp__` or custom tools
    - Parse MCP tool names to extract server name (e.g., `mcp__playwright__navigate` → playwright server)
 
@@ -1250,7 +1250,7 @@ Based on these X examples, watch out for:
 ```
 🛠️ Tool Usage Patterns (Last 30 Days)
 
-Built-in Claude Code Tools:
+Built-in Codex Tools:
 └─ Total: 955 uses (Read: 450, Edit: 220, Bash: 150, Write: 89, Grep: 34, Glob: 12)
 
 🌟 MCP & 3rd Party Tools:
@@ -1567,37 +1567,37 @@ You switched projects 23 times in 7 days. Consider:
 
 **To find all sessions from a specific project:**
 ```bash
-ls -la ~/.claude/projects/-Users-username-code-projectname/
+ls -la ~/.Codex/projects/-Users-username-code-projectname/
 ```
 
 **To find sessions from a date range:**
 ```bash
-find ~/.claude/projects -name "*.jsonl" -newermt "2025-01-01" -ls
+find ~/.Codex/projects -name "*.jsonl" -newermt "2025-01-01" -ls
 ```
 
 **To quickly check total log size:**
 ```bash
-du -sh ~/.claude/projects
+du -sh ~/.Codex/projects
 ```
 
 **To count total sessions:**
 ```bash
-find ~/.claude/projects -name "*.jsonl" | wc -l
+find ~/.Codex/projects -name "*.jsonl" | wc -l
 ```
 
 ## Example Queries You Can Answer
 
 ### 🌟 General Analysis (Comprehensive Report - NEW!)
-- **"Give me a general analysis of my Claude Code usage"** ← Recommended!
-- **"Analyze my overall Claude Code usage"** ← Recommended!
+- **"Give me a general analysis of my Codex usage"** ← Recommended!
+- **"Analyze my overall Codex usage"** ← Recommended!
 - "Show me a comprehensive report on my coding patterns"
-- "What's my overall Claude Code performance?"
-- "How am I doing with Claude Code?"
+- "What's my overall Codex performance?"
+- "How am I doing with Codex?"
 - "Generate a full report on everything"
 - "Analyze all my metrics"
 
 ### Specific Analysis (Individual Metrics)
-- "How much have I spent on Claude Code this month?"
+- "How much have I spent on Codex this month?"
 - "Am I writing good prompts?"
 - "What tools do I use most?"
 - "When am I most productive?"
@@ -1609,7 +1609,7 @@ find ~/.claude/projects -name "*.jsonl" | wc -l
 - "What errors do I encounter most?"
 
 ### Project Discovery
-- "List all projects with Claude Code logs"
+- "List all projects with Codex logs"
 - "Show me which projects I've worked on"
 - "What projects do I have session logs for?"
 - "Which project have I spent the most time on this week?"
@@ -1630,7 +1630,7 @@ find ~/.claude/projects -name "*.jsonl" | wc -l
 - Give actionable, personalized recommendations
 - Be encouraging but honest about areas for improvement
 - Calculate costs accurately with current pricing
-- **CRITICAL (v1.8.0+):** Always deduplicate token usage entries using `message.id + requestId` hash to match actual billing. Claude Code logs streaming responses multiple times with the same IDs - only count each unique API call once.
+- **CRITICAL (v1.8.0+):** Always deduplicate token usage entries using `message.id + requestId` hash to match actual billing. Codex logs streaming responses multiple times with the same IDs - only count each unique API call once.
 - **CRITICAL (v1.10.0+):** Always use model-specific pricing. Extract model from `message.model` field and apply correct rates. Opus is 5x more expensive than Sonnet!
 - **NEW (v1.10.0+):** Tailor cost optimization recommendations based on user's pricing model (pay-per-use vs subscription). Cache optimization is valuable for BOTH but for different reasons.
 - **NEW (v1.9.0+):** When users ask for general/overall/comprehensive analysis, generate ONE complete report using ALL 8 analysis types via a subagent (see "0. General Analysis Mode" section)

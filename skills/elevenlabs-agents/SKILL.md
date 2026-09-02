@@ -6,7 +6,7 @@ description: >
   Supports React, React Native, and Swift SDKs. Use when building voice agents,
   AI phone systems, or troubleshooting @11labs deprecated packages, webhook errors,
   CSP violations, localhost allowlist, or tool parsing errors.
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # ElevenLabs Agent Builder
@@ -45,7 +45,7 @@ Templates: `default`, `minimal`, `voice-only`, `text-only`, `customer-service`, 
 
 Configure:
 - **Voice** -- Choose from 5000+ voices or clone
-- **LLM** -- GPT, Claude, Gemini, or custom
+- **LLM** -- GPT, Codex, Gemini, or custom
 - **System prompt** -- Use the 6-component framework below
 - **First message** -- What the agent says when conversation starts
 
@@ -390,7 +390,7 @@ if (signature !== hmac) { /* reject */ }
 |-------|---------------|-------|----------|
 | GPT-4o | $5 | Medium | Complex reasoning |
 | GPT-4o-mini | $0.15 | Fast | Most use cases |
-| Claude Sonnet 4.5 | $3 | Medium | Long context |
+| Codex Sonnet 4.5 | $3 | Medium | Long context |
 | Gemini 2.5 Flash | $0.075 | Fastest | Simple tasks |
 
 **Start with gpt-4o-mini** for all agents. Upgrade only if quality requires it.

@@ -26,8 +26,8 @@ board meeting, executive deliberation, strategic decision, C-suite, multi-agent,
 ## The 6-Phase Protocol
 
 ### PHASE 1: Context Gathering
-1. Load `~/.claude/company-context.md`
-2. Load Layer 2 approved decisions from `~/.claude/decisions/approved/` **(Layer 2 ONLY — never raw transcripts)**
+1. Load `~/.Codex/company-context.md`
+2. Load Layer 2 approved decisions from `~/.Codex/decisions/approved/` **(Layer 2 ONLY — never raw transcripts)**
 3. Reset session state — no bleed from previous conversations
 4. Present agenda + activated roles → wait for founder confirmation
 
@@ -115,8 +115,8 @@ Options: ✅ Approve | ✏️ Modify | ❌ Reject | ❓ Ask follow-up
 
 ### PHASE 6: Decision Extraction
 After founder approval:
-- **Layer 1:** Write full transcript → `~/.claude/decisions/raw/YYYY-MM-DD-<slug>.md`
-- **Layer 2:** Write approved decision record → `~/.claude/decisions/approved/YYYY-MM-DD-<slug>.md` and append to the index `~/.claude/decisions/approved/decisions.md`
+- **Layer 1:** Write full transcript → `~/.Codex/decisions/raw/YYYY-MM-DD-<slug>.md`
+- **Layer 2:** Write approved decision record → `~/.Codex/decisions/approved/YYYY-MM-DD-<slug>.md` and append to the index `~/.Codex/decisions/approved/decisions.md`
 - Mark rejected proposals `[DO_NOT_RESURFACE]`
 - Confirm to founder with count of decisions logged, actions tracked, flags added
 
@@ -127,7 +127,7 @@ After founder approval:
 Uses the canonical two-layer decision memory (see `../agent-protocol/SKILL.md` → "Decision Memory (Canonical Layout)"):
 
 ```
-~/.claude/decisions/
+~/.Codex/decisions/
 ├── raw/YYYY-MM-DD-<slug>.md        # Layer 1 — full transcripts (never auto-loaded)
 ├── raw/archive/YYYY/               # Raw transcripts after 90 days
 ├── approved/YYYY-MM-DD-<slug>.md   # Layer 2 — founder-approved records (Phase 1 loads these)
@@ -136,7 +136,7 @@ Uses the canonical two-layer decision memory (see `../agent-protocol/SKILL.md` �
 
 **Future meetings load Layer 2 only.** Never Layer 1. This prevents hallucinated consensus.
 
-Migration: a legacy `memory/board-meetings/` folder may exist from earlier versions; read it for history but write new transcripts and decisions to `~/.claude/decisions/`.
+Migration: a legacy `memory/board-meetings/` folder may exist from earlier versions; read it for history but write new transcripts and decisions to `~/.Codex/decisions/`.
 
 ---
 
@@ -147,7 +147,7 @@ Migration: a legacy `memory/board-meetings/` folder may exist from earlier versi
 | Analysis paralysis | Cap at 5 points; force recommendation even with Low confidence |
 | Bikeshedding | Log as async action item; return to main agenda |
 | Role bleed (CFO making product calls) | Critic flags; exclude from synthesis |
-| Layer contamination | Phase 1 loads `~/.claude/decisions/approved/` only — hard rule |
+| Layer contamination | Phase 1 loads `~/.Codex/decisions/approved/` only — hard rule |
 
 ---
 

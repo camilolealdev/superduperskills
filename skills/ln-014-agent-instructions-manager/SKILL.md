@@ -1,6 +1,6 @@
 ---
 name: ln-014-agent-instructions-manager
-description: "Creates missing instruction files (CLAUDE.md, AGENTS.md, GEMINI.md), audits token budget, prompt cache safety, cross-agent consistency. Use after setup or when instruction files need alignment."
+description: "Creates missing instruction files (AGENTS.md, AGENTS.md, GEMINI.md), audits token budget, prompt cache safety, cross-agent consistency. Use after setup or when instruction files need alignment."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Creates missing instruction files and audits all (CLAUDE.md, AGENTS.md, GEMINI.md) for quality, consistency, and best practices.
+Creates missing instruction files and audits all (AGENTS.md, AGENTS.md, GEMINI.md) for quality, consistency, and best practices.
 
 ## Input / Output
 
@@ -36,7 +36,7 @@ Locate instruction files in target project:
 
 | Agent | Primary | Fallback |
 |-------|---------|----------|
-| Claude | `CLAUDE.md` | `.claude/settings.local.json` |
+| Codex | `AGENTS.md` | `.Codex/settings.local.json` |
 | Codex | `AGENTS.md` | `.codex/instructions.md` |
 | Gemini | `GEMINI.md` | `AGENTS.md` (shared with Codex) |
 
@@ -46,10 +46,10 @@ Report: which files exist (`found` / `missing`), which agents share files.
 
 **Skip condition:** No `enabledPlugins` in settings OR all plugins are `@levnikolaevich-skills-marketplace`.
 
-1. Read `~/.claude/settings.json` → parse `enabledPlugins`
+1. Read `~/.Codex/settings.json` → parse `enabledPlugins`
 2. Filter: enabled=true AND publisher ≠ `levnikolaevich-skills-marketplace`
 3. For each external plugin:
-   - Locate cache: `~/.claude/plugins/cache/{publisher}/{plugin}/*/skills/*/SKILL.md`
+   - Locate cache: `~/.Codex/plugins/cache/{publisher}/{plugin}/*/skills/*/SKILL.md`
    - Read each skill description (frontmatter `description:` field)
    - Match against conflict signal keywords:
 
@@ -80,7 +80,7 @@ Report: which files exist (`found` / `missing`), which agents share files.
 | PROJECT_DESCRIPTION | `package.json` → `description` | `[TBD: Project description]` |
 | DATE | current date (YYYY-MM-DD) | — |
 
-### Step 2b: Create CLAUDE.md (if missing)
+### Step 2b: Create AGENTS.md (if missing)
 
 1. **MANDATORY READ:** Load `skills/ln-111-root-docs-creator/references/templates/claude_md_template.md`
 2. Replace `{{PROJECT_NAME}}`, `{{PROJECT_DESCRIPTION}}`, `{{DATE}}`
@@ -89,14 +89,14 @@ Report: which files exist (`found` / `missing`), which agents share files.
 
 ### Step 2c: Create AGENTS.md (if missing)
 
-Source: target project's CLAUDE.md (just created or pre-existing).
+Source: target project's AGENTS.md (just created or pre-existing).
 
 | # | Transformation | Find | Replace |
 |---|---------------|------|---------|
 | 1 | Title | First H1 line | `# AGENTS.md` |
 | 2 | SCOPE | `Guides in \`docs/\`` | `Detailed guides in \`docs/\`. Skill workflows in individual \`SKILL.md\` files. Public documentation in \`README.md\`.` |
-| 3 | Agent name | `Claude Code` / `Claude` in intro line | `Codex` |
-| 4 | DAG entry | `CLAUDE.md →` | `AGENTS.md →` |
+| 3 | Agent name | `Codex` / `Codex` in intro line | `Codex` |
+| 4 | DAG entry | `AGENTS.md →` | `AGENTS.md →` |
 | 5 | Add rule | After last Critical Rules row | Add: `\| **Code Comments 15-20%** \| Writing code \| WHY not WHAT. No historical notes. Task/ADR IDs as spec refs only \|` |
 
 ### Step 2d: Create GEMINI.md (if missing)
@@ -113,7 +113,7 @@ Source: target project's AGENTS.md (just created or pre-existing).
 
 ### Step 2e: Report Creations
 
-List each created file with its source (template / derived from CLAUDE.md / derived from AGENTS.md).
+List each created file with its source (template / derived from AGENTS.md / derived from AGENTS.md).
 
 ## Phase 3: Token Budget Audit
 
@@ -187,7 +187,7 @@ Compare content across all found instruction files:
 | Build/test commands | Same commands | Different or missing |
 | Structural sections | Same section order | Inconsistent structure |
 
-**Sync action:** For each inconsistency, show diff and suggest which file is source of truth (usually CLAUDE.md).
+**Sync action:** For each inconsistency, show diff and suggest which file is source of truth (usually AGENTS.md).
 
 ## Phase 7: Report
 
@@ -195,26 +195,26 @@ Compare content across all found instruction files:
 Agent Instructions Manager:
 
 Created:  (omit section if nothing created)
-- CLAUDE.md (from template, context from package.json)
-- AGENTS.md (derived from CLAUDE.md)
+- AGENTS.md (from template, context from package.json)
+- AGENTS.md (derived from AGENTS.md)
 
 Audit:
 | File       | Lines | ~Tokens | Cache-safe | Quality | Issues |
 |------------|-------|---------|------------|---------|--------|
-| CLAUDE.md  | 80    | 2,100   | OK         | 7/7     | Compact Instructions added |
+| AGENTS.md  | 80    | 2,100   | OK         | 7/7     | Compact Instructions added |
 | AGENTS.md  | 77    | 2,000   | OK         | 7/7     | OK |
 | GEMINI.md  | 75    | 1,950   | OK         | 7/7     | OK |
 
 Cross-agent: OK (or N inconsistencies listed)
 
 Recommendations:
-1. Run /init (ln-100) for full context-aware CLAUDE.md with project-specific rules
+1. Run /init (ln-100) for full context-aware AGENTS.md with project-specific rules
 ```
 
 ## Definition of Done
 
 - [ ] All instruction files discovered
-- [ ] Missing files created (CLAUDE.md from template, AGENTS/GEMINI derived)
+- [ ] Missing files created (AGENTS.md from template, AGENTS/GEMINI derived)
 - [ ] Token budget within limits (≤2,500 tokens each)
 - [ ] No prompt cache breakers found (or reported as WARN)
 - [ ] Content quality checks passed (or issues reported)

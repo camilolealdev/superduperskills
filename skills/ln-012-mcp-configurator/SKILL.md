@@ -1,6 +1,6 @@
 ---
 name: ln-012-mcp-configurator
-description: "Installs MCP packages, registers servers in Claude Code, configures hooks, permissions, and migrations. Use when MCP needs setup or reconfiguration."
+description: "Installs MCP packages, registers servers in Codex, configures hooks, permissions, and migrations. Use when MCP needs setup or reconfiguration."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Configures MCP servers in Claude Code: installs npm packages, registers servers, installs hooks and output style, migrates allowed-tools, updates instruction files, grants permissions.
+Configures MCP servers in Codex: installs npm packages, registers servers, installs hooks and output style, migrates allowed-tools, updates instruction files, grants permissions.
 
 ---
 
@@ -54,7 +54,7 @@ Smart install: check MCP status AND package drift. npx -y caches aggressively �
 
 **Step 1a: Check MCP server status**
 
-Run `claude mcp list` -> parse each hex server:
+Run `Codex mcp list` -> parse each hex server:
 
 | Server | Status | Action |
 |--------|--------|--------|
@@ -92,10 +92,10 @@ Note: hex packages run via `npx -y`, NOT global install. Never probe global npm 
 
 ### Phase 2: Register & Configure
 
-One pass: use Phase 1 state (do NOT re-run `claude mcp list`) -> remove deprecated -> register/update -> verify.
+One pass: use Phase 1 state (do NOT re-run `Codex mcp list`) -> remove deprecated -> register/update -> verify.
 
 1. **Reuse Phase 1 state** — server map from Step 1a already has registration + connection status
-   - Fallback (standalone only): read `~/.claude.json` + `~/.claude/settings.json`
+   - Fallback (standalone only): read `~/.Codex.json` + `~/.Codex/settings.json`
 2. Remove deprecated servers:
 
 | Deprecated Server | Action |
@@ -116,23 +116,23 @@ Registration commands (OS-dependent prefix):
 
 | OS | Prefix | Why |
 |----|--------|-----|
-| Windows (bash/MSYS2) | `MSYS_NO_PATHCONV=1 claude mcp add ... -- cmd /c npx` | MSYS2/Git Bash converts `/c` -> `C:/` in args. `MSYS_NO_PATHCONV=1` prevents this |
+| Windows (bash/MSYS2) | `MSYS_NO_PATHCONV=1 Codex mcp add ... -- cmd /c npx` | MSYS2/Git Bash converts `/c` -> `C:/` in args. `MSYS_NO_PATHCONV=1` prevents this |
 | Windows (PowerShell/cmd) | `cmd /c npx` | No path conversion issue in native shells |
 | macOS / Linux | `npx` | Direct execution |
 
 | Server | Command (Windows bash — always prefix with `MSYS_NO_PATHCONV=1`) |
 |--------|----------|
-| hex-line | `MSYS_NO_PATHCONV=1 claude mcp add -s user hex-line -- cmd /c npx -y @levnikolaevich/hex-line-mcp` |
-| hex-ssh | `MSYS_NO_PATHCONV=1 claude mcp add -s user hex-ssh -- cmd /c npx -y @levnikolaevich/hex-ssh-mcp` |
-| hex-graph | `MSYS_NO_PATHCONV=1 claude mcp add -s user hex-graph -- cmd /c npx -y @levnikolaevich/hex-graph-mcp` |
-| context7 | `claude mcp add -s user --transport http context7 https://mcp.context7.com/mcp` |
-| Ref | `claude mcp add -s user --transport http Ref https://api.ref.tools/mcp` |
-| linear | `claude mcp add -s user --transport http linear-server https://mcp.linear.app/mcp` |
+| hex-line | `MSYS_NO_PATHCONV=1 Codex mcp add -s user hex-line -- cmd /c npx -y @levnikolaevich/hex-line-mcp` |
+| hex-ssh | `MSYS_NO_PATHCONV=1 Codex mcp add -s user hex-ssh -- cmd /c npx -y @levnikolaevich/hex-ssh-mcp` |
+| hex-graph | `MSYS_NO_PATHCONV=1 Codex mcp add -s user hex-graph -- cmd /c npx -y @levnikolaevich/hex-graph-mcp` |
+| context7 | `Codex mcp add -s user --transport http context7 https://mcp.context7.com/mcp` |
+| Ref | `Codex mcp add -s user --transport http Ref https://api.ref.tools/mcp` |
+| linear | `Codex mcp add -s user --transport http linear-server https://mcp.linear.app/mcp` |
 
-4. Verify: `claude mcp list` -> check all registered show `Connected`. This is the only second `claude mcp list` call (post-mutation verify). Retry + report failures.
+4. Verify: `Codex mcp list` -> check all registered show `Connected`. This is the only second `Codex mcp list` call (post-mutation verify). Retry + report failures.
 
 **Windows MSYS2 path validation (MANDATORY on win32):**
-After registration, read `~/.claude.json` -> verify each hex server's `args[0]` is `"/c"` not `"C:/"`.
+After registration, read `~/.Codex.json` -> verify each hex server's `args[0]` is `"/c"` not `"C:/"`.
 If corrupted: fix via `mcp__hex-line__edit_file` (set_line the arg to `"/c"`).
 
 
@@ -140,23 +140,23 @@ If corrupted: fix via `mcp__hex-line__edit_file` (set_line the arg to `"/c"`).
 
 | Error | Response |
 |-------|----------|
-| `claude` CLI not found | FAIL, report "Claude CLI not in PATH" |
+| `Codex` CLI not found | FAIL, report "Codex CLI not in PATH" |
 | Server already exists | SKIP, report "already configured" |
-| Connection failed after add | WARN, report detail from `claude mcp list` |
+| Connection failed after add | WARN, report detail from `Codex mcp list` |
 | API key missing (Ref) | Prompt user for key, skip if declined |
 
 ### Phase 3: Hooks & Output Style [CRITICAL]
 
 MUST call `mcp__hex-line__setup_hooks(agent="all")` AFTER all Phase 2 registrations complete (not just hex-line). This ensures the latest hook.mjs and output-style.md from the updated package are installed.
 
-**Hooks** (in `~/.claude/settings.json`):
+**Hooks** (in `~/.Codex/settings.json`):
 1. `PreToolUse` hook — redirects built-in Read/Edit/Write/Grep to hex-line equivalents
 2. `PostToolUse` hook — compresses verbose tool output (RTK filter)
 3. `SessionStart` hook — injects MCP Tool Preferences reminder
 4. Sets `disableAllHooks: false`
 
 **Output Style:**
-5. Copies `output-style.md` to `~/.claude/output-styles/hex-line.md`
+5. Copies `output-style.md` to `~/.Codex/output-styles/hex-line.md`
 6. Sets `outputStyle: "hex-line"` if no style is active (preserves existing style)
 
 **Verification:** Response must contain `Hooks configured for`. If `SKIPPED`, `UNKNOWN_AGENT`, `Error`, or `failed` — STOP.
@@ -188,7 +188,7 @@ Scan project commands/skills to replace built-in tools with hex-line equivalents
 
 **Steps:**
 
-1. Glob `.claude/commands/*.md` + `.claude/skills/*/SKILL.md` in current project
+1. Glob `.Codex/commands/*.md` + `.Codex/skills/*/SKILL.md` in current project
 2. For each file: parse YAML frontmatter, extract `allowed-tools`
 3. For each mapping entry:
    a. If built-in present AND hex equivalent absent -> add hex equivalent, remove built-in (except `Read` and `Bash`)
@@ -201,7 +201,7 @@ Scan project commands/skills to replace built-in tools with hex-line equivalents
 
 | Condition | Action |
 |-----------|--------|
-| No `.claude/` directory | Skip entire phase |
+| No `.Codex/` directory | Skip entire phase |
 | File has no `allowed-tools` | Skip file |
 | All hex equivalents present | Skip file, report "already migrated" |
 | `dry_run: true` | Show planned changes |
@@ -214,7 +214,7 @@ Ensure instruction files have MCP Tool Preferences section.
 
 **Steps:**
 
-1. For each file: CLAUDE.md, GEMINI.md, AGENTS.md (if exists in project)
+1. For each file: AGENTS.md, GEMINI.md, AGENTS.md (if exists in project)
 2. Search for `## MCP Tool Preferences` or `### MCP Tool Preferences`
 3. If MISSING -> insert before `## Navigation` (or at end of conventions/rules block)
 4. If PRESENT but OUTDATED -> update table rows to match template
@@ -229,7 +229,7 @@ Ensure instruction files have MCP Tool Preferences section.
 
 ### Phase 7: Grant Permissions
 
-For each **configured** MCP server, add `mcp__{name}` to `~/.claude/settings.json` -> `permissions.allow[]`.
+For each **configured** MCP server, add `mcp__{name}` to `~/.Codex/settings.json` -> `permissions.allow[]`.
 
 | Server | Permission entry |
 |---|---|
@@ -240,7 +240,7 @@ For each **configured** MCP server, add `mcp__{name}` to `~/.claude/settings.jso
 | Ref | `mcp__Ref` |
 | linear | `mcp__linear-server` |
 
-1. Read `~/.claude/settings.json` (create if missing: `{"permissions":{"allow":[]}}`)
+1. Read `~/.Codex/settings.json` (create if missing: `{"permissions":{"allow":[]}}`)
 2. For each configured server: check if `mcp__{name}` already in `allow[]`
 3. Missing -> append
 4. Write back (2-space indent JSON)
@@ -266,29 +266,29 @@ MCP Configuration:
 
 ## Critical Rules
 
-1. **Write only via sanctioned paths.** Register servers via `claude mcp add`. Write to `~/.claude/settings.json` ONLY for hooks (via `setup_hooks`), permissions (`permissions.allow[]`), and `outputStyle`
-2. **Verify after add.** Always run `claude mcp list` after registration to confirm connection
+1. **Write only via sanctioned paths.** Register servers via `Codex mcp add`. Write to `~/.Codex/settings.json` ONLY for hooks (via `setup_hooks`), permissions (`permissions.allow[]`), and `outputStyle`
+2. **Verify after add.** Always run `Codex mcp list` after registration to confirm connection
 3. **Ask before optional servers.** Linear requires explicit user consent
 4. **npx -y for all hex MCP.** Never `npm i -g` — npx provides process isolation and avoids EBUSY on Windows. On Windows, wrap with `cmd /c npx` (see Phase 2 OS prefix table)
 5. **Remove deprecated servers.** Clean up servers no longer in the registry
 6. **Grant permissions.** After registration, add `mcp__{server}` to user settings
-7. **Minimize `claude mcp list` calls.** Phase 1 runs it once (discovery). Phase 2 reuses that data. Only Phase 2 Step 4 runs it again (post-mutation verify). Max 2 calls total
+7. **Minimize `Codex mcp list` calls.** Phase 1 runs it once (discovery). Phase 2 reuses that data. Only Phase 2 Step 4 runs it again (post-mutation verify). Max 2 calls total
 8. **Always check npm drift.** Connected != up to date. Compare npm latest against the newest locally cached npx package version before skipping
-9. **MSYS2 path safety.** On Windows with Git Bash/MSYS2, always prefix `claude mcp add` with `MSYS_NO_PATHCONV=1`. After registration, verify `args[0]` in `.claude.json` is `"/c"` not `"C:/"`. Fix inline if corrupted.
+9. **MSYS2 path safety.** On Windows with Git Bash/MSYS2, always prefix `Codex mcp add` with `MSYS_NO_PATHCONV=1`. After registration, verify `args[0]` in `.Codex.json` is `"/c"` not `"C:/"`. Fix inline if corrupted.
 
 ## Anti-Patterns
 
 | DON'T | DO |
 |-------|-----|
-| Write arbitrary fields to `~/.claude.json` | Use `claude mcp add` for servers, `setup_hooks` for hooks |
-| Skip verification after add | Always check `claude mcp list` after mutations |
+| Write arbitrary fields to `~/.Codex.json` | Use `Codex mcp add` for servers, `setup_hooks` for hooks |
+| Skip verification after add | Always check `Codex mcp list` after mutations |
 | Auto-add optional servers | Ask user for Linear and other optional servers |
 | Leave deprecated servers | Remove hashline-edit, pencil, etc. |
 | Calculate token budget | Not this worker's responsibility |
-| Run `claude mcp list` in every phase | Run once in Phase 1, reuse in Phase 2, verify once after mutations |
+| Run `Codex mcp list` in every phase | Run once in Phase 1, reuse in Phase 2, verify once after mutations |
 | Assume connected = up to date | Check `npm view` version vs newest cached npx package version |
 | Call `setup_hooks` before all packages re-registered | Call `setup_hooks(agent="all")` AFTER all Phase 2 registrations complete |
-| Run `claude mcp add` without MSYS_NO_PATHCONV on Windows bash | Always `MSYS_NO_PATHCONV=1 claude mcp add ...` or verify+fix args after |
+| Run `Codex mcp add` without MSYS_NO_PATHCONV on Windows bash | Always `MSYS_NO_PATHCONV=1 Codex mcp add ...` or verify+fix args after |
 
 ---
 

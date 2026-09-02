@@ -25,7 +25,7 @@ Each step in a chain receives the complete output from the previous step, enabli
 ### Run a Custom Chain
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Analyze codebase structure" \
   "Identify improvement areas" \
   "Generate action plan"
@@ -34,7 +34,7 @@ claude-flow stream-chain run \
 ### Execute a Pipeline
 
 ```bash
-claude-flow stream-chain pipeline analysis
+Codex-flow stream-chain pipeline analysis
 ```
 
 ---
@@ -46,7 +46,7 @@ Execute custom stream chains with your own prompts for maximum flexibility.
 ### Syntax
 
 ```bash
-claude-flow stream-chain run <prompt1> <prompt2> [...] [options]
+Codex-flow stream-chain run <prompt1> <prompt2> [...] [options]
 ```
 
 **Requirements:**
@@ -88,7 +88,7 @@ Step 3 receives:
 #### Basic Development Chain
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Write a user authentication function" \
   "Add input validation and error handling" \
   "Create unit tests with edge cases"
@@ -97,7 +97,7 @@ claude-flow stream-chain run \
 #### Security Audit Workflow
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Analyze authentication system for vulnerabilities" \
   "Identify and categorize security issues by severity" \
   "Propose fixes with implementation priority" \
@@ -109,7 +109,7 @@ claude-flow stream-chain run \
 #### Code Refactoring Chain
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Identify code smells in src/ directory" \
   "Create refactoring plan with specific changes" \
   "Apply refactoring to top 3 priority items" \
@@ -120,7 +120,7 @@ claude-flow stream-chain run \
 #### Data Processing Pipeline
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Extract data from API responses" \
   "Transform data into normalized format" \
   "Validate data against schema" \
@@ -136,7 +136,7 @@ Execute battle-tested workflows optimized for common development tasks.
 ### Syntax
 
 ```bash
-claude-flow stream-chain pipeline <type> [options]
+Codex-flow stream-chain pipeline <type> [options]
 ```
 
 ### Available Pipelines
@@ -146,7 +146,7 @@ claude-flow stream-chain pipeline <type> [options]
 Comprehensive codebase analysis and improvement identification.
 
 ```bash
-claude-flow stream-chain pipeline analysis
+Codex-flow stream-chain pipeline analysis
 ```
 
 **Workflow Steps:**
@@ -165,7 +165,7 @@ claude-flow stream-chain pipeline analysis
 Systematic code refactoring with prioritization.
 
 ```bash
-claude-flow stream-chain pipeline refactor
+Codex-flow stream-chain pipeline refactor
 ```
 
 **Workflow Steps:**
@@ -184,7 +184,7 @@ claude-flow stream-chain pipeline refactor
 Comprehensive test generation with coverage analysis.
 
 ```bash
-claude-flow stream-chain pipeline test
+Codex-flow stream-chain pipeline test
 ```
 
 **Workflow Steps:**
@@ -203,7 +203,7 @@ claude-flow stream-chain pipeline test
 Performance optimization with profiling and implementation.
 
 ```bash
-claude-flow stream-chain pipeline optimize
+Codex-flow stream-chain pipeline optimize
 ```
 
 **Workflow Steps:**
@@ -230,25 +230,25 @@ claude-flow stream-chain pipeline optimize
 #### Quick Analysis
 
 ```bash
-claude-flow stream-chain pipeline analysis
+Codex-flow stream-chain pipeline analysis
 ```
 
 #### Extended Refactoring
 
 ```bash
-claude-flow stream-chain pipeline refactor --timeout 60 --verbose
+Codex-flow stream-chain pipeline refactor --timeout 60 --verbose
 ```
 
 #### Debug Test Generation
 
 ```bash
-claude-flow stream-chain pipeline test --debug
+Codex-flow stream-chain pipeline test --debug
 ```
 
 #### Comprehensive Optimization
 
 ```bash
-claude-flow stream-chain pipeline optimize --timeout 90 --verbose
+Codex-flow stream-chain pipeline optimize --timeout 90 --verbose
 ```
 
 ### Pipeline Output
@@ -264,7 +264,7 @@ Each pipeline execution provides:
 
 ## Custom Pipeline Definitions
 
-Define reusable pipelines in `.claude-flow/config.json`:
+Define reusable pipelines in `.Codex-flow/config.json`:
 
 ### Configuration Format
 
@@ -300,8 +300,8 @@ Define reusable pipelines in `.claude-flow/config.json`:
 ### Execute Custom Pipeline
 
 ```bash
-claude-flow stream-chain pipeline security
-claude-flow stream-chain pipeline documentation
+Codex-flow stream-chain pipeline security
+Codex-flow stream-chain pipeline documentation
 ```
 
 ---
@@ -313,7 +313,7 @@ claude-flow stream-chain pipeline documentation
 Chain different agent types for complex workflows:
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Research best practices for API design" \
   "Design REST API with discovered patterns" \
   "Implement API endpoints with validation" \
@@ -327,7 +327,7 @@ claude-flow stream-chain run \
 Process and transform data through multiple stages:
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Extract user data from CSV files" \
   "Normalize and validate data format" \
   "Enrich data with external API calls" \
@@ -340,7 +340,7 @@ claude-flow stream-chain run \
 Systematic code migration with validation:
 
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Analyze legacy codebase dependencies" \
   "Create migration plan with risk assessment" \
   "Generate modernized code for high-priority modules" \
@@ -353,10 +353,10 @@ claude-flow stream-chain run \
 Comprehensive code quality workflow:
 
 ```bash
-claude-flow stream-chain pipeline analysis
-claude-flow stream-chain pipeline refactor
-claude-flow stream-chain pipeline test
-claude-flow stream-chain pipeline optimize
+Codex-flow stream-chain pipeline analysis
+Codex-flow stream-chain pipeline refactor
+Codex-flow stream-chain pipeline test
+Codex-flow stream-chain pipeline optimize
 ```
 
 ---
@@ -397,7 +397,7 @@ Order prompts to build on previous outputs:
 
 Include validation in your chains:
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Implement feature X" \
   "Write tests for feature X" \
   "Verify tests pass and cover edge cases"
@@ -407,7 +407,7 @@ claude-flow stream-chain run \
 
 Use chains for iterative improvement:
 ```bash
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Generate initial implementation" \
   "Review and identify issues" \
   "Refine based on issues found" \
@@ -416,16 +416,16 @@ claude-flow stream-chain run \
 
 ---
 
-## Integration with Claude Flow
+## Integration with Codex Flow
 
 ### Combine with Swarm Coordination
 
 ```bash
 # Initialize swarm for coordination
-claude-flow swarm init --topology mesh
+Codex-flow swarm init --topology mesh
 
 # Execute stream chain with swarm agents
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Agent 1: Research task" \
   "Agent 2: Implement solution" \
   "Agent 3: Test implementation" \
@@ -438,12 +438,12 @@ Stream chains automatically store context in memory for cross-session persistenc
 
 ```bash
 # Execute chain with memory
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Analyze requirements" \
   "Design architecture" \
   --verbose
 
-# Results stored in .claude-flow/memory/stream-chain/
+# Results stored in .Codex-flow/memory/stream-chain/
 ```
 
 ### Neural Pattern Training
@@ -452,7 +452,7 @@ Successful chains train neural patterns for improved performance:
 
 ```bash
 # Enable neural training
-claude-flow stream-chain pipeline optimize --debug
+Codex-flow stream-chain pipeline optimize --debug
 
 # Patterns learned and stored for future optimizations
 ```
@@ -466,7 +466,7 @@ claude-flow stream-chain pipeline optimize --debug
 If steps timeout, increase timeout value:
 
 ```bash
-claude-flow stream-chain run "complex task" --timeout 120
+Codex-flow stream-chain run "complex task" --timeout 120
 ```
 
 ### Context Loss
@@ -474,7 +474,7 @@ claude-flow stream-chain run "complex task" --timeout 120
 If context not flowing properly, use `--debug`:
 
 ```bash
-claude-flow stream-chain run "step 1" "step 2" --debug
+Codex-flow stream-chain run "step 1" "step 2" --debug
 ```
 
 ### Pipeline Not Found
@@ -483,7 +483,7 @@ Verify pipeline name and custom definitions:
 
 ```bash
 # Check available pipelines
-cat .claude-flow/config.json | grep -A 10 "streamChain"
+cat .Codex-flow/config.json | grep -A 10 "streamChain"
 ```
 
 ---
@@ -512,7 +512,7 @@ cat .claude-flow/config.json | grep -A 10 "streamChain"
 
 ```bash
 # Full feature development chain
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Analyze requirements for user profile feature" \
   "Design database schema and API endpoints" \
   "Implement backend with validation" \
@@ -527,7 +527,7 @@ claude-flow stream-chain run \
 
 ```bash
 # Automated code review workflow
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Analyze recent git changes" \
   "Identify code quality issues" \
   "Check for security vulnerabilities" \
@@ -539,7 +539,7 @@ claude-flow stream-chain run \
 
 ```bash
 # Framework migration helper
-claude-flow stream-chain run \
+Codex-flow stream-chain run \
   "Analyze current Vue 2 codebase" \
   "Identify Vue 3 breaking changes" \
   "Create migration checklist" \

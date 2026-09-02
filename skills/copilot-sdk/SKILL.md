@@ -817,7 +817,7 @@ volumes:
 
 | Option | Type | Description |
 |--------|------|-------------|
-| `model` | string | Model to use (e.g., `"gpt-4.1"`, `"claude-sonnet-4"`) |
+| `model` | string | Model to use (e.g., `"gpt-4.1"`, `"Codex-sonnet-4"`) |
 | `sessionId` | string | Custom ID for resumable sessions |
 | `streaming` | boolean | Enable streaming responses |
 | `tools` | Tool[] | Custom tools |

@@ -139,7 +139,7 @@ https://dashboard.render.com/u/*/settings#api-keys
 
 3) Restart Cursor, then retry `list_services()`.
 
-### Claude Code
+### Codex
 
 Walk the user through these steps:
 
@@ -148,12 +148,12 @@ Walk the user through these steps:
 https://dashboard.render.com/u/*/settings#api-keys
 ```
 
-2) Add the MCP server with Claude Code (replace `<YOUR_API_KEY>`):
+2) Add the MCP server with Codex (replace `<YOUR_API_KEY>`):
 ```bash
-claude mcp add --transport http render https://mcp.render.com/mcp --header "Authorization: Bearer <YOUR_API_KEY>"
+Codex mcp add --transport http render https://mcp.render.com/mcp --header "Authorization: Bearer <YOUR_API_KEY>"
 ```
 
-3) Restart Claude Code, then retry `list_services()`.
+3) Restart Codex, then retry `list_services()`.
 
 ### Codex
 

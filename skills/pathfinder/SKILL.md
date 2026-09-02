@@ -35,7 +35,7 @@ All artifacts go in `PATHFINDER-<YYYY-MM-DD>/` at repo root:
 ### Phase 0: Feature Discovery (ALWAYS FIRST)
 
 Deploy ONE "Feature Discovery" subagent to:
-1. Walk the source tree (not built artifacts) and read top-level README / CLAUDE.md
+1. Walk the source tree (not built artifacts) and read top-level README / AGENTS.md
 2. Propose feature boundaries based on directory structure, import graph, and naming
 3. Return a flat list of features with: name, entry points (file:line), core files, brief purpose
 

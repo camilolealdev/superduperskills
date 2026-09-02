@@ -25,7 +25,7 @@ validation:
 
 ## Browser engine
 
-Browser-driven a11y checks should go through the **qe-browser** fleet skill. `vibium a11y-tree --json` returns the full accessibility tree without visual rendering — feed it into axe-core via `vibium eval --stdin` for ruleset enforcement. See `.claude/skills/qe-browser/SKILL.md`.
+Browser-driven a11y checks should go through the **qe-browser** fleet skill. `vibium a11y-tree --json` returns the full accessibility tree without visual rendering — feed it into axe-core via `vibium eval --stdin` for ruleset enforcement. See `.Codex/skills/qe-browser/SKILL.md`.
 
 <default_to_action>
 When testing accessibility or ensuring compliance:

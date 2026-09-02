@@ -1,10 +1,10 @@
 ---
 name: ln-162-skill-reviewer
-description: "Reviews skills (D1-D11 + M1-M6 criteria) or .claude/commands for quality. Use when validating skill correctness before release."
+description: "Reviews skills (D1-D11 + M1-M6 criteria) or .Codex/commands for quality. Use when validating skill correctness before release."
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # ln-162-skill-reviewer
 
@@ -13,7 +13,7 @@ license: MIT
 
 Universal reviewer with two modes:
 - `SKILL` for `ln-*/SKILL.md`
-- `COMMAND` for `.claude/commands/*.md`
+- `COMMAND` for `.Codex/commands/*.md`
 
 > **Plan Mode behavior:** Phases 1-4 and 6-7 are research. Run them fully in Plan Mode, write the report plus fix list into the plan, and apply edits only after approval.
 
@@ -24,7 +24,7 @@ Universal reviewer with two modes:
 | Condition | Mode | Review Profile |
 |-----------|------|----------------|
 | `ln-*/SKILL.md` files exist in CWD | SKILL | Full D1-D11 + M1-M6 |
-| `.claude/commands/*.md` files exist | COMMAND | Structural + actionability |
+| `.Codex/commands/*.md` files exist | COMMAND | Structural + actionability |
 | Both exist | SKILL | Override with `$ARGUMENTS=commands` |
 
 ## Input
@@ -32,7 +32,7 @@ Universal reviewer with two modes:
 `$ARGUMENTS` options:
 - empty -> auto-detect mode and scope
 - `ln-400 ln-500` -> SKILL mode, specific skills
-- `commands` -> COMMAND mode, all `.claude/commands/*.md`
+- `commands` -> COMMAND mode, all `.Codex/commands/*.md`
 - `deploy.md run-tests.md` -> COMMAND mode, specific files
 
 When invoked by another skill, file paths may be passed directly.
@@ -76,7 +76,7 @@ Treat these as structural issues, not style nits:
 - missing `**Type:**` when role-sensitive checks depend on it
 - worker independence violations in L3 workers
 - broken shared paths
-- stale root-doc assumptions after `AGENTS.md canonical / CLAUDE.md thin shim`
+- stale root-doc assumptions after `AGENTS.md canonical / AGENTS.md thin shim`
 - markdown-analysis skills missing `markdown_read_protocol.md`
 - extraction or audit skills contradicting the shared docs-quality contract
 - skills contradicting the shared skill contract
@@ -129,7 +129,7 @@ Remove stale aggregate counts from SKILL.md files. Keep only local counts intrin
 ### Phase 1: Scope Detection
 
 - explicit file paths -> review those files
-- `commands` -> glob `.claude/commands/*.md`
+- `commands` -> glob `.Codex/commands/*.md`
 - coordinator-supplied file list -> review those files
 
 ### Phase 2: Review

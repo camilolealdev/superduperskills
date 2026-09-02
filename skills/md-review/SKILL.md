@@ -5,7 +5,7 @@ version: 2.10.2
 author: Alireza Rezvani
 license: MIT
 tags: [markdown, html, code-review, diff, severity, annotations, single-file, design-system, wcag-1.4.1]
-compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
+compatible_tools: [Codex, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
 # md-review — Code-review markdown → 2-column HTML
@@ -90,7 +90,7 @@ python3 markdown-html/skills/md-review/scripts/review_html_renderer.py \
 
 ## References
 
-- Shihipar — *Claude Code HTML output* (Medium, 2026), Tier 2 use case
+- Shihipar — *Codex HTML output* (Medium, 2026), Tier 2 use case
 - *Software Engineering at Google* (Manshreck & Wright, O'Reilly 2020), ch. 9 "Code Review"
 - Google *Code Review Developer Guide* — severity convention source
 - WCAG 2.2 §1.4.1 — color-not-sole-signal enforcement

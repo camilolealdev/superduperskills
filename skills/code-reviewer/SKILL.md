@@ -1,119 +1,183 @@
 ---
-name: code-reviewer
-description: Analyzes code diffs and files to identify bugs, security vulnerabilities (SQL injection, XSS, insecure deserialization), code smells, N+1 queries, naming issues, and architectural concerns, then produces a structured review report with prioritized, actionable feedback. Use when reviewing pull requests, conducting code quality audits, identifying refactoring opportunities, or checking for security issues. Invoke for PR reviews, code quality checks, refactoring suggestions, review code, code quality. Complements specialized skills (security-reviewer, test-master) by providing broad-scope review across correctness, performance, maintainability, and test coverage in a single pass.
-license: MIT
-allowed-tools: Read, Grep, Glob
-metadata:
-  author: https://github.com/Jeffallan
-  version: "1.1.0"
-  domain: quality
-  triggers: code review, PR review, pull request, review code, code quality
-  role: specialist
-  scope: review
-  output-format: report
-  related-skills: security-reviewer, test-master, architecture-designer
+name: "code-reviewer"
+description: Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin, C#, .NET, Java, C, C++, Rust, Ruby, PHP, and Dart/Flutter. Analyzes PRs for complexity and risk, checks code quality for SOLID violations and code smells, generates review reports. Use when reviewing pull requests, analyzing code quality, identifying issues, generating review checklists.
 ---
 
 # Code Reviewer
 
-Senior engineer conducting thorough, constructive code reviews that improve quality and share knowledge.
+Automated code review tools for analyzing pull requests, detecting code quality issues, and generating review reports.
 
-## When to Use This Skill
+---
 
-- Reviewing pull requests
-- Conducting code quality audits
-- Identifying refactoring opportunities
-- Checking for security vulnerabilities
-- Validating architectural decisions
+## How This Skill Is Organized
 
-## Core Workflow
-
-1. **Context** — Read PR description, understand the problem being solved. **Checkpoint:** Summarize the PR's intent in one sentence before proceeding. If you cannot, ask the author to clarify.
-2. **Structure** — Review architecture and design decisions. Ask: Does this follow existing patterns in the codebase? Are new abstractions justified?
-3. **Details** — Check code quality, security, and performance. Apply the checks in the Reference Guide below. Ask: Are there N+1 queries, hardcoded secrets, or injection risks?
-4. **Tests** — Validate test coverage and quality. Ask: Are edge cases covered? Do tests assert behavior, not implementation?
-5. **Feedback** — Produce a categorized report using the Output Template. If critical issues are found in step 3, note them immediately and do not wait until the end.
-
-> **Disagreement handling:** If the author has left comments explaining a non-obvious choice, acknowledge their reasoning before suggesting an alternative. Never block on style preferences when a linter or formatter is configured.
-
-## Reference Guide
-
-Load detailed guidance based on context:
-
-<!-- Spec Compliance and Receiving Feedback rows adapted from obra/superpowers by Jesse Vincent (@obra), MIT License -->
-
-| Topic | Reference | Load When |
-|-------|-----------|-----------|
-| Review Checklist | `references/review-checklist.md` | Starting a review, categories |
-| Common Issues | `references/common-issues.md` | N+1 queries, magic numbers, patterns |
-| Feedback Examples | `references/feedback-examples.md` | Writing good feedback |
-| Report Template | `references/report-template.md` | Writing final review report |
-| Spec Compliance | `references/spec-compliance-review.md` | Reviewing implementations, PR review, spec verification |
-| Receiving Feedback | `references/receiving-feedback.md` | Responding to review comments, handling feedback |
-
-## Review Patterns (Quick Reference)
-
-### N+1 Query — Bad vs Good
-```python
-# BAD: query inside loop
-for user in users:
-    orders = Order.objects.filter(user=user)  # N+1
-
-# GOOD: prefetch in bulk
-users = User.objects.prefetch_related('orders').all()
+```
+code-reviewer/
+  SKILL.md                        ← you are here (tools + dispatch table)
+  rules/
+    universal.md                  ← security, async, resources, exceptions, performance — all languages
+  languages/
+    python.md                     ← Python-specific rules + idioms
+    typescript.md                 ← TypeScript / JavaScript-specific rules + idioms
+    go.md                         ← Go-specific rules + idioms
+    swift.md                      ← Swift-specific rules + idioms
+    kotlin.md                     ← Kotlin-specific rules + idioms
+    csharp.md                     ← C# / .NET-specific rules + idioms
+    java.md                       ← Java-specific rules + idioms
+    c.md                          ← C -specific rules + idioms
+    cpp.md                        ← C++ -specific rules + idioms
+    rust.md                       ← Rust -specific rules + idioms
+    ruby.md                       ← Ruby -specific rules + idioms
+    php.md                        ← PHP-specific rules + idioms
+    dart.md                       ← Dart / Flutter-specific rules + idioms
 ```
 
-### Magic Number — Bad vs Good
-```python
-# BAD
-if status == 3:
-    ...
+### Loading order for every review
 
-# GOOD
-ORDER_STATUS_SHIPPED = 3
-if status == ORDER_STATUS_SHIPPED:
-    ...
+1. This file (`SKILL.md`) — tools and thresholds
+2. `rules/universal.md` — always, for every language
+3. The matching `languages/*.md` — one file based on the extension table below
+
+That is always exactly **2 additional files**, regardless of scope.
+
+| Extension(s) | Load |
+|---|---|
+| `.py` | `languages/python.md` |
+| `.ts`, `.tsx`, `.js`, `.jsx`, `.mjs` | `languages/typescript.md` |
+| `.go` | `languages/go.md` |
+| `.swift` | `languages/swift.md` |
+| `.kt`, `.kts` | `languages/kotlin.md` |
+| `.cs`, `.csx`, `.razor`, `.cshtml` | `languages/csharp.md` |
+| `.java` | `languages/java.md` |
+| `.c`, `.h` | `languages/c.md` |
+| `.cpp`, `.cc`, `.cxx`, `.hpp`, `.hh`, `.hxx` | `languages/cpp.md` |
+| `.rs` | `languages/rust.md` |
+| `.rb`, `.rake`, `.gemspec`, `.ru` | `languages/ruby.md` |
+| `.php`, `.phtml` | `languages/php.md` |
+| `.dart` | `languages/dart.md` |
+
+---
+
+## Tools
+
+### PR Analyzer
+
+Analyzes git diff between branches to assess review complexity and identify risks.
+
+```bash
+# Analyze current branch against main
+python scripts/pr_analyzer.py /path/to/repo
+
+# Compare specific branches
+python scripts/pr_analyzer.py . --base main --head feature-branch
+
+# JSON output for integration
+python scripts/pr_analyzer.py /path/to/repo --json
 ```
 
-### Security: SQL Injection — Bad vs Good
-```python
-# BAD: string interpolation in query
-cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
+**What it detects (universal — see also language file for language-specific signals):**
+- Hardcoded secrets (passwords, API keys, tokens, connection strings)
+- SQL / query injection patterns
+- Debug statements left in production code
+- Lint / analyzer suppression annotations
+- TODO/FIXME comments
 
-# GOOD: parameterized query
-cursor.execute("SELECT * FROM users WHERE id = %s", [user_id])
+**Language-specific detections** are defined in each `languages/*.md` file.
+
+**Output includes:**
+- Complexity score (1-10)
+- Risk categorization (critical, high, medium, low)
+- File prioritization for review order
+- Commit message validation
+
+---
+
+### Code Quality Checker
+
+Analyzes source code for structural issues, code smells, and SOLID violations.
+
+```bash
+# Analyze a directory
+python scripts/code_quality_checker.py /path/to/code
+
+# Analyze specific language
+# Valid values: python, typescript, javascript, go, swift, kotlin, csharp, java, c, cpp, rust, ruby, php, dart
+python scripts/code_quality_checker.py . --language java
+
+# JSON output
+python scripts/code_quality_checker.py /path/to/code --json
 ```
 
-## Constraints
+**Universal thresholds:**
 
-### MUST DO
-- Summarize PR intent before reviewing (see Workflow step 1)
-- Provide specific, actionable feedback
-- Include code examples in suggestions
-- Praise good patterns
-- Prioritize feedback (critical → minor)
-- Review tests as thoroughly as code
-- Check for security issues (OWASP Top 10 as baseline)
+| Issue | Threshold |
+|-------|-----------|
+| Long function | >50 lines |
+| Large file | >500 lines |
+| God class | >20 methods |
+| Too many params | >5 |
+| Deep nesting | >4 levels |
+| High complexity | >10 branches |
 
-### MUST NOT DO
-- Be condescending or rude
-- Nitpick style when linters exist
-- Block on personal preferences
-- Demand perfection
-- Review without understanding the why
-- Skip praising good work
+Language-specific checks are defined in each `languages/*.md` file.
 
-## Output Template
+---
 
-Code review report must include:
-1. **Summary** — One-sentence intent recap + overall assessment
-2. **Critical issues** — Must fix before merge (bugs, security, data loss)
-3. **Major issues** — Should fix (performance, design, maintainability)
-4. **Minor issues** — Nice to have (naming, readability)
-5. **Positive feedback** — Specific patterns done well
-6. **Questions for author** — Clarifications needed
-7. **Verdict** — Approve / Request Changes / Comment
+### Review Report Generator
 
-## Knowledge Reference
+Combines PR analysis and code quality findings into structured review reports.
 
-SOLID, DRY, KISS, YAGNI, design patterns, OWASP Top 10, language idioms, testing patterns
+```bash
+# Generate report for current repo
+python scripts/review_report_generator.py /path/to/repo
+
+# Markdown output
+python scripts/review_report_generator.py . --format markdown --output review.md
+
+# Use pre-computed analyses
+python scripts/review_report_generator.py . \
+  --pr-analysis pr_results.json \
+  --quality-analysis quality_results.json
+```
+
+**Verdicts:**
+
+| Score | Verdict |
+|-------|---------|
+| 90+ with no high issues | Approve |
+| 75+ with ≤2 high issues | Approve with suggestions |
+| 50-74 | Request changes |
+| <50 or critical issues | Block |
+
+---
+
+## Adding a New Language
+
+**Reviewer guidance (required):**
+
+1. Create `languages/<name>.md` using any existing language file as a template — it must have sections: PR Analyzer Signals, Code Quality Checks, Security, Async, Resource Management, Exception Handling, Performance, Idioms.
+2. Add the extension row to the dispatch table above.
+
+That is all the agent-driven review needs.
+
+**Deterministic analyzer support (optional, recommended):** the bundled scripts
+only flag a language they explicitly know. To make `code_quality_checker.py`
+score the new language:
+
+3. Add the extensions to `LANGUAGE_EXTENSIONS` in `scripts/code_quality_checker.py` (this also adds the `--language` choice).
+4. Add `function` / `class` / `method` regex entries for the language in the same file; otherwise it falls back to the Python patterns.
+5. Optionally add a `check_<name>_specific_smells(...)` detector (see the C#, Java, and C ones) and call it from `analyze_file`.
+6. Add `assets/sample_<name>_smells.<ext>` + `_clean` fixtures and commit the expected `--json` output under `expected_outputs/` as a regression guard.
+
+---
+
+## Regression Fixtures
+
+Labelled fixtures live in `assets/` with their committed `--json` output in
+`expected_outputs/` (C#, Java, and C). Drift from the committed JSON signals a
+behaviour change in the analyzer:
+
+```bash
+python scripts/code_quality_checker.py assets/sample_java_smells.java --json \
+  | diff - expected_outputs/sample_java_smells_quality.json
+```

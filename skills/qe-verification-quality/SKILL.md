@@ -20,7 +20,7 @@ This skill provides a comprehensive verification and quality assurance system th
 
 ## Prerequisites
 
-- Claude Flow installed (`npx claude-flow@alpha`)
+- Codex Flow installed (`npx Codex-flow@alpha`)
 - Git repository (for rollback features)
 - Node.js 18+ (for dashboard features)
 
@@ -28,16 +28,16 @@ This skill provides a comprehensive verification and quality assurance system th
 
 ```bash
 # View current truth scores
-npx claude-flow@alpha truth
+npx Codex-flow@alpha truth
 
 # Run verification check
-npx claude-flow@alpha verify check
+npx Codex-flow@alpha verify check
 
 # Verify specific file with custom threshold
-npx claude-flow@alpha verify check --file src/app.js --threshold 0.98
+npx Codex-flow@alpha verify check --file src/app.js --threshold 0.98
 
 # Rollback last failed verification
-npx claude-flow@alpha verify rollback --last-good
+npx Codex-flow@alpha verify rollback --last-good
 ```
 
 ---
@@ -53,40 +53,40 @@ Display comprehensive quality and reliability metrics for your codebase and agen
 **Basic Usage:**
 ```bash
 # View current truth scores (default: table format)
-npx claude-flow@alpha truth
+npx Codex-flow@alpha truth
 
 # View scores for specific time period
-npx claude-flow@alpha truth --period 7d
+npx Codex-flow@alpha truth --period 7d
 
 # View scores for specific agent
-npx claude-flow@alpha truth --agent coder --period 24h
+npx Codex-flow@alpha truth --agent coder --period 24h
 
 # Find files/tasks below threshold
-npx claude-flow@alpha truth --threshold 0.8
+npx Codex-flow@alpha truth --threshold 0.8
 ```
 
 **Output Formats:**
 ```bash
 # Table format (default)
-npx claude-flow@alpha truth --format table
+npx Codex-flow@alpha truth --format table
 
 # JSON for programmatic access
-npx claude-flow@alpha truth --format json
+npx Codex-flow@alpha truth --format json
 
 # CSV for spreadsheet analysis
-npx claude-flow@alpha truth --format csv
+npx Codex-flow@alpha truth --format csv
 
 # HTML report with visualizations
-npx claude-flow@alpha truth --format html --export report.html
+npx Codex-flow@alpha truth --format html --export report.html
 ```
 
 **Real-time Monitoring:**
 ```bash
 # Watch mode with live updates
-npx claude-flow@alpha truth --watch
+npx Codex-flow@alpha truth --watch
 
 # Export metrics automatically
-npx claude-flow@alpha truth --export .claude-flow/metrics/truth-$(date +%Y%m%d).json
+npx Codex-flow@alpha truth --export .Codex-flow/metrics/truth-$(date +%Y%m%d).json
 ```
 
 #### Truth Score Dashboard
@@ -142,40 +142,40 @@ Execute comprehensive verification checks on code, tasks, or agent outputs.
 **File Verification:**
 ```bash
 # Verify single file
-npx claude-flow@alpha verify check --file src/app.js
+npx Codex-flow@alpha verify check --file src/app.js
 
 # Verify directory recursively
-npx claude-flow@alpha verify check --directory src/
+npx Codex-flow@alpha verify check --directory src/
 
 # Verify with auto-fix enabled
-npx claude-flow@alpha verify check --file src/utils.js --auto-fix
+npx Codex-flow@alpha verify check --file src/utils.js --auto-fix
 
 # Verify current working directory
-npx claude-flow@alpha verify check
+npx Codex-flow@alpha verify check
 ```
 
 **Task Verification:**
 ```bash
 # Verify specific task output
-npx claude-flow@alpha verify check --task task-123
+npx Codex-flow@alpha verify check --task task-123
 
 # Verify with custom threshold
-npx claude-flow@alpha verify check --task task-456 --threshold 0.99
+npx Codex-flow@alpha verify check --task task-456 --threshold 0.99
 
 # Verbose output for debugging
-npx claude-flow@alpha verify check --task task-789 --verbose
+npx Codex-flow@alpha verify check --task task-789 --verbose
 ```
 
 **Batch Verification:**
 ```bash
 # Verify multiple files in parallel
-npx claude-flow@alpha verify batch --files "*.js" --parallel
+npx Codex-flow@alpha verify batch --files "*.js" --parallel
 
 # Verify with pattern matching
-npx claude-flow@alpha verify batch --pattern "src/**/*.ts"
+npx Codex-flow@alpha verify batch --pattern "src/**/*.ts"
 
 # Integration test suite
-npx claude-flow@alpha verify integration --test-suite full
+npx Codex-flow@alpha verify integration --test-suite full
 ```
 
 #### Verification Criteria
@@ -216,7 +216,7 @@ The verification system evaluates:
 
 ```bash
 # Get structured JSON output
-npx claude-flow@alpha verify check --json > verification.json
+npx Codex-flow@alpha verify check --json > verification.json
 
 # Example JSON structure:
 {
@@ -248,25 +248,25 @@ Automatically revert changes that fail verification checks.
 **Basic Rollback:**
 ```bash
 # Rollback to last known good state
-npx claude-flow@alpha verify rollback --last-good
+npx Codex-flow@alpha verify rollback --last-good
 
 # Rollback to specific commit
-npx claude-flow@alpha verify rollback --to-commit abc123
+npx Codex-flow@alpha verify rollback --to-commit abc123
 
 # Interactive rollback with preview
-npx claude-flow@alpha verify rollback --interactive
+npx Codex-flow@alpha verify rollback --interactive
 ```
 
 **Smart Rollback:**
 ```bash
 # Rollback only failed files (preserve good changes)
-npx claude-flow@alpha verify rollback --selective
+npx Codex-flow@alpha verify rollback --selective
 
 # Rollback with automatic backup
-npx claude-flow@alpha verify rollback --backup-first
+npx Codex-flow@alpha verify rollback --backup-first
 
 # Dry-run mode (preview without executing)
-npx claude-flow@alpha verify rollback --dry-run
+npx Codex-flow@alpha verify rollback --dry-run
 ```
 
 **Rollback Performance:**
@@ -283,31 +283,31 @@ Create detailed verification reports with metrics and visualizations.
 **Report Formats:**
 ```bash
 # JSON report
-npx claude-flow@alpha verify report --format json
+npx Codex-flow@alpha verify report --format json
 
 # HTML report with charts
-npx claude-flow@alpha verify report --export metrics.html --format html
+npx Codex-flow@alpha verify report --export metrics.html --format html
 
 # CSV for data analysis
-npx claude-flow@alpha verify report --format csv --export metrics.csv
+npx Codex-flow@alpha verify report --format csv --export metrics.csv
 
 # Markdown summary
-npx claude-flow@alpha verify report --format markdown
+npx Codex-flow@alpha verify report --format markdown
 ```
 
 **Time-based Reports:**
 ```bash
 # Last 24 hours
-npx claude-flow@alpha verify report --period 24h
+npx Codex-flow@alpha verify report --period 24h
 
 # Last 7 days
-npx claude-flow@alpha verify report --period 7d
+npx Codex-flow@alpha verify report --period 7d
 
 # Last 30 days with trends
-npx claude-flow@alpha verify report --period 30d --include-trends
+npx Codex-flow@alpha verify report --period 30d --include-trends
 
 # Custom date range
-npx claude-flow@alpha verify report --from 2025-01-01 --to 2025-01-31
+npx Codex-flow@alpha verify report --from 2025-01-01 --to 2025-01-31
 ```
 
 **Report Content:**
@@ -327,16 +327,16 @@ Run interactive web-based verification dashboard with real-time updates.
 
 ```bash
 # Launch dashboard on default port (3000)
-npx claude-flow@alpha verify dashboard
+npx Codex-flow@alpha verify dashboard
 
 # Custom port
-npx claude-flow@alpha verify dashboard --port 8080
+npx Codex-flow@alpha verify dashboard --port 8080
 
 # Export dashboard data
-npx claude-flow@alpha verify dashboard --export
+npx Codex-flow@alpha verify dashboard --export
 
 # Dashboard with auto-refresh
-npx claude-flow@alpha verify dashboard --refresh 5s
+npx Codex-flow@alpha verify dashboard --refresh 5s
 ```
 
 **Dashboard Features:**
@@ -352,7 +352,7 @@ npx claude-flow@alpha verify dashboard --refresh 5s
 
 #### Default Configuration
 
-Set verification preferences in `.claude-flow/config.json`:
+Set verification preferences in `.Codex-flow/config.json`:
 
 ```json
 {
@@ -380,7 +380,7 @@ Set verification preferences in `.claude-flow/config.json`:
     "criticalThreshold": 0.75,
     "autoExport": {
       "enabled": true,
-      "path": ".claude-flow/metrics/truth-daily.json"
+      "path": ".Codex-flow/metrics/truth-daily.json"
     }
   }
 }
@@ -391,13 +391,13 @@ Set verification preferences in `.claude-flow/config.json`:
 **Adjust verification strictness:**
 ```bash
 # Strict mode (99% accuracy required)
-npx claude-flow@alpha verify check --threshold 0.99
+npx Codex-flow@alpha verify check --threshold 0.99
 
 # Lenient mode (90% acceptable)
-npx claude-flow@alpha verify check --threshold 0.90
+npx Codex-flow@alpha verify check --threshold 0.90
 
 # Set default threshold
-npx claude-flow@alpha config set verification.threshold 0.98
+npx Codex-flow@alpha config set verification.threshold 0.98
 ```
 
 **Per-environment thresholds:**
@@ -434,7 +434,7 @@ jobs:
 
       - name: Run Verification
         run: |
-          npx claude-flow@alpha verify check --json > verification.json
+          npx Codex-flow@alpha verify check --json > verification.json
 
       - name: Check Truth Score
         run: |
@@ -456,7 +456,7 @@ jobs:
 verify:
   stage: test
   script:
-    - npx claude-flow@alpha verify check --threshold 0.95 --json > verification.json
+    - npx Codex-flow@alpha verify check --threshold 0.95 --json > verification.json
     - |
       score=$(jq '.overallScore' verification.json)
       if [ $(echo "$score < 0.95" | bc) -eq 1 ]; then
@@ -476,13 +476,13 @@ Run verification automatically during swarm operations:
 
 ```bash
 # Swarm with verification enabled
-npx claude-flow@alpha swarm --verify --threshold 0.98
+npx Codex-flow@alpha swarm --verify --threshold 0.98
 
 # Hive Mind with auto-rollback
-npx claude-flow@alpha hive-mind --verify --rollback-on-fail
+npx Codex-flow@alpha hive-mind --verify --rollback-on-fail
 
 # Training pipeline with verification
-npx claude-flow@alpha train --verify --threshold 0.99
+npx Codex-flow@alpha train --verify --threshold 0.99
 ```
 
 #### Pair Programming Integration
@@ -491,10 +491,10 @@ Enable real-time verification during collaborative development:
 
 ```bash
 # Pair with verification
-npx claude-flow@alpha pair --verify --real-time
+npx Codex-flow@alpha pair --verify --real-time
 
 # Pair with custom threshold
-npx claude-flow@alpha pair --verify --threshold 0.97 --auto-fix
+npx Codex-flow@alpha pair --verify --threshold 0.97 --auto-fix
 ```
 
 ### Advanced Workflows
@@ -505,13 +505,13 @@ Monitor codebase continuously during development:
 
 ```bash
 # Watch directory for changes
-npx claude-flow@alpha verify watch --directory src/
+npx Codex-flow@alpha verify watch --directory src/
 
 # Watch with auto-fix
-npx claude-flow@alpha verify watch --directory src/ --auto-fix
+npx Codex-flow@alpha verify watch --directory src/ --auto-fix
 
 # Watch with notifications
-npx claude-flow@alpha verify watch --notify --threshold 0.95
+npx Codex-flow@alpha verify watch --notify --threshold 0.95
 ```
 
 #### Monitoring Integration
@@ -520,18 +520,18 @@ Send metrics to external monitoring systems:
 
 ```bash
 # Export to Prometheus
-npx claude-flow@alpha truth --format json | \
-  curl -X POST https://pushgateway.example.com/metrics/job/claude-flow \
+npx Codex-flow@alpha truth --format json | \
+  curl -X POST https://pushgateway.example.com/metrics/job/Codex-flow \
   -d @-
 
 # Send to DataDog
-npx claude-flow@alpha verify report --format json | \
+npx Codex-flow@alpha verify report --format json | \
   curl -X POST "https://api.datadoghq.com/api/v1/series?api_key=${DD_API_KEY}" \
   -H "Content-Type: application/json" \
   -d @-
 
 # Custom webhook
-npx claude-flow@alpha truth --format json | \
+npx Codex-flow@alpha truth --format json | \
   curl -X POST https://metrics.example.com/api/truth \
   -H "Content-Type: application/json" \
   -d @-
@@ -543,16 +543,16 @@ Automatically verify before commits:
 
 ```bash
 # Install pre-commit hook
-npx claude-flow@alpha verify install-hook --pre-commit
+npx Codex-flow@alpha verify install-hook --pre-commit
 
 # .git/hooks/pre-commit example:
 #!/bin/bash
-npx claude-flow@alpha verify check --threshold 0.95 --json > /tmp/verify.json
+npx Codex-flow@alpha verify check --threshold 0.95 --json > /tmp/verify.json
 
 score=$(jq '.overallScore' /tmp/verify.json)
 if (( $(echo "$score < 0.95" | bc -l) )); then
   echo "❌ Verification failed with score: $score"
-  echo "Run 'npx claude-flow@alpha verify check --verbose' for details"
+  echo "Run 'npx Codex-flow@alpha verify check --verbose' for details"
   exit 1
 fi
 
@@ -584,13 +584,13 @@ echo "✅ Verification passed with score: $score"
 **Low Truth Scores:**
 ```bash
 # Get detailed breakdown
-npx claude-flow@alpha truth --verbose --threshold 0.0
+npx Codex-flow@alpha truth --verbose --threshold 0.0
 
 # Check specific criteria
-npx claude-flow@alpha verify check --verbose
+npx Codex-flow@alpha verify check --verbose
 
 # View agent-specific issues
-npx claude-flow@alpha truth --agent <agent-name> --format json
+npx Codex-flow@alpha truth --agent <agent-name> --format json
 ```
 
 **Rollback Failures:**
@@ -599,7 +599,7 @@ npx claude-flow@alpha truth --agent <agent-name> --format json
 git status
 
 # View rollback history
-npx claude-flow@alpha verify rollback --history
+npx Codex-flow@alpha verify rollback --history
 
 # Manual rollback
 git reset --hard HEAD~1
@@ -608,10 +608,10 @@ git reset --hard HEAD~1
 **Verification Timeouts:**
 ```bash
 # Increase timeout
-npx claude-flow@alpha verify check --timeout 60s
+npx Codex-flow@alpha verify check --timeout 60s
 
 # Verify in batches
-npx claude-flow@alpha verify batch --batch-size 10
+npx Codex-flow@alpha verify batch --batch-size 10
 ```
 
 ### Exit Codes
@@ -624,10 +624,10 @@ Verification commands return standard exit codes:
 
 ### Related Commands
 
-- `npx claude-flow@alpha pair` - Collaborative development with verification
-- `npx claude-flow@alpha train` - Training with verification feedback
-- `npx claude-flow@alpha swarm` - Multi-agent coordination with quality checks
-- `npx claude-flow@alpha report` - Generate comprehensive project reports
+- `npx Codex-flow@alpha pair` - Collaborative development with verification
+- `npx Codex-flow@alpha train` - Training with verification feedback
+- `npx Codex-flow@alpha swarm` - Multi-agent coordination with quality checks
+- `npx Codex-flow@alpha report` - Generate comprehensive project reports
 
 ### Best Practices
 

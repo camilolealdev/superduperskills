@@ -8,7 +8,7 @@ requires:
 
 # Harvest Automation
 
-Automate your Harvest time tracking operations directly from Claude Code. Log time entries, manage projects and clients, create tasks, and pull reporting data -- all without leaving your terminal.
+Automate your Harvest time tracking operations directly from Codex. Log time entries, manage projects and clients, create tasks, and pull reporting data -- all without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/harvest](https://composio.dev/toolkits/harvest)
 
@@ -16,7 +16,7 @@ Automate your Harvest time tracking operations directly from Claude Code. Log ti
 
 ## Setup
 
-1. Add the Rube MCP server to your Claude Code config with URL: `https://rube.app/mcp`
+1. Add the Rube MCP server to your Codex config with URL: `https://rube.app/mcp`
 2. When prompted, authenticate your Harvest account through the connection link provided
 3. Start automating your time tracking workflows with natural language
 

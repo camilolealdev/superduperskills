@@ -55,7 +55,7 @@ gh run view <run-id> --json jobs,conclusion | \
 
 ```bash
 # Usage example
-npx claude-flow@alpha github gh-coordinator \
+npx Codex-flow@alpha github gh-coordinator \
   "Coordinate multi-repo release across 5 repositories"
 ```
 
@@ -81,7 +81,7 @@ gh pr create --title "Feature: New capability" \
 
 ```bash
 # Create coordinated issue workflow
-npx claude-flow@alpha github issue-tracker \
+npx Codex-flow@alpha github issue-tracker \
   "Manage sprint issues with automated tracking"
 ```
 
@@ -93,7 +93,7 @@ npx claude-flow@alpha github issue-tracker \
 
 ```bash
 # Automated release management
-npx claude-flow@alpha github release-manager \
+npx Codex-flow@alpha github release-manager \
   "Create v2.0.0 release with changelog and deployment"
 ```
 
@@ -105,7 +105,7 @@ npx claude-flow@alpha github release-manager \
 
 ```bash
 # Optimize repository structure
-npx claude-flow@alpha github repo-architect \
+npx Codex-flow@alpha github repo-architect \
   "Restructure monorepo with optimal organization"
 ```
 
@@ -131,7 +131,7 @@ gh pr view 123 --json files | \
 
 ```bash
 # Orchestrate CI/CD pipeline
-npx claude-flow@alpha github ci-orchestrator \
+npx Codex-flow@alpha github ci-orchestrator \
   "Setup parallel test execution with smart caching"
 ```
 
@@ -509,7 +509,7 @@ run().catch(error => core.setFailed(error.message));
 
 </details>
 
-## Integration with Claude-Flow
+## Integration with Codex-Flow
 
 ### 🔄 Swarm Coordination Patterns
 
@@ -541,17 +541,17 @@ mcp__claude-flow__task_orchestrate {
 #### GitHub Hooks Integration
 ```bash
 # Pre-task: Setup GitHub context
-npx claude-flow@alpha hooks pre-task \
+npx Codex-flow@alpha hooks pre-task \
   --description "PR review workflow" \
   --context "pr-123"
 
 # During task: Track progress
-npx claude-flow@alpha hooks notify \
+npx Codex-flow@alpha hooks notify \
   --message "Completed security scan" \
   --type "github-action"
 
 # Post-task: Export results
-npx claude-flow@alpha hooks post-task \
+npx Codex-flow@alpha hooks post-task \
   --task-id "pr-review-123" \
   --export-github-summary
 ```
@@ -899,7 +899,7 @@ jobs:
 #### Example 3: Multi-Repo Synchronization
 ```bash
 # Synchronize multiple repositories
-npx claude-flow@alpha github sync-coordinator \
+npx Codex-flow@alpha github sync-coordinator \
   "Synchronize version updates across:
    - github.com/org/repo-a
    - github.com/org/repo-b
@@ -987,7 +987,7 @@ npx ruv-swarm actions analytics [options]
 - [ ] GitHub CLI (`gh`) installed and authenticated
 - [ ] Git configured with user credentials
 - [ ] Node.js v16+ installed
-- [ ] `claude-flow@alpha` package available
+- [ ] `Codex-flow@alpha` package available
 - [ ] Repository has `.github/workflows` directory
 - [ ] GitHub Actions enabled on repository
 - [ ] Necessary secrets configured
@@ -999,7 +999,7 @@ npx ruv-swarm actions analytics [options]
 # setup-github-automation.sh
 
 # Install dependencies
-npm install -g claude-flow@alpha
+npm install -g Codex-flow@alpha
 
 # Verify GitHub CLI
 gh auth status || gh auth login
@@ -1028,7 +1028,7 @@ echo "✅ GitHub workflow automation setup complete"
 
 - **GitHub CLI Docs**: https://cli.github.com/manual/
 - **GitHub Actions**: https://docs.github.com/en/actions
-- **Claude-Flow**: https://github.com/ruvnet/claude-flow
+- **Codex-Flow**: https://github.com/ruvnet/Codex-flow
 - **Ruv-Swarm**: https://github.com/ruvnet/ruv-swarm
 
 ## Version History
@@ -1044,4 +1044,4 @@ echo "✅ GitHub workflow automation setup complete"
 
 **Skill Status**: ✅ Production Ready
 **Last Updated**: 2025-01-19
-**Maintainer**: claude-flow team
+**Maintainer**: Codex-flow team

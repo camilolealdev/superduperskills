@@ -1,6 +1,6 @@
 ---
 name: "adversarial-reviewer"
-description: "Adversarial code review that breaks the self-review monoculture. Use when you want a genuinely critical review of recent changes, before merging a PR, or when you suspect Claude is being too agreeable about code quality. Forces perspective shifts through hostile reviewer personas that catch blind spots the author's mental model shares with the reviewer."
+description: "Adversarial code review that breaks the self-review monoculture. Use when you want a genuinely critical review of recent changes, before merging a PR, or when you suspect Codex is being too agreeable about code quality. Forces perspective shifts through hostile reviewer personas that catch blind spots the author's mental model shares with the reviewer."
 tier: "STANDARD"
 category: "Engineering / Code Quality"
 dependencies: "None (prompt-only, no external tools required)"
@@ -43,7 +43,7 @@ Produces a structured report with findings from all three personas, deduplicated
 
 ## Problem This Solves
 
-When Claude reviews code it wrote (or code it just read), it shares the same mental model, assumptions, and blind spots as the author. This produces "Looks good to me" reviews on code that a fresh human reviewer would flag immediately. Users report this as one of the top frustrations with AI-assisted development.
+When Codex reviews code it wrote (or code it just read), it shares the same mental model, assumptions, and blind spots as the author. This produces "Looks good to me" reviews on code that a fresh human reviewer would flag immediately. Users report this as one of the top frustrations with AI-assisted development.
 
 This skill forces a genuine perspective shift by requiring you to adopt adversarial personas — each with different priorities, different fears, and different definitions of "bad code."
 
@@ -82,7 +82,7 @@ If no changes are found, stop and report: "Nothing to review."
 For every file in the diff:
 1. Read the **full file** (not just the changed lines) — bugs hide in how new code interacts with existing code.
 2. Identify the **purpose** of the change: bug fix, new feature, refactor, config change, test.
-3. Note any **project conventions** from CLAUDE.md, .editorconfig, linting configs, or existing patterns.
+3. Note any **project conventions** from AGENTS.md, .editorconfig, linting configs, or existing patterns.
 
 ### Step 3: Run All Three Personas
 
@@ -236,7 +236,7 @@ You are likely reviewing code you just wrote or just read. Your brain (weights) 
 
 - **Before merging any PR** — especially self-authored PRs with no human reviewer
 - **After a long coding session** — fatigue produces blind spots; this skill compensates
-- **When Claude said "looks good"** — if you got an easy approval, run this for a second opinion
+- **When Codex said "looks good"** — if you got an easy approval, run this for a second opinion
 - **On security-sensitive code** — auth, payments, data access, API endpoints
 - **When something "feels off"** — trust that instinct and run an adversarial review
 

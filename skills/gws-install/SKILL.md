@@ -6,7 +6,7 @@ description: >
   Use when setting up gws on a new computer, reinstalling after a fresh OS, or
   configuring a second workstation. Triggers: "install gws", "gws on new machine",
   "gws install", "set up gws again".
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Google Workspace CLI — Quick Install
@@ -117,10 +117,10 @@ The user can check their original machine's scopes with `gws auth status` to see
 ### Step 5: Install Agent Skills
 
 ```bash
-npx skills add googleworkspace/cli -g --agent claude-code --all
+npx skills add googleworkspace/cli -g --agent Codex --all
 ```
 
-This installs 90+ skills into `~/.claude/skills/`. Safe to re-run if skills are already installed.
+This installs 90+ skills into `~/.Codex/skills/`. Safe to re-run if skills are already installed.
 
 ### Step 6: Verify
 
@@ -145,12 +145,12 @@ gws gmail +triage
 - Re-run `gws auth login` to refresh
 - For permanent tokens, push the app to Production in GCP Console OAuth consent screen
 
-### Skills not appearing in Claude Code
+### Skills not appearing in Codex
 
-- Skills load at session start — restart Claude Code after installing
-- Verify: `ls ~/.claude/skills/gws-* | wc -l` should show 30+ directories
+- Skills load at session start — restart Codex after installing
+- Verify: `ls ~/.Codex/skills/gws-* | wc -l` should show 30+ directories
 
 ## See Also
 
 - [gws-setup](../gws-setup/SKILL.md) — First-time setup including GCP project creation
-- [gws-shared](~/.claude/skills/gws-shared/SKILL.md) — Auth patterns and global flags
+- [gws-shared](~/.Codex/skills/gws-shared/SKILL.md) — Auth patterns and global flags

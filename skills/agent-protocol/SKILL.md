@@ -173,7 +173,7 @@ Responses come back independently (no agent sees another's response before formi
 All C-suite skills and `/cs:*` commands read and write decisions in **one** place — the two-layer model owned by `/cs:decide` and the decision-logger skill:
 
 ```
-~/.claude/decisions/
+~/.Codex/decisions/
 ├── raw/YYYY-MM-DD-<slug>.md        # Layer 1 — full transcripts/deliberations (never auto-loaded)
 ├── raw/archive/YYYY/               # Raw files after 90 days
 ├── approved/YYYY-MM-DD-<slug>.md   # Layer 2 — one founder-approved decision record per file
@@ -186,7 +186,7 @@ All C-suite skills and `/cs:*` commands read and write decisions in **one** plac
 - Writers: `/cs:decide` and the Chief of Staff (post board-meeting Phase 5). Individual role agents never write decisions directly.
 - decision-logger, chief-of-staff, and board-meeting all use this layout. Their SKILL.md files link here rather than defining their own paths.
 
-**Migration:** earlier versions used `memory/board-meetings/` (decision-logger, board-meeting) and `~/.claude/decision-log.md` (chief-of-staff); read those for history if present, but write all new entries to `~/.claude/decisions/`.
+**Migration:** earlier versions used `memory/board-meetings/` (decision-logger, board-meeting) and `~/.Codex/decision-log.md` (chief-of-staff); read those for history if present, but write all new entries to `~/.Codex/decisions/`.
 
 ## Quick Reference
 

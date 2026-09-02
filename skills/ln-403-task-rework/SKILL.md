@@ -5,7 +5,7 @@ allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex-line__ve
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Task Rework Executor
 
@@ -51,7 +51,7 @@ Extract: `task_provider` = Task Management → Provider (`linear` | `file`).
 3) **Plan fixes:** Map each comment to an action; confirm no new scope added.
 4) **Implement:** **MANDATORY READ:** `shared/references/code_efficiency_criterion.md` — Follow task plan/checkboxes; address config/hardcoded issues; update docs/tests noted in Affected Components and Existing Code Impact. Before handoff, verify 3 efficiency self-checks.
 5) **Quality:** Run typecheck/lint (or project equivalents); ensure fixes reflect guides/manuals/ADRs/research.
-6) **Root Cause Analysis:** Ask "Why did the agent produce incorrect code?" Classify: missing context | wrong pattern | unclear AC | gap in docs/templates. If doc/template gap found → update the relevant file (guide, template, CLAUDE.md) to prevent recurrence.
+6) **Root Cause Analysis:** Ask "Why did the agent produce incorrect code?" Classify: missing context | wrong pattern | unclear AC | gap in docs/templates. If doc/template gap found → update the relevant file (guide, template, AGENTS.md) to prevent recurrence.
 7) **Handoff:** Set task to To Review (Linear: update_issue; File: Edit status line); move it in kanban; add summary comment referencing resolved feedback + root cause classification.
 
 ## Critical Rules

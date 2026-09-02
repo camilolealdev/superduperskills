@@ -1,10 +1,10 @@
 ---
 name: memory-management
-description: 'Persist SEO/GEO campaign context across Claude sessions. Three-tier memory (HOT/WARM/COLD). Persist keywords, audits, entities across sessions. "Remember this" / "保存进度" / "上次说了什么". 项目记忆/SEO数据保存/跨会话 プロジェクト記憶 프로젝트메모리 memoria SEO'
+description: 'Persist SEO/GEO campaign context across Codex sessions. Three-tier memory (HOT/WARM/COLD). Persist keywords, audits, entities across sessions. "Remember this" / "保存进度" / "上次说了什么". 项目记忆/SEO数据保存/跨会话 プロジェクト記憶 프로젝트메모리 memoria SEO'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -61,8 +61,8 @@ metadata:
 
 # Memory Management
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 This skill implements a three-tier memory system (HOT/WARM/COLD) for SEO and GEO projects. HOT memory (80 lines max) loads automatically every session via the SessionStart hook. WARM memory loads on demand per skill. COLD memory is archived data queried only when explicitly requested. The skill manages the full lifecycle: capture, promote, demote, and archive.
 
@@ -93,7 +93,7 @@ Use this whenever project state should survive the current session — even if t
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a hot-cache update plan and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a hot-cache update plan and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Initialize Memory Structure
 
@@ -153,7 +153,7 @@ What does [internal jargon] mean in this project?
 
 **Expected output**: a memory update plan, hot-cache changes, and a short handoff summary.
 
-- **Reads**: current campaign facts, new findings from other skills, approved decisions, and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+- **Reads**: current campaign facts, new findings from other skills, approved decisions, and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 - **Writes**: updates to `memory/hot-cache.md`, `memory/open-loops.md`, `memory/decisions.md`, and related `memory/` folders. Also manages WARM-to-COLD archival in `memory/archive/`.
 - **Promotes**: durable strategy, blockers, terminology, entity candidates, and major deltas. Applies temperature lifecycle rules: promote to HOT on high reference frequency, demote on staleness.
 - **Next handoff**: use the `Next Best Skill` below when the project memory baseline is ready for active work.
@@ -175,7 +175,7 @@ This skill's behavior is reinforced by the library's prompt-based hooks:
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~analytics + ~~search console connected:**
 Automatically populate memory from historical data: keyword rankings over time, competitor domain authority changes, traffic metrics, conversion data, backlink profile evolution. The skill will fetch current rankings, alert on significant changes, and update both hot cache and cold storage.
@@ -188,7 +188,7 @@ Ask the user to provide:
 4. Active campaigns and their status
 5. Any project-specific terminology or abbreviations
 
-Proceed with memory structure creation using provided data. Note in CLAUDE.md which data requires manual updates vs. automated refresh.
+Proceed with memory structure creation using provided data. Note in AGENTS.md which data requires manual updates vs. automated refresh.
 
 ## Instructions
 
@@ -202,7 +202,7 @@ For new projects, create the following structure:
 ## Directory Structure
 
 project-root/
-├── CLAUDE.md                           # HOT tier (80 lines max)
+├── AGENTS.md                           # HOT tier (80 lines max)
 └── memory/
     ├── decisions.md                    # Major strategic choices
     ├── open-loops.md                   # Unresolved blockers and follow-ups
@@ -230,13 +230,13 @@ project-root/
         └── snapshots/                 # Dated hot-cache snapshots
 ```
 
-> **Templates**: See [references/hot-cache-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/hot-cache-template.md) for the complete CLAUDE.md hot cache template and [references/glossary-template.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/glossary-template.md) for the project glossary template.
+> **Templates**: See [references/hot-cache-template.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/memory-management/references/hot-cache-template.md) for the complete AGENTS.md hot cache template and [references/glossary-template.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/memory-management/references/glossary-template.md) for the project glossary template.
 
 ### 4. Context Lookup Flow
 
 When a user references something unclear, follow this lookup sequence:
 
-**Step 1: Check CLAUDE.md (Hot Cache)**
+**Step 1: Check AGENTS.md (Hot Cache)**
 - Is it in active keywords?
 - Is it in primary competitors?
 - Is it in current priorities or campaigns?
@@ -259,19 +259,19 @@ Example lookup:
 ```markdown
 User: "Update rankings for our hero KWs"
 
-Step 1: Check CLAUDE.md → Found "Hero Keywords (Priority 1)" section
+Step 1: Check AGENTS.md → Found "Hero Keywords (Priority 1)" section
 Step 2: Extract keyword list from hot cache
 Step 3: Execute ranking check
-Step 4: Update both CLAUDE.md and memory/monitoring/rank-history/YYYY-MM-DD-ranks.csv
+Step 4: Update both AGENTS.md and memory/monitoring/rank-history/YYYY-MM-DD-ranks.csv
 ```
 
 ### 5. Promotion & Demotion Logic
 
-> **Reference**: See [references/promotion-demotion-rules.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/promotion-demotion-rules.md) for detailed promotion/demotion triggers (keywords, competitors, metrics, campaigns) and the action procedures for each.
+> **Reference**: See [references/promotion-demotion-rules.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/memory-management/references/promotion-demotion-rules.md) for detailed promotion/demotion triggers (keywords, competitors, metrics, campaigns) and the action procedures for each.
 
 ### 6. Update Triggers, Archive Management & Cross-Skill Integration
 
-> **Reference**: See [references/update-triggers-integration.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/update-triggers-integration.md) for the complete update procedures after ranking checks, competitor analyses, audits, and reports; monthly/quarterly archive routines; and integration points with all 8 connected skills (keyword-research, rank-tracker, competitor-analysis, content-gap-analysis, seo-content-writer, content-quality-auditor, domain-authority-auditor).
+> **Reference**: See [references/update-triggers-integration.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/memory-management/references/update-triggers-integration.md) for the complete update procedures after ranking checks, competitor analyses, audits, and reports; monthly/quarterly archive routines; and integration points with all 8 connected skills (keyword-research, rank-tracker, competitor-analysis, content-gap-analysis, seo-content-writer, content-quality-auditor, domain-authority-auditor).
 
 ### Save Results
 
@@ -296,7 +296,7 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 - [ ] All historical data files include timestamps in filename or metadata
 
 ### Content Validation
-- [ ] CLAUDE.md "Last Updated" date is current
+- [ ] AGENTS.md "Last Updated" date is current
 - [ ] Every keyword in hot cache has current rank, target rank, and status
 - [ ] Every competitor has domain authority and position assessment
 - [ ] Every active campaign has status percentage and expected completion date
@@ -304,19 +304,19 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ### Lookup Validation
 - [ ] Test lookup flow: reference a term → verify it finds it in correct layer
-- [ ] Test promotion: manually promote item → verify it appears in CLAUDE.md
-- [ ] Test demotion: manually archive item → verify removed from CLAUDE.md
-- [ ] Glossary contains all custom segments and shorthand used in CLAUDE.md
+- [ ] Test promotion: manually promote item → verify it appears in AGENTS.md
+- [ ] Test demotion: manually archive item → verify removed from AGENTS.md
+- [ ] Glossary contains all custom segments and shorthand used in AGENTS.md
 
 ### Update Validation
 - [ ] After ranking check, `memory/monitoring/rank-history/` has a dated snapshot or export
 - [ ] After competitor analysis, `memory/research/competitors/` has a dated file
-- [ ] After audit, top action items appear in CLAUDE.md priorities
+- [ ] After audit, top action items appear in AGENTS.md priorities
 - [ ] After monthly report, metrics snapshot reflects new data
 
 ## Examples
 
-> **Reference**: See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/memory-management/references/examples.md) for three complete examples: (1) updating hero keyword rankings with memory refresh, (2) glossary lookup flow, and (3) initializing memory for a new e-commerce project.
+> **Reference**: See [references/examples.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/memory-management/references/examples.md) for three complete examples: (1) updating hero keyword rankings with memory refresh, (2) glossary lookup flow, and (3) initializing memory for a new e-commerce project.
 
 ## Advanced Features
 
@@ -364,9 +364,9 @@ Identifies keyword overlaps, competitor intersections, and strategy similarities
 
 ## Practical Limitations
 
-- **Concurrent access**: If multiple Claude sessions update memory simultaneously, later writes may overwrite earlier ones. Mitigate by using timestamped filenames for audit reports rather than overwriting a single file.
-- **Cold storage retrieval**: Files in `memory/` subdirectories are only loaded when explicitly requested. They do not appear in Claude's context automatically. The hot cache (`CLAUDE.md`) is the primary cross-session mechanism.
-- **CLAUDE.md size**: The HOT cache should stay concise (80 lines max). If it grows too large, archive older metrics to cold storage.
+- **Concurrent access**: If multiple Codex sessions update memory simultaneously, later writes may overwrite earlier ones. Mitigate by using timestamped filenames for audit reports rather than overwriting a single file.
+- **Cold storage retrieval**: Files in `memory/` subdirectories are only loaded when explicitly requested. They do not appear in Codex's context automatically. The hot cache (`AGENTS.md`) is the primary cross-session mechanism.
+- **AGENTS.md size**: The HOT cache should stay concise (80 lines max). If it grows too large, archive older metrics to cold storage.
 - **Data freshness**: Memory reflects the last time each skill was run. Stale data (>90 days) should be flagged for refresh.
 
 ## Tips for Success
@@ -378,15 +378,15 @@ Identifies keyword overlaps, competitor intersections, and strategy similarities
 5. **Review hot cache weekly** - Quick scan to ensure everything there is still relevant and active.
 6. **Automate where possible** - If ~~SEO tool or ~~search console connected, write dated exports into `memory/monitoring/rank-history/`.
 7. **Archive aggressively** - Better to have data in cold storage and not need it than clutter hot cache.
-8. **Link between layers** - CLAUDE.md should always reference where detailed data lives ("Full data: memory/research/keywords/").
-9. **Timestamp changes** - When updating CLAUDE.md, always update "Last Updated" date.
+8. **Link between layers** - AGENTS.md should always reference where detailed data lives ("Full data: memory/research/keywords/").
+9. **Timestamp changes** - When updating AGENTS.md, always update "Last Updated" date.
 10. **Use memory for continuity** - If you switch between different analysis sessions, memory ensures nothing is forgotten.
 
 ## Reference Materials
 
-- [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md) — Content quality scoring stored in memory
-- [CITE Domain Rating](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md) — Domain authority scoring stored in memory
+- [CORE-EEAT Content Benchmark](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md) — Content quality scoring stored in memory
+- [CITE Domain Rating](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/cite-domain-rating.md) — Domain authority scoring stored in memory
 
 ## Next Best Skill
 
-- **Primary**: [keyword-research](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/keyword-research/SKILL.md) — seed or refresh campaign strategy with current demand signals.
+- **Primary**: [keyword-research](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/keyword-research/SKILL.md) — seed or refresh campaign strategy with current demand signals.

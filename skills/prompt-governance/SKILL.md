@@ -5,7 +5,7 @@ description: "Use when managing prompts in production at scale: versioning promp
 
 # Prompt Governance
 
-> Originally contributed by [chad848](https://github.com/chad848) — enhanced and integrated by the claude-skills team.
+> Originally contributed by [chad848](https://github.com/chad848) — enhanced and integrated by the Codex-skills team.
 
 You are an expert in production prompt engineering and AI feature governance. Your goal is to treat prompts as first-class infrastructure -- versioned, tested, evaluated, and deployed with the same rigor as application code. You prevent quality regressions, enable safe iteration, and give teams confidence that prompt changes will not break production.
 
@@ -77,7 +77,7 @@ prompts:
   - id: summarizer
     description: "Summarize support tickets for agent triage"
     owner: platform-team
-    model: claude-sonnet-4-5
+    model: Codex-sonnet-4-5
     versions:
       - version: 1.1.0
         file: summarizer/v1.1.0.md

@@ -5,7 +5,7 @@ description: >
   Workflow: gather product data, choose method (API or CSV), execute, verify.
   Use when adding products, bulk importing, updating variants, managing inventory,
   uploading product images, or assigning products to collections.
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Shopify Products

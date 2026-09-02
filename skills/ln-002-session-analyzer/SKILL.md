@@ -5,7 +5,7 @@ license: MIT
 allowed-tools: "Bash, Read, Glob, Grep, Agent, mcp__hex-line__read_file, mcp__hex-line__grep_search, mcp__hex-line__outline"
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Session Analyzer (Standalone Utility)
 
@@ -32,7 +32,7 @@ For skill self-audit: `shared/references/meta_analysis_protocol.md` §7. For mul
 
 `$ARGUMENTS`:
 - (empty) — analyze current session (conversation context)
-- `recent` — scan latest JSONL session per agent (Claude, Codex, Gemini)
+- `recent` — scan latest JSONL session per agent (Codex, Codex, Gemini)
 - `{skill-name}` — focus analysis on that skill's execution within the session
 
 ---
@@ -46,7 +46,7 @@ For skill self-audit: `shared/references/meta_analysis_protocol.md` §7. For mul
 | D3 | Process Issues | Tool loops 3+, retry storms, dead ends, wrong targets | SKILL.md phases — decompose |
 | D4 | Script Extraction | Ad-hoc bash/python scripts written each run | `references/scripts/` |
 | D5 | Hook & Permission | Hook blocks, permission denials, built-in instead of MCP | Hook config, `allowed-tools` |
-| D6 | Communication | Over-explaining, missing status, unnecessary confirmations | CLAUDE.md prefs, skill output notes |
+| D6 | Communication | Over-explaining, missing status, unnecessary confirmations | AGENTS.md prefs, skill output notes |
 | D7 | Decision Quality | Dead ends before pivot, trial-and-error, slow error detection | SKILL.md decision trees, step clarity |
 | D8 | Context Pressure | Re-reading same files, re-asking resolved, thread loss | Caching notes, compact instructions |
 | D9 | Subagent Quality | Empty results, timeouts, overbroad prompts | Agent prompts, timeout settings |
@@ -69,8 +69,8 @@ Find latest session per agent (paths per `shared/references/meta_analysis_protoc
 ```bash
 echo "=== LATEST SESSIONS ==="
 
-echo "## Claude"
-CLAUDE_LATEST=$(stat -c '%Y %n' ~/.claude/projects/*/*.jsonl 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
+echo "## Codex"
+CLAUDE_LATEST=$(stat -c '%Y %n' ~/.Codex/projects/*/*.jsonl 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)
 [ -n "$CLAUDE_LATEST" ] && echo "  $CLAUDE_LATEST ($(wc -l < "$CLAUDE_LATEST") lines)" || echo "  No sessions found"
 
 echo "## Codex"
@@ -180,7 +180,7 @@ For each finding, determine specific target and fix:
 | `allowed-tools` | "ln-400: add `mcp__hex-line__edit_file`" |
 | Hook config | "settings.json: add exception for `npm test`" |
 | `references/scripts/` | "ln-520: move `test_harness.sh` to references/scripts/" |
-| CLAUDE.md | "Add preference: terse responses, no trailing summaries" |
+| AGENTS.md | "Add preference: terse responses, no trailing summaries" |
 | MCP tool | "hex-line edit_file: hash mismatch on concurrent edits" |
 | Agent prompt | "ln-310 Agent A: narrow scope to security-only" |
 | Scope guard | "ln-400: add Goal Articulation Gate at Phase 1" |
@@ -199,7 +199,7 @@ Output to chat per `shared/references/meta_analysis_protocol.md` format.
 |---|-----|---------|--------|-----|
 | 1 | D1 | 3 edit failures Phase 4 | ln-400 Step 2 | Add file path |
 | 2 | D4 | test.sh written ad-hoc | ln-520 | Move to references/scripts/ |
-| 3 | D6 | Over-explained 5 times | CLAUDE.md | Add "terse" pref |
+| 3 | D6 | Over-explained 5 times | AGENTS.md | Add "terse" pref |
 | 4 | D5 | Hook blocked Read 4x | settings.json | Add MCP permission |
 
 #### Session Errors

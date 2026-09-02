@@ -21,7 +21,7 @@ When assessing testability:
 TEST_URL='https://example.com/' npx playwright test tests/testability-scoring/testability-scoring.spec.js --project=chromium --workers=1
 
 # Or use shell script wrapper
-.claude/skills/testability-scoring/scripts/run-assessment.sh https://example.com/
+.Codex/skills/testability-scoring/scripts/run-assessment.sh https://example.com/
 ```
 
 **The 10 Principles at a Glance:**
@@ -112,7 +112,7 @@ tests/reports/
 # GitHub Actions
 - name: Testability Assessment
   run: |
-    timeout 180 .claude/skills/testability-scoring/scripts/run-assessment.sh ${{ env.APP_URL }}
+    timeout 180 .Codex/skills/testability-scoring/scripts/run-assessment.sh ${{ env.APP_URL }}
 
 - name: Upload Reports
   uses: actions/upload-artifact@v3
@@ -173,7 +173,7 @@ Vibium browser automation can be used alongside Playwright for enhanced testabil
 
 **Installation:**
 ```bash
-claude mcp add vibium -- npx -y vibium
+Codex mcp add vibium -- npx -y vibium
 ```
 
 ### Vibium-Enhanced Metrics
@@ -292,7 +292,7 @@ const testabilityFleet = await FleetManager.coordinate({
 | Partial results | Check console errors, increase network timeout |
 | Report not opening | Use `AUTO_OPEN=false`, open manually |
 | Config not updating | Use `TEST_URL` env var instead |
-| Vibium not available | Install via `claude mcp add vibium -- npx -y vibium` (optional) |
+| Vibium not available | Install via `Codex mcp add vibium -- npx -y vibium` (optional) |
 | Hybrid mode errors | Vibium is optional; assessments work without it |
 
 ---
@@ -318,7 +318,7 @@ const testabilityFleet = await FleetManager.coordinate({
 
 ### Vibium Resources
 - GitHub: https://github.com/VibiumDev/vibium
-- MCP Integration: `claude mcp add vibium -- npx -y vibium`
+- MCP Integration: `Codex mcp add vibium -- npx -y vibium`
 - Created by Jason Huggins (creator of Selenium/Appium)
 
 ---

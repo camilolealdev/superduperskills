@@ -91,7 +91,7 @@ Before processing, display a structured overview of all comments:
 - Group related comments (same file, same root cause, "also applies to" ranges) and note clusters
 - Deduplicate: if the same issue appears both as an inline comment and in a CodeRabbit review body section (e.g., duplicate), keep one entry and note both sources
 
-If there are **more than 10 comments**, suggest saving a review summary to Claude's memory for tracking across sessions. The summary should include: PR number, comment IDs, severity, status (new/addressed/deferred/won't fix), and brief description. This helps maintain continuity when new comments arrive after subsequent pushes.
+If there are **more than 10 comments**, suggest saving a review summary to Codex's memory for tracking across sessions. The summary should include: PR number, comment IDs, severity, status (new/addressed/deferred/won't fix), and brief description. This helps maintain continuity when new comments arrive after subsequent pushes.
 
 ### 3. Process each comment
 

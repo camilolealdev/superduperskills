@@ -171,7 +171,7 @@ Every H2 section needs a citation block. Provide guidance for each:
 
 **Citation block rules**:
 - 50-70 words, no more
-- Third-person factual tone ("Claude Code is..." not "You should...")
+- Third-person factual tone ("Codex is..." not "You should...")
 - Starts with the primary entity or keyword of that section
 - Self-contained: makes sense without surrounding context
 - Includes one specific fact, stat, or definition

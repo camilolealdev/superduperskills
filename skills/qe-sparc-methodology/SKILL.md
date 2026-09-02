@@ -8,7 +8,7 @@ description: "SPARC (Specification, Pseudocode, Architecture, Refinement, Comple
 
 ## Overview
 
-SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a systematic development methodology integrated with Claude Flow's multi-agent orchestration capabilities. It provides 17 specialized modes for comprehensive software development, from initial research through deployment and monitoring.
+SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) is a systematic development methodology integrated with Codex Flow's multi-agent orchestration capabilities. It provides 17 specialized modes for comprehensive software development, from initial research through deployment and monitoring.
 
 ## Table of Contents
 
@@ -432,9 +432,9 @@ Knowledge management and context preservation.
 
 ## Activation Methods
 
-### Method 1: MCP Tools (Preferred in Claude Code)
+### Method 1: MCP Tools (Preferred in Codex)
 
-**Best for**: Integrated Claude Code workflows with full orchestration capabilities
+**Best for**: Integrated Codex workflows with full orchestration capabilities
 
 ```javascript
 // Basic mode execution
@@ -472,37 +472,37 @@ mcp__claude-flow__swarm_monitor {
 
 ```bash
 # Execute specific mode
-npx claude-flow sparc run <mode> "task description"
+npx Codex-flow sparc run <mode> "task description"
 
 # Use alpha features
-npx claude-flow@alpha sparc run <mode> "task description"
+npx Codex-flow@alpha sparc run <mode> "task description"
 
 # List all available modes
-npx claude-flow sparc modes
+npx Codex-flow sparc modes
 
 # Get help for specific mode
-npx claude-flow sparc help <mode>
+npx Codex-flow sparc help <mode>
 
 # Run with options
-npx claude-flow sparc run <mode> "task" --parallel --monitor
+npx Codex-flow sparc run <mode> "task" --parallel --monitor
 
 # Execute TDD workflow
-npx claude-flow sparc tdd "feature description"
+npx Codex-flow sparc tdd "feature description"
 
 # Batch execution
-npx claude-flow sparc batch <mode1,mode2,mode3> "task"
+npx Codex-flow sparc batch <mode1,mode2,mode3> "task"
 
 # Pipeline execution
-npx claude-flow sparc pipeline "task description"
+npx Codex-flow sparc pipeline "task description"
 ```
 
 ### Method 3: Local Installation
 
-**Best for**: Projects with local claude-flow installation
+**Best for**: Projects with local Codex-flow installation
 
 ```bash
-# If claude-flow is installed locally
-./claude-flow sparc run <mode> "task description"
+# If Codex-flow is installed locally
+./Codex-flow sparc run <mode> "task description"
 ```
 
 ---
@@ -720,13 +720,13 @@ Message 3: TodoWrite { todos: [...] }
 
 ```bash
 # Before work
-npx claude-flow@alpha hooks pre-task --description "implement auth"
+npx Codex-flow@alpha hooks pre-task --description "implement auth"
 
 # During work
-npx claude-flow@alpha hooks post-edit --file "auth.js"
+npx Codex-flow@alpha hooks post-edit --file "auth.js"
 
 # After work
-npx claude-flow@alpha hooks post-task --task-id "task-123"
+npx Codex-flow@alpha hooks post-task --task-id "task-123"
 ```
 
 ### 4. Test Coverage
@@ -911,58 +911,58 @@ mcp__claude-flow__sparc_mode {
 
 ```bash
 # Step 1: Research and planning
-npx claude-flow sparc run researcher "authentication patterns"
+npx Codex-flow sparc run researcher "authentication patterns"
 
 # Step 2: Architecture design
-npx claude-flow sparc run architect "design auth system"
+npx Codex-flow sparc run architect "design auth system"
 
 # Step 3: TDD implementation
-npx claude-flow sparc tdd "user authentication feature"
+npx Codex-flow sparc tdd "user authentication feature"
 
 # Step 4: Code review
-npx claude-flow sparc run reviewer "review auth implementation"
+npx Codex-flow sparc run reviewer "review auth implementation"
 
 # Step 5: Documentation
-npx claude-flow sparc run documenter "document auth API"
+npx Codex-flow sparc run documenter "document auth API"
 ```
 
 ### Workflow 2: Bug Investigation
 
 ```bash
 # Step 1: Analyze issue
-npx claude-flow sparc run analyzer "investigate bug #456"
+npx Codex-flow sparc run analyzer "investigate bug #456"
 
 # Step 2: Debug systematically
-npx claude-flow sparc run debugger "fix memory leak in service X"
+npx Codex-flow sparc run debugger "fix memory leak in service X"
 
 # Step 3: Create tests
-npx claude-flow sparc run tester "regression tests for bug #456"
+npx Codex-flow sparc run tester "regression tests for bug #456"
 
 # Step 4: Review fix
-npx claude-flow sparc run reviewer "validate bug fix"
+npx Codex-flow sparc run reviewer "validate bug fix"
 ```
 
 ### Workflow 3: Performance Optimization
 
 ```bash
 # Step 1: Profile performance
-npx claude-flow sparc run analyzer "profile API response times"
+npx Codex-flow sparc run analyzer "profile API response times"
 
 # Step 2: Identify bottlenecks
-npx claude-flow sparc run optimizer "optimize database queries"
+npx Codex-flow sparc run optimizer "optimize database queries"
 
 # Step 3: Implement improvements
-npx claude-flow sparc run coder "implement caching layer"
+npx Codex-flow sparc run coder "implement caching layer"
 
 # Step 4: Benchmark results
-npx claude-flow sparc run tester "performance benchmarks"
+npx Codex-flow sparc run tester "performance benchmarks"
 ```
 
 ### Workflow 4: Complete Pipeline
 
 ```bash
 # Execute full development pipeline
-npx claude-flow sparc pipeline "e-commerce checkout feature"
+npx Codex-flow sparc pipeline "e-commerce checkout feature"
 
 # This automatically runs:
 # 1. researcher - Gather requirements
@@ -1057,9 +1057,9 @@ mcp__claude-flow__token_usage {
 
 ## Support and Resources
 
-- **Documentation**: https://github.com/ruvnet/claude-flow
-- **Issues**: https://github.com/ruvnet/claude-flow/issues
-- **NPM Package**: https://www.npmjs.com/package/claude-flow
+- **Documentation**: https://github.com/ruvnet/Codex-flow
+- **Issues**: https://github.com/ruvnet/Codex-flow/issues
+- **NPM Package**: https://www.npmjs.com/package/Codex-flow
 - **Community**: Discord server (link in repository)
 
 ---
@@ -1070,19 +1070,19 @@ mcp__claude-flow__token_usage {
 
 ```bash
 # List modes
-npx claude-flow sparc modes
+npx Codex-flow sparc modes
 
 # Run specific mode
-npx claude-flow sparc run <mode> "task"
+npx Codex-flow sparc run <mode> "task"
 
 # TDD workflow
-npx claude-flow sparc tdd "feature"
+npx Codex-flow sparc tdd "feature"
 
 # Full pipeline
-npx claude-flow sparc pipeline "task"
+npx Codex-flow sparc pipeline "task"
 
 # Batch execution
-npx claude-flow sparc batch <modes> "task"
+npx Codex-flow sparc batch <modes> "task"
 ```
 
 ### Most Common MCP Calls

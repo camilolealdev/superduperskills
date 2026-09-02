@@ -5,7 +5,7 @@ version: 2.10.3
 author: Alireza Rezvani
 license: MIT
 tags: [markdown, html, slides, deck, presenter-mode, keyboard-nav, print-to-pdf, single-file, design-system]
-compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
+compatible_tools: [Codex, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
 # md-slides — Markdown deck → single-file HTML presentation
@@ -94,7 +94,7 @@ python3 markdown-html/skills/md-slides/scripts/deck_html_renderer.py \
 
 ## References
 
-- Shihipar — *Claude Code HTML output* (Medium, 2026), Tier 3 use case "Slide Decks"
+- Shihipar — *Codex HTML output* (Medium, 2026), Tier 3 use case "Slide Decks"
 - Reynolds — *Presentation Zen* (less is more discipline)
 - Atkinson — *Beyond Bullet Points* (the bullet-heavy failure mode)
 - Tufte — *The Cognitive Style of PowerPoint* (the polemic)

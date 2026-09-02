@@ -8,7 +8,7 @@ requires:
 
 # Firecrawl Automation
 
-Run **Firecrawl** web crawling and extraction directly from Claude Code. Scrape individual pages, crawl entire sites, extract structured data with AI, batch process URL lists, and map website structures without leaving your terminal.
+Run **Firecrawl** web crawling and extraction directly from Codex. Scrape individual pages, crawl entire sites, extract structured data with AI, batch process URL lists, and map website structures without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/firecrawl](https://composio.dev/toolkits/firecrawl)
 

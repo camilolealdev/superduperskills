@@ -42,7 +42,7 @@ All divergences → FINDING-XXX → REFACTOR-XXX task → ring:running-dev-cycle
 
 Pre-fetch before any step:
 ```
-WebFetch: https://raw.githubusercontent.com/LerianStudio/ring/main/CLAUDE.md
+WebFetch: https://raw.githubusercontent.com/LerianStudio/ring/main/AGENTS.md
 WebFetch: https://raw.githubusercontent.com/LerianStudio/ring/main/dev-team/docs/standards/frontend.md
 WebFetch: testing-accessibility.md, testing-visual.md, testing-e2e.md, testing-performance.md
 ```

@@ -22,7 +22,7 @@ Deploy, train, and manage neural networks in distributed E2B sandbox environment
 
 ```bash
 # Add Flow Nexus MCP server
-claude mcp add flow-nexus npx flow-nexus@latest mcp start
+Codex mcp add flow-nexus npx flow-nexus@latest mcp start
 
 # Register and login
 npx flow-nexus@latest register

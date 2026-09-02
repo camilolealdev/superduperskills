@@ -5,7 +5,7 @@ allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline, mcp__hex_graph__i
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Documentation Fact-Checker (L3 Worker)
 
@@ -147,7 +147,7 @@ Calculate score using penalty formula. Write report.
 
 | Issue Type | Severity | Rationale |
 |------------|----------|-----------|
-| PATH_NOT_FOUND (critical file: AGENTS.md, CLAUDE.md, runbook, api_spec) | CRITICAL | Setup/onboarding fails |
+| PATH_NOT_FOUND (critical file: AGENTS.md, AGENTS.md, runbook, api_spec) | CRITICAL | Setup/onboarding fails |
 | PATH_NOT_FOUND (other docs) | HIGH | Misleading reference |
 | VERSION_MISMATCH (major version) | HIGH | Fundamentally wrong |
 | VERSION_MISMATCH (minor/patch) | MEDIUM | Cosmetic drift |

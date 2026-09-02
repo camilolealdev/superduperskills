@@ -3,8 +3,8 @@ name: seo-content-writer
 description: 'Write SEO blog posts, articles, landing pages with keywords, headers, snippet targeting. "Write me a blog post" / "帮我写文章" / "写一篇好文章". SEO文章写作/博客创作/内容优化/排名提升 SEOライティング SEO글쓰기/블로그작성 redacción SEO'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -87,8 +87,8 @@ metadata:
 
 # SEO Content Writer
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill creates search-engine-optimized content that ranks well while providing genuine value to readers. It applies proven SEO copywriting techniques, proper keyword integration, and optimal content structure.
@@ -121,7 +121,7 @@ Use this whenever the task needs a shippable asset or transformation that should
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Basic Content Creation
 
@@ -150,14 +150,14 @@ Here's my content brief: [brief]. Write SEO-optimized content following this out
 
 **Expected output**: a ready-to-use asset or implementation-ready transformation plus a short handoff summary ready for `memory/content/`.
 
-- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing content, metadata, or schema deliverable plus a reusable summary that can be stored under `memory/content/`.
-- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `CLAUDE.md`, `memory/decisions.md`, and `memory/open-loops.md`.
+- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `AGENTS.md`, `memory/decisions.md`, and `memory/open-loops.md`.
 - **Next handoff**: use the `Next Best Skill` below when the asset is ready for review or deployment.
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console connected:**
 Automatically pull keyword metrics (search volume, difficulty, CPC), competitor content analysis (top-ranking pages, content length, common topics), SERP features (featured snippets, PAA questions), and keyword opportunities (related keywords, question-based queries).
@@ -195,7 +195,7 @@ When a user requests SEO content:
 
 2. **Load CORE-EEAT Quality Constraints**
 
-   Before writing, load content quality standards from the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md):
+   Before writing, load content quality standards from the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md):
 
    ```markdown
    ### CORE-EEAT Pre-Write Checklist
@@ -224,9 +224,9 @@ When a user requests SEO content:
    | O10 | Multimedia Structure | Images/videos have captions and carry information |
    | E07 | Practical Tools | Include downloadable templates, checklists, or calculators |
 
-   _These 16 items apply across all content types. For content-type-specific dimension weights, see the Content-Type Weight Table in [core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)._
-   _Full 80-item benchmark: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)_
-   _For complete content quality audit: use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
+   _These 16 items apply across all content types. For content-type-specific dimension weights, see the Content-Type Weight Table in [core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md)._
+   _Full 80-item benchmark: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md)_
+   _For complete content quality audit: use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
    ```
 
 3. **Research and Plan**
@@ -304,7 +304,7 @@ When a user requests SEO content:
 
    Follow the on-page SEO checklist (keyword placement, content quality, readability, technical elements) and the content writing template (H1 with keyword, hook, sections with H2/H3, FAQ, conclusion with CTA).
 
-   > **Reference**: See [references/seo-writing-checklist.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/seo-writing-checklist.md) for the full on-page SEO checklist, content writing template, and featured snippet optimization patterns.
+   > **Reference**: See [references/seo-writing-checklist.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/seo-content-writer/references/seo-writing-checklist.md) for the full on-page SEO checklist, content writing template, and featured snippet optimization patterns.
 
    Key requirements while writing:
    - Primary keyword in title, H1, first 100 words, at least one H2, and conclusion
@@ -333,7 +333,7 @@ When a user requests SEO content:
 
     Then verify the 16 CORE-EEAT pre-write constraints (C01, C02, C06, C10, O01, O02, O06, O09, R01, R02, R04, R07, C03, O08, O10, E07) with pass/warning/fail status. List items needing attention.
 
-    _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
+    _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
 
 ## Validation Checkpoints
 
@@ -355,7 +355,7 @@ When a user requests SEO content:
 
 **User**: "Write an SEO-optimized article about 'email marketing best practices' targeting small businesses"
 
-> **Reference**: See [references/seo-writing-checklist.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/seo-writing-checklist.md) for the full example output demonstrating a complete SEO article with meta description, H1/H2/H3 hierarchy, statistics with citations, comparison tables, FAQ section, and conclusion with CTA.
+> **Reference**: See [references/seo-writing-checklist.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/seo-content-writer/references/seo-writing-checklist.md) for the full example output demonstrating a complete SEO article with meta description, H1/H2/H3 hierarchy, statistics with citations, comparison tables, FAQ section, and conclusion with CTA.
 
 The example output demonstrates: keyword in H1 and first 100 words, statistics with sources (DMA, Emarsys), comparison tables, bullet-point lists, pro tips, FAQ section with 40-60 word answers, and a clear CTA in the conclusion.
 
@@ -413,9 +413,9 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Title Formulas](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/title-formulas.md) - Proven headline formulas, power words, CTR patterns
-- [Content Structure Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/references/content-structure-templates.md) - Templates for blog posts, comparisons, listicles, how-tos, pillar pages
+- [Title Formulas](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/seo-content-writer/references/title-formulas.md) - Proven headline formulas, power words, CTR patterns
+- [Content Structure Templates](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/seo-content-writer/references/content-structure-templates.md) - Templates for blog posts, comparisons, listicles, how-tos, pillar pages
 
 ## Next Best Skill
 
-- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — gate the draft before publishing or handing it off.
+- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — gate the draft before publishing or handing it off.

@@ -126,7 +126,7 @@ loaded one at a time to avoid "lost in the middle" context degradation.
 
 ### Execution Instructions
 
-1. Use the Read tool to load the current step file (e.g., `Read({ file_path: ".claude/skills/qcsd-development-swarm/steps/01-flag-detection.md" })`)
+1. Use the Read tool to load the current step file (e.g., `Read({ file_path: ".Codex/skills/qcsd-development-swarm/steps/01-flag-detection.md" })`)
 2. Execute the step's instructions completely
 3. Verify all success criteria are met before proceeding
 4. Pass the step's output as context to the next step
@@ -194,13 +194,13 @@ skip to step N. Ensure you have the required prerequisite data from prior steps.
 | Model | When to Use | Agent Spawn |
 |-------|-------------|-------------|
 | **Workflow** (PRIMARY, ADR-102) | Harness with the Workflow tool | `Workflow({ name: "qcsd-development-review", args: { sourcePath, testPath } })` |
-| **Task Tool** (fallback) | Claude Code sessions without Workflow support | `Task({ subagent_type, run_in_background: true })` |
+| **Task Tool** (fallback) | Codex sessions without Workflow support | `Task({ subagent_type, run_in_background: true })` |
 | **MCP Tools** | MCP server available | `fleet_init({})` / `task_submit({})` |
 | **CLI** | Terminal/scripts | `swarm init` / `agent spawn` |
 
 ### Workflow execution (ADR-102)
 
-`.claude/workflows/qcsd-development-review.js` runs the review as a deterministic
+`.Codex/workflows/qcsd-development-review.js` runs the review as a deterministic
 pipeline: one finder per quality dimension (TDD adherence, complexity, coverage
 gaps — `args.dimensions` selects a subset) → **3 blind adversarial refuters per
 finding** (Loki-mode, ADR-074: refuters see only the bare claim + evidence,

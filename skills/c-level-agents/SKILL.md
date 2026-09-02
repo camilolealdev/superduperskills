@@ -102,14 +102,14 @@ User question
 1. **Voice is bookended, analysis is neutral.**
 2. **Artifacts over chat.** Every command produces a Markdown artifact the next command consumes.
 3. **Phase 2 isolation in boardroom.** Independent thinking before cross-examination.
-4. **Graceful degradation.** `/cs:cross-eval` falls back to Claude-only.
+4. **Graceful degradation.** `/cs:cross-eval` falls back to Codex-only.
 5. **No paid dependencies.** All Python tools are stdlib-only.
 
 ## References
 
 - [persona-voices.md](../../references/persona-voices.md)
 - [llm-wiki-bridge.md](../../references/llm-wiki-bridge.md)
-- [Parent c-level CLAUDE.md](../../../CLAUDE.md)
+- [Parent c-level AGENTS.md](../../../AGENTS.md)
 - [Existing executive-mentor sibling](../../../executive-mentor/)
 
 ---

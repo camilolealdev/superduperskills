@@ -1,6 +1,6 @@
 ---
 name: "terraform-patterns"
-description: "Terraform infrastructure-as-code agent skill and plugin for Claude Code, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security hardening, policy-as-code with Sentinel/OPA, and CI/CD plan/apply workflows. Use when: user wants to design Terraform modules, manage state backends, review Terraform security, implement multi-region deployments, or follow IaC best practices."
+description: "Terraform infrastructure-as-code agent skill and plugin for Codex, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security hardening, policy-as-code with Sentinel/OPA, and CI/CD plan/apply workflows. Use when: user wants to design Terraform modules, manage state backends, review Terraform security, implement multi-region deployments, or follow IaC best practices."
 license: MIT
 metadata:
   version: 1.0.0
@@ -716,8 +716,8 @@ inputs = {
 
 ### One-liner (any tool)
 ```bash
-git clone https://github.com/alirezarezvani/claude-skills.git
-cp -r claude-skills/engineering/terraform-patterns ~/.claude/skills/
+git clone https://github.com/alirezarezvani/Codex-skills.git
+cp -r Codex-skills/engineering/terraform-patterns ~/.Codex/skills/
 ```
 
 ### Multi-tool install

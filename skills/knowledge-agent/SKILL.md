@@ -1,11 +1,11 @@
 ---
 name: knowledge-agent
-description: Build and query AI-powered knowledge bases from claude-mem observations. Use when users want to create focused "brains" from their observation history, ask questions about past work patterns, or compile expertise on specific topics.
+description: Build and query AI-powered knowledge bases from Codex-mem observations. Use when users want to create focused "brains" from their observation history, ask questions about past work patterns, or compile expertise on specific topics.
 ---
 
 # Knowledge Agent
 
-Build and query AI-powered knowledge bases from claude-mem observations.
+Build and query AI-powered knowledge bases from Codex-mem observations.
 
 ## What Are Knowledge Agents?
 
@@ -18,7 +18,7 @@ Think of them as custom "brains": "everything about hooks", "all decisions from 
 ### Step 1: Build a corpus
 
 ```text
-build_corpus name="hooks-expertise" description="Everything about the hooks lifecycle" project="claude-mem" concepts="hooks" limit=500
+build_corpus name="hooks-expertise" description="Everything about the hooks lifecycle" project="Codex-mem" concepts="hooks" limit=500
 ```
 
 Filter options:

@@ -20,8 +20,8 @@ Logs the founder's decision via the `decision-logger` skill. This is the gate wh
 
 The `decision-logger` skill maintains two layers:
 
-1. **Raw transcripts** — every boardroom session, every advisor's Phase 2 position, every dissent. Stored under `~/.claude/decisions/raw/`. Reference only, never feeds back automatically.
-2. **Approved decisions** — only the founder-signed memos. Stored under `~/.claude/decisions/approved/`. Feeds into future `/cs:office-hours` and `/cs:founder-mode` calls.
+1. **Raw transcripts** — every boardroom session, every advisor's Phase 2 position, every dissent. Stored under `~/.Codex/decisions/raw/`. Reference only, never feeds back automatically.
+2. **Approved decisions** — only the founder-signed memos. Stored under `~/.Codex/decisions/approved/`. Feeds into future `/cs:office-hours` and `/cs:founder-mode` calls.
 
 This split prevents the system from "remembering" unresolved debates as if they were decisions.
 
@@ -40,7 +40,7 @@ A board memo file (output of `/cs:boardroom`).
    - Success + kill criteria
    - Dissent (preserved)
    - Review checkpoint date
-4. Append to `~/.claude/decisions/approved/<YYYY-MM-DD>-<slug>.md`
+4. Append to `~/.Codex/decisions/approved/<YYYY-MM-DD>-<slug>.md`
 5. Update the raw transcript pointer
 6. If llm-wiki bridge configured, write to vault (`~/company-vault/10-decisions/`)
 7. Schedule auto-revisit (90 days)

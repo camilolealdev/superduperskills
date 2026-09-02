@@ -70,7 +70,7 @@ When detecting visual regressions or validating UI:
 
 ## PRIMARY PATH: qe-browser visual-diff
 
-**Most visual regression work should go through the `qe-browser` fleet skill.** It wraps Vibium (WebDriver BiDi) and provides pixel-diff against stored baselines with threshold enforcement and diff-image output. See `.claude/skills/qe-browser/SKILL.md`.
+**Most visual regression work should go through the `qe-browser` fleet skill.** It wraps Vibium (WebDriver BiDi) and provides pixel-diff against stored baselines with threshold enforcement and diff-image output. See `.Codex/skills/qe-browser/SKILL.md`.
 
 ```bash
 # Navigate
@@ -78,23 +78,23 @@ vibium go https://example.com
 vibium wait load
 
 # First run — creates baseline in .aqe/visual-baselines/homepage.png
-node .claude/skills/qe-browser/scripts/visual-diff.js --name homepage
+node .Codex/skills/qe-browser/scripts/visual-diff.js --name homepage
 
 # Subsequent runs — compare, non-zero exit on mismatch
-node .claude/skills/qe-browser/scripts/visual-diff.js --name homepage --threshold 0.02
+node .Codex/skills/qe-browser/scripts/visual-diff.js --name homepage --threshold 0.02
 
 # Scope to a single region
-node .claude/skills/qe-browser/scripts/visual-diff.js --name hero --selector "#hero"
+node .Codex/skills/qe-browser/scripts/visual-diff.js --name hero --selector "#hero"
 
 # Responsive — run diff at each breakpoint
 for viewport in "375 667" "768 1024" "1920 1080"; do
   read w h <<< "$viewport"
   vibium viewport $w $h
-  node .claude/skills/qe-browser/scripts/visual-diff.js --name "homepage-${w}x${h}"
+  node .Codex/skills/qe-browser/scripts/visual-diff.js --name "homepage-${w}x${h}"
 done
 
 # Reset baseline after an intentional design change
-node .claude/skills/qe-browser/scripts/visual-diff.js --name homepage --update-baseline
+node .Codex/skills/qe-browser/scripts/visual-diff.js --name homepage --update-baseline
 ```
 
 Baselines live in `.aqe/visual-baselines/`. The script uses `pixelmatch` when installed, with a hash-based exact-match fallback otherwise. Non-zero exit when similarity < `1 - threshold`, so CI gating is `$?`-based.

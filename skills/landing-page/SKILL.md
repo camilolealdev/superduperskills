@@ -7,7 +7,7 @@ allowed-tools:
   - Edit
   - Glob
   - Grep
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Landing Page Generator

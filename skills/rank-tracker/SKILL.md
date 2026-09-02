@@ -3,8 +3,8 @@ name: rank-tracker
 description: 'Track keyword rankings and SERP changes in traditional search and AI responses over time. "How am I ranking" / "查排名" / "排名变了吗". 排名追踪/关键词排名/SERP监控/排名变化 ランキング追跡 순위추적 seguimiento rankings'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -73,8 +73,8 @@ metadata:
 # Rank Tracker
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 Tracks, analyzes, and reports on keyword ranking positions over time. Monitors both traditional SERP rankings and AI/GEO visibility to provide comprehensive search performance insights.
@@ -107,7 +107,7 @@ Use this whenever the task needs time-aware change detection, escalation, or sta
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Set Up Tracking
 
@@ -137,7 +137,7 @@ Create a ranking report for [domain/campaign]
 
 **Expected output**: a delta summary, alert/report output, and a short handoff summary ready for `memory/monitoring/`.
 
-- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing monitoring deliverable plus a reusable summary that can be stored under `memory/monitoring/`.
 - **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
 - **Next handoff**: use the `Next Best Skill` below when a change needs action.
@@ -146,7 +146,7 @@ Create a ranking report for [domain/campaign]
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console + ~~analytics + ~~AI monitor connected:**
 Automatically pull ranking positions from ~~SEO tool, search impressions/clicks from ~~search console, traffic data from ~~analytics, and AI Overview citation tracking from ~~AI monitor. Daily automated rank checks with historical trend data.
@@ -179,7 +179,7 @@ When a user requests rank tracking or analysis:
 
 7. **Generate Ranking Report** -- Executive summary with overall trend, position distribution, key highlights (wins/concerns/opportunities), detailed analysis, SERP feature report, GEO visibility, competitive position, recommendations.
 
-   > **Reference**: See [references/ranking-analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/references/ranking-analysis-templates.md) for complete output templates for all 7 steps.
+   > **Reference**: See [references/ranking-analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/rank-tracker/references/ranking-analysis-templates.md) for complete output templates for all 7 steps.
 
 ## Validation Checkpoints
 
@@ -247,7 +247,7 @@ Keywords in top 10 increased from 12 to 17 (+5)
 | Drop off page 1 | Emergency response | Comprehensive audit + recovery plan |
 | Position gained | Document and learn | What worked? Can you replicate? |
 
-> **Reference**: See [references/tracking-setup-guide.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/references/tracking-setup-guide.md) for root cause taxonomy, CTR benchmarks by position, SERP feature CTR impact, algorithm update assessment, tracking configuration best practices, keyword selection and grouping strategies, and data interpretation guidelines.
+> **Reference**: See [references/tracking-setup-guide.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/rank-tracker/references/tracking-setup-guide.md) for root cause taxonomy, CTR benchmarks by position, SERP feature CTR impact, algorithm update assessment, tracking configuration best practices, keyword selection and grouping strategies, and data interpretation guidelines.
 
 
 ### Save Results
@@ -266,8 +266,8 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Tracking Setup Guide](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/references/tracking-setup-guide.md) — Configuration best practices, device/location settings, and SERP feature tracking setup
+- [Tracking Setup Guide](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/rank-tracker/references/tracking-setup-guide.md) — Configuration best practices, device/location settings, and SERP feature tracking setup
 
 ## Next Best Skill
 
-- **Primary**: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/SKILL.md) — operationalize rank changes into thresholds and follow-ups.
+- **Primary**: [alert-manager](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/alert-manager/SKILL.md) — operationalize rank changes into thresholds and follow-ups.

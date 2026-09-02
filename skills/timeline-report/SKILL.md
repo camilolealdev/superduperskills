@@ -1,11 +1,11 @@
 ---
 name: timeline-report
-description: Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from claude-mem's timeline. Use when asked for a timeline report, project history analysis, development journey, or full project report.
+description: Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from Codex-mem's timeline. Use when asked for a timeline report, project history analysis, development journey, or full project report.
 ---
 
 # Timeline Report
 
-Generate a comprehensive narrative analysis of a project's entire development history using claude-mem's persistent memory timeline.
+Generate a comprehensive narrative analysis of a project's entire development history using Codex-mem's persistent memory timeline.
 
 ## When to Use
 
@@ -20,15 +20,15 @@ Use when users ask for:
 
 ## Prerequisites
 
-The claude-mem worker must be running. The project must have claude-mem observations recorded.
+The Codex-mem worker must be running. The project must have Codex-mem observations recorded.
 
 **Resolve the worker port** (do this once at the start and reuse `$WORKER_PORT` in every curl call below):
 
 ```bash
-WORKER_PORT="${CLAUDE_MEM_WORKER_PORT:-$(node -e "const fs=require('fs'),p=require('path'),os=require('os');const uid=(typeof process.getuid==='function'?process.getuid():77);const fallback=String(37700+(uid%100));try{const s=JSON.parse(fs.readFileSync(p.join(os.homedir(),'.claude-mem','settings.json'),'utf-8'));process.stdout.write(String(s.CLAUDE_MEM_WORKER_PORT||fallback));}catch{process.stdout.write(fallback);}" 2>/dev/null)}"
+WORKER_PORT="${CLAUDE_MEM_WORKER_PORT:-$(node -e "const fs=require('fs'),p=require('path'),os=require('os');const uid=(typeof process.getuid==='function'?process.getuid():77);const fallback=String(37700+(uid%100));try{const s=JSON.parse(fs.readFileSync(p.join(os.homedir(),'.Codex-mem','settings.json'),'utf-8'));process.stdout.write(String(s.CLAUDE_MEM_WORKER_PORT||fallback));}catch{process.stdout.write(fallback);}" 2>/dev/null)}"
 ```
 
-This honors `CLAUDE_MEM_WORKER_PORT` env, then `~/.claude-mem/settings.json`, then falls back to the per-UID default `37700 + (uid % 100)` — matching how the worker itself picks its port. Required for multi-account setups (#2101) and any user who has overridden the default port (#2103).
+This honors `CLAUDE_MEM_WORKER_PORT` env, then `~/.Codex-mem/settings.json`, then falls back to the per-UID default `37700 + (uid % 100)` — matching how the worker itself picks its port. Required for multi-account setups (#2101) and any user who has overridden the default port (#2103).
 
 ## Workflow
 
@@ -55,7 +55,7 @@ If a worktree is detected, use `$parent_project` (the basename of the parent rep
 
 ### Step 2: Fetch the Full Timeline
 
-Use Bash to fetch the complete timeline from the claude-mem worker API:
+Use Bash to fetch the complete timeline from the Codex-mem worker API:
 
 ```bash
 curl -s "http://localhost:${WORKER_PORT}/api/context/inject?project=PROJECT_NAME&full=true"
@@ -84,14 +84,14 @@ Wait for user confirmation before continuing if the timeline exceeds 100K tokens
 
 ### Step 4: Analyze with a Subagent
 
-Deploy an Agent (using the Task tool) with the full timeline and the following analysis prompt. Pass the ENTIRE timeline as context to the agent. The agent should also be instructed to query the SQLite database at `~/.claude-mem/claude-mem.db` for the Token Economics section.
+Deploy an Agent (using the Task tool) with the full timeline and the following analysis prompt. Pass the ENTIRE timeline as context to the agent. The agent should also be instructed to query the SQLite database at `~/.Codex-mem/Codex-mem.db` for the Token Economics section.
 
 **Agent prompt:**
 
 ```
-You are a technical historian analyzing a software project's complete development timeline from claude-mem's persistent memory system. The timeline below contains every observation, session boundary, and summary recorded across the project's entire history.
+You are a technical historian analyzing a software project's complete development timeline from Codex-mem's persistent memory system. The timeline below contains every observation, session boundary, and summary recorded across the project's entire history.
 
-You also have access to the claude-mem SQLite database at ~/.claude-mem/claude-mem.db. Use it to run queries for the Token Economics & Memory ROI section. The database has an "observations" table with columns: id, memory_session_id, project, text, type, title, subtitle, facts, narrative, concepts, files_read, files_modified, prompt_number, discovery_tokens, created_at, created_at_epoch, source_tool, source_input_summary.
+You also have access to the Codex-mem SQLite database at ~/.Codex-mem/Codex-mem.db. Use it to run queries for the Token Economics & Memory ROI section. The database has an "observations" table with columns: id, memory_session_id, project, text, type, title, subtitle, facts, narrative, concepts, files_read, files_modified, prompt_number, discovery_tokens, created_at, created_at_epoch, source_tool, source_input_summary.
 
 Write a comprehensive narrative report titled "Journey Into [PROJECT_NAME]" that covers:
 
@@ -109,10 +109,10 @@ Write a comprehensive narrative report titled "Journey Into [PROJECT_NAME]" that
 
 6. **Challenges and Debugging Sagas** -- The hardest problems encountered. Multi-session debugging efforts, architectural dead-ends that required backtracking, platform-specific issues that took days to resolve.
 
-7. **Memory and Continuity** -- How did persistent memory (claude-mem itself, if applicable) affect the development process? Were there moments where recalled context from prior sessions saved significant time or prevented repeated mistakes?
+7. **Memory and Continuity** -- How did persistent memory (Codex-mem itself, if applicable) affect the development process? Were there moments where recalled context from prior sessions saved significant time or prevented repeated mistakes?
 
 8. **Token Economics & Memory ROI** -- Quantitative analysis of how memory recall saved work:
-   - Query the database directly for these metrics using `sqlite3 ~/.claude-mem/claude-mem.db`
+   - Query the database directly for these metrics using `sqlite3 ~/.Codex-mem/Codex-mem.db`
    - Count total discovery_tokens across all observations (the original cost of all work)
    - Count sessions that had context injection available (sessions after the first)
    - Calculate the compression ratio: average discovery_tokens vs average read_tokens per observation
@@ -196,7 +196,7 @@ Tell the user:
 ## Error Handling
 
 - **Empty timeline:** "No observations found for project 'X'. Check the project name with: `curl -s \"http://localhost:${WORKER_PORT}/api/search?query=*&limit=1\"`"
-- **Worker not running:** "The claude-mem worker is not responding on port ${WORKER_PORT}. Start it with your usual method or check `ps aux | grep worker-service`."
+- **Worker not running:** "The Codex-mem worker is not responding on port ${WORKER_PORT}. Start it with your usual method or check `ps aux | grep worker-service`."
 - **Timeline too large:** For projects with 50,000+ observations, the timeline may exceed context limits. Suggest using date range filtering: `curl -s "http://localhost:${WORKER_PORT}/api/context/inject?project=X&full=true"` -- the current endpoint returns all observations; for extremely large projects, the user may want to analyze in time-windowed segments.
 
 ## Example

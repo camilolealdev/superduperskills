@@ -5,12 +5,12 @@ description: >
   technical meta tags, schema, images, and performance. Use when user says
   "analyze this page", "check page SEO", "single URL", "check this page",
   "page analysis", or provides a single URL for review.
-user-invokable: true
+user-invocable: true
 argument-hint: "[url]"
 license: MIT
 metadata:
   author: AgriciDaniel
-  version: "1.7.0"
+  version: "2.2.4"
   category: seo
 ---
 
@@ -45,14 +45,14 @@ metadata:
 - Detect all types (JSON-LD preferred)
 - Validate required properties
 - Identify missing opportunities
-- NEVER recommend HowTo (deprecated) or FAQ (restricted to gov/health)
+- Never recommend HowTo (deprecated) or FAQ for rich results (retired May 2026); existing FAQPage need not be removed, use QAPage for genuine Q&A
 
 ### Images
 - Alt text: present, descriptive, includes keywords where natural
 - File size: flag >200KB (warning), >500KB (critical)
 - Format: recommend WebP/AVIF over JPEG/PNG
 - Dimensions: width/height set for CLS prevention
-- Lazy loading: loading="lazy" on below-fold images
+- Lazy loading: report `lazy_method` per image (native | perfmatters | ewww | js-generic | none). Do not flag "not lazy-loaded" when JS lazy-loaders (Perfmatters, EWWW, lazysizes) are detected, they intentionally strip the native `loading="lazy"` attribute and use `data-src` placeholders
 
 ### Core Web Vitals (reference only, not measurable from HTML alone)
 - Flag potential LCP issues (huge hero images, render-blocking resources)

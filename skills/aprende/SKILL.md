@@ -98,10 +98,10 @@ negativos.
 
 | # | Category / Categoría | Lives at / Vive en | When / Cuándo |
 |---|---------------------|--------------------|---------------|
-| 1 | `memory` | `~/.claude/projects/<slug>/memory/<name>.md` (`metadata.type: user \| project \| reference \| feedback`) | Durable facts, preferences, project context, external references. *Hechos durables, preferencias, contexto del proyecto, referencias externas.* |
+| 1 | `memory` | `~/.Codex/projects/<slug>/memory/<name>.md` (`metadata.type: user \| project \| reference \| feedback`) | Durable facts, preferences, project context, external references. *Hechos durables, preferencias, contexto del proyecto, referencias externas.* |
 | 2 | `lesson` (anti-pattern) | Same folder, `metadata.type: lesson` | A mistake happened. We know what, why, and how to avoid. *Un error pasó. Sabemos qué, por qué, y cómo evitar.* |
-| 3 | `skill` (stub) | `~/.claude/skills/<slug>/SKILL.md` or `./.claude/skills/<slug>/` | A reusable multi-step workflow surfaced. *Apareció un workflow multi-paso reutilizable.* |
-| 4 | `project-doc` | `./CLAUDE.md` + `./AGENTS.md` (dual-write) — or `~/.claude/CLAUDE.md` + `~/.claude/AGENTS.md` for global | Build commands, repo conventions, gotchas worth telling every future agent. *Comandos de build, convenciones del repo, gotchas que vale la pena contarle a cada agente futuro.* |
+| 3 | `skill` (stub) | `~/.Codex/skills/<slug>/SKILL.md` or `./.Codex/skills/<slug>/` | A reusable multi-step workflow surfaced. *Apareció un workflow multi-paso reutilizable.* |
+| 4 | `project-doc` | `./AGENTS.md` + `./AGENTS.md` (dual-write) — or `~/.Codex/AGENTS.md` + `~/.Codex/AGENTS.md` for global | Build commands, repo conventions, gotchas worth telling every future agent. *Comandos de build, convenciones del repo, gotchas que vale la pena contarle a cada agente futuro.* |
 
 **One example each / Un ejemplo de cada:**
 
@@ -137,7 +137,7 @@ Ejecuta en orden. No saltes pasos. Cada pase tiene una forma de output estricta.
    `skill` stub) — four or more sequential tool calls that the user explicitly
    walked through.
 
-If `~/.claude/projects/<current-project-slug>/.aprende-signals.md` exists and
+If `~/.Codex/projects/<current-project-slug>/.aprende-signals.md` exists and
 is non-empty, prepend its contents to the scratch list — those are signals
 captured by the PostToolUse hook earlier in this session.
 
@@ -156,7 +156,7 @@ alta señal:
 5. **Workflows que el usuario explicó paso a paso** (medium, candidato a
    `skill` stub) — cuatro o más llamadas secuenciales que el usuario detalló.
 
-Si `~/.claude/projects/<slug-del-proyecto>/.aprende-signals.md` existe y no
+Si `~/.Codex/projects/<slug-del-proyecto>/.aprende-signals.md` existe y no
 está vacío, anteponé su contenido a la lista — son señales capturadas por el
 hook PostToolUse antes en esta sesión.
 
@@ -198,11 +198,11 @@ Before showing the list, check overlaps **without dropping silently**:
 
 Antes de mostrar la lista, chequea overlaps **sin dropear en silencio**:
 
-1. Read `~/.claude/projects/<slug>/memory/MEMORY.md` if it exists. For each
+1. Read `~/.Codex/projects/<slug>/memory/MEMORY.md` if it exists. For each
    candidate, do a title + topic similarity check against existing bullets.
-2. For `skill` candidates, `ls ~/.claude/skills/` and `ls ./.claude/skills/`
+2. For `skill` candidates, `ls ~/.Codex/skills/` and `ls ./.Codex/skills/`
    (if the project-local folder exists).
-3. For `project-doc` candidates, `grep -i <keyword>` against `./CLAUDE.md` and
+3. For `project-doc` candidates, `grep -i <keyword>` against `./AGENTS.md` and
    `./AGENTS.md` (if either exists).
 4. If a candidate looks like a near-duplicate of an existing entry, **do not
    drop it**. Annotate it `[overlaps with: <existing-name-or-path>]` in the
@@ -265,13 +265,13 @@ categoría**:
 1. Determine `<slug>` for the current project: read `pwd`, then convert
    `/Users/soyenrique/Desktop/aprende-skill` to `-Users-soyenrique-Desktop-aprende-skill`
    (replace `/` with `-`, drop leading dash, keep dashes). The folder is
-   `~/.claude/projects/<slug>/memory/`. Create it if missing (`mkdir -p`).
+   `~/.Codex/projects/<slug>/memory/`. Create it if missing (`mkdir -p`).
 2. Pick a filename: kebab-case slug from the title, prefixed by `metadata.type`
    (e.g. `feedback_pnpm-over-npm.md`, `project_supabase-rls-policy.md`).
    If a file with that name exists, append `-2`, `-3`, ... **Never overwrite.**
 3. Write the file with the frontmatter and body spec from
    `references/memory-format.md`.
-4. Append a one-line entry to `~/.claude/projects/<slug>/memory/MEMORY.md`:
+4. Append a one-line entry to `~/.Codex/projects/<slug>/memory/MEMORY.md`:
    `- [<Title>](<filename>.md) — <one-sentence hook>`.
 
 #### `lesson`
@@ -289,8 +289,8 @@ categoría**:
 
 #### `skill` (stub)
 
-1. Decide scope: user-global (`~/.claude/skills/<slug>/`) by default;
-   project-local (`./.claude/skills/<slug>/`) only if the workflow references
+1. Decide scope: user-global (`~/.Codex/skills/<slug>/`) by default;
+   project-local (`./.Codex/skills/<slug>/`) only if the workflow references
    repo-specific paths or tools.
 2. Create the folder. Write `SKILL.md` as a **stub**, not a full skill — use
    `references/skill-stub-template.md`. Fill in only what the conversation
@@ -300,11 +300,11 @@ categoría**:
 
 #### `project-doc`
 
-1. Decide scope: project-level (`./CLAUDE.md` and `./AGENTS.md` — dual-write)
-   by default; global (`~/.claude/CLAUDE.md` and `~/.claude/AGENTS.md`) only
+1. Decide scope: project-level (`./AGENTS.md` and `./AGENTS.md` — dual-write)
+   by default; global (`~/.Codex/AGENTS.md` and `~/.Codex/AGENTS.md`) only
    if the candidate is repo-agnostic.
 2. **Extra confirmation** for global writes: prompt the user one more time
-   before touching `~/.claude/CLAUDE.md` or `~/.claude/AGENTS.md`. Global
+   before touching `~/.Codex/AGENTS.md` or `~/.Codex/AGENTS.md`. Global
    docs affect every session on this machine.
 3. Read the target file. Find the best existing section (e.g. `## Commands`,
    `## Conventions`). Append under it.
@@ -312,7 +312,7 @@ categoría**:
    section at the end of the file.
 5. Mark each appended line with an HTML comment for later audit:
    `<!-- /aprende YYYY-MM-DD -->`.
-6. Dual-write to **both** `CLAUDE.md` and `AGENTS.md`. If one doesn't exist,
+6. Dual-write to **both** `AGENTS.md` and `AGENTS.md`. If one doesn't exist,
    create it with the entry alone. Content is identical between the two.
 
 After all writes, emit one confirmation line per write:
@@ -320,10 +320,10 @@ After all writes, emit one confirmation line per write:
 Después de cada escritura, imprime una línea de confirmación:
 
 ```
-✓ memory   → ~/.claude/projects/.../feedback_pnpm-over-npm.md  (+MEMORY.md)
-✓ lesson   → ~/.claude/projects/.../lesson_webview-localstorage.md  (+MEMORY.md)
-✓ skill    → ~/.claude/skills/verify-rls/SKILL.md  (stub — finish before use)
-✓ project  → ./CLAUDE.md + ./AGENTS.md  (## Commands)
+✓ memory   → ~/.Codex/projects/.../feedback_pnpm-over-npm.md  (+MEMORY.md)
+✓ lesson   → ~/.Codex/projects/.../lesson_webview-localstorage.md  (+MEMORY.md)
+✓ skill    → ~/.Codex/skills/verify-rls/SKILL.md  (stub — finish before use)
+✓ project  → ./AGENTS.md + ./AGENTS.md  (## Commands)
 ```
 
 End with a one-paragraph summary of what was learned and a pointer to
@@ -452,10 +452,10 @@ User: `1`
 
 Execution:
 ```
-✓ project  → ./CLAUDE.md + ./AGENTS.md  (## Conventions)
+✓ project  → ./AGENTS.md + ./AGENTS.md  (## Conventions)
 ```
 
-`./CLAUDE.md` now contains, under `## Conventions`:
+`./AGENTS.md` now contains, under `## Conventions`:
 ```
 - Indent with 2 spaces, not tabs. <!-- /aprende 2026-05-11 -->
 ```
@@ -494,8 +494,8 @@ Execution: writes lesson file + project-doc append, MEMORY.md updated.
 2. **Never overwrite an existing file.** Always append, or create with a
    unique name (`-2`, `-3` suffix).
 3. **Never delete a lesson.** Use `metadata.status: retired`.
-4. **Extra confirmation for global writes.** Touching `~/.claude/CLAUDE.md`
-   or `~/.claude/AGENTS.md` requires a second user yes.
+4. **Extra confirmation for global writes.** Touching `~/.Codex/AGENTS.md`
+   or `~/.Codex/AGENTS.md` requires a second user yes.
 5. **Dedup annotates, does not drop.** Let the user decide on overlaps.
 6. **Cap at 15 candidates per run.** Forces focus.
 7. **Confidence labels are mandatory.** No item ships without `(high|medium|low)`.
@@ -514,7 +514,7 @@ Execution: writes lesson file + project-doc append, MEMORY.md updated.
    un nombre único (`-2`, `-3`).
 3. **Nunca elimines una lección.** Usa `metadata.status: retired`.
 4. **Confirmación extra para escrituras globales.** Tocar
-   `~/.claude/CLAUDE.md` o `~/.claude/AGENTS.md` requiere un segundo sí del
+   `~/.Codex/AGENTS.md` o `~/.Codex/AGENTS.md` requiere un segundo sí del
    usuario.
 5. **El dedup anota, no dropea.** Que el usuario decida sobre los overlaps.
 6. **Tope de 15 candidatos por corrida.** Fuerza foco.
@@ -531,26 +531,26 @@ Execution: writes lesson file + project-doc append, MEMORY.md updated.
 
 ## 10. Project-slug derivation / Derivación del slug del proyecto
 
-The memory folder is `~/.claude/projects/<slug>/memory/`. To get `<slug>`:
+The memory folder is `~/.Codex/projects/<slug>/memory/`. To get `<slug>`:
 
-La carpeta de memoria es `~/.claude/projects/<slug>/memory/`. Para obtener `<slug>`:
+La carpeta de memoria es `~/.Codex/projects/<slug>/memory/`. Para obtener `<slug>`:
 
 1. Read `pwd` (the current working directory absolute path).
 2. Replace every character that is **not** a letter or digit (`A–Z`, `a–z`,
-   `0–9`) with `-`. This is Claude Code's own project-folder convention, so the
+   `0–9`) with `-`. This is Codex's own project-folder convention, so the
    slug matches for **every** path — including Windows paths like
    `D:/proyectos_python/...` and any path containing `_`, `.`, `:`, `\` etc.
    (Replacing only `/` would mis-slug and read from the wrong folder.)
 3. If the result starts with `-`, that leading dash stays (matches the
-   existing convention — `~/.claude/projects/-Users-soyenrique-Desktop-aprende-skill/`).
+   existing convention — `~/.Codex/projects/-Users-soyenrique-Desktop-aprende-skill/`).
 
 Example (macOS/Linux): `pwd` = `/Users/soyenrique/Desktop/myproject`
 → slug = `-Users-soyenrique-Desktop-myproject`
-→ folder = `~/.claude/projects/-Users-soyenrique-Desktop-myproject/memory/`
+→ folder = `~/.Codex/projects/-Users-soyenrique-Desktop-myproject/memory/`
 
 Example (Windows): `pwd` = `D:/proyectos_python/myproject`
 → slug = `D--proyectos-python-myproject`
-→ folder = `~/.claude/projects/D--proyectos-python-myproject/memory/`
+→ folder = `~/.Codex/projects/D--proyectos-python-myproject/memory/`
 
 If the folder does not exist, create it with `mkdir -p`. Also create
 `MEMORY.md` with a single-line header (`# Memory Index`) if it's missing.
@@ -569,7 +569,7 @@ Si los hooks del plugin están activos (vienen ON por defecto), este skill se
 beneficia de ellos pero **nunca depende de ellos**:
 
 - **PostToolUse** writes per-session signal records to
-  `~/.claude/projects/<slug>/.aprende-signals.md`. Pass A reads this file
+  `~/.Codex/projects/<slug>/.aprende-signals.md`. Pass A reads this file
   if it exists and prepends its content to the scratch list.
 - **Stop** reads the same file at session end and emits an
   `additionalContext` reminder if signals exist and `/aprende` was not run.
@@ -586,12 +586,12 @@ como consumidas.
 
 ## 12. Cross-tool note / Nota cross-tool
 
-This skill is designed to work in both **Claude Code** and **Codex**:
+This skill is designed to work in both **Codex** and **Codex**:
 
-Este skill está diseñado para funcionar tanto en **Claude Code** como **Codex**:
+Este skill está diseñado para funcionar tanto en **Codex** como **Codex**:
 
-- `project-doc` writes always dual-write to `CLAUDE.md` and `AGENTS.md`.
-  Codex reads `AGENTS.md`; Claude Code reads `CLAUDE.md`. Same content in
+- `project-doc` writes always dual-write to `AGENTS.md` and `AGENTS.md`.
+  Codex reads `AGENTS.md`; Codex reads `AGENTS.md`. Same content in
   both. No symlinks, no imports.
 - For `memory` and `lesson`, use `/aprende --portable` to mirror to
   `./.aprende/` in the project root. Codex can then read
@@ -611,7 +611,7 @@ Este skill está diseñado para funcionar tanto en **Claude Code** como **Codex*
 | `/aprende --review` | Revisit existing lessons; mark retired or refresh. |
 | `/aprende --portable` | Standard run + mirror lessons to `./.aprende/`. |
 | `/aprende --dry-run` | Run passes A-D but skip the write pass. Preview only. |
-| `/aprende-enable-hooks` | Install PostToolUse + Stop hooks into `~/.claude/settings.json`. |
+| `/aprende-enable-hooks` | Install PostToolUse + Stop hooks into `~/.Codex/settings.json`. |
 | `/aprende-disable-hooks` | Remove those hooks. |
 
 ---

@@ -1,101 +1,91 @@
 ---
-name: "freeze"
-description: "/cs:freeze <decision> <days> — Lock a strategic decision for a cooldown period to prevent impulse reversal. Mirrors gstack's safety primitives for the business layer. Use when an irreversible decision was made under pressure — e.g. a layoff plan or multi-year contract — and deserves a cooling-off lock before execution."
+name: freeze
+version: 0.1.0
+description: Restrict file edits to a specific directory for the session. (gstack)
+triggers:
+  - freeze edits to directory
+  - lock editing scope
+  - restrict file changes
+allowed-tools:
+  - Bash
+  - Read
+  - AskUserQuestion
+hooks:
+  PreToolUse:
+    - matcher: "Edit"
+      hooks:
+        - type: command
+          command: "bash $HOME/.Codex/skills/gstack/freeze/bin/check-freeze.sh"
+          statusMessage: "Checking freeze boundary..."
+    - matcher: "Write"
+      hooks:
+        - type: command
+          command: "bash $HOME/.Codex/skills/gstack/freeze/bin/check-freeze.sh"
+          statusMessage: "Checking freeze boundary..."
 ---
+<!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
+<!-- Regenerate: bun run gen:skill-docs -->
 
-# /cs:freeze — Cooldown Lock on a Decision
 
-**Command:** `/cs:freeze <decision-path> <days>`
+## When to invoke this skill
 
-Locks a decision for a defined cooldown period. During the freeze, the chief-of-staff router refuses to re-litigate the decision unless a kill criterion explicitly triggers.
+Blocks Edit and
+Write outside the allowed path. Use when debugging to prevent accidentally
+"fixing" unrelated code, or when you want to scope changes to one module.
+Use when asked to "freeze", "restrict edits", "only edit this folder",
+or "lock down edits".
 
-Inspired by gstack's `/freeze` and `/guard` safety primitives — adapted from code-scoping to strategic-scoping.
+# /freeze — Restrict Edits to a Directory
 
-## When to Use
+Lock file edits to a specific directory. Any Edit or Write operation targeting
+a file outside the allowed path will be **blocked** (not just warned).
 
-Founders are pattern-matchers; pattern-matching after a tough decision often produces a reversal that's actually just decision fatigue. The freeze enforces a discipline:
-
-- After any **irreversible** or **high-cost-to-reverse** decision (fundraise, layoff, market entry)
-- After a **split-vote boardroom** (preserve the call against second-guessing)
-- After a **founder gut-feel** override of unanimous advisor consensus (let it run)
-- During a **personnel transition** (lock the strategy so the new exec can execute, not redebate)
-
-## Default Freeze Periods
-
-| Decision type | Default freeze |
-|---|---|
-| Fundraise round size / lead choice | 30 days |
-| Pricing change | 60 days |
-| Market entry / exit | 90 days |
-| Layoff / RIF | 30 days |
-| Strategic pivot | 90 days |
-| Personnel (exec hire / fire) | 60 days |
-| M&A LOI | 30 days |
-| Custom | specify in command |
-
-## Workflow
-
-1. Read the decision record
-2. Validate it has APPROVED status
-3. Apply freeze: write `freeze_until: YYYY-MM-DD` to the decision record
-4. Add to active-freezes index at `~/.claude/freezes/active.md`
-5. cs-chief-of-staff router now refuses to re-route this topic to the boardroom until:
-   - The freeze period expires, OR
-   - A kill criterion explicitly triggers
-
-## Output
-
-The decision record is updated in place:
-
-```markdown
-# Decision: <title>
-...
-**Status:** FROZEN
-**Frozen until:** YYYY-MM-DD
-**Reason for freeze:** <text>
-**Override condition:** Kill criterion <name> triggers OR founder issues `/cs:unfreeze` with stated reason
+```bash
+mkdir -p ~/.gstack/analytics
+echo '{"skill":"freeze","ts":"'$(date -u +%Y-%m-%dT%H:%M:%SZ)'","repo":"'$(basename "$(git rev-parse --show-toplevel 2>/dev/null)" 2>/dev/null || echo "unknown")'"}'  >> ~/.gstack/analytics/skill-usage.jsonl 2>/dev/null || true
 ```
 
-The active-freezes index is updated:
+## Setup
 
-```markdown
-# Active Freezes
-**Updated:** YYYY-MM-DD
+Ask the user which directory to restrict edits to. Use AskUserQuestion:
 
-| Decision | Frozen until | Override condition |
-|---|---|---|
-| <decision title> | YYYY-MM-DD | <kill criterion or /cs:unfreeze> |
+- Question: "Which directory should I restrict edits to? Files outside this path will be blocked from editing."
+- Text input (not multiple choice) — the user types a path.
+
+Once the user provides a directory path:
+
+1. Resolve it to an absolute path:
+```bash
+FREEZE_DIR=$(cd "<user-provided-path>" 2>/dev/null && pwd)
+echo "$FREEZE_DIR"
 ```
 
-## Override
-
-To unfreeze before the period ends, the founder runs:
-
+2. Ensure trailing slash and save to the freeze state file:
+```bash
+FREEZE_DIR="${FREEZE_DIR%/}/"
+eval "$(~/.Codex/skills/gstack/bin/gstack-paths)"
+STATE_DIR="$GSTACK_STATE_ROOT"
+mkdir -p "$STATE_DIR"
+echo "$FREEZE_DIR" > "$STATE_DIR/freeze-dir.txt"
+echo "Freeze boundary set: $FREEZE_DIR"
 ```
-/cs:unfreeze <decision> <reason>
-```
 
-The unfreeze is logged in the decision history (preserved permanently). Forced overrides create a paper trail that surfaces at post-mortem.
+Tell the user: "Edits are now restricted to `<path>/`. Any Edit or Write
+outside this directory will be blocked. To change the boundary, run `/freeze`
+again. To remove it, run `/unfreeze` or end the session."
 
-## Auto-Override
+## How it works
 
-If a kill criterion in the decision triggers, the freeze auto-releases and the chief-of-staff routes immediately to `/cs:post-mortem`. The freeze does not protect against reality; it protects against impulse.
+The hook reads `file_path` from the Edit/Write tool input JSON, then checks
+whether the path starts with the freeze directory. If not, it returns
+`permissionDecision: "deny"` to block the operation.
 
-## Why This Beats "Just Don't Re-Decide"
+The freeze boundary persists for the session via the state file. The hook
+script reads it on every Edit/Write invocation.
 
-Founders have authority. Without an explicit lock + log, every wobble produces a "let's discuss this again" — which is exhausting for advisors and erodes the value of the boardroom. The freeze is **a process**, not a rule; it logs every override so the post-mortem can audit founder discipline.
+## Notes
 
-## Routing
-
-- `/cs:unfreeze` — explicit early release
-- `/cs:post-mortem` — auto-triggered if kill criterion fires
-- `/cs:boardroom` — blocked until unfreeze or expiry
-
-## Related
-
-- Skill: [`decision-logger`](../../../skills/decision-logger/SKILL.md)
-- Agent: [`cs-chief-of-staff`](../../agents/cs-chief-of-staff.md) — enforces freezes in routing
-
----
-
-**Version:** 1.0.0
+- The trailing `/` on the freeze directory prevents `/src` from matching `/src-old`
+- Freeze applies to Edit and Write tools only — Read, Bash, Glob, Grep are unaffected
+- This prevents accidental edits, not a security boundary — Bash commands like `sed` can still modify files outside the boundary
+- To deactivate, run `/unfreeze` or end the conversation

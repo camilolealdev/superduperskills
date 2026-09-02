@@ -1,7 +1,7 @@
 ---
 name: ux-audit
 description: "Dogfood web apps — browse as a real user, notice friction, document findings. Adopts a user persona, tracks emotional friction (trust, anxiety, confusion), counts click efficiency, tests resilience (mid-form navigation, back button, refresh), and asks 'would I come back?'. Produces ranked audit reports. Trigger with 'ux audit', 'dogfood this', 'ux walkthrough', 'qa test', 'test the app', or 'check all pages'."
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # UX Audit
@@ -30,7 +30,7 @@ If the user didn't provide a URL, find one automatically. **Prefer the deployed/
    ```
    If found, use the production URL (e.g. `https://app.example.com`).
 
-2. **Check for deployed URL** in CLAUDE.md, README, or package.json `homepage` field.
+2. **Check for deployed URL** in AGENTS.md, README, or package.json `homepage` field.
 
 3. **Fall back to local dev server** — check if one is already running:
    ```bash

@@ -1,16 +1,16 @@
 ---
 name: workflow-builder
-description: Design and write deterministic multi-agent workflow scripts (.js files in .claude/workflows/) for Claude Code's Workflow tool. Use when a user wants to build, create, author, scaffold, or run a custom Claude Code workflow, orchestrate sub-agents (fan-out, pipeline, loop, judge-panel), or automate a repeatable multi-step task across fresh-context agents.
+description: Design and write deterministic multi-agent workflow scripts (.js files in .Codex/workflows/) for Codex's Workflow tool. Use when a user wants to build, create, author, scaffold, or run a custom Codex workflow, orchestrate sub-agents (fan-out, pipeline, loop, judge-panel), or automate a repeatable multi-step task across fresh-context agents.
 license: MIT
 metadata:
-  inspired_by: "https://github.com/ray-amjad/claude-code-workflow-creator (Ray Amjad)"
-  targets: "Claude Code Workflow tool (CLAUDE_CODE_WORKFLOWS=1, /workflows)"
+  inspired_by: "https://github.com/ray-amjad/Codex-workflow-creator (Ray Amjad)"
+  targets: "Codex Workflow tool (CLAUDE_CODE_WORKFLOWS=1, /workflows)"
   version: 1.0.0
 ---
 
 # Workflow Builder
 
-Author runnable workflow scripts for Claude Code's Workflow tool: deterministic multi-agent orchestration files (`.js`) that fan work out to fresh-context sub-agents under plain JavaScript control flow. Only leaf `agent()` calls spend tokens, so the main session stays clean and the whole run is resumable.
+Author runnable workflow scripts for Codex's Workflow tool: deterministic multi-agent orchestration files (`.js`) that fan work out to fresh-context sub-agents under plain JavaScript control flow. Only leaf `agent()` calls spend tokens, so the main session stays clean and the whole run is resumable.
 
 ## ALWAYS start every session with intake (non-negotiable)
 
@@ -40,24 +40,24 @@ See [references/decision_and_intake_guide.md](references/decision_and_intake_gui
 | Scenario | Use |
 |----------|-----|
 | Single sub-agent, one task | plain Agent tool |
-| Reusable procedure, Claude picks steps dynamically | a Skill |
+| Reusable procedure, Codex picks steps dynamically | a Skill |
 | Many sub-agents in a fixed topology, deterministic + resumable | **Workflow** ✓ |
 
-Workflows earn their cost when work is parallel or multi-stage, must be reproducible, long enough to fail halfway (so resume matters), or benefits from isolating each step in its own context window. For one-off tasks, just use Claude directly.
+Workflows earn their cost when work is parallel or multi-stage, must be reproducible, long enough to fail halfway (so resume matters), or benefits from isolating each step in its own context window. For one-off tasks, just use Codex directly.
 
 ## Build → validate → run loop
 
 1. **Scaffold** a starter from the confirmed topology:
    ```bash
    python scripts/scaffold_workflow.py --topology pipeline --name pr-triage \
-     --description "Triage open PRs" > .claude/workflows/pr-triage.js
+     --description "Triage open PRs" > .Codex/workflows/pr-triage.js
    ```
 2. **Edit** the file: `meta` block first (pure literal, first statement), then the async body using the injected globals — `agent()`, `pipeline()`, `parallel()`, `phase()`, `log()`, `budget`, `args`, `workflow()`. Full surface in [references/api_reference.md](references/api_reference.md); copy-paste shapes in [references/orchestration_patterns.md](references/orchestration_patterns.md).
 3. **Validate** before running — catches the parser-fatal mistakes:
    ```bash
-   python scripts/validate_workflow.py .claude/workflows/pr-triage.js
+   python scripts/validate_workflow.py .Codex/workflows/pr-triage.js
    ```
-4. **Run** it: enable the feature with `export CLAUDE_CODE_WORKFLOWS=1`, save the file under `.claude/workflows/`, then use `/workflows` to launch and watch it live. Press **P** to pause/resume, **X** to skip a sub-agent. Failed agents retry automatically.
+4. **Run** it: enable the feature with `export CLAUDE_CODE_WORKFLOWS=1`, save the file under `.Codex/workflows/`, then use `/workflows` to launch and watch it live. Press **P** to pause/resume, **X** to skip a sub-agent. Failed agents retry automatically.
 
 ## Hard rules (validator enforces these)
 

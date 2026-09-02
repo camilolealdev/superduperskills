@@ -31,7 +31,7 @@ Prevents these patterns from being written to test files:
     "PreToolUse": [
       {
         "matcher": "Write|Edit",
-        "hook": ".claude/skills/no-skip/scripts/check-skips.sh",
+        "hook": ".Codex/skills/no-skip/scripts/check-skips.sh",
         "condition": "file matches **/*.test.{ts,js,tsx,jsx} OR **/*.spec.{ts,js}"
       }
     ]

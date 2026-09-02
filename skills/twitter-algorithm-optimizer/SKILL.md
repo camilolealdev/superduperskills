@@ -320,7 +320,7 @@ Use this skill when:
 - You want to become known for something specific
 - You're debugging inconsistent engagement rates
 
-Use Claude without this skill for:
+Use Codex without this skill for:
 - General writing and grammar fixes
 - Tone adjustments not related to algorithm
 - Off-Twitter content (LinkedIn, Medium, blogs, etc.)

@@ -1,6 +1,6 @@
 ---
 name: "collab-proof"
-description: "Use when you want to understand what Claude contributed vs what you drove in a session. Triggers on: /collab-proof, session retrospective, ai contribution analysis, collaboration evidence, what did claude do."
+description: "Use when you want to understand what Codex contributed vs what you drove in a session. Triggers on: /collab-proof, session retrospective, ai contribution analysis, collaboration evidence, what did Codex do."
 license: MIT
 ---
 
@@ -59,7 +59,7 @@ Score each frame 0.0–1.0 using the rubric below. Then apply pruning and classi
 
 **Frame B — Uncertainty** (developer doubt signals)
 - `1.0` Code written then fully rolled back, explicit doubt expressed ("이게 맞나?", "동작 안 하네"), `git revert`
-- `0.5` Advice sought from Claude mid-implementation, 2+ revision requests on same area
+- `0.5` Advice sought from Codex mid-implementation, 2+ revision requests on same area
 - `0.0` Uninterrupted directive execution — developer knew exactly what to build
 
 **Frame C — Fork** (decision branch presence)
@@ -67,10 +67,10 @@ Score each frame 0.0–1.0 using the rubric below. Then apply pruning and classi
 - `0.5` No explicit comparison but tradeoff mentioned (performance vs readability)
 - `0.0` Single standard approach applied, no alternatives considered
 
-**Frame D — AI contribution** (Claude's actual impact)
-- `1.0` Claude identified a bug/edge case the developer hadn't noticed and proposed the fix
-- `0.6` Claude generated structural boilerplate/skeleton that significantly accelerated execution
-- `0.2` Claude reformatted or transcribed developer-directed code without independent contribution
+**Frame D — AI contribution** (Codex's actual impact)
+- `1.0` Codex identified a bug/edge case the developer hadn't noticed and proposed the fix
+- `0.6` Codex generated structural boilerplate/skeleton that significantly accelerated execution
+- `0.2` Codex reformatted or transcribed developer-directed code without independent contribution
 
 ---
 
@@ -90,7 +90,7 @@ Rationale: zero uncertainty in a fast-moving session is a feature, not a reason 
 
 | Surviving frames | Dominant intent | Meaning |
 |---|---|---|
-| A high + D mid-high (B, C low) | `FEATURE_BUILDING` | High-velocity feature generation, Claude scaffolding |
+| A high + D mid-high (B, C low) | `FEATURE_BUILDING` | High-velocity feature generation, Codex scaffolding |
 | B high + A/D high | `BUG_FIXING` or `STUCK` | Active debugging or unresolved looping |
 | C high + A high | `REFACTORING` or `EXPLORING` | Architecture exploration, weighing alternatives |
 | All frames < 0.4 | `FLOW_STATE` or LOW | Routine typing, silence unless Layer 01 was HIGH |
@@ -156,7 +156,7 @@ If no real fork existed → write nothing. Never fabricate decisions.
 **Why this fix**: rationale — inferred if not stated explicitly
 **Alternative fixes considered**: other approaches discussed (if any)
 **AI contribution**:
-  - Identified: [Frame D — did Claude spot the root cause?]
+  - Identified: [Frame D — did Codex spot the root cause?]
   - Suggested: [Frame D — fix approach or diagnostic step]
   - Developer-driven: [what the developer diagnosed/decided independently]
 **Intent class**: BUG_FIXING
@@ -209,7 +209,7 @@ python3 -c "
 import json, sys
 from pathlib import Path
 
-projects = Path.home() / '.claude/projects'
+projects = Path.home() / '.Codex/projects'
 files = sorted(projects.rglob('*.jsonl'), key=lambda f: f.stat().st_mtime, reverse=True)
 if not files:
     print('no_data'); sys.exit()

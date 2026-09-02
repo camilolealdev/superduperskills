@@ -1,7 +1,7 @@
 ---
 name: roadmap
 description: "Plan and execute entire application builds. Generates phased delivery roadmaps, then executes them autonomously — phase by phase, committing at milestones, deploying, testing, and continuing until done or stuck. Modes: plan (generate roadmap), start (begin executing), resume (continue from where you left off), status (show progress). Triggers: 'roadmap', 'plan the build', 'start building', 'resume the build', 'keep going', 'build the whole thing', 'execute the roadmap', 'what phase are we on'."
-compatibility: claude-code-only
+compatibility: Codex-only
 allowed-tools:
   - Read
   - Write
@@ -13,7 +13,7 @@ allowed-tools:
 
 # Roadmap
 
-Generate a comprehensive technical roadmap for building an entire application. Detailed enough that Claude Code can pick up any phase and execute it autonomously for hours.
+Generate a comprehensive technical roadmap for building an entire application. Detailed enough that Codex can pick up any phase and execute it autonomously for hours.
 
 This is not a high-level strategy doc. It's a **delivery blueprint** — every phase has concrete tasks, every task is actionable, and the whole thing is ordered so you can build from phase 1 through to launch without backtracking.
 
@@ -21,8 +21,8 @@ This is not a high-level strategy doc. It's a **delivery blueprint** — every p
 
 - Starting a major new product (after deep-research, or from a product brief)
 - Converting a vague idea into an executable plan
-- Planning a multi-week build that will span many Claude Code sessions
-- Before saying "build this" — the roadmap is what you hand Claude Code to execute
+- Planning a multi-week build that will span many Codex sessions
+- Before saying "build this" — the roadmap is what you hand Codex to execute
 
 ## Inputs
 
@@ -32,7 +32,7 @@ The skill needs one of these:
 |-------|-----------------|
 | Deep research brief | `.jez/artifacts/research-brief-{topic}.md` (from `/deep-research`) |
 | Product brief | User describes what they want to build |
-| Existing partial app | Read CLAUDE.md + codebase to understand what exists |
+| Existing partial app | Read AGENTS.md + codebase to understand what exists |
 | Competitor to clone/improve | URL or product name — skill analyses it |
 
 If the user just says "plan a note-taking app on Cloudflare", that's enough — ask clarifying questions as needed.
@@ -97,7 +97,7 @@ This is the core of the roadmap. Each phase must:
 - **Have a clear goal** — one sentence describing what's different when this phase is done
 - **Be independently deployable** — the app works (with reduced features) after each phase
 - **Build on the previous phase** — no phase requires ripping out what came before
-- **Be completable in 1-3 Claude Code sessions** — if a phase takes more than a day, split it
+- **Be completable in 1-3 Codex sessions** — if a phase takes more than a day, split it
 
 #### Phase Structure
 
@@ -125,7 +125,7 @@ For each phase:
 [New Cloudflare resources, secrets, config]
 
 ### Task Checklist
-[Actionable tasks grouped by area — these are what Claude Code executes]
+[Actionable tasks grouped by area — these are what Codex executes]
 
 #### Setup
 - [ ] [task]
@@ -261,10 +261,10 @@ Show how the API grows:
 
 Write the roadmap to `docs/ROADMAP.md` (or the project root if no `docs/` exists).
 
-The file should be a single markdown document that Claude Code can read at the start of any session and know exactly what to build next. It's the project's north star.
+The file should be a single markdown document that Codex can read at the start of any session and know exactly what to build next. It's the project's north star.
 
 After generating, also update:
-- `CLAUDE.md` — add a reference to the roadmap
+- `AGENTS.md` — add a reference to the roadmap
 - `SESSION.md` — set current phase
 
 ## Quality Rules
@@ -274,9 +274,9 @@ After generating, also update:
 3. **Phase 1 must be ruthlessly small** — if it takes more than 2-3 sessions, cut scope.
 4. **The data model must be complete upfront** — schema redesigns mid-build are the #1 time waster.
 5. **"Deliberately not building" is mandatory** — without it, every phase grows.
-6. **Tasks are grouped by layer** (data, API, frontend, infra) — Claude Code works in layers, not features.
+6. **Tasks are grouped by layer** (data, API, frontend, infra) — Codex works in layers, not features.
 7. **Each phase has a definition of done** — specific things to test and verify.
-8. **Include the stack table** — don't make Claude guess the tech choices per phase.
+8. **Include the stack table** — don't make Codex guess the tech choices per phase.
 
 ---
 

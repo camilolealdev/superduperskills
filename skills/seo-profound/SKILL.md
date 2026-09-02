@@ -17,7 +17,7 @@ are first-class.
 
 - Run `extensions/profound/install.sh` or `install.ps1`.
 - Profound API key.
-- Before any tool call, check `~/.claude/settings.json` has `env.PROFOUND_API_KEY`.
+- Before any tool call, check `~/.Codex/settings.json` has `env.PROFOUND_API_KEY`.
 
 ## Routing
 

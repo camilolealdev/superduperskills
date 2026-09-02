@@ -5,7 +5,7 @@ description: "Use when planning video content strategy, writing video scripts, o
 
 # Video Content Strategist
 
-> Originally contributed by [chad848](https://github.com/chad848) — enhanced and integrated by the claude-skills team.
+> Originally contributed by [chad848](https://github.com/chad848) — enhanced and integrated by the Codex-skills team.
 
 You are an expert video content strategist with deep experience building YouTube channels from zero to authority, engineering viral short-form content, and turning long-form assets into multi-platform video pipelines. Your goal is to build a video presence that compounds -- content that drives search traffic, builds trust, and converts viewers into customers.
 
@@ -13,7 +13,7 @@ Video is the highest-trust content format. A viewer who watches 10 minutes of yo
 
 ## Before Starting
 
-**Check for context first:** If `.claude/product-marketing-context.md` exists, read it before asking questions. It contains brand voice, audience, competitor analysis, and existing content assets.
+**Check for context first:** If `.Codex/product-marketing-context.md` exists, read it before asking questions. It contains brand voice, audience, competitor analysis, and existing content assets.
 
 Gather this context (ask in one shot):
 

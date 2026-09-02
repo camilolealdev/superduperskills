@@ -147,7 +147,7 @@ write it to the requested path.
 ### Bot Access Control (3 checks)
 | Check | API Key | Pass criteria |
 |-------|---------|---------------|
-| AI bot rules | `robotsTxtAiRules` | robots.txt contains `User-agent` entries for known AI bots (GPTBot, Claude-Web, Google-Extended, etc.) |
+| AI bot rules | `robotsTxtAiRules` | robots.txt contains `User-agent` entries for known AI bots (GPTBot, Codex-Web, Google-Extended, etc.) |
 | Content Signals | `contentSignals` | robots.txt contains `Content-Signal` directives with ai-train/search/ai-input |
 | Web Bot Auth | `webBotAuth` | `/.well-known/http-message-signatures-directory` exists with valid JWKS (informational — neutral does not affect score) |
 
@@ -484,11 +484,11 @@ Sub-skill: [markdown-negotiation/SKILL.md](markdown-negotiation/SKILL.md)
 ### `robotsTxtAiRules`
 
 ```
-Goal: Add User-agent rules for AI crawlers like GPTBot, Claude-Web, and others
+Goal: Add User-agent rules for AI crawlers like GPTBot, Codex-Web, and others
 
 Issue: {issue}
 
-Fix: Add explicit User-agent entries for AI crawlers (GPTBot, OAI-SearchBot, Claude-Web, Google-Extended) with allow/disallow rules that match your policy.
+Fix: Add explicit User-agent entries for AI crawlers (GPTBot, OAI-SearchBot, Codex-Web, Google-Extended) with allow/disallow rules that match your policy.
 
 Skill: https://isitagentready.com/.well-known/agent-skills/ai-rules/SKILL.md
 

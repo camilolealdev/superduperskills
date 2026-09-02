@@ -1,20 +1,20 @@
 ---
 name: creating-skills
-description: Guide for creating Claude Code skills following Anthropic's official best practices. Use when user wants to create a new skill, build a skill, write SKILL.md, update an existing skill, or needs skill creation guidelines. Provides structure, frontmatter fields, naming conventions, and new features like dynamic context injection and subagent execution.
+description: Guide for creating Codex skills following Anthropic's official best practices. Use when user wants to create a new skill, build a skill, write SKILL.md, update an existing skill, or needs skill creation guidelines. Provides structure, frontmatter fields, naming conventions, and new features like dynamic context injection and subagent execution.
 ---
 
 # Creating skills
 
-Guide for creating Claude Code skills following Anthropic's official best practices.
+Guide for creating Codex skills following Anthropic's official best practices.
 
 ## Quick start
 
 ```bash
 # 1. Create skill directory
-mkdir -p ~/.claude/skills/<skill-name>
+mkdir -p ~/.Codex/skills/<skill-name>
 
 # 2. Create SKILL.md with frontmatter
-cat > ~/.claude/skills/<skill-name>/SKILL.md << 'EOF'
+cat > ~/.Codex/skills/<skill-name>/SKILL.md << 'EOF'
 ---
 name: <skill-name>
 description: <What it does>. Use when <trigger phrases>. <Key capabilities>.
@@ -26,7 +26,7 @@ description: <What it does>. Use when <trigger phrases>. <Key capabilities>.
 EOF
 
 # 3. Add optional resources as needed
-mkdir -p ~/.claude/skills/<skill-name>/{scripts,references,assets}
+mkdir -p ~/.Codex/skills/<skill-name>/{scripts,references,assets}
 ```
 
 ## SKILL.md structure
@@ -36,8 +36,8 @@ mkdir -p ~/.claude/skills/<skill-name>/{scripts,references,assets}
 | Field | Required | Description |
 |-------|----------|-------------|
 | `name` | No | Display name. Defaults to directory name. Lowercase, hyphens, max 64 chars. |
-| `description` | Recommended | What + when + capabilities. Max 1024 chars. Determines when Claude activates the skill. |
-| `allowed-tools` | No | Tools Claude can use without asking permission when skill is active. |
+| `description` | Recommended | What + when + capabilities. Max 1024 chars. Determines when Codex activates the skill. |
+| `allowed-tools` | No | Tools Codex can use without asking permission when skill is active. |
 | `argument-hint` | No | Autocomplete hint for arguments. Example: `[issue-number]` |
 | `disable-model-invocation` | No | `true` to prevent auto-invocation (manual `/name` only). |
 | `user-invocable` | No | `false` to hide from `/` menu (background knowledge only). |
@@ -48,7 +48,7 @@ mkdir -p ~/.claude/skills/<skill-name>/{scripts,references,assets}
 
 ### Invocation control matrix
 
-| Configuration | User can invoke | Claude can invoke |
+| Configuration | User can invoke | Codex can invoke |
 |---------------|-----------------|-------------------|
 | (defaults) | Yes | Yes |
 | `disable-model-invocation: true` | Yes | No |
@@ -77,16 +77,16 @@ skill-name/
 
 1. **Metadata** (name + description) - always in context (~100 tokens per skill)
 2. **SKILL.md body** - loaded when skill triggers (keep under 5k words)
-3. **Bundled resources** - loaded as needed by Claude
+3. **Bundled resources** - loaded as needed by Codex
 
-Reference supporting files from SKILL.md so Claude knows they exist. Keep references one level deep. For files over 100 lines, include a table of contents.
+Reference supporting files from SKILL.md so Codex knows they exist. Keep references one level deep. For files over 100 lines, include a table of contents.
 
 ### Scripts vs references vs assets
 
 | Type | Purpose | Loaded into context? |
 |------|---------|---------------------|
 | `scripts/` | Deterministic operations, complex processing | No (executed via bash) |
-| `references/` | Documentation Claude reads while working | Yes, on demand |
+| `references/` | Documentation Codex reads while working | Yes, on demand |
 | `assets/` | Templates, images, fonts for output | No (copied/used in output) |
 
 Only create scripts when they add value: complex multi-step processing, repeated code generation, deterministic reliability. Not for single-command wrappers.
@@ -146,11 +146,11 @@ Match specificity to the task's fragility:
 
 - **ALWAYS** write descriptions that include WHAT + WHEN triggers + capabilities
 - **ALWAYS** keep SKILL.md under 500 lines, split to references when approaching
-- **ALWAYS** reference bundled files from SKILL.md so Claude discovers them
+- **ALWAYS** reference bundled files from SKILL.md so Codex discovers them
 - **NEVER** duplicate info between SKILL.md and reference files
 - **NEVER** create wrapper scripts for single commands
 - **NEVER** include extraneous files (README.md, CHANGELOG.md, INSTALLATION_GUIDE.md, QUICK_REFERENCE.md)
-- **NEVER** explain things Claude already knows (standard libraries, common tools, basic patterns)
+- **NEVER** explain things Codex already knows (standard libraries, common tools, basic patterns)
 
 ## References
 

@@ -8,7 +8,7 @@ requires:
 
 # Shortcut Automation
 
-Automate your Shortcut project management operations directly from Claude Code. Create and list stories, add tasks and comments, batch-create stories, and navigate workflows -- all without leaving your terminal.
+Automate your Shortcut project management operations directly from Codex. Create and list stories, add tasks and comments, batch-create stories, and navigate workflows -- all without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/shortcut](https://composio.dev/toolkits/shortcut)
 
@@ -16,7 +16,7 @@ Automate your Shortcut project management operations directly from Claude Code. 
 
 ## Setup
 
-1. Add the Rube MCP server to your Claude Code config with URL: `https://rube.app/mcp`
+1. Add the Rube MCP server to your Codex config with URL: `https://rube.app/mcp`
 2. When prompted, authenticate your Shortcut account through the connection link provided
 3. Start automating your project management workflows with natural language
 

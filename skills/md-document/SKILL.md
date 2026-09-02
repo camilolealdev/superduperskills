@@ -5,7 +5,7 @@ version: 2.10.1
 author: Alireza Rezvani
 license: MIT
 tags: [markdown, html, documentation, single-file, toc, scrollspy, search, code-copy, design-system]
-compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
+compatible_tools: [Codex, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
 # md-document — Long-form Markdown to HTML
@@ -97,7 +97,7 @@ Out of scope: nested lists, HTML inlines, footnotes, definition lists, task list
 
 ## References
 
-- Shihipar — *Claude Code HTML output* (Medium, 2026)
+- Shihipar — *Codex HTML output* (Medium, 2026)
 - Tufte — *Envisioning Information* (1990), ch. 2 "Micro/Macro Readings"
 - NN/g — *Table of Contents Best Practices* (2023)
 - WCAG 2.2 — §1.4.3 contrast, §2.4.5 multiple ways

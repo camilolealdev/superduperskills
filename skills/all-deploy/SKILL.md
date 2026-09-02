@@ -3,7 +3,7 @@ name: all-deploy
 description: >
   Deploys any web app, API, or agent to the internet with a strict pre-deploy
   audit and a preview → health-check → prod flow. Detects Next, Vite, Astro,
-  Remix, Nuxt, SvelteKit, FastAPI, Flask, Express, MCP server, Claude Agent
+  Remix, Nuxt, SvelteKit, FastAPI, Flask, Express, MCP server, Codex Agent
   SDK script, Python worker, Dockerized, and static projects; routes to
   Vercel, Railway, Docker+SSH VPS, or cloudflared tunnel. Also supports a
   first-class "run locally" mode. At the start of each cloud deploy the skill
@@ -91,11 +91,11 @@ Target-CLI authentication is checked in **Phase 3.5** (below), after the target 
 
 ### Phase 0.5 — Permission-prompt seeding (first run only)
 
-Tell the user: *"Run the `fewer-permission-prompts` skill once on this project to seed `.claude/settings.json` with a deploy allowlist — otherwise every step will prompt."* Pointer only. Never edit the user's settings here.
+Tell the user: *"Run the `fewer-permission-prompts` skill once on this project to seed `.Codex/settings.json` with a deploy allowlist — otherwise every step will prompt."* Pointer only. Never edit the user's settings here.
 
 ### Phase 1 — Detect
 
-Read `references/project-types.md` (skill-relative path — Claude resolves it against the installed skill directory) for the full fingerprint table. Inspect:
+Read `references/project-types.md` (skill-relative path — Codex resolves it against the installed skill directory) for the full fingerprint table. Inspect:
 
 - **Package managers & manifests:** `package.json`, `pnpm-lock.yaml`, `yarn.lock`, `package-lock.json`, `bun.lockb`, `pyproject.toml`, `requirements.txt`, `poetry.lock`, `uv.lock`, `Pipfile`.
 - **Framework signals:** `next.config.*`, `vite.config.*`, `astro.config.*`, `remix.config.*`, `nuxt.config.*`, `svelte.config.*`, `app/` vs `pages/`, `main.py` with `FastAPI()`, `Flask()`, `app = FastAPI()`, `server.py`, `index.html` at root.
@@ -111,13 +111,13 @@ Output: a classification block and a ranked list of candidate targets with one-l
 
 ### Phase 2 — Audit (strict, blocking)
 
-Run the audit script bundled with this skill (`scripts/audit.py`) against the current project directory. Claude resolves the skill path at load time — the invocation looks like:
+Run the audit script bundled with this skill (`scripts/audit.py`) against the current project directory. Codex resolves the skill path at load time — the invocation looks like:
 
 ```
 python3 <SKILL_DIR>/scripts/audit.py <project-path>
 ```
 
-Where `<SKILL_DIR>` is wherever the skill is installed (typically `~/.claude/skills/all-deploy/`) and `<project-path>` is usually `.`. The script checks every item in `references/audit-checklist.md`: secrets in tracked files, `.gitignore` coverage, lockfile sanity, `.env.example` completeness (via `scripts/env_extract.py`), build/start script existence, port binding, clean HEAD, git-remote match, `npm audit --production --audit-level=high` or `pip-audit`.
+Where `<SKILL_DIR>` is wherever the skill is installed (typically `~/.Codex/skills/all-deploy/`) and `<project-path>` is usually `.`. The script checks every item in `references/audit-checklist.md`: secrets in tracked files, `.gitignore` coverage, lockfile sanity, `.env.example` completeness (via `scripts/env_extract.py`), build/start script existence, port binding, clean HEAD, git-remote match, `npm audit --production --audit-level=high` or `pip-audit`.
 
 Any failure halts. For each issue, show the fix as a diff (if applicable) and wait for the user's OK before applying. Auto-mode does not bypass audit.
 
@@ -128,11 +128,11 @@ Any failure halts. For each issue, show the fix as a diff (if applicable) and wa
 Present the ranked candidates from Phase 1 with one-line rationales. User picks or accepts the top pick with "ok". Only now load the target reference:
 
 - `references/targets/vercel.md` — Next, Vite, Astro, Remix, Nuxt, SvelteKit, static
-- `references/targets/railway.md` — FastAPI, Flask, Express, Python workers, MCP HTTP, Claude Agent SDK
+- `references/targets/railway.md` — FastAPI, Flask, Express, Python workers, MCP HTTP, Codex Agent SDK
 - `references/targets/docker-vps.md` — any Dockerfile, stateful workloads, self-hosted
 - `references/targets/cloudflared-tunnel.md` — expose local dev, quick demo
 
-For agent-shaped projects, also load `references/agents.md` for per-agent-type adjustments (FastAPI/Flask HTTP, MCP stdio vs HTTP, Claude Agent SDK script, generic Python worker).
+For agent-shaped projects, also load `references/agents.md` for per-agent-type adjustments (FastAPI/Flask HTTP, MCP stdio vs HTTP, Codex Agent SDK script, generic Python worker).
 
 ### Phase 3.5 — Target CLI installed + authenticated
 
@@ -214,7 +214,7 @@ In `always_ask` mode, skip steps 2–3 and require an explicit "yes" in-turn bef
 | Any `Dockerfile` present, DB/volumes needed, self-host preference | Docker + SSH VPS | Full control, stateful-friendly |
 | Local dev running, wants a quick public URL | cloudflared tunnel | No host needed, instant |
 | MCP server | Railway (HTTP mode) or Docker+SSH | See `references/agents.md` |
-| Claude Agent SDK script | Railway (worker mode) or cron | See `references/agents.md` |
+| Codex Agent SDK script | Railway (worker mode) or cron | See `references/agents.md` |
 
 If signals conflict, present the top two with rationale and let the user pick.
 

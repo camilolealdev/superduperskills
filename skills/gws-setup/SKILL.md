@@ -2,16 +2,16 @@
 name: gws-setup
 description: >
   Set up the Google Workspace CLI (gws) from scratch. Guides through GCP project creation,
-  OAuth credentials, authentication, and installing 90+ agent skills for Claude Code.
+  OAuth credentials, authentication, and installing 90+ agent skills for Codex.
   Use when setting up gws for the first time, configuring Google Workspace API access,
   or troubleshooting gws auth issues. Triggers: "set up gws", "google workspace cli",
   "gws setup", "install gws".
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Google Workspace CLI — First-Time Setup
 
-Set up the `gws` CLI (@googleworkspace/cli) with OAuth credentials and 90+ agent skills for Claude Code. Produces a fully authenticated CLI with skills for Gmail, Drive, Calendar, Sheets, Docs, Chat, Tasks, and more.
+Set up the `gws` CLI (@googleworkspace/cli) with OAuth credentials and 90+ agent skills for Codex. Produces a fully authenticated CLI with skills for Gmail, Drive, Calendar, Sheets, Docs, Chat, Tasks, and more.
 
 ## Prerequisites
 
@@ -183,16 +183,16 @@ Should show `"status": "success"` with the authenticated account and granted sco
 
 ### Step 6: Install Agent Skills
 
-Install the 90+ gws agent skills globally for Claude Code:
+Install the 90+ gws agent skills globally for Codex:
 
 ```bash
-npx skills add googleworkspace/cli -g --agent claude-code --all
+npx skills add googleworkspace/cli -g --agent Codex --all
 ```
 
 Verify skills are installed:
 
 ```bash
-ls ~/.claude/skills/gws-* | wc -l
+ls ~/.Codex/skills/gws-* | wc -l
 ```
 
 Should show 30+ gws skill directories.
@@ -277,4 +277,4 @@ All gws config lives in `~/.config/gws/`:
 ## See Also
 
 - [gws-install](../gws-install/SKILL.md) — Quick setup on additional machines with existing credentials
-- [gws-shared](~/.claude/skills/gws-shared/SKILL.md) — Auth patterns and global flags for gws commands
+- [gws-shared](~/.Codex/skills/gws-shared/SKILL.md) — Auth patterns and global flags for gws commands

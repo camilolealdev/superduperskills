@@ -3,8 +3,8 @@ name: alert-manager
 description: 'Automated SEO alerts: ranking drops, traffic changes, technical issues, competitor movements with notifications. "Alert if rankings drop" / "排名掉了提醒我" / "流量异常". SEO预警/排名监控/流量报警/自动提醒 アラート設定 알림설정 alertas SEO'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -67,8 +67,8 @@ metadata:
 # Alert Manager
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 Sets up proactive monitoring alerts for critical SEO and GEO metrics. Triggers notifications when rankings drop, traffic changes significantly, technical issues occur, or competitors make moves.
@@ -101,7 +101,7 @@ Use this whenever the task needs time-aware change detection, escalation, or sta
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Set Up Alerts
 
@@ -133,7 +133,7 @@ Review and optimize my current SEO alerts
 
 **Expected output**: a delta summary, alert/report output, and a short handoff summary ready for `memory/monitoring/`.
 
-- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing monitoring deliverable plus a reusable summary that can be stored under `memory/monitoring/`.
 - **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
 - **Next handoff**: use the `Next Best Skill` below when a change needs action.
@@ -142,7 +142,7 @@ Review and optimize my current SEO alerts
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console + ~~web crawler connected:**
 Automatically monitor real-time metric feeds for ranking changes via ~~SEO tool API, indexing and coverage alerts from ~~search console, and technical health alerts from ~~web crawler. Set up automated threshold-based alerts with notification delivery.
@@ -186,7 +186,7 @@ When a user requests alert setup:
 
    For each relevant category (Rankings, Traffic, Technical, Backlinks, Competitors, GEO/AI, Brand), define alert name, trigger condition, threshold, and priority level.
 
-   > **Reference**: See [references/alert-configuration-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/references/alert-configuration-templates.md) for complete alert tables, threshold examples, and response plan templates for all 7 categories.
+   > **Reference**: See [references/alert-configuration-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/alert-manager/references/alert-configuration-templates.md) for complete alert tables, threshold examples, and response plan templates for all 7 categories.
 
 3. **Define Alert Response Plans**
 
@@ -309,7 +309,7 @@ When a user requests alert setup:
 | AI citation loss | Any key query | >20% queries | Weekly |
 | Security issues | Any detected | Any detected | Daily |
 
-> **Reference**: See [references/alert-threshold-guide.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/references/alert-threshold-guide.md) for baseline establishment, threshold setting methodology, fatigue prevention, escalation paths, and response playbooks.
+> **Reference**: See [references/alert-threshold-guide.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/alert-manager/references/alert-threshold-guide.md) for baseline establishment, threshold setting methodology, fatigue prevention, escalation paths, and response playbooks.
 
 
 ### Save Results
@@ -328,8 +328,8 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Alert Threshold Guide](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/alert-manager/references/alert-threshold-guide.md) — Recommended thresholds by metric, fatigue prevention strategies, and escalation path templates
+- [Alert Threshold Guide](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/alert-manager/references/alert-threshold-guide.md) — Recommended thresholds by metric, fatigue prevention strategies, and escalation path templates
 
 ## Next Best Skill
 
-- **Primary**: [rank-tracker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/rank-tracker/SKILL.md) — pair alerts with a baseline measurement workflow.
+- **Primary**: [rank-tracker](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/rank-tracker/SKILL.md) — pair alerts with a baseline measurement workflow.

@@ -13,7 +13,7 @@ tags:
   - iso-27001
   - gdpr
 agents:
-  - claude-code
+  - Codex
   - codex-cli
   - openclaw
 ---

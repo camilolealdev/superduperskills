@@ -5,7 +5,7 @@ description: >
   Workflow: check CLI, test SSH connection, set up auth, verify access, save config.
   Use when connecting to a WordPress site, setting up WP-CLI access, creating
   application passwords, or troubleshooting WordPress connection issues.
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # WordPress Setup
@@ -60,7 +60,7 @@ If SSH isn't available:
 
 1. Navigate to `https://example.com/wp-admin/profile.php` (or use browser automation)
 2. Scroll to "Application Passwords" section
-3. Enter a name (e.g. "Claude Code") and click "Add New Application Password"
+3. Enter a name (e.g. "Codex") and click "Add New Application Password"
 4. Copy the generated password (spaces are part of it but optional in auth)
 
 Test the connection:

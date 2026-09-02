@@ -165,9 +165,9 @@ Smart-explore uses **tree-sitter AST parsing** for structural analysis. Unsuppor
 
 Files with unrecognized extensions are parsed as plain text — `smart_search` still works (grep-style), but `smart_outline` and `smart_unfold` will not extract structured symbols.
 
-### Custom Grammars (`.claude-mem.json`)
+### Custom Grammars (`.Codex-mem.json`)
 
-You can register additional tree-sitter grammars for file types not in the bundled list. Create or update `.claude-mem.json` in your project root:
+You can register additional tree-sitter grammars for file types not in the bundled list. Create or update `.Codex-mem.json` in your project root:
 
 ```json
 {

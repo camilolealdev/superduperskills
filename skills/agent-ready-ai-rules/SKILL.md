@@ -10,7 +10,7 @@ Add explicit `User-agent` entries for AI crawlers in your robots.txt per
 
 ## Requirements
 
-- Add `User-agent` blocks for AI-specific bots: `GPTBot`, `OAI-SearchBot`, `Claude-Web`, `Google-Extended`, `Amazonbot`, `anthropic-ai`, `Bytespider`, `CCBot`, `Applebot-Extended`
+- Add `User-agent` blocks for AI-specific bots: `GPTBot`, `OAI-SearchBot`, `Codex-Web`, `Google-Extended`, `Amazonbot`, `anthropic-ai`, `Bytespider`, `CCBot`, `Applebot-Extended`
 - Set `Allow` and/or `Disallow` rules matching your content policy
 - A wildcard `User-agent: *` block alone is not sufficient — explicit AI bot entries are required
 

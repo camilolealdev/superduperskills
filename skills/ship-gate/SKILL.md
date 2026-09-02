@@ -76,7 +76,7 @@ Auth detection:
 
 AI/LLM detection:
   "openai" in dependencies                -> OpenAI
-  "@anthropic-ai/sdk" in dependencies     -> Claude API
+  "@anthropic-ai/sdk" in dependencies     -> Codex API
   "@google/generative-ai" in deps         -> Gemini
 ```
 

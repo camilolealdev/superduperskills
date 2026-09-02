@@ -6,7 +6,7 @@ metadata:
   author: https://github.com/Jeffallan
   version: "1.1.0"
   domain: api-architecture
-  triggers: MCP, Model Context Protocol, MCP server, MCP client, Claude integration, AI tools, context protocol, JSON-RPC
+  triggers: MCP, Model Context Protocol, MCP server, MCP client, Codex integration, AI tools, context protocol, JSON-RPC
   role: specialist
   scope: implementation
   output-format: code
@@ -141,3 +141,5 @@ When implementing MCP features, provide:
 2. Schema definitions (tools, resources, prompts)
 3. Configuration file (transport, auth, etc.)
 4. Brief explanation of design decisions
+
+[Documentation](https://jeffallan.github.io/Codex-skills/skills/api-architecture/mcp-developer/)

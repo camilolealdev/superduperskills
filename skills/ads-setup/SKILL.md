@@ -1,6 +1,6 @@
 ---
 name: ads-setup
-description: "Set up a paid-media client, brand, account, data-source, privacy, and mutation-guardrail profile for Claude Ads. Use for onboarding, initial configuration, brand DNA, API tokens or credential profiles, environment-variable or keychain setup, connecting exports or read adapters, safe native or verified-local installation, curl-pipe-bash install requests, declaring KPIs, or preparing a new advertising project."
+description: "Set up a paid-media client, brand, account, data-source, privacy, and mutation-guardrail profile for Codex Ads. Use for onboarding, initial configuration, brand DNA, API tokens or credential profiles, environment-variable or keychain setup, connecting exports or read adapters, safe native or verified-local installation, curl-pipe-bash install requests, declaring KPIs, or preparing a new advertising project."
 ---
 
 # Paid Media Setup
@@ -18,7 +18,7 @@ description: "Set up a paid-media client, brand, account, data-source, privacy, 
    incident owner/channel. This is an operational contract, not legal advice or a
    claim of regulatory compliance.
 5. Declare mutation authority, approvers, budget/policy ceilings, and rollback owner.
-6. Validate the profile and write it atomically beneath the project's Claude Ads
+6. Validate the profile and write it atomically beneath the project's Codex Ads
    state directory.
 
 Distinguish observed facts, operator decisions, and provisional assumptions. Treat

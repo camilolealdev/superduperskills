@@ -7,7 +7,7 @@ description: "Comprehensive incident response framework from detection through r
 
 **Category:** Engineering Team  
 **Tier:** POWERFUL  
-**Author:** Claude Skills Team  
+**Author:** Codex Skills Team  
 **Version:** 1.0.0  
 **Last Updated:** February 2026
 

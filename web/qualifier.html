@@ -3,13 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SuperDuperSkills — Qualify & Skill Selector</title>
-  <meta name="description" content="Qualify a project and generate a focused SuperDuperSkills manifest from the 2,608-skill catalog.">
+  <title>Qualify AI Skills for Your Project | SuperDuperSkills</title>
+  <meta name="description" content="Qualify your project and generate a focused SuperDuperSkills manifest from the 2,608-skill catalog.">
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0c0e13">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="canonical" href="https://superduperskills.vercel.app/qualifier.html">
+  <link rel="alternate" type="text/html" href="https://superduperskills.vercel.app/" title="SuperDuperSkills catalog">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Qualify AI Skills for Your Project | SuperDuperSkills">
+  <meta property="og:description" content="Generate a focused AI skills manifest for your project from the SuperDuperSkills catalog.">
+  <meta property="og:url" content="https://superduperskills.vercel.app/qualifier.html">
+  <meta property="og:site_name" content="SuperDuperSkills">
+  <meta property="og:image" content="https://superduperskills.vercel.app/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Qualify AI Skills for Your Project">
+  <meta name="twitter:description" content="Generate a focused AI skills manifest from the SuperDuperSkills catalog.">
+  <meta name="twitter:image" content="https://superduperskills.vercel.app/og-image.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="apple-touch-icon" href="/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Space+Mono:wght@400;700&family=Bangers&display=swap" rel="stylesheet"></noscript>
   <style>
@@ -21,24 +37,22 @@
       --ink-muted: #8b8d97;
       --accent: #00e5a0;
       --accent-alt: #6c5ce7;
+      --accent-cyan: #4facfe;
       --comic-blue: #4facfe;
       --comic-pink: #e100ff;
       --border: rgba(255,255,255,0.06);
+      --border-card: rgba(255,255,255,0.06);
       --border-glass: rgba(255,255,255,0.08);
       --font-display: 'Bangers', cursive;
       --font-body: 'Space Grotesk', sans-serif;
       --font-mono: 'Space Mono', monospace;
+      --text-muted: #8b8d97;
       --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     :where(a, button, input, select, textarea, [tabindex]):focus-visible {
       outline: 2px solid var(--accent);
-      outline-offset: 3px;
-    }
-
-    :where(a, button, input, select, textarea, [tabindex]):focus-visible {
-      outline: 2px solid var(--accent-cyan);
       outline-offset: 3px;
     }
 
@@ -52,6 +66,18 @@
       display: flex;
       flex-direction: column;
     }
+
+    .page-nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      border: 1px solid var(--border-glass);
+      border-radius: 8px;
+      padding: 0.45rem 0.75rem;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+    .page-nav a:hover { border-color: var(--accent); background: rgba(0, 229, 160, 0.08); }
 
     header {
       padding: 1.5rem 2rem;
@@ -278,6 +304,7 @@
       .brand-title { font-size: 1rem; }
       .brand-logo { width: 34px; height: 34px; }
       .badge { font-size: 0.68rem; padding: 0.2rem 0.5rem; }
+      .page-nav a { font-size: 0.68rem; padding: 0.35rem 0.55rem; }
       main { margin: 1rem auto; padding: 0 1rem; gap: 1rem; }
       .glass-card { padding: 1.25rem; border-radius: 12px; }
       .options-grid { grid-template-columns: 1fr; }
@@ -302,14 +329,16 @@
       <div class="brand-logo">S</div>
       <div class="brand-title">SuperDuperSkills Qualifier</div>
     </div>
+    <nav class="page-nav" aria-label="Navegación principal">
+      <a href="/" aria-label="Ver catálogo de skills">Catálogo</a>
+    </nav>
     <div class="badge">2,608 Skills Indexadas</div>
   </header>
 
   <main>
     <section>
-      <!-- Phase Selection -->
-      <div class="glass-card">
-        <div class="card-title">1. Fase & Enfoque del Proyecto</div>
+      <!-- Phase Selection -->        <div class="glass-card">
+        <h1 class="card-title">1. Fase & Enfoque del Proyecto</h1>
         <div class="options-grid" id="phase-grid">
           <div class="opt-card selected" onclick="selectPhase(this, 'MVP')">
             <span class="opt-icon">🚀</span>
@@ -340,7 +369,7 @@
 
       <!-- Objectives -->
       <div class="glass-card">
-        <div class="card-title">2. Objetivos Clave de la Sesión</div>
+        <h2 class="card-title">2. Objetivos Clave de la Sesión</h2>
         <div class="options-grid" id="obj-grid">
           <div class="opt-card selected" onclick="toggleObjective(this, 'yagni')">
             <span class="opt-icon">📏</span>
@@ -373,7 +402,7 @@
     <!-- Side Panel: Active Suite -->
     <aside>
       <div class="glass-card">
-        <div class="card-title">📋 Suite de Skills Cualificadas</div>
+        <h2 class="card-title">📋 Suite de Skills Cualificadas</h2>
         <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
           Invocación directa y lectura obligatoria de cada <code>SKILL.md</code> antes de iniciar código.
         </p>
@@ -388,7 +417,7 @@
       </div>
 
       <div class="glass-card">
-        <div class="card-title">📜 Vista Previa Manifiesto</div>
+        <h2 class="card-title">📜 Vista Previa Manifiesto</h2>
         <div class="code-block" id="json-preview">
           // Manifiesto cualificado listo
         </div>

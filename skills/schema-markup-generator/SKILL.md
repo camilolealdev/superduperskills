@@ -3,8 +3,8 @@ name: schema-markup-generator
 description: 'Generate JSON-LD for FAQ, HowTo, Article, Product, LocalBusiness rich results and AI understanding. "Add structured data" / "添加结构化数据" / "要星级评分". Schema标记/富摘要/JSON-LD/结构化 構造化データ 스키마마크업 datos estructurados'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 allowed-tools: WebFetch
 metadata:
   author: aaron-he-zhu
@@ -70,8 +70,8 @@ metadata:
 
 # Schema Markup Generator
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill creates Schema.org structured data markup in JSON-LD format to help search engines understand your content and enable rich results in SERPs.
@@ -104,7 +104,7 @@ Use this whenever the task needs a shippable asset or transformation that should
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Generate Schema for Content
 
@@ -136,14 +136,14 @@ Review and improve this schema markup: [existing schema]
 
 **Expected output**: a ready-to-use asset or implementation-ready transformation plus a short handoff summary ready for `memory/content/`.
 
-- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing content, metadata, or schema deliverable plus a reusable summary that can be stored under `memory/content/`.
-- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `CLAUDE.md`, `memory/decisions.md`, and `memory/open-loops.md`.
+- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `AGENTS.md`, `memory/decisions.md`, and `memory/open-loops.md`.
 - **Next handoff**: use the `Next Best Skill` below when the asset is ready for review or deployment.
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~web crawler connected:**
 Automatically crawl and extract page content (visible text, headings, lists, tables), existing schema markup, page metadata, and structured content elements that map to schema properties.
@@ -163,7 +163,7 @@ When a user requests schema markup:
 
 1. **Identify Content Type and Rich Result Opportunity**
 
-   Reference the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md) item **O05 (Schema Markup)** for content-type to schema mapping:
+   Reference the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md) item **O05 (Schema Markup)** for content-type to schema mapping:
 
    ```markdown
    ### CORE-EEAT Schema Mapping (O05)
@@ -210,7 +210,7 @@ When a user requests schema markup:
 
    Based on the identified content type, generate the appropriate JSON-LD schema. Supported types: FAQPage, HowTo, Article/BlogPosting/NewsArticle, Product, LocalBusiness, Organization, BreadcrumbList, Event, Recipe, and combined multi-type schemas.
 
-   > **Reference**: See [references/schema-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/schema-templates.md) for complete, copy-ready JSON-LD templates for all schema types with required and optional properties.
+   > **Reference**: See [references/schema-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/schema-markup-generator/references/schema-templates.md) for complete, copy-ready JSON-LD templates for all schema types with required and optional properties.
 
    For each schema generated, include:
    - All required properties for the chosen type
@@ -371,7 +371,7 @@ Learn SEO from scratch with our comprehensive guide...
 
 ## Schema Type Decision Tree
 
-> **Reference**: See [references/schema-decision-tree.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/schema-decision-tree.md) for the full decision tree (content-to-schema mapping), industry-specific recommendations, implementation priority tiers (P0-P4), and validation quick reference.
+> **Reference**: See [references/schema-decision-tree.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/schema-markup-generator/references/schema-decision-tree.md) for the full decision tree (content-to-schema mapping), industry-specific recommendations, implementation priority tiers (P0-P4), and validation quick reference.
 
 
 ### Save Results
@@ -392,9 +392,9 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Schema Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/schema-templates.md) - Copy-ready JSON-LD templates for all schema types
-- [Validation Guide](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/schema-markup-generator/references/validation-guide.md) - Common errors, required properties, testing workflow
+- [Schema Templates](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/schema-markup-generator/references/schema-templates.md) - Copy-ready JSON-LD templates for all schema types
+- [Validation Guide](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/schema-markup-generator/references/validation-guide.md) - Common errors, required properties, testing workflow
 
 ## Next Best Skill
 
-- **Primary**: [technical-seo-checker](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/optimize/technical-seo-checker/SKILL.md) — verify implementation quality and deployment readiness.
+- **Primary**: [technical-seo-checker](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/optimize/technical-seo-checker/SKILL.md) — verify implementation quality and deployment readiness.

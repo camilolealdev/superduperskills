@@ -21,7 +21,7 @@ hooks:
   Stop:
     - hooks:
         - type: command
-          command: "SKILL_PS1=\"${CLAUDE_SKILL_DIR}/scripts/check-complete.ps1\"; SKILL_SH=\"${CLAUDE_SKILL_DIR}/scripts/check-complete.sh\"; KNOWN_PS1=$(ls \"$HOME/.claude/skills/planning-with-files/scripts/check-complete.ps1\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/check-complete.ps1\" 2>/dev/null | head -1); KNOWN_SH=$(ls \"$HOME/.claude/skills/planning-with-files/scripts/check-complete.sh\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/check-complete.sh\" 2>/dev/null | head -1); TARGET_PS1=\"${SKILL_PS1:-$KNOWN_PS1}\"; TARGET_SH=\"${SKILL_SH:-$KNOWN_SH}\"; if [ -n \"$TARGET_PS1\" ] && [ -f \"$TARGET_PS1\" ]; then powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File \"$TARGET_PS1\" 2>/dev/null; elif [ -n \"$TARGET_SH\" ] && [ -f \"$TARGET_SH\" ]; then sh \"$TARGET_SH\" 2>/dev/null; fi"
+          command: "SKILL_PS1=\"${CLAUDE_SKILL_DIR}/scripts/check-complete.ps1\"; SKILL_SH=\"${CLAUDE_SKILL_DIR}/scripts/check-complete.sh\"; KNOWN_PS1=$(ls \"$HOME/.Codex/skills/planning-with-files/scripts/check-complete.ps1\" \"$HOME/.Codex/plugins/marketplaces/planning-with-files/scripts/check-complete.ps1\" 2>/dev/null | head -1); KNOWN_SH=$(ls \"$HOME/.Codex/skills/planning-with-files/scripts/check-complete.sh\" \"$HOME/.Codex/plugins/marketplaces/planning-with-files/scripts/check-complete.sh\" 2>/dev/null | head -1); TARGET_PS1=\"${SKILL_PS1:-$KNOWN_PS1}\"; TARGET_SH=\"${SKILL_SH:-$KNOWN_SH}\"; if [ -n \"$TARGET_PS1\" ] && [ -f \"$TARGET_PS1\" ]; then powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File \"$TARGET_PS1\" 2>/dev/null; elif [ -n \"$TARGET_SH\" ] && [ -f \"$TARGET_SH\" ]; then sh \"$TARGET_SH\" 2>/dev/null; fi"
   PreCompact:
     - matcher: "*"
       hooks:
@@ -44,13 +44,13 @@ Trabaja como Manus: usa archivos Markdown persistentes como tu «memoria de trab
 
 ```bash
 # Linux/macOS
-SKILL_DIR="${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/skills/planning-with-files-es}"
+SKILL_DIR="${CLAUDE_PLUGIN_ROOT:-$HOME/.Codex/skills/planning-with-files-es}"
 $(command -v python3 || command -v python) "${SKILL_DIR}/scripts/session-catchup.py" "$(pwd)"
 ```
 
 ```powershell
 # Windows PowerShell
-& (Get-Command python -ErrorAction SilentlyContinue).Source "$env:USERPROFILE\.claude\skills\planning-with-files-es\scripts\session-catchup.py" (Get-Location)
+& (Get-Command python -ErrorAction SilentlyContinue).Source "$env:USERPROFILE\.Codex\skills\planning-with-files-es\scripts\session-catchup.py" (Get-Location)
 ```
 
 Si el informe de recuperación muestra contexto no sincronizado:

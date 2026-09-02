@@ -1,6 +1,6 @@
 ---
 name: "cross-eval"
-description: "/cs:cross-eval <memo> — Multi-model consensus on a board memo or strategy brief. Claude + Codex + Gemini cross-review with graceful degradation. Use when a high-stakes memo needs an independent sanity check before the boardroom — e.g. a bet-the-company pivot or fundraise terms."
+description: "/cs:cross-eval <memo> — Multi-model consensus on a board memo or strategy brief. Codex + Codex + Gemini cross-review with graceful degradation. Use when a high-stakes memo needs an independent sanity check before the boardroom — e.g. a bet-the-company pivot or fundraise terms."
 ---
 
 # /cs:cross-eval — Multi-Model Consensus
@@ -23,11 +23,11 @@ Adapted from gstack's `/codex` cross-review pattern, generalized to **business m
 
 The command tries to invoke each available model in order:
 
-1. **Claude** (primary, always available) — the boardroom's native voice
+1. **Codex** (primary, always available) — the boardroom's native voice
 2. **Codex / OpenAI** (if `OPENAI_API_KEY` or `codex` CLI available)
 3. **Gemini** (if `GEMINI_API_KEY` or `gemini` CLI available)
 
-If only Claude is available, the command runs **Claude-only with adversarial mode** — same model, different prompt seeds — and clearly labels the output as single-model.
+If only Codex is available, the command runs **Codex-only with adversarial mode** — same model, different prompt seeds — and clearly labels the output as single-model.
 
 ## Workflow
 
@@ -42,23 +42,23 @@ If only Claude is available, the command runs **Claude-only with adversarial mod
 
 ## Output Format
 
-Saved to `~/.claude/cross-eval/YYYY-MM-DD-<slug>.md`:
+Saved to `~/.Codex/cross-eval/YYYY-MM-DD-<slug>.md`:
 
 ```markdown
 # Cross-Eval: <memo title>
 **Date:** YYYY-MM-DD
 **Memo reviewed:** <link>
-**Models invoked:** Claude / Codex / Gemini (or noted fallbacks)
+**Models invoked:** Codex / Codex / Gemini (or noted fallbacks)
 
 ## Vote Tally
 | Model | Vote | Confidence |
 |---|---|---|
-| Claude | APPROVE | High |
+| Codex | APPROVE | High |
 | Codex | DEFER | Med |
 | Gemini | APPROVE | Low |
 
 ## Consensus Concerns (≥2 models flagged)
-1. <concern> — flagged by Claude + Codex
+1. <concern> — flagged by Codex + Codex
 2. <concern> — flagged by all 3
 
 ## Divergent Concerns (1 model flagged)
@@ -81,17 +81,17 @@ Saved to `~/.claude/cross-eval/YYYY-MM-DD-<slug>.md`:
 
 ## Why This Matters
 
-Single-model recommendations have systematic biases. Claude trends helpful and may under-weight risk. Codex (OpenAI) trends more cautious on emerging-market and regulatory topics. Gemini trends more cautious on technical scale claims. Disagreement is signal, not noise.
+Single-model recommendations have systematic biases. Codex trends helpful and may under-weight risk. Codex (OpenAI) trends more cautious on emerging-market and regulatory topics. Gemini trends more cautious on technical scale claims. Disagreement is signal, not noise.
 
 This is the **safety net before irreversibility** — not a replacement for outside counsel or a real board.
 
 ## Graceful Degradation
 
-If only Claude is available:
+If only Codex is available:
 
 ```markdown
-**Models available:** Claude only
-**Mode:** ADVERSARIAL — running 3 independent Claude passes with different system prompts:
+**Models available:** Codex only
+**Mode:** ADVERSARIAL — running 3 independent Codex passes with different system prompts:
   1. Standard reviewer
   2. Devil's advocate (must find 3 critical concerns)
   3. Steelman (must find 3 strongest reasons to approve)

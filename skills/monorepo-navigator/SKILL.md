@@ -13,7 +13,7 @@ description: "Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pn
 
 ## Overview
 
-Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces, and Lerna. Enables cross-package impact analysis, selective builds/tests on affected packages only, remote caching, dependency graph visualization, and structured migrations from multi-repo to monorepo. Includes Claude Code configuration for workspace-aware development.
+Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces, and Lerna. Enables cross-package impact analysis, selective builds/tests on affected packages only, remote caching, dependency graph visualization, and structured migrations from multi-repo to monorepo. Includes Codex configuration for workspace-aware development.
 
 ---
 
@@ -25,7 +25,7 @@ Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces,
 - **Build optimization** — remote caching, incremental builds, parallel execution
 - **Migration** — step-by-step multi-repo → monorepo with zero history loss
 - **Publishing** — changesets for versioning, pre-release channels, npm publish workflows
-- **Claude Code config** — workspace-aware CLAUDE.md with per-package instructions
+- **Codex config** — workspace-aware AGENTS.md with per-package instructions
 
 ---
 
@@ -81,14 +81,14 @@ Also see `references/monorepo-patterns.md` for common architecture and CI patter
 | Shared tsconfig causes one package to break all type-checks | Use `extends` properly — each package extends root but overrides `rootDir` / `outDir` |
 | git history lost during migration | Use `git filter-repo --to-subdirectory-filter` before merging — never move files manually |
 | Remote cache not working in CI | Check TURBO_TOKEN and TURBO_TEAM env vars; verify with `turbo run build --summarize` |
-| CLAUDE.md too generic — Claude modifies wrong package | Add explicit "When working on X, only touch files in apps/X" rules per package CLAUDE.md |
+| AGENTS.md too generic — Codex modifies wrong package | Add explicit "When working on X, only touch files in apps/X" rules per package AGENTS.md |
 
 ---
 
 ## Best Practices
 
-1. **Root CLAUDE.md defines the map** — document every package, its purpose, and dependency rules
-2. **Per-package CLAUDE.md defines the rules** — what's allowed, what's forbidden, testing commands
+1. **Root AGENTS.md defines the map** — document every package, its purpose, and dependency rules
+2. **Per-package AGENTS.md defines the rules** — what's allowed, what's forbidden, testing commands
 3. **Always scope commands with --filter** — running everything on every change defeats the purpose
 4. **Remote cache is not optional** — without it, monorepo CI is slower than multi-repo CI
 5. **Changesets over manual versioning** — never hand-edit package.json versions in a monorepo

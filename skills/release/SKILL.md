@@ -50,7 +50,7 @@ grep -rn --include="*.ts" --include="*.js" --include="*.json" '"3\.[0-9]\+\.[0-9
   --exclude-dir=node_modules --exclude-dir=dist --exclude-dir=.git --exclude-dir=releases
 ```
 
-Also check `.claude/skills/skills-manifest.json` for `fleetVersion` — must be updated to match.
+Also check `.Codex/skills/skills-manifest.json` for `fleetVersion` — must be updated to match.
 
 If any stale version strings are found in source files, fix them ALL before continuing.
 
@@ -63,7 +63,7 @@ Update package.json to the target version:
 cd /workspaces/agentic-qe && npm version <version> --no-git-tag-version
 ```
 
-Also update `fleetVersion` in `.claude/skills/skills-manifest.json`.
+Also update `fleetVersion` in `.Codex/skills/skills-manifest.json`.
 
 Verify:
 ```bash
@@ -253,7 +253,7 @@ cd /workspaces/agentic-qe
 
 # Stage version bump + changelog + release docs + any version audit fixes
 git add package.json package-lock.json CHANGELOG.md docs/releases/README.md docs/releases/v<version>.md
-git add .claude/skills/skills-manifest.json  # if fleetVersion was updated
+git add .Codex/skills/skills-manifest.json  # if fleetVersion was updated
 git status
 
 git commit -m "chore(release): bump version to v<version>"
@@ -401,7 +401,7 @@ Fix, rebuild, and re-release if this step fails. Never ship a CLI that crashes o
 
 - **Single package.json** at root — no v3/ subdirectory exists
 - Never hardcode version strings — always read from package.json
-- Also update `fleetVersion` in `.claude/skills/skills-manifest.json`
+- Also update `fleetVersion` in `.Codex/skills/skills-manifest.json`
 - Always run REAL tests, never simulated
 - Publish happens via GitHub Actions, not locally (uses `--provenance` for attestation)
 - Release notes must be **user-friendly** — focus on value, not implementation internals

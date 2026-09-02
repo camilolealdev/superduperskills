@@ -1,6 +1,6 @@
 ---
 name: ln-011-agent-installer
-description: "Installs or updates Codex CLI, Gemini CLI, and Claude Code. Use when CLI agents need installation or update."
+description: "Installs or updates Codex CLI, Gemini CLI, and Codex. Use when CLI agents need installation or update."
 license: MIT
 ---
 
@@ -11,7 +11,7 @@ license: MIT
 **Type:** L3 Worker
 **Category:** 0XX Shared
 
-Installs or updates CLI agents via npm and Claude CLI. Single pass per agent: install then immediately verify.
+Installs or updates CLI agents via npm and Codex CLI. Single pass per agent: install then immediately verify.
 
 ---
 
@@ -32,7 +32,7 @@ If `summaryArtifactPath` is provided, write the same summary JSON there. If not 
 |-------|----------------|---------------|
 | Codex | `npm i -g @openai/codex` | `codex --version` |
 | Gemini | `npm i -g @google/gemini-cli` | `gemini --version` |
-| Claude | `claude update` | `claude --version` |
+| Codex | `Codex update` | `Codex --version` |
 
 ---
 
@@ -51,7 +51,7 @@ For each agent in registry, apply first matching rule:
 | `disabled: true` | SKIP | "disabled by user" |
 | `dry_run: true` | Show planned command | "dry run" |
 | npm agent | `npm install -g {pkg}` then `{cmd} --version` | version or error |
-| Claude | `claude update` then `claude --version` | version or error |
+| Codex | `Codex update` then `Codex --version` | version or error |
 
 **Single pass:** install and verify happen atomically per agent. No separate scan phase — the install result IS the state.
 
@@ -72,7 +72,7 @@ Agent Installation:
 |--------|-----------|----------|--------|
 | Codex  | installed | 0.1.2503 | ok     |
 | Gemini | skipped   | -        | disabled by user |
-| Claude | updated   | 1.0.30   | ok     |
+| Codex | updated   | 1.0.30   | ok     |
 ```
 
 ### Phase 2: Post-Install Gemini Configuration

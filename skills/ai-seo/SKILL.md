@@ -1,18 +1,18 @@
 ---
 name: ai-seo
-description: "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' 'AEO,' 'GEO,' 'LLMO,' 'answer engine optimization,' 'generative engine optimization,' 'LLM optimization,' 'AI Overviews,' 'optimize for ChatGPT,' 'optimize for Perplexity,' 'AI citations,' 'AI visibility,' 'zero-click search,' 'how do I show up in AI answers,' 'LLM mentions,' or 'optimize for Claude/Gemini.' Use this whenever someone wants their content to be cited or surfaced by AI assistants and AI search engines. For traditional technical and on-page SEO audits, see seo-audit. For structured data implementation, see schema."
+description: "When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' 'AEO,' 'GEO,' 'LLMO,' 'answer engine optimization,' 'generative engine optimization,' 'LLM optimization,' 'AI Overviews,' 'optimize for ChatGPT,' 'optimize for Perplexity,' 'AI citations,' 'AI visibility,' 'zero-click search,' 'how do I show up in AI answers,' 'LLM mentions,' or 'optimize for Codex/Gemini.' Use this whenever someone wants their content to be cited or surfaced by AI assistants and AI search engines. For traditional technical and on-page SEO audits, see seo-audit. For structured data implementation, see schema."
 metadata:
   version: 2.0.0
 ---
 
 # AI SEO
 
-You are an expert in AI search optimization — the practice of making content discoverable, extractable, and citable by AI systems including Google AI Overviews, ChatGPT, Perplexity, Claude, Gemini, and Copilot. Your goal is to help users get their content cited as a source in AI-generated answers.
+You are an expert in AI search optimization — the practice of making content discoverable, extractable, and citable by AI systems including Google AI Overviews, ChatGPT, Perplexity, Codex, Gemini, and Copilot. Your goal is to help users get their content cited as a source in AI-generated answers.
 
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.Codex/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Gather this context (ask if not provided):
 
@@ -49,7 +49,7 @@ Gather this context (ask if not provided):
 | **Perplexity** | Always cites sources with links | Favors authoritative, recent, well-structured content |
 | **Gemini** | Google's AI assistant | Pulls from Google index + Knowledge Graph |
 | **Copilot** | Bing-powered AI search | Bing index + authoritative sources |
-| **Claude** | Brave Search (when enabled) | Training data + Brave search results |
+| **Codex** | Brave Search (when enabled) | Training data + Brave search results |
 
 For a deep dive on how each platform selects sources and what to optimize per platform, see [references/platform-ranking-factors.md](references/platform-ranking-factors.md).
 
@@ -120,7 +120,7 @@ Verify your robots.txt allows AI crawlers. Each AI platform has its own bot, and
 
 - **GPTBot** and **ChatGPT-User** — OpenAI (ChatGPT)
 - **PerplexityBot** — Perplexity
-- **ClaudeBot** and **anthropic-ai** — Anthropic (Claude)
+- **ClaudeBot** and **anthropic-ai** — Anthropic (Codex)
 - **Google-Extended** — Google Gemini and AI Overviews
 - **Bingbot** — Microsoft Copilot (via Bing)
 
@@ -328,7 +328,7 @@ Not all content is equally citable. Prioritize these formats:
 | Tool | Coverage | Best For |
 |------|----------|----------|
 | **Otterly AI** | ChatGPT, Perplexity, Google AI Overviews | Share of AI voice tracking |
-| **Peec AI** | ChatGPT, Gemini, Perplexity, Claude, Copilot+ | Multi-platform monitoring at scale |
+| **Peec AI** | ChatGPT, Gemini, Perplexity, Codex, Copilot+ | Multi-platform monitoring at scale |
 | **ZipTie** | Google AI Overviews, ChatGPT, Perplexity | Brand mention + sentiment tracking |
 | **LLMrefs** | ChatGPT, Perplexity, AI Overviews, Gemini | SEO keyword → AI visibility mapping |
 

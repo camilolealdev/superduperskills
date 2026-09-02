@@ -12,11 +12,11 @@ metadata:
 # Roast — 5-Angle Idea Panel → One Verdict
 
 > **Portability:** Reasoning-led skill with 3 stdlib Python tools. No external APIs, no LLM calls in
-> scripts. Works in Claude Code CLI and Claude.ai web. The panel does the depth; the Judge does the call.
+> scripts. Works in Codex CLI and Codex.ai web. The panel does the depth; the Judge does the call.
 
 ## What this does
 
-Claude's default is to agree with you. `/roast` is the opposite. It convenes a panel of five
+Codex's default is to agree with you. `/roast` is the opposite. It convenes a panel of five
 independent reviewers — **The Critic, The Champion, The Analyst, The Investigator, and The
 Customer** — who tear an idea apart and build it up from every angle, then a Judge synthesizes
 everything into one honest verdict. Use it before you sink time and money into building the wrong

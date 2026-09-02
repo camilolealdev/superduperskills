@@ -182,13 +182,13 @@ await db.batchStore(documents.map(doc => ({
 ## MCP Server Integration
 
 ```bash
-# Start AgentDB MCP server for Claude Code
+# Start AgentDB MCP server for Codex
 npx agentdb@latest mcp
 
-# Add to Claude Code (one-time setup)
-claude mcp add agentdb npx agentdb@latest mcp
+# Add to Codex (one-time setup)
+Codex mcp add agentdb npx agentdb@latest mcp
 
-# Now use MCP tools in Claude Code:
+# Now use MCP tools in Codex:
 # - agentdb_query: Semantic vector search
 # - agentdb_store: Store documents with embeddings
 # - agentdb_stats: Database statistics
@@ -333,7 +333,7 @@ npx agentdb@latest stats ./vectors.db
 
 - GitHub: https://github.com/ruvnet/agentic-flow/tree/main/packages/agentdb
 - Documentation: node_modules/agentic-flow/docs/AGENTDB_INTEGRATION.md
-- MCP Integration: `npx agentdb@latest mcp` for Claude Code
+- MCP Integration: `npx agentdb@latest mcp` for Codex
 - Website: https://agentdb.ruv.io
 - CLI Help: `npx agentdb@latest --help`
 - Command Help: `npx agentdb@latest help <command>`

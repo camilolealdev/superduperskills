@@ -35,14 +35,14 @@ npx agentdb@latest init ./agents.db --preset large
 npx agentdb@latest init ./memory.db --in-memory
 ```
 
-### Start MCP Server for Claude Code
+### Start MCP Server for Codex
 
 ```bash
-# Start MCP server (integrates with Claude Code)
+# Start MCP server (integrates with Codex)
 npx agentdb@latest mcp
 
-# Add to Claude Code (one-time setup)
-claude mcp add agentdb npx agentdb@latest mcp
+# Add to Codex (one-time setup)
+Codex mcp add agentdb npx agentdb@latest mcp
 ```
 
 ### Create Learning Plugin
@@ -335,5 +335,5 @@ npx agentdb@latest migrate --source .swarm/memory.db
 
 - GitHub: https://github.com/ruvnet/agentic-flow/tree/main/packages/agentdb
 - Documentation: node_modules/agentic-flow/docs/AGENTDB_INTEGRATION.md
-- MCP Integration: `npx agentdb@latest mcp` for Claude Code
+- MCP Integration: `npx agentdb@latest mcp` for Codex
 - Website: https://agentdb.ruv.io

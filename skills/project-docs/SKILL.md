@@ -8,7 +8,7 @@ allowed-tools:
   - Glob
   - Grep
   - Bash
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Project Documentation Generator
@@ -197,7 +197,7 @@ For small projects with no `docs/` directory, write to the project root instead.
 2. **Include versions** — extract from package.json/lock files, not from memory
 3. **Show real response shapes** — copy from TypeScript types or Zod schemas in the code
 4. **Keep it scannable** — tables over paragraphs, code blocks over prose
-5. **Don't duplicate CLAUDE.md** — if architecture info is already in CLAUDE.md, either move it to ARCHITECTURE.md or reference it
+5. **Don't duplicate AGENTS.md** — if architecture info is already in AGENTS.md, either move it to ARCHITECTURE.md or reference it
 6. **Flag gaps** — if you find undocumented routes or tables without clear purpose, note them with `<!-- TODO: document purpose -->`
 
 ## Updating Existing Docs

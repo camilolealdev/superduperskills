@@ -5,7 +5,7 @@ allowed-tools: Read, Grep, Glob, Bash, mcp__hex-line__outline
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Documentation Structure Auditor (L3 Worker)
 
@@ -31,9 +31,9 @@ Receives `contextStore` with: `tech_stack`, `project_root`, `output_dir`.
 
 1) **Parse Context:** Extract tech stack, project root, output_dir from contextStore
 2) **Load Registry if Present:** Use `docs/project/.context/doc_registry.json` as the first routing source when available
-3) **Scan Docs:** Find all `.md` files in project (`AGENTS.md`, `CLAUDE.md`, `README.md`, `docs/**`)
+3) **Scan Docs:** Find all `.md` files in project (`AGENTS.md`, `AGENTS.md`, `README.md`, `docs/**`)
 4) **Read Section-First:** For larger docs, outline first, then read header markers + `Quick Navigation` + `Agent Entry` + `Maintenance`
-5) **Build Tree:** Construct hierarchy from `AGENTS.md` outward links when present, otherwise from `CLAUDE.md`
+5) **Build Tree:** Construct hierarchy from `AGENTS.md` outward links when present, otherwise from `AGENTS.md`
 6) **Audit Categories 1-7:** Run structural checks (see Audit Categories below)
 7) **Collect Findings:** Record each violation with severity, location (file:line), effort estimate (S/M/L), recommendation
 8) **Calculate Score:** Count violations by severity, calculate compliance score (X/10)

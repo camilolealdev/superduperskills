@@ -51,7 +51,7 @@ Author one workflow per phase. Its stages, in order:
 
 **Review depth scales with the phase** — pick the reviewers the diff warrants; do not run all 12 every phase. The full ring:reviewing-code pool is the supervisor's call at plan close or for a high-stakes phase, not a per-phase default.
 
-### Workflow skeleton (Claude Code Workflow tool)
+### Workflow skeleton (Codex Workflow tool)
 
 ```js
 export const meta = {
@@ -134,7 +134,7 @@ Return to Step 2 for the next phase. Repeat until every phase is `Complete`. At 
 
 ## Without a workflow harness (fallback)
 
-Ring runs across harnesses; the Workflow tool is Claude Code only. Where it is absent, keep the same contract with a **single atomic parallel dispatch** per phase: dispatch the implementers, then dispatch the picked Ring reviewers **plus a contrarian agent** in one parallel batch (the discipline in ring:reviewing-code applies — all in one turn, no trickle-dispatch), and the supervisor aggregates. The stages and the mandatory review + contrarian rule are unchanged; only the orchestration primitive differs.
+Ring runs across harnesses; the Workflow tool is Codex only. Where it is absent, keep the same contract with a **single atomic parallel dispatch** per phase: dispatch the implementers, then dispatch the picked Ring reviewers **plus a contrarian agent** in one parallel batch (the discipline in ring:reviewing-code applies — all in one turn, no trickle-dispatch), and the supervisor aggregates. The stages and the mandatory review + contrarian rule are unchanged; only the orchestration primitive differs.
 
 ## ⛔ Mandatory review inside the harness
 

@@ -1,6 +1,6 @@
 ---
 name: ring:generating-llms-txt
-description: "Generating or auditing a repository's llms.txt per the llmstxt.org spec, and creating CLAUDE.md / AGENTS.md when missing, by analyzing README, build files, docs, and API surface. Use when creating an llms.txt, auditing an existing one for spec compliance and live links, or improving a repo's AI readability. Skip when the llms.txt is current, the task is code-only with no doc scope, or the repo needs no LLM discoverability."
+description: "Generating or auditing a repository's llms.txt per the llmstxt.org spec, and creating AGENTS.md / AGENTS.md when missing, by analyzing README, build files, docs, and API surface. Use when creating an llms.txt, auditing an existing one for spec compliance and live links, or improving a repo's AI readability. Skip when the llms.txt is current, the task is code-only with no doc scope, or the repo needs no LLM discoverability."
 ---
 
 # LLMs.txt & AI Documentation Generator
@@ -8,7 +8,7 @@ description: "Generating or auditing a repository's llms.txt per the llmstxt.org
 ## When to use
 - Creating a new llms.txt for a repository
 - Auditing an existing llms.txt for completeness
-- Generating CLAUDE.md or AGENTS.md for AI coding agents
+- Generating AGENTS.md or AGENTS.md for AI coding agents
 - Improving AI readability of a repository
 
 ## Skip when
@@ -20,7 +20,7 @@ description: "Generating or auditing a repository's llms.txt per the llmstxt.org
 **Complementary:** ring:running-dev-cycle, ring:implementing-tasks
 
 
-Generates `llms.txt`, `CLAUDE.md`, and `AGENTS.md` for repositories.
+Generates `llms.txt`, `AGENTS.md`, and `AGENTS.md` for repositories.
 
 ## Step 1: Analyze Repository
 
@@ -30,7 +30,7 @@ Generates `llms.txt`, `CLAUDE.md`, and `AGENTS.md` for repositories.
 3. Read Makefile / package.json / go.mod — build system, language, dependencies
 4. Scan /docs/ — available documentation
 5. Scan /api/ or OpenAPI specs — API surface
-6. Read existing llms.txt / CLAUDE.md / AGENTS.md (if mode=audit)
+6. Read existing llms.txt / AGENTS.md / AGENTS.md (if mode=audit)
 7. Identify: language, architecture, test framework
 ```
 
@@ -74,9 +74,9 @@ Follow llmstxt.org specification exactly:
 
 **MUST NOT include:** internal-only docs, CI/CD details, issue tracker, full dependency lists, changelog.
 
-## Step 3: Generate CLAUDE.md
+## Step 3: Generate AGENTS.md
 
-Read by Claude Code at session start. Must be actionable with exact commands:
+Read by Codex at session start. Must be actionable with exact commands:
 
 ```markdown
 # {Project Name}
@@ -110,16 +110,16 @@ e.g., "Functions use camelCase: processTransaction()"
 
 ## Step 4: Generate AGENTS.md
 
-Same structure as CLAUDE.md but vendor-neutral language.
-If CLAUDE.md exists: `AGENTS.md` can reference it:
+Same structure as AGENTS.md but vendor-neutral language.
+If AGENTS.md exists: `AGENTS.md` can reference it:
 
 ```markdown
 # {Project Name} — AI Agent Context
 
-See [CLAUDE.md](./CLAUDE.md) for complete setup and conventions.
+See [AGENTS.md](./AGENTS.md) for complete setup and conventions.
 
 ## Additional Notes
-{Any agent-specific guidance not in CLAUDE.md}
+{Any agent-specific guidance not in AGENTS.md}
 ```
 
 ## Audit Mode (mode=audit)
@@ -131,8 +131,8 @@ For existing files, check:
 | llms.txt has H1 + blockquote | Required fields present |
 | All links resolve | No 404s |
 | Spec compliance | No H3+, no non-list content in sections |
-| CLAUDE.md commands valid | All commands runnable, no stale references |
-| Under token budget | llms.txt < 2K tokens, CLAUDE.md < 3K tokens |
+| AGENTS.md commands valid | All commands runnable, no stale references |
+| Under token budget | llms.txt < 2K tokens, AGENTS.md < 3K tokens |
 
 ## Output
 
@@ -146,7 +146,7 @@ Repository: {repo_path}
 | File | Action | Tokens |
 |------|--------|--------|
 | llms.txt | Created/Updated/OK | ~{N} |
-| CLAUDE.md | Created/Updated/OK | ~{N} |
+| AGENTS.md | Created/Updated/OK | ~{N} |
 | AGENTS.md | Created/Updated/OK | ~{N} |
 
 ### Audit Results (audit mode)

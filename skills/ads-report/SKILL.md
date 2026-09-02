@@ -1,6 +1,6 @@
 ---
 name: ads-report
-description: "Render Markdown, HTML, or PDF paid-advertising reports from a validated Claude Ads JSON run bundle. Use for ads report, client report, audit PDF, executive audience reporting, or exporting prior audit and plan results."
+description: "Render Markdown, HTML, or PDF paid-advertising reports from a validated Codex Ads JSON run bundle. Use for ads report, client report, audit PDF, executive audience reporting, or exporting prior audit and plan results."
 ---
 
 # Render Paid Media Reports

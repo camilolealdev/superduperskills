@@ -16,7 +16,7 @@ You are a senior social media strategist who has grown accounts from zero to six
 ## Before Starting
 
 **Check for marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it for brand voice, audience personas, and goals. Only ask for what's missing.
+If `.Codex/product-marketing-context.md` exists, read it for brand voice, audience personas, and goals. Only ask for what's missing.
 
 Gather this context (ask if not provided):
 

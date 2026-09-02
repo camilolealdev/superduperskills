@@ -12,11 +12,11 @@ Master advanced swarm patterns for distributed research, development, and testin
 
 ### Prerequisites
 ```bash
-# Ensure Claude Flow is installed
-npm install -g claude-flow@alpha
+# Ensure Codex Flow is installed
+npm install -g Codex-flow@alpha
 
 # Add MCP server (if using MCP tools)
-claude mcp add claude-flow npx claude-flow@alpha mcp start
+Codex mcp add Codex-flow npx Codex-flow@alpha mcp start
 ```
 
 ### Basic Pattern
@@ -237,7 +237,7 @@ mcp__claude-flow__workflow_execute({
 ### CLI Fallback
 ```bash
 # Quick research swarm
-npx claude-flow swarm "research AI trends in 2025" \
+npx Codex-flow swarm "research AI trends in 2025" \
   --strategy research \
   --mode distributed \
   --max-agents 6 \
@@ -381,7 +381,7 @@ mcp__claude-flow__pipeline_create({
 ### CLI Fallback
 ```bash
 # Quick development swarm
-npx claude-flow swarm "build REST API with authentication" \
+npx Codex-flow swarm "build REST API with authentication" \
   --strategy development \
   --mode hierarchical \
   --monitor \
@@ -581,7 +581,7 @@ mcp__claude-flow__trend_analysis({
 ### CLI Fallback
 ```bash
 # Quick testing swarm
-npx claude-flow swarm "test application comprehensively" \
+npx Codex-flow swarm "test application comprehensively" \
   --strategy testing \
   --mode star \
   --parallel \
@@ -728,7 +728,7 @@ mcp__claude-flow__context_restore({
 
 // Backup memory stores
 mcp__claude-flow__memory_backup({
-  "path": "/workspaces/claude-code-flow/backups/swarm-memory.json"
+  "path": "/workspaces/Codex-flow/backups/swarm-memory.json"
 })
 ```
 
@@ -957,10 +957,10 @@ mcp__claude-flow__swarm_init({ topology: "mesh", maxAgents: 4 })
 
 ## References
 
-- [Claude Flow Documentation](https://github.com/ruvnet/claude-flow)
-- [Swarm Orchestration Guide](https://github.com/ruvnet/claude-flow/wiki/swarm)
-- [MCP Tools Reference](https://github.com/ruvnet/claude-flow/wiki/mcp)
-- [Performance Optimization](https://github.com/ruvnet/claude-flow/wiki/performance)
+- [Codex Flow Documentation](https://github.com/ruvnet/Codex-flow)
+- [Swarm Orchestration Guide](https://github.com/ruvnet/Codex-flow/wiki/swarm)
+- [MCP Tools Reference](https://github.com/ruvnet/Codex-flow/wiki/mcp)
+- [Performance Optimization](https://github.com/ruvnet/Codex-flow/wiki/performance)
 
 ---
 

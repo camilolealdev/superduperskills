@@ -4,7 +4,7 @@ description: "Coordinates project documentation creation with single context gat
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Project Documentation Coordinator
 
@@ -217,7 +217,7 @@ Agent(description: "{doc_type} docs via {worker}",
   "validation_status": "passed",
   "created_files": [
     "AGENTS.md",
-    "CLAUDE.md",
+    "AGENTS.md",
     "docs/README.md",
     "docs/documentation_standards.md",
     "docs/principles.md",
@@ -231,10 +231,10 @@ Agent(description: "{doc_type} docs via {worker}",
     "docs/project/runbook.md"
   ],
   "quality_inputs": {
-    "doc_paths": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/project/architecture.md"],
+    "doc_paths": ["AGENTS.md", "AGENTS.md", "docs/README.md", "docs/project/architecture.md"],
     "owners": {
       "AGENTS.md": "ln-111-root-docs-creator",
-      "CLAUDE.md": "ln-111-root-docs-creator",
+      "AGENTS.md": "ln-111-root-docs-creator",
       "docs/project/architecture.md": "ln-112-project-core-creator"
     }
   },

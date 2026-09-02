@@ -1,11 +1,11 @@
 ---
 name: weekly-digests
-description: Generate a serial week-by-week narrative digest of a project's full claude-mem timeline. Splits the timeline into per-ISO-week files, then runs one consecutive subagent per week — each receiving the prior week's carry-forward block — to produce one chapter per ISO week of data. Use when asked for "weekly digests", "week-by-week story", "serial timeline", or "narrative chapters" of a project's history.
+description: Generate a serial week-by-week narrative digest of a project's full Codex-mem timeline. Splits the timeline into per-ISO-week files, then runs one consecutive subagent per week — each receiving the prior week's carry-forward block — to produce one chapter per ISO week of data. Use when asked for "weekly digests", "week-by-week story", "serial timeline", or "narrative chapters" of a project's history.
 ---
 
 # Weekly Digests
 
-Produce a serial, multi-chapter narrative digest of a project's complete claude-mem history. Differs from `timeline-report` (one long report) — this generates one digest *per ISO week*, with each subagent reading the prior week's carry-forward block so the story stays coherent.
+Produce a serial, multi-chapter narrative digest of a project's complete Codex-mem history. Differs from `timeline-report` (one long report) — this generates one digest *per ISO week*, with each subagent reading the prior week's carry-forward block so the story stays coherent.
 
 **The chapter count equals the number of ISO weeks the timeline covers.** A project with 2 weeks of data produces 2 chapters; one with 30 weeks produces 30. There is no fixed length — count the weeks first, then drive the pipeline off that count.
 
@@ -24,14 +24,14 @@ If the user wants a single sweeping report, use `timeline-report` instead. This 
 
 ## Prerequisites
 
-- claude-mem worker running
+- Codex-mem worker running
 - Project has at least one ISO week of observations (the pipeline degenerates gracefully — even N=1 works)
 - A clean output directory the user is comfortable writing into
 
 **Resolve the worker port** (do this once, reuse `$WORKER_PORT`):
 
 ```bash
-WORKER_PORT="${CLAUDE_MEM_WORKER_PORT:-$(node -e "const fs=require('fs'),p=require('path'),os=require('os');const uid=(typeof process.getuid==='function'?process.getuid():77);const fallback=String(37700+(uid%100));try{const s=JSON.parse(fs.readFileSync(p.join(os.homedir(),'.claude-mem','settings.json'),'utf-8'));process.stdout.write(String(s.CLAUDE_MEM_WORKER_PORT||fallback));}catch{process.stdout.write(fallback);}" 2>/dev/null)}"
+WORKER_PORT="${CLAUDE_MEM_WORKER_PORT:-$(node -e "const fs=require('fs'),p=require('path'),os=require('os');const uid=(typeof process.getuid==='function'?process.getuid():77);const fallback=String(37700+(uid%100));try{const s=JSON.parse(fs.readFileSync(p.join(os.homedir(),'.Codex-mem','settings.json'),'utf-8'));process.stdout.write(String(s.CLAUDE_MEM_WORKER_PORT||fallback));}catch{process.stdout.write(fallback);}" 2>/dev/null)}"
 ```
 
 ## Workflow
@@ -142,7 +142,7 @@ Required carry-forward sub-sections:
 
 **Tone rules:**
 - Third-person narrator, sharp, observational. Not twee.
-- AI is "Claude"; human is "{USER_FIRST_NAME}".
+- AI is "Codex"; human is "{USER_FIRST_NAME}".
 - Treat codebase components as characters — whatever the project's recurring named systems are (e.g. a worker, a queue, a process manager, a recurring bug, a flaky migration). Don't import names from another project; use what shows up in this project's observations.
 - Don't manufacture drama. Name what's there.
 - Track the user's prompt-register evolution week by week (frustration markers, escalation language, shifts in tone).

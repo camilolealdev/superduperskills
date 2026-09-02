@@ -8,7 +8,7 @@ requires:
 
 # Ahrefs Automation
 
-Run **Ahrefs** SEO analytics directly from Claude Code. Analyze backlink profiles, research keywords, track domain authority over time, audit organic keyword rankings, and batch-analyze multiple URLs without leaving your terminal.
+Run **Ahrefs** SEO analytics directly from Codex. Analyze backlink profiles, research keywords, track domain authority over time, audit organic keyword rankings, and batch-analyze multiple URLs without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/ahrefs](https://composio.dev/toolkits/ahrefs)
 

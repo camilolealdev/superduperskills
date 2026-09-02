@@ -63,7 +63,7 @@ Task("Audit accessibility", `
 
 ## Browser engine
 
-All browser automation in this skill uses the **qe-browser** fleet skill (Vibium engine). See `.claude/skills/qe-browser/SKILL.md`. The `vibium` binary is installed by `aqe init`.
+All browser automation in this skill uses the **qe-browser** fleet skill (Vibium engine). See `.Codex/skills/qe-browser/SKILL.md`. The `vibium` binary is installed by `aqe init`.
 
 ## Visual Testing Operations
 
@@ -74,14 +74,14 @@ All browser automation in this skill uses the **qe-browser** fleet skill (Vibium
 for path in / /login /dashboard /settings; do
   slug=$(echo "$path" | tr '/' '_' | sed 's/^_//' || echo root)
   vibium go "https://production.example.com$path" && vibium wait load
-  node .claude/skills/qe-browser/scripts/visual-diff.js --name "baseline_${slug:-root}"
+  node .Codex/skills/qe-browser/scripts/visual-diff.js --name "baseline_${slug:-root}"
 done
 
 # Compare staging against those baselines
 for path in / /login /dashboard /settings; do
   slug=$(echo "$path" | tr '/' '_' | sed 's/^_//' || echo root)
   vibium go "https://staging.example.com$path" && vibium wait load
-  node .claude/skills/qe-browser/scripts/visual-diff.js \
+  node .Codex/skills/qe-browser/scripts/visual-diff.js \
     --name "baseline_${slug:-root}" --threshold 0.001  # 0.1% pixel diff
 done
 ```
@@ -89,7 +89,7 @@ done
 Ignore dynamic regions (timestamps, live counts) by scoping the diff to a selector that excludes them:
 
 ```bash
-node .claude/skills/qe-browser/scripts/visual-diff.js \
+node .Codex/skills/qe-browser/scripts/visual-diff.js \
   --name hero --selector "main > .content"
 ```
 

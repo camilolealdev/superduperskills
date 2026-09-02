@@ -21,13 +21,13 @@ validation:
 # /a11y-ally - Comprehensive Accessibility Audit
 
 <default_to_action>
-When this skill is invoked with a URL, Claude executes ALL steps automatically without waiting for user prompts between steps.
+When this skill is invoked with a URL, Codex executes ALL steps automatically without waiting for user prompts between steps.
 
 ## THIS IS AN LLM-POWERED SKILL
 
-The value of this skill is **Claude's intelligence**, not just running automated tools:
+The value of this skill is **Codex's intelligence**, not just running automated tools:
 
-| Automated Tools Do | Claude (This Skill) Does |
+| Automated Tools Do | Codex (This Skill) Does |
 |--------------------|--------------------------|
 | Flag "button has no name" | Analyze context: icon class, parent element, nearby text → generate "Add to wishlist" |
 | Flag "image missing alt" | Use Vision to see the image → describe actual content |
@@ -40,7 +40,7 @@ The value of this skill is **Claude's intelligence**, not just running automated
 
 ## EXECUTION MODEL
 
-**CLAUDE EXECUTES ALL STEPS WITHOUT STOPPING.**
+**Codex EXECUTES ALL STEPS WITHOUT STOPPING.**
 
 Do NOT wait for user prompts between steps. Execute the full pipeline:
 
@@ -52,15 +52,15 @@ Do NOT wait for user prompts between steps. Execute the full pipeline:
 
 **WRONG:**
 ```
-Claude: "I found 5 violations. Should I analyze them?"
+Codex: "I found 5 violations. Should I analyze them?"
 User: "Yes"
-Claude: "I see a video. Should I run the video pipeline?"
+Codex: "I see a video. Should I run the video pipeline?"
 User: "Yes"
 ```
 
 **RIGHT:**
 ```
-Claude: [Runs scan] → [Analyzes violations] → [Downloads video] → [Extracts frames] →
+Codex: [Runs scan] → [Analyzes violations] → [Downloads video] → [Extracts frames] →
         [Reads each frame with Vision] → [Generates captions] → [Writes all files]
         "Audit complete. Generated 4 files in docs/accessibility-scans/example/"
 ```
@@ -69,7 +69,7 @@ Claude: [Runs scan] → [Analyzes violations] → [Downloads video] → [Extract
 
 ## STEP 1: BROWSER AUTOMATION - Content Fetching
 
-Uses the **qe-browser** fleet skill as the browser engine. qe-browser wraps Vibium (WebDriver BiDi, 10MB Go binary) and provides the QE primitives we rely on. See `.claude/skills/qe-browser/SKILL.md`.
+Uses the **qe-browser** fleet skill as the browser engine. qe-browser wraps Vibium (WebDriver BiDi, 10MB Go binary) and provides the QE primitives we rely on. See `.Codex/skills/qe-browser/SKILL.md`.
 
 ### 1.1: PRIMARY — qe-browser via Vibium CLI
 ```bash
@@ -99,7 +99,7 @@ JSON.stringify({ violations: results.violations.length, issues: results.violatio
 EOF
 
 # Enforce: no critical a11y violations + no failed network requests
-node .claude/skills/qe-browser/scripts/assert.js --checks '[
+node .Codex/skills/qe-browser/scripts/assert.js --checks '[
   {"kind": "no_console_errors"},
   {"kind": "no_failed_requests"},
   {"kind": "selector_visible", "selector": "main, [role=main]"}
@@ -702,14 +702,14 @@ if (results.pageInfo && results.pageInfo.media.videoUrls.length > 0) {
 
 ## STEP 3: CONTEXT-AWARE REMEDIATION (LLM-POWERED)
 
-**THIS IS WHERE CLAUDE'S INTELLIGENCE MATTERS.**
+**THIS IS WHERE Codex'S INTELLIGENCE MATTERS.**
 
 Generic tools output: `aria-label="[DESCRIPTION]"`
 You output: `aria-label="Add to shopping cart"` because you understand context.
 
 ### 3.1: Context Analysis (Use Your Reasoning)
 
-For EACH violation, Claude must:
+For EACH violation, Codex must:
 
 1. **READ THE HTML CONTEXT** - Don't just see `<button class="btn">`, see:
    ```html
@@ -1188,11 +1188,11 @@ fi
 3. Add remediation instructions WITHOUT generated captions
 4. Mark video pipeline as "blocked" not "skipped"
 
-### 7.3: Analyze Each Frame with Claude Vision (MANDATORY)
+### 7.3: Analyze Each Frame with Codex Vision (MANDATORY)
 
 **USE THE READ TOOL ON EACH FRAME IMAGE.**
 
-Claude Code has native vision capabilities. When you Read an image file, you SEE it.
+Codex has native vision capabilities. When you Read an image file, you SEE it.
 
 ```
 Read /tmp/a11y-work/frames/frame_01.jpg
@@ -1230,7 +1230,7 @@ const client = new Anthropic();
 
 const imageData = fs.readFileSync('/tmp/a11y-work/frames/frame_01.jpg').toString('base64');
 const response = await client.messages.create({
-  model: 'claude-sonnet-4-6',
+  model: 'Codex-sonnet-4-6',
   max_tokens: 500,
   messages: [{
     role: 'user',

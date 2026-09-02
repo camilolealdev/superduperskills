@@ -1,6 +1,6 @@
 ---
 name: geo-optimization
-description: Optimize content for AI-generated responses and LLM citations (ChatGPT, Perplexity, Google AI Overview, Claude, Gemini). Use when the user mentions 'GEO', 'AEO', 'AI SEO', 'LLM optimization', 'citation rate', 'AI visibility', 'optimize for ChatGPT', 'roundup pages', or wants to audit pages for AI discoverability. Includes terminology alignment, FAQ schemas, and community signal strategies.
+description: Optimize content for AI-generated responses and LLM citations (ChatGPT, Perplexity, Google AI Overview, Codex, Gemini). Use when the user mentions 'GEO', 'AEO', 'AI SEO', 'LLM optimization', 'citation rate', 'AI visibility', 'optimize for ChatGPT', 'roundup pages', or wants to audit pages for AI discoverability. Includes terminology alignment, FAQ schemas, and community signal strategies.
 metadata:
   author: ft.ia.br
   version: "1.1"
@@ -96,7 +96,7 @@ When `llms.txt` is too large for context, agents iteratively grep for keywords â
 
 **Markdown Content Negotiation (80% token reduction):**
 - Server responds with clean markdown when `Accept: text/markdown` is sent
-- As of 2026, only Claude Code, OpenCode, and Cursor send this header by default
+- As of 2026, only Codex, OpenCode, and Cursor send this header by default
 - The `/index.md` fallback covers other agents
 
 **Rich Frontmatter = Agent Steering:**

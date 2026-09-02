@@ -5,7 +5,7 @@ allowed-tools: Read, Grep, Glob, Bash, Skill, mcp__hex-graph__index_project
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 **Type:** L2 Coordinator
 **Category:** 5XX Quality
@@ -192,7 +192,7 @@ Skill(skill: "ln-514-test-log-analyzer", args: "review logs since test run start
 **MANDATORY READ:** Load `shared/references/agent_review_workflow.md` (Critical Verification + Iterative Refinement), `shared/references/agent_review_memory.md`
 
 9a) Sync agent state via review runtime. Do not merge until every required agent is `result_ready | dead | failed | skipped`
-9b) **Critical Verification** per shared workflow — Claude evaluates each suggestion on merits
+9b) **Critical Verification** per shared workflow — Codex evaluates each suggestion on merits
 9c) **Merge accepted suggestions** into issues list (SEC-, PERF-, MNT-, ARCH-, BP-, OPT-)
     - If `area=security` or `area=correctness` → escalate aggregate to CONCERNS
 9d) **Save review summary** to `.hex-skills/agent-review/review_history.md`

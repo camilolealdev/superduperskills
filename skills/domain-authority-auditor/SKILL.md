@@ -3,8 +3,8 @@ name: domain-authority-auditor
 description: '40-item CITE domain audit: 4 dimensions, domain-type weighting, veto checks, trust scoring. "Is my site trustworthy" / "域名可信吗" / "权威度多少". 域名权威/网站可信度/域名评分 ドメイン権威 도메인권위 autoridad dominio'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -64,15 +64,15 @@ metadata:
 
 # Domain Authority Auditor
 
-> Based on [CITE Domain Rating](https://github.com/aaron-he-zhu/cite-domain-rating). Full benchmark reference: [references/cite-domain-rating.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md)
+> Based on [CITE Domain Rating](https://github.com/aaron-he-zhu/cite-domain-rating). Full benchmark reference: [references/cite-domain-rating.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/cite-domain-rating.md)
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This cross-cutting skill is part of the protocol layer and follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill evaluates domain authority across 40 standardized criteria organized in 4 dimensions. It produces a comprehensive audit report with per-item scoring, dimension and weighted scores by domain type, veto item checks, and a prioritized action plan.
 
-**Sister skill**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) evaluates content at the page level (80 items). This skill evaluates the domain behind the content (40 items). Together they provide a complete 120-item assessment.
+**Sister skill**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) evaluates content at the page level (80 items). This skill evaluates the domain behind the content (40 items). Together they provide a complete 120-item assessment.
 
 > **Namespace note**: CITE uses C01-C10 for Citation items; CORE-EEAT uses C01-C10 for Contextual Clarity items. In combined 120-item assessments, prefix with the framework name (e.g., CITE-C01 vs CORE-C01) to avoid confusion.
 
@@ -103,7 +103,7 @@ Use this when domain credibility or citation trustworthiness is in question — 
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a citation-trust verdict and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a citation-trust verdict and a handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Audit Your Domain
 
@@ -137,14 +137,14 @@ Run full 120-item assessment on [domain]: CITE domain audit + CORE-EEAT content 
 
 **Expected output**: a CITE audit report, a citation-trust verdict, and a short handoff summary ready for `memory/audits/domain/`.
 
-- **Reads**: the target domain, supporting authority signals, comparison domains, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: the target domain, supporting authority signals, comparison domains, and prior decisions from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing authority report plus a reusable summary that can be stored under `memory/audits/domain/`.
 - **Promotes**: veto items and domain risks to `memory/hot-cache.md` (auto-saved). Authority context to `memory/audits/domain/`. Results feed into entity-optimizer as authority input for brand's canonical profile.
 - **Next handoff**: use the `Next Best Skill` below once the trust picture is clear.
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
@@ -198,7 +198,7 @@ If any veto item triggers, flag it prominently at the top of the report. CITE Sc
 
 ### Step 2: C + I Audit (20 items)
 
-Evaluate each item against the criteria in [references/cite-domain-rating.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md).
+Evaluate each item against the criteria in [references/cite-domain-rating.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/cite-domain-rating.md).
 
 Score each item:
 - **Pass** = 10 points (fully meets criteria)
@@ -372,7 +372,7 @@ If any veto-level issue was found (CORE-EEAT T04, C01, R10 or CITE T03, T05, T09
 
 ## Example
 
-See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/references/example-report.md) for a complete CITE audit of cloudhosting.com showing veto check, dimension scores, top 5 improvements, action plan, and cross-reference with CORE-EEAT.
+See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/domain-authority-auditor/references/example-report.md) for a complete CITE audit of cloudhosting.com showing veto check, dimension scores, top 5 improvements, action plan, and cross-reference with CORE-EEAT.
 
 ## Tips for Success
 
@@ -384,9 +384,9 @@ See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claud
 
 ## Reference Materials
 
-- [CITE Domain Rating](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/cite-domain-rating.md) — Full 40-item benchmark with dimension definitions, scoring criteria, domain-type weight tables, and veto items
-- [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/references/example-report.md) — Complete CITE audit example with scored dimensions, top 5 improvements, action plan, and CORE-EEAT cross-reference
+- [CITE Domain Rating](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/cite-domain-rating.md) — Full 40-item benchmark with dimension definitions, scoring criteria, domain-type weight tables, and veto items
+- [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/domain-authority-auditor/references/example-report.md) — Complete CITE audit example with scored dimensions, top 5 improvements, action plan, and CORE-EEAT cross-reference
 
 ## Next Best Skill
 
-- **Primary**: [backlink-analyzer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/SKILL.md) — turn trust or citation issues into link-level investigation.
+- **Primary**: [backlink-analyzer](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/backlink-analyzer/SKILL.md) — turn trust or citation issues into link-level investigation.

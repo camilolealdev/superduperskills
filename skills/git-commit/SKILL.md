@@ -1,6 +1,6 @@
 ---
 name: git-commit
-description: Creates git commits following Conventional Commits format with type/scope/subject. Use when user wants to commit changes, create commit, save work, or stage and commit. Enforces project-specific conventions from CLAUDE.md.
+description: Creates git commits following Conventional Commits format with type/scope/subject. Use when user wants to commit changes, create commit, save work, or stage and commit. Enforces project-specific conventions from AGENTS.md.
 ---
 
 # Git commit
@@ -43,7 +43,7 @@ EOF
 
 ## Important rules
 
-- **ALWAYS** check CLAUDE.md conventions first - use project format if it differs
+- **ALWAYS** check AGENTS.md conventions first - use project format if it differs
 - **ALWAYS** include scope in parentheses
 - **ALWAYS** use present tense imperative verb for the subject
 - **NEVER** end subject with a period

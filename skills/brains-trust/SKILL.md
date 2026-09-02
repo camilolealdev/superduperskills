@@ -18,7 +18,7 @@ triggers:
   - what does gpt think
 user-invocable: true
 argument-hint: "[question or topic]"
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Brains Trust
@@ -30,7 +30,7 @@ Consult other leading AI models for a second opinion. Not limited to code — wo
 If the user triggers this skill without specifying what to consult about, apply these defaults:
 
 1. **Pattern**: Consensus (2 models from different providers) — it's called "brains trust", not "single opinion"
-2. **Scope**: Whatever Claude has been working on in the current session. Look at recent context: files edited, decisions made, architecture discussed, problems being solved.
+2. **Scope**: Whatever Codex has been working on in the current session. Look at recent context: files edited, decisions made, architecture discussed, problems being solved.
 3. **Mode**: Infer from context:
    - Recently wrote/edited code → **Code Review**
    - In a planning or design discussion → **Architecture**
@@ -48,7 +48,7 @@ If the user triggers this skill without specifying what to consult about, apply 
 | "second opinion" | Single (1 model) | Current session work |
 | "ask gemini" / "ask gpt" | Single (specified provider) | Current session work |
 | "peer review" | Consensus (2 models) | Recently changed files |
-| "challenge this" / "devil's advocate" | Devil's advocate (1 model) | Claude's current position |
+| "challenge this" / "devil's advocate" | Devil's advocate (1 model) | Codex's current position |
 
 The user can always override by being specific: "brains trust this config file", "ask gemini about the auth approach", etc.
 
@@ -137,7 +137,7 @@ For consensus, always pick models from different providers (e.g. one Google + on
 - Any time you want a fresh perspective
 
 **Avoid using for**:
-- Simple syntax checks (Claude handles these)
+- Simple syntax checks (Codex handles these)
 - Every single edit (too slow, costs money)
 - Questions with obvious, well-known answers
 
@@ -147,7 +147,7 @@ For consensus, always pick models from different providers (e.g. one Google + on
 2. **Never cap output tokens** — don't set `max_tokens` or `maxOutputTokens`
 3. **Always write prompts to file** — never pass via bash arguments
 4. **Include file contents inline** — attach code context directly in the prompt
-5. **Use AI-to-AI framing** — the model is advising Claude, not talking to the human
+5. **Use AI-to-AI framing** — the model is advising Codex, not talking to the human
 6. **Print progress to stderr** — the Python script must print status updates (`Calling gemini-2.5-pro...`, `Received response from qwen3.5-plus.`) so the user knows it's working during the 30-90 second wait
 
 ## Reference Files

@@ -3,9 +3,9 @@ name: serp-analysis
 description: 'Analyze SERPs: ranking factors, features, intent, AI overviews, featured snippets, People Also Ask. "What ranks for this" / "谁排第一" / "搜索结果分析". SERP分析/搜索结果/精选摘要 検索結果チェック/リッチリザルト 검색결과분석 análisis SERP'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
 allowed-tools: WebFetch
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -69,8 +69,8 @@ metadata:
 # SERP Analysis
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This research skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill analyzes Search Engine Results Pages to reveal what's working for ranking content, which SERP features appear, and what triggers AI-generated answers. Understand the battlefield before creating content.
@@ -103,7 +103,7 @@ Use this whenever the task needs reusable market intelligence that should influe
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Basic SERP Analysis
 
@@ -135,16 +135,16 @@ Why does [URL] rank #1 for [keyword]?
 
 **Expected output**: a prioritized research brief, evidence-backed findings, and a short handoff summary ready for `memory/research/`.
 
-- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: user goals, target market inputs, available tool data, and prior strategy from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing research deliverable plus a reusable summary that can be stored under `memory/research/`.
-- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `CLAUDE.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
+- **Promotes**: durable keyword priorities, competitor facts, entity candidates, and strategic decisions to `AGENTS.md`, `memory/decisions.md`, and `memory/research/`; hand canonical entity work to `entity-optimizer`.
 - **Next handoff**: use the `Next Best Skill` below when the findings are ready to drive action.
 
 ## Data Sources
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~SEO tool + ~~search console + ~~AI monitor connected:**
 Automatically fetch SERP snapshots for target keywords, extract ranking page metrics (domain authority, backlinks, content length), pull SERP feature data, and check AI Overview presence using ~~AI monitor. Historical SERP change data and mobile vs. desktop variations can be retrieved automatically.
@@ -199,7 +199,7 @@ When a user requests SERP analysis:
 
    Produce a summary with: Key Findings, Content Requirements to Rank (minimum requirements + differentiators), SERP Feature Strategy, Recommended Content Outline, and Next Steps.
 
-   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/analysis-templates.md) for detailed templates for each step.
+   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/serp-analysis/references/analysis-templates.md) for detailed templates for each step.
 
 ## Validation Checkpoints
 
@@ -218,7 +218,7 @@ When a user requests SERP analysis:
 
 ## Example
 
-> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/example-report.md) for a complete example analyzing the SERP for "how to start a podcast".
+> **Reference**: See [references/example-report.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/serp-analysis/references/example-report.md) for a complete example analyzing the SERP for "how to start a podcast".
 
 ## Advanced Analysis
 
@@ -273,10 +273,10 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Analysis Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/analysis-templates.md) — Detailed templates for each analysis step (SERP composition, top results, ranking patterns, features, intent, difficulty, recommendations)
-- [SERP Feature Taxonomy](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/serp-feature-taxonomy.md) — Complete taxonomy of SERP features with trigger conditions, AI overview framework, intent signals, and volatility assessment
-- [Example Report](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/research/serp-analysis/references/example-report.md) — Complete example analyzing the SERP for "how to start a podcast"
+- [Analysis Templates](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/serp-analysis/references/analysis-templates.md) — Detailed templates for each analysis step (SERP composition, top results, ranking patterns, features, intent, difficulty, recommendations)
+- [SERP Feature Taxonomy](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/serp-analysis/references/serp-feature-taxonomy.md) — Complete taxonomy of SERP features with trigger conditions, AI overview framework, intent signals, and volatility assessment
+- [Example Report](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/research/serp-analysis/references/example-report.md) — Complete example analyzing the SERP for "how to start a podcast"
 
 ## Next Best Skill
 
-- **Primary**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/seo-content-writer/SKILL.md) — turn SERP patterns into a content brief or page structure.
+- **Primary**: [seo-content-writer](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/seo-content-writer/SKILL.md) — turn SERP patterns into a content brief or page structure.

@@ -1,17 +1,17 @@
 ---
 name: markdown-html-orchestrator
-description: Use when a user wants to convert any markdown file in their Claude project into a single-file, lightly-interactive HTML — long-form documents (specs, plans, RFCs, reports, explainers), code reviews with diffs and severity-tagged annotations, or slide decks. Triggers on "convert this markdown to HTML", "make this an HTML file", "turn this into an interactive document", "render this report as HTML", "PR writeup as HTML", "slides from this markdown". Forks context to route to one of three converter sub-skills (md-document, md-review, md-slides) based on a deterministic doctype classifier, after the user has run the design-system onboarding once. Refuses if input is under 100 lines (per Shihipar — markdown still wins below the threshold) or design-system isn't onboarded. Distinct from Anthropic's official Playground plugin (which is interactive prompt-tuning controls with sliders/knobs/prompt-copy-back) and from marketing/landing/ (which is a landing-page generator).
+description: Use when a user wants to convert any markdown file in their Codex project into a single-file, lightly-interactive HTML — long-form documents (specs, plans, RFCs, reports, explainers), code reviews with diffs and severity-tagged annotations, or slide decks. Triggers on "convert this markdown to HTML", "make this an HTML file", "turn this into an interactive document", "render this report as HTML", "PR writeup as HTML", "slides from this markdown". Forks context to route to one of three converter sub-skills (md-document, md-review, md-slides) based on a deterministic doctype classifier, after the user has run the design-system onboarding once. Refuses if input is under 100 lines (per Shihipar — markdown still wins below the threshold) or design-system isn't onboarded. Distinct from Anthropic's official Playground plugin (which is interactive prompt-tuning controls with sliders/knobs/prompt-copy-back) and from marketing/landing/ (which is a landing-page generator).
 context: fork
 version: 2.10.3
 author: Alireza Rezvani
 license: MIT
 tags: [markdown, html, converter, orchestrator, documentation, code-review, slides, design-system]
-compatible_tools: [claude-code, codex-cli, cursor, antigravity, opencode, gemini-cli]
+compatible_tools: [Codex, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
 # Markdown → HTML — Domain Orchestrator
 
-Thariq Shihipar's argument (Claude Code HTML output essay, Medium 2026): **markdown collapses past 100 lines for agent-generated artifacts.** Long specs, code reviews, and architecture explainers lose density, hierarchy, and lightweight interaction the moment they exceed a screen of text. HTML restores all three — single-file, browser-native, shareable.
+Thariq Shihipar's argument (Codex HTML output essay, Medium 2026): **markdown collapses past 100 lines for agent-generated artifacts.** Long specs, code reviews, and architecture explainers lose density, hierarchy, and lightweight interaction the moment they exceed a screen of text. HTML restores all three — single-file, browser-native, shareable.
 
 This orchestrator forks context, classifies the input markdown deterministically, routes to the right converter sub-skill, and returns a digest with the output path. Heavy intake (full markdown bodies, diffs, slide decks) stays in the forked context.
 
@@ -95,7 +95,7 @@ Walk these one at a time, with a recommended answer per question, citing the can
 2. **Is the input markdown ≥ 100 lines?**
    Recommended: yes — below that, keep it as markdown. Canon: Shihipar — markdown still wins under 100 lines.
 3. **Is the design-system onboarded?**
-   Recommended: yes, globally (`~/.config/markdown-html/design-system.json`). Canon: research-ops onboarding pattern (`research-ops/CLAUDE.md` §8); WCAG 2.2 §1.4.3 (text contrast 4.5:1).
+   Recommended: yes, globally (`~/.config/markdown-html/design-system.json`). Canon: research-ops onboarding pattern (`research-ops/AGENTS.md` §8); WCAG 2.2 §1.4.3 (text contrast 4.5:1).
 4. **Where does the output save, and will it overwrite anything?**
    Recommended: the configured `default_output_dir` with `--on-collision suffix`. Canon: Matt Pocock `handoff` skill — never silently overwrite a working artifact.
 5. **Document type confidence — silent-route or one question?**
@@ -122,7 +122,7 @@ Never run a sub-skill before the lane is locked.
 
 - **Anthropic Playground plugin** (`/playground`) — builds interactive controls (sliders, knobs, drag-drop) for prompt tuning, with a copy-prompt-back loop. This plugin converts existing markdown documents to HTML. Different tools for different jobs.
 - **`marketing/landing/`** — generates landing pages from scratch (Phase-0 intake → 3 sections → branded TSX/HTML). This plugin converts an existing markdown file you already have.
-- **`engineering/handoff/` + `productivity/handoff/`** — preserve session continuity between Claude conversations. Different artifact type (handoff brief vs. document conversion).
+- **`engineering/handoff/` + `productivity/handoff/`** — preserve session continuity between Codex conversations. Different artifact type (handoff brief vs. document conversion).
 
 ## Output artifacts
 
@@ -143,7 +143,7 @@ Never run a sub-skill before the lane is locked.
 
 ## References
 
-- Spec: Thariq Shihipar — "Claude Code HTML output" (Medium, 2026)
+- Spec: Thariq Shihipar — "Codex HTML output" (Medium, 2026)
 - Forking pattern: `research-ops/skills/research-ops-skills/SKILL.md` (`context: fork`, two-signal routing)
 - Customization pattern: `research-ops/skills/clinical-research/scripts/` (`onboard.py`, `config_loader.py`)
 - Brand palette math: `marketing/landing/skills/landing/scripts/brand_palette_validator.py` (WCAG + HSL derive)

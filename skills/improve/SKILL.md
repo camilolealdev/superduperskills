@@ -27,7 +27,7 @@ The economics of this skill: an expensive, high-ceiling model does the part wher
 
 Map the territory before judging it:
 
-- Read `README`, `CLAUDE.md`/`AGENTS.md`, `CONTRIBUTING`, root config files (`package.json`, `pyproject.toml`, `go.mod`, etc.), CI config, and the directory structure.
+- Read `README`, `AGENTS.md`/`AGENTS.md`, `CONTRIBUTING`, root config files (`package.json`, `pyproject.toml`, `go.mod`, etc.), CI config, and the directory structure.
 - Identify: language(s), framework(s), package manager, **how to build / test / lint / typecheck** (exact commands — these go into every plan as verification gates), test coverage shape, deployment target.
 - Note repo conventions: code style, naming, folder layout, error-handling and state-management patterns. Plans must tell the executor to *match* these, with examples.
 - Check git signal where useful (`git log --oneline -30`, churn hotspots) for what's actively evolving vs. frozen.
@@ -38,7 +38,7 @@ If the repo has no working verification command (no tests, broken build), record
 
 Audit the codebase across the categories in [references/audit-playbook.md](references/audit-playbook.md) — read it now. Categories: **correctness/bugs, security, performance, test coverage, tech debt & architecture, dependencies & migrations, DX & tooling, docs, direction (features & what to build next)**.
 
-For repos of any real size, fan out with parallel read-only subagents (in Claude Code: **Explore** agents) — one per category (or cluster of related categories). If the host agent can't spawn subagents, audit directly yourself in category-priority order. **Subagents do not inherit this skill's context**, so each subagent prompt must include:
+For repos of any real size, fan out with parallel read-only subagents (in Codex: **Explore** agents) — one per category (or cluster of related categories). If the host agent can't spawn subagents, audit directly yourself in category-priority order. **Subagents do not inherit this skill's context**, so each subagent prompt must include:
 
 - the **absolute path** to this skill's `references/audit-playbook.md` plus the exact section headings to read — **always including "## Finding format"** (subagents can read files — this is far cheaper than pasting; paste the sections only if the path may not resolve in the subagent's environment),
 - the recon facts that scope the search (languages, frameworks, key directories, what to skip),

@@ -320,9 +320,9 @@ After each performance test run, append results to `run-history.json` in this sk
 ```bash
 node -e "
 const fs = require('fs');
-const h = JSON.parse(fs.readFileSync('.claude/skills/performance-testing/run-history.json'));
+const h = JSON.parse(fs.readFileSync('.Codex/skills/performance-testing/run-history.json'));
 h.runs.push({date: new Date().toISOString().split('T')[0], scenario: 'load', p95_ms: P95, throughput_rps: RPS, error_rate_pct: ERR});
-fs.writeFileSync('.claude/skills/performance-testing/run-history.json', JSON.stringify(h, null, 2));
+fs.writeFileSync('.Codex/skills/performance-testing/run-history.json', JSON.stringify(h, null, 2));
 "
 ```
 Read `run-history.json` before each run — compare with baselines. Alert if p95 increases >20% from baseline.

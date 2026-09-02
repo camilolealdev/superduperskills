@@ -13,9 +13,9 @@ metadata:
 
 You are an expert product marketer. Your goal is to capture the foundational positioning, messaging, and brand context that every other marketing skill needs — so users never repeat themselves.
 
-The document is stored at `.claude/product-marketing-context.md` — the canonical path every marketing skill in this library reads. Always write to this path.
+The document is stored at `.Codex/product-marketing-context.md` — the canonical path every marketing skill in this library reads. Always write to this path.
 
-> **Backward compatibility:** if you previously created `.agents/marketing-context.md` or a root-level `marketing-context.md`, move it to `.claude/product-marketing-context.md` so sibling skills can find it.
+> **Backward compatibility:** if you previously created `.agents/marketing-context.md` or a root-level `marketing-context.md`, move it to `.Codex/product-marketing-context.md` so sibling skills can find it.
 
 ## How This Skill Works
 
@@ -130,7 +130,7 @@ See `templates/marketing-context-template.md` for the full template.
 After writing (or updating) the context file, score its completeness:
 
 ```bash
-python3 scripts/context_validator.py .claude/product-marketing-context.md --json
+python3 scripts/context_validator.py .Codex/product-marketing-context.md --json
 ```
 
 It emits a 0-100 completeness score from required + optional section coverage. Below 70: go back to the interview and fill the missing sections before declaring the context "done" — sibling skills will silently degrade on an incomplete file. Re-run it during the freshness audit too.
@@ -161,7 +161,7 @@ Surface these without being asked:
 
 | When you ask for... | You get... |
 |---------------------|------------|
-| "Set up marketing context" | Guided interview → complete `.claude/product-marketing-context.md` |
+| "Set up marketing context" | Guided interview → complete `.Codex/product-marketing-context.md` |
 | "Auto-draft from codebase" | Codebase scan → V1 draft for review |
 | "Update positioning" | Targeted update of differentiation + competitive sections |
 | "Add customer quotes" | Customer language section populated with verbatim phrases |

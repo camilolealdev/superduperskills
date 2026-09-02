@@ -8,7 +8,7 @@ requires:
 
 # Ashby Automation
 
-Automate your Ashby ATS recruiting operations directly from Claude Code. Create candidates, post jobs, manage applications, view interview schedules, and search your talent pipeline -- all without leaving your terminal.
+Automate your Ashby ATS recruiting operations directly from Codex. Create candidates, post jobs, manage applications, view interview schedules, and search your talent pipeline -- all without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/ashby](https://composio.dev/toolkits/ashby)
 
@@ -16,7 +16,7 @@ Automate your Ashby ATS recruiting operations directly from Claude Code. Create 
 
 ## Setup
 
-1. Add the Rube MCP server to your Claude Code config with URL: `https://rube.app/mcp`
+1. Add the Rube MCP server to your Codex config with URL: `https://rube.app/mcp`
 2. When prompted, authenticate your Ashby account through the connection link provided
 3. Start automating your recruiting workflows with natural language
 

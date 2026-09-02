@@ -8,7 +8,7 @@ requires:
 
 # Lever Automation
 
-Automate your recruiting operations in **Lever ATS** directly from Claude Code. Manage job postings, track candidate pipelines, update requisitions, and query opportunities without leaving your terminal.
+Automate your recruiting operations in **Lever ATS** directly from Codex. Manage job postings, track candidate pipelines, update requisitions, and query opportunities without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/lever](https://composio.dev/toolkits/lever)
 

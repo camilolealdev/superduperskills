@@ -198,7 +198,7 @@ Only include SearchAction if the site has a functional search page.
   "tool": [
     {
       "@type": "HowToTool",
-      "name": "Claude Code"
+      "name": "Codex"
     }
   ],
   "step": [
@@ -321,7 +321,7 @@ Use a more specific @type when applicable: Restaurant, Dentist, LegalService, Re
     "https://twitter.com/handle",
     "https://linkedin.com/in/name"
   ],
-  "knowsAbout": ["SEO", "Claude Code", "Technical Audits"]
+  "knowsAbout": ["SEO", "Codex", "Technical Audits"]
 }
 ```
 
@@ -499,7 +499,7 @@ For in-person events, replace VirtualLocation with Place:
     "courseWorkload": "PT10H"
   },
   "educationalLevel": "Intermediate",
-  "about": ["SEO", "Claude Code"],
+  "about": ["SEO", "Codex"],
   "inLanguage": "en"
 }
 ```

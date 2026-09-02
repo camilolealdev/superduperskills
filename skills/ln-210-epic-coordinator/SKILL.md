@@ -4,7 +4,7 @@ description: "Creates or replans 3-7 Epics from scope using Decompose-First patt
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Epic Coordinator
 
@@ -124,7 +124,7 @@ Auto-discovers Team ID and Next Epic Number from `docs/tasks/kanban_board.md`:
 - **Team ID:** Reads Linear Configuration table → Fallback: Ask user directly
 - **Next Epic Number:** Reads Next Epic Number field → Fallback: Ask user directly
 
-**MANDATORY READ:** Load `CLAUDE.md` — sections "Configuration Auto-Discovery" and "Linear Integration".
+**MANDATORY READ:** Load `AGENTS.md` — sections "Configuration Auto-Discovery" and "Linear Integration".
 
 **Step 2: Project Research**
 

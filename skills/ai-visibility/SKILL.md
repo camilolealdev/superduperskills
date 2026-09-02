@@ -1,7 +1,7 @@
 ---
 name: ai-visibility
 version: 1.0.0
-description: "Check if your brand and content appear in AI-generated answers across Google AI Overviews, ChatGPT, Perplexity, Claude, Copilot, and Gemini. Audit citation-readiness, crawl access, and content extractability. Get prioritized fixes."
+description: "Check if your brand and content appear in AI-generated answers across Google AI Overviews, ChatGPT, Perplexity, Codex, Copilot, and Gemini. Audit citation-readiness, crawl access, and content extractability. Get prioritized fixes."
 ---
 
 # AI Visibility & Citation Audit
@@ -13,7 +13,7 @@ Run this skill when you need to:
 - Audit your site's readiness for AI crawlers and citation extraction
 - Compare your AI visibility against competitors
 - Build a GEO (Generative Engine Optimization) action plan
-- Track citation presence across ChatGPT, Perplexity, Google AI Overviews, Claude, Copilot, and Gemini
+- Track citation presence across ChatGPT, Perplexity, Google AI Overviews, Codex, Copilot, and Gemini
 
 Cross-references: Use `seo-audit` for traditional technical SEO issues. Use `schema-gen` to add structured data that improves AI extractability. Use `content-brief` to plan citation-ready content from scratch.
 
@@ -38,11 +38,11 @@ Each AI search platform uses a different search backend and ranking logic. Under
 | Google AI Overviews | Google Search | Google index | Inline links to source pages |
 | ChatGPT (Browse) | Bing + internal | Bing index (primarily) | Footnote citations with URLs |
 | Perplexity | Multi-source (Google, Bing, Brave, own crawler) | Blended index | Numbered inline citations |
-| Claude (web search) | Brave Search | Brave index | Inline source references |
+| Codex (web search) | Brave Search | Brave index | Inline source references |
 | Microsoft Copilot | Bing Search | Bing index | Numbered citations with snippets |
 | Gemini | Google Search | Google index | Inline links, similar to AI Overviews |
 
-**Key takeaway:** Optimizing for Google index covers AI Overviews + Gemini. Optimizing for Bing index covers ChatGPT + Copilot. Perplexity and Claude use independent indices. You need visibility across all three index families.
+**Key takeaway:** Optimizing for Google index covers AI Overviews + Gemini. Optimizing for Bing index covers ChatGPT + Copilot. Perplexity and Codex use independent indices. You need visibility across all three index families.
 
 See `references/platform-ranking-factors.md` for detailed per-platform optimization tactics.
 
@@ -57,7 +57,7 @@ AI crawlers must be able to access your content. Check robots.txt for these user
 | GPTBot | `GPTBot` | ChatGPT training + Browse | Allowed |
 | ChatGPT-User | `ChatGPT-User` | ChatGPT Browse (live) | Allowed |
 | PerplexityBot | `PerplexityBot` | Perplexity | Allowed |
-| ClaudeBot | `ClaudeBot` | Claude web search | Allowed |
+| ClaudeBot | `ClaudeBot` | Codex web search | Allowed |
 | Google-Extended | `Google-Extended` | Gemini training | Allowed |
 | Googlebot | `Googlebot` | AI Overviews (uses main index) | Allowed |
 | Bingbot | `bingbot` | Copilot + ChatGPT | Allowed |
@@ -86,7 +86,7 @@ robots.txt AI Bot Access:
 **Recommendation framework:**
 - Block training bots (`GPTBot`, `Google-Extended`) only if you have a specific IP reason
 - Never block live search bots (`ChatGPT-User`, `PerplexityBot`, `Googlebot`, `Bingbot`) as this removes you from AI search results entirely
-- `ClaudeBot` serves both training and search; blocking it removes you from Claude's web search citations
+- `ClaudeBot` serves both training and search; blocking it removes you from Codex's web search citations
 
 ### 2. Citation Presence Check
 
@@ -113,7 +113,7 @@ Query: "how to do a technical seo audit"
     Your domain: NOT CITED
     Cited sources: searchengineland.com (#1), semrush.com (#2), backlinko.com (#3)
 
-  Claude:
+  Codex:
     Your domain: NOT CITED
     Cited sources: web.dev (#1), ahrefs.com (#2)
 
@@ -127,7 +127,7 @@ Query: "how to do a technical seo audit"
 ```
 
 **Summary table across all queries:**
-| Query | AI Overviews | ChatGPT | Perplexity | Claude | Copilot | Gemini | Score |
+| Query | AI Overviews | ChatGPT | Perplexity | Codex | Copilot | Gemini | Score |
 |---|---|---|---|---|---|---|---|
 | technical seo audit | No | #4 | No | No | No | No | 1/6 |
 | keyword clustering | No | No | No | No | No | No | 0/6 |
@@ -149,7 +149,7 @@ AI engines extract content that is structured, self-contained, and directly answ
 | Numbered steps | Are processes written as numbered lists with action verbs? | +10 if yes |
 | Statistics with sources | Are stats cited inline with source and date? | +5 per cited stat |
 | FAQ section | Does the page have an FAQ with concise answers? | +10 if yes |
-| Entity definitions | Are key terms defined on first use? ("Claude Code is Anthropic's CLI tool for...") | +5 per definition |
+| Entity definitions | Are key terms defined on first use? ("Codex is Anthropic's CLI tool for...") | +5 per definition |
 | Heading-answer pairs | Does each H2 contain a direct answer in its first paragraph? | +10 per H2 that qualifies |
 
 **Extractability score per page:** Sum of signals, max 100. Pages scoring under 40 need structural rework.

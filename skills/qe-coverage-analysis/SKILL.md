@@ -192,9 +192,9 @@ After each coverage analysis, append results to `run-history.json` in this skill
 # Read current history, append new entry, write back
 node -e "
 const fs = require('fs');
-const h = JSON.parse(fs.readFileSync('.claude/skills/qe-coverage-analysis/run-history.json'));
+const h = JSON.parse(fs.readFileSync('.Codex/skills/qe-coverage-analysis/run-history.json'));
 h.runs.push({date: new Date().toISOString().split('T')[0], statements_pct: STATEMENTS, branches_pct: BRANCHES, gaps_found: GAPS});
-fs.writeFileSync('.claude/skills/qe-coverage-analysis/run-history.json', JSON.stringify(h, null, 2));
+fs.writeFileSync('.Codex/skills/qe-coverage-analysis/run-history.json', JSON.stringify(h, null, 2));
 "
 ```
 Read `run-history.json` before each run to detect trends (e.g., "coverage dropped 3 consecutive times").

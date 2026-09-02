@@ -19,11 +19,11 @@ Removes all hex-line artifacts from the system. Standalone — no coordinator de
 
 | Artifact | Location | Action |
 |----------|----------|--------|
-| Hook script | `~/.claude/hex-line/hook.mjs` | Delete file |
-| Hook entries | `~/.claude/settings.json` → `hooks` | Remove entries matching "hex-line" signature |
-| Output style file | `~/.claude/output-styles/hex-line.md` | Delete file |
-| Output style setting | `~/.claude/settings.json` → `outputStyle` | Clear only if value is `"hex-line"` |
-| Hook directory | `~/.claude/hex-line/` | Delete if empty after hook removal |
+| Hook script | `~/.Codex/hex-line/hook.mjs` | Delete file |
+| Hook entries | `~/.Codex/settings.json` → `hooks` | Remove entries matching "hex-line" signature |
+| Output style file | `~/.Codex/output-styles/hex-line.md` | Delete file |
+| Output style setting | `~/.Codex/settings.json` → `outputStyle` | Clear only if value is `"hex-line"` |
+| Hook directory | `~/.Codex/hex-line/` | Delete if empty after hook removal |
 
 ---
 
@@ -32,7 +32,7 @@ Removes all hex-line artifacts from the system. Standalone — no coordinator de
 ### 1. Remove hook entries from settings.json
 
 ```
-Read ~/.claude/settings.json
+Read ~/.Codex/settings.json
 For each event in hooks (SessionStart, PreToolUse, PostToolUse):
   Find entry where hooks[].command contains "hex-line"
   Remove that entry
@@ -52,18 +52,18 @@ If settings.json.outputStyle === "hex-line":
 ### 3. Delete installed files
 
 ```bash
-rm -f ~/.claude/hex-line/hook.mjs
-rmdir ~/.claude/hex-line 2>/dev/null   # only if empty
-rm -f ~/.claude/output-styles/hex-line.md
+rm -f ~/.Codex/hex-line/hook.mjs
+rmdir ~/.Codex/hex-line 2>/dev/null   # only if empty
+rm -f ~/.Codex/output-styles/hex-line.md
 ```
 
 ### 4. Verify
 
 ```bash
 # Confirm no hex-line references remain
-grep -r "hex-line" ~/.claude/settings.json || echo "Clean"
-test ! -f ~/.claude/hex-line/hook.mjs && echo "Hook removed"
-test ! -f ~/.claude/output-styles/hex-line.md && echo "Style removed"
+grep -r "hex-line" ~/.Codex/settings.json || echo "Clean"
+test ! -f ~/.Codex/hex-line/hook.mjs && echo "Hook removed"
+test ! -f ~/.Codex/output-styles/hex-line.md && echo "Style removed"
 ```
 
 ---
@@ -71,16 +71,16 @@ test ! -f ~/.claude/output-styles/hex-line.md && echo "Style removed"
 ## Notes
 
 - Does NOT remove the MCP server itself (`npm uninstall -g @levnikolaevich/hex-line-mcp` is separate)
-- Does NOT touch per-project `.claude/settings.local.json` (autoSync already cleans those)
+- Does NOT touch per-project `.Codex/settings.local.json` (autoSync already cleans those)
 - Safe to run multiple times (idempotent)
-- After uninstall, restart Claude Code for changes to take effect
+- After uninstall, restart Codex for changes to take effect
 
 ## Definition of Done
 
-- [ ] No hex-line entries in `~/.claude/settings.json` hooks
+- [ ] No hex-line entries in `~/.Codex/settings.json` hooks
 - [ ] No `outputStyle: "hex-line"` in settings (unless user re-set it)
-- [ ] `~/.claude/hex-line/hook.mjs` does not exist
-- [ ] `~/.claude/output-styles/hex-line.md` does not exist
+- [ ] `~/.Codex/hex-line/hook.mjs` does not exist
+- [ ] `~/.Codex/output-styles/hex-line.md` does not exist
 
 **Version:** 1.0.0
 **Last Updated:** 2026-03-27

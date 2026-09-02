@@ -1,6 +1,6 @@
 ---
 name: design-loop
-description: "Autonomous multi-page site builder using a baton-passing loop pattern. Each iteration reads a task from .design/next-prompt.md, generates a page with Claude's HTML/CSS/Tailwind, integrates it into the site, verifies visually via browser automation, then writes the next task to keep the loop going. Drives complete website builds from a single starting prompt. Triggers: 'design loop', 'build the site', 'build all pages', 'autonomous site build', 'baton loop', 'next page', 'keep building pages'."
+description: "Autonomous multi-page site builder using a baton-passing loop pattern. Each iteration reads a task from .design/next-prompt.md, generates a page with Codex's HTML/CSS/Tailwind, integrates it into the site, verifies visually via browser automation, then writes the next task to keep the loop going. Drives complete website builds from a single starting prompt. Triggers: 'design loop', 'build the site', 'build all pages', 'autonomous site build', 'baton loop', 'next page', 'keep building pages'."
 allowed-tools:
   - Read
   - Write
@@ -8,7 +8,7 @@ allowed-tools:
   - Glob
   - Grep
   - Bash
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Design Loop — Autonomous Site Builder
@@ -20,7 +20,7 @@ Build complete multi-page websites through an autonomous loop. Each iteration re
 The Design Loop uses a "baton" pattern — a file (`.design/next-prompt.md`) acts as a relay baton between iterations. Each cycle:
 
 1. Reads the current task from the baton
-2. Generates the page (via Claude or Google Stitch)
+2. Generates the page (via Codex or Google Stitch)
 3. Integrates into the site structure (navigation, links)
 4. Verifies visually via browser automation (if available)
 5. Updates site documentation
@@ -28,14 +28,14 @@ The Design Loop uses a "baton" pattern — a file (`.design/next-prompt.md`) act
 
 This is orchestration-agnostic. The loop can be driven by:
 - **Human-in-loop**: User reviews each page, then says "next" or "keep going"
-- **Fully autonomous**: Claude runs continuously until the site is complete
+- **Fully autonomous**: Codex runs continuously until the site is complete
 - **CI/CD**: Triggered on `.design/next-prompt.md` changes
 
 ## Generation Backends
 
 | Backend | Setup | Quality | Speed | Best for |
 |---------|-------|---------|-------|----------|
-| **Claude** (default) | Zero dependencies | Great — production-ready HTML/Tailwind | Fast | Most projects, full code control |
+| **Codex** (default) | Zero dependencies | Great — production-ready HTML/Tailwind | Fast | Most projects, full code control |
 | **Google Stitch** | `npm install @google/stitch-sdk` + API key | Higher fidelity AI designs | ~10-20s/screen | Design-heavy projects, visual polish |
 
 ### Detecting Stitch
@@ -46,7 +46,7 @@ At the start of each loop, check if Stitch is available:
 2. Check if `STITCH_API_KEY` is set in `.dev.vars` or environment
 3. Check if `.design/metadata.json` exists (contains Stitch project ID)
 
-If all three are present, use Stitch. Otherwise, fall back to Claude generation.
+If all three are present, use Stitch. Otherwise, fall back to Codex generation.
 
 ### Stitch SDK Reference
 
@@ -189,7 +189,7 @@ Before generating, read:
 
 ### Step 3: Generate the Page
 
-#### Option A: Claude Generation (Default)
+#### Option A: Codex Generation (Default)
 
 Generate a complete HTML file using Tailwind CSS (via CDN). The page must:
 
@@ -521,7 +521,7 @@ project/
 - **Start with the homepage** — it establishes the visual language for everything else
 - **Read existing pages before generating** — consistency comes from copying, not recreating
 - **One page per iteration** — don't try to generate multiple pages at once
-- **Include the design system in every baton** — Claude needs it fresh each time
+- **Include the design system in every baton** — Codex needs it fresh each time
 - **Use the roadmap** — don't generate pages randomly; follow the user's priority order
 - **Wire navigation early** — even link to pages that don't exist yet (they will soon)
 

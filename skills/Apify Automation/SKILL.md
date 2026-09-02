@@ -8,7 +8,7 @@ requires:
 
 # Apify Automation
 
-Run **Apify** web scraping Actors and manage datasets directly from Claude Code. Execute crawlers synchronously or asynchronously, retrieve structured data, create reusable tasks, and inspect run logs without leaving your terminal.
+Run **Apify** web scraping Actors and manage datasets directly from Codex. Execute crawlers synchronously or asynchronously, retrieve structured data, create reusable tasks, and inspect run logs without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/apify](https://composio.dev/toolkits/apify)
 

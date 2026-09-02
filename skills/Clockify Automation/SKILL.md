@@ -8,7 +8,7 @@ requires:
 
 # Clockify Automation
 
-Automate your Clockify time tracking operations directly from Claude Code. Log time entries, query historical data, manage workspaces, and audit team activity -- all without leaving your terminal.
+Automate your Clockify time tracking operations directly from Codex. Log time entries, query historical data, manage workspaces, and audit team activity -- all without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/clockify](https://composio.dev/toolkits/clockify)
 
@@ -16,7 +16,7 @@ Automate your Clockify time tracking operations directly from Claude Code. Log t
 
 ## Setup
 
-1. Add the Rube MCP server to your Claude Code config with URL: `https://rube.app/mcp`
+1. Add the Rube MCP server to your Codex config with URL: `https://rube.app/mcp`
 2. When prompted, authenticate your Clockify account through the connection link provided
 3. Start automating your time tracking workflows with natural language
 

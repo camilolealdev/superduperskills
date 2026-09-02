@@ -5,7 +5,7 @@ disable-model-invocation: true
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Push All (Standalone Utility)
 
@@ -73,7 +73,7 @@ If `CHANGELOG.md` exists and changes are significant (not just lint/formatting f
 
 Discover and run project linters before committing, per ci_tool_detection.md.
 
-**Step 1: Discover linter setup** — first check `docs/project/runbook.md` for explicit lint/format commands (they take priority over auto-detection), then follow ci_tool_detection.md discovery hierarchy. Also check: `CLAUDE.md`, `README.md`, `CONTRIBUTING.md` for lint instructions.
+**Step 1: Discover linter setup** — first check `docs/project/runbook.md` for explicit lint/format commands (they take priority over auto-detection), then follow ci_tool_detection.md discovery hierarchy. Also check: `AGENTS.md`, `README.md`, `CONTRIBUTING.md` for lint instructions.
 
 **Step 2: Run linters with auto-fix**
 
@@ -90,7 +90,7 @@ Discover and run project linters before committing, per ci_tool_detection.md.
 2. Run `git diff --cached --stat` to show what will be committed
 3. Run `git log --oneline -3` to match recent commit style
 4. Compose a concise commit message summarizing ALL changes
-5. Commit with `Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>`
+5. Commit with `Co-Authored-By: Codex Opus 4.6 <noreply@anthropic.com>`
 
 ### Phase 6: Push and Report
 

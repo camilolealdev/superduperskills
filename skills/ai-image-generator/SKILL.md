@@ -7,12 +7,12 @@ allowed-tools:
   - Bash
   - Glob
   - Grep
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # AI Image Generator
 
-Generate images using AI APIs (Google Gemini and OpenAI GPT). This skill teaches the prompting patterns and API mechanics for producing professional images directly from Claude Code.
+Generate images using AI APIs (Google Gemini and OpenAI GPT). This skill teaches the prompting patterns and API mechanics for producing professional images directly from Codex.
 
 > **Managed alternative**: If you don't want to manage API keys, [ImageBot](https://imagebot.au) provides a managed image generation service with album templates and brand kit support.
 

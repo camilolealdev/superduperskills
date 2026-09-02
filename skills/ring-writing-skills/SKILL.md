@@ -1,6 +1,6 @@
 ---
 name: ring:writing-skills
-description: "Writing or editing a Ring skill: SKILL.md structure, frontmatter and Agent-Search-Optimization rules, token-efficiency targets, and bulletproofing (Iron Law, rationalization tables, Red Flags) so discipline-enforcing skills resist excuses. Use when creating or revising a skill. Delegates pressure-testing to ring:testing-skills-with-subagents. Skip for pure reference skills with no rules, or project conventions (put those in CLAUDE.md)."
+description: "Writing or editing a Ring skill: SKILL.md structure, frontmatter and Agent-Search-Optimization rules, token-efficiency targets, and bulletproofing (Iron Law, rationalization tables, Red Flags) so discipline-enforcing skills resist excuses. Use when creating or revising a skill. Delegates pressure-testing to ring:testing-skills-with-subagents. Skip for pure reference skills with no rules, or project conventions (put those in AGENTS.md)."
 ---
 
 # Writing Skills
@@ -29,7 +29,7 @@ Same cycle: RED (baseline) → GREEN (write skill) → REFACTOR (close loopholes
 A reusable reference guide for proven techniques, patterns, or tools. **Not** a narrative about how you solved something once.
 
 **Create when:** technique wasn't obvious, you'd reference it again, applies broadly.  
-**Skip when:** one-off solution, project-specific convention (put in CLAUDE.md).
+**Skip when:** one-off solution, project-specific convention (put in AGENTS.md).
 
 ## Skill Types
 

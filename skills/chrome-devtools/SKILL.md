@@ -20,7 +20,7 @@ On Linux/WSL, Chrome requires system libraries. Install them first:
 
 ```bash
 pwd  # Should show current working directory
-cd .claude/skills/chrome-devtools/scripts
+cd .Codex/skills/chrome-devtools/scripts
 ./install-deps.sh  # Auto-detects OS and installs required libs
 ```
 
@@ -53,7 +53,7 @@ sudo apt-get install imagemagick
 magick -version  # or: convert -version
 ```
 
-Without ImageMagick, screenshots >5MB will not be compressed (may fail to load in Gemini/Claude).
+Without ImageMagick, screenshots >5MB will not be compressed (may fail to load in Gemini/Codex).
 
 ### Test
 ```bash
@@ -63,7 +63,7 @@ node navigate.js --url https://example.com
 
 ## Available Scripts
 
-All scripts are in `.claude/skills/chrome-devtools/scripts/`
+All scripts are in `.Codex/skills/chrome-devtools/scripts/`
 
 **CRITICAL**: Always check `pwd` before running scripts.
 
@@ -88,13 +88,13 @@ All scripts are in `.claude/skills/chrome-devtools/scripts/`
 ### Single Command
 ```bash
 pwd  # Should show current working directory
-cd .claude/skills/chrome-devtools/scripts
+cd .Codex/skills/chrome-devtools/scripts
 node screenshot.js --url https://example.com --output ./docs/screenshots/page.png
 ```
 **Important**: Always save screenshots to `./docs/screenshots` directory.
 
 ### Automatic Image Compression
-Screenshots are **automatically compressed** if they exceed 5MB to ensure compatibility with Gemini API and Claude Code (which have 5MB limits). This uses ImageMagick internally:
+Screenshots are **automatically compressed** if they exceed 5MB to ensure compatibility with Gemini API and Codex (which have 5MB limits). This uses ImageMagick internally:
 
 ```bash
 # Default: auto-compress if >5MB
@@ -150,7 +150,7 @@ node network.js --url https://example.com --output /tmp/requests.json
 
 BEFORE executing any script:
 1. Check current working directory with `pwd`
-2. Verify in `.claude/skills/chrome-devtools/scripts/` directory
+2. Verify in `.Codex/skills/chrome-devtools/scripts/` directory
 3. If wrong directory, `cd` to correct location
 4. Use absolute paths for all output files
 
@@ -158,7 +158,7 @@ Example:
 ```bash
 pwd  # Should show: .../chrome-devtools/scripts
 # If wrong:
-cd .claude/skills/chrome-devtools/scripts
+cd .Codex/skills/chrome-devtools/scripts
 ```
 
 ### Output Validation

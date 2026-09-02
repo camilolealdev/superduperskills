@@ -15,17 +15,17 @@ hooks:
     - matcher: "Bash"
       hooks:
         - type: command
-          command: "bash $HOME/.claude/skills/gstack/careful/bin/check-careful.sh"
+          command: "bash $HOME/.Codex/skills/gstack/careful/bin/check-careful.sh"
           statusMessage: "Checking for destructive commands..."
     - matcher: "Edit"
       hooks:
         - type: command
-          command: "bash $HOME/.claude/skills/gstack/freeze/bin/check-freeze.sh"
+          command: "bash $HOME/.Codex/skills/gstack/freeze/bin/check-freeze.sh"
           statusMessage: "Checking freeze boundary..."
     - matcher: "Write"
       hooks:
         - type: command
-          command: "bash $HOME/.claude/skills/gstack/freeze/bin/check-freeze.sh"
+          command: "bash $HOME/.Codex/skills/gstack/freeze/bin/check-freeze.sh"
           statusMessage: "Checking freeze boundary..."
 ---
 <!-- AUTO-GENERATED from SKILL.md.tmpl — do not edit directly -->
@@ -71,7 +71,7 @@ echo "$FREEZE_DIR"
 2. Ensure trailing slash and save to the freeze state file:
 ```bash
 FREEZE_DIR="${FREEZE_DIR%/}/"
-eval "$(~/.claude/skills/gstack/bin/gstack-paths)"
+eval "$(~/.Codex/skills/gstack/bin/gstack-paths)"
 STATE_DIR="$GSTACK_STATE_ROOT"
 mkdir -p "$STATE_DIR"
 echo "$FREEZE_DIR" > "$STATE_DIR/freeze-dir.txt"

@@ -237,7 +237,7 @@ image: {
 
 ## Detailed References
 
-- [Install MCP Server](references/install-mcp.md) — Setup Astro Docs MCP for any AI tool (Kiro, Claude, Cursor, VS Code, etc.)
+- [Install MCP Server](references/install-mcp.md) — Setup Astro Docs MCP for any AI tool (Kiro, Codex, Cursor, VS Code, etc.)
 - [Migration Guide v6→v7](references/migration-v6-to-v7.md) — Step-by-step upgrade plan with breaking changes checklist
 - [Validation Checklist](references/validation-checklist.md) — Verify installation, detect breaking/deprecated patterns
 - [AI Dev Server](references/ai-dev-server.md) — Background mode, JSON logging, agent detection

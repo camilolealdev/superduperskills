@@ -242,9 +242,9 @@ After each quality assessment, append results to `run-history.json` in this skil
 ```bash
 node -e "
 const fs = require('fs');
-const h = JSON.parse(fs.readFileSync('.claude/skills/qe-quality-assessment/run-history.json'));
+const h = JSON.parse(fs.readFileSync('.Codex/skills/qe-quality-assessment/run-history.json'));
 h.runs.push({date: new Date().toISOString().split('T')[0], gate_result: 'PASS_OR_FAIL', failed_checks: []});
-fs.writeFileSync('.claude/skills/qe-quality-assessment/run-history.json', JSON.stringify(h, null, 2));
+fs.writeFileSync('.Codex/skills/qe-quality-assessment/run-history.json', JSON.stringify(h, null, 2));
 "
 ```
 Read `run-history.json` before each run — alert if quality gate failed 3 of last 5 runs.

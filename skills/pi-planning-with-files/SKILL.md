@@ -210,7 +210,7 @@ When installed via `pi install npm:@tomxprime/planning-with-files`, this package
 
 Modes:
 - `auto` (default): DeepSeek -> `cache-safe`, other models -> `parity`
-- `parity`: maximum Claude-style behavior (dynamic plan context)
+- `parity`: maximum Codex-style behavior (dynamic plan context)
 - `cache-safe`: fixed reminder strings for better DeepSeek KV-cache stability
 - `notify`: notification-only mode
 

@@ -8,7 +8,7 @@ requires:
 
 # Gorgias Automation
 
-Automate your Gorgias helpdesk operations directly from Claude Code. Create, update, and triage support tickets, manage customers, and organize your support team -- all without leaving your terminal.
+Automate your Gorgias helpdesk operations directly from Codex. Create, update, and triage support tickets, manage customers, and organize your support team -- all without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/gorgias](https://composio.dev/toolkits/gorgias)
 
@@ -16,7 +16,7 @@ Automate your Gorgias helpdesk operations directly from Claude Code. Create, upd
 
 ## Setup
 
-1. Add the Rube MCP server to your Claude Code config with URL: `https://rube.app/mcp`
+1. Add the Rube MCP server to your Codex config with URL: `https://rube.app/mcp`
 2. When prompted, authenticate your Gorgias account through the connection link provided
 3. Start automating your support workflows with natural language
 

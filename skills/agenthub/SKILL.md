@@ -54,7 +54,7 @@ Trigger phrases:
 
 ## Coordinator Protocol
 
-The main Claude Code session is the coordinator. It follows this lifecycle:
+The main Codex session is the coordinator. It follows this lifecycle:
 
 ```
 INIT → DISPATCH → MONITOR → EVALUATE → MERGE
@@ -233,8 +233,8 @@ The coordinator should act when:
 ## Installation
 
 ```bash
-# Copy to your Claude Code skills directory
-cp -r engineering/agenthub ~/.claude/skills/agenthub
+# Copy to your Codex skills directory
+cp -r engineering/agenthub ~/.Codex/skills/agenthub
 
 # Or install via ClawHub
 clawhub install agenthub

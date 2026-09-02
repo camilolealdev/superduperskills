@@ -3,8 +3,8 @@ name: backlink-analyzer
 description: 'Analyze backlinks: link authority, toxic links, building opportunities, competitor gaps. "Who links to me" / "外链怎么做" / "有垃圾外链". 外链分析/反向链接/有毒链接/链接建设 被リンク分析 백링크분석 análisis de backlinks'
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -78,8 +78,8 @@ metadata:
 # Backlink Analyzer
 
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This monitoring skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 Analyzes, monitors, and optimizes backlink profiles. Identifies link quality, discovers opportunities, and tracks competitor link building activities.
@@ -112,7 +112,7 @@ Use this whenever the task needs time-aware change detection, escalation, or sta
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Analyze Your Profile
 
@@ -142,7 +142,7 @@ Compare backlink profiles: [your domain] vs [competitor domains]
 
 **Expected output**: a delta summary, alert/report output, and a short handoff summary ready for `memory/monitoring/`.
 
-- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: current metrics, previous baselines, alert thresholds, and reporting context from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing monitoring deliverable plus a reusable summary that can be stored under `memory/monitoring/`.
 - **Promotes**: significant changes, confirmed anomalies, and follow-up actions to `memory/open-loops.md` and `memory/decisions.md`.
 - **Next handoff**: use the `Next Best Skill` below when a change needs action.
@@ -151,7 +151,7 @@ Compare backlink profiles: [your domain] vs [competitor domains]
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 **With ~~link database + ~~SEO tool connected:**
 Automatically pull comprehensive backlink profiles including referring domains, anchor text distribution, link quality metrics (DA/DR), link velocity, and toxic link detection from ~~link database. Competitor backlink data from ~~SEO tool for gap analysis.
@@ -184,7 +184,7 @@ When a user requests backlink analysis:
 
 7. **Generate Backlink Report** -- Executive summary, strengths, concerns, opportunities, competitive position, recommended actions (immediate/short-term/long-term), KPIs to track.
 
-   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/references/analysis-templates.md) for complete output templates for all 7 steps above.
+   > **Reference**: See [references/analysis-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/backlink-analyzer/references/analysis-templates.md) for complete output templates for all 7 steps above.
 
 ### CITE Item Mapping
 
@@ -267,9 +267,9 @@ If you acquire links from top 10 opportunities:
 
 ## Link Quality and Strategy Reference
 
-> **Reference**: See [references/link-quality-rubric.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/references/link-quality-rubric.md) for the complete link quality scoring matrix (6 weighted factors), toxic link identification criteria, link profile health benchmarks, and disavow file guidance.
+> **Reference**: See [references/link-quality-rubric.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/backlink-analyzer/references/link-quality-rubric.md) for the complete link quality scoring matrix (6 weighted factors), toxic link identification criteria, link profile health benchmarks, and disavow file guidance.
 
-> **Reference**: See [references/outreach-templates.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/references/outreach-templates.md) for email outreach frameworks, subject line formulas, response rate benchmarks, follow-up sequences, and templates for each link building strategy.
+> **Reference**: See [references/outreach-templates.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/backlink-analyzer/references/outreach-templates.md) for email outreach frameworks, subject line formulas, response rate benchmarks, follow-up sequences, and templates for each link building strategy.
 
 
 ### Save Results
@@ -291,9 +291,9 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [Link Quality Rubric](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/references/link-quality-rubric.md) — Quality scoring matrix with weighted factors and toxic link identification criteria
-- [Outreach Templates](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/monitor/backlink-analyzer/references/outreach-templates.md) — Email frameworks, subject line formulas, and response rate benchmarks
+- [Link Quality Rubric](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/backlink-analyzer/references/link-quality-rubric.md) — Quality scoring matrix with weighted factors and toxic link identification criteria
+- [Outreach Templates](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/monitor/backlink-analyzer/references/outreach-templates.md) — Email frameworks, subject line formulas, and response rate benchmarks
 
 ## Next Best Skill
 
-- **Primary**: [domain-authority-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/domain-authority-auditor/SKILL.md) — translate link findings into a domain-level trust view.
+- **Primary**: [domain-authority-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/domain-authority-auditor/SKILL.md) — translate link findings into a domain-level trust view.

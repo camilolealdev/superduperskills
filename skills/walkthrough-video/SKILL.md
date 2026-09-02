@@ -8,7 +8,7 @@ allowed-tools:
   - Bash
   - Glob
   - Grep
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Walkthrough Video Generator

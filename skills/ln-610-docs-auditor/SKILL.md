@@ -5,7 +5,7 @@ allowed-tools: Read, Grep, Glob, Bash, Skill
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Documentation Auditor (L2 Coordinator)
 
@@ -75,7 +75,7 @@ Runtime artifact layout for this coordinator:
 
 **Load project metadata:**
 - `AGENTS.md` - canonical root of the documentation hierarchy when present
-- `CLAUDE.md` - optional Anthropic-compatible shim or legacy root in older projects
+- `AGENTS.md` - optional Anthropic-compatible shim or legacy root in older projects
 - `docs/README.md` - documentation index
 - Package manifests: `package.json`, `requirements.txt`, `go.mod`, `Cargo.toml`
 - Existing docs in `docs/project/`
@@ -89,7 +89,7 @@ Runtime artifact layout for this coordinator:
 
 **Target documents for ln-612:**
 ```
-FOR doc IN [AGENTS.md, CLAUDE.md, docs/README.md, docs/documentation_standards.md,
+FOR doc IN [AGENTS.md, AGENTS.md, docs/README.md, docs/documentation_standards.md,
             docs/principles.md, docs/project/*.md]:
   IF doc exists AND doc NOT IN [docs/tasks/*, docs/reference/*, docs/presentation/*]:
     semantic_targets.append(doc)

@@ -187,7 +187,7 @@ Do both pages serve the same search intent?
 ```
 | Keyword | URL 1 | Clicks (U1) | Impr (U1) | Pos (U1) | URL 2 | Clicks (U2) | Impr (U2) | Pos (U2) | Severity | Action |
 |---------|-------|-------------|-----------|----------|-------|-------------|-----------|----------|----------|--------|
-| claude code seo | /blog/guide | 45 | 1200 | 8.3 | /blog/tutorial | 28 | 980 | 11.7 | High | Consolidate → /blog/guide |
+| Codex seo | /blog/guide | 45 | 1200 | 8.3 | /blog/tutorial | 28 | 980 | 11.7 | High | Consolidate → /blog/guide |
 | seo audit tool | /tools | 120 | 3400 | 4.1 | /blog/audit | 15 | 890 | 18.2 | Medium | Differentiate keywords |
 | meta tags seo | /blog/meta | 210 | 5600 | 3.2 | /blog/title-tags | 3 | 120 | 34.5 | Low | Monitor |
 ```
@@ -197,7 +197,7 @@ Do both pages serve the same search intent?
 For each High or Medium severity case, provide:
 
 ```
-Keyword:     "claude code seo"
+Keyword:     "Codex seo"
 Competing:   /blog/guide (pos 8.3, 45 clicks) vs /blog/tutorial (pos 11.7, 28 clicks)
 Severity:    HIGH
 Why:         Both pages rank 5-15. Neither breaks top 5. Combined 73 clicks suggest

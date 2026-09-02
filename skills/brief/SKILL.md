@@ -20,11 +20,11 @@ Turns intake (raw question or office-hours output) into a one-page strategy brie
 
 - A topic string, **or**
 - An office-hours brief (preferred — more rigor)
-- `~/.claude/company-context.md` (loaded automatically)
+- `~/.Codex/company-context.md` (loaded automatically)
 
 ## Output
 
-A single Markdown file under `~/.claude/briefs/YYYY-MM-DD-<slug>.md` with this structure:
+A single Markdown file under `~/.Codex/briefs/YYYY-MM-DD-<slug>.md` with this structure:
 
 ```markdown
 # Strategy Brief: <topic>
@@ -94,7 +94,7 @@ A single Markdown file under `~/.claude/briefs/YYYY-MM-DD-<slug>.md` with this s
 5. Make assumptions and constraints explicit
 6. Identify affected roles → drives panel composition for `/cs:boardroom`
 7. Write success + kill criteria BEFORE the decision (this is the rigor moment)
-8. Save to `~/.claude/briefs/`
+8. Save to `~/.Codex/briefs/`
 
 ## Why This Step Exists
 

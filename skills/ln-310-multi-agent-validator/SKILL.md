@@ -4,7 +4,7 @@ description: "Validates Stories, plans, or context via deterministic multi-agent
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 **Type:** L2 Coordinator
 **Category:** 3XX Planning
@@ -18,7 +18,7 @@ Validates Stories/Tasks (`mode=story`), implementation plans (`mode=plan_review`
 | Input | Required | Source | Description |
 |-------|----------|--------|-------------|
 | `storyId` | mode=story | args, git branch, kanban, user | Story to process |
-| `plan {file}` | mode=plan_review | args or auto | Plan file to review. Auto-detected from `.claude/plans/` if Read-Only Mode active and no args |
+| `plan {file}` | mode=plan_review | args or auto | Plan file to review. Auto-detected from `.Codex/plans/` if Read-Only Mode active and no args |
 | `context` | mode=context | conversation history, git diff | Review current discussion context + changed files |
 
 **Mode detection:** `"plan"` or `"plan {file}"` or Read-Only Mode active with no args -> `mode=plan_review`. `"context"` -> `mode=context`. Anything else -> `mode=story`.
@@ -77,7 +77,7 @@ node shared/scripts/review-runtime/cli.mjs start \
 
 1. Resolve primary artifact:
    - `story`: resolve Story + child Tasks
-   - `plan_review`: resolve plan file, or auto-detect latest `.claude/plans/*.md`
+   - `plan_review`: resolve plan file, or auto-detect latest `.Codex/plans/*.md`
    - `context`: resolve identifier and materialize chat-derived context if needed
 2. Load metadata:
    - `linear`: `get_issue(storyId)` + `list_issues(parentId=storyId)`

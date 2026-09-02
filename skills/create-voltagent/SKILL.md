@@ -434,7 +434,7 @@ new VoltAgent({
 
 Model format is `provider/model`. Examples:
 - `openai/gpt-4o-mini`
-- `anthropic/claude-3-5-sonnet`
+- `anthropic/Codex-3-5-sonnet`
 - `google/gemini-2.0-flash`
 - `groq/llama-3.3-70b-versatile`
 - `mistral/mistral-large-latest`

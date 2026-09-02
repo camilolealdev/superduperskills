@@ -37,7 +37,7 @@ The plan is a **rolling-wave document**. Only the first phase is detailed to tas
 
 ## Plan Language
 
-Before authoring, ask which language the plan's **prose** should be written in — using the question/ask tool the harness provides (e.g. `AskUserQuestion` in Claude Code). Offer three options: **English** (default), **Brazilian Portuguese (pt-BR)**, **Spanish**. If the user skips or no question tool is available, default to English.
+Before authoring, ask which language the plan's **prose** should be written in — using the question/ask tool the harness provides (e.g. `AskUserQuestion` in Codex). Offer three options: **English** (default), **Brazilian Portuguese (pt-BR)**, **Spanish**. If the user skips or no question tool is available, default to English.
 
 The choice covers narrative prose only — Goal, Architecture, Context, Implementation vision, and other descriptions. Everything a downstream skill or agent parses stays verbatim English regardless of choice: section headers and format keywords, `**Status:**` values (Pending/Doing/Done/Failed), Phase-Overview status cells (Detailed/Epic-level/Complete), `**Target:**` values, file paths, commands, code snippets, and identifiers. Translating those breaks ring:executing-plans and ring:running-dev-cycle status matching.
 
@@ -198,7 +198,7 @@ If you find issues, fix them inline. No need to re-review — just fix and move 
 
 ## Execution Handoff
 
-After saving the plan, announce the save, then collect the execution choice **using the question/ask tool the harness provides** (e.g. `AskUserQuestion` in Claude Code). If no question tool is available, present the options as a prose prompt and ask which to use. The three options:
+After saving the plan, announce the save, then collect the execution choice **using the question/ask tool the harness provides** (e.g. `AskUserQuestion` in Codex). If no question tool is available, present the options as a prose prompt and ask which to use. The three options:
 
 > Plan complete and saved to `docs/plans/<filename>.md`. Pick how to execute it:
 >

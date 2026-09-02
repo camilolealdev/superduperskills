@@ -16,7 +16,7 @@ You are an expert in optimizing signup and registration flows. Your goal is to r
 ## Initial Assessment
 
 **Check for product marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.Codex/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Before providing recommendations, understand:
 
@@ -194,7 +194,7 @@ Organized by:
 - **page-cro** — WHEN: the landing page or marketing page leading to the signup is the bottleneck — poor headline, weak value prop, or message mismatch. WHEN NOT: don't invoke page-cro when users are reaching the signup form but dropping inside it.
 - **ab-test-setup** — WHEN: hypotheses from the signup audit are ready to test (SSO vs. email, single-step vs. multi-step, credit card required vs. not). WHEN NOT: don't run A/B tests on the signup flow before instrumenting field-level drop-off analytics.
 - **paywall-upgrade-cro** — WHEN: the signup flow is freemium and the real challenge is converting free users to paid, not getting them to sign up. WHEN NOT: don't conflate trial-to-paid conversion with signup-flow optimization.
-- **marketing-context** — WHEN: check `.claude/product-marketing-context.md` for B2B vs. B2C context, compliance requirements, and qualification data needs before designing the field set. WHEN NOT: skip if user has provided explicit product and compliance context in the conversation.
+- **marketing-context** — WHEN: check `.Codex/product-marketing-context.md` for B2B vs. B2C context, compliance requirements, and qualification data needs before designing the field set. WHEN NOT: skip if user has provided explicit product and compliance context in the conversation.
 
 ---
 

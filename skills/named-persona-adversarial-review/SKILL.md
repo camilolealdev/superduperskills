@@ -101,7 +101,7 @@ For each persona, pull their documented principles from `references/persona_prin
 Each persona gets: **Mindset** (one sentence from their principles), **Priorities** (3-5 criteria), **Findings** (each mapped to a documented principle + confidence level), or the **zero-finding burden** (3+ principles the code satisfies, with how).
 
 ### Step 3: Synthesize & post
-Merge duplicates; count concurrences; promote per the rule; flag single-lens findings (often the most interesting). Post the report as a PR comment (default) or save to `.claude/review-[timestamp].md`.
+Merge duplicates; count concurrences; promote per the rule; flag single-lens findings (often the most interesting). Post the report as a PR comment (default) or save to `.Codex/review-[timestamp].md`.
 
 ## Integrity Check (Feynman)
 

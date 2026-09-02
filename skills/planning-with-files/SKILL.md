@@ -7,12 +7,12 @@ hooks:
   UserPromptSubmit:
     - hooks:
         - type: command
-          command: "SH=\"${CLAUDE_SKILL_DIR}/scripts/inject-plan.sh\"; [ -f \"$SH\" ] || SH=$(ls \"$HOME/.claude/skills/planning-with-files/scripts/inject-plan.sh\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/inject-plan.sh\" 2>/dev/null | head -1); [ -n \"$SH\" ] && [ -f \"$SH\" ] && sh \"$SH\" --context=userprompt; exit 0"
+          command: "SH=\"${CLAUDE_SKILL_DIR}/scripts/inject-plan.sh\"; [ -f \"$SH\" ] || SH=$(ls \"$HOME/.Codex/skills/planning-with-files/scripts/inject-plan.sh\" \"$HOME/.Codex/plugins/marketplaces/planning-with-files/scripts/inject-plan.sh\" 2>/dev/null | head -1); [ -n \"$SH\" ] && [ -f \"$SH\" ] && sh \"$SH\" --context=userprompt; exit 0"
   PreToolUse:
     - matcher: "Write|Edit|Bash|Read|Glob|Grep"
       hooks:
         - type: command
-          command: "SH=\"${CLAUDE_SKILL_DIR}/scripts/inject-plan.sh\"; [ -f \"$SH\" ] || SH=$(ls \"$HOME/.claude/skills/planning-with-files/scripts/inject-plan.sh\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/inject-plan.sh\" 2>/dev/null | head -1); [ -n \"$SH\" ] && [ -f \"$SH\" ] && sh \"$SH\" --context=pretool; exit 0"
+          command: "SH=\"${CLAUDE_SKILL_DIR}/scripts/inject-plan.sh\"; [ -f \"$SH\" ] || SH=$(ls \"$HOME/.Codex/skills/planning-with-files/scripts/inject-plan.sh\" \"$HOME/.Codex/plugins/marketplaces/planning-with-files/scripts/inject-plan.sh\" 2>/dev/null | head -1); [ -n \"$SH\" ] && [ -f \"$SH\" ] && sh \"$SH\" --context=pretool; exit 0"
   PostToolUse:
     - matcher: "Write|Edit"
       hooks:
@@ -21,12 +21,12 @@ hooks:
   Stop:
     - hooks:
         - type: command
-          command: "SKILL_PS1=\"${CLAUDE_SKILL_DIR}/scripts/check-complete.ps1\"; SKILL_SH=\"${CLAUDE_SKILL_DIR}/scripts/gate-stop.sh\"; KNOWN_PS1=$(ls \"$HOME/.claude/skills/planning-with-files/scripts/check-complete.ps1\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/check-complete.ps1\" 2>/dev/null | head -1); KNOWN_SH=$(ls \"$HOME/.claude/skills/planning-with-files/scripts/gate-stop.sh\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/gate-stop.sh\" 2>/dev/null | head -1); TARGET_PS1=\"${SKILL_PS1:-$KNOWN_PS1}\"; TARGET_SH=\"${SKILL_SH:-$KNOWN_SH}\"; if [ -n \"$TARGET_PS1\" ] && [ -f \"$TARGET_PS1\" ]; then powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File \"$TARGET_PS1\" -Gate 2>/dev/null; elif [ -n \"$TARGET_SH\" ] && [ -f \"$TARGET_SH\" ]; then sh \"$TARGET_SH\" 2>/dev/null; fi"
+          command: "SKILL_PS1=\"${CLAUDE_SKILL_DIR}/scripts/check-complete.ps1\"; SKILL_SH=\"${CLAUDE_SKILL_DIR}/scripts/gate-stop.sh\"; KNOWN_PS1=$(ls \"$HOME/.Codex/skills/planning-with-files/scripts/check-complete.ps1\" \"$HOME/.Codex/plugins/marketplaces/planning-with-files/scripts/check-complete.ps1\" 2>/dev/null | head -1); KNOWN_SH=$(ls \"$HOME/.Codex/skills/planning-with-files/scripts/gate-stop.sh\" \"$HOME/.Codex/plugins/marketplaces/planning-with-files/scripts/gate-stop.sh\" 2>/dev/null | head -1); TARGET_PS1=\"${SKILL_PS1:-$KNOWN_PS1}\"; TARGET_SH=\"${SKILL_SH:-$KNOWN_SH}\"; if [ -n \"$TARGET_PS1\" ] && [ -f \"$TARGET_PS1\" ]; then powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -File \"$TARGET_PS1\" -Gate 2>/dev/null; elif [ -n \"$TARGET_SH\" ] && [ -f \"$TARGET_SH\" ]; then sh \"$TARGET_SH\" 2>/dev/null; fi"
   PreCompact:
     - matcher: "*"
       hooks:
         - type: command
-          command: "SH=\"${CLAUDE_SKILL_DIR}/scripts/inject-plan.sh\"; [ -f \"$SH\" ] || SH=$(ls \"$HOME/.claude/skills/planning-with-files/scripts/inject-plan.sh\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/inject-plan.sh\" 2>/dev/null | head -1); [ -n \"$SH\" ] && [ -f \"$SH\" ] && sh \"$SH\" --context=precompact; exit 0"
+          command: "SH=\"${CLAUDE_SKILL_DIR}/scripts/inject-plan.sh\"; [ -f \"$SH\" ] || SH=$(ls \"$HOME/.Codex/skills/planning-with-files/scripts/inject-plan.sh\" \"$HOME/.Codex/plugins/marketplaces/planning-with-files/scripts/inject-plan.sh\" 2>/dev/null | head -1); [ -n \"$SH\" ] && [ -f \"$SH\" ] && sh \"$SH\" --context=precompact; exit 0"
 metadata:
   version: "3.2.0"
 ---
@@ -44,13 +44,13 @@ Work like Manus: Use persistent markdown files as your "working memory on disk."
 
 ```bash
 # Linux/macOS — auto-detects skill directory (plugin env or default install path)
-SKILL_DIR="${CLAUDE_PLUGIN_ROOT:-$HOME/.claude/skills/planning-with-files}"
+SKILL_DIR="${CLAUDE_PLUGIN_ROOT:-$HOME/.Codex/skills/planning-with-files}"
 $(command -v python3 || command -v python) "${SKILL_DIR}/scripts/session-catchup.py" "$(pwd)"
 ```
 
 ```powershell
 # Windows PowerShell
-& (Get-Command python -ErrorAction SilentlyContinue).Source "$env:USERPROFILE\.claude\skills\planning-with-files\scripts\session-catchup.py" (Get-Location)
+& (Get-Command python -ErrorAction SilentlyContinue).Source "$env:USERPROFILE\.Codex\skills\planning-with-files\scripts\session-catchup.py" (Get-Location)
 ```
 
 If catchup report shows unsynced context:
@@ -244,9 +244,9 @@ export PLAN_ID=2026-01-10-backend-refactor
 Each session reads from its own isolated plan directory. Hooks resolve the correct plan automatically.
 - `scripts/session-catchup.py` — Recover context from previous session (v2.2.0). For OpenCode (v2.38.0+), reads the new SQLite store at `${XDG_DATA_HOME:-~/.local/share}/opencode/opencode.db` instead of the legacy JSON tree.
 
-## Claude Code Turn-Loop Integration (v2.38.0+)
+## Codex Turn-Loop Integration (v2.38.0+)
 
-Claude Code shipped three new turn-loop primitives in May 2026: `/loop` (v2.1.72), `/goal` (v2.1.139), and the `PreCompact` hook event. v2.38.0 wires the planning workflow into all three.
+Codex shipped three new turn-loop primitives in May 2026: `/loop` (v2.1.72), `/goal` (v2.1.139), and the `PreCompact` hook event. v2.38.0 wires the planning workflow into all three.
 
 ### Install scope: plugin vs skill-only (v2.42.0 clarification)
 
@@ -257,9 +257,9 @@ Not every install path ships every surface in this section. Two distinct install
 | `/plugin marketplace add OthmanAdi/planning-with-files` then `/plugin install` | SKILL.md, scripts, templates, **plus `commands/` folder** | Yes, as `/plan-goal` and `/plan-loop` |
 | `npx skills add OthmanAdi/planning-with-files` (or ClawHub) | SKILL.md, scripts, templates only | No, follow the manual fallback below |
 
-The PreCompact hook is registered in the SKILL.md frontmatter and works for both routes. The `/plan-goal` and `/plan-loop` slash commands live in `commands/` at the repo root, which only the plugin route copies into `~/.claude/plugins/marketplaces/`. Skill-only installs land at `~/.claude/skills/planning-with-files/` and do not see `commands/`.
+The PreCompact hook is registered in the SKILL.md frontmatter and works for both routes. The `/plan-goal` and `/plan-loop` slash commands live in `commands/` at the repo root, which only the plugin route copies into `~/.Codex/plugins/marketplaces/`. Skill-only installs land at `~/.Codex/skills/planning-with-files/` and do not see `commands/`.
 
-Both slash commands also carry `disable-model-invocation: true`, which means the model will not auto-trigger them. You type them. Per known Claude Code behavior (anthropics/claude-code issues #26251, #41417), some sessions interpret `disable-model-invocation: true` as "I cannot use the Skill tool for this entry at all" and refuse to fire even when you type the slash. If that happens, the manual fallback below produces the same effect.
+Both slash commands also carry `disable-model-invocation: true`, which means the model will not auto-trigger them. You type them. Per known Codex behavior (anthropics/Codex issues #26251, #41417), some sessions interpret `disable-model-invocation: true` as "I cannot use the Skill tool for this entry at all" and refuse to fire even when you type the slash. If that happens, the manual fallback below produces the same effect.
 
 ### PreCompact hook (auto)
 
@@ -273,7 +273,7 @@ Compaction still proceeds. The protection model is "the plan is on disk, the pla
 
 ### `/plan-goal` slash command
 
-Composes with Claude Code's `/goal`. Derives a goal condition from the active plan and forwards it to `/goal`, so the agent keeps working until the plan file actually reports complete.
+Composes with Codex's `/goal`. Derives a goal condition from the active plan and forwards it to `/goal`, so the agent keeps working until the plan file actually reports complete.
 
 ```
 /plan-goal                                # default: "all phases report Status: complete"
@@ -284,7 +284,7 @@ Composes with Claude Code's `/goal`. Derives a goal condition from the active pl
 
 ### `/plan-loop` slash command
 
-Composes with Claude Code's `/loop`. Default 10-minute tick re-reads the planning files, runs `check-complete`, and writes a `progress.md` entry if nothing changed since the last tick.
+Composes with Codex's `/loop`. Default 10-minute tick re-reads the planning files, runs `check-complete`, and writes a `progress.md` entry if nothing changed since the last tick.
 
 ```
 /plan-loop                                # default 10m cadence, default tick prompt
@@ -303,7 +303,7 @@ For skill-only installs (no `commands/` folder) or sessions where the slash comm
 1. Resolve the active plan: prefer `${PLAN_ID}` env var, then `.planning/.active_plan`, then newest `.planning/<dir>/`, then legacy `./task_plan.md`.
 2. Read the resolved `task_plan.md`.
 3. Compose a goal condition. Default: `"all phases in task_plan.md report Status: complete and check-complete.sh reports ALL PHASES COMPLETE"`. If the user passed additional clauses, append them.
-4. Issue Claude Code's native `/goal <condition>` (CC primitive, always available).
+4. Issue Codex's native `/goal <condition>` (CC primitive, always available).
 5. Confirm to the user: print the condition + active plan ID + remind that `/goal clear` cancels.
 6. Refuse if `task_plan.md` does not exist; direct the user to run init first.
 
@@ -312,21 +312,21 @@ For skill-only installs (no `commands/` folder) or sessions where the slash comm
 1. Parse args: first arg matching `^\d+[smhd]$` is the interval (default `10m`), remaining args are an optional task prompt.
 2. Resolve the active plan as above.
 3. Compose the loop tick prompt. If user passed a task prompt, use it verbatim. Otherwise use the planning-aware default that re-reads `task_plan.md` and `progress.md`, runs `scripts/check-complete.sh`, and writes a `progress.md` entry if no progress was logged since the last tick.
-4. Issue Claude Code's native `/loop <interval> <prompt>` (CC primitive, always available).
+4. Issue Codex's native `/loop <interval> <prompt>` (CC primitive, always available).
 5. Confirm to the user: print interval + active plan ID + remind that bare `/loop` runs the built-in maintenance prompt.
 
-Both procedures match what the `commands/plan-goal.md` and `commands/plan-loop.md` files would have fed the model when invoked. The native `/loop` and `/goal` primitives are always available in Claude Code; only the planning-aware wrapper is plugin-scoped.
+Both procedures match what the `commands/plan-goal.md` and `commands/plan-loop.md` files would have fed the model when invoked. The native `/loop` and `/goal` primitives are always available in Codex; only the planning-aware wrapper is plugin-scoped.
 
 ### `loop.md` template
 
-Claude Code's bare `/loop` reads `.claude/loop.md` (project) or `~/.claude/loop.md` (user). v2.38 ships a planning-aware template at `templates/loop.md`. Install once:
+Codex's bare `/loop` reads `.Codex/loop.md` (project) or `~/.Codex/loop.md` (user). v2.38 ships a planning-aware template at `templates/loop.md`. Install once:
 
 ```bash
 # user-wide
-cp ${CLAUDE_PLUGIN_ROOT}/templates/loop.md ~/.claude/loop.md
+cp ${CLAUDE_PLUGIN_ROOT}/templates/loop.md ~/.Codex/loop.md
 
 # project-specific
-cp ${CLAUDE_PLUGIN_ROOT}/templates/loop.md .claude/loop.md
+cp ${CLAUDE_PLUGIN_ROOT}/templates/loop.md .Codex/loop.md
 ```
 
 After install, bare `/loop <interval>` runs the planning-aware tick.
@@ -373,7 +373,7 @@ The gate mechanism is host-aware. Not every host can hard-block a stop.
 
 | Tier | Hosts | Gate mechanism |
 |---|---|---|
-| 1: hard block | Claude Code, Codex CLI, OpenAI Codex API, Continue.dev | `{"decision":"block"}` / exit 2 |
+| 1: hard block | Codex, Codex CLI, OpenAI Codex API, Continue.dev | `{"decision":"block"}` / exit 2 |
 | 2: follow-up inject | Cursor, Pi, Kiro | agent_end follow-up message + own counter |
 | 3: notify only | OpenCode, Gemini CLI, rest | systemMessage only, no enforcement |
 

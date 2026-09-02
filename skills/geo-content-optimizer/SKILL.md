@@ -1,10 +1,10 @@
 ---
 name: geo-content-optimizer
-description: "Optimize content for AI citations: ChatGPT, Perplexity, AI Overviews, Gemini, Claude, Copilot. Quotable statements, Q&A, attribution. \"AI doesn't mention my brand\" / \"让AI引用我\" / \"AI搜不到\". AI引用优化/GEO优化/AI搜索 AI最適化/コンテンツ最適化 AI최적화 optimización IA"
+description: "Optimize content for AI citations: ChatGPT, Perplexity, AI Overviews, Gemini, Codex, Copilot. Quotable statements, Q&A, attribution. \"AI doesn't mention my brand\" / \"让AI引用我\" / \"AI搜不到\". AI引用优化/GEO优化/AI搜索 AI最適化/コンテンツ最適化 AI최적화 optimización IA"
 version: "5.1.0"
 license: Apache-2.0
-compatibility: "Claude Code ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
-homepage: "https://github.com/aaron-he-zhu/seo-geo-claude-skills"
+compatibility: "Codex ≥1.0, skills.sh marketplace, ClawHub marketplace, Vercel Labs skills ecosystem. No system packages required. Optional: MCP network access for SEO tool integrations."
+homepage: "https://github.com/aaron-he-zhu/seo-geo-Codex-skills"
 metadata:
   author: aaron-he-zhu
   version: "5.1.0"
@@ -85,8 +85,8 @@ metadata:
 
 # GEO Content Optimizer
 
-> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-claude-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-claude-skills)
-> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md).
+> **[SEO & GEO Skills Library](https://github.com/aaron-he-zhu/seo-geo-Codex-skills)** · 20 skills for SEO + GEO · [ClawHub](https://clawhub.ai/u/aaron-he-zhu) · [skills.sh](https://skills.sh/aaron-he-zhu/seo-geo-Codex-skills)
+> **System Mode**: This build skill follows the shared [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md) and [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md).
 
 
 This skill optimizes content to appear in AI-generated responses. As AI systems increasingly answer user queries directly, getting cited by these systems becomes crucial for visibility.
@@ -119,7 +119,7 @@ Use this whenever the task needs a shippable asset or transformation that should
 
 ## Quick Start
 
-Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/skill-contract.md).
+Start with one of these prompts. Finish with a short handoff summary using the repository format in [Skill Contract](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/skill-contract.md).
 
 ### Optimize Existing Content
 
@@ -147,19 +147,19 @@ Audit this content for GEO readiness and suggest improvements
 
 **Expected output**: a ready-to-use asset or implementation-ready transformation plus a short handoff summary ready for `memory/content/`.
 
-- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [CLAUDE.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CLAUDE.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/state-model.md) when available.
+- **Reads**: the brief, target keywords, entity inputs, quality constraints, and prior decisions from [AGENTS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/AGENTS.md) and the shared [State Model](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/state-model.md) when available.
 - **Writes**: a user-facing content, metadata, or schema deliverable plus a reusable summary that can be stored under `memory/content/`.
-- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `CLAUDE.md`, `memory/decisions.md`, and `memory/open-loops.md`.
+- **Promotes**: approved angles, messaging choices, missing evidence, and publish blockers to `AGENTS.md`, `memory/decisions.md`, and `memory/open-loops.md`.
 - **Next handoff**: use the `Next Best Skill` below when the asset is ready for review or deployment.
 
 ## Data Sources
 
-> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/CONNECTORS.md) for tool category placeholders.
+> See [CONNECTORS.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/CONNECTORS.md) for tool category placeholders.
 
 > **Note:** All integrations are optional. This skill works without any API keys — users provide data manually when no tools are connected.
 
 **With ~~AI monitor + ~~SEO tool connected:**
-Automatically pull AI citation patterns (which content is being cited by ChatGPT, Claude, Perplexity), current AI visibility scores, competitor citation frequency, and AI Overview appearance tracking.
+Automatically pull AI citation patterns (which content is being cited by ChatGPT, Codex, Perplexity), current AI visibility scores, competitor citation frequency, and AI Overview appearance tracking.
 
 **With manual data only:**
 Ask the user to provide:
@@ -175,7 +175,7 @@ When a user requests GEO optimization:
 
 1. **Load CORE-EEAT GEO-First Optimization Targets**
 
-   Before optimizing, load GEO-critical items from the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md):
+   Before optimizing, load GEO-critical items from the [CORE-EEAT Benchmark](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md):
 
    ```markdown
    ### CORE-EEAT GEO-First Targets
@@ -203,9 +203,9 @@ When a user requests GEO optimization:
    | Google AI Overview | C02, O03, O05, C09 |
    | ChatGPT Browse | C02, R01, R02, E01 |
    | Perplexity AI | E01, R03, R05, Ept05 |
-   | Claude | R04, Ept08, Exp10, R03 |
+   | Codex | R04, Ept08, Exp10, R03 |
 
-   _Full benchmark: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/references/core-eeat-benchmark.md)_
+   _Full benchmark: [references/core-eeat-benchmark.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/references/core-eeat-benchmark.md)_
    ```
 
 2. **Analyze Current Content**
@@ -239,11 +239,11 @@ When a user requests GEO optimization:
 
 3. **Apply GEO Optimization Techniques**
 
-   > **GEO fundamentals**: AI systems prioritize content that is authoritative (expert credentials, proper citations), accurate (verifiable, up-to-date), clear (well-structured, unambiguous), and quotable (standalone answers, specific data). See [references/geo-optimization-techniques.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/geo-content-optimizer/references/geo-optimization-techniques.md) for details.
+   > **GEO fundamentals**: AI systems prioritize content that is authoritative (expert credentials, proper citations), accurate (verifiable, up-to-date), clear (well-structured, unambiguous), and quotable (standalone answers, specific data). See [references/geo-optimization-techniques.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/geo-content-optimizer/references/geo-optimization-techniques.md) for details.
 
    Apply the six core optimization techniques: definition optimization, quotable statement creation, authority signal enhancement, structure optimization, factual density improvement, and FAQ schema implementation.
 
-   > **Reference**: See [references/geo-optimization-techniques.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/geo-content-optimizer/references/geo-optimization-techniques.md) for detailed before/after examples, templates, and checklists for each technique.
+   > **Reference**: See [references/geo-optimization-techniques.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/geo-content-optimizer/references/geo-optimization-techniques.md) for detailed before/after examples, templates, and checklists for each technique.
 
    Key principles:
    - **Definitions**: 25-50 words, standalone, starting with the term
@@ -324,7 +324,7 @@ When a user requests GEO optimization:
 
     **Items Needing Attention**: [list any ⚠️/❌ items]
 
-    _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
+    _For full 80-item audit, use [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md)_
     ```
 
 ## Validation Checkpoints
@@ -380,7 +380,7 @@ Changes: added clear definition, 2 stats with sources, structured list, DMA/Emar
 
 ## GEO Optimization Checklist
 
-> **Reference**: See the GEO Readiness Checklist in [references/geo-optimization-techniques.md](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/geo-content-optimizer/references/geo-optimization-techniques.md) for the full checklist covering definitions, quotable content, authority, structure, and technical elements.
+> **Reference**: See the GEO Readiness Checklist in [references/geo-optimization-techniques.md](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/geo-content-optimizer/references/geo-optimization-techniques.md) for the full checklist covering definitions, quotable content, authority, structure, and technical elements.
 
 ## Tips for Success
 
@@ -410,9 +410,9 @@ If any findings should influence ongoing strategy, recommend promoting key concl
 
 ## Reference Materials
 
-- [AI Citation Patterns](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/geo-content-optimizer/references/ai-citation-patterns.md) - How Google AI Overviews, ChatGPT, Perplexity, and Claude select and cite sources
-- [Quotable Content Examples](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/build/geo-content-optimizer/references/quotable-content-examples.md) - Before/after examples of content optimized for AI citation
+- [AI Citation Patterns](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/geo-content-optimizer/references/ai-citation-patterns.md) - How Google AI Overviews, ChatGPT, Perplexity, and Codex select and cite sources
+- [Quotable Content Examples](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/build/geo-content-optimizer/references/quotable-content-examples.md) - Before/after examples of content optimized for AI citation
 
 ## Next Best Skill
 
-- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-claude-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — verify the optimized content is strong enough to ship and cite.
+- **Primary**: [content-quality-auditor](https://github.com/aaron-he-zhu/seo-geo-Codex-skills/blob/main/cross-cutting/content-quality-auditor/SKILL.md) — verify the optimized content is strong enough to ship and cite.

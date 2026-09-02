@@ -11,7 +11,7 @@ metadata:
 
 # Pulse — Multi-Source Recency Research
 
-> **Portability:** Works in both Claude Code CLI and Claude.ai. The optional X/Twitter phase requires browser automation and is skipped automatically if unavailable.
+> **Portability:** Works in both Codex CLI and Codex.ai. The optional X/Twitter phase requires browser automation and is skipped automatically if unavailable.
 
 A recency-oriented research skill that synthesizes what people are saying about a topic across Reddit, Hacker News, the open web, and (optionally) X/Twitter — within a configurable time window. Output is a single coherent briefing with citations, engagement signals, and cross-platform pattern analysis. The skill captures the **current conversation**, not the canonical reference.
 
@@ -46,7 +46,7 @@ Dependency-ordered. Each question carries explicit "why I'm asking". Stop condit
 
 ### Q1 (root) — Topic Specificity
 
-> **What's the topic? State it in 1–2 sentences — be specific. "AI" or "tech" will get you a vague survey; "self-hosted LLM deployment for small teams" or "Claude Code adoption among enterprise engineering orgs" will get you a useful answer.**
+> **What's the topic? State it in 1–2 sentences — be specific. "AI" or "tech" will get you a vague survey; "self-hosted LLM deployment for small teams" or "Codex adoption among enterprise engineering orgs" will get you a useful answer.**
 >
 > *Why I'm asking:* Specificity dictates search quality. Vague topics produce vague briefings. If your topic is broad, I'd rather narrow it now than spend a search budget on noise.
 
@@ -140,7 +140,7 @@ Run last. Reasons:
 **Interface (in priority order):**
 1. **Grok** if available in the harness
 2. **X API** if authenticated
-3. **Browser automation** if the harness supports it (Claude Code CLI with `playwright` or similar)
+3. **Browser automation** if the harness supports it (Codex CLI with `playwright` or similar)
 4. **Skip with note** if none of the above available
 
 **Documented behavior:**

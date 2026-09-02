@@ -11,7 +11,7 @@ tags:
   - valuation
   - budgeting
 agents:
-  - claude-code
+  - Codex
   - codex-cli
   - openclaw
 ---

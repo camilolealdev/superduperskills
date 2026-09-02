@@ -8,7 +8,7 @@ requires:
 
 # Productboard Automation
 
-Automate your Productboard product management operations directly from Claude Code. Create notes from customer feedback, browse features and objectives, link entities, and track releases -- all without leaving your terminal.
+Automate your Productboard product management operations directly from Codex. Create notes from customer feedback, browse features and objectives, link entities, and track releases -- all without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/productboard](https://composio.dev/toolkits/productboard)
 
@@ -16,7 +16,7 @@ Automate your Productboard product management operations directly from Claude Co
 
 ## Setup
 
-1. Add the Rube MCP server to your Claude Code config with URL: `https://rube.app/mcp`
+1. Add the Rube MCP server to your Codex config with URL: `https://rube.app/mcp`
 2. When prompted, authenticate your Productboard account through the connection link provided
 3. Start automating your product management workflows with natural language
 

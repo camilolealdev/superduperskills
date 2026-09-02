@@ -9,7 +9,7 @@ description: Default entry point for any research request — a hybrid router th
 
 ## Portability
 
-Requires `WebSearch` + `WebFetch` for the fallback workflow; specialist skills (`pulse`, `grants`, `litreview`, `syllabus`, `patent`, `dossier`) must be present for delegation to work. Node.js with `docx` package required if Q2 = document mode. Works in Claude Code CLI natively. In Claude.ai with web tools + Code Execution, the workflow is supported.
+Requires `WebSearch` + `WebFetch` for the fallback workflow; specialist skills (`pulse`, `grants`, `litreview`, `syllabus`, `patent`, `dossier`) must be present for delegation to work. Node.js with `docx` package required if Q2 = document mode. Works in Codex CLI natively. In Codex.ai with web tools + Code Execution, the workflow is supported.
 
 ## Distinct From `engineering/autoresearch-agent`
 

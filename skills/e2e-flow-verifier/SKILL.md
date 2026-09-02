@@ -16,7 +16,7 @@ Product verification skill that drives user flows with the **qe-browser** fleet 
 
 ## Dependency
 
-This skill uses `.claude/skills/qe-browser/` for all browser automation. The `vibium` binary is installed automatically by `aqe init`. See `qe-browser/SKILL.md` for the full command reference.
+This skill uses `.Codex/skills/qe-browser/` for all browser automation. The `vibium` binary is installed automatically by `aqe init`. See `qe-browser/SKILL.md` for the full command reference.
 
 ## Flow Verification Pattern (qe-browser + batch + assert)
 
@@ -47,7 +47,7 @@ EOF
 
 # Record evidence AND drive the flow
 vibium record start --screenshots --snapshots --name "{{flow-name}}"
-node .claude/skills/qe-browser/scripts/batch.js --steps "@/tmp/{{flow-name}}.json"
+node .Codex/skills/qe-browser/scripts/batch.js --steps "@/tmp/{{flow-name}}.json"
 FLOW_EXIT=$?
 vibium record stop -o "test-results/{{flow-name}}/evidence.zip"
 exit $FLOW_EXIT
@@ -71,7 +71,7 @@ Use `vibium har-export` for a separate HAR 1.2 network log if needed.
 The qe-browser `assert.js` check kinds include network assertions that capture backend calls made from the page:
 
 ```bash
-node .claude/skills/qe-browser/scripts/assert.js --checks '[
+node .Codex/skills/qe-browser/scripts/assert.js --checks '[
   {"kind": "response_status", "url": "/api/{{resource}}", "status": 200},
   {"kind": "request_url_seen", "url": "/api/{{resource}}"}
 ]'

@@ -7,7 +7,7 @@ description: "Comprehensive REST API design review with automated linting, break
 
 **Tier:** POWERFUL  
 **Category:** Engineering / Architecture  
-**Maintainer:** Claude Skills Team  
+**Maintainer:** Codex Skills Team  
 
 ## Overview
 

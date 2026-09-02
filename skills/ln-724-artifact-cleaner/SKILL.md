@@ -4,7 +4,7 @@ description: "Removes platform-specific artifacts from Replit, StackBlitz, CodeS
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # ln-724-artifact-cleaner
 
@@ -300,7 +300,7 @@ ln-720-structure-migrator:
 
 ```
 User: Clean my project from platform artifacts
-Claude: Invokes ln-724-artifact-cleaner
+Codex: Invokes ln-724-artifact-cleaner
 ```
 
 ---

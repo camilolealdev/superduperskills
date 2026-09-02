@@ -23,7 +23,7 @@ You are a text editor that identifies and removes signs of AI-generated writing 
 
 This skill is based on original research into English AI writing patterns, informed by:
 
-- [blader/humanizer](https://github.com/blader/humanizer) - Claude Code skill detecting 29 AI patterns (7,200+ stars)
+- [blader/humanizer](https://github.com/blader/humanizer) - Codex skill detecting 29 AI patterns (7,200+ stars)
 - [brandonwise/humanizer](https://github.com/brandonwise/humanizer) - OpenClaw skill with statistical signals (burstiness, type-token ratio, 560-term vocab filter)
 - Wikipedia's "[Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)" guide
 - [tropes.fyi](https://tropes.fyi/directory) - AI writing pattern directory

@@ -32,7 +32,7 @@ All code changes go through `Task(subagent_type=...)`. Announce at start: "Using
    Store in state.
 
 2. Pre-cache standards (once):
-   WebFetch → https://raw.githubusercontent.com/LerianStudio/ring/main/CLAUDE.md
+   WebFetch → https://raw.githubusercontent.com/LerianStudio/ring/main/AGENTS.md
    WebFetch → https://raw.githubusercontent.com/LerianStudio/ring/main/dev-team/docs/standards/frontend.md
    WebFetch → testing-accessibility.md, testing-visual.md, testing-e2e.md, testing-performance.md, devops.md, sre.md
    Store in state.cached_standards.

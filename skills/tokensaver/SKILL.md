@@ -171,7 +171,7 @@ When context grows, consolidate into one summary.
 | Model | Context Window | Safe Threshold |
 |-------|----------------|----------------|
 | GPT-4o | 128K | 100K tokens |
-| Claude 3.5 | 200K | 150K tokens |
+| Codex 3.5 | 200K | 150K tokens |
 | GPT-4-turbo | 128K | 100K tokens |
 | GPT-3.5-turbo | 16K | 12K tokens |
 

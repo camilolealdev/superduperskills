@@ -1,17 +1,17 @@
-# Claude Code Expert
+# Codex Expert
 
-Claude Code is Anthropic's agentic coding tool that lives in the terminal and helps turn ideas into code faster. It combines autonomous planning, execution, and validation with extensibility through skills, plugins, MCP servers, and hooks.
+Codex is Anthropic's agentic coding tool that lives in the terminal and helps turn ideas into code faster. It combines autonomous planning, execution, and validation with extensibility through skills, plugins, MCP servers, and hooks.
 
 ## When to Use This Skill
 
 Use when users need help with:
-- Understanding Claude Code features and capabilities
+- Understanding Codex features and capabilities
 - Installation, setup, and authentication
 - Using slash commands for development workflows
 - Creating or managing Agent Skills
 - Configuring MCP servers for external tool integration
 - Setting up hooks and plugins
-- Troubleshooting Claude Code issues
+- Troubleshooting Codex issues
 - Enterprise deployment (SSO, sandboxing, monitoring)
 - IDE integration (VS Code, JetBrains)
 - CI/CD integration (GitHub Actions, GitLab)
@@ -19,20 +19,20 @@ Use when users need help with:
 - Cost tracking and optimization
 
 **Activation examples:**
-- "How do I use Claude Code?"
+- "How do I use Codex?"
 - "What slash commands are available?"
 - "How to set up MCP servers?"
 - "Create a new skill for X"
-- "Fix Claude Code authentication issues"
-- "Deploy Claude Code in enterprise environment"
+- "Fix Codex authentication issues"
+- "Deploy Codex in enterprise environment"
 
 ## Core Architecture
 
 **Subagents**: Specialized AI agents (planner, code-reviewer, tester, debugger, docs-manager, ui-ux-designer, database-admin, etc.)
 
-**Agent Skills**: Modular capabilities with instructions, metadata, and resources that Claude uses automatically
+**Agent Skills**: Modular capabilities with instructions, metadata, and resources that Codex uses automatically
 
-**Slash Commands**: User-defined operations in `.claude/commands/` that expand to prompts
+**Slash Commands**: User-defined operations in `.Codex/commands/` that expand to prompts
 
 **Hooks**: Shell commands executing in response to events (pre/post-tool, user-prompt-submit)
 
@@ -107,7 +107,7 @@ Load these references when needed for detailed guidance:
 
 ### Code Review & Testing
 ```bash
-claude "review my latest commit"
+Codex "review my latest commit"
 /test
 /fix:test the user service tests are failing
 ```
@@ -132,9 +132,9 @@ claude "review my latest commit"
 /content:good write product description for new feature
 ```
 
-## Instructions for Claude
+## Instructions for Codex
 
-When responding to Claude Code questions:
+When responding to Codex questions:
 
 1. **Identify the topic** from the user's question
 2. **Load relevant references** from the Quick Reference section above
@@ -174,8 +174,8 @@ When responding to Claude Code questions:
 **For best practices:** Load `references/best-practices.md`
 
 **Documentation links:**
-- Main docs: https://docs.claude.com/claude-code
-- GitHub: https://github.com/anthropics/claude-code
-- Support: support.claude.com
+- Main docs: https://docs.Codex.com/Codex
+- GitHub: https://github.com/anthropics/Codex
+- Support: support.Codex.com
 
 Provide accurate, actionable guidance based on the loaded references and official documentation.

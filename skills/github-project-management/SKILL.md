@@ -36,7 +36,7 @@ gh issue create \
   --label "enhancement,swarm-ready"
 
 # Initialize swarm for issue
-npx claude-flow@alpha hooks pre-task --description "Feature implementation"
+npx Codex-flow@alpha hooks pre-task --description "Feature implementation"
 ```
 
 ### Project Board Quick Setup
@@ -1253,10 +1253,10 @@ npx ruv-swarm github board-kpis
 - [GitHub CLI Documentation](https://cli.github.com/manual/)
 - [GitHub Projects Documentation](https://docs.github.com/en/issues/planning-and-tracking-with-projects)
 - [Swarm Coordination Guide](https://github.com/ruvnet/ruv-swarm)
-- [Claude Flow Documentation](https://github.com/ruvnet/claude-flow)
+- [Codex Flow Documentation](https://github.com/ruvnet/Codex-flow)
 
 ---
 
 **Last Updated**: 2025-10-19
 **Version**: 2.0.0
-**Maintainer**: Claude Code
+**Maintainer**: Codex

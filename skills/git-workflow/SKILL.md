@@ -1,7 +1,7 @@
 ---
 name: git-workflow
 description: "Guided git workflows: prepare PRs, clean up branches, resolve merge conflicts, handle monorepo tags, squash-and-merge patterns. Use when asked to prepare a PR, clean branches, resolve conflicts, or tag a release."
-compatibility: claude-code-only
+compatibility: Codex-only
 ---
 
 # Git Workflow
@@ -32,7 +32,7 @@ When preparing a pull request:
    ## Test plan
    - [ ] ...
 
-   🤖 Generated with [Claude Code](https://claude.com/claude-code)
+   🤖 Generated with [Codex](https://Codex.com/Codex)
    EOF
    )"
    ```

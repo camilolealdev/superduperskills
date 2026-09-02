@@ -1,10 +1,10 @@
 ---
 name: ln-111-root-docs-creator
-description: "Creates root documentation files (AGENTS.md, CLAUDE.md, docs/README.md, standards, principles, tools config). Use for initial project doc setup."
+description: "Creates root documentation files (AGENTS.md, AGENTS.md, docs/README.md, standards, principles, tools config). Use for initial project doc setup."
 license: MIT
 ---
 
-> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/claude-code-skills/master/skills/{path}`.
+> **Paths:** File paths (`shared/`, `references/`, `../ln-*`) are relative to skills repo root. If not found at CWD, locate this SKILL.md directory and go up one level for repo root. If `shared/` is missing, fetch files via WebFetch from `https://raw.githubusercontent.com/levnikolaevich/Codex-skills/master/skills/{path}`.
 
 # Root Documentation Creator
 
@@ -43,7 +43,7 @@ From coordinator:
 | File | Target Sections | Questions |
 |------|-----------------|-----------|
 | AGENTS.md | Quick Navigation, Agent Entry, Critical Rules, Development Commands, Maintenance | Q1-Q6 |
-| CLAUDE.md | Quick Navigation, Agent Entry, Anthropic-specific notes, Maintenance | Q1-Q6 |
+| AGENTS.md | Quick Navigation, Agent Entry, Anthropic-specific notes, Maintenance | Q1-Q6 |
 | docs/README.md | Quick Navigation, Agent Entry, Documentation Map, Maintenance | Q7-Q13 |
 | docs/documentation_standards.md | Quick Reference (60+ requirements), 12 main sections, Maintenance | Q14-Q16 |
 | docs/principles.md | Core Principles (8), Decision Framework, Anti-Patterns, Verification, Maintenance | Q17-Q22 |
@@ -57,7 +57,7 @@ From coordinator:
 3. Set defaults for missing optional keys
 
 ### Phase 2: Create Documents
-For each document (AGENTS.md, CLAUDE.md, docs/README.md, documentation_standards.md, principles.md, tools_config.md):
+For each document (AGENTS.md, AGENTS.md, docs/README.md, documentation_standards.md, principles.md, tools_config.md):
 1. Check if file exists (idempotent)
 2. If exists: skip with log
 3. If not exists:
@@ -88,7 +88,7 @@ For each document (AGENTS.md, CLAUDE.md, docs/README.md, documentation_standards
 
 **Root entrypoint rule:**
 - `AGENTS.md` is the canonical machine-facing map
-- `CLAUDE.md` must stay thin and point to `AGENTS.md`
+- `AGENTS.md` must stay thin and point to `AGENTS.md`
 - Do not duplicate the full project knowledge base in both files
 
 ### Phase 2b: Create Tools Config
@@ -122,13 +122,13 @@ For each created document:
 Return to coordinator:
 ```json
 {
-  "created_files": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
+  "created_files": ["AGENTS.md", "AGENTS.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
   "skipped_files": [],
   "quality_inputs": {
-    "doc_paths": ["AGENTS.md", "CLAUDE.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
+    "doc_paths": ["AGENTS.md", "AGENTS.md", "docs/README.md", "docs/documentation_standards.md", "docs/principles.md", "docs/tools_config.md"],
     "owners": {
       "AGENTS.md": "ln-111-root-docs-creator",
-      "CLAUDE.md": "ln-111-root-docs-creator",
+      "AGENTS.md": "ln-111-root-docs-creator",
       "docs/README.md": "ln-111-root-docs-creator",
       "docs/documentation_standards.md": "ln-111-root-docs-creator",
       "docs/principles.md": "ln-111-root-docs-creator",
@@ -147,7 +147,7 @@ Return to coordinator:
 - **Publishable output:** Root docs must not contain `[TBD: ...]`, `TODO`, or leaked template metadata
 - **Language:** All root docs in English (universal standards)
 - **SCOPE tags:** Required in first 10 lines of each file
-- **Map-first root model:** `AGENTS.md` is canonical; `CLAUDE.md` is a compatibility shim
+- **Map-first root model:** `AGENTS.md` is canonical; `AGENTS.md` is a compatibility shim
 
 ### NO_CODE_EXAMPLES Rule (MANDATORY)
 Root documents define **navigation and standards**, NOT implementations:

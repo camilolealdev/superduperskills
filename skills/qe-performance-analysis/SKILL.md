@@ -1,12 +1,12 @@
 ---
 inclusion: auto
 name: qe-performance-analysis
-description: Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Claude Flow swarms
+description: Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Codex Flow swarms
 ---
 
 # qe-performance-analysis
 
-Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Claude Flow swarms
+Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Codex Flow swarms
 
 **Tags:** performance, bottleneck, optimization, profiling, metrics, analysis, qe, quality-engineering, monitoring
 

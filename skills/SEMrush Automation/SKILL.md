@@ -8,7 +8,7 @@ requires:
 
 # SEMrush Automation
 
-Run **SEMrush** SEO analytics directly from Claude Code. Analyze domain keywords, audit backlink profiles, research keyword difficulty, discover related terms, and track organic page performance without leaving your terminal.
+Run **SEMrush** SEO analytics directly from Codex. Analyze domain keywords, audit backlink profiles, research keyword difficulty, discover related terms, and track organic page performance without leaving your terminal.
 
 **Toolkit docs:** [composio.dev/toolkits/semrush](https://composio.dev/toolkits/semrush)
 

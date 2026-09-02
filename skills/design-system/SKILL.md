@@ -1,229 +1,156 @@
 ---
 name: design-system
-description: "Extract a complete design system from an existing website or screenshot into a DESIGN.md file. Analyses colours, typography, component styles, spacing, and atmosphere through browser automation and HTML inspection. Produces a semantic design system document optimised for consistent page generation. Triggers: 'extract design system', 'design system', 'create DESIGN.md', 'analyse the design', 'what design does this site use', 'extract styles from', 'reverse engineer the design'."
-allowed-tools:
-  - Read
-  - Write
-  - Edit
-  - Bash
-  - Glob
-  - Grep
-compatibility: claude-code-only
+description: Captures the user's brand identity once via a 10-question onboarding wizard (primary/accent HEX + heading + body Google Fonts + design style editorial/technical/minimal/playful + default output directory + syntax theme + TOC behavior + optional logo/company), validates body-text and link contrast against WCAG 2.2 AA, derives 12 CSS custom properties in HSL space, and stores the result for every markdown-html converter to consume. Use before any markdown-html conversion. Triggers on first-run onboarding ("set up the brand", "configure markdown-html", "run onboarding"), on explicit reset ("reset the design system", "re-onboard"), and is checked by every converter via config_loader.py before rendering. Refuses to save if body-text contrast fails AA 4.5:1 or the output dir isn't writable. Precedence: project (./.markdown-html/) > global (~/.config/markdown-html/) > built-in defaults; MARKDOWN_HTML_NO_CONFIG=1 bypasses.
+version: 2.10.0
+author: Alireza Rezvani
+license: MIT
+tags: [design-system, brand-palette, wcag, onboarding, customization, markdown-html, css-variables, typography]
+compatible_tools: [Codex, codex-cli, cursor, antigravity, opencode, gemini-cli]
 ---
 
-# Design System Extractor
+# Design System — Onboarding + Shared Brand Tokens
 
-Analyse an existing website, HTML file, or screenshot and synthesise a semantic design system into a `DESIGN.md` file. The output is optimised for use with the `design-loop` skill and general page generation.
+The design-system skill is the **shared brand owner** for the markdown-html plugin. Run its onboarding once. Every converter (`md-document`, `md-review`, `md-slides`) reads the resulting config via `config_loader.py` and applies the same 12 CSS custom properties to its output. Without this, conversions render with placeholder defaults — technically functional but unbranded.
 
-## When to Use
+This skill ships exactly three Python tools:
 
-- Starting a new project based on an existing site's visual language
-- Documenting a site's design system that was never formally written down
-- Preparing `.design/DESIGN.md` before running the design loop
-- Extracting brand guidelines from a client's existing website
-- Creating consistency documentation for a multi-page project
-- Extracting design tokens from a Google Stitch project
+1. **`onboard.py`** — interactive (or `--defaults` / `--set` / `--show` / `--reset`) wizard.
+2. **`config_loader.py`** — importable customization loader with project > global > defaults precedence and `MARKDOWN_HTML_NO_CONFIG=1` bypass.
+3. **`brand_palette_validator.py`** — WCAG-AA contrast checker + HSL palette deriver.
 
-## Workflow
+All three are stdlib-only and contain no LLM calls (deterministic per Path-B discipline).
 
-### Step 1: Identify the Source
+## When to invoke
 
-Ask the user for one of:
+| Symptom | Action |
+|---|---|
+| User says "convert this markdown to HTML" for the first time in this workspace | Run `python3 markdown-html/skills/design-system/scripts/onboard.py` |
+| `~/.config/markdown-html/design-system.json` doesn't exist OR `setup_completed_at` is null | Refuse conversion, surface onboarding |
+| User wants per-repo brand override | `python3 .../onboard.py --scope project` |
+| User wants to change a single field non-interactively | `python3 .../onboard.py --set brand.primary=#FF6B35` |
+| User wants to reset and re-onboard | `python3 .../onboard.py --reset` then re-run |
+| User wants zero-touch defaults (CI, ephemeral session) | `python3 .../onboard.py --defaults` |
+| Headless / containerized run that should ignore saved config | `MARKDOWN_HTML_NO_CONFIG=1 ...` |
 
-| Source | Method |
-|--------|--------|
-| **Live URL** | Browse via Playwright CLI or scraper, screenshot + extract HTML |
-| **Local HTML file** | Read the file directly |
-| **Screenshot image** | Analyse visually (limited — no exact hex extraction) |
-| **Existing project** | Scan `site/public/` for HTML files to analyse |
-| **Stitch project** | Use `@google/stitch-sdk` to fetch screen HTML + design theme |
+## Onboarding question set (10 questions)
 
-### Step 2: Extract Raw Design Data
+| # | Key | Choices / Validator | Default |
+|---|---|---|---|
+| 1 | `default_output_dir` | path; `os.access(parent, os.W_OK)` | `./markdown-html-out/` |
+| 2 | `brand.primary` | HEX `^#?[0-9a-fA-F]{6}$` | `#0A1628` |
+| 3 | `brand.accent` | HEX or blank (auto-derive) | derive from primary |
+| 4 | `typography.heading_font` | Google Font name (12 safe defaults) | `Inter` |
+| 5 | `typography.body_font` | Google Font name | `Inter` |
+| 6 | `design_style` | `editorial / technical / minimal / playful` | `technical` |
+| 7 | `code_theme` | `light / dark / auto` | `auto` |
+| 8 | `toc.behavior` | `sticky-sidebar / collapsible-top / inline / none` | `sticky-sidebar` |
+| 9 | `company_name` | string (may be empty) | `""` |
+| 10 | `logo_url` | URL or empty (base64-embedded at render) | `""` |
 
-#### From a Live URL
+## Hard rules
 
-1. **Browse the site** using Playwright CLI:
-   ```
-   playwright-cli -s=design open {url}
-   playwright-cli -s=design screenshot --filename=.design/screenshots/source-desktop.png
-   ```
+1. **WCAG AA body-text contrast must pass.** `brand_palette_validator.validate()` runs after every change. Body text on bg must reach 4.5:1; link on bg must reach 4.5:1. If either fails, `onboard.py` refuses to save (exit code 4) and tells the user to pick a darker primary, blank `brand.bg`/`brand.text` to let derivation pick a safe pair, or override `brand.text` directly. Canon: WCAG 2.2 §1.4.3.
+2. **Output directory must be writable.** `onboard.py` walks up the path to find an existing ancestor and checks `os.W_OK`. Empty or unwritable path → exit code 3. The orchestrator's `output_path_resolver.py` honors the same rule per-conversion.
+3. **Customization must change behavior, not sit as decoration.** Every consumer (md-document, md-review, md-slides) must read the config and render differently when the user changes `design_style`, `brand.primary`, `code_theme`, or `toc.behavior`. Decorative-only fields fail the design discipline.
+4. **Precedence is fixed.** Project > global > defaults. The deep-merge preserves nested keys (e.g. you can override `brand.primary` in a project config without losing `typography.heading_font` from global).
+5. **Bypass env exists for a reason.** `MARKDOWN_HTML_NO_CONFIG=1` is for headless CI, ephemeral test containers, and the autoresearch-style evaluator loops. Never set it silently for an interactive user.
 
-2. **Extract the full HTML** — either via scraper MCP or by reading the page source
+## Derived 12-token palette
 
-3. **Resize and screenshot mobile** (375px):
-   ```
-   playwright-cli -s=design resize 375 812
-   playwright-cli -s=design screenshot --filename=.design/screenshots/source-mobile.png
-   ```
+Once the user's brand is captured, `brand_palette_validator.derive_palette()` produces 12 CSS custom properties stored under `derived_palette` in the same config file. Every converter inlines these into its `<style>` block.
 
-4. Close the session: `playwright-cli -s=design close`
+| Token | Purpose | Derivation |
+|---|---|---|
+| `--md-bg` | Document background | Primary if dark, near-neutral if vibrant |
+| `--md-surface` | Card / callout / blockquote background | Bg ± 4-6% luminance |
+| `--md-border` | Hairline dividers, table borders | Bg ± 8-12% luminance |
+| `--md-text` | Body text | Off-white on dark bg, near-black on light bg |
+| `--md-text-muted` | Captions, metadata, footers | `rgba(text, 0.68)` |
+| `--md-accent` | Primary CTA, callout headers, link emphasis | Primary if vibrant, hue-shifted lighter if dark |
+| `--md-accent-soft` | Accent backgrounds, hover states | `rgba(accent, 0.14)` |
+| `--md-code-bg` | Inline code, fenced block bg | Bg ± 4-5% luminance |
+| `--md-link` | Hyperlinks | Iteratively walked to reach 4.5:1 contrast on bg |
+| `--md-link-hover` | Hover state | Link ± 6-8% luminance |
+| `--md-success` | OK / approved / passed | Green anchored, luminance-matched |
+| `--md-warn` | Caution / nit / TODO | Amber anchored, luminance-matched |
 
-#### From a Local HTML File
+## Forcing-question library (Matt Pocock grill-with-docs pattern)
 
-Read the file directly and extract design tokens from the source.
+One question per turn, recommended answer, canon citation.
 
-#### From a Screenshot Only
+1. **What's your brand primary color?** Recommended: a HEX you already use in your product or docs — not a stock blue. Canon: Aarron Walter, *Designing for Emotion* (color carries brand affect).
+2. **Should accent be derived or set?** Recommended: derive on first run (hue-shift + lighten produces a coherent companion); set explicitly only if your brand kit specifies one. Canon: Adobe Spectrum, *Color Foundations*.
+3. **Editorial, technical, minimal, or playful?** Recommended: `technical` for engineering specs/reports, `editorial` for long-read narratives, `minimal` for sparse reference docs, `playful` for marketing/landing content. Canon: Ellen Lupton, *Thinking with Type* (style serves the rhetorical purpose).
+4. **Sticky-sidebar TOC, or inline?** Recommended: `sticky-sidebar` for documents over 800 words, `inline` for short reads. Canon: Nielsen-Norman, *Table of Contents Best Practices* (2023).
+5. **Save to global or per-project?** Recommended: global by default (consistent across your work); use `--scope project` only when this repo has a different brand. Canon: research-ops onboarding pattern, `research-ops/AGENTS.md` §8.
 
-Analyse the image visually. Note: colour extraction will be approximate without HTML source. Flag this limitation in the output.
+## Customization in use (worked example)
 
-#### From a Google Stitch Project
+```bash
+# First-run onboarding (interactive, walks all 10 questions)
+python3 markdown-html/skills/design-system/scripts/onboard.py
 
-If `@google/stitch-sdk` is installed and `STITCH_API_KEY` is set:
+# Zero-touch defaults for CI / first-test
+python3 .../onboard.py --defaults
 
-```typescript
-import { stitch } from "@google/stitch-sdk";
+# Change just the primary color and design style
+python3 .../onboard.py --set brand.primary=#FF6B35 --set design_style=editorial
 
-// List projects to find the target
-const projects = await stitch.projects();
+# Per-repo override
+python3 .../onboard.py --scope project --set design_style=minimal
 
-// Get project details (includes designTheme)
-const project = stitch.project(projectId);
-const screens = await project.screens();
+# Reset and re-onboard
+python3 .../onboard.py --reset
+python3 .../onboard.py
 
-// Get HTML from the main screen
-const screen = screens[0]; // or find by title
-const htmlUrl = await screen.getHtml();
-const imageUrl = await screen.getImage();
+# Inspect the effective config (project > global > defaults)
+python3 .../config_loader.py --show
+python3 .../config_loader.py --status
+
+# Bypass saved config (returns DEFAULTS only)
+MARKDOWN_HTML_NO_CONFIG=1 python3 .../config_loader.py --show
+
+# Spot-check WCAG contrast before committing to a brand
+python3 .../brand_palette_validator.py --primary "#FF6B35" --accent "#00D4AA"
 ```
 
-The Stitch `designTheme` object provides structured tokens directly:
+## Assumptions
 
-```json
-{
-  "colorMode": "DARK",
-  "font": "INTER",
-  "roundness": "ROUND_EIGHT",
-  "customColor": "#40baf7",
-  "saturation": 3
-}
-```
+1. User has at least one brand HEX they want consistent across their HTML conversions.
+2. User accepts a 1-2 minute one-time setup.
+3. User is OK with Google Fonts as the typography source (CDN, no local font hosting).
+4. WCAG 2.2 AA is the accessibility floor (4.5:1 body, 3:1 large/UI). AAA (7:1) is out of scope.
 
-Map these to DESIGN.md sections:
-- `colorMode` → Theme (Light/Dark)
-- `font` → Typography font family
-- `roundness` → Component border-radius (`ROUND_EIGHT` = 8px, `ROUND_SIXTEEN` = 16px, etc.)
-- `customColor` → Primary brand colour
-- `saturation` → Colour vibrancy (1-5 scale)
+## Non-goals
 
-Then also download and analyse the HTML for the full palette (Stitch's theme object only has the primary colour — the full palette is in the generated CSS).
+- Not a full design-token system (Style Dictionary, Theo). Twelve tokens, not a hundred.
+- Not a custom-font hosting solution. Google Fonts only.
+- Not a dark/light mode switcher in the converters. `code_theme: auto` handles the prefers-color-scheme case for syntax highlighting; layout palette is single-mode per onboarding.
+- Not an accessibility audit suite (use axe-core / pa11y for that). We enforce contrast only.
+- Does not transform existing CSS — the derived palette is injected into freshly generated HTML.
 
-### Step 3: Analyse Design Tokens
+## Distinct from
 
-Extract these from the HTML/CSS source:
+- **`marketing/landing/skills/landing/scripts/brand_palette_validator.py`** — that script's `derive_palette()` produces 8 tokens shaped for hero-page rendering (`--navy`, `--teal`, `--card-bg`, `--card-border`). This script produces 12 tokens shaped for document rendering (sticky surface, hairline border, code bg, link, link-hover, success, warn). Same WCAG + HSL math, different token taxonomy.
+- **`research-ops/skills/clinical-research/scripts/onboard.py`** — same pattern (interactive + `--defaults`/`--set`/`--show`/`--reset`/`--scope`), different question set (clinical alpha/power/dropout vs. brand palette/typography/layout).
 
-#### Colours
+## Output artifact
 
-Look in these locations (priority order):
+`~/.config/markdown-html/design-system.json` (global) or `./.markdown-html/design-system.json` (project). JSON schema lives at `assets/design_system_schema.json`.
 
-1. **CSS custom properties** — `:root { --primary: #hex; }` or `@theme` blocks
-2. **Tailwind config** — `<script>` block with `tailwind.config` or `@theme` in `<style>`
-3. **Inline styles** — `style="color: #hex"` or `style="background: #hex"`
-4. **Tailwind classes** — `bg-blue-600`, `text-gray-900` (map to palette)
-5. **Computed from screenshot** — last resort, approximate
+## Anti-patterns (do not)
 
-For each colour found, determine its **role**:
+- ❌ Skip onboarding and run a converter with placeholder defaults — output looks unbranded.
+- ❌ Pick a vibrant brand primary as `brand.bg` directly (low text contrast). Use it as accent instead.
+- ❌ Set `MARKDOWN_HTML_NO_CONFIG=1` silently for an interactive user — they'll wonder why their tokens disappeared.
+- ❌ Encode brand semantics in `derived_palette` outside the 12-token taxonomy. Add a new token only with a deliberate name + purpose + derivation rule.
 
-| Role | How to identify |
-|------|-----------------|
-| Primary | Buttons, links, active states, brand elements |
-| Background | `<body>` or `<html>` background |
-| Surface | Cards, containers, elevated elements |
-| Text Primary | `<h1>`, `<h2>`, main body text |
-| Text Secondary | Captions, metadata, muted text |
-| Border | Dividers, input borders, card borders |
-| Accent | Badges, notifications, highlights |
+## References
 
-#### Typography
-
-Extract:
-
-| Token | Where to find |
-|-------|---------------|
-| Font families | Google Fonts `<link>`, `@import`, `font-family` in CSS |
-| Heading weights | `font-bold`, `font-semibold`, or explicit `font-weight` |
-| Body size | Base `font-size` on `<body>` or root |
-| Line height | `leading-*` classes or `line-height` CSS |
-| Letter spacing | `tracking-*` classes or `letter-spacing` CSS |
-
-#### Components
-
-Identify patterns for:
-
-- **Buttons** — shape (rounded-full, rounded-lg), colours, padding, hover states
-- **Cards** — background, border, shadow, border-radius, padding
-- **Navigation** — sticky/static, background treatment, active indicator
-- **Forms** — input style, focus ring, label positioning
-- **Hero sections** — layout pattern, overlay treatment, CTA placement
-
-#### Spacing & Layout
-
-- **Max content width** — look for `max-w-*` or explicit `max-width`
-- **Section padding** — typical vertical padding between sections
-- **Grid system** — column count, gap values
-- **Whitespace philosophy** — tight, balanced, generous, or dramatic
-
-### Step 4: Synthesise into Natural Language
-
-**Critical**: The DESIGN.md should describe the design in **semantic, natural language** supported by exact values. This is not a CSS dump — it's a document a designer or AI can read to understand and reproduce the visual language.
-
-| Don't write | Write instead |
-|-------------|---------------|
-| `rounded-xl` | "Softly rounded corners (12px)" |
-| `shadow-md` | "Subtle elevation with diffused shadow" |
-| `#1E40AF` | "Deep Ocean Blue (#1E40AF) for primary actions" |
-| `py-16` | "Generous section spacing with breathing room" |
-
-### Step 5: Write DESIGN.md
-
-Output the file to `.design/DESIGN.md` (or user-specified path).
-
-Follow the structure from the `design-loop` skill's `references/site-template.md` — specifically the DESIGN.md Template section. The key sections are:
-
-1. **Visual Theme & Atmosphere** — mood, vibe, philosophy
-2. **Colour Palette & Roles** — table with role, name, hex, usage
-3. **Typography** — font families, weights, sizes, line heights
-4. **Component Styles** — buttons, cards, nav, forms
-5. **Layout Principles** — max width, spacing, grid, whitespace
-6. **Design System Notes for Generation** — the copy-paste block for baton prompts
-
-### Step 6: Verify Accuracy
-
-If browser automation is available:
-
-1. Generate a small test section (e.g. a card + button + heading) using the extracted design system
-2. Screenshot it alongside the original
-3. Compare visually — adjust any values that don't match
-
-### Step 7: Report to User
-
-Present:
-- Summary of extracted tokens (colour count, fonts, component patterns)
-- The generated DESIGN.md location
-- Any tokens that were approximate (flagged with ⚠️)
-- Suggestions for manual review (colours from screenshots, ambiguous typography)
-
-## Handling Multiple Pages
-
-If the site has multiple pages with different styles:
-
-1. Analyse the **homepage first** — it usually has the most complete design language
-2. Spot-check 2-3 inner pages for consistency
-3. Note any **page-specific overrides** in the Component Styles section
-4. If pages are wildly different, ask the user which page to use as the canonical source
-
-## Tips
-
-- **Tailwind sites are easiest** — the config block has everything
-- **Google Fonts links are gold** — they specify exact families and weights
-- **CSS custom properties are reliable** — they represent intentional design tokens
-- **Inline Tailwind classes need interpretation** — `bg-slate-900` needs mapping to a role
-- **Screenshots are last resort** — accurate hex extraction from images is unreliable
-- **Dark mode**: Check for `.dark` class overrides or `prefers-color-scheme` media queries
-
-## Common Pitfalls
-
-- ❌ Listing raw CSS values without semantic description
-- ❌ Missing the dark mode palette (check for `.dark` class or media query)
-- ❌ Ignoring component patterns (just listing colours isn't enough)
-- ❌ Not including Section 6 (the copy-paste generation block)
-- ❌ Approximate colours from screenshots without flagging the uncertainty
+- WCAG 2.2 — §1.4.3 (contrast), §1.4.4 (resize), §1.4.11 (non-text contrast)
+- Aarron Walter — *Designing for Emotion* (A Book Apart)
+- Ellen Lupton — *Thinking with Type*
+- Adobe Spectrum — *Color Foundations*
+- Nielsen-Norman — *Table of Contents Best Practices* (2023)
+- research-ops onboarding pattern: `research-ops/AGENTS.md` §8
+- Brand palette math source: `marketing/landing/skills/landing/scripts/brand_palette_validator.py`

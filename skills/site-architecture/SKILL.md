@@ -1,357 +1,289 @@
 ---
-name: site-architecture
-description: When the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking. Also use when the user mentions "sitemap," "site map," "visual sitemap," "site structure," "page hierarchy," "information architecture," "IA," "navigation design," "URL structure," "breadcrumbs," "internal linking strategy," "website planning," "what pages do I need," "how should I organize my site," or "site navigation." Use this whenever someone is planning what pages a website should have and how they connect. NOT for XML sitemaps (that's technical SEO — see seo-audit). For SEO audits, see seo-audit. For structured data, see schema.
+name: "site-architecture"
+description: "When the user wants to audit, redesign, or plan their website's structure, URL hierarchy, navigation design, or internal linking strategy. Use when the user mentions 'site architecture,' 'URL structure,' 'internal links,' 'site navigation,' 'breadcrumbs,' 'topic clusters,' 'hub pages,' 'orphan pages,' 'silo structure,' 'information architecture,' or 'website reorganization.' Also use when someone has SEO problems and the root cause is structural (not content or schema). NOT for content strategy decisions about what to write (use content-strategy) or for schema markup (use schema-markup)."
+license: MIT
 metadata:
-  version: 2.0.0
+  version: 1.0.0
+  author: Alireza Rezvani
+  category: marketing
+  updated: 2026-03-06
 ---
 
-# Site Architecture
+# Site Architecture & Internal Linking
 
-You are an information architecture expert. Your goal is to help plan website structure — page hierarchy, navigation, URL patterns, and internal linking — so the site is intuitive for users and optimized for search engines.
+You are an expert in website information architecture and technical SEO structure. Your goal is to design website architecture that makes it easy for users to navigate, easy for search engines to crawl, and builds topical authority through intelligent internal linking.
 
-## Before Planning
+## Before Starting
 
-**Check for product marketing context first:**
-If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+**Check for context first:**
+If `.Codex/product-marketing-context.md` exists, read it before asking questions.
 
-Gather this context (ask if not provided):
+Gather this context:
 
-### 1. Business Context
-- What does the company do?
-- Who are the primary audiences?
-- What are the top 3 goals for the site? (conversions, SEO traffic, education, support)
+### 1. Current State
+- Do they have an existing site? (URL, CMS, sitemap.xml available?)
+- How many pages exist? Rough estimate by section.
+- What are the top-performing pages (if they know)?
+- Any known problems: orphan pages, duplicate content, poor rankings?
 
-### 2. Current State
-- New site or restructuring an existing one?
-- If restructuring: what's broken? (high bounce, poor SEO, users can't find things)
-- Existing URLs that must be preserved (for redirects)?
+### 2. Goals
+- Primary business goal (lead gen, e-commerce, content authority, local search)
+- Target audience and their mental model of navigation
+- Specific SEO targets — topics or keyword clusters they want to rank for
 
-### 3. Site Type
-- SaaS marketing site
-- Content/blog site
-- E-commerce
-- Documentation
-- Hybrid (SaaS + content)
-- Small business / local
-
-### 4. Content Inventory
-- How many pages exist or are planned?
-- What are the most important pages? (by traffic, conversions, or business value)
-- Any planned sections or expansions?
+### 3. Constraints
+- CMS capabilities (can they change URLs? Does it auto-generate certain structures?)
+- Redirect capacity (if restructuring, can they manage bulk 301s?)
+- Development resources (minor tweaks vs full migration)
 
 ---
 
-## Site Types and Starting Points
+## How This Skill Works
 
-| Site Type | Typical Depth | Key Sections | URL Pattern |
-|-----------|--------------|--------------|-------------|
-| SaaS marketing | 2-3 levels | Home, Features, Pricing, Blog, Docs | `/features/name`, `/blog/slug` |
-| Content/blog | 2-3 levels | Home, Blog, Categories, About | `/blog/slug`, `/category/slug` |
-| E-commerce | 3-4 levels | Home, Categories, Products, Cart | `/category/subcategory/product` |
-| Documentation | 3-4 levels | Home, Guides, API Reference | `/docs/section/page` |
-| Hybrid SaaS+content | 3-4 levels | Home, Product, Blog, Resources, Docs | `/product/feature`, `/blog/slug` |
-| Small business | 1-2 levels | Home, Services, About, Contact | `/services/name` |
+### Mode 1: Audit Current Architecture
+When a site exists and they need a structural assessment.
 
-**For full page hierarchy templates**: See [references/site-type-templates.md](references/site-type-templates.md)
+1. Run `scripts/sitemap_analyzer.py` on their sitemap.xml (or paste sitemap content)
+2. Review: depth distribution, URL patterns, potential orphans, duplicate paths
+3. Evaluate navigation by reviewing the site manually or from their description
+4. Identify the top structural problems by SEO impact
+5. Deliver a prioritized audit with quick wins and structural recommendations
+
+### Mode 2: Plan New Structure
+When building a new site or doing a full redesign/restructure.
+
+1. Map business goals to site sections
+2. Design URL hierarchy (flat vs layered by content type)
+3. Define content silos for topical authority
+4. Plan navigation zones: primary nav, breadcrumbs, footer nav, contextual
+5. Deliver site map diagram (text-based tree) + URL structure spec
+
+### Mode 3: Internal Linking Strategy
+When the structure is fine but they need to improve link equity flow and topical signals.
+
+1. Identify hub pages (the pillar content that should rank highest)
+2. Map spoke pages (supporting content that links to hubs)
+3. Find orphan pages (indexed pages with no inbound internal links)
+4. Identify anchor text patterns and over-optimized phrases
+5. Deliver an internal linking plan: which pages link to which, with anchor text guidance
 
 ---
 
-## Page Hierarchy Design
+## URL Structure Principles
 
-### The 3-Click Rule
+### The Core Rule: URLs are for Humans First
 
-Users should reach any important page within 3 clicks from the homepage. This isn't absolute, but if critical pages are buried 4+ levels deep, something is wrong.
+A URL should tell a user exactly where they are before they click. It also tells search engines about content hierarchy. Get this right once — URL changes later require redirects and lose equity.
 
-### Flat vs Deep
+### Flat vs Layered: Pick the Right Depth
 
-| Approach | Best For | Tradeoff |
-|----------|----------|----------|
-| Flat (2 levels) | Small sites, portfolios | Simple but doesn't scale |
-| Moderate (3 levels) | Most SaaS, content sites | Good balance of depth and findability |
-| Deep (4+ levels) | E-commerce, large docs | Scales but risks burying content |
+| Depth | Example | Use When |
+|-------|---------|----------|
+| Flat (1 level) | `/blog/cold-email-tips` | Blog posts, articles, standalone pages |
+| Two levels | `/blog/email-marketing/cold-email-tips` | When category is a ranking page itself |
+| Three levels | `/solutions/marketing/email-automation` | Product families, nested services |
+| 4+ levels | `/a/b/c/d/page` | ❌ Avoid — dilutes crawl equity, confusing |
 
-**Rule of thumb**: Go as flat as possible while keeping navigation clean. If a nav dropdown has 20+ items, add a level of hierarchy.
+**Rule of thumb:** If the category URL (`/blog/email-marketing/`) is not a real page you want to rank, don't create the directory. Flat is usually better for SEO.
 
-### Hierarchy Levels
+### URL Construction Rules
 
-| Level | What It Is | Example |
-|-------|-----------|---------|
-| L0 | Homepage | `/` |
-| L1 | Primary sections | `/features`, `/blog`, `/pricing` |
-| L2 | Section pages | `/features/analytics`, `/blog/seo-guide` |
-| L3+ | Detail pages | `/docs/api/authentication` |
+| Do | Don't |
+|----|-------|
+| `/how-to-write-cold-emails` | `/how_to_write_cold_emails` (underscores) |
+| `/pricing` | `/pricing-page` (redundant suffixes) |
+| `/blog/seo-tips-2024` | `/blog/article?id=4827` (dynamic, non-descriptive) |
+| `/services/web-design` | `/services/web-design/` (trailing slash — pick one and be consistent) |
+| `/about` | `/about-us-company-info` (keyword stuffing the URL) |
+| Short, human-readable | Long, generated, token-filled |
 
-### ASCII Tree Format
+### Keywords in URLs
 
-Use this format for page hierarchies:
+Yes — include the primary keyword. No — don't stuff 4 keywords in.
 
-```
-Homepage (/)
-├── Features (/features)
-│   ├── Analytics (/features/analytics)
-│   ├── Automation (/features/automation)
-│   └── Integrations (/features/integrations)
-├── Pricing (/pricing)
-├── Blog (/blog)
-│   ├── [Category: SEO] (/blog/category/seo)
-│   └── [Category: CRO] (/blog/category/cro)
-├── Resources (/resources)
-│   ├── Case Studies (/resources/case-studies)
-│   └── Templates (/resources/templates)
-├── Docs (/docs)
-│   ├── Getting Started (/docs/getting-started)
-│   └── API Reference (/docs/api)
-├── About (/about)
-│   └── Careers (/about/careers)
-└── Contact (/contact)
-```
+`/guides/technical-seo-audit` ✅
+`/guides/technical-seo-audit-checklist-how-to-complete-step-by-step` ❌
 
-**When to use ASCII vs Mermaid**:
-- ASCII: quick hierarchy drafts, text-only contexts, simple structures
-- Mermaid: visual presentations, complex relationships, showing nav zones or linking patterns
+The keyword in the URL is a minor signal, not a major one. Don't sacrifice readability for it.
+
+### Reference docs
+See `references/url-design-guide.md` for patterns by site type (blog, SaaS, e-commerce, local).
 
 ---
 
 ## Navigation Design
 
-### Navigation Types
+Navigation serves two masters: user experience and link equity flow. Most sites optimize for neither.
 
-| Nav Type | Purpose | Placement |
-|----------|---------|-----------|
-| Header nav | Primary navigation, always visible | Top of every page |
-| Dropdown menus | Organize sub-pages under parent | Expands from header items |
-| Footer nav | Secondary links, legal, sitemap | Bottom of every page |
-| Sidebar nav | Section navigation (docs, blog) | Left side within a section |
-| Breadcrumbs | Show current location in hierarchy | Below header, above content |
-| Contextual links | Related content, next steps | Within page content |
+### Navigation Zones
 
-### Header Navigation Rules
+| Zone | Purpose | SEO Role |
+|------|---------|----------|
+| Primary nav | Core site sections, 5-8 items max | Passes equity to top-level pages |
+| Secondary nav | Sub-sections within a section | Passes equity within a silo |
+| Breadcrumbs | Current location in hierarchy | Equity from deep pages upward |
+| Footer nav | Secondary utility links, key service pages | Sitewide links — use carefully |
+| Contextual nav | In-content links, related posts, "next step" links | Most powerful equity signal |
+| Sidebar | Related content, category listing | Medium equity if above fold |
 
-- **4-7 items max** in the primary nav (more causes decision paralysis)
-- **CTA button** goes rightmost (e.g., "Start Free Trial," "Get Started")
-- **Logo** links to homepage (left side)
-- **Order by priority**: most important/visited pages first
-- If you have a mega menu, limit to 3-4 columns
+### Primary Navigation Rules
 
-### Footer Organization
+- 5-8 items maximum. Cognitive load increases with every item.
+- Each nav item should link to a page you want to rank.
+- Never use nav labels like "Resources" with no landing page — it should be a real, rankable resources page.
+- Dropdown menus are fine but crawlers may not engage them deeply — critical pages need a clickable parent link.
 
-Group footer links into columns:
-- **Product**: Features, Pricing, Integrations, Changelog
-- **Resources**: Blog, Case Studies, Templates, Docs
-- **Company**: About, Careers, Contact, Press
-- **Legal**: Privacy, Terms, Security
+### Breadcrumbs
 
-### Breadcrumb Format
+Add breadcrumbs to every non-homepage page. They do three things:
+1. Show users where they are
+2. Create site-wide upward internal links to category/hub pages
+3. Enable BreadcrumbList schema for rich results in Google
 
-```
-Home > Features > Analytics
-Home > Blog > SEO Category > Post Title
-```
+Format: `Home > Category > Subcategory > Current Page`
 
-Breadcrumbs should mirror the URL hierarchy. Every breadcrumb segment should be a clickable link except the current page.
-
-**For detailed navigation patterns**: See [references/navigation-patterns.md](references/navigation-patterns.md)
+Every breadcrumb segment should be a real, crawlable link — not just styled text.
 
 ---
 
-## URL Structure
+## Silo Structure & Topical Authority
 
-### Design Principles
+A silo is a self-contained cluster of content about one topic, where all pages link to each other and to a central hub page. Google uses this to determine topical authority.
 
-1. **Readable by humans** — `/features/analytics` not `/f/a123`
-2. **Hyphens, not underscores** — `/blog/seo-guide` not `/blog/seo_guide`
-3. **Reflect the hierarchy** — URL path should match site structure
-4. **Consistent trailing slash policy** — pick one (with or without) and enforce it
-5. **Lowercase always** — `/About` should redirect to `/about`
-6. **Short but descriptive** — `/blog/how-to-improve-landing-page-conversion-rates` is too long; `/blog/landing-page-conversions` is better
+### Hub-and-Spoke Model
 
-### URL Patterns by Page Type
-
-| Page Type | Pattern | Example |
-|-----------|---------|---------|
-| Homepage | `/` | `example.com` |
-| Feature page | `/features/{name}` | `/features/analytics` |
-| Pricing | `/pricing` | `/pricing` |
-| Blog post | `/blog/{slug}` | `/blog/seo-guide` |
-| Blog category | `/blog/category/{slug}` | `/blog/category/seo` |
-| Case study | `/customers/{slug}` | `/customers/acme-corp` |
-| Documentation | `/docs/{section}/{page}` | `/docs/api/authentication` |
-| Legal | `/{page}` | `/privacy`, `/terms` |
-| Landing page | `/{slug}` or `/lp/{slug}` | `/free-trial`, `/lp/webinar` |
-| Comparison | `/compare/{competitor}` or `/vs/{competitor}` | `/compare/competitor-name` |
-| Integration | `/integrations/{name}` | `/integrations/slack` |
-| Template | `/templates/{slug}` | `/templates/marketing-plan` |
-
-### Common Mistakes
-
-- **Dates in blog URLs** — `/blog/2024/01/15/post-title` adds no value and makes URLs long. Use `/blog/post-title`.
-- **Over-nesting** — `/products/category/subcategory/item/detail` is too deep. Flatten where possible.
-- **Changing URLs without redirects** — Every old URL needs a 301 redirect to its new URL. Without them, you lose backlink equity and create broken pages for anyone with the old URL bookmarked or linked.
-- **IDs in URLs** — `/product/12345` is not human-readable. Use slugs.
-- **Query parameters for content** — `/blog?id=123` should be `/blog/post-title`.
-- **Inconsistent patterns** — Don't mix `/features/analytics` and `/product/automation`. Pick one parent.
-
-### Breadcrumb-URL Alignment
-
-The breadcrumb trail should mirror the URL path:
-
-| URL | Breadcrumb |
-|-----|-----------|
-| `/features/analytics` | Home > Features > Analytics |
-| `/blog/seo-guide` | Home > Blog > SEO Guide |
-| `/docs/api/auth` | Home > Docs > API > Authentication |
-
----
-
-## Visual Sitemap Output (Mermaid)
-
-Use Mermaid `graph TD` for visual sitemaps. This makes hierarchy relationships clear and can annotate navigation zones.
-
-### Basic Hierarchy
-
-```mermaid
-graph TD
-    HOME[Homepage] --> FEAT[Features]
-    HOME --> PRICE[Pricing]
-    HOME --> BLOG[Blog]
-    HOME --> ABOUT[About]
-
-    FEAT --> F1[Analytics]
-    FEAT --> F2[Automation]
-    FEAT --> F3[Integrations]
-
-    BLOG --> B1[Post 1]
-    BLOG --> B2[Post 2]
+```
+HUB: /seo/                          ← Pillar page, broad topic
+  SPOKE: /seo/technical-seo/        ← Sub-topic
+  SPOKE: /seo/on-page-seo/          ← Sub-topic
+  SPOKE: /seo/link-building/        ← Sub-topic
+  SPOKE: /seo/keyword-research/     ← Sub-topic
+    └─ DEEP: /seo/keyword-research/long-tail-keywords/   ← Specific guide
 ```
 
-### With Navigation Zones
+**Linking rules within a silo:**
+- Hub links to all spokes
+- Each spoke links back to hub
+- Spokes can link to adjacent spokes (contextually relevant)
+- Deep pages link up to their spoke + the hub
+- Cross-silo links are fine when genuinely relevant — just don't build a link for its own sake
 
-```mermaid
-graph TD
-    subgraph Header Nav
-        HOME[Homepage]
-        FEAT[Features]
-        PRICE[Pricing]
-        BLOG[Blog]
-        CTA[Get Started]
-    end
+### Building Topic Clusters
 
-    subgraph Footer Nav
-        ABOUT[About]
-        CAREERS[Careers]
-        CONTACT[Contact]
-        PRIVACY[Privacy]
-    end
-
-    HOME --> FEAT
-    HOME --> PRICE
-    HOME --> BLOG
-    HOME --> ABOUT
-
-    FEAT --> F1[Analytics]
-    FEAT --> F2[Automation]
-```
-
-**For more Mermaid templates**: See [references/mermaid-templates.md](references/mermaid-templates.md)
+1. Identify your core topics (usually 3-7 for a focused site)
+2. For each topic: one pillar page (the hub) that covers it broadly
+3. Create spoke content for each major sub-question within the topic
+4. Every spoke links to the pillar with relevant anchor text
+5. The pillar links down to all spokes
+6. Build the cluster before you build the links — if you don't have the content, the links don't help
 
 ---
 
 ## Internal Linking Strategy
 
-### Link Types
+Internal links are the most underused SEO lever. They're fully under your control, free, and directly affect which pages rank.
 
-| Type | Purpose | Example |
-|------|---------|---------|
-| Navigational | Move between sections | Header, footer, sidebar links |
-| Contextual | Related content within text | "Learn more about [analytics](/features/analytics)" |
-| Hub-and-spoke | Connect cluster content to hub | Blog posts linking to pillar page |
-| Cross-section | Connect related pages across sections | Feature page linking to related case study |
+### Link Equity Principles
 
-### Internal Linking Rules
+- Google crawls your site from the homepage outward
+- Pages closer to the homepage (fewer clicks away) get more equity
+- A page with no internal links is an orphan — Google won't prioritize it
+- Anchor text matters: generic ("click here") signals nothing; descriptive ("cold email templates") signals topic relevance
 
-1. **No orphan pages** — every page must have at least one internal link pointing to it
-2. **Descriptive anchor text** — "our analytics features" not "click here"
-3. **5-10 internal links per 1000 words** of content (approximate guideline)
-4. **Link to important pages more often** — homepage, key feature pages, pricing
-5. **Use breadcrumbs** — free internal links on every page
-6. **Related content sections** — "Related Posts" or "You might also like" at page bottom
+### Anchor Text Rules
 
-### Hub-and-Spoke Model
+| Type | Example | Use |
+|------|---------|-----|
+| Exact match | "cold email templates" | Use sparingly — 1-2x per page, looks natural |
+| Partial match | "writing effective cold emails" | Primary approach — most internal links |
+| Branded | "our email guide" | Fine, not the most powerful |
+| Generic | "click here", "learn more" | Avoid — wastes the signal |
+| Naked URL | `https://example.com/guide` | Never use for internal links |
 
-For content-heavy sites, organize around hub pages:
+### Finding and Fixing Orphan Pages
 
-```
-Hub: /blog/seo-guide (comprehensive overview)
-├── Spoke: /blog/keyword-research (links back to hub)
-├── Spoke: /blog/on-page-seo (links back to hub)
-├── Spoke: /blog/technical-seo (links back to hub)
-└── Spoke: /blog/link-building (links back to hub)
-```
+An orphan page is indexed but has no inbound internal links. It's invisible to the site's link graph.
 
-Each spoke links back to the hub. The hub links to all spokes. Spokes link to each other where relevant.
+How to find them:
+1. Export all indexed URLs (from GSC, Screaming Frog, or `sitemap_analyzer.py`)
+2. Export all internal links on the site
+3. Pages that appear in set A but not set B are orphans
+4. Or: run `scripts/sitemap_analyzer.py` which flags potential orphan candidates
 
-### Link Audit Checklist
+How to fix them:
+- Add contextual links from relevant existing pages
+- Add them to relevant hub pages
+- If they truly have no home, consider whether they should exist at all
 
-- [ ] Every page has at least one inbound internal link
-- [ ] No broken internal links (404s)
-- [ ] Anchor text is descriptive (not "click here" or "read more")
-- [ ] Important pages have the most inbound internal links
-- [ ] Breadcrumbs are implemented on all pages
-- [ ] Related content links exist on blog posts
-- [ ] Cross-section links connect features to case studies, blog to product pages
+### The Linking Priority Stack
 
----
+Not all internal links are equal. From most to least powerful:
 
-## Output Format
+1. **In-content links** — within the body copy of a relevant page. Most natural, most powerful.
+2. **Hub page links** — the pillar page linking to all its spokes. High equity because pillar pages are linked from everywhere.
+3. **Navigation links** — sitewide, consistent, but diluted by their ubiquity.
+4. **Footer links** — sitewide, but Google gives them less weight than in-content.
+5. **Sidebar links** — OK but often not in the main content flow.
 
-When creating a site architecture plan, provide these deliverables:
-
-### 1. Page Hierarchy (ASCII Tree)
-Full site structure with URLs at each node. Use the ASCII tree format from the Page Hierarchy Design section.
-
-### 2. Visual Sitemap (Mermaid)
-Mermaid diagram showing page relationships and navigation zones. Use `graph TD` with subgraphs for nav zones where helpful.
-
-### 3. URL Map Table
-
-| Page | URL | Parent | Nav Location | Priority |
-|------|-----|--------|-------------|----------|
-| Homepage | `/` | — | Header | High |
-| Features | `/features` | Homepage | Header | High |
-| Analytics | `/features/analytics` | Features | Header dropdown | Medium |
-| Pricing | `/pricing` | Homepage | Header | High |
-| Blog | `/blog` | Homepage | Header | Medium |
-
-### 4. Navigation Spec
-- Header nav items (ordered, with CTA)
-- Footer sections and links
-- Sidebar nav (if applicable)
-- Breadcrumb implementation notes
-
-### 5. Internal Linking Plan
-- Hub pages and their spokes
-- Cross-section link opportunities
-- Orphan page audit (if restructuring)
-- Recommended links per key page
+See `references/internal-linking-playbook.md` for patterns and scripts.
 
 ---
 
-## Task-Specific Questions
+## Common Architecture Mistakes
 
-1. Is this a new site or are you restructuring an existing one?
-2. What type of site is it? (SaaS, content, e-commerce, docs, hybrid, small business)
-3. How many pages exist or are planned?
-4. What are the 5 most important pages on the site?
-5. Are there existing URLs that need to be preserved or redirected?
-6. Who are the primary audiences, and what are they trying to accomplish on the site?
+| Mistake | Why It Hurts | Fix |
+|---------|-------------|-----|
+| Orphan pages | No equity flows in, Google deprioritizes | Add contextual internal links from related content |
+| URL changes without redirects | Inbound links become broken, equity lost | Always 301 redirect old URLs to new ones |
+| Duplicate paths | `/blog/seo` and `/resources/seo` covering same topic | Consolidate with canonical or merge content |
+| Deep nesting (4+ levels) | Crawl equity diluted, users confused | Flatten structure, remove unnecessary directories |
+| Sitewide footer links to every post | Footer equity is diluted across 500 links | Footer should link to high-value pages only |
+| Navigation that doesn't match user intent | Users leave, rankings drop | Run card-sort tests — let users show you their mental model |
+| Homepage linking nowhere | Home is highest-equity page — use it | Link from home to key hub pages |
+| Category pages with no content | Thin pages rank poorly | Add content to all hub/category pages |
+| Dynamic URLs with parameters | `?sort=&filter=` creates duplicate content | Canonicalize or block with robots.txt |
+
+---
+
+## Proactive Triggers
+
+Surface these without being asked:
+
+- **Pages more than 3 clicks from homepage** → flag as crawl equity risk. Any page a user has to click 4+ times to reach needs a structural shortcut.
+- **Category/hub page has thin or no content** → hub pages without real content don't rank. Flag and recommend adding a proper pillar page.
+- **Internal links using generic anchor text ("click here", "read more")** → wasted signal. Offer to rewrite anchor text patterns.
+- **No breadcrumbs on deep pages** → missing upward equity links and BreadcrumbList schema opportunity.
+- **Sitemap includes noindex pages** → sitemap should only contain pages you want indexed. Flag and offer to filter.
+- **Primary nav links to utility pages (contact, privacy)** → pushing equity to low-value pages. Nav should prioritize money/content pages.
+
+---
+
+## Output Artifacts
+
+| When you ask for... | You get... |
+|---------------------|------------|
+| Architecture audit | Structural scorecard: depth distribution, orphan count, URL pattern issues, navigation gaps + prioritized fix list |
+| New site structure | Text-based site tree (hierarchy diagram) + URL spec table with notes per section |
+| Internal linking plan | Hub-and-spoke map per topic cluster + anchor text guidelines + orphan fix list |
+| URL redesign | Before/after URL table + 301 redirect mapping + implementation checklist |
+| Silo strategy | Topic cluster map per business goal + content gap analysis + pillar page brief |
+
+---
+
+## Communication
+
+All output follows the structured communication standard:
+- **Bottom line first** — answer before explanation
+- **What + Why + How** — every finding has all three
+- **Actions have owners and deadlines** — no "we should consider"
+- **Confidence tagging** — 🟢 verified / 🟡 medium / 🔴 assumed
 
 ---
 
 ## Related Skills
 
-- **content-strategy**: For planning what content to create and topic clusters
-- **programmatic-seo**: For building SEO pages at scale with templates and data
-- **seo-audit**: For technical SEO, on-page optimization, and indexation issues
-- **cro**: For optimizing individual pages for conversion
-- **schema**: For implementing breadcrumb and site navigation structured data
-- **competitors**: For comparison page frameworks and URL patterns
+- **seo-audit**: For comprehensive SEO audit covering technical, on-page, and off-page. Use seo-audit when architecture is one of several problem areas. NOT for deep structural redesign — use site-architecture.
+- **schema-markup**: For structured data implementation. Use after site-architecture when you want to add BreadcrumbList and other schema to your finalized structure.
+- **content-strategy**: For deciding what content to create. Use content-strategy to plan the content, then site-architecture to determine where it lives and how it links.
+- **programmatic-seo**: When you need to generate hundreds or thousands of pages systematically. Site-architecture provides the URL and structural patterns that programmatic-seo scales.
+- **seo-audit**: For identifying technical issues. NOT for architecture redesign planning — use site-architecture for that.

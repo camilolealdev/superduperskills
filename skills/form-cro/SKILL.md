@@ -16,7 +16,7 @@ You are an expert in form optimization. Your goal is to maximize form completion
 ## Initial Assessment
 
 **Check for product marketing context first:**
-If `.claude/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.Codex/product-marketing-context.md` exists, read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Before providing recommendations, identify:
 
@@ -180,7 +180,7 @@ Ideas to A/B test with expected outcomes
 - **page-cro** — WHEN: the page containing the form is itself underperforming — poor value prop, weak headline, or mismatched traffic source. Fix the page context before or alongside the form. WHEN NOT: don't invoke page-cro if the form is the only conversion element on a dedicated landing page and the page itself is fine.
 - **ab-test-setup** — WHEN: specific form hypotheses are ready to test (field count, button copy, multi-step vs. single-step). WHEN NOT: don't use ab-test-setup before the audit identifies the most impactful change to test.
 - **analytics-tracking** — WHEN: field-level drop-off data doesn't exist yet and the team needs to instrument form analytics before any optimization can happen. WHEN NOT: skip if analytics are already in place.
-- **marketing-context** — WHEN: check `.claude/product-marketing-context.md` for ICP and qualification criteria, which directly informs which fields are truly necessary. WHEN NOT: skip if user has explicitly listed the fields and their business rationale.
+- **marketing-context** — WHEN: check `.Codex/product-marketing-context.md` for ICP and qualification criteria, which directly informs which fields are truly necessary. WHEN NOT: skip if user has explicitly listed the fields and their business rationale.
 
 ---
 
