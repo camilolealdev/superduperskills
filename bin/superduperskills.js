@@ -12,8 +12,8 @@ const fs = require('fs');
 const rootDir = path.resolve(__dirname, '..');
 const pythonScript = path.join(rootDir, 'scripts', 'superduper_cli.py');
 
-const VERSION = '5.0.0';
-const CODENAME = 'OmniPower';
+const VERSION = '6.0.0';
+const CODENAME = 'WorldClass';
 
 // TrueColor / ANSI Styling
 const C = {
@@ -53,24 +53,34 @@ if (process.argv.includes('--help') && process.argv.length <= 3) {
     ${C.SLATE_LIGHT}$ sds --help${C.RESET}            ${C.SLATE_MUTED}Show this help screen${C.RESET}
     ${C.SLATE_LIGHT}$ sds --version${C.RESET}         ${C.SLATE_MUTED}Display version information${C.RESET}
 
+  ${C.BOLD}${C.GOLD}World-Class Commands:${C.RESET}
+    ${C.EMERALD}ui${C.RESET}          ${C.SLATE_LIGHT}Launch companion web UI dashboard at http://localhost:4242${C.RESET}
+    ${C.EMERALD}ask${C.RESET}         ${C.SLATE_LIGHT}Query terminal assistant grounded in active skills (-75% tokens)${C.RESET}
+    ${C.EMERALD}why${C.RESET}         ${C.SLATE_LIGHT}Explain why a skill is in matrix & detect AST file markers${C.RESET}
+    ${C.EMERALD}graph${C.RESET}       ${C.SLATE_LIGHT}Render ASCII dependency architecture and topology tree${C.RESET}
+    ${C.EMERALD}auto-branch${C.RESET} ${C.SLATE_LIGHT}Auto-calibrate mission mode based on active Git branch${C.RESET}
+    ${C.EMERALD}benchmark${C.RESET}   ${C.SLATE_LIGHT}Audit structural quality of vault skills with letter grade (A+)${C.RESET}
+    ${C.EMERALD}update${C.RESET}      ${C.SLATE_LIGHT}Silent vault synchronization from remote GitHub master${C.RESET}
+    ${C.EMERALD}eval${C.RESET}        ${C.SLATE_LIGHT}Run prompt through skill sandbox playground${C.RESET}
+
   ${C.BOLD}${C.GOLD}Core Commands:${C.RESET}
-    ${C.EMERALD}scan${C.RESET}        ${C.SLATE_LIGHT}Scan project stack & recommend curated skills${C.RESET}
-    ${C.EMERALD}budget${C.RESET}      ${C.SLATE_LIGHT}Token budget estimator & LLM context window simulator${C.RESET}
-    ${C.EMERALD}mode${C.RESET}        ${C.SLATE_LIGHT}1-Click Mission Modes (mvp, harden, refactor, design, fullstack)${C.RESET}
-    ${C.EMERALD}prompt${C.RESET}      ${C.SLATE_LIGHT}Compile & copy Super-Prompt to clipboard for Web LLMs${C.RESET}
-    ${C.EMERALD}watch${C.RESET}       ${C.SLATE_LIGHT}Real-time workspace watcher for automatic skill triggers${C.RESET}
-    ${C.EMERALD}doctor${C.RESET}      ${C.SLATE_LIGHT}Run full health check & environment diagnostics${C.RESET}
-    ${C.EMERALD}list${C.RESET}        ${C.SLATE_LIGHT}List all active skills in project manifest${C.RESET}
-    ${C.EMERALD}search${C.RESET}      ${C.SLATE_LIGHT}Search across 3,300+ skills in the local vault${C.RESET}
-    ${C.EMERALD}preview${C.RESET}     ${C.SLATE_LIGHT}Inspect formatted SKILL.md and calculate token weight${C.RESET}
-    ${C.EMERALD}toggle${C.RESET}      ${C.SLATE_LIGHT}Toggle a specific skill ON or OFF${C.RESET}
-    ${C.EMERALD}sync${C.RESET}        ${C.SLATE_LIGHT}Sync manifest to Cursor Rules, Claude, OpenCode${C.RESET}
-    ${C.EMERALD}audit${C.RESET}       ${C.SLATE_LIGHT}Verify physical SKILL.md compliance on disk${C.RESET}
-    ${C.EMERALD}wizard${C.RESET}      ${C.SLATE_LIGHT}Launch Socratic qualification interview wizard${C.RESET}
-    ${C.EMERALD}init${C.RESET}        ${C.SLATE_LIGHT}Initialize .agents/ governance directory${C.RESET}
-    ${C.EMERALD}stats${C.RESET}       ${C.SLATE_LIGHT}Display telemetry dashboard & category metrics${C.RESET}
-    ${C.EMERALD}profile${C.RESET}     ${C.SLATE_LIGHT}Save and load custom skill presets${C.RESET}
-    ${C.EMERALD}export${C.RESET}      ${C.SLATE_LIGHT}Export active manifest to JSON or Markdown${C.RESET}
+    ${C.CYAN}scan${C.RESET}        ${C.SLATE_LIGHT}Scan project stack & recommend curated skills${C.RESET}
+    ${C.CYAN}budget${C.RESET}      ${C.SLATE_LIGHT}Token budget estimator & LLM context window simulator${C.RESET}
+    ${C.CYAN}mode${C.RESET}        ${C.SLATE_LIGHT}1-Click Mission Modes (mvp, harden, refactor, design, fullstack)${C.RESET}
+    ${C.CYAN}prompt${C.RESET}      ${C.SLATE_LIGHT}Compile & copy Super-Prompt to clipboard for Web LLMs${C.RESET}
+    ${C.CYAN}watch${C.RESET}       ${C.SLATE_LIGHT}Real-time workspace watcher for automatic skill triggers${C.RESET}
+    ${C.CYAN}doctor${C.RESET}      ${C.SLATE_LIGHT}Run full health check & environment diagnostics${C.RESET}
+    ${C.CYAN}list${C.RESET}        ${C.SLATE_LIGHT}List all active skills in project manifest${C.RESET}
+    ${C.CYAN}search${C.RESET}      ${C.SLATE_LIGHT}Search across 3,300+ skills in the local vault${C.RESET}
+    ${C.CYAN}preview${C.RESET}     ${C.SLATE_LIGHT}Inspect formatted SKILL.md and calculate token weight${C.RESET}
+    ${C.CYAN}toggle${C.RESET}      ${C.SLATE_LIGHT}Toggle a specific skill ON or OFF${C.RESET}
+    ${C.CYAN}sync${C.RESET}        ${C.SLATE_LIGHT}Sync manifest to Cursor Rules, Claude, OpenCode${C.RESET}
+    ${C.CYAN}audit${C.RESET}       ${C.SLATE_LIGHT}Verify physical SKILL.md compliance on disk${C.RESET}
+    ${C.CYAN}wizard${C.RESET}      ${C.SLATE_LIGHT}Launch Socratic qualification interview wizard${C.RESET}
+    ${C.CYAN}init${C.RESET}        ${C.SLATE_LIGHT}Initialize .agents/ governance directory${C.RESET}
+    ${C.CYAN}stats${C.RESET}       ${C.SLATE_LIGHT}Display telemetry dashboard & category metrics${C.RESET}
+    ${C.CYAN}profile${C.RESET}     ${C.SLATE_LIGHT}Save and load custom skill presets${C.RESET}
+    ${C.CYAN}export${C.RESET}      ${C.SLATE_LIGHT}Export active manifest to JSON or Markdown${C.RESET}
 
   ${C.SLATE_DARK}──────────────────────────────────────────────────────────────────────────${C.RESET}
   ${C.SLATE_MUTED}Docs:${C.RESET}  ${C.CYAN}https://superduperskills.vercel.app${C.RESET}
