@@ -1,33 +1,32 @@
 #!/bin/bash
-# Minify skills-site.html → skills-site.min.html
-# Uses sed for basic minification (no external deps needed)
+# Minify skills-site.html to skills-site.min.html.
+# Keep this recipe aligned with .github/workflows/build-site.yml.
+set -euo pipefail
 
 INPUT="skills-site.html"
 OUTPUT="skills-site.min.html"
 
 if [ ! -f "$INPUT" ]; then
-  echo "Error: $INPUT not found"
+  echo "Error: $INPUT not found" >&2
   exit 1
 fi
 
-# Basic minification: remove comments, collapse whitespace, strip newlines
-sed \
-  -e '/<!--/,/-->/d' \
-  -e 's/\/\*.*\*\///g' \
-  -e '/^[[:space:]]*$/d' \
-  -e 's/^[[:space:]]*//' \
-  -e 's/[[:space:]]*$//' \
-  -e ':a;N;$!ba;s/\n/ /g' \
-  -e 's/  */ /g' \
-  -e 's/ >/>/g' \
-  -e 's/ </</g' \
-  "$INPUT" > "$OUTPUT"
+npx --yes html-minifier-terser \
+  --collapse-whitespace \
+  --remove-comments \
+  --remove-redundant-attributes \
+  --remove-script-type-attributes \
+  --remove-style-link-type-attributes \
+  --minify-css true \
+  --minify-js true \
+  -o "$OUTPUT" \
+  "$INPUT"
 
 ORIG=$(wc -c < "$INPUT")
 MINI=$(wc -c < "$OUTPUT")
 PCT=$((100 - MINI * 100 / ORIG))
 
-echo "✅ Minified: $INPUT → $OUTPUT"
-echo "   Original: ${ORIG} bytes"
-echo "   Minified: ${MINI} bytes"
-echo "   Saved:    ${PCT}%"
+echo "Minified: $INPUT -> $OUTPUT"
+echo "Original: ${ORIG} bytes"
+echo "Minified: ${MINI} bytes"
+echo "Saved:    ${PCT}%"

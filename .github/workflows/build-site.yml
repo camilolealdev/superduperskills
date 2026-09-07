@@ -5,6 +5,7 @@ on:
     paths:
       - 'web/skills-site.html'
       - 'web/build.sh'
+      - 'index.html'
     branches: [master]
   workflow_dispatch:
 
@@ -22,13 +23,13 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install terser
-        run: npm install -g terser
+      - name: Install HTML minifier
+        run: npm install --no-save html-minifier-terser
 
       - name: Minify HTML
         working-directory: web
         run: |
-          npx --yes html-minifier-terser \
+          npx --no-install html-minifier-terser \
             --collapse-whitespace \
             --remove-comments \
             --remove-redundant-attributes \
@@ -41,7 +42,7 @@ jobs:
           echo "Original: $(wc -c < skills-site.html) bytes"
           echo "Minified: $(wc -c < skills-site.min.html) bytes"
 
-      - name: Copy to docs/
+      - name: Copy catalog artifacts
         run: |
           cp web/skills-site.html docs/index.html
           cp web/skills-site.min.html docs/index.min.html
@@ -52,7 +53,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/index.html docs/index.min.html
+          git add docs/index.html docs/index.min.html index.html
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else

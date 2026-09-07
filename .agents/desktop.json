@@ -1,0 +1,39 @@
+{
+  "name": "SuperDuperSkills Desktop",
+  "version": "4.0.0",
+  "main": "main.js",
+  "window": {
+    "width": 1200,
+    "height": 800,
+    "title": "SuperDuperSkills v4.0.0 — Agentic CLI Hub",
+    "icon": "G:\\Nueva carpeta\\Documentos\\superduperskills\\icon-512.png",
+    "darkTheme": true
+  },
+  "tray": {
+    "enabled": true,
+    "icon": "G:\\Nueva carpeta\\Documentos\\superduperskills\\icon-192.png",
+    "tooltip": "SuperDuperSkills v4.0.0",
+    "menu": [
+      "Open CLI",
+      "Scan Project",
+      "View Active Skills",
+      "Quit"
+    ]
+  },
+  "autoScan": {
+    "enabled": true,
+    "onLaunch": true,
+    "intervalMinutes": 30
+  },
+  "terminal": {
+    "type": "xterm",
+    "fontSize": 14,
+    "fontFamily": "JetBrains Mono, Fira Code, monospace",
+    "theme": {
+      "background": "#0c0e13",
+      "foreground": "#e8e6e1",
+      "cursorAccent": "#00e5a0",
+      "selectionBackground": "rgba(0, 229, 160, 0.3)"
+    }
+  }
+}
