@@ -16,9 +16,10 @@
 </p>
 
 <p align="center">
-  <a href="#-overview--visión-general"><img src="https://img.shields.io/badge/Skills--Vault-3%2C900%2B-00f2fe?style=for-the-badge&logo=ai&logoColor=black" alt="Vault Size" /></a>
+  <a href="#-overview--visión-general"><img src="https://img.shields.io/badge/Skills--Vault-3%2C325%2B-00f2fe?style=for-the-badge&logo=ai&logoColor=black" alt="Vault Size" /></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-10b981?style=for-the-badge&logo=open-source-initiative&logoColor=white" alt="License: MIT" /></a>
-  <a href="#-author--autor"><img src="https://img.shields.io/badge/Author-camilolealdev-7f00ff?style=for-the-badge&logo=github&logoColor=white" alt="Author" /></a>
+  <a href="#-author--autor"><img src="https://img.shields.io/badge/Author-Camilo_Leal-7f00ff?style=for-the-badge&logo=github&logoColor=white" alt="Author" /></a>
+  <a href="https://easy-marketing.xyz"><img src="https://img.shields.io/badge/Powered_by-easy--marketing.xyz-ff007f?style=for-the-badge&logo=fastapi&logoColor=white" alt="Easy Marketing" /></a>
   <a href="docs/index.html"><img src="https://img.shields.io/badge/Web--UI-Interactive-e100ff?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Web UI" /></a>
   <a href="AGENTS.md"><img src="https://img.shields.io/badge/Agent--Protocol-Mandatory-ff6b35?style=for-the-badge&logo=github&logoColor=white" alt="Agent Protocol" /></a>
 </p>
@@ -381,24 +382,25 @@ El CI (`.github/workflows/build-site.yml`) hace lo mismo automáticamente en pus
 
 ---
 
-## 👤 Author · Autor
+## 👤 Author & Organization · Autor y Organización
 
 | Field · Campo | Value · Valor |
 |---|---|
-| **Author / Mantainer** | **camilolealdev** (Camilo Leal) |
-| **GitHub** | [github.com/camilolealdev](https://github.com/camilolealdev) |
-| **Repository** | [github.com/camilolealdev/superduperskills](https://github.com/camilolealdev/superduperskills) |
-| **Issues** | [github.com/camilolealdev/superduperskills/issues](https://github.com/camilolealdev/superduperskills/issues) |
-| **Live site** | [camilolealdev.github.io/superduperskills](https://camilolealdev.github.io/superduperskills/) · [superduperskills.vercel.app](https://superduperskills.vercel.app/) |
+| **Author / Creator** | **Camilo Leal** ([@camilolealdev](https://github.com/camilolealdev)) |
+| **Organization / Company** | [**Easy Marketing** (easy-marketing.xyz)](https://easy-marketing.xyz) |
+| **GitHub Repository** | [github.com/camilolealdev/superduperskills](https://github.com/camilolealdev/superduperskills) |
+| **Issues & Feedback** | [github.com/camilolealdev/superduperskills/issues](https://github.com/camilolealdev/superduperskills/issues) |
+| **Live Catalog** | [camilolealdev.github.io/superduperskills](https://camilolealdev.github.io/superduperskills/) · [superduperskills.vercel.app](https://superduperskills.vercel.app/) |
+| **Official Website** | [easy-marketing.xyz](https://easy-marketing.xyz) |
 | **X / Twitter** | [@camilolealdev](https://x.com/camilolealdev) |
 
-**🇬🇧** Built and maintained by **Camilo Leal** (`camilolealdev`). Questions, feature ideas and skill submissions are welcome via [GitHub Issues](https://github.com/camilolealdev/superduperskills/issues).
+**🇬🇧** Built and engineered by **Camilo Leal** (`camilolealdev`) and powered by **[Easy Marketing](https://easy-marketing.xyz)**. Questions, enterprise integrations, feature ideas, and skill submissions are welcome via [GitHub Issues](https://github.com/camilolealdev/superduperskills/issues).
 
-**🇪🇸** Construido y mantenido por **Camilo Leal** (`camilolealdev`). Preguntas, ideas y envíos de skills son bienvenidos vía [GitHub Issues](https://github.com/camilolealdev/superduperskills/issues).
+**🇪🇸** Construido e ingeniado por **Camilo Leal** (`camilolealdev`) con el respaldo de **[Easy Marketing](https://easy-marketing.xyz)**. Preguntas, integraciones empresariales, ideas y envíos de skills son bienvenidos vía [GitHub Issues](https://github.com/camilolealdev/superduperskills/issues).
 
 ### Contributors · Contribuidores
 
-Thanks to every open-source library bundled in this vault (see [`skills-inventory.md`](skills-inventory.md)) and to the community that keeps agent skills growing. You can join them — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Thanks to every open-source library bundled in this vault (see [`skills-inventory.md`](skills-inventory.md)) and to the global community that keeps agent skills growing. You can join them — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ---
 
@@ -407,8 +409,8 @@ Thanks to every open-source library bundled in this vault (see [`skills-inventor
 ```
 MIT License
 
-Copyright (c) 2025-2026 SuperDuperSkills contributors
-Author / Maintainer: camilolealdev (Camilo Leal) — https://github.com/camilolealdev
+Copyright (c) 2025-2026 Camilo Leal (camilolealdev) & Easy Marketing (https://easy-marketing.xyz)
+Author / Maintainer: Camilo Leal (camilolealdev) — https://github.com/camilolealdev | https://easy-marketing.xyz
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -430,5 +432,5 @@ in the Software without restriction...
 ---
 
 <p align="center">
-  Made with 🧠 by <a href="https://github.com/camilolealdev">camilolealdev</a> · MIT · <a href="https://camilolealdev.github.io/superduperskills/">Live site</a>
+  Engineered with ⚡ by <a href="https://github.com/camilolealdev">Camilo Leal</a> & <a href="https://easy-marketing.xyz">Easy Marketing</a> · MIT License · <a href="https://superduperskills.vercel.app">Live Catalog</a>
 </p>

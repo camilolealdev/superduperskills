@@ -43,8 +43,8 @@ if (process.argv.includes('--version') || process.argv.includes('-V')) {
 if (process.argv.includes('--help') && process.argv.length <= 3) {
   console.log(`
   ${C.CYAN}╭────────────────────────────────────────────────────────────────────────╮${C.RESET}
-  ${C.CYAN}│${C.RESET}  ${C.CYAN}${C.BOLD}✦ SUPERDUPERSKILLS${C.RESET} ${C.SLATE_MUTED}v${VERSION}${C.RESET} ${C.GOLD}«${CODENAME}»${C.RESET}                       ${C.INDIGO}● Agentic Hub${C.RESET} ${C.CYAN}│${C.RESET}
-  ${C.BLUE}│${C.RESET}  ${C.SLATE_LIGHT}3,300+ AI Agent Skills Governance Suite for Claude, Gemini, Codex${C.RESET}  ${C.BLUE}│${C.RESET}
+  ${C.CYAN}│${C.RESET}  ${C.CYAN}${C.BOLD}✦ SUPERDUPERSKILLS${C.RESET} ${C.SLATE_MUTED}v${VERSION}${C.RESET} ${C.GOLD}«${CODENAME}»${C.RESET}                       ${C.INDIGO}● Camilo Leal${C.RESET} ${C.CYAN}│${C.RESET}
+  ${C.BLUE}│${C.RESET}  ${C.SLATE_LIGHT}3,325+ AI Agent Skills Governance Suite · ${C.EMERALD}easy-marketing.xyz${C.RESET}  ${C.BLUE}│${C.RESET}
   ${C.INDIGO}╰────────────────────────────────────────────────────────────────────────╯${C.RESET}
 
   ${C.BOLD}${C.CYAN}Usage:${C.RESET}

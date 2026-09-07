@@ -551,8 +551,8 @@ def render_gemini_banner() -> str:
     branch = get_git_branch()
     ws_name = os.path.basename(WORKSPACE_DIR) or "root"
     
-    docs_link = make_clickable_link(f"{C.SLATE_LIGHT}2,700+ Multi-Agent Skills Governance Suite for Claude, Gemini, Codex{C.RESET}", "https://superduperskills.vercel.app")
-    hub_link = make_clickable_link(f"{C.GEMINI_VIOLET}● Agentic Hub{C.RESET}", "https://github.com/camilolealdev/superduperskills")
+    docs_link = make_clickable_link(f"{C.SLATE_LIGHT}3,325+ AI Agent Skills Governance Suite · {C.EMERALD}easy-marketing.xyz{C.RESET}", "https://easy-marketing.xyz")
+    hub_link = make_clickable_link(f"{C.GEMINI_VIOLET}● Camilo Leal{C.RESET}", "https://github.com/camilolealdev")
     
     g1 = C.GEMINI_CYAN
     g2 = C.GEMINI_BLUE
