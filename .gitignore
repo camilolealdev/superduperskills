@@ -8,7 +8,6 @@
 !README.md
 !.gitignore
 !.gitattributes
-!build_index.py
 !install.sh
 !install.ps1
 !skills/

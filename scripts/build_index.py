@@ -8,7 +8,7 @@ Build script for superduperskills repo.
 import os, re, json, shutil, stat, subprocess
 from pathlib import Path
 
-BASE = os.path.dirname(os.path.abspath(__file__))
+BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 REPO_SKILLS = os.path.join(BASE, 'skills')
 
 ORDER = {'agents': 0, 'opencode': 1, 'claude': 2}
