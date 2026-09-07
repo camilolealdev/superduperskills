@@ -26,7 +26,7 @@ if os.path.isfile(readme_path):
 setup(
     name="superduperskills",
     version=version,
-    description="The Ultimate Multi-Agent Skills Hub & Governance Suite — 2,700+ curated AI agent skills",
+    description="The Ultimate Multi-Agent Skills Hub & Governance Suite — 3,325+ curated AI agent skills",
     long_description=long_description,
     long_description_content_type="text/markdown",
     author="camilolealdev",

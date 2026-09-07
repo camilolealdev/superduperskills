@@ -138,8 +138,8 @@ Incluye además un **Motor Interactivo de Cualificación de Proyectos**: antes d
 | [`install.ps1`](install.ps1) | Windows PowerShell installer. | Instalador Windows PowerShell. |
 | [`package.json`](package.json) | Node package + CLI entry (`bin/`). | Paquete Node + entrada CLI (`bin/`). |
 | [`pyproject.toml`](pyproject.toml) · [`setup.py`](setup.py) | Python packaging. | Empaquetado Python. |
-| [`build_index.py`](build_index.py) | Index builder: scans → dedup → `SKILLS-INDEX.md`. | Constructor de índice: escaneo → dedup → `SKILLS-INDEX.md`. |
-| [`scripts/superduper_cli.py`](scripts/superduper_cli.py) | **Python Command Center** (discovery, toggles, vault search, multi-CLI sync). | **Centro de Control Python** (descubrimiento, toggles, búsqueda en bóveda, sync multi-CLI). |
+| [`scripts/build_index.py`](scripts/build_index.py) | Index builder: scans → dedup → `SKILLS-INDEX.md`. | Constructor de índice: escaneo → dedup → `SKILLS-INDEX.md`. |
+| [`scripts/superduper_cli.py`](scripts/superduper_cli.py) | **Python Command Center** (TUI dashboard, AI assistant, dependency graphs, multi-CLI sync). | **Centro de Control Python** (dashboard TUI, asistente IA, grafos de dependencias, sync multi-CLI). |
 | [`scripts/qualify_project.py`](scripts/qualify_project.py) | Socratic interactive qualification wizard. | Wizard interactivo socrático de cualificación. |
 | [`bin/superduperskills.js`](bin/superduperskills.js) | Node CLI (same commands, JS runtime). | CLI Node (mismos comandos, runtime JS). |
 | [`web/skills-site.html`](web/skills-site.html) | **Canonical** interactive catalog source. | Fuente **canónica** del catálogo interactivo. |
@@ -147,7 +147,7 @@ Incluye además un **Motor Interactivo de Cualificación de Proyectos**: antes d
 | [`docs/index.html`](docs/index.html) | Built site copy (GitHub Pages). | Copia construida del sitio (GitHub Pages). |
 | [`index.html`](index.html) | Root/Vercel site copy with extra OG meta. | Copia raíz/Vercel del sitio con OG meta extra. |
 | [`docs/assets/`](docs/assets/) | README images (hero, diagrams, infographics). | Imágenes del README (hero, diagramas, infografías). |
-| [`skills/`](skills/) | **The vault** — 3,300+ packaged skills (each `SKILL.md`). | **La bóveda** — 3,300+ skills empaquetadas (cada `SKILL.md`). |
+| [`skills/`](skills/) | **The vault** — 3,325+ packaged skills (each `SKILL.md`). | **La bóveda** — 3,325+ skills empaquetadas (cada `SKILL.md`). |
 | [`.github/workflows/`](.github/workflows/) | CI: build/minify site, GH-Pages deploy, PR previews. | CI: build/minify sitio, deploy GH-Pages, previews de PRs. |
 
 ---
@@ -193,7 +193,7 @@ cd superduperskills
 ```bash
 npx superduperskills        # Node runtime (anywhere)
 pnpm dlx superduperskills   # pnpm equivalent
-python scripts/superduper_cli.py   # native Python runtime
+python scripts/superduper_cli.py ui   # native Python TUI (mouse & fuzzy search)
 ```
 
 ### 🇪🇸 Español — Ejecuta el CLI (sin instalación)
@@ -201,34 +201,53 @@ python scripts/superduper_cli.py   # native Python runtime
 ```bash
 npx superduperskills        # runtime Node (en cualquier sitio)
 pnpm dlx superduperskills   # equivalente con pnpm
-python scripts/superduper_cli.py   # runtime Python nativo
+python scripts/superduper_cli.py ui   # TUI nativa Python (ratón y búsqueda fuzzy)
 ```
 
 ---
 
-## 💻 CLI Command Center · Centro de Comando CLI
+## 💻 CLI Command Center · Centro de Comando CLI (v6.0.0 «WorldClass»)
 
 | Command · Comando | 🇬🇧 Purpose | 🇪🇸 Propósito |
 |---|---|---|
+| `ui` | 🖱️ Interactive TUI Dashboard (Mouse support, fuzzy search, live preview) | 🖱️ Dashboard TUI interactivo (Soporte de ratón, búsqueda fuzzy, preview) |
+| `ask "<query>"` | 🤖 Local Semantic AI Assistant with RAG & streaming | 🤖 Asistente IA semántico local con RAG y streaming |
+| `why <skill>` | 🔍 Architectural justification & token breakdown | 🔍 Justificación arquitectónica y desglose de tokens |
+| `graph` | 🕸️ ASCII Dependency & synergy graph between skills | 🕸️ Grafo ASCII de dependencias y sinergias entre skills |
+| `benchmark` | ⚡ Latency & resolution throughput benchmark | ⚡ Benchmark de latencia de resolución y rendimiento |
+| `budget <tokens>`| 💰 Token budget optimizer for context windows | 💰 Optimizador de presupuesto de tokens para ventanas de contexto |
+| `auto-branch` | 🌿 Intent-based Git branch auto-generator | 🌿 Generador automático de ramas Git basado en intención |
+| `mode <profile>` | ⚙️ Switch execution profiles (`fast`, `deep`, `audit`, `budget`) | ⚙️ Conmutar perfiles de ejecución (`fast`, `deep`, `audit`, `budget`) |
 | `scan` | Deep scan of repo stack, frameworks & dependencies | Escaneo profundo del stack, frameworks y dependencias |
 | `list` | List active skills in the manifest | Listar skills activas del manifiesto |
 | `toggle <skill>` | Enable / disable a skill | Activar / desactivar una skill |
-| `search "<query>"` | Search the vault | Buscar en la bóveda |
+| `search "<query>"` | Search the vault with fuzzy matching | Buscar en la bóveda con coincidencia difusa |
 | `ingest <url>` | Ingest a remote skill (Skill Seekers) | Ingerir skill remota (Skill Seekers) |
 | `sync` | Sync config across Cursor, Claude, OpenCode… | Sincronizar configs multi-CLI |
 | `audit` | Verify physical `SKILL.md` presence of active skills | Auditar presencia física de `SKILL.md` |
-| `wizard` | Interactive qualification interview | Entrevista de cualificación interactiva |
-| `stats` | Vault statistics | Estadísticas de la bóveda |
-| `doctor` | Environment health check | Chequeo de salud del entorno |
-| `completions` | Install shell completions | Instalar completions de shell |
+| `wizard` | Socratic interactive qualification interview | Entrevista de cualificación interactiva |
+| `stats` | Live vault statistics & category metrics | Estadísticas de la bóveda en vivo |
+| `doctor` | Comprehensive environment & tool health check | Chequeo de salud del entorno y herramientas |
+| `completions` | Install shell completions (bash, zsh, powershell) | Instalar autocompletado para shell |
 
 ```bash
-python scripts/superduper_cli.py scan
-python scripts/superduper_cli.py search "nextjs"
-python scripts/superduper_cli.py toggle emil-design-eng
-python scripts/superduper_cli.py ingest "https://github.com/autor/nueva-skill"
-python scripts/superduper_cli.py sync
-python scripts/superduper_cli.py audit
+# 🖱️ Dashboard interactivo con ratón
+python scripts/superduper_cli.py ui
+
+# 🤖 Preguntarle a la IA
+python scripts/superduper_cli.py ask "How to build a clean architecture API in FastAPI?"
+
+# 🔍 Justificar por qué usar una skill
+python scripts/superduper_cli.py why emil-design-eng
+
+# 🕸️ Analizar dependencias
+python scripts/superduper_cli.py graph --target tailwind-patterns
+
+# ⚡ Ejecutar benchmark de rendimiento
+python scripts/superduper_cli.py benchmark
+
+# 💰 Ajustar skills a un presupuesto de 8,000 tokens
+python scripts/superduper_cli.py budget 8000
 ```
 
 ---

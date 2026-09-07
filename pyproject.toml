@@ -5,7 +5,7 @@ build-backend = "hatchling.build"
 [project]
 name = "superduperskills"
 dynamic = ["version"]
-description = "The Ultimate Multi-Agent Skills Hub & Governance Suite — 2,700+ curated AI agent skills for Claude, Gemini, Cursor, Codex, OpenCode, and more."
+description = "The Ultimate Multi-Agent Skills Hub & Governance Suite — 3,325+ curated AI agent skills for Claude, Gemini, Cursor, Codex, OpenCode, and more."
 readme = "README.md"
 license = { text = "MIT" }
 requires-python = ">=3.8"
