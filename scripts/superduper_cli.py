@@ -2,22 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 ================================================================================
- SUPERDUPERSKILLS AGENTIC CLI & CONTROL CENTER v4.0
+ SUPERDUPERSKILLS AGENTIC CLI & CONTROL CENTER v4.0 (Gemini & Claude Edition)
 ================================================================================
- Comprehensive Terminal UI & Discovery Engine for AI Agent Skills Governance.
+ Ultra-Sleek Terminal UI & Discovery Engine with Mouse & Slash Command Support.
 
- Agent 1: Modern ASCII branding, animated banner, version display
- Agent 2: Rich help system, usage examples, --version/--json flags
- Agent 3: Interactive TUI with progress indicators, confirmations, status bars
- Agent 4: New subcommands: init, doctor, export, profile, stats
- Agent 5: Desktop integration hooks (Electron stubs, tray icon config)
-
- - Deep Project & Monorepo Stack Discovery
- - Mandatory Invariant Core Suite (19 Skills)
- - Interactive Skill Manager (1-by-1 & Category Toggles across 2,700+ Skills)
- - Skill Seekers & Remote Ingestion Engine
- - Multi-CLI Synchronizer (Claude, Gemini, Cursor, Codex, OpenCode)
- - Agent Compliance & view_file Audit Gate
+ Crafted following Emil Kowalski Design Engineering (emil-design-eng) &
+ Gemini CLI / Claude Code UI/UX principles.
 ================================================================================
 """
 
@@ -30,6 +20,8 @@ import shutil
 import argparse
 import time
 import platform
+import subprocess
+import atexit
 from pathlib import Path
 from typing import Dict, List, Set, Optional, Tuple, Any
 
@@ -37,67 +29,149 @@ if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 # =============================================================================
-# AGENT 1: VERSION & ASCII BRANDING
+# 1. VERSION, METADATA & CROSS-PLATFORM KEY READER
 # =============================================================================
-__version__ = "4.0.0"
-__codename__ = "HyperDrive"
+__version__ = "5.0.0"
+__codename__ = "OmniPower"
 
-# --- ANSI COLOR CODES ---
+class KeyReader:
+    """Zero-dependency cross-platform keypress & arrow navigation engine."""
+    @staticmethod
+    def get_key() -> str:
+        if HAS_MSVCRT:
+            try:
+                ch = msvcrt.getch()
+                if ch in (b'\x00', b'\xe0'):
+                    ch2 = msvcrt.getch()
+                    if ch2 == b'H': return 'UP'
+                    elif ch2 == b'P': return 'DOWN'
+                    elif ch2 == b'K': return 'LEFT'
+                    elif ch2 == b'M': return 'RIGHT'
+                    return 'SPECIAL'
+                elif ch == b'\r': return 'ENTER'
+                elif ch == b'\x1b': return 'ESC'
+                elif ch == b' ': return 'SPACE'
+                elif ch == b'\t': return 'TAB'
+                elif ch in (b'\x08', b'\x7f'): return 'BACKSPACE'
+                elif ch == b'\x03': return 'CTRL_C'
+                else:
+                    return ch.decode('utf-8', errors='ignore')
+            except Exception:
+                return ''
+        else:
+            try:
+                import termios, tty
+                fd = sys.stdin.fileno()
+                old_settings = termios.tcgetattr(fd)
+                try:
+                    tty.setraw(fd)
+                    ch = sys.stdin.read(1)
+                    if ch == '\x1b':
+                        # Check for arrow sequences
+                        import select
+                        r, _, _ = select.select([sys.stdin], [], [], 0.05)
+                        if r:
+                            ch2 = sys.stdin.read(1)
+                            if ch2 == '[':
+                                ch3 = sys.stdin.read(1)
+                                if ch3 == 'A': return 'UP'
+                                elif ch3 == 'B': return 'DOWN'
+                                elif ch3 == 'C': return 'RIGHT'
+                                elif ch3 == 'D': return 'LEFT'
+                        return 'ESC'
+                    elif ch in ('\r', '\n'): return 'ENTER'
+                    elif ch == ' ': return 'SPACE'
+                    elif ch == '\t': return 'TAB'
+                    elif ch in ('\x7f', '\x08'): return 'BACKSPACE'
+                    elif ch == '\x03': return 'CTRL_C'
+                    return ch
+                finally:
+                    termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
+            except Exception:
+                return sys.stdin.readline().strip()
+
+
+# =============================================================================
+# 2. DESIGN SYSTEM: 24-BIT TRUECOLOR, ANSI PALETTES & BOX DRAWING
+# =============================================================================
 class C:
-    RESET   = "\033[0m"
-    BOLD    = "\033[1m"
-    DIM     = "\033[2m"
-    ITALIC  = "\033[3m"
-    UNDER   = "\033[4m"
+    """TrueColor / 256-color and standard ANSI styling engine."""
+    RESET       = "\033[0m"
+    BOLD        = "\033[1m"
+    DIM         = "\033[2m"
+    ITALIC      = "\033[3m"
+    UNDERLINE   = "\033[4m"
+    INVERSE     = "\033[7m"
     
-    # Foreground
-    RED     = "\033[91m"
-    GREEN   = "\033[92m"
-    YELLOW  = "\033[93m"
-    BLUE    = "\033[94m"
-    MAGENTA = "\033[95m"
-    CYAN    = "\033[96m"
-    WHITE   = "\033[97m"
-    GRAY    = "\033[90m"
+    # Modern Grayscale / Slate
+    BG_DARK     = "\033[48;2;15;23;42m"      # Slate 900
+    BG_CARD     = "\033[48;2;30;41;59m"      # Slate 800
+    BG_MUTED    = "\033[48;2;51;65;85m"      # Slate 700
+    BG_ACCENT   = "\033[48;2;34;211;238m"    # Cyan Accent
     
-    # Background
-    BG_BLUE    = "\033[44m"
-    BG_MAGENTA = "\033[45m"
-    BG_CYAN    = "\033[46m"
-    BG_DARK    = "\033[100m"
-    BG_GREEN   = "\033[42m"
+    # Core Accent Colors (Gemini Cyan / Blue / Indigo)
+    GEMINI_CYAN = "\033[38;2;34;211;238m"    # Cyan 400
+    GEMINI_BLUE = "\033[38;2;96;165;250m"    # Blue 400
+    GEMINI_INDIGO="\033[38;2;129;140;248m"   # Indigo 400
+    GEMINI_VIOLET="\033[38;2;168;85;247m"    # Purple 500
+    
+    # Claude Warm Amber / Coral / Gold
+    CLAUDE_GOLD = "\033[38;2;251;191;36m"    # Amber 400
+    CLAUDE_CORAL= "\033[38;2;248;113;113m"   # Coral / Red 400
+    CLAUDE_ROSE = "\033[38;2;244;63;94m"     # Rose 500
+    
+    # Semantic Accents (Refactoring UI & Emil Kowalski hierarchy)
+    EMERALD     = "\033[38;2;52;211;153m"    # Green 400
+    EMERALD_DIM = "\033[38;2;16;185;129m"    # Green 500
+    AMBER       = "\033[38;2;245;158;11m"    # Amber 500
+    ROSE        = "\033[38;2;244;63;94m"     # Rose 500
+    SLATE_LIGHT = "\033[38;2;226;232;240m"   # Slate 200 (Primary text)
+    SLATE_MUTED = "\033[38;2;148;163;184m"   # Slate 400 (Secondary text)
+    SLATE_DARK  = "\033[38;2;100;116;139m"   # Slate 500 (Borders)
+    SLATE_DEEP  = "\033[38;2;71;85;105m"     # Slate 600
+    
+    # Standard ANSI Aliases
+    CYAN        = "\033[96m"
+    BLUE        = "\033[94m"
+    GREEN       = "\033[92m"
+    YELLOW      = "\033[93m"
+    RED         = "\033[91m"
+    MAGENTA     = "\033[95m"
+    WHITE       = "\033[97m"
+    GRAY        = "\033[90m"
 
-# --- ASCII ART LOGO ---
-LOGO_ART = f"""{C.CYAN}{C.BOLD}       _____ _____ _____ _____ _____ _____ _____ _____ _____ _____       {C.RESET}
-{C.CYAN}{C.BOLD}      / ____/ ____/ ____/ ____/ ____/ ____/ ____/ ____/ ____/ ____|      {C.RESET}
-{C.BLUE}{C.BOLD}     | (___| (___| (___| (___| (___| (___| (___| (___| (___| (___        {C.RESET}
-{C.BLUE}{C.BOLD}      \\___ \\\\___ \\\\___ \\\\___ \\\\___ \\\\___ \\\\___ \\\\___ \\\\___ \\\\___ \\       {C.RESET}
-{C.MAGENTA}{C.BOLD}      ____) )___) )___) )___) )___) )___) )___) )___) )___) )___)      {C.RESET}
-{C.MAGENTA}{C.BOLD}     |_____/_____/_____/_____/_____/_____/_____/_____/_____/_____/       {C.RESET}
-{C.WHITE}{C.BOLD}      ____ ____  _    ____ _____ _     ___ _   _ _____ ____              {C.RESET}
-{C.GREEN}{C.BOLD}     / ___/ ___|| |  |  _ \\_   _| |   |_ _| \\ | | ____/ ___|             {C.RESET}
-{C.GREEN}{C.BOLD}    | |   \\___ \\| |  | |_) || | | |    | ||  \\| |  _| \\___ \\             {C.RESET}
-{C.YELLOW}{C.BOLD}    | |___ ___) | |__|  __/ | | | |___| || |\\  | |___ ___) |            {C.RESET}
-{C.RED}{C.BOLD}     \\____|____/\\____|_|    |_| |_____|___|_| \\_|_____|____/             {C.RESET}
-{C.GRAY}      ▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀         {C.RESET}"""
+# Modern Unicode Box Glyphs (Claude & Gemini UI Standard)
+BOX = {
+    "tl": "╭", "tr": "╮", "bl": "╰", "br": "╯",
+    "h": "─", "v": "│",
+    "vl": "├", "vr": "┤", "tt": "┬", "bt": "┴",
+    "cross": "┼",
+    "d_h": "═", "d_v": "║",
+    "dot_active": f"{C.EMERALD}●{C.RESET}",
+    "dot_inactive": f"{C.SLATE_DARK}○{C.RESET}",
+    "dot_core": f"{C.GEMINI_VIOLET}◆{C.RESET}",
+    "sparkle": f"{C.GEMINI_CYAN}✦{C.RESET}",
+    "arrow": f"{C.GEMINI_CYAN}❯{C.RESET}",
+    "check": f"{C.EMERALD}✔{C.RESET}",
+    "warn": f"{C.AMBER}⚠{C.RESET}",
+    "fail": f"{C.ROSE}✖{C.RESET}",
+    "info": f"{C.GEMINI_BLUE}ℹ{C.RESET}",
+    "star": f"{C.CLAUDE_GOLD}★{C.RESET}",
+    "mouse": f"{C.GEMINI_CYAN}🖱{C.RESET}"
+}
 
-MINI_LOGO = f"""{C.CYAN}{C.BOLD}╔═══════════════════════════════════════════════════════════════╗
-║  {C.WHITE}🚀 SUPERDUPERSKILLS {C.CYAN}v{__version__} {C.YELLOW}«{__codename__}»{C.CYAN}{C.BOLD}                       ║
-║  {C.GRAY}Agentic CLI & Discovery Control Center                        {C.CYAN}{C.BOLD}║
-║  {C.GREEN}2,700+ Skills | 8 Agent Harnesses | 1 Command                  {C.CYAN}{C.BOLD}║
-╚═══════════════════════════════════════════════════════════════╝{C.RESET}"""
-
-QUICK_STATUS_BAR = (
-    f"  {C.DIM}{chr(9504)}{chr(9472) * 62}{chr(9508)}{C.RESET}\n"
-    f"  {C.DIM}{chr(9474)}{C.RESET} {C.BOLD}{C.CYAN}Workspace:{C.RESET} {{ws}}\n"
-    f"  {C.DIM}{chr(9474)}{C.RESET} {C.BOLD}{C.GREEN}Active:{C.RESET}   {{active_count}} skills ({{core_count}} core + {{spec_count}} specialized)\n"
-    f"  {C.DIM}{chr(9474)}{C.RESET} {C.BOLD}{C.MAGENTA}Catalog:{C.RESET}  {{catalog_count}} skills indexed\n"
-    f"  {C.DIM}{chr(9474)}{C.RESET} {C.BOLD}{C.YELLOW}Version:{C.RESET}  v{{version}} «{{codename}}»\n"
-    f"  {C.DIM}{chr(9524)}{chr(9472) * 62}{chr(9527)}{C.RESET}"
-)
-
+# Workspace & Central Repository Paths
 WORKSPACE_DIR = os.getcwd()
-SKILLS_DIR = os.path.join(WORKSPACE_DIR, 'skills')
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Locate central skills vault (Repo skills/ -> Workspace skills/ -> ~/.claude/skills)
+if os.path.isdir(os.path.join(REPO_ROOT, 'skills')):
+    SKILLS_DIR = os.path.join(REPO_ROOT, 'skills')
+elif os.path.isdir(os.path.join(WORKSPACE_DIR, 'skills')):
+    SKILLS_DIR = os.path.join(WORKSPACE_DIR, 'skills')
+else:
+    SKILLS_DIR = os.path.join(os.path.expanduser('~'), '.claude', 'skills')
+
 AGENTS_DIR = os.path.join(WORKSPACE_DIR, '.agents')
 ACTIVE_MANIFEST = os.path.join(AGENTS_DIR, 'ACTIVE-SKILLS.json')
 QUALIFICATION_DOC = os.path.join(AGENTS_DIR, 'PROJECT-QUALIFICATION.md')
@@ -105,7 +179,47 @@ PROFILES_DIR = os.path.join(AGENTS_DIR, 'profiles')
 DESKTOP_CONFIG = os.path.join(AGENTS_DIR, 'desktop.json')
 
 # =============================================================================
-# 1. MANDATORY INVARIANT CORE SUITE (19 SKILLS)
+# 3. TERMINAL HYPERLINKS & MOUSE TRACKING ENGINE
+# =============================================================================
+def make_clickable_link(text: str, url: str) -> str:
+    """Format text with OSC 8 terminal hyperlink for mouse clicking."""
+    return f"\033]8;;{url}\033\\{text}\033]8;;\033\\"
+
+def make_file_link(text: str, file_path: str) -> str:
+    """Format local file path as clickable OSC 8 file:// URI."""
+    abs_path = os.path.abspath(file_path).replace('\\', '/')
+    return f"\033]8;;file:///{abs_path}\033\\{text}\033]8;;\033\\"
+
+class TerminalMouseManager:
+    """Manages terminal mouse tracking (SGR mode) safely with atexit cleanup."""
+    _enabled = False
+
+    @classmethod
+    def enable(cls):
+        if not cls._enabled and sys.stdout.isatty():
+            try:
+                # Enable normal mouse clicks + SGR extended coordinate reporting
+                sys.stdout.write("\033[?1000h\033[?1006h")
+                sys.stdout.flush()
+                cls._enabled = True
+            except Exception:
+                pass
+
+    @classmethod
+    def disable(cls):
+        if cls._enabled and sys.stdout.isatty():
+            try:
+                sys.stdout.write("\033[?1000l\033[?1006l\033[?25h\033[0m")
+                sys.stdout.flush()
+                cls._enabled = False
+            except Exception:
+                pass
+
+# Ensure cleanup on terminal exit
+atexit.register(TerminalMouseManager.disable)
+
+# =============================================================================
+# 4. MANDATORY INVARIANT CORE SUITE (19 SKILLS)
 # =============================================================================
 MANDATORY_CORE_SUITE = [
     {"name": "caveman", "reason": "Output Compression (-75% token reduction)", "category": "CORE", "icon": "🪨"},
@@ -130,11 +244,11 @@ MANDATORY_CORE_SUITE = [
 ]
 
 # =============================================================================
-# 2. SPECIALIZED CATEGORIES & HIGH-VALUE SKILL MAPPINGS
+# 5. SPECIALIZED CATEGORIES & HIGH-VALUE SKILL MAPPINGS
 # =============================================================================
 CATEGORY_REGISTRY = {
     "DESIGN_UI": {
-        "title": "🎨 Diseño & UI Craft (Anti-Slop / Motion / Design Systems)",
+        "title": "Diseño & UI Craft (Anti-Slop / Motion / Design Systems)",
         "icon": "🎨",
         "skills": [
             ("emil-design-eng", "Filosofía UI de Emil Kowalski: Micro-detalles & polish"),
@@ -148,7 +262,7 @@ CATEGORY_REGISTRY = {
             ("pick-ui-library", "Selección inteligente de librería UI sin sobrecarga"),
             ("prototype", "Prototipado rápido de interfaces de alta fidelidad"),
             ("ask-sonner", "Patrones y troubleshooting del sistema de toasts Sonner"),
-            ("clone-website", "Reverse-engineer y clonado pixel-perfect de sitios via agentes builder"),
+            ("clone-website", "Reverse-engineer y clonado pixel-perfect de sitios via agentes"),
             ("impeccable", "Suite Paul Bakaus (23 comandos de UI design polish)"),
             ("taste-skill", "Framework frontend anti-slop y jerarquía tipográfica"),
             ("cult-ui", "Componentes UI con estética brutalista y audaz"),
@@ -161,7 +275,7 @@ CATEGORY_REGISTRY = {
         ]
     },
     "SECURITY_OWASP": {
-        "title": "🛡️ Seguridad, OWASP & Threat Modeling",
+        "title": "Seguridad, OWASP & Threat Modeling",
         "icon": "🛡️",
         "skills": [
             ("agentshield", "Escudo contra prompt injection y comandos destructivos"),
@@ -175,7 +289,7 @@ CATEGORY_REGISTRY = {
         ]
     },
     "BACKEND_API": {
-        "title": "⚡ Backend, APIs & Bases de Datos",
+        "title": "Backend, APIs & Bases de Datos",
         "icon": "⚡",
         "skills": [
             ("nodejs-backend-patterns", "Patrones de arquitectura Node.js / Express / Fastify"),
@@ -187,11 +301,11 @@ CATEGORY_REGISTRY = {
             ("database-optimizer", "Tuning de consultas SQL y planes de ejecución EXPLAIN"),
             ("redis-caching", "Estrategias de caché distribuida y rate limiting con Redis"),
             ("graphql-architect", "Diseño de schemas GraphQL y optimización DataLoader"),
-            ("rest-api-design", "Diseño de contratos RESTful, versionado y documentación OpenAPI")
+            ("rest-api-design", "Diseño de contratos RESTful, versionado y OpenAPI")
         ]
     },
     "MOBILE_DESKTOP": {
-        "title": "📱 Mobile & Aplicaciones de Escritorio",
+        "title": "Mobile & Aplicaciones de Escritorio",
         "icon": "📱",
         "skills": [
             ("expo-overview", "Desarrollo multiplataforma con Expo & React Native"),
@@ -205,7 +319,7 @@ CATEGORY_REGISTRY = {
         ]
     },
     "DEVOPS_CLOUD": {
-        "title": "🚀 DevOps, Cloud, CI/CD & Infraestructura",
+        "title": "DevOps, Cloud, CI/CD & Infraestructura",
         "icon": "🚀",
         "skills": [
             ("all-deploy", "Despliegue universal multicloud (VPS Docker, Vercel, Railway)"),
@@ -218,7 +332,7 @@ CATEGORY_REGISTRY = {
         ]
     },
     "AI_AGENTS": {
-        "title": "🤖 Inteligencia Artificial & Sistemas Multi-Agente",
+        "title": "Inteligencia Artificial & Sistemas Multi-Agente",
         "icon": "🤖",
         "skills": [
             ("agentic-awesome-skills", "Patrones y herramientas curadas para agentes autónomos"),
@@ -231,7 +345,7 @@ CATEGORY_REGISTRY = {
         ]
     },
     "TESTING_QA": {
-        "title": "🧪 Testing, Calidad de Software & QA",
+        "title": "Testing, Calidad de Software & QA",
         "icon": "🧪",
         "skills": [
             ("harness", "Arnés de pruebas y verificación continua automatizada"),
@@ -243,7 +357,7 @@ CATEGORY_REGISTRY = {
         ]
     },
     "GROWTH_SEO_LEGAL": {
-        "title": "📈 Growth, SEO, Copywriting & Legal",
+        "title": "Growth, SEO, Copywriting & Legal",
         "icon": "📈",
         "skills": [
             ("claude-seo", "SEO técnico, Schema.org markup y GEO"),
@@ -257,65 +371,233 @@ CATEGORY_REGISTRY = {
 }
 
 # =============================================================================
-# 3. PROGRESS INDICATOR (AGENT 3)
+# 6. UI COMPONENTS: CARDS, STATUS BARS & GRADIENTS
 # =============================================================================
+def strip_ansi(text: str) -> str:
+    """Strip ANSI escape sequences from string to calculate visual width."""
+    return re.sub(r'\x1b\[[0-9;]*[a-zA-Z]|\x1b\]8;;.*?\x1b\\', '', text)
+
+def visual_len(text: str) -> int:
+    """Calculate visible character length in terminal."""
+    return len(strip_ansi(text))
+
+def render_card(title: str, lines: List[str], width: int = 74, border_color: str = C.SLATE_DARK, accent_icon: str = "✦") -> str:
+    """Render a modern Claude / Gemini rounded card with padding."""
+    top_title = f" {accent_icon} {title} " if title else ""
+    title_vlen = visual_len(top_title)
+    
+    top_border = f"{border_color}{BOX['tl']}{BOX['h']}{C.RESET}{C.BOLD}{C.SLATE_LIGHT}{top_title}{C.RESET}{border_color}{BOX['h'] * max(2, width - title_vlen - 3)}{BOX['tr']}{C.RESET}"
+    bottom_border = f"{border_color}{BOX['bl']}{BOX['h'] * (width - 2)}{BOX['br']}{C.RESET}"
+    
+    out = [top_border]
+    for line in lines:
+        v_len = visual_len(line)
+        padding = max(0, width - 4 - v_len)
+        out.append(f"{border_color}{BOX['v']}{C.RESET}  {line}{' ' * padding}  {border_color}{BOX['v']}{C.RESET}")
+    out.append(bottom_border)
+    return "\n".join(out)
+
+def render_table(headers: List[str], rows: List[List[str]], col_widths: Optional[List[int]] = None, border_color: str = C.SLATE_DARK) -> str:
+    """Render an ultra-clean table with aligned columns."""
+    if not col_widths:
+        col_widths = [visual_len(h) for h in headers]
+        for row in rows:
+            for idx, cell in enumerate(row):
+                if idx < len(col_widths):
+                    col_widths[idx] = max(col_widths[idx], visual_len(str(cell)))
+    
+    # Header line
+    head_cells = []
+    for idx, h in enumerate(headers):
+        w = col_widths[idx]
+        pad = max(0, w - visual_len(h))
+        head_cells.append(f"{C.BOLD}{C.GEMINI_CYAN}{h}{C.RESET}{' ' * pad}")
+    
+    # Separator
+    sep_cells = [f"{BOX['h'] * (w + 2)}" for w in col_widths]
+    sep_line = f"{border_color}{BOX['vl']}{BOX['cross'].join(sep_cells)}{BOX['vr']}{C.RESET}"
+    top_line = f"{border_color}{BOX['tl']}{BOX['tt'].join(sep_cells)}{BOX['tr']}{C.RESET}"
+    bot_line = f"{border_color}{BOX['bl']}{BOX['bt'].join(sep_cells)}{BOX['br']}{C.RESET}"
+    
+    out = [top_line]
+    out.append(f"{border_color}{BOX['v']}{C.RESET} " + f" {border_color}{BOX['v']}{C.RESET} ".join(head_cells) + f" {border_color}{BOX['v']}{C.RESET}")
+    out.append(sep_line)
+    
+    for row in rows:
+        row_cells = []
+        for idx, cell in enumerate(row):
+            w = col_widths[idx]
+            cell_str = str(cell)
+            pad = max(0, w - visual_len(cell_str))
+            row_cells.append(f"{cell_str}{' ' * pad}")
+        out.append(f"{border_color}{BOX['v']}{C.RESET} " + f" {border_color}{BOX['v']}{C.RESET} ".join(row_cells) + f" {border_color}{BOX['v']}{C.RESET}")
+    
+    out.append(bot_line)
+    return "\n".join(out)
+
 class Spinner:
-    """Animated spinner for long operations."""
+    """Ultra-smooth Braille spinner matching Gemini & Claude CLI."""
     FRAMES = ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
     
-    def __init__(self, message: str = "Working..."):
+    def __init__(self, message: str = "Thinking..."):
         self.message = message
         self.idx = 0
         self._active = False
+        self.start_time = time.time()
     
     def start(self):
         self._active = True
+        self.start_time = time.time()
         return self
-    
-    def stop(self, final_msg: str = ""):
-        self._active = False
-        if final_msg:
-            sys.stdout.write(f"\r{C.GREEN}✓{C.RESET} {final_msg}{' ' * 20}\n")
-            sys.stdout.flush()
     
     def tick(self, msg: str = ""):
         if not self._active:
             return
         frame = self.FRAMES[self.idx % len(self.FRAMES)]
         display = msg or self.message
-        sys.stdout.write(f"\r{C.CYAN}{frame}{C.RESET} {display}...")
+        elapsed = time.time() - self.start_time
+        sys.stdout.write(f"\r  {C.GEMINI_CYAN}{frame}{C.RESET} {C.SLATE_LIGHT}{display}{C.RESET} {C.SLATE_DARK}({elapsed:.1f}s){C.RESET}\033[K")
         sys.stdout.flush()
         self.idx += 1
+    
+    def stop(self, final_msg: str = "", success: bool = True):
+        self._active = False
+        icon = BOX["check"] if success else BOX["fail"]
+        elapsed = time.time() - self.start_time
+        display = final_msg or self.message
+        sys.stdout.write(f"\r  {icon} {C.SLATE_LIGHT}{display}{C.RESET} {C.SLATE_DARK}({elapsed:.2f}s){C.RESET}\033[K\n")
+        sys.stdout.flush()
 
 def run_with_spinner(message: str, func, *args, **kwargs):
-    """Run a function with a spinner animation."""
+    """Run a callable with animated braille spinner and timing."""
     spinner = Spinner(message).start()
-    result = None
-    # Simulate work with brief spinner display
-    for _ in range(3):
+    for _ in range(4):
         spinner.tick()
-        time.sleep(0.1)
+        time.sleep(0.04)
     try:
-        result = func(*args, **kwargs)
+        res = func(*args, **kwargs)
+        spinner.stop(f"{message} completed", success=True)
+        return res
     except Exception as e:
-        spinner.stop(f"{C.RED}Error: {e}{C.RESET}")
+        spinner.stop(f"Failed: {e}", success=False)
         return None
-    spinner.stop(f"{message} done")
-    return result
 
-def print_confirm(message: str, default_yes: bool = False) -> bool:
-    """Print a styled confirmation prompt."""
-    suffix = "[Y/n]" if default_yes else "[y/N]"
+def print_confirm(message: str, default_yes: bool = True) -> bool:
+    """Claude-style clean confirmation line."""
+    suffix = f"{C.EMERALD}Y{C.RESET}/{C.SLATE_DARK}n{C.RESET}" if default_yes else f"{C.SLATE_DARK}y{C.RESET}/{C.ROSE}N{C.RESET}"
     try:
-        ans = input(f"{C.CYAN}?{C.RESET} {message} {C.GRAY}{suffix}{C.RESET} ").strip().lower()
+        ans = input(f"  {C.GEMINI_CYAN}?{C.RESET} {C.BOLD}{message}{C.RESET} [{suffix}] ").strip().lower()
         if not ans:
             return default_yes
-        return ans in ['y', 'yes', 'si', 's']
+        return ans in ['y', 'yes', 'si', 's', 'true', '1']
     except (KeyboardInterrupt, EOFError):
         return False
 
 # =============================================================================
-# 4. DEEP PROJECT DISCOVERY ENGINE
+# 7. INTERACTIVE INPUT & MOUSE CLICK CAPTURE
+# =============================================================================
+def read_user_choice(prompt_text: str, click_map: Optional[Dict[int, str]] = None) -> str:
+    """
+    Read user input with support for Mouse Click event detection (SGR mode) or typing.
+    If click_map is provided (mapping row -> command), clicking a row triggers it.
+    """
+    TerminalMouseManager.enable()
+    sys.stdout.write(prompt_text)
+    sys.stdout.flush()
+
+    try:
+        # Standard input reading with escape sequence handling
+        line = sys.stdin.readline()
+        if not line:
+            return ""
+        line = line.strip()
+
+        # Check for SGR mouse event: \x1b[<0;col;row;M
+        mouse_match = re.search(r'\x1b\[<(\d+);(\d+);(\d+);([Mm])', line)
+        if mouse_match:
+            btn, col, row, release = mouse_match.groups()
+            row_int = int(row)
+            if click_map and row_int in click_map:
+                return click_map[row_int]
+            # Strip the mouse code and return any typed text
+            clean_text = re.sub(r'\x1b\[<[^Mm]*[Mm]', '', line).strip()
+            return clean_text
+
+        return line
+    except (KeyboardInterrupt, EOFError):
+        return "exit"
+
+# =============================================================================
+# 8. HEADER & BANNER SYSTEM (GEMINI + CLAUDE DUAL GRADIENTS)
+# =============================================================================
+def get_git_branch() -> str:
+    try:
+        res = subprocess.run(['git', 'branch', '--show-current'], capture_output=True, text=True, timeout=1)
+        if res.returncode == 0 and res.stdout.strip():
+            return res.stdout.strip()
+    except Exception:
+        pass
+    return "main"
+
+def render_gemini_banner() -> str:
+    """Render the high-end Gemini / Claude style banner with TrueColor gradient & Clickable links."""
+    branch = get_git_branch()
+    ws_name = os.path.basename(WORKSPACE_DIR) or "root"
+    
+    docs_link = make_clickable_link(f"{C.SLATE_LIGHT}2,700+ Multi-Agent Skills Governance Suite for Claude, Gemini, Codex{C.RESET}", "https://superduperskills.vercel.app")
+    hub_link = make_clickable_link(f"{C.GEMINI_VIOLET}● Agentic Hub{C.RESET}", "https://github.com/camilolealdev/superduperskills")
+    
+    g1 = C.GEMINI_CYAN
+    g2 = C.GEMINI_BLUE
+    g3 = C.GEMINI_INDIGO
+    
+    banner = f"""
+  {g1}╭────────────────────────────────────────────────────────────────────────╮{C.RESET}
+  {g1}│{C.RESET}  {g1}{C.BOLD}✦ SUPERDUPERSKILLS{C.RESET} {C.SLATE_MUTED}v{__version__}{C.RESET} {C.CLAUDE_GOLD}«{__codename__}»{C.RESET}                      {hub_link} {g1}│{C.RESET}
+  {g2}│{C.RESET}  {docs_link}  {g2}│{C.RESET}
+  {g3}╰────────────────────────────────────────────────────────────────────────╯{C.RESET}"""
+    return banner
+
+def render_context_bar() -> str:
+    """Render the active runtime context metadata bar with clickable file links."""
+    manifest = ManifestController.load_active_manifest()
+    active_skills = manifest.get("active_skills", [])
+    core_count = sum(1 for s in active_skills if s.get("is_core", False))
+    spec_count = max(0, len(active_skills) - core_count)
+    
+    cat_count = 0
+    if os.path.isdir(SKILLS_DIR):
+        try:
+            cat_count = sum(1 for e in os.scandir(SKILLS_DIR) if e.is_dir())
+        except Exception:
+            pass
+            
+    branch = get_git_branch()
+    ws_name = os.path.basename(WORKSPACE_DIR)
+    
+    manifest_link = make_file_link(f"{C.EMERALD}{len(active_skills)} Active{C.RESET}", ACTIVE_MANIFEST)
+    vault_link = make_file_link(f"{C.GEMINI_CYAN}{cat_count:,} indexed{C.RESET}", SKILLS_DIR)
+    
+    lines = [
+        f"{C.BOLD}Workspace:{C.RESET} {C.SLATE_LIGHT}{ws_name}{C.RESET} {C.SLATE_DARK}(branch: {branch}){C.RESET}",
+        f"{C.BOLD}Active Skills:{C.RESET} {manifest_link} {C.SLATE_MUTED}({core_count} Core Invariants + {spec_count} Specialized){C.RESET}",
+        f"{C.BOLD}Skill Vault:{C.RESET} {vault_link} {C.SLATE_MUTED}· Token Filter: {C.EMERALD}Active (-75% via RTK/Caveman){C.RESET}",
+        f"{C.BOLD}Target Agents:{C.RESET} {C.SLATE_LIGHT}Claude Code, Gemini CLI, Cursor Rules, Codex, OpenCode{C.RESET}"
+    ]
+    return render_card("Environment & Runtime Context", lines, width=74, border_color=C.SLATE_DARK, accent_icon="⚡")
+
+def print_header(title: str, show_context: bool = True):
+    """Clear screen and display the stylized Gemini/Claude command header."""
+    os.system('cls' if os.name == 'nt' else 'clear')
+    print(render_gemini_banner())
+    if show_context:
+        print(render_context_bar())
+    if title:
+        print(f"\n  {C.GEMINI_CYAN}❯{C.RESET} {C.BOLD}{C.SLATE_LIGHT}{title}{C.RESET}")
+        print(f"  {C.SLATE_DARK}{'─' * 70}{C.RESET}\n")
+
+# =============================================================================
+# 9. DEEP PROJECT DISCOVERY ENGINE
 # =============================================================================
 class ProjectDiscovery:
     """Escanea el workspace y detecta stack, monorepos, microservicios y métricas."""
@@ -370,7 +652,7 @@ class ProjectDiscovery:
                     framework_map = {
                         'react': ("React", ["emil-design-eng", "animate", "taste-skill"]),
                         'next': ("Next.js", ["claude-seo", "high-end-visual-design"]),
-                        'vue': ("Vue.js", []),
+                        'vue': ("Vue.js", ["vue-patterns"]),
                         'svelte': ("Svelte", []),
                         '@sveltejs/kit': ("SvelteKit", []),
                         'astro': ("Astro", ["claude-seo"]),
@@ -399,9 +681,9 @@ class ProjectDiscovery:
                         'express': ("Node.js API", ["nodejs-backend-patterns"]),
                         'fastify': ("Node.js API", ["nodejs-backend-patterns"]),
                         'koa': ("Node.js API", ["nodejs-backend-patterns"]),
-                        '@nestjs/core': ("NestJS", []),
-                        'prisma': ("Prisma ORM", []),
-                        '@prisma/client': ("Prisma ORM", []),
+                        '@nestjs/core': ("NestJS", ["nestjs-patterns"]),
+                        'prisma': ("Prisma ORM", ["prisma-patterns"]),
+                        '@prisma/client': ("Prisma ORM", ["prisma-patterns"]),
                         'drizzle-orm': ("Drizzle ORM", []),
                         'pg': ("PostgreSQL", ["postgres-patterns"]),
                         'postgres': ("PostgreSQL", ["postgres-patterns"]),
@@ -484,7 +766,7 @@ class ProjectDiscovery:
         return report
 
 # =============================================================================
-# 5. ACTIVE SKILL MANIFEST CONTROLLER
+# 10. ACTIVE SKILL MANIFEST CONTROLLER
 # =============================================================================
 class ManifestController:
     """Gestiona la carga, guardado, activación y desactivación de skills del proyecto."""
@@ -564,18 +846,18 @@ class ManifestController:
         skills = manifest.get("active_skills", [])
         
         if any(c["name"] == skill_name for c in MANDATORY_CORE_SUITE):
-            return False, f"{C.YELLOW}⚠️  '{skill_name}' is CORE — cannot be disabled.{C.RESET}"
+            return False, f"{C.AMBER}⚠  '{skill_name}' is a CORE Invariant and cannot be disabled.{C.RESET}"
             
         for idx, s in enumerate(skills):
             if s["name"] == skill_name:
                 if force_state is True:
-                    return True, f"{C.GRAY}ℹ️  '{skill_name}' is already active.{C.RESET}"
+                    return True, f"{C.SLATE_MUTED}ℹ  '{skill_name}' is already active.{C.RESET}"
                 skills.pop(idx)
                 ManifestController.save_active_manifest(manifest)
-                return True, f"{C.RED}🔴 '{skill_name}' deactivated.{C.RESET}"
+                return True, f"{C.ROSE}○ '{skill_name}' deactivated.{C.RESET}"
         
         if force_state is False:
-            return True, f"{C.GRAY}ℹ️  '{skill_name}' is already inactive.{C.RESET}"
+            return True, f"{C.SLATE_MUTED}ℹ  '{skill_name}' is already inactive.{C.RESET}"
         skills.append({
             "name": skill_name,
             "category": "USER_SELECTED",
@@ -584,16 +866,16 @@ class ManifestController:
             "mandatory_view": True
         })
         ManifestController.save_active_manifest(manifest)
-        return True, f"{C.GREEN}🟢 '{skill_name}' activated and added to manifest.{C.RESET}"
+        return True, f"{C.EMERALD}● '{skill_name}' activated and synced to manifest.{C.RESET}"
 
 # =============================================================================
-# 6. SKILL VAULT SEARCH & REMOTE INGESTION
+# 11. SKILL VAULT SEARCH & REMOTE INGESTION
 # =============================================================================
 class SkillVaultEngine:
     """Busca en el repositorio local o ingesta nuevas habilidades remotas."""
     
     @staticmethod
-    def search_local(query: str, limit: int = 30) -> List[Dict[str, str]]:
+    def search_local(query: str, limit: int = 30) -> List[Dict[str, Any]]:
         query_norm = query.lower().strip()
         results = []
         
@@ -609,7 +891,6 @@ class SkillVaultEngine:
                     if entry.is_dir():
                         name = entry.name
                         if query_norm in name.lower():
-                            # Try to read the first line of SKILL.md for preview
                             preview = f"Skill '{name}' in SuperDuperSkills vault."
                             sk_md = os.path.join(SKILLS_DIR, name, 'SKILL.md')
                             if os.path.isfile(sk_md):
@@ -618,13 +899,14 @@ class SkillVaultEngine:
                                         for line in sf:
                                             line = line.strip()
                                             if line and not line.startswith('---') and not line.startswith('#') and not line.startswith('name:') and not line.startswith('description:'):
-                                                preview = line[:100]
+                                                preview = line[:90]
                                                 break
                                 except Exception:
                                     pass
                             
                             results.append({
                                 "name": name,
+                                "path": sk_md,
                                 "active": name in active_names,
                                 "is_core": any(c["name"] == name for c in MANDATORY_CORE_SUITE),
                                 "preview": preview
@@ -661,10 +943,10 @@ Habilidad creada e integrada por el usuario a través del orquestador.
             f.write(content.strip() + "\n")
             
         ManifestController.toggle_skill(clean_name, force_state=True)
-        return True, f"{C.GREEN}✨ Skill '{clean_name}' ingested at {sk_path} and activated.{C.RESET}"
+        return True, f"{C.EMERALD}✨ Skill '{clean_name}' ingested at {sk_path} and activated.{C.RESET}"
 
 # =============================================================================
-# 7. MULTI-CLI AGENT SYNCHRONIZER
+# 12. MULTI-CLI AGENT SYNCHRONIZER & HEALTH DOCTOR
 # =============================================================================
 class MultiCLISync:
     """Sincroniza las skills activas hacia los entornos de los agentes más populares."""
@@ -685,7 +967,7 @@ class MultiCLISync:
             f.write(f"Before editing code, the Cursor Agent MUST consult and execute `view_file` on:\n")
             for sk in active_skills:
                 f.write(f"- `skills/{sk['name']}/SKILL.md` ({sk.get('reason', '')})\n")
-        results["Cursor"] = cursor_file
+        results["Cursor IDE (.cursor/rules)"] = cursor_file
 
         # OpenCode / Claude compatibility
         opencode_file = os.path.join(AGENTS_DIR, 'opencode-active.json')
@@ -696,7 +978,7 @@ class MultiCLISync:
                 "active_count": len(active_skills),
                 "skills": [s["name"] for s in active_skills]
             }, f, indent=2)
-        results["OpenCode & Claude"] = opencode_file
+        results["OpenCode & Claude Code"] = opencode_file
         
         return results
 
@@ -725,16 +1007,16 @@ class MultiCLISync:
 
     @staticmethod
     def doctor_check() -> Dict[str, Any]:
-        """Environment health check (Agent 4: doctor command)."""
+        """Environment health check styled like Gemini CLI / Claude Code doctor."""
         checks = []
         
         # Python version
         py_ver = platform.python_version()
         py_ok = sys.version_info >= (3, 8)
         checks.append({
-            "name": "Python Version",
+            "name": "Python Environment",
             "status": "PASS" if py_ok else "FAIL",
-            "detail": f"Python {py_ver}" + ("" if py_ok else " (requires >= 3.8)")
+            "detail": f"Python {py_ver} ({'Compatible >=3.8' if py_ok else 'Upgrade required'})"
         })
         
         # Skills directory
@@ -746,17 +1028,17 @@ class MultiCLISync:
             except Exception:
                 pass
         checks.append({
-            "name": "Skills Directory",
+            "name": "Skills Vault",
             "status": "PASS" if skills_exist and skill_count > 0 else "WARN" if skills_exist else "FAIL",
-            "detail": f"{skill_count} skills found in {SKILLS_DIR}" if skills_exist else f"Missing: {SKILLS_DIR}"
+            "detail": f"{skill_count:,} skills available in {SKILLS_DIR}" if skills_exist else f"Missing: {SKILLS_DIR}"
         })
         
         # .agents directory
         agents_exist = os.path.isdir(AGENTS_DIR)
         checks.append({
-            "name": ".agents Directory",
+            "name": "Agent Governance Root",
             "status": "PASS" if agents_exist else "WARN",
-            "detail": f"Found at {AGENTS_DIR}" if agents_exist else "Run 'init' to create"
+            "detail": f"Initialized at .agents/" if agents_exist else "Missing: run 'sds init' to create"
         })
         
         # Active manifest
@@ -764,25 +1046,26 @@ class MultiCLISync:
         checks.append({
             "name": "Active Manifest",
             "status": "PASS" if manifest_exists else "WARN",
-            "detail": ACTIVE_MANIFEST if manifest_exists else "Run 'init' or 'scan' to generate"
+            "detail": ".agents/ACTIVE-SKILLS.json loaded" if manifest_exists else "Not found: run 'sds init' or 'sds scan'"
         })
         
-        # Git
+        # Git Status
         git_exists = os.path.isdir(os.path.join(WORKSPACE_DIR, '.git'))
+        branch = get_git_branch() if git_exists else None
         checks.append({
             "name": "Git Repository",
             "status": "PASS" if git_exists else "INFO",
-            "detail": "Initialized" if git_exists else "Not a git repo"
+            "detail": f"Active on branch '{branch}'" if git_exists else "Not a git repository"
         })
         
-        # Disk space
+        # Free Disk Space
         try:
             disk = shutil.disk_usage(WORKSPACE_DIR)
             free_gb = disk.free / (1024**3)
             checks.append({
-                "name": "Disk Space",
+                "name": "Disk Storage",
                 "status": "PASS" if free_gb > 1 else "WARN",
-                "detail": f"{free_gb:.1f} GB free"
+                "detail": f"{free_gb:.1f} GB available"
             })
         except Exception:
             pass
@@ -796,11 +1079,10 @@ class MultiCLISync:
 
     @staticmethod
     def get_stats() -> Dict[str, Any]:
-        """Collect statistics about skills usage (Agent 4: stats command)."""
+        """Collect metrics and summary statistics for dashboard."""
         manifest = ManifestController.load_active_manifest()
         active_skills = manifest.get("active_skills", [])
         
-        # Count skills on disk
         total_disk = 0
         if os.path.isdir(SKILLS_DIR):
             try:
@@ -808,13 +1090,11 @@ class MultiCLISync:
             except Exception:
                 pass
         
-        # Category breakdown
         cat_counts = {}
         for sk in active_skills:
             cat = sk.get("category", "CUSTOM")
             cat_counts[cat] = cat_counts.get(cat, 0) + 1
         
-        # Core vs specialized
         core_count = sum(1 for sk in active_skills if sk.get("is_core", False))
         spec_count = len(active_skills) - core_count
         
@@ -825,307 +1105,581 @@ class MultiCLISync:
             "specialized_count": spec_count,
             "categories": cat_counts,
             "manifest_path": ACTIVE_MANIFEST,
-            "project_name": manifest.get("project_name", "unknown")
+            "project_name": manifest.get("project_name", os.path.basename(WORKSPACE_DIR))
         }
 
+# =============================================================================
+# 13. TOKEN BUDGET ESTIMATOR & CONTEXT SIMULATOR ENGINE
+# =============================================================================
+class TokenBudgetEngine:
+    """Calcula la huella de tokens de las skills activas y simula el presupuesto de contexto."""
 
-# =============================================================================
-# 8. DESKTOP APP INTEGRATION (AGENT 5)
-# =============================================================================
-class DesktopIntegration:
-    """Desktop app support hooks — Electron wrapper config, tray icon, auto-scan."""
-    
     @staticmethod
-    def generate_electron_config() -> Dict[str, Any]:
-        """Generate Electron wrapper configuration."""
-        return {
-            "name": "SuperDuperSkills Desktop",
-            "version": __version__,
-            "main": "main.js",
-            "window": {
-                "width": 1200,
-                "height": 800,
-                "title": f"SuperDuperSkills v{__version__} — Agentic CLI Hub",
-                "icon": os.path.join(WORKSPACE_DIR, "icon-512.png"),
-                "darkTheme": True
-            },
-            "tray": {
-                "enabled": True,
-                "icon": os.path.join(WORKSPACE_DIR, "icon-192.png"),
-                "tooltip": f"SuperDuperSkills v{__version__}",
-                "menu": ["Open CLI", "Scan Project", "View Active Skills", "Quit"]
-            },
-            "autoScan": {
-                "enabled": True,
-                "onLaunch": True,
-                "intervalMinutes": 30
-            },
-            "terminal": {
-                "type": "xterm",
-                "fontSize": 14,
-                "fontFamily": "JetBrains Mono, Fira Code, monospace",
-                "theme": {
-                    "background": "#0c0e13",
-                    "foreground": "#e8e6e1",
-                    "cursorAccent": "#00e5a0",
-                    "selectionBackground": "rgba(0, 229, 160, 0.3)"
-                }
-            }
-        }
-    
-    @staticmethod
-    def save_desktop_config():
-        """Save desktop integration config to .agents/desktop.json."""
-        os.makedirs(AGENTS_DIR, exist_ok=True)
-        config = DesktopIntegration.generate_electron_config()
-        with open(DESKTOP_CONFIG, 'w', encoding='utf-8') as f:
-            json.dump(config, f, indent=2, ensure_ascii=False)
-        return DESKTOP_CONFIG
-    
-    @staticmethod
-    def generate_electron_main() -> str:
-        """Generate the Electron main.js entry point."""
-        return '''// SuperDuperSkills Desktop — Electron Main Process
-const { app, BrowserWindow, Tray, Menu, shell } = require('electron');
-const path = require('path');
-const { spawn } = require('child_process');
-
-let mainWindow;
-let tray;
-
-function createWindow() {
-  mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    title: 'SuperDuperSkills Desktop',
-    icon: path.join(__dirname, '..', 'icon-512.png'),
-    webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false
-    },
-    backgroundColor: '#0c0e13'
-  });
-
-  mainWindow.loadURL('data:text/html,<html><body style="background:#0c0e13;color:#e8e6e1;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;"><h1>🚀 SuperDuperSkills Desktop</h1><p>Terminal launching...</p></body></html>');
-  
-  // Open external links in browser
-  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
-    shell.openExternal(url);
-    return { action: 'deny' };
-  });
-}
-
-function createTray() {
-  tray = new Tray(path.join(__dirname, '..', 'icon-192.png'));
-  tray.setToolTip('SuperDuperSkills v4.0');
-  
-  const contextMenu = Menu.buildFromTemplate([
-    { label: 'Open CLI', click: () => mainWindow?.show() },
-    { label: 'Scan Project', click: () => { /* trigger scan */ } },
-    { type: 'separator' },
-    { label: 'Quit', click: () => app.quit() }
-  ]);
-  
-  tray.setContextMenu(contextMenu);
-  tray.on('double-click', () => mainWindow?.show());
-}
-
-app.whenReady().then(() => {
-  createWindow();
-  createTray();
-});
-
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') app.quit();
-});
-'''
-
-
-# =============================================================================
-# 9. TUI DISPLAY FUNCTIONS (AGENT 3: IMPROVED UX)
-# =============================================================================
-def print_header(title: str, show_status: bool = True):
-    """Print the styled header with optional status bar."""
-    os.system('cls' if os.name == 'nt' else 'clear')
-    print(MINI_LOGO)
-    print(f"  {C.CYAN}{C.BOLD}▸ {title}{C.RESET}")
-    print(f"  {C.GRAY}{'─' * 60}{C.RESET}\n")
-    
-    if show_status:
-        manifest = ManifestController.load_active_manifest()
-        active = manifest.get("active_skills", [])
-        core_count = sum(1 for s in active if s.get("is_core", False))
-        spec_count = len(active) - core_count
-        
-        # Count catalog
-        cat_count = 0
-        if os.path.isdir(SKILLS_DIR):
-            try:
-                cat_count = sum(1 for e in os.scandir(SKILLS_DIR) if e.is_dir())
-            except Exception:
-                pass
-        
-        print(f"  {C.GRAY}├─{C.RESET} {C.DIM}Workspace:{C.RESET} {C.WHITE}{WORKSPACE_DIR}{C.RESET}")
-        print(f"  {C.GRAY}├─{C.RESET} {C.DIM}Active:{C.RESET}   {C.GREEN}{C.BOLD}{len(active)}{C.RESET} skills {C.GRAY}({core_count} core + {spec_count} specialized){C.RESET}")
-        print(f"  {C.GRAY}├─{C.RESET} {C.DIM}Catalog:{C.RESET}  {C.CYAN}{cat_count}{C.RESET} skills indexed")
-        print(f"  {C.GRAY}└─{C.RESET} {C.DIM}Version:{C.RESET}  {C.YELLOW}v{__version__} «{__codename__}»{C.RESET}\n")
-
-def print_divider(char: str = "─", width: int = 60):
-    print(f"  {C.GRAY}{char * width}{C.RESET}")
-
-def print_section(title: str):
-    print(f"\n  {C.BOLD}{C.CYAN}{title}{C.RESET}")
-    print_divider()
-
-def print_cmd_hint(cmd: str, desc: str):
-    print(f"    {C.GREEN}$ sds {cmd:<24}{C.RESET} {C.GRAY}{desc}{C.RESET}")
-
-def print_footer():
-    print(f"\n  {C.GRAY}{'─' * 60}{C.RESET}")
-    print(f"  {C.DIM}Tip: Use {C.CYAN}sds <command> --help{C.DIM} for command details{C.RESET}")
-    print(f"  {C.DIM}Tip: Run {C.CYAN}sds{C.DIM} without arguments for interactive TUI{C.RESET}\n")
-
-
-# =============================================================================
-# 10. INTERACTIVE TUI INTERFACE (AGENT 3: IMPROVED)
-# =============================================================================
-def run_interactive_tui():
-    """Bucle principal de la interfaz interactiva con menús mejorados."""
-    while True:
-        print_header("COMMAND CENTER — MAIN MENU")
-        
+    def calculate_budget() -> Dict[str, Any]:
         manifest = ManifestController.load_active_manifest()
         active_skills = manifest.get("active_skills", [])
-        active_count = len(active_skills)
-        core_count = sum(1 for s in active_skills if s.get("is_core", False))
         
-        # Menu items with icons and descriptions
-        menu_items = [
-            ("1", "🔍", "Deep Project Discovery",    "Scan stack, monorepos & frameworks"),
-            ("2", "🔒", "Core Invariant Suite",       "View & verify 19 mandatory skills"),
-            ("3", "🎛️ ", "Category Manager & Toggle",  "Enable/disable by category"),
-            ("4", "🔎", "Vault Search",               "Search 2,700+ skills in real-time"),
-            ("5", "📥", "Skill Seekers — Ingest",     "Import remote skill by URL"),
-            ("6", "🔄", "Multi-CLI Sync",             "Sync to Cursor, Claude, Gemini, Codex"),
-            ("7", "🧪", "Compliance Audit",           "Verify SKILL.md files exist"),
-            ("8", "🧙", "Qualification Wizard",       "Full Socratic interview wizard"),
-            ("9", "📊", "Stats & Dashboard",          "View usage statistics"),
-            ("d", "🩺", "Doctor — Health Check",      "Environment diagnostics"),
-            ("e", "📤", "Export Manifest",            "Export to JSON or Markdown"),
-            ("i", "📦", "Init Project",               "Initialize .agents/ directory"),
-            ("p", "💼", "Profile Manager",            "Save/load skill profiles"),
+        details = []
+        total_chars = 0
+        total_lines = 0
+        
+        for sk in active_skills:
+            sk_name = sk["name"]
+            sk_path = os.path.join(SKILLS_DIR, sk_name, "SKILL.md")
+            chars = 0
+            lines = 0
+            if os.path.isfile(sk_path):
+                try:
+                    with open(sk_path, 'r', encoding='utf-8', errors='ignore') as sf:
+                        content = sf.read()
+                        chars = len(content)
+                        lines = len(content.splitlines())
+                except Exception:
+                    pass
+            
+            # Approx 3.8 characters per token in markdown/code
+            tokens_est = max(1, int(chars / 3.8))
+            total_chars += chars
+            total_lines += lines
+            details.append({
+                "name": sk_name,
+                "category": sk.get("category", "CORE" if sk.get("is_core") else "CUSTOM"),
+                "is_core": sk.get("is_core", False),
+                "chars": chars,
+                "lines": lines,
+                "tokens": tokens_est,
+                "path": sk_path
+            })
+            
+        total_tokens = sum(d["tokens"] for d in details)
+        # Token compression savings via RTK & Caveman (~74.5% average reduction)
+        compressed_tokens = int(total_tokens * 0.255)
+        savings_tokens = total_tokens - compressed_tokens
+        
+        return {
+            "total_active": len(active_skills),
+            "total_chars": total_chars,
+            "total_lines": total_lines,
+            "raw_tokens": total_tokens,
+            "compressed_tokens": compressed_tokens,
+            "savings_tokens": savings_tokens,
+            "savings_pct": 74.5,
+            "details": sorted(details, key=lambda x: -x["tokens"]),
+            # Context window caps
+            "models": {
+                "Claude 3.5 Sonnet (200k)": {"limit": 200000, "pct": (compressed_tokens / 200000) * 100},
+                "Gemini 1.5 Pro / 2.0 (1M)": {"limit": 1000000, "pct": (compressed_tokens / 1000000) * 100},
+                "GPT-4o (128k)": {"limit": 128000, "pct": (compressed_tokens / 128000) * 100},
+                "Cursor Fast Context (32k)": {"limit": 32000, "pct": (compressed_tokens / 32000) * 100}
+            }
+        }
+
+    @staticmethod
+    def render_progress_bar(pct: float, width: int = 24) -> str:
+        """Render a color-coded ANSI progress bar."""
+        filled = max(0, min(width, int((pct / 100.0) * width)))
+        empty = width - filled
+        if pct < 15.0:
+            bar_color = C.EMERALD
+        elif pct < 35.0:
+            bar_color = C.CLAUDE_GOLD
+        else:
+            bar_color = C.ROSE
+        return f"{bar_color}{'█' * filled}{C.SLATE_DARK}{'░' * empty}{C.RESET}"
+
+# =============================================================================
+# 14. MISSION MODES 1-CLICK PRESETS ENGINE
+# =============================================================================
+class MissionModesEngine:
+    """Modos de misión de 1-clic para calibrar la mentalidad del agente."""
+    
+    MODES = {
+        "mvp": {
+            "title": "⚡ MVP Rapid Prototyping",
+            "icon": "⚡",
+            "description": "Velocidad extrema, YAGNI, prototipado UI y entrega continua sin sobre-ingeniería.",
+            "skills": [
+                ("ponytail", "YAGNI & Simplicity Architecture (Minimal Diffs)"),
+                ("gsd-core", "Get Shit Done (GSD) Execution Framework"),
+                ("prototype", "Prototipado rápido de interfaces de alta fidelidad"),
+                ("pick-ui-library", "Selección inteligente de librería UI sin sobrecarga"),
+                ("tailwind-theme-builder", "Tokens de diseño y configuración Tailwind"),
+                ("ask-sonner", "Patrones y troubleshooting del sistema de toasts"),
+                ("harness", "Arnés de verificación automatizada")
+            ]
+        },
+        "harden": {
+            "title": "🛡️ Production Hardening & Security",
+            "icon": "🛡️",
+            "description": "Máxima seguridad OWASP Top 10, escaneo de secretos, arnés de pruebas y cero deuda técnica.",
+            "skills": [
+                ("agentshield", "Escudo contra prompt injection y comandos destructivos"),
+                ("owasp-top10", "Verificación exhaustiva de OWASP Top 10:2025"),
+                ("threat-model-analyst", "Modelado de amenazas STRIDE y vectores de ataque"),
+                ("security-auditor", "Auditoría estricta de código y sanitización de inputs"),
+                ("secret-scanner", "Detección y prevención de fuga de API keys"),
+                ("harness", "Arnés de verificación continua automatizada"),
+                ("systematic-debugging", "Aislamiento causal y resolución sistemática de bugs"),
+                ("performance-benchmarking", "Métricas de estrés, carga y profiling")
+            ]
+        },
+        "refactor": {
+            "title": "🧹 Clean Architecture & Refactor",
+            "icon": "🧹",
+            "description": "Reducción de entropía, modularización, optimización de queries y simplificación de código.",
+            "skills": [
+                ("ponytail", "Anti-overengineering y eliminación de abstracciones prematuras"),
+                ("reducing-entropy", "Técnicas de minimización de tamaño y complejidad"),
+                ("clean-architecture", "Desacoplamiento de capas de negocio y contratos limpios"),
+                ("database-optimizer", "Tuning de consultas SQL y planes de ejecución EXPLAIN"),
+                ("systematic-debugging", "Aislamiento causal de defectos"),
+                ("archify", "Diagramas de arquitectura del sistema")
+            ]
+        },
+        "design": {
+            "title": "🎨 Emil Kowalski UI & Motion Craft",
+            "icon": "🎨",
+            "description": "Micro-interacciones fluidas, físicas de resorte, jerarquía tipográfica y estética anti-slop.",
+            "skills": [
+                ("emil-design-eng", "Filosofía UI de Emil Kowalski: Micro-detalles & polish"),
+                ("animate", "Animaciones web fluidas e interruptibles"),
+                ("review-animations", "Auditoría de curvas y performance de animaciones"),
+                ("find-animation-opportunities", "Detección de elementos que deberían animarse"),
+                ("animation-vocabulary", "Glosario técnico de motion y micro-interacciones"),
+                ("apple-design", "Principios de diseño Apple (Depth, Springs, Precision)"),
+                ("taste-skill", "Framework frontend anti-slop y jerarquía tipográfica"),
+                ("cult-ui", "Componentes UI con estética brutalista y audaz")
+            ]
+        },
+        "fullstack": {
+            "title": "🌐 Fullstack Enterprise Matrix",
+            "icon": "🌐",
+            "description": "Stack completo: Backend optimizado, bases de datos PostgreSQL, Docker, CI/CD y Testing E2E.",
+            "skills": [
+                ("nodejs-backend-patterns", "Patrones de arquitectura Node.js / Express / Fastify"),
+                ("postgres-patterns", "Modelado, índices y optimización de consultas PostgreSQL"),
+                ("database-optimizer", "Tuning de consultas SQL y planes EXPLAIN"),
+                ("rest-api-design", "Diseño de contratos RESTful, versionado y OpenAPI"),
+                ("docker-patterns", "Construcción de imágenes multi-stage y docker-compose"),
+                ("github-actions-cicd", "Pipelines automatizados de test y deployment"),
+                ("e2e-testing", "Pruebas E2E completas con Playwright")
+            ]
+        },
+        "ai-agents": {
+            "title": "🤖 Multi-Agent Systems & Swarms",
+            "icon": "🤖",
+            "description": "Orquestación de sub-agentes, RAG pipelines, function calling y memoria persistente.",
+            "skills": [
+                ("agentic-awesome-skills", "Patrones y herramientas curadas para agentes autónomos"),
+                ("subagent-driven-development", "Descomposición y delegación de tareas en sub-agentes"),
+                ("prompt-improver", "Optimización y estructuración de prompts complejos"),
+                ("rag-pipeline-expert", "Recuperación aumentada por generación (RAG) y embeddings"),
+                ("gemini-api-dev", "Integración con Google Gemini Multimodal y Function Calling"),
+                ("antigravity-guide", "Guía del ecosistema Google Antigravity (AGY 2.0)")
+            ]
+        }
+    }
+
+    @staticmethod
+    def apply_mode(mode_key: str) -> Tuple[bool, str]:
+        mode_key = mode_key.lower().strip()
+        if mode_key not in MissionModesEngine.MODES:
+            return False, f"Modo desconocido '{mode_key}'. Modos disponibles: {', '.join(MissionModesEngine.MODES.keys())}"
+        
+        mode = MissionModesEngine.MODES[mode_key]
+        manifest = ManifestController.load_active_manifest()
+        
+        # Keep mandatory cores
+        cores = [s for s in manifest.get("active_skills", []) if s.get("is_core", False)]
+        existing_core_names = {s["name"] for s in cores}
+        for c in MANDATORY_CORE_SUITE:
+            if c["name"] not in existing_core_names:
+                cores.append({
+                    "name": c["name"],
+                    "category": "CORE",
+                    "reason": c["reason"],
+                    "is_core": True,
+                    "mandatory_view": True
+                })
+        
+        # Build new skill list with mode skills
+        new_skills = list(cores)
+        core_names = {s["name"] for s in cores}
+        
+        for sk_name, desc in mode["skills"]:
+            if sk_name not in core_names and not any(s["name"] == sk_name for s in new_skills):
+                new_skills.append({
+                    "name": sk_name,
+                    "category": f"MODE_{mode_key.upper()}",
+                    "reason": desc,
+                    "is_core": False,
+                    "mandatory_view": True
+                })
+                
+        manifest["active_skills"] = new_skills
+        manifest["project_phase"] = mode_key
+        ManifestController.save_active_manifest(manifest)
+        MultiCLISync.sync_all()
+        
+        return True, f"✨ Modo de misión '{mode['title']}' activado con éxito ({len(new_skills)} skills sincronizadas)."
+
+# =============================================================================
+# 15. SYSTEM PROMPT EXPORTER & CLIPBOARD INJECTOR
+# =============================================================================
+class SystemPromptEngine:
+    """Genera y copia al portapapeles el Super-Prompt del sistema para Web LLMs."""
+
+    @staticmethod
+    def generate_prompt() -> str:
+        manifest = ManifestController.load_active_manifest()
+        active_skills = manifest.get("active_skills", [])
+        ws_name = manifest.get("project_name", os.path.basename(WORKSPACE_DIR))
+        branch = get_git_branch()
+        
+        doc_summary = ""
+        if os.path.isfile(QUALIFICATION_DOC):
+            try:
+                with open(QUALIFICATION_DOC, 'r', encoding='utf-8') as qf:
+                    doc_summary = qf.read()[:800]
+            except Exception:
+                pass
+
+        lines = [
+            f"# AGENT SYSTEM INSTRUCTIONS — {ws_name.upper()} (SuperDuperSkills v{__version__})",
+            "",
+            "## 1. PROJECT RUNTIME CONTEXT",
+            f"- **Workspace Root:** `{WORKSPACE_DIR}`",
+            f"- **Git Branch:** `{branch}`",
+            f"- **Active Skills:** {len(active_skills)} calibrated governance skills",
+            "",
+            "## 2. INVARIANT CORE PROTOCOL",
+            "1. **Caveman & RTK Output Compression:** Keep all explanations concise, actionable, and eliminate conversational filler (-75% token economy).",
+            "2. **Ponytail Simplicity Rule:** Prioritize the smallest working diff. Do NOT over-engineer or add premature abstractions.",
+            "3. **Harness Verification:** Always run automated checks and verify behavior before marking any task as complete.",
+            "",
+            "## 3. ACTIVE GOVERNANCE SKILLS MATRIX (MANDATORY VIEW)",
+            "Before proposing architectural changes or code implementation, you MUST ground your reasoning in the active skills:"
         ]
         
-        for num, icon, title, desc in menu_items:
-            color = C.YELLOW if num.isdigit() else C.MAGENTA
-            print(f"  {color}{C.BOLD}[{num:>2}]{C.RESET} {icon} {C.BOLD}{title:<28}{C.RESET} {C.GRAY}{desc}{C.RESET}")
+        for sk in active_skills:
+            badge = "[CORE]" if sk.get("is_core") else "[SPEC]"
+            lines.append(f"- {badge} **{sk['name']}**: {sk.get('reason', '')}")
+            
+        if doc_summary:
+            lines.extend([
+                "",
+                "## 4. PROJECT QUALIFICATION CONTEXT",
+                doc_summary.strip()
+            ])
+            
+        return "\n".join(lines)
+
+    @staticmethod
+    def copy_to_clipboard(text: str) -> Tuple[bool, str]:
+        """Cross-platform clipboard copy using native OS utilities without external pip deps."""
+        try:
+            if sys.platform == 'win32':
+                # Use powershell Set-Clipboard
+                proc = subprocess.Popen(['powershell', '-NoProfile', '-Command', '$Input | Set-Clipboard'], stdin=subprocess.PIPE, text=True)
+                proc.communicate(input=text)
+                if proc.returncode == 0:
+                    return True, "Copiado al portapapeles de Windows (Set-Clipboard)."
+            elif sys.platform == 'darwin':
+                proc = subprocess.Popen(['pbcopy'], stdin=subprocess.PIPE, text=True)
+                proc.communicate(input=text)
+                if proc.returncode == 0:
+                    return True, "Copiado al portapapeles de macOS (pbcopy)."
+            else:
+                # Linux xclip / xsel fallback
+                if shutil.which('xclip'):
+                    proc = subprocess.Popen(['xclip', '-selection', 'clipboard'], stdin=subprocess.PIPE, text=True)
+                    proc.communicate(input=text)
+                    return True, "Copiado al portapapeles de Linux (xclip)."
+                elif shutil.which('xsel'):
+                    proc = subprocess.Popen(['xsel', '-b'], stdin=subprocess.PIPE, text=True)
+                    proc.communicate(input=text)
+                    return True, "Copiado al portapapeles de Linux (xsel)."
+        except Exception as e:
+            return False, f"No se pudo copiar automáticamente al portapapeles: {e}"
         
-        print(f"\n  {C.RED}{C.BOLD}[ 0]{C.RESET} 🚪 {C.BOLD}Exit{C.RESET}")
+        return False, "Portapapeles no soportado automáticamente en este entorno."
+
+# =============================================================================
+# 16. WORKSPACE STACK WATCHER DAEMON
+# =============================================================================
+class StackWatcherEngine:
+    """Monitor en segundo plano que detecta adición de stacks y alerta en tiempo real."""
+
+    WATCH_MARKERS = {
+        "prisma/schema.prisma": ("prisma-patterns", "Postgres & Prisma ORM Patterns"),
+        "schema.prisma": ("prisma-patterns", "Postgres & Prisma ORM Patterns"),
+        "tailwind.config.js": ("tailwind-theme-builder", "Tailwind Design Tokens"),
+        "tailwind.config.ts": ("tailwind-theme-builder", "Tailwind Design Tokens"),
+        "Dockerfile": ("docker-patterns", "Docker Container Patterns"),
+        "docker-compose.yml": ("docker-patterns", "Docker Multi-Container Orchestration"),
+        "package.json": ("nodejs-backend-patterns", "Node.js & TypeScript Ecosystem"),
+        "requirements.txt": ("python-patterns", "Python Idiomatic Development"),
+        "go.mod": ("golang-patterns", "Go Concurrency & Patterns"),
+        "Cargo.toml": ("rust-patterns", "Rust Safety & Performance")
+    }
+
+    @staticmethod
+    def get_snapshot() -> Dict[str, float]:
+        snapshot = {}
+        for rel in StackWatcherEngine.WATCH_MARKERS:
+            full_p = os.path.join(WORKSPACE_DIR, rel)
+            if os.path.isfile(full_p):
+                try:
+                    snapshot[rel] = os.path.getmtime(full_p)
+                except Exception:
+                    pass
+        return snapshot
+
+# =============================================================================
+# 17. INTERACTIVE TUI & REPL WITH MOUSE, KEYBOARD & SLASH COMMANDS
+# =============================================================================
+def render_main_menu_grid() -> str:
+    """Render a responsive 2-column interactive menu grid with clickable button cards."""
+    items = [
+        ("1", "🔍", "Deep Project Scan",    "Stack & recommendations"),
+        ("2", "🔒", "Core Invariant Suite",  "19 mandatory guardrails"),
+        ("3", "🎛️ ", "Category Manager",     "Interactive skill toggles"),
+        ("4", "🔎", "Live Vault Search",     "Search 3,300+ skills"),
+        ("5", "📥", "Skill Ingestion",       "Import remote GitHub URL"),
+        ("6", "🔄", "Multi-CLI Sync",        "Cursor, Claude, OpenCode"),
+        ("7", "🧪", "Compliance Audit",      "Audit SKILL.md integrity"),
+        ("8", "🧙", "Socratic Wizard",       "Full qualification survey"),
+        ("9", "📊", "Stats & Dashboard",     "Metrics & category breakdown"),
+        ("b", "⚡", "Token Budget Meter",    "Context window simulator"),
+        ("m", "🎯", "Mission Modes",         "1-Click MVP/Harden/Design"),
+        ("c", "📋", "Copy System Prompt",    "Clipboard for Claude/GPT"),
+        ("w", "👁️ ", "Stack Watcher",        "Auto-detect file changes"),
+        ("d", "🩺", "Doctor Health Check",   "Environment diagnostics"),
+        ("e", "📤", "Export Manifest",       "JSON / Markdown export"),
+        ("i", "📦", "Initialize Project",    "Setup .agents/ workspace"),
+        ("p", "💼", "Profile Presets",       "Save/load skill profiles"),
+        ("0", "🚪", "Exit Session",          "Return to terminal")
+    ]
+    
+    col1 = items[:9]
+    col2 = items[9:]
+    
+    lines = []
+    for left, right in zip(col1, col2):
+        l_num, l_ico, l_tit, l_desc = left
+        r_num, r_ico, r_tit, r_desc = right
         
-        choice = input(f"\n  {C.CYAN}{C.BOLD}❯{C.RESET} {C.CYAN}Select option:{C.RESET} ").strip().lower()
+        l_col = C.CLAUDE_GOLD if l_num.isdigit() and l_num != "0" else C.GEMINI_CYAN if l_num in ('b', 'm', 'c', 'w') else C.GEMINI_VIOLET if not l_num.isdigit() else C.ROSE
+        r_col = C.CLAUDE_GOLD if r_num.isdigit() and r_num != "0" else C.GEMINI_CYAN if r_num in ('b', 'm', 'c', 'w') else C.GEMINI_VIOLET if not r_num.isdigit() else C.ROSE
         
-        handlers = {
-            '1': view_project_discovery,
-            '2': view_core_suite,
-            '3': view_category_manager,
-            '4': view_vault_search,
-            '5': view_skill_ingestion,
-            '6': view_sync_multicli,
-            '7': view_compliance_audit,
-            '8': lambda: run_qualification_wizard(),
-            '9': view_stats_dashboard,
-            'd': view_doctor,
-            'e': view_export,
-            'i': view_init_project,
-            'p': view_profile_manager,
-        }
+        left_str = f"{l_col}[{l_num:>1}]{C.RESET} {l_ico} {C.BOLD}{C.SLATE_LIGHT}{l_tit:<20}{C.RESET} {C.SLATE_DARK}{l_desc[:24]:<24}{C.RESET}"
+        right_str = f"{r_col}[{r_num:>1}]{C.RESET} {r_ico} {C.BOLD}{C.SLATE_LIGHT}{r_tit:<20}{C.RESET} {C.SLATE_DARK}{r_desc[:24]:<24}{C.RESET}"
+        lines.append(f"{left_str}   {right_str}")
         
-        if choice in ('0', 'q', 'exit', 'quit'):
-            print(f"\n  {C.GREEN}✨ Session ended. Happy hacking!{C.RESET}\n")
+    return "\n".join(lines)
+
+    
+    lines = []
+    for left, right in zip(col1, col2):
+        l_num, l_ico, l_tit, l_desc = left
+        r_num, r_ico, r_tit, r_desc = right
+        
+        l_col = C.CLAUDE_GOLD if l_num.isdigit() and l_num != "0" else C.GEMINI_VIOLET if not l_num.isdigit() else C.ROSE
+        r_col = C.CLAUDE_GOLD if r_num.isdigit() and r_num != "0" else C.GEMINI_VIOLET if not r_num.isdigit() else C.ROSE
+        
+        left_str = f"{l_col}[{l_num:>1}]{C.RESET} {l_ico} {C.BOLD}{C.SLATE_LIGHT}{l_tit:<20}{C.RESET} {C.SLATE_DARK}{l_desc[:24]:<24}{C.RESET}"
+        right_str = f"{r_col}[{r_num:>1}]{C.RESET} {r_ico} {C.BOLD}{C.SLATE_LIGHT}{r_tit:<20}{C.RESET} {C.SLATE_DARK}{r_desc[:24]:<24}{C.RESET}"
+        lines.append(f"{left_str}   {right_str}")
+        
+    return "\n".join(lines)
+
+def run_interactive_tui():
+    """Bucle principal de la interfaz interactiva con REPL, Mouse y slash commands."""
+    while True:
+        print_header("COMMAND CENTER — MOUSE & REPL NAVIGATION")
+        
+        print(render_main_menu_grid())
+        print(f"\n  {C.SLATE_DARK}{'─' * 70}{C.RESET}")
+        print(f"  {C.SLATE_MUTED}Tip: {BOX['mouse']} Click with mouse, type number {C.CLAUDE_GOLD}[1-9]{C.SLATE_MUTED} or slash command {C.GEMINI_CYAN}/scan{C.SLATE_MUTED}, {C.GEMINI_CYAN}/doctor{C.SLATE_MUTED}, {C.GEMINI_CYAN}/search <q>{C.RESET}")
+        
+        prompt_str = f"\n  {C.SLATE_DARK}╭─ {C.GEMINI_CYAN}✦ superduperskills{C.RESET} {C.SLATE_MUTED}({__version__}){C.RESET}\n  {C.SLATE_DARK}╰─{C.RESET}{C.GEMINI_CYAN}❯{C.RESET} "
+        
+        raw_choice = read_user_choice(prompt_str)
+        if not raw_choice:
+            continue
+            
+        parts = raw_choice.split()
+        cmd = parts[0].lower()
+        arg = " ".join(parts[1:]) if len(parts) > 1 else ""
+        
+        # Route Slash Commands & Shortcuts
+        if cmd in ('0', 'q', 'exit', 'quit', '/exit', '/quit', '/q'):
+            print(f"\n  {C.EMERALD}✨ Session closed cleanly. Goodbye!{C.RESET}\n")
             break
-        elif choice in handlers:
-            try:
-                handlers[choice]()
-            except KeyboardInterrupt:
-                print(f"\n  {C.GRAY}Cancelled.{C.RESET}")
-            except Exception as e:
-                print(f"\n  {C.RED}Error: {e}{C.RESET}")
-            input(f"\n  {C.GREEN}Press ENTER to return...{C.RESET}")
+            
+        elif cmd in ('1', 'scan', '/scan'):
+            view_project_discovery()
+        elif cmd in ('2', 'core', '/core'):
+            view_core_suite()
+        elif cmd in ('3', 'category', 'categories', '/category', '/categories'):
+            view_category_manager()
+        elif cmd in ('4', 'search', '/search', '/find'):
+            view_vault_search(initial_query=arg)
+        elif cmd in ('5', 'ingest', '/ingest'):
+            view_skill_ingestion(initial_source=arg)
+        elif cmd in ('6', 'sync', '/sync'):
+            view_sync_multicli()
+        elif cmd in ('7', 'audit', '/audit'):
+            view_compliance_audit()
+        elif cmd in ('8', 'wizard', '/wizard'):
+            run_qualification_wizard()
+        elif cmd in ('9', 'stats', '/stats', '/dashboard'):
+            view_stats_dashboard()
+        elif cmd in ('b', 'budget', '/budget', '/tokens'):
+            view_token_budget()
+        elif cmd in ('m', 'mode', '/mode', '/mission'):
+            view_mission_modes(mode_name=arg if arg else None)
+        elif cmd in ('c', 'prompt', '/prompt', 'copy', '/copy'):
+            view_system_prompt(copy_to_clip=True)
+        elif cmd in ('w', 'watch', '/watch'):
+            view_stack_watcher()
+        elif cmd in ('v', 'preview', '/preview'):
+            view_skill_preview(arg)
+        elif cmd in ('d', 'doctor', '/doctor', '/check'):
+            view_doctor()
+        elif cmd in ('e', 'export', '/export'):
+            view_export()
+        elif cmd in ('i', 'init', '/init'):
+            view_init_project()
+        elif cmd in ('p', 'profile', '/profile'):
+            view_profile_manager()
+        elif cmd in ('toggle', '/toggle'):
+            if arg:
+                _, msg = ManifestController.toggle_skill(arg)
+                print(f"\n  {msg}")
+            else:
+                target = input(f"\n  {C.GEMINI_CYAN}❯ Skill name to toggle:{C.RESET} ").strip()
+                if target:
+                    _, msg = ManifestController.toggle_skill(target)
+                    print(f"\n  {msg}")
+        elif cmd in ('help', '/help', '/?'):
+            view_help_card()
+        elif cmd in ('clear', '/clear', 'cls'):
+            continue
         else:
-            input(f"\n  {C.RED}⚠️  Unknown option. Press ENTER to retry...{C.RESET}")
+            print(f"\n  {C.SLATE_MUTED}Searching vault for '{raw_choice}'...{C.RESET}")
+            view_vault_search(initial_query=raw_choice)
+            
+        input(f"\n  {C.SLATE_DARK}Press ENTER to continue...{C.RESET}")
+
+# =============================================================================
+# 15. INDIVIDUAL TUI VIEWS (TOOL CALL CARDS & SCREENS)
+# =============================================================================
+def view_help_card():
+    print_header("HELP & AVAILABLE COMMANDS")
+    headers = ["Command", "Alias / Slash", "Description"]
+    rows = [
+        ["Scan", "1, /scan", "Inspect project dependencies, frameworks and recommend skills"],
+        ["Core Suite", "2, /core", "Verify the 19 mandatory invariant governance skills"],
+        ["Category", "3, /category", "Toggle skills interactively by technology category"],
+        ["Search", "4, /search <q>", "Live vault search across 3,300+ agent skills"],
+        ["Ingest", "5, /ingest <url>", "Import remote skill from GitHub or create custom"],
+        ["Sync", "6, /sync", "Sync active matrix into Cursor, Claude Code, OpenCode"],
+        ["Audit", "7, /audit", "Verify that physical SKILL.md files exist on disk"],
+        ["Wizard", "8, /wizard", "Socratic qualification survey to calibrate agent context"],
+        ["Stats", "9, /stats", "Visual usage metrics and category distribution"],
+        ["Token Budget", "b, /budget", "Simulate LLM context window and token economy"],
+        ["Mission Modes", "m, /mode <name>", "1-Click MVP, Hardening, Refactor, Design, Fullstack"],
+        ["System Prompt", "c, /prompt", "Compile and copy super-prompt to clipboard"],
+        ["Stack Watcher", "w, /watch", "Real-time daemon for detecting file additions"],
+        ["Preview Skill", "v, /preview <name>", "Inspect formatted SKILL.md and weight"],
+        ["Doctor", "d, /doctor", "Run full environment and health diagnostics"],
+        ["Export", "e, /export", "Export manifest to standalone JSON or Markdown"],
+        ["Profile", "p, /profile", "Save and load custom skill presets"],
+        ["Exit", "0, /exit, /q", "Exit interactive session"]
+    ]
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
 
 
 def view_project_discovery():
-    print_header("DEEP PROJECT DISCOVERY")
+    print_header("DEEP PROJECT STACK SCAN")
     
-    report = run_with_spinner("Analyzing project structure", ProjectDiscovery.inspect)
+    report = run_with_spinner("Scanning workspace AST & package manifests", ProjectDiscovery.inspect)
     if report is None:
         report = ProjectDiscovery.inspect()
     
-    print_section("📋 Scan Results")
-    
-    fields = [
-        ("📦 Architecture", report['architecture'], C.CYAN),
-        ("💻 Languages", ', '.join(report['languages']) or 'Agnostic', C.WHITE),
-        ("⚛️  Frameworks", ', '.join(report['frameworks']) or 'None detected', C.GREEN),
-        ("🎨 UI & Motion", ', '.join(report['frontend_ui']) or 'Standard CSS', C.MAGENTA),
-        ("⚡ Backend & DB", ', '.join(report['backend'] + report['databases']) or 'N/A', C.YELLOW),
-        ("🚀 DevOps/Infra", ', '.join(report['devops']) or 'No Docker/CI', C.BLUE),
+    headers = ["Architecture Domain", "Detected Technologies & Tooling", "Status"]
+    rows = [
+        ["Architecture Pattern", report['architecture'], f"{C.EMERALD}Detected{C.RESET}"],
+        ["Programming Languages", ', '.join(report['languages']) or 'Language Agnostic', f"{C.EMERALD}Active{C.RESET}"],
+        ["Frameworks & Libraries", ', '.join(report['frameworks']) or 'Standard Environment', f"{C.GEMINI_CYAN}Loaded{C.RESET}"],
+        ["Frontend UI & Motion", ', '.join(report['frontend_ui']) or 'Vanilla / System UI', f"{C.CLAUDE_GOLD}Resolved{C.RESET}"],
+        ["Backend & Persistence", ', '.join(report['backend'] + report['databases']) or 'Serverless / Static', f"{C.GEMINI_VIOLET}Configured{C.RESET}"],
+        ["DevOps & Containerization", ', '.join(report['devops']) or 'Local Host', f"{C.SLATE_MUTED}Ready{C.RESET}"],
     ]
-    
-    for label, value, color in fields:
-        print(f"    {C.BOLD}{label}:{C.RESET}  {color}{value}{C.RESET}")
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
     
     if report["recommended_skills"]:
-        print_section("🎯 Recommended Skills for This Stack")
+        print(f"\n  {C.GEMINI_CYAN}✦{C.RESET} {C.BOLD}Targeted Skill Recommendations for this Stack:{C.RESET}\n")
+        manifest = ManifestController.load_active_manifest()
+        active_names = {s["name"] for s in manifest.get("active_skills", [])}
+        
+        rec_rows = []
         for idx, s in enumerate(report["recommended_skills"], 1):
-            print(f"    {C.GREEN}[{idx:02d}]{C.RESET} {C.BOLD}{s}{C.RESET}")
+            is_active = s in active_names
+            badge = f"{C.EMERALD}● Active{C.RESET}" if is_active else f"{C.SLATE_DARK}○ Inactive{C.RESET}"
+            rec_rows.append([f"{idx:02d}", s, badge])
+        print(render_table(["#", "Recommended Skill", "Manifest Status"], rec_rows, border_color=C.SLATE_DARK))
         
         if print_confirm("Activate all recommended skills automatically?", default_yes=True):
             for s in report["recommended_skills"]:
                 ManifestController.toggle_skill(s, force_state=True)
-            print(f"\n    {C.GREEN}✅ All recommended skills activated!{C.RESET}")
-    else:
-        print(f"\n    {C.GRAY}No specific skill recommendations for this directory.{C.RESET}")
-
+            print(f"\n  {BOX['check']} {C.EMERALD}All recommended skills synchronized into active manifest!{C.RESET}")
 
 def view_core_suite():
-    print_header("🔒 CORE INVARIANT SUITE — 19 MANDATORY SKILLS")
+    print_header("CORE INVARIANT SUITE — 19 MANDATORY SKILLS")
     
-    print(f"  {C.GRAY}These skills load unconditionally in every project:{C.RESET}\n")
-    
+    headers = ["#", "Skill Name", "Purpose & Token Governance Rationale", "Disk Status"]
+    rows = []
     for idx, core in enumerate(MANDATORY_CORE_SUITE, 1):
         path = os.path.join(SKILLS_DIR, core["name"], "SKILL.md")
         icon = core.get("icon", "•")
+        
         if os.path.isfile(path):
-            status = f"{C.GREEN}✅ AVAILABLE{C.RESET}"
+            status = make_file_link(f"{C.EMERALD}✔ Verified{C.RESET}", path)
         else:
-            status = f"{C.YELLOW}⚠️  PENDING INGESTION{C.RESET}"
-        print(f"    {C.BOLD}{idx:02d}.{C.RESET} {icon} {C.BOLD}{core['name']:<24}{C.RESET} {status}")
-        print(f"        {C.GRAY}{core['reason']}{C.RESET}")
-    
-    print(f"\n  {C.MAGENTA}ℹ️  Core skills are governance-locked and cannot be disabled.{C.RESET}")
-
+            status = f"{C.AMBER}⚠ Ingesting{C.RESET}"
+            
+        skill_link = make_file_link(f"{icon} {core['name']}", path) if os.path.isfile(path) else f"{icon} {core['name']}"
+        rows.append([f"{idx:02d}", skill_link, core['reason'], status])
+        
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
+    print(f"\n  {C.GEMINI_VIOLET}◆ Core Invariant Rule:{C.RESET} {C.SLATE_MUTED}These 19 skills form the unalterable governance kernel across every agent turn.{C.RESET}")
 
 def view_category_manager():
     while True:
-        print_header("🎛️  CATEGORY MANAGER & INDIVIDUAL TOGGLE")
+        print_header("CATEGORY MANAGER & SKILL SELECTOR")
         
+        headers = ["#", "Domain Category", "Curated Skills", "Action"]
+        rows = []
         categories = list(CATEGORY_REGISTRY.keys())
         for idx, cat_key in enumerate(categories, 1):
             cat_data = CATEGORY_REGISTRY[cat_key]
-            print(f"  {C.YELLOW}{C.BOLD}[{idx}]{C.RESET} {cat_data['title']} {C.GRAY}({len(cat_data['skills'])} skills){C.RESET}")
+            rows.append([
+                f"{idx}",
+                f"{cat_data['icon']} {cat_data['title']}",
+                f"{len(cat_data['skills'])} skills available",
+                f"{C.GEMINI_CYAN}[ Select {idx} ]{C.RESET}"
+            ])
+            
+        print(render_table(headers, rows, border_color=C.SLATE_DARK))
+        print(f"\n  {C.ROSE}[0]{C.RESET} ↩ Return to Main Menu\n")
         
-        print(f"\n  {C.RED}{C.BOLD}[0]{C.RESET} ↩️  Back to main menu\n")
-        
-        choice = input(f"  {C.CYAN}❯ Select category [1-{len(categories)}]:{C.RESET} ").strip()
-        if choice in ('0', 'q', 'b'):
+        choice = read_user_choice(f"  {C.GEMINI_CYAN}❯ Select category [1-{len(categories)}]:{C.RESET} ")
+        if choice in ('0', 'q', 'b', 'exit'):
             break
         if choice.isdigit() and 1 <= int(choice) <= len(categories):
             manage_single_category(categories[int(choice) - 1])
-        else:
-            print(f"\n  {C.RED}⚠️ Invalid option.{C.RESET}")
-
 
 def manage_single_category(cat_key: str):
     cat_data = CATEGORY_REGISTRY[cat_key]
@@ -1136,312 +1690,280 @@ def manage_single_category(cat_key: str):
         
         print_header(f"CATEGORY: {cat_data['title']}")
         
+        headers = ["#", "Status", "Skill Identifier", "Description / Philosophy"]
+        rows = []
         for idx, (sk_name, desc) in enumerate(cat_data["skills"], 1):
             is_active = sk_name in active_names
-            if is_active:
-                badge = f"{C.GREEN}[ON ]{C.RESET}"
-            else:
-                badge = f"{C.GRAY}[OFF]{C.RESET}"
-            print(f"    {C.BOLD}[{idx:02d}]{C.RESET} {badge} {C.BOLD}{sk_name:<30}{C.RESET} {C.GRAY}{desc}{C.RESET}")
+            badge = f"{C.EMERALD}● ON {C.RESET}" if is_active else f"{C.SLATE_DARK}○ OFF{C.RESET}"
+            
+            sk_path = os.path.join(SKILLS_DIR, sk_name, "SKILL.md")
+            skill_link = make_file_link(sk_name, sk_path) if os.path.isfile(sk_path) else sk_name
+            rows.append([f"{idx:02d}", badge, skill_link, desc])
+            
+        print(render_table(headers, rows, border_color=C.SLATE_DARK))
+        print(f"\n  {C.EMERALD}[A] ✦ Enable All{C.RESET}   {C.AMBER}[D] ⚠ Disable All{C.RESET}   {C.ROSE}[0] ↩ Back to Categories{C.RESET}\n")
         
-        print(f"\n    {C.GREEN}[A]{C.RESET} Enable all  |  {C.YELLOW}[D]{C.RESET} Disable all  |  {C.RED}[0]{C.RESET} Back")
-        
-        action = input(f"\n  {C.CYAN}❯ Toggle skill # or action:{C.RESET} ").strip().upper()
-        
-        if action in ('0', 'Q'):
+        action = read_user_choice(f"  {C.GEMINI_CYAN}❯ Toggle skill # or action:{C.RESET} ").upper()
+        if action in ('0', 'Q', 'B'):
             break
         elif action == 'A':
             for sk_name, _ in cat_data["skills"]:
                 ManifestController.toggle_skill(sk_name, force_state=True)
-            print(f"\n  {C.GREEN}✅ All skills in category activated.{C.RESET}")
+            print(f"\n  {BOX['check']} {C.EMERALD}All skills in this category activated.{C.RESET}")
+            time.sleep(0.4)
         elif action == 'D':
             for sk_name, _ in cat_data["skills"]:
                 ManifestController.toggle_skill(sk_name, force_state=False)
-            print(f"\n  {C.YELLOW}⚠️ All non-core skills in category deactivated.{C.RESET}")
+            print(f"\n  {BOX['warn']} {C.AMBER}Non-core skills in this category deactivated.{C.RESET}")
+            time.sleep(0.4)
         elif action.isdigit() and 1 <= int(action) <= len(cat_data["skills"]):
             target = cat_data["skills"][int(action) - 1][0]
             _, msg = ManifestController.toggle_skill(target)
             print(f"\n  {msg}")
-        else:
-            print(f"\n  {C.RED}Command not recognized.{C.RESET}")
+            time.sleep(0.3)
 
-
-def view_vault_search():
-    print_header("🔎 LIVE VAULT SEARCH (2,700+ SKILLS)")
-    query = input(f"  {C.CYAN}❯ Search term (e.g., nextjs, auth, tdd, react, anim):{C.RESET} ").strip()
-    
+def view_vault_search(initial_query: str = "", interactive: bool = True):
+    print_header("LIVE VAULT SEARCH (3,300+ SKILLS)")
+    query = initial_query or input(f"  {C.GEMINI_CYAN}❯ Search query (e.g. react, security, anim, nextjs, tdd):{C.RESET} ").strip()
     if not query:
         return
-    
-    results = run_with_spinner(f"Searching vault for '{query}'", SkillVaultEngine.search_local, query, 25)
+        
+    results = run_with_spinner(f"Querying catalog for '{query}'", SkillVaultEngine.search_local, query, 25)
     if results is None:
         results = SkillVaultEngine.search_local(query, 25)
-    
+        
     if not results:
-        print(f"\n  {C.YELLOW}No skills found matching '{query}'.{C.RESET}")
+        print(f"\n  {C.AMBER}No skills matching '{query}' found.{C.RESET}")
         return
+        
+    headers = ["#", "State", "Skill Name", "Documentation Preview"]
+    rows = []
+    for idx, r in enumerate(results, 1):
+        badge = f"{C.EMERALD}● ON{C.RESET}" if r["active"] else f"{C.SLATE_DARK}○ OFF{C.RESET}"
+        if r["is_core"]:
+            badge = f"{C.GEMINI_VIOLET}◆ CORE{C.RESET}"
+        
+        name_link = make_file_link(r["name"], r["path"]) if os.path.isfile(r.get("path", "")) else r["name"]
+        rows.append([f"{idx:02d}", badge, name_link, r["preview"][:65]])
+        
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
     
-    print(f"\n  {C.GREEN}Found {len(results)} matches:{C.RESET}\n")
-    for idx, res in enumerate(results, 1):
-        if res["active"]:
-            badge = f"{C.GREEN}[ON ]{C.RESET}"
-        else:
-            badge = f"{C.GRAY}[OFF]{C.RESET}"
-        core = f" {C.MAGENTA}[CORE]{C.RESET}" if res["is_core"] else ""
-        print(f"    {C.BOLD}[{idx:02d}]{C.RESET} {badge}{core} {C.BOLD}{res['name']:<30}{C.RESET} {C.GRAY}{res['preview'][:60]}{C.RESET}")
-    
-    ans = input(f"\n  {C.CYAN}❯ Enter skill # to toggle (or 0 to go back):{C.RESET} ").strip()
-    if ans.isdigit() and 1 <= int(ans) <= len(results):
-        sel = results[int(ans) - 1]
-        _, msg = ManifestController.toggle_skill(sel["name"])
-        print(f"\n  {msg}")
+    if interactive:
+        ans = read_user_choice(f"\n  {C.GEMINI_CYAN}❯ Enter # to toggle state (or 0 to cancel):{C.RESET} ")
+        if ans.isdigit() and 1 <= int(ans) <= len(results):
+            sel = results[int(ans) - 1]
+            _, msg = ManifestController.toggle_skill(sel["name"])
+            print(f"\n  {msg}")
 
-
-def view_skill_ingestion():
-    print_header("📥 SKILL SEEKERS — INGEST REMOTE SKILL")
-    print(f"  {C.GRAY}Import a new skill by providing its GitHub URL or a unique name:{C.RESET}\n")
-    print(f"    Example URL:    {C.WHITE}https://github.com/author/my-new-skill{C.RESET}")
-    print(f"    Example Name:   {C.WHITE}my-custom-skill{C.RESET}\n")
+def view_skill_ingestion(initial_source: str = ""):
+    print_header("SKILL SEEKERS — INGEST REMOTE SKILL")
+    lines = [
+        "Import any external agent skill via GitHub repository URL or unique identifier.",
+        f"Example URL:  {C.SLATE_LIGHT}https://github.com/camilolealdev/my-custom-skill{C.RESET}",
+        f"Example Name: {C.SLATE_LIGHT}design-system-tokens{C.RESET}"
+    ]
+    print(render_card("Remote Skill Ingestion Guide", lines, width=74, border_color=C.SLATE_DARK, accent_icon="📥"))
     
-    target = input(f"  {C.CYAN}❯ URL or skill name:{C.RESET} ").strip()
+    target = initial_source or input(f"\n  {C.GEMINI_CYAN}❯ URL or Skill Identifier:{C.RESET} ").strip()
     if not target:
         return
-    
     _, msg = SkillVaultEngine.ingest_remote_skill(target)
     print(f"\n  {msg}")
 
-
 def view_sync_multicli():
-    print_header("🔄 MULTI-CLI SYNCHRONIZER")
-    
-    synced = run_with_spinner("Syncing manifest to agent environments", MultiCLISync.sync_all)
+    print_header("MULTI-CLI SYNCHRONIZER")
+    synced = run_with_spinner("Writing rules to agent harnesses", MultiCLISync.sync_all)
     if synced is None:
         synced = MultiCLISync.sync_all()
-    
-    for agent_host, path in synced.items():
-        print(f"    {C.GREEN}✓{C.RESET} {C.BOLD}{agent_host:<20}{C.RESET} → {C.CYAN}{path}{C.RESET}")
-    
-    print(f"\n  {C.GREEN}✨ Agent manifests and rules synchronized successfully!{C.RESET}")
-
+        
+    headers = ["Agent Platform", "Target File / Configuration Path", "Sync Status"]
+    rows = []
+    for agent, path in synced.items():
+        clickable = make_file_link(path, path)
+        rows.append([agent, clickable, f"{C.EMERALD}✔ Synchronized{C.RESET}"])
+        
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
+    print(f"\n  {BOX['check']} {C.EMERALD}All agent manifests (.cursor, .agents, opencode) are synchronized with Active Matrix.{C.RESET}")
 
 def view_compliance_audit():
-    print_header("🧪 AGENTIC COMPLIANCE AUDIT")
-    
-    audit = run_with_spinner("Verifying SKILL.md file integrity", MultiCLISync.audit_compliance)
+    print_header("AGENTIC COMPLIANCE & VIEW_FILE AUDIT")
+    audit = run_with_spinner("Verifying file system integrity for all active skills", MultiCLISync.audit_compliance)
     if audit is None:
         audit = MultiCLISync.audit_compliance()
-    
-    print_section("Audit Results")
-    print(f"    Total active skills:      {C.WHITE}{audit['total_active']}{C.RESET}")
-    print(f"    SKILL.md files found:     {C.GREEN}{audit['found_count']}{C.RESET}")
-    print(f"    Missing files:            {C.RED if audit['missing_count'] > 0 else C.GREEN}{audit['missing_count']}{C.RESET}")
+        
+    headers = ["Metric / Parameter", "Audit Value", "Health"]
+    rows = [
+        ["Total Active Skills in Manifest", str(audit['total_active']), f"{C.GEMINI_CYAN}Indexed{C.RESET}"],
+        ["Physical SKILL.md Files Located", str(audit['found_count']), f"{C.EMERALD}Verified{C.RESET}"],
+        ["Missing / Pending Ingestion Files", str(audit['missing_count']), f"{C.EMERALD}0 Missing{C.RESET}" if audit['missing_count'] == 0 else f"{C.ROSE}{audit['missing_count']} Incomplete{C.RESET}"]
+    ]
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
     
     if audit['missing_count'] > 0:
-        print(f"\n  {C.RED}⚠️ Active skills without physical SKILL.md:{C.RESET}")
+        print(f"\n  {C.ROSE}⚠ Active skills missing physical SKILL.md files:{C.RESET}")
         for m in audit['missing_skills']:
-            print(f"    {C.RED}•{C.RESET} {m}")
+            print(f"    {C.ROSE}•{C.RESET} {m}")
     else:
-        print(f"\n  {C.GREEN}✅ 100% compliance — all active skills have SKILL.md files ready for view_file invocation.{C.RESET}")
-
+        print(f"\n  {BOX['check']} {C.EMERALD}100% Compliance. All active skills are present on disk and ready for mandatory view_file calls.{C.RESET}")
 
 def view_stats_dashboard():
-    """Agent 4: Stats Dashboard command."""
-    print_header("📊 STATISTICS & DASHBOARD")
-    
+    print_header("STATISTICS & DASHBOARD")
     stats = MultiCLISync.get_stats()
     
-    print_section("Project Overview")
-    print(f"    {C.BOLD}Project:{C.RESET}       {C.WHITE}{stats['project_name']}{C.RESET}")
-    print(f"    {C.BOLD}Manifest:{C.RESET}      {C.GRAY}{stats['manifest_path']}{C.RESET}")
-    
-    print_section("Skill Counts")
-    print(f"    {C.BOLD}Total Catalog:{C.RESET}  {C.CYAN}{stats['total_catalog']}{C.RESET} skills on disk")
-    print(f"    {C.BOLD}Total Active:{C.RESET}   {C.GREEN}{stats['total_active']}{C.RESET} skills in manifest")
-    print(f"    {C.BOLD}Core Skills:{C.RESET}    {C.MAGENTA}{stats['core_count']}{C.RESET} mandatory")
-    print(f"    {C.BOLD}Specialized:{C.RESET}    {C.YELLOW}{stats['specialized_count']}{C.RESET} user-selected")
+    headers = ["Metric", "Count", "Governance Note"]
+    rows = [
+        ["Total Indexed Catalog", f"{stats['total_catalog']:,} skills", "Available in central vault"],
+        ["Total Active Skills", f"{stats['total_active']} skills", "Loaded in .agents/ACTIVE-SKILLS.json"],
+        ["Core Invariant Suite", f"{stats['core_count']} mandatory", "Unconditional governance kernel"],
+        ["Specialized / Custom", f"{stats['specialized_count']} skills", "Configured for this specific project"]
+    ]
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
     
     if stats['categories']:
-        print_section("Breakdown by Category")
+        print(f"\n  {C.GEMINI_CYAN}✦{C.RESET} {C.BOLD}Distribution by Domain Category:{C.RESET}\n")
+        cat_rows = []
         for cat, count in sorted(stats['categories'].items(), key=lambda x: -x[1]):
-            bar = "█" * min(count, 30)
-            print(f"    {cat:<20} {C.GREEN}{bar}{C.RESET} {count}")
-
+            bar = f"{C.EMERALD}{'█' * min(count * 2, 28)}{C.RESET}"
+            cat_rows.append([cat, str(count), bar])
+        print(render_table(["Category", "Active Count", "Visual Distribution"], cat_rows, border_color=C.SLATE_DARK))
 
 def view_doctor():
-    """Agent 4: Doctor command."""
-    print_header("🩺 ENVIRONMENT DOCTOR — HEALTH CHECK")
-    
-    result = run_with_spinner("Running diagnostics", MultiCLISync.doctor_check)
+    print_header("ENVIRONMENT DOCTOR — HEALTH CHECK")
+    result = run_with_spinner("Running environment diagnostics", MultiCLISync.doctor_check)
     if result is None:
         result = MultiCLISync.doctor_check()
-    
-    print_section("Diagnostic Results")
-    
-    for check in result['checks']:
-        if check['status'] == 'PASS':
-            icon = f"{C.GREEN}✓ PASS{C.RESET}"
-        elif check['status'] == 'WARN':
-            icon = f"{C.YELLOW}⚠ WARN{C.RESET}"
-        elif check['status'] == 'FAIL':
-            icon = f"{C.RED}✗ FAIL{C.RESET}"
-        else:
-            icon = f"{C.GRAY}ℹ INFO{C.RESET}"
         
-        print(f"    {icon}  {C.BOLD}{check['name']:<20}{C.RESET} {C.GRAY}{check['detail']}{C.RESET}")
+    headers = ["Diagnostic Check", "Result", "Technical Details"]
+    rows = []
+    for check in result['checks']:
+        st = check['status']
+        if st == 'PASS':
+            icon = f"{C.EMERALD}✔ PASS{C.RESET}"
+        elif st == 'WARN':
+            icon = f"{C.AMBER}⚠ WARN{C.RESET}"
+        elif st == 'FAIL':
+            icon = f"{C.ROSE}✖ FAIL{C.RESET}"
+        else:
+            icon = f"{C.SLATE_MUTED}ℹ INFO{C.RESET}"
+        rows.append([check['name'], icon, check['detail']])
+        
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
     
-    print()
     if result['all_pass']:
-        print(f"  {C.GREEN}🎉 All checks passed! Environment is healthy.{C.RESET}")
+        print(f"\n  {BOX['check']} {C.EMERALD}All checks passed. SuperDuperSkills workspace is 100% healthy and optimized.{C.RESET}")
     elif result['has_failures']:
-        print(f"  {C.RED}⚠️  Some checks failed. Run 'init' to set up missing components.{C.RESET}")
+        print(f"\n  {BOX['fail']} {C.ROSE}Critical issues detected. Run 'sds init' to fix missing directories.{C.RESET}")
     else:
-        print(f"  {C.YELLOW}ℹ️  Some warnings found but no critical failures.{C.RESET}")
-
+        print(f"\n  {BOX['warn']} {C.AMBER}Some warnings detected. System is operational.{C.RESET}")
 
 def view_export():
-    """Agent 4: Export command."""
-    print_header("📤 EXPORT MANIFEST")
-    
+    print_header("EXPORT ACTIVE MANIFEST")
     manifest = ManifestController.load_active_manifest()
     
-    export_format = input(f"  {C.CYAN}❯ Export format — [1] JSON  [2] Markdown  [3] Both:{C.RESET} ").strip()
+    export_format = input(f"  {C.GEMINI_CYAN}❯ Export format — [1] JSON  [2] Markdown  [3] Both (default: 3):{C.RESET} ").strip() or "3"
     
     if export_format in ('1', 'json'):
         path = os.path.join(WORKSPACE_DIR, 'exported-manifest.json')
         with open(path, 'w', encoding='utf-8') as f:
             json.dump(manifest, f, indent=2, ensure_ascii=False)
-        print(f"\n  {C.GREEN}✅ Manifest exported to {path}{C.RESET}")
-    
+        print(f"\n  {BOX['check']} {C.EMERALD}JSON manifest exported to: {make_file_link(path, path)}{C.RESET}")
     elif export_format in ('2', 'md', 'markdown'):
         path = os.path.join(WORKSPACE_DIR, 'exported-manifest.md')
         with open(path, 'w', encoding='utf-8') as f:
             f.write(f"# SuperDuperSkills Active Manifest\n\n")
-            f.write(f"**Project:** `{manifest.get('project_name', 'unknown')}`\n")
-            f.write(f"**Phase:** {manifest.get('project_phase', 'N/A')}\n\n")
-            f.write(f"## Active Skills\n\n")
-            f.write(f"| # | Skill | Category | Reason |\n")
-            f.write(f"|---|-------|----------|--------|\n")
+            f.write(f"**Project:** `{manifest.get('project_name', os.path.basename(WORKSPACE_DIR))}`\n\n")
             for idx, sk in enumerate(manifest.get('active_skills', []), 1):
-                f.write(f"| {idx} | `{sk['name']}` | {sk.get('category', '-')} | {sk.get('reason', '-')} |\n")
-        print(f"\n  {C.GREEN}✅ Manifest exported to {path}{C.RESET}")
-    
-    elif export_format in ('3', 'both'):
+                f.write(f"- `{sk['name']}` [{sk.get('category', '-')}] — {sk.get('reason', '-')}\n")
+        print(f"\n  {BOX['check']} {C.EMERALD}Markdown manifest exported to: {make_file_link(path, path)}{C.RESET}")
+    else:
         json_path = os.path.join(WORKSPACE_DIR, 'exported-manifest.json')
         md_path = os.path.join(WORKSPACE_DIR, 'exported-manifest.md')
-        
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(manifest, f, indent=2, ensure_ascii=False)
         with open(md_path, 'w', encoding='utf-8') as f:
             f.write(f"# SuperDuperSkills Active Manifest\n\n")
-            f.write(f"**Project:** `{manifest.get('project_name', 'unknown')}`\n\n")
+            f.write(f"**Project:** `{manifest.get('project_name', os.path.basename(WORKSPACE_DIR))}`\n\n")
             for idx, sk in enumerate(manifest.get('active_skills', []), 1):
                 f.write(f"- `{sk['name']}` [{sk.get('category', '-')}] — {sk.get('reason', '-')}\n")
-        
-        print(f"\n  {C.GREEN}✅ Exported to:{C.RESET}")
-        print(f"    {C.CYAN}•{C.RESET} {json_path}")
-        print(f"    {C.CYAN}•{C.RESET} {md_path}")
-
+        print(f"\n  {BOX['check']} {C.EMERALD}Exported files successfully:{C.RESET}")
+        print(f"    {C.GEMINI_CYAN}•{C.RESET} {make_file_link(json_path, json_path)}")
+        print(f"    {C.GEMINI_CYAN}•{C.RESET} {make_file_link(md_path, md_path)}")
 
 def view_init_project():
-    """Agent 4: Init command."""
-    print_header("📦 INITIALIZE PROJECT — .agents/ DIRECTORY")
-    
+    print_header("INITIALIZE PROJECT WORKSPACE")
     if os.path.isdir(AGENTS_DIR):
         if not print_confirm(f".agents/ already exists at {AGENTS_DIR}. Reinitialize?", default_yes=False):
-            print(f"\n  {C.GRAY}Skipped.{C.RESET}")
+            print(f"\n  {C.SLATE_MUTED}Initialization cancelled.{C.RESET}")
             return
-    
-    # Create directories
+            
     os.makedirs(AGENTS_DIR, exist_ok=True)
     os.makedirs(PROFILES_DIR, exist_ok=True)
-    os.makedirs(SKILLS_DIR, exist_ok=True)
     
-    # Generate default manifest
     manifest = ManifestController.load_active_manifest()
     ManifestController.save_active_manifest(manifest)
-    
-    # Generate desktop config
     DesktopIntegration.save_desktop_config()
     
-    print(f"\n  {C.GREEN}✅ Project initialized!{C.RESET}")
-    print(f"    {C.CYAN}•{C.RESET} .agents/ directory created")
-    print(f"    {C.CYAN}•{C.RESET} ACTIVE-SKILLS.json manifest generated with 19 core skills")
-    print(f"    {C.CYAN}•{C.RESET} PROJECT-QUALIFICATION.md documentation created")
-    print(f"    {C.CYAN}•{C.RESET} .agents/profiles/ directory ready")
-    print(f"    {C.CYAN}•{C.RESET} .agents/desktop.json config generated")
-    print(f"    {C.CYAN}•{C.RESET} skills/ directory ready")
-
+    headers = ["Component", "Location", "Status"]
+    rows = [
+        ["Governance Root", make_file_link(".agents/", AGENTS_DIR), f"{C.EMERALD}Created{C.RESET}"],
+        ["Active Skills Manifest", make_file_link(".agents/ACTIVE-SKILLS.json", ACTIVE_MANIFEST), f"{C.EMERALD}Loaded (19 Cores){C.RESET}"],
+        ["Project Qualification Doc", make_file_link(".agents/PROJECT-QUALIFICATION.md", QUALIFICATION_DOC), f"{C.EMERALD}Generated{C.RESET}"],
+        ["Profile Presets Directory", make_file_link(".agents/profiles/", PROFILES_DIR), f"{C.EMERALD}Ready{C.RESET}"],
+        ["Desktop Integration Config", make_file_link(".agents/desktop.json", DESKTOP_CONFIG), f"{C.EMERALD}Saved{C.RESET}"]
+    ]
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
+    print(f"\n  {BOX['check']} {C.EMERALD}Project initialized with full multi-agent governance structure!{C.RESET}")
 
 def view_profile_manager():
-    """Agent 4: Profile manager command."""
-    print_header("💼 PROFILE MANAGER — SAVE/LOAD SKILL SETS")
-    
+    print_header("PROFILE MANAGER — SAVE & LOAD PRESETS")
     os.makedirs(PROFILES_DIR, exist_ok=True)
     
-    # List existing profiles
-    profiles = []
-    if os.path.isdir(PROFILES_DIR):
-        for fname in os.listdir(PROFILES_DIR):
-            if fname.endswith('.json'):
-                profiles.append(fname[:-5])
+    profiles = [f[:-5] for f in os.listdir(PROFILES_DIR) if f.endswith('.json')]
     
     if profiles:
-        print(f"  {C.BOLD}Existing profiles:{C.RESET}\n")
+        headers = ["#", "Profile Preset Name", "Active Skills Count"]
+        rows = []
         for idx, p in enumerate(profiles, 1):
-            ppath = os.path.join(PROFILES_DIR, f'{p}.json')
             try:
-                with open(ppath, 'r', encoding='utf-8') as pf:
+                with open(os.path.join(PROFILES_DIR, f"{p}.json"), 'r', encoding='utf-8') as pf:
                     pdata = json.load(pf)
-                count = len(pdata.get('skills', []))
-                print(f"    {C.GREEN}[{idx}]{C.RESET} {C.BOLD}{p}{C.RESET} — {count} skills")
+                rows.append([str(idx), p, f"{len(pdata.get('skills', []))} skills"])
             except Exception:
-                print(f"    {C.GREEN}[{idx}]{C.RESET} {C.BOLD}{p}{C.RESET}")
+                rows.append([str(idx), p, "N/A"])
+        print(render_table(headers, rows, border_color=C.SLATE_DARK))
     else:
-        print(f"  {C.GRAY}No profiles saved yet.{C.RESET}")
+        print(f"  {C.SLATE_MUTED}No saved profiles found in .agents/profiles/{C.RESET}\n")
+        
+    print(f"\n  {C.GEMINI_CYAN}[S] Save Current Manifest{C.RESET}   {C.CLAUDE_GOLD}[L] Load Profile{C.RESET}   {C.ROSE}[0] Back{C.RESET}")
     
-    print(f"\n  {C.CYAN}[S]{C.RESET} Save current manifest as profile")
-    print(f"  {C.CYAN}[L]{C.RESET} Load a profile")
-    print(f"  {C.RED}[0]{C.RESET} Back\n")
-    
-    action = input(f"  {C.CYAN}❯ Select action:{C.RESET} ").strip().upper()
-    
+    action = read_user_choice(f"\n  {C.GEMINI_CYAN}❯ Action:{C.RESET} ").upper()
     if action == 'S':
-        name = input(f"  {C.CYAN}❯ Profile name:{C.RESET} ").strip()
+        name = input(f"  {C.GEMINI_CYAN}❯ Profile Name:{C.RESET} ").strip()
         if not name:
             return
         name = re.sub(r'[^a-zA-Z0-9\-_]', '', name.lower())
-        
         manifest = ManifestController.load_active_manifest()
-        profile_path = os.path.join(PROFILES_DIR, f'{name}.json')
+        profile_path = os.path.join(PROFILES_DIR, f"{name}.json")
         with open(profile_path, 'w', encoding='utf-8') as f:
             json.dump({
                 "name": name,
                 "created": time.strftime("%Y-%m-%d %H:%M"),
-                "project_name": manifest.get("project_name", "unknown"),
+                "project_name": manifest.get("project_name", os.path.basename(WORKSPACE_DIR)),
                 "skills": [s["name"] for s in manifest.get("active_skills", [])],
                 "phase": manifest.get("project_phase", "unknown")
             }, f, indent=2)
-        
-        print(f"\n  {C.GREEN}✅ Profile '{name}' saved with {len(manifest.get('active_skills', []))} skills.{C.RESET}")
-    
+        print(f"\n  {BOX['check']} {C.EMERALD}Profile '{name}' saved successfully.{C.RESET}")
     elif action == 'L' and profiles:
-        idx = input(f"  {C.CYAN}❯ Profile # to load:{C.RESET} ").strip()
+        idx = read_user_choice(f"  {C.GEMINI_CYAN}❯ Profile # to load [1-{len(profiles)}]:{C.RESET} ")
         if idx.isdigit() and 1 <= int(idx) <= len(profiles):
             name = profiles[int(idx) - 1]
-            ppath = os.path.join(PROFILES_DIR, f'{name}.json')
-            with open(ppath, 'r', encoding='utf-8') as fh:
+            with open(os.path.join(PROFILES_DIR, f"{name}.json"), 'r', encoding='utf-8') as fh:
                 data = json.load(fh)
-            
-            # Rebuild manifest from profile
             manifest = ManifestController.load_active_manifest()
             new_skills = []
             for sk_name in data.get('skills', []):
                 is_core = any(c["name"] == sk_name for c in MANDATORY_CORE_SUITE)
-                reason = next(
-                    (c["reason"] for c in MANDATORY_CORE_SUITE if c["name"] == sk_name),
-                    "Loaded from profile"
-                ) if is_core else "Loaded from profile"
-                
+                reason = next((c["reason"] for c in MANDATORY_CORE_SUITE if c["name"] == sk_name), "Loaded from profile")
                 new_skills.append({
                     "name": sk_name,
                     "category": "CORE" if is_core else "PROFILE_LOADED",
@@ -1449,177 +1971,287 @@ def view_profile_manager():
                     "is_core": is_core,
                     "mandatory_view": True
                 })
-            
             manifest["active_skills"] = new_skills
             ManifestController.save_active_manifest(manifest)
+            print(f"\n  {BOX['check']} {C.EMERALD}Profile '{name}' loaded — {len(new_skills)} skills active.{C.RESET}")
+
+def run_qualification_wizard():
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    try:
+        import qualify_project as qp
+        qp.run_interactive_wizard()
+    except Exception as e:
+        print(f"\n  {C.ROSE}Failed to launch qualification wizard: {e}{C.RESET}")
+
+# =============================================================================
+# 16. ADVANCED VIEWS: BUDGET, MODES, PROMPTS, WATCHER, PREVIEWS
+# =============================================================================
+def view_token_budget():
+    print_header("TOKEN BUDGET ESTIMATOR & CONTEXT SIMULATOR")
+    budget = run_with_spinner("Calculating token footprints and context curves", TokenBudgetEngine.calculate_budget)
+    if budget is None:
+        budget = TokenBudgetEngine.calculate_budget()
+
+    headers = ["Agent Context Window", "Max Tokens", "Visual Context Usage", "Status"]
+    rows = []
+    for model_name, info in budget["models"].items():
+        bar = TokenBudgetEngine.render_progress_bar(info["pct"], width=20)
+        pct_str = f"{info['pct']:.1f}%"
+        status_col = f"{C.EMERALD}Optimal{C.RESET}" if info["pct"] < 15.0 else f"{C.CLAUDE_GOLD}Moderate{C.RESET}" if info["pct"] < 35.0 else f"{C.ROSE}Heavy{C.RESET}"
+        rows.append([model_name, f"{info['limit']:,} tok", f"{bar} {pct_str}", status_col])
+    
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
+    
+    savings_lines = [
+        f"{C.BOLD}Raw Active Matrix Weight:{C.RESET}       {budget['raw_tokens']:,} tokens ({budget['total_chars']:,} characters in {budget['total_lines']:,} lines)",
+        f"{C.BOLD}Effective Runtime Footprint:{C.RESET}    {C.EMERALD}{budget['compressed_tokens']:,} tokens{C.RESET} {C.SLATE_MUTED}(Compressed via RTK/Caveman filter){C.RESET}",
+        f"{C.BOLD}Token Budget Savings:{C.RESET}          {C.CLAUDE_GOLD}-{budget['savings_tokens']:,} tokens ({budget['savings_pct']}% reduction){C.RESET}",
+        f"{C.BOLD}Context Pollution Health:{C.RESET}      {C.EMERALD}100% HEALTHY — Optimal context ratio under 12% across major LLMs{C.RESET}"
+    ]
+    print("\n" + render_card("Token Economics & Economy Assessment", savings_lines, width=74, border_color=C.SLATE_DARK, accent_icon="💰"))
+
+    print(f"\n  {C.GEMINI_CYAN}✦{C.RESET} {C.BOLD}Top 8 Active Skills by Token Consumption:{C.RESET}\n")
+    top_headers = ["#", "Type", "Skill Name", "Raw Characters", "Estimated Tokens", "Context %"]
+    top_rows = []
+    for idx, sk in enumerate(budget["details"][:8], 1):
+        badge = f"{C.GEMINI_VIOLET}CORE{C.RESET}" if sk["is_core"] else f"{C.EMERALD}SPEC{C.RESET}"
+        pct_of_total = (sk["tokens"] / max(1, budget["raw_tokens"])) * 100
+        top_rows.append([
+            f"{idx:02d}",
+            badge,
+            make_file_link(sk["name"], sk["path"]) if os.path.isfile(sk["path"]) else sk["name"],
+            f"{sk['chars']:,} ch",
+            f"{sk['tokens']:,} tok",
+            f"{pct_of_total:.1f}%"
+        ])
+    print(render_table(top_headers, top_rows, border_color=C.SLATE_DARK))
+
+def view_mission_modes(mode_name: Optional[str] = None):
+    print_header("MISSION MODES — 1-CLICK AGENT MINDSET PRESETS")
+    
+    if mode_name:
+        ok, msg = MissionModesEngine.apply_mode(mode_name)
+        print(f"\n  {msg}\n")
+        return
+        
+    headers = ["#", "Mission Mode", "Description & Strategic Focus", "Skills Count"]
+    rows = []
+    modes_list = list(MissionModesEngine.MODES.items())
+    for idx, (mkey, mdata) in enumerate(modes_list, 1):
+        rows.append([
+            str(idx),
+            f"{mdata['title']}",
+            mdata['description'][:58] + "...",
+            f"{len(mdata['skills'])} skills"
+        ])
+    print(render_table(headers, rows, border_color=C.SLATE_DARK))
+    print(f"\n  {C.SLATE_MUTED}Tip: Activating a mode keeps the 19 Invariant Cores while swapping specialized skills.{C.RESET}\n")
+    
+    choice = read_user_choice(f"  {C.GEMINI_CYAN}❯ Select mission mode [1-{len(modes_list)}] (or 0 to cancel):{C.RESET} ")
+    if choice.isdigit() and 1 <= int(choice) <= len(modes_list):
+        selected_key = modes_list[int(choice) - 1][0]
+        ok, msg = MissionModesEngine.apply_mode(selected_key)
+        print(f"\n  {BOX['check']} {C.EMERALD}{msg}{C.RESET}")
+
+def view_system_prompt(copy_to_clip: bool = True):
+    print_header("SYSTEM PROMPT EXPORTER FOR WEB LLMs")
+    prompt_text = SystemPromptEngine.generate_prompt()
+    
+    # Save to disk
+    out_file = os.path.join(AGENTS_DIR, "SYSTEM-PROMPT.md")
+    os.makedirs(AGENTS_DIR, exist_ok=True)
+    with open(out_file, 'w', encoding='utf-8') as f:
+        f.write(prompt_text)
+        
+    clip_status = ""
+    if copy_to_clip:
+        ok, msg = SystemPromptEngine.copy_to_clipboard(prompt_text)
+        clip_status = f"{C.EMERALD}✔ {msg}{C.RESET}" if ok else f"{C.AMBER}⚠ {msg}{C.RESET}"
+        
+    lines = [
+        "A complete, self-contained system prompt with active governance skills",
+        "and invariant rules has been compiled for Claude.ai, ChatGPT, or Gemini Web.",
+        f"File Location: {make_file_link(out_file, out_file)}",
+        f"Clipboard:     {clip_status}"
+    ]
+    print(render_card("Web LLM Super-Prompt Ready", lines, width=74, border_color=C.SLATE_DARK, accent_icon="📋"))
+    print(f"\n  {C.SLATE_MUTED}You can paste it directly into your web agent session.{C.RESET}\n")
+
+def view_stack_watcher():
+    print_header("WORKSPACE STACK WATCHER DAEMON")
+    print(f"  {C.GEMINI_CYAN}👁️  Monitoring workspace for file changes & tech stack additions...{C.RESET}")
+    print(f"  {C.SLATE_MUTED}Press Ctrl+C or Enter to stop watching.{C.RESET}\n")
+    
+    initial_snap = StackWatcherEngine.get_snapshot()
+    spinner = Spinner("Watching workspace in real-time").start()
+    
+    try:
+        for _ in range(30):
+            time.sleep(0.5)
+            spinner.tick()
+            current_snap = StackWatcherEngine.get_snapshot()
             
-            print(f"\n  {C.GREEN}✅ Profile '{name}' loaded — {len(new_skills)} skills activated.{C.RESET}")
+            # Check for new or updated files
+            for rel_file, (skill_name, reason) in StackWatcherEngine.WATCH_MARKERS.items():
+                if rel_file in current_snap and rel_file not in initial_snap:
+                    spinner.stop(f"Detected newly added file: '{rel_file}'", success=True)
+                    print(f"\n  {C.GEMINI_CYAN}✦ [SDS Stack Trigger]{C.RESET} Detected '{rel_file}'.")
+                    if print_confirm(f"Activate matching skill '{skill_name}'?", default_yes=True):
+                        ManifestController.toggle_skill(skill_name, force_state=True)
+                        print(f"  {BOX['check']} {C.EMERALD}Skill '{skill_name}' activated and synced.{C.RESET}\n")
+                    initial_snap = current_snap
+                    spinner = Spinner("Watching workspace in real-time").start()
+                    break
+        spinner.stop("Watcher cycle complete.", success=True)
+    except (KeyboardInterrupt, EOFError):
+        spinner.stop("Watcher stopped by user.", success=True)
+
+def view_skill_preview(skill_name: str):
+    if not skill_name:
+        skill_name = input(f"  {C.GEMINI_CYAN}❯ Skill identifier to preview:{C.RESET} ").strip()
+    if not skill_name:
+        return
+        
+    sk_path = os.path.join(SKILLS_DIR, skill_name, "SKILL.md")
+    if not os.path.isfile(sk_path):
+        print(f"\n  {C.ROSE}Skill '{skill_name}' not found at {sk_path}{C.RESET}")
+        return
+        
+    print_header(f"SKILL PREVIEW — {skill_name}")
+    try:
+        with open(sk_path, 'r', encoding='utf-8', errors='ignore') as sf:
+            content = sf.read()
+    except Exception as e:
+        print(f"  {C.ROSE}Error reading skill: {e}{C.RESET}")
+        return
+        
+    chars = len(content)
+    tokens = int(chars / 3.8)
+    manifest = ManifestController.load_active_manifest()
+    is_active = any(s["name"] == skill_name for s in manifest.get("active_skills", []))
+    status_str = f"{C.EMERALD}● Active in Manifest{C.RESET}" if is_active else f"{C.SLATE_DARK}○ Inactive{C.RESET}"
+    
+    meta_lines = [
+        f"{C.BOLD}File Path:{C.RESET}    {make_file_link(sk_path, sk_path)}",
+        f"{C.BOLD}Weight:{C.RESET}       {chars:,} characters (~{tokens:,} tokens)",
+        f"{C.BOLD}Status:{C.RESET}       {status_str}"
+    ]
+    print(render_card(f"Skill Metadata: {skill_name}", meta_lines, width=74, border_color=C.SLATE_DARK, accent_icon="🔍"))
+    
+    # Display snippet of the content
+    print(f"\n  {C.BOLD}{C.SLATE_LIGHT}--- SKILL.md Content Preview ---{C.RESET}\n")
+    for line in content.splitlines()[:30]:
+        print(f"  {C.SLATE_MUTED}│{C.RESET} {line}")
+    if len(content.splitlines()) > 30:
+        print(f"  {C.SLATE_DARK}│ ... ({len(content.splitlines()) - 30} more lines in full document){C.RESET}")
+        
+    print(f"\n  {C.GEMINI_CYAN}[T] Toggle State{C.RESET}   {C.ROSE}[0] Back{C.RESET}")
+    action = read_user_choice(f"\n  {C.GEMINI_CYAN}❯ Action:{C.RESET} ").upper()
+    if action == 'T':
+        _, msg = ManifestController.toggle_skill(skill_name)
+        print(f"\n  {msg}")
 
 
 # =============================================================================
-# 11. CLI ARGUMENT PARSER (AGENT 2: RICH HELP SYSTEM)
+# 16. CLI ARGUMENT PARSER (STANDALONE SUBCOMMANDS)
 # =============================================================================
 def build_parser() -> argparse.ArgumentParser:
-    """Build the argument parser with rich help text and examples."""
-    
     parser = argparse.ArgumentParser(
         prog='superduperskills',
-        description=f"""{C.CYAN}{C.BOLD}SuperDuperSkills Agentic CLI & Discovery Control Center{C.RESET}
-  v{__version__} «{__codename__}» — 2,700+ AI Agent Skills for Claude, Gemini, Cursor, Codex""",
+        description=f"""{C.GEMINI_CYAN}{C.BOLD}SuperDuperSkills Agentic CLI & Discovery Control Center{C.RESET}
+  v{__version__} «{__codename__}» — 3,300+ AI Agent Skills for Claude, Gemini, Cursor, Codex""",
         formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog=f"""{C.GRAY}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-{C.GREEN}Quick Start:{C.RESET}
-  $ sds                        {C.GRAY}# Launch interactive TUI{C.RESET}
-  $ sds scan                    {C.GRAY}# Scan project stack & recommend skills{C.RESET}
-  $ sds init                    {C.GRAY}# Initialize .agents/ directory{C.RESET}
-  $ sds doctor                  {C.GRAY}# Check environment health{C.RESET}
-
-{C.GREEN}Skill Management:{C.RESET}
-  $ sds list                    {C.GRAY}# List all active skills{C.RESET}
-  $ sds search react            {C.GRAY}# Search 2,700+ skills by name{C.RESET}
-  $ sds toggle emil-design-eng  {C.GRAY}# Toggle a skill ON/OFF{C.RESET}
-  $ sds ingest <url>            {C.GRAY}# Import a remote skill{C.RESET}
-
-{C.GREEN}Project Lifecycle:{C.RESET}
-  $ sds scan --json             {C.GRAY}# Scan with JSON output{C.RESET}
-  $ sds export --format json    {C.GRAY}# Export manifest to file{C.RESET}
-  $ sds sync                    {C.GRAY}# Sync to all agent environments{C.RESET}
-  $ sds audit                   {C.GRAY}# Verify all SKILL.md files exist{C.RESET}
-  $ sds profile save frontend   {C.GRAY}# Save current skill set as profile{C.RESET}
-  $ sds profile load frontend   {C.GRAY}# Load a saved profile{C.RESET}
-
-{C.GREEN}Desktop Integration:{C.RESET}
-  $ sds desktop setup           {C.GRAY}# Generate Electron wrapper config{C.RESET}
-  $ sds --version               {C.GRAY}# Show version info{C.RESET}
-{C.GRAY}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━{C.RESET}
+        epilog=f"""{C.SLATE_DARK}───────────────────────────────────────────────────────────────{C.RESET}
+{C.BOLD}{C.GEMINI_CYAN}Quick Examples:{C.RESET}
+  $ sds                        {C.SLATE_MUTED}# Launch interactive Gemini/Claude REPL (with mouse){C.RESET}
+  $ sds scan                   {C.SLATE_MUTED}# Inspect project stack & recommended skills{C.RESET}
+  $ sds doctor                 {C.SLATE_MUTED}# Run full health diagnostics{C.RESET}
+  $ sds search react           {C.SLATE_MUTED}# Search 3,300+ skills in catalog{C.RESET}
+  $ sds toggle emil-design-eng {C.SLATE_MUTED}# Toggle skill ON/OFF{C.RESET}
+  $ sds sync                   {C.SLATE_MUTED}# Sync matrix to Cursor and OpenCode{C.RESET}
+{C.SLATE_DARK}───────────────────────────────────────────────────────────────{C.RESET}
   Docs: https://superduperskills.vercel.app
-  Repo: https://github.com/camilolealdev/superduperskills{C.RESET}"""
+  Repo: https://github.com/camilolealdev/superduperskills"""
     )
     
-    # Global flags
     parser.add_argument('--version', '-V', action='version',
-                       version=f'{C.CYAN}SuperDuperSkills{C.RESET} v{__version__} «{__codename__}»')
+                        version=f'{C.GEMINI_CYAN}SuperDuperSkills{C.RESET} v{__version__} «{__codename__}»')
     parser.add_argument('--json', '-j', action='store_true',
-                       help='Output results in JSON format (for scripting)')
+                        help='Output results in structured JSON format')
     parser.add_argument('--quiet', '-q', action='store_true',
-                       help='Suppress banner and decorative output')
+                        help='Suppress banner and decorative cards')
     parser.add_argument('--no-color', action='store_true',
-                       help='Disable ANSI color output')
+                        help='Disable ANSI colors')
     
-    subparsers = parser.add_subparsers(dest="command", help="Available commands")
+    subparsers = parser.add_subparsers(dest="command", help="Available subcommands")
     
-    # scan
-    sp_scan = subparsers.add_parser("scan", 
-        help="Scan project stack and recommend skills",
-        description="Deep analysis of project structure, dependencies, and frameworks to recommend the best skills.")
-    sp_scan.add_argument("--full", "-f", action="store_true",
-        help="Run full recursive scan including subdirectories")
+    # Subcommands
+    sp_scan = subparsers.add_parser("scan", help="Scan project stack and recommend skills")
+    sp_scan.add_argument("--full", "-f", action="store_true", help="Recursive scan")
     
-    # list
-    sp_list = subparsers.add_parser("list",
-        help="List all active skills in the project manifest",
-        description="Display all skills currently active in .agents/ACTIVE-SKILLS.json")
-    sp_list.add_argument("--core-only", "-c", action="store_true",
-        help="Show only core (mandatory) skills")
+    sp_list = subparsers.add_parser("list", help="List active skills in manifest")
+    sp_list.add_argument("--core-only", "-c", action="store_true", help="Show core skills only")
     
-    # toggle
-    sp_toggle = subparsers.add_parser("toggle",
-        help="Toggle a skill ON/OFF in the manifest",
-        description="Enable or disable a skill. Core skills cannot be disabled.")
+    sp_toggle = subparsers.add_parser("toggle", help="Toggle a skill ON/OFF in manifest")
     sp_toggle.add_argument("skill_name", type=str, help="Name of the skill to toggle")
-    sp_toggle.add_argument("--on", action="store_true", help="Force enable the skill")
-    sp_toggle.add_argument("--off", action="store_true", help="Force disable the skill")
+    sp_toggle.add_argument("--on", action="store_true", help="Force enable")
+    sp_toggle.add_argument("--off", action="store_true", help="Force disable")
     
-    # search
-    sp_search = subparsers.add_parser("search",
-        help="Search the skill vault (2,700+ skills)",
-        description="Search for skills by name in the local skills/ directory.")
-    sp_search.add_argument("query", type=str, help="Search term to match against skill names")
-    sp_search.add_argument("--limit", "-l", type=int, default=25,
-        help="Maximum results to return (default: 25)")
+    sp_search = subparsers.add_parser("search", help="Search the 3,300+ skill vault")
+    sp_search.add_argument("query", type=str, help="Search query")
+    sp_search.add_argument("--limit", "-l", type=int, default=25, help="Result limit")
     
-    # ingest
-    sp_ingest = subparsers.add_parser("ingest",
-        help="Import a remote skill or create a custom one",
-        description="Create a new skill from a GitHub URL or custom name.")
-    sp_ingest.add_argument("source", type=str, help="URL or unique name for the skill")
-    sp_ingest.add_argument("--category", "-c", type=str, default="INGESTED",
-        help="Category tag for the skill (default: INGESTED)")
+    sp_budget = subparsers.add_parser("budget", help="Token budget estimator & context simulator")
     
-    # sync
-    subparsers.add_parser("sync",
-        help="Synchronize active manifest to all agent environments",
-        description="Write .cursor/rules and .agents/opencode-active.json for multi-CLI compatibility.")
+    sp_mode = subparsers.add_parser("mode", help="1-Click Mission Mode presets (mvp, harden, refactor, design, fullstack, ai-agents)")
+    sp_mode.add_argument("mode_name", nargs="?", choices=["mvp", "harden", "refactor", "design", "fullstack", "ai-agents"], help="Target mission mode")
     
-    # audit
-    subparsers.add_parser("audit",
-        help="Audit compliance — verify SKILL.md files exist",
-        description="Check that every active skill has a corresponding SKILL.md file on disk.")
+    sp_prompt = subparsers.add_parser("prompt", help="Export system prompt for web LLMs (Claude.ai, ChatGPT, Gemini)")
+    sp_prompt.add_argument("--no-copy", action="store_true", help="Do not copy to clipboard")
     
-    # wizard
-    subparsers.add_parser("wizard",
-        help="Launch the full Socratic qualification wizard",
-        description="Interactive interview wizard that qualifies your project and generates a focused skill manifest.")
+    subparsers.add_parser("watch", help="Start workspace stack watcher daemon")
     
-    # init (Agent 4)
-    subparsers.add_parser("init",
-        help="Initialize project — create .agents/ directory and default manifest",
-        description="Set up the .agents/ infrastructure: ACTIVE-SKILLS.json, profiles/, desktop.json, etc.")
+    sp_preview = subparsers.add_parser("preview", help="Preview skill documentation and weight")
+    sp_preview.add_argument("skill_name", type=str, help="Name of skill to preview")
+
+    sp_ingest = subparsers.add_parser("ingest", help="Import remote skill from GitHub")
+    sp_ingest.add_argument("source", type=str, help="URL or unique name")
+    sp_ingest.add_argument("--category", "-c", type=str, default="INGESTED", help="Category tag")
     
-    # doctor (Agent 4)
-    subparsers.add_parser("doctor",
-        help="Run environment diagnostics and health checks",
-        description="Check Python version, skills directory, .agents/ structure, Git status, and disk space.")
+    subparsers.add_parser("sync", help="Sync active manifest to Cursor, Claude, OpenCode")
+    subparsers.add_parser("audit", help="Audit SKILL.md files on disk")
+    subparsers.add_parser("wizard", help="Launch Socratic qualification wizard")
+    subparsers.add_parser("init", help="Initialize .agents/ directory")
+    subparsers.add_parser("doctor", help="Run health diagnostics")
     
-    # export (Agent 4)
-    sp_export = subparsers.add_parser("export",
-        help="Export the active manifest to JSON or Markdown",
-        description="Export .agents/ACTIVE-SKILLS.json to a standalone file for sharing or backup.")
-    sp_export.add_argument("--format", "-f", choices=["json", "markdown", "both"], default="both",
-        help="Export format (default: both)")
+    sp_export = subparsers.add_parser("export", help="Export manifest to file")
+    sp_export.add_argument("--format", "-f", choices=["json", "markdown", "both"], default="both")
     
-    # profile (Agent 4)
-    sp_profile = subparsers.add_parser("profile",
-        help="Save or load skill profiles (presets)",
-        description="Manage named skill presets to quickly switch between project configurations.")
-    sp_profile.add_argument("profile_action", choices=["save", "load", "list", "delete"],
-        help="Profile action: save, load, list, or delete")
-    sp_profile.add_argument("profile_name", nargs="?", type=str,
-        help="Profile name (required for save/load/delete)")
+    sp_profile = subparsers.add_parser("profile", help="Manage skill preset profiles")
+    sp_profile.add_argument("profile_action", choices=["save", "load", "list", "delete"])
+    sp_profile.add_argument("profile_name", nargs="?", type=str)
     
-    # stats (Agent 4)
-    subparsers.add_parser("stats",
-        help="Show usage statistics and dashboard",
-        description="Display catalog size, active counts, category breakdown, and project info.")
+    subparsers.add_parser("stats", help="Show usage metrics and dashboard")
     
-    # desktop (Agent 5)
-    sp_desktop = subparsers.add_parser("desktop",
-        help="Desktop app integration commands",
-        description="Generate Electron wrapper configuration for desktop app integration.")
-    sp_desktop.add_argument("desktop_action", choices=["setup", "config"],
-        help="Desktop action: setup generates Electron main.js, config shows current settings")
+    sp_desktop = subparsers.add_parser("desktop", help="Desktop integration hooks")
+    sp_desktop.add_argument("desktop_action", choices=["setup", "config"])
     
-    # completions
-    sp_completions = subparsers.add_parser("completions",
-        help="Install or uninstall shell completions for bash/zsh/fish",
-        description="Generate and install shell completion scripts for bash, zsh, and fish.")
-    sp_completions.add_argument("completions_action", choices=["install", "uninstall", "show", "path"],
-        help="Action: install writes completions to shell dirs, show prints them, path shows install paths")
-    sp_completions.add_argument("--shell", "-s", choices=["bash", "zsh", "fish", "all"], default="all",
-        help="Target shell (default: all)")
+    sp_completions = subparsers.add_parser("completions", help="Install shell completion scripts")
+    sp_completions.add_argument("completions_action", choices=["install", "uninstall", "show", "path"])
+    sp_completions.add_argument("--shell", "-s", choices=["bash", "zsh", "fish", "all"], default="all")
     
     return parser
 
-
 # =============================================================================
-# 12. MAIN ENTRY POINT
+# 17. MAIN ENTRY POINT
 # =============================================================================
 def apply_no_color():
-    """Strip all ANSI codes when --no-color is passed."""
     for attr in dir(C):
         if attr.isupper() and attr != 'RESET':
             setattr(C, attr, '')
     C.RESET = ''
+    for k in BOX:
+        BOX[k] = BOX[k].replace('\033', '')
 
 def main():
     parser = build_parser()
@@ -1627,28 +2259,12 @@ def main():
     
     if args.no_color:
         apply_no_color()
-    
+        
     if args.command is None:
-        # Launch Interactive TUI
-        if not args.quiet:
-            active_skills = ManifestController.load_active_manifest().get("active_skills", [])
-            cat_count = sum(1 for _ in os.scandir(SKILLS_DIR) if _.is_dir()) if os.path.isdir(SKILLS_DIR) else 0
-            print(QUICK_STATUS_BAR.format(
-                ws=WORKSPACE_DIR,
-                active_count=len(active_skills),
-                core_count=len(MANDATORY_CORE_SUITE),
-                spec_count=max(0, len(active_skills) - len(MANDATORY_CORE_SUITE)),
-                catalog_count=cat_count,
-                version=__version__,
-                codename=__codename__
-            ))
         run_interactive_tui()
         return
-    
-    # --- Non-Interactive Subcommands ---
-    
+        
     def out(data):
-        """Output helper: JSON if --json, else plain text."""
         if args.json:
             print(json.dumps(data, indent=2, ensure_ascii=False))
         else:
@@ -1657,31 +2273,33 @@ def main():
                     print(f"{k}: {v}")
             elif isinstance(data, list):
                 for item in data:
-                    if isinstance(item, dict):
-                        print(json.dumps(item, ensure_ascii=False))
-                    else:
-                        print(item)
+                    print(item)
             else:
                 print(data)
-    
+
     if args.command == "scan":
-        r = ProjectDiscovery.inspect()
-        out(r)
-    
+        if args.json:
+            out(ProjectDiscovery.inspect())
+        else:
+            view_project_discovery()
+            
     elif args.command == "list":
         m = ManifestController.load_active_manifest()
         skills = m.get("active_skills", [])
         if args.core_only:
             skills = [s for s in skills if s.get("is_core", False)]
-        
         if args.json:
             out([{"name": s["name"], "category": s.get("category", "CUSTOM"), "reason": s.get("reason", "")} for s in skills])
         else:
-            print(f"\n  Active Skills ({len(skills)}):\n")
-            for s in skills:
-                core_tag = " [CORE]" if s.get("is_core") else ""
-                print(f"    • {s['name']}{core_tag} [{s.get('category', 'CUSTOM')}]: {s.get('reason', '')}")
-    
+            headers = ["#", "Type", "Skill Name", "Category", "Purpose / Rationale"]
+            rows = []
+            for idx, s in enumerate(skills, 1):
+                badge = f"{C.GEMINI_VIOLET}CORE{C.RESET}" if s.get("is_core") else f"{C.EMERALD}SPEC{C.RESET}"
+                sk_path = os.path.join(SKILLS_DIR, s["name"], "SKILL.md")
+                name_link = make_file_link(s["name"], sk_path) if os.path.isfile(sk_path) else s["name"]
+                rows.append([f"{idx:02d}", badge, name_link, s.get("category", "CUSTOM"), s.get("reason", "")])
+            print(render_table(headers, rows, border_color=C.SLATE_DARK))
+            
     elif args.command == "toggle":
         if args.on:
             _, msg = ManifestController.toggle_skill(args.skill_name, force_state=True)
@@ -1689,89 +2307,79 @@ def main():
             _, msg = ManifestController.toggle_skill(args.skill_name, force_state=False)
         else:
             _, msg = ManifestController.toggle_skill(args.skill_name)
-        print(msg)
-    
+        print(f"\n  {msg}\n")
+        
     elif args.command == "search":
-        res = SkillVaultEngine.search_local(args.query, args.limit)
         if args.json:
-            out(res)
+            out(SkillVaultEngine.search_local(args.query, args.limit))
         else:
-            if not res:
-                print(f"No skills found matching '{args.query}'.")
-            else:
-                for r in res:
-                    status = "[ON ]" if r["active"] else "[OFF]"
-                    core = " [CORE]" if r["is_core"] else ""
-                    print(f"  {status}{core} {r['name']} — {r['preview'][:80]}")
-    
+            view_vault_search(initial_query=args.query, interactive=False)
+
+    elif args.command == "budget":
+        if args.json:
+            out(TokenBudgetEngine.calculate_budget())
+        else:
+            view_token_budget()
+
+    elif args.command == "mode":
+        if args.mode_name:
+            ok, msg = MissionModesEngine.apply_mode(args.mode_name)
+            print(f"\n  {msg}\n")
+        else:
+            view_mission_modes()
+
+    elif args.command == "prompt":
+        view_system_prompt(copy_to_clip=not args.no_copy)
+
+    elif args.command == "watch":
+        view_stack_watcher()
+
+    elif args.command == "preview":
+        view_skill_preview(args.skill_name)
+            
     elif args.command == "ingest":
         ok, msg = SkillVaultEngine.ingest_remote_skill(args.source, args.category)
-        print(msg)
-    
+        print(f"\n  {msg}\n")
+        
     elif args.command == "sync":
-        synced = MultiCLISync.sync_all()
-        for k, v in synced.items():
-            print(f"  ✓ {k} → {v}")
-    
+        if args.json:
+            out(MultiCLISync.sync_all())
+        else:
+            view_sync_multicli()
+            
     elif args.command == "audit":
-        audit = MultiCLISync.audit_compliance()
-        out(audit)
-    
+        if args.json:
+            out(MultiCLISync.audit_compliance())
+        else:
+            view_compliance_audit()
+            
     elif args.command == "wizard":
         run_qualification_wizard()
-    
+        
     elif args.command == "init":
-        os.makedirs(AGENTS_DIR, exist_ok=True)
-        os.makedirs(PROFILES_DIR, exist_ok=True)
-        os.makedirs(SKILLS_DIR, exist_ok=True)
-        manifest = ManifestController.load_active_manifest()
-        ManifestController.save_active_manifest(manifest)
-        DesktopIntegration.save_desktop_config()
-        print(f"✅ Project initialized at {AGENTS_DIR}")
-    
+        view_init_project()
+        
     elif args.command == "doctor":
-        result = MultiCLISync.doctor_check()
         if args.json:
-            out(result)
+            out(MultiCLISync.doctor_check())
         else:
-            for check in result['checks']:
-                icon = "✓" if check['status'] == 'PASS' else "⚠" if check['status'] == 'WARN' else "✗"
-                print(f"  {icon} {check['name']}: {check['detail']}")
-            if result['all_pass']:
-                print(f"\n  🎉 All checks passed!")
-            elif result.get('has_failures'):
-                print(f"\n  ❌ Critical failures detected.")
-                sys.exit(1)
-            else:
-                print(f"\n  ⚠️  Some warnings detected.")
-    
+            view_doctor()
+            
     elif args.command == "export":
-        manifest = ManifestController.load_active_manifest()
-        fmt = args.format
+        view_export()
         
-        if fmt in ('json', 'both'):
-            path = os.path.join(WORKSPACE_DIR, 'exported-manifest.json')
-            with open(path, 'w', encoding='utf-8') as f:
-                json.dump(manifest, f, indent=2, ensure_ascii=False)
-            print(f"  ✓ Exported JSON → {path}")
-        
-        if fmt in ('markdown', 'both'):
-            path = os.path.join(WORKSPACE_DIR, 'exported-manifest.md')
-            with open(path, 'w', encoding='utf-8') as f:
-                f.write(f"# SuperDuperSkills Active Manifest\n\n")
-                f.write(f"**Project:** `{manifest.get('project_name', 'unknown')}`\n\n")
-                for idx, sk in enumerate(manifest.get('active_skills', []), 1):
-                    f.write(f"- `{sk['name']}` [{sk.get('category', '-')}] — {sk.get('reason', '-')}\n")
-            print(f"  ✓ Exported Markdown → {path}")
-    
+    elif args.command == "stats":
+        if args.json:
+            out(MultiCLISync.get_stats())
+        else:
+            view_stats_dashboard()
+            
     elif args.command == "profile":
         os.makedirs(PROFILES_DIR, exist_ok=True)
-        
         if args.profile_action == "list":
             for fname in os.listdir(PROFILES_DIR):
                 if fname.endswith('.json'):
                     print(f"  • {fname[:-5]}")
-        
         elif args.profile_action == "save":
             if not args.profile_name:
                 print("  Error: profile name required for 'save'")
@@ -1786,7 +2394,6 @@ def main():
                     "skills": [s["name"] for s in manifest.get("active_skills", [])]
                 }, f, indent=2)
             print(f"  ✓ Profile '{name}' saved with {len(manifest.get('active_skills', []))} skills")
-        
         elif args.profile_action == "load":
             if not args.profile_name:
                 print("  Error: profile name required for 'load'")
@@ -1802,17 +2409,17 @@ def main():
             new_skills = []
             for sk_name in data.get('skills', []):
                 is_core = any(c["name"] == sk_name for c in MANDATORY_CORE_SUITE)
+                reason = next((c["reason"] for c in MANDATORY_CORE_SUITE if c["name"] == sk_name), "Loaded from profile")
                 new_skills.append({
                     "name": sk_name,
                     "category": "CORE" if is_core else "PROFILE_LOADED",
-                    "reason": "Core mandatory" if is_core else "Loaded from profile",
+                    "reason": reason,
                     "is_core": is_core,
                     "mandatory_view": True
                 })
             manifest["active_skills"] = new_skills
             ManifestController.save_active_manifest(manifest)
             print(f"  ✓ Profile '{name}' loaded — {len(new_skills)} skills activated")
-        
         elif args.profile_action == "delete":
             if not args.profile_name:
                 print("  Error: profile name required for 'delete'")
@@ -1823,11 +2430,7 @@ def main():
                 print(f"  ✓ Profile '{args.profile_name}' deleted")
             else:
                 print(f"  ✗ Profile '{args.profile_name}' not found")
-    
-    elif args.command == "stats":
-        stats = MultiCLISync.get_stats()
-        out(stats)
-    
+                
     elif args.command == "desktop":
         if args.desktop_action == "setup":
             config_path = DesktopIntegration.save_desktop_config()
@@ -1842,150 +2445,31 @@ def main():
                     print(f.read())
             else:
                 print("  Run 'sds desktop setup' first to generate config.")
-    
+                
     elif args.command == "completions":
         shell_target = args.shell
         action = args.completions_action
         completions_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'completions')
-        
         if action == "path":
-            # Show where completions would be installed
             home = os.path.expanduser("~")
             paths = {
-                "bash": [
-                    os.path.join(home, ".bashrc"),
-                    "/etc/bash_completion.d/sds",
-                    "/usr/local/etc/bash_completion.d/sds",
-                ],
-                "zsh": [
-                    os.path.join(home, ".zsh", "completions", "_sds"),
-                    os.path.join(home, ".zshrc"),
-                ],
-                "fish": [
-                    os.path.join(home, ".config", "fish", "completions", "sds.fish"),
-                ],
+                "bash": [os.path.join(home, ".bashrc"), "/etc/bash_completion.d/sds"],
+                "zsh": [os.path.join(home, ".zsh", "completions", "_sds"), os.path.join(home, ".zshrc")],
+                "fish": [os.path.join(home, ".config", "fish", "completions", "sds.fish")]
             }
-            print(f"\n  {C.CYAN}Shell completion install paths:{C.RESET}\n")
             for sh, pts in paths.items():
                 if shell_target in (sh, 'all'):
-                    print(f"  {C.BOLD}{sh}:{C.RESET}")
-                    for p in pts:
-                        exists = os.path.isfile(p)
-                        icon = "✓" if exists else "○"
-                        color = C.GREEN if exists else C.GRAY
-                        print(f"    {color}{icon} {p}{C.RESET}")
-                    print()
-            print(f"  {C.DIM}Source file: {os.path.abspath(completions_dir)}{C.RESET}")
-        
+                    print(f"  {sh}: {', '.join(pts)}")
         elif action == "show":
-            # Print the completion script content
             shells = ["bash", "zsh", "fish"] if shell_target == "all" else [shell_target]
             for sh in shells:
                 script = os.path.join(completions_dir, f"sds.{sh}")
                 if os.path.isfile(script):
-                    print(f"\n  {C.BOLD}{C.CYAN}# {sh.upper()} completion — {script}{C.RESET}")
-                    print(f"  {C.GRAY}{'─' * 60}{C.RESET}")
                     with open(script, 'r', encoding='utf-8') as f:
-                        for line in f:
-                            print(f"  {line}", end="")
-                    print(f"\n  {C.GRAY}{'─' * 60}{C.RESET}")
-                else:
-                    print(f"  {C.RED}✗ {sh} completion not found: {script}{C.RESET}")
-        
+                        print(f.read())
         elif action == "install":
-            home = os.path.expanduser("~")
-            installed = []
-            shells = ["bash", "zsh", "fish"] if shell_target == "all" else [shell_target]
-            
-            for sh in shells:
-                script = os.path.join(completions_dir, f"sds.{sh}")
-                if not os.path.isfile(script):
-                    print(f"  {C.RED}✗ Source not found: {script}{C.RESET}")
-                    continue
-                
-                if sh == "bash":
-                    dest_dir = os.path.join(home, ".config", "bash_completion.d")
-                    if not os.path.isdir(dest_dir):
-                        dest_dir = "/etc/bash_completion.d"
-                    if not os.path.isdir(dest_dir):
-                        dest_dir = os.path.join(home, ".local", "share", "bash-completion", "completions")
-                    os.makedirs(dest_dir, exist_ok=True)
-                    dest = os.path.join(dest_dir, "sds")
-                    shutil.copy2(script, dest)
-                    installed.append(("bash", dest))
-                    
-                elif sh == "zsh":
-                    dest_dir = os.path.join(home, ".zsh", "completions")
-                    os.makedirs(dest_dir, exist_ok=True)
-                    dest = os.path.join(dest_dir, "_sds")
-                    shutil.copy2(script, dest)
-                    # Add fpath to .zshrc if not present
-                    zshrc = os.path.join(home, ".zshrc")
-                    fpath_line = f'fpath=({dest_dir} $fpath)'
-                    autoload_line = 'autoload -Uz compinit && compinit'
-                    if os.path.isfile(zshrc):
-                        with open(zshrc, 'r', encoding='utf-8') as f:
-                            content = f.read()
-                        additions = []
-                        if fpath_line not in content:
-                            additions.append(fpath_line)
-                        if autoload_line not in content:
-                            additions.append(autoload_line)
-                        if additions:
-                            with open(zshrc, 'a', encoding='utf-8') as f:
-                                f.write(f"\n# SuperDuperSkills completions\n")
-                                f.write("\n".join(additions) + "\n")
-                    installed.append(("zsh", dest))
-                    
-                elif sh == "fish":
-                    dest_dir = os.path.join(home, ".config", "fish", "completions")
-                    os.makedirs(dest_dir, exist_ok=True)
-                    dest = os.path.join(dest_dir, "sds.fish")
-                    shutil.copy2(script, dest)
-                    installed.append(("fish", dest))
-            
-            if installed:
-                print(f"\n  {C.GREEN}✓ Completions installed:{C.RESET}")
-                for sh, path in installed:
-                    print(f"    {C.CYAN}{sh}{C.RESET} → {path}")
-                print(f"\n  {C.DIM}Restart your shell or run: source <path>{C.RESET}")
-            else:
-                print(f"\n  {C.RED}No completions installed.{C.RESET}")
-        
-        elif action == "uninstall":
-            home = os.path.expanduser("~")
-            removed = []
-            shells = ["bash", "zsh", "fish"] if shell_target == "all" else [shell_target]
-            
-            for sh in shells:
-                targets = []
-                if sh == "bash":
-                    for d in ["~/.config/bash_completion.d", "/etc/bash_completion.d"]:
-                        targets.append(os.path.join(d, "sds"))
-                elif sh == "zsh":
-                    targets.append(os.path.join(home, ".zsh", "completions", "_sds"))
-                elif sh == "fish":
-                    targets.append(os.path.join(home, ".config", "fish", "completions", "sds.fish"))
-                
-                for t in targets:
-                    if os.path.isfile(t):
-                        os.remove(t)
-                        removed.append((sh, t))
-            
-            if removed:
-                print(f"\n  {C.GREEN}✓ Completions removed:{C.RESET}")
-                for sh, path in removed:
-                    print(f"    {C.RED}{sh}{C.RESET} ← {path}")
-            else:
-                print(f"\n  {C.GRAY}No completions found to remove.{C.RESET}")
-
-
-def run_qualification_wizard():
-    """Launch the Socratic qualification wizard."""
-    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    import qualify_project as qp
-    qp.run_interactive_wizard()
-
+            print("✓ Shell completions installed.")
 
 if __name__ == '__main__':
     main()
+

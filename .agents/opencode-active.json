@@ -1,6 +1,7 @@
 {
   "source": "superduperskills",
-  "active_count": 21,
+  "version": "5.0.0",
+  "active_count": 23,
   "skills": [
     "caveman",
     "ponytail",
@@ -21,7 +22,9 @@
     "agentic-awesome-skills",
     "gsd-core",
     "i-have-adhd",
-    "emil-design-eng",
-    "mi-skill"
+    "prototype",
+    "pick-ui-library",
+    "tailwind-theme-builder",
+    "ask-sonner"
   ]
 }

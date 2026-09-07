@@ -1,6 +1,6 @@
 {
   "project_name": "superduperskills",
-  "project_phase": "0-to-1 MVP / Desarrollo Activo",
+  "project_phase": "mvp",
   "objectives": [
     "YAGNI Architecture",
     "UI Polish",
@@ -142,16 +142,30 @@
       "mandatory_view": true
     },
     {
-      "name": "emil-design-eng",
-      "category": "USER_SELECTED",
-      "reason": "Habilitada interactivamente por el usuario.",
+      "name": "prototype",
+      "category": "MODE_MVP",
+      "reason": "Prototipado rápido de interfaces de alta fidelidad",
       "is_core": false,
       "mandatory_view": true
     },
     {
-      "name": "mi-skill",
-      "category": "USER_SELECTED",
-      "reason": "Habilitada interactivamente por el usuario.",
+      "name": "pick-ui-library",
+      "category": "MODE_MVP",
+      "reason": "Selección inteligente de librería UI sin sobrecarga",
+      "is_core": false,
+      "mandatory_view": true
+    },
+    {
+      "name": "tailwind-theme-builder",
+      "category": "MODE_MVP",
+      "reason": "Tokens de diseño y configuración Tailwind",
+      "is_core": false,
+      "mandatory_view": true
+    },
+    {
+      "name": "ask-sonner",
+      "category": "MODE_MVP",
+      "reason": "Patrones y troubleshooting del sistema de toasts",
       "is_core": false,
       "mandatory_view": true
     }

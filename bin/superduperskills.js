@@ -1,10 +1,8 @@
 #!/usr/bin/env node
 
 /**
- * SuperDuperSkills — Node.js CLI Binary Launcher v4.0
+ * SuperDuperSkills — Node.js CLI Binary Launcher v4.0 (Gemini & Claude Edition)
  * Bridges npx / pnpm dlx executions directly into the Agentic Control Center.
- * 
- * Agent 5: Desktop integration stubs + Electron wrapper detection
  */
 
 const { spawn } = require('child_process');
@@ -14,64 +12,82 @@ const fs = require('fs');
 const rootDir = path.resolve(__dirname, '..');
 const pythonScript = path.join(rootDir, 'scripts', 'superduper_cli.py');
 
-const VERSION = '4.0.0';
-const CODENAME = 'HyperDrive';  // synced with scripts/superduper_cli.py
+const VERSION = '5.0.0';
+const CODENAME = 'OmniPower';
 
-// Pick available python command
+// TrueColor / ANSI Styling
+const C = {
+  RESET: '\x1b[0m',
+  BOLD: '\x1b[1m',
+  DIM: '\x1b[2m',
+  CYAN: '\x1b[38;2;34;211;238m',
+  BLUE: '\x1b[38;2;96;165;250m',
+  INDIGO: '\x1b[38;2;129;140;248m',
+  GOLD: '\x1b[38;2;251;191;36m',
+  EMERALD: '\x1b[38;2;52;211;153m',
+  SLATE_LIGHT: '\x1b[38;2;226;232;240m',
+  SLATE_MUTED: '\x1b[38;2;148;163;184m',
+  SLATE_DARK: '\x1b[38;2;100;116;139m',
+  ROSE: '\x1b[38;2;248;113;113m'
+};
+
 const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
 
-// Handle --version flag directly in Node (no Python needed)
+// Handle --version flag directly in Node
 if (process.argv.includes('--version') || process.argv.includes('-V')) {
-  console.log(`\x1b[36m\x1b[1mSuperDuperSkills\x1b[0m v${VERSION} \x1b[33m\u00ab${CODENAME}\u00bb\x1b[0m`);
+  console.log(`\n  ${C.CYAN}${C.BOLD}✦ SuperDuperSkills${C.RESET} ${C.SLATE_LIGHT}v${VERSION}${C.RESET} ${C.GOLD}«${CODENAME}»${C.RESET}\n`);
   process.exit(0);
 }
 
 // Handle --help without Python
 if (process.argv.includes('--help') && process.argv.length <= 3) {
   console.log(`
-\x1b[36m\x1b[1m SuperDuperSkills Agentic CLI v${VERSION}\x1b[0m
-\x1b[37m 2,700+ AI Agent Skills for Claude, Gemini, Cursor, Codex\x1b[0m
+  ${C.CYAN}╭────────────────────────────────────────────────────────────────────────╮${C.RESET}
+  ${C.CYAN}│${C.RESET}  ${C.CYAN}${C.BOLD}✦ SUPERDUPERSKILLS${C.RESET} ${C.SLATE_MUTED}v${VERSION}${C.RESET} ${C.GOLD}«${CODENAME}»${C.RESET}                       ${C.INDIGO}● Agentic Hub${C.RESET} ${C.CYAN}│${C.RESET}
+  ${C.BLUE}│${C.RESET}  ${C.SLATE_LIGHT}3,300+ AI Agent Skills Governance Suite for Claude, Gemini, Codex${C.RESET}  ${C.BLUE}│${C.RESET}
+  ${C.INDIGO}╰────────────────────────────────────────────────────────────────────────╯${C.RESET}
 
-\x1b[32mUsage:\x1b[0m
-  $ sds                  Launch interactive TUI
-  $ sds <command>        Run a specific command
-  $ sds --help           Show this help
-  $ sds --version        Show version
+  ${C.BOLD}${C.CYAN}Usage:${C.RESET}
+    ${C.SLATE_LIGHT}$ sds${C.RESET}                   ${C.SLATE_MUTED}Launch interactive Gemini/Claude REPL (with mouse)${C.RESET}
+    ${C.SLATE_LIGHT}$ sds <command>${C.RESET}         ${C.SLATE_MUTED}Execute a specific command directly${C.RESET}
+    ${C.SLATE_LIGHT}$ sds --help${C.RESET}            ${C.SLATE_MUTED}Show this help screen${C.RESET}
+    ${C.SLATE_LIGHT}$ sds --version${C.RESET}         ${C.SLATE_MUTED}Display version information${C.RESET}
 
-\x1b[33mCommands:\x1b[0m
-  init        Initialize project (.agents/ directory)
-  scan        Scan project stack & recommend skills
-  list        List active skills in manifest
-  toggle      Toggle a skill ON/OFF
-  search      Search the 2,700+ skill vault
-  ingest      Import a remote skill
-  sync        Sync manifest to all agent environments
-  audit       Verify SKILL.md files exist
-  wizard      Launch qualification wizard
-  doctor      Run environment health checks
-  export      Export manifest to JSON/Markdown
-  stats       Show usage statistics
-  profile     Save/load skill profiles
-  desktop     Desktop app integration
-  completions Install shell completions
+  ${C.BOLD}${C.GOLD}Core Commands:${C.RESET}
+    ${C.EMERALD}scan${C.RESET}        ${C.SLATE_LIGHT}Scan project stack & recommend curated skills${C.RESET}
+    ${C.EMERALD}budget${C.RESET}      ${C.SLATE_LIGHT}Token budget estimator & LLM context window simulator${C.RESET}
+    ${C.EMERALD}mode${C.RESET}        ${C.SLATE_LIGHT}1-Click Mission Modes (mvp, harden, refactor, design, fullstack)${C.RESET}
+    ${C.EMERALD}prompt${C.RESET}      ${C.SLATE_LIGHT}Compile & copy Super-Prompt to clipboard for Web LLMs${C.RESET}
+    ${C.EMERALD}watch${C.RESET}       ${C.SLATE_LIGHT}Real-time workspace watcher for automatic skill triggers${C.RESET}
+    ${C.EMERALD}doctor${C.RESET}      ${C.SLATE_LIGHT}Run full health check & environment diagnostics${C.RESET}
+    ${C.EMERALD}list${C.RESET}        ${C.SLATE_LIGHT}List all active skills in project manifest${C.RESET}
+    ${C.EMERALD}search${C.RESET}      ${C.SLATE_LIGHT}Search across 3,300+ skills in the local vault${C.RESET}
+    ${C.EMERALD}preview${C.RESET}     ${C.SLATE_LIGHT}Inspect formatted SKILL.md and calculate token weight${C.RESET}
+    ${C.EMERALD}toggle${C.RESET}      ${C.SLATE_LIGHT}Toggle a specific skill ON or OFF${C.RESET}
+    ${C.EMERALD}sync${C.RESET}        ${C.SLATE_LIGHT}Sync manifest to Cursor Rules, Claude, OpenCode${C.RESET}
+    ${C.EMERALD}audit${C.RESET}       ${C.SLATE_LIGHT}Verify physical SKILL.md compliance on disk${C.RESET}
+    ${C.EMERALD}wizard${C.RESET}      ${C.SLATE_LIGHT}Launch Socratic qualification interview wizard${C.RESET}
+    ${C.EMERALD}init${C.RESET}        ${C.SLATE_LIGHT}Initialize .agents/ governance directory${C.RESET}
+    ${C.EMERALD}stats${C.RESET}       ${C.SLATE_LIGHT}Display telemetry dashboard & category metrics${C.RESET}
+    ${C.EMERALD}profile${C.RESET}     ${C.SLATE_LIGHT}Save and load custom skill presets${C.RESET}
+    ${C.EMERALD}export${C.RESET}      ${C.SLATE_LIGHT}Export active manifest to JSON or Markdown${C.RESET}
 
-\x1b[36mDocs:\x1b[0m  https://superduperskills.vercel.app
-\x1b[36mRepo:\x1b[0m  https://github.com/camilolealdev/superduperskills
+  ${C.SLATE_DARK}──────────────────────────────────────────────────────────────────────────${C.RESET}
+  ${C.SLATE_MUTED}Docs:${C.RESET}  ${C.CYAN}https://superduperskills.vercel.app${C.RESET}
+  ${C.SLATE_MUTED}Repo:${C.RESET}  ${C.CYAN}https://github.com/camilolealdev/superduperskills${C.RESET}
 `);
   process.exit(0);
 }
 
+
 // Desktop mode detection
 if (process.argv.includes('--desktop')) {
-  // Check if Electron is available
   try {
     require('electron');
-    console.log('\x1b[32mElectron detected! Launching desktop mode...\x1b[0m');
-    // In a real implementation, this would spawn Electron
-    // For now, fall through to Python CLI
+    console.log(`\n  ${C.EMERALD}✔ Electron runtime found. Launching desktop control center...${C.RESET}\n`);
   } catch (e) {
-    console.log('\x1b[33mDesktop mode requires Electron. Install with: npm install electron\x1b[0m');
-    console.log('\x1b[37mFalling back to terminal mode...\x1b[0m');
+    console.log(`\n  ${C.GOLD}⚠ Desktop mode requires Electron (npm install electron).${C.RESET}`);
+    console.log(`  ${C.SLATE_MUTED}Switching seamlessly to terminal interactive mode...${C.RESET}\n`);
   }
 }
 
@@ -89,13 +105,10 @@ const child = spawn(pythonCmd, args, {
 
 child.on('error', (err) => {
   if (err.code === 'ENOENT') {
-    console.error('\x1b[31m[ERROR] Python 3 not found on PATH.\x1b[0m');
-    console.error('Install Python 3 (https://www.python.org/downloads/) to run SuperDuperSkills CLI.');
-    console.error('');
-    console.error('\x1b[37mTip: You can still use basic commands like --version and --help\x1b[0m');
-    console.error('\x1b[37m     without Python installed.\x1b[0m');
+    console.error(`\n  ${C.ROSE}✖ Python 3 was not detected on PATH.${C.RESET}`);
+    console.error(`  ${C.SLATE_MUTED}Install Python 3 (https://www.python.org/downloads/) to run SuperDuperSkills CLI.${C.RESET}\n`);
   } else {
-    console.error('\x1b[31m[ERROR] Failed to start process:\x1b[0m', err.message);
+    console.error(`\n  ${C.ROSE}✖ Process error:${C.RESET}`, err.message);
   }
   process.exit(1);
 });

@@ -14,7 +14,7 @@ Total unique skills: **3326**
 
 ## By Category
 
-### Marketing & Growth (141)
+### Marketing & Growth (2544)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2620,813 +2620,24 @@ Total unique skills: **3326**
 | **loop-library** | Discover, find, compare, audit, repair, adapt, and design repeatable AI-agent loops with explicit triggers, actions, verification, stopping conditions, guardrails, and handoffs. Use when a user ask... |  | `skills/loop-library/SKILL.md` |
 | **loop-me** | Grill me about specs for the workflows I want to build, within this workspace. |  | `skills/loop-me/SKILL.md` |
 
-### Other (800)
-
-| Skill | Description | GitHub | Location |
-|-------|-------------|--------|----------|
 | **ab-test-setup** | When the user wants to plan, design, or implement an A/B test or experiment. Also use when the user mentions "A/B test," "split test," "experiment," "test this change," "variant copy," "multivariat... |  | `skills/ab-test-setup/SKILL.md` |
-| **accessibility-testing** | WCAG 2.2 compliance testing, screen reader validation, and inclusive design verification. Use when ensuring legal compliance (ADA, Section 508), testing for disabilities, or building accessible app... |  | `skills/accessibility-testing/SKILL.md` |
-| **addyosmani** | Senior engineering habits & full lifecycle suite by Addy Osmani (Google Chrome Lead). Enforces a structured lifecycle: /spec → /plan → /build → /test → /review → /ship, along with web performance a... | `https://github.com/addyosmani/agent-skills` | `skills/addyosmani/SKILL.md` |
-| **agentic-awesome-skills** | Directorio curado de habilidades avanzadas para agentes autónomos y sistemas multi-agente. |  | `skills/agentic-awesome-skills/SKILL.md` |
-| **agentic-engineering** | Operate as an agentic engineer using eval-first execution, task decomposition, and cost-aware model routing. Use when structuring complex software tasks, optimizing LLM token budget allocation, or ... |  | `skills/agentic-engineering/SKILL.md` |
-| **agentic-eval** | Patterns and techniques for evaluating and improving AI agent outputs. Implements self-critique, reflection loops, and quantitative evaluation suites. Use when building eval benchmarks, testing pro... |  | `skills/agentic-eval/SKILL.md` |
-| **agentic-os** | Build persistent multi-agent operating systems on Claude Code / Antigravity. Covers kernel architecture, specialist sub-agents, slash commands, file-based memory, and scheduled background tasks. Us... |  | `skills/agentic-os/SKILL.md` |
-| **agentic-quality-engineering** | Use when orchestrating QE agents, understanding PACTS principles, configuring the AQE v3 fleet, or leveraging AI agents as force multipliers for quality work. |  | `skills/agentic-quality-engineering/SKILL.md` |
-| **agents-md** | Creates and maintains concise AGENTS.md and CLAUDE.md project instruction files. Use when initializing agent rules in a repo, updating AGENTS.md, setting up project instructions, or when user menti... |  | `skills/agents-md/SKILL.md` |
-| **agentshield** | Escudo de seguridad para agentes de IA: previene prompt injection, filtrado de credenciales y ejecución de código peligroso. |  | `skills/agentshield/SKILL.md` |
-| **agile-product-owner** | Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use when writing user stories, creating ... |  | `skills/agile-product-owner/SKILL.md` |
-| **algorithmic-art** | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields,... |  | `skills/algorithmic-art/SKILL.md` |
-| **all-deploy** | Deploys any web app, API, or agent to the internet with a strict pre-deploy audit and a preview → health-check → prod flow. Detects Next, Vite, Astro, Remix, Nuxt, SvelteKit, FastAPI, Flask, Expres... |  | `skills/all-deploy/SKILL.md` |
-| **alloydb-basics** | Manages clusters, instances, and backups for Google Cloud AlloyDB for PostgreSQL, and integrates with AlloyDB MCP tools for automated database operations and vector search. Use when configuring All... |  | `skills/alloydb-basics/SKILL.md` |
-| **android-clean-architecture** | Clean Architecture patterns for Android and Kotlin Multiplatform (KMP) projects — module structure, dependency rules, UseCases, Repositories, Coroutines/Flow, and ViewModel state mapping. Use when ... |  | `skills/android-clean-architecture/SKILL.md` |
-| **animation-vocabulary** | Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term ("the bouncy thing when a popover opens" → Pop in; "the iOS rubber-band scroll" → Rubb... | `https://github.com/emilkowalski/skills` | `skills/animation-vocabulary/SKILL.md` |
-| **anti-ui-slop** | Stops AI models from shipping generic, boring UI by leveraging UIZZE's public catalog of 800,000+ real web and iOS screens. Use when designing production-grade interfaces, preventing AI UI slop, or... |  | `skills/anti-ui-slop/SKILL.md` |
-| **app-docs** | Generate complete user documentation for a web app with screenshots. Browses the app via browser automation, screenshots every screen, and produces a structured user guide with step-by-step instruc... |  | `skills/app-docs/SKILL.md` |
-| **apple-design** | Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum... | `https://github.com/emilkowalski/skills` | `skills/apple-design/SKILL.md` |
-| **application-security-testing** | Application security testing (AppSec) across a whole product with Strix — decide which asset needs which test (source code, running web app, API, CI pipeline), run it, and turn the results into a r... |  | `skills/application-security-testing/SKILL.md` |
-| **aprende** | EN — Review the current conversation and surface reusable learnings across four categories (memory, lesson, skill, project-doc). Generate a numbered candidate list first; only write to disk after t... |  | `skills/aprende/SKILL.md` |
-| **aprende-skill** | Metodología de aprendizaje activo y aprendizaje acelerado para asimilar rápidamente nuevos dominios técnicos. |  | `skills/aprende-skill/SKILL.md` |
-| **archify** | Turn a codebase or system description into a polished, interactive system map, architecture diagram, workflow, sequence, or data-flow diagram — directly in chat. MANDATORY PROTOCOLS: 1. ALWAYS AVAI... |  | `skills/archify/SKILL.md` |
-| **architecture-blueprint-generator** | Generates comprehensive architectural blueprints by scanning codebase dependencies, module boundaries, data flows, and deployment targets. Use when creating system architecture diagrams, onboarding... |  | `skills/architecture-blueprint-generator/SKILL.md` |
-| **architecture-decision-records** | Captures architectural decisions made during development sessions as structured Architecture Decision Records (ADRs). Auto-detects decision moments, records context, options considered, trade-offs,... |  | `skills/architecture-decision-records/SKILL.md` |
-| **artifacts-builder** | Suite of tools for creating elaborate, multi-component Codex.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state man... |  | `skills/artifacts-builder/SKILL.md` |
-| **ask-sonner** | Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and... | `https://github.com/emilkowalski/skills` | `skills/ask-sonner/SKILL.md` |
-| **autofix** | Safely reviews and applies CodeRabbit PR review-thread feedback from GitHub with per-change approval. Use when applying PR comments, fixing reviewer feedback, or when user mentions "autofix", "code... |  | `skills/autofix/SKILL.md` |
-| **autoplan** | Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack) |  | `skills/autoplan/SKILL.md` |
-| **baoyu-compress-image** | Compresses images to WebP (default) or PNG with automatic tool selection (sharp, cwebp, pngquant). Use when optimizing image assets for web performance, converting to webp, or when user mentions "b... |  | `skills/baoyu-compress-image/SKILL.md` |
-| **baoyu-diagram** | Creates professional, dark-themed SVG diagrams (architecture, flowcharts, sequence diagrams, mind maps, timelines). Use when rendering vector SVG diagrams, visual system maps, or when user mentions... |  | `skills/baoyu-diagram/SKILL.md` |
-| **baoyu-url-to-markdown** | Fetches any public URL and converts content to clean markdown using site-specific adapters (X/Twitter, YouTube transcripts, HackerNews, GitHub). Use when scraping web content, converting articles t... |  | `skills/baoyu-url-to-markdown/SKILL.md` |
-| **benchmark** | Performance regression detection using the browse daemon. (gstack) |  | `skills/benchmark/SKILL.md` |
-| **benchmark-models** | Cross-model benchmark for gstack skills. (gstack) |  | `skills/benchmark-models/SKILL.md` |
-| **brief** | /cs:brief <topic> — Generate a one-page strategy brief from an office-hours intake. First step in the strategic sprint pipeline. Use when a strategic question needs to be framed before boardroom de... |  | `skills/brief/SKILL.md` |
-| **browse** | Fast headless browser for QA testing and site dogfooding. (gstack) |  | `skills/browse/SKILL.md` |
-| **browser-harness** | Arnés de pruebas de navegador y automatización e2e con inspección visual y capturas de pantalla. |  | `skills/browser-harness/SKILL.md` |
-| **browserstack** | Run tests on BrowserStack. Use when user mentions "browserstack", "cross-browser", "cloud testing", "browser matrix", "test on safari", "test on firefox", or "browser compatibility". |  | `skills/browserstack/SKILL.md` |
-| **bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. |  | `skills/bug-reporting-excellence/SKILL.md` |
-| **bun-runtime** | Guidance for using Bun as a runtime, package manager, bundler, and test runner. Explains Bun vs Node.js tradeoffs, native SQLite, Workspaces, and deployment. Use when working with Bun projects, con... |  | `skills/bun-runtime/SKILL.md` |
-| **c4-architecture** | Generates software architecture documentation using C4 model Mermaid diagrams (Context, Container, Component, Code). Use when asked to create architecture diagrams, document system boundaries, visu... |  | `skills/c4-architecture/SKILL.md` |
-| **canary** | Post-deploy canary monitoring. (gstack) |  | `skills/canary/SKILL.md` |
-| **capa-officer** | CAPA system management for medical device QMS. Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA metrics. Use when running CAPA investigations, 5-Why anal... |  | `skills/capa-officer/SKILL.md` |
-| **capture** | Captures and organizes chaotic brain dumps into a structured, actionable system with zero information loss. Use this skill whenever the user says 'capture this', 'brain dump', 'let me dump some ide... |  | `skills/capture/SKILL.md` |
-| **careful** | Safety guardrails for destructive commands. (gstack) |  | `skills/careful/SKILL.md` |
-| **chaos-experiment** |  |  | `skills/chaos-experiment/SKILL.md` |
-| **ci-security-scanning-with-strix** | Add security scanning to CI/CD with Strix — GitHub Actions, GitLab CI, or any pipeline — so every pull request gets a diff-scoped AI pentest that blocks vulnerable code before it merges, with resul... |  | `skills/ci-security-scanning-with-strix/SKILL.md` |
-| **claimable-postgres** | Provisions instant temporary PostgreSQL databases via Claimable Postgres by Neon (neon.new) without login or signup. Use when running quick SQL tests, provisioning sandbox DBs for CI, or when user ... |  | `skills/claimable-postgres/SKILL.md` |
-| **claude** | Claude Code CLI wrapper for non-Claude hosts - three modes. Review: independent diff review via claude -p. Challenge: adversarial failure-mode review. Consult: ask Claude about the repo with read-o... | `https://github.com/garrytan/gstack` | `skills/claude/SKILL.md` |
-| **claude-for-legal** | Análisis legal, revisión de contratos, cumplimiento normativo y síntesis de documentos jurídicos. |  | `skills/claude-for-legal/SKILL.md` |
-| **claude-mem** | Persistent architectural decisions and session memory across agent invocations. |  | `skills/claude-mem/SKILL.md` |
-| **claude-seo** | SEO técnico, Schema org markup, GEO (Generative Engine Optimization) y optimización de motores de búsqueda de IA. |  | `skills/claude-seo/SKILL.md` |
-| **cli-creator** | Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ... |  | `skills/cli-creator/SKILL.md` |
-| **clickhouse-io** | ClickHouse column-oriented database patterns, query optimization, MergeTree engines, materialization, and analytics. Use when designing ClickHouse schemas, optimizing OLAP SQL queries, or when user... |  | `skills/clickhouse-io/SKILL.md` |
-| **codebase-memory-mcp** | Indexes a codebase into a persistent knowledge graph so agents can query callers, callees, type hierarchies, and module relationships instead of re-reading dozens of files each session. Save tokens... |  | `skills/codebase-memory-mcp/SKILL.md` |
-| **codehealth-mcp** | Real-time structural Code Health analysis via CodeScene MCP. Reviews code complexity before edits, verifies score deltas after changes, and gates commits/PRs against technical debt accumulation. Us... |  | `skills/codehealth-mcp/SKILL.md` |
-| **codex** | OpenAI Codex CLI wrapper — three modes. (gstack) |  | `skills/codex/SKILL.md` |
-| **Codex** | Codex CLI wrapper for non-Codex hosts - three modes. Review: independent diff review via Codex -p. Challenge: adversarial failure-mode review. Consult: ask Codex about the repo with read-only file ... |  | `skills/Codex/SKILL.md` |
-| **Codex-api** | Reference for the Codex API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file; ... |  | `skills/Codex-api/SKILL.md` |
-| **Codex-coach** | Personal coach that teaches users to become Codex power users. Use this skill the FIRST time a user asks to "learn Codex", "be a power user", "coach me", "teach me Codex tricks", "what can Codex do... |  | `skills/Codex-coach/SKILL.md` |
-| **Codex-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. |  | `skills/Codex-handoff/SKILL.md` |
-| **codigo-full-stack** | Construye aplicaciones completas de punta a punta — interfaz, API, base de datos, autenticación y despliegue — con criterio de producción y sin sobredimensionar. Cubre elección de stack, modelo de ... |  | `skills/codigo-full-stack/SKILL.md` |
-| **collab-proof** | Use when you want to understand what Codex contributed vs what you drove in a session. Triggers on: /collab-proof, session retrospective, ai contribution analysis, collaboration evidence, what did ... |  | `skills/collab-proof/SKILL.md` |
-| **Collision-Zone Thinking** | Force unrelated concepts together to discover emergent properties - "What if we treated X like Y? |  | `skills/Collision-Zone Thinking/SKILL.md` |
-| **computer-use** | Drive the user's desktop in the background (clicking, typing, scrolling, dragging) without stealing cursor focus. Use when automating desktop applications, interacting with native GUIs, or when use... |  | `skills/computer-use/SKILL.md` |
-| **connect** | Connect Codex to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services. |  | `skills/connect/SKILL.md` |
-| **consultancy-practices** | Apply effective software quality consultancy practices. Use when consulting, advising clients, or establishing consultancy workflows. |  | `skills/consultancy-practices/SKILL.md` |
-| **context-mode** | Gestión ultra-eficiente de la ventana de contexto de sesión, compresión dinámica de tokens y poda de información no relevante. |  | `skills/context-mode/SKILL.md` |
-| **context-restore** | Restore working context saved earlier by /context-save. (gstack) |  | `skills/context-restore/SKILL.md` |
-| **context-save** | Save working context. (gstack) |  | `skills/context-save/SKILL.md` |
-| **contract-first** | Contract-first API and event schema development pattern. Prevents field drift and breaking changes between frontend/backend or service providers by defining OpenAPI/TypeSpec/Protobuf contracts befo... |  | `skills/contract-first/SKILL.md` |
-| **conventional-branch** | Create Git branches following the Conventional Branch specification (feature/, bugfix/, hotfix/, release/, chore/). Use when creating a new branch, naming a branch, or when user mentions "conventio... |  | `skills/conventional-branch/SKILL.md` |
-| **convert-pdf-to-md** | Converts PDF (.pdf) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing PDF files, converting PDF to text/markdown, or when... |  | `skills/convert-pdf-to-md/SKILL.md` |
-| **convert-word-to-md** | Converts Word (.docx) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing Word documents, converting docx to markdown, or w... |  | `skills/convert-word-to-md/SKILL.md` |
-| **cost-aware-llm-pipeline** | Cost optimization patterns for LLM API usage — model routing by task complexity, budget tracking, retry logic, and prompt caching. Use when building production LLM apps, reducing token costs, confi... |  | `skills/cost-aware-llm-pipeline/SKILL.md` |
-| **cpp-coding-standards** | C++ coding standards based on the C++ Core Guidelines (isocpp.github.io). Enforces modern C++20/23 patterns, RAII, smart pointers (`std::unique_ptr`), const-correctness, and memory safety. Use when... |  | `skills/cpp-coding-standards/SKILL.md` |
-| **creacion-de-oferta** | Convierte un servicio difuso en una oferta que se puede vender — resultado concreto, plazo, precio anclado al valor y no a las horas, garantía defendible y entregables listados. Incluye las seis pr... |  | `skills/creacion-de-oferta/SKILL.md` |
-| **create-mcp-eval** | Generates comprehensive evaluation suites for any Model Context Protocol (MCP) server using @mcpjam/sdk. Supports Vitest/Jest integration, deterministic tool assertions, and LLM-as-a-judge test cas... |  | `skills/create-mcp-eval/SKILL.md` |
-| **cso** | Chief Security Officer mode. (gstack) |  | `skills/cso/SKILL.md` |
-| **cult-ui** | Componentes UI con estética de culto, brutalista y moderna (React, Tailwind, Framer Motion). |  | `skills/cult-ui/SKILL.md` |
-| **customize** | Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI ... |  | `skills/customize/SKILL.md` |
-| **cybersecurity** | Community cybersecurity knowledge suite containing 817 security skills mapped to MITRE ATT&CK, NIST CSF, and OWASP standards. Covers vulnerability assessment, secret scanning, threat modeling, hard... |  | `skills/cybersecurity/SKILL.md` |
-| **data-scraper-agent** | Build automated AI-powered data collection agents for public web sources (job boards, pricing, news, GitHub, sports). Runs on a schedule, enriches collected data, handles rate limits, and persists ... |  | `skills/data-scraper-agent/SKILL.md` |
-| **databases** | Work with MongoDB (document database, BSON documents, aggregation pipelines, Atlas cloud) and PostgreSQL (relational database, SQL queries, psql CLI, pgAdmin). Use when designing database schemas, ... |  | `skills/databases/SKILL.md` |
-| **datadog-cli** | Datadog CLI for searching production logs, querying APM metrics, tracing requests, and inspecting dashboards. Use when debugging production issues, checking Datadog telemetry, or when user mentions... |  | `skills/datadog-cli/SKILL.md` |
-| **db-seed** | Generate database seed scripts with realistic sample data. Reads Drizzle schemas or SQL migrations, respects foreign key ordering, produces idempotent TypeScript or SQL seed files. Handles D1 batch... |  | `skills/db-seed/SKILL.md` |
-| **deep-dive** | 2-stage trace & interview pipeline (trace -> deep-interview). Use when applying patterns from Yeachan-Heo/deep-dive or when user mentions "deep-dive". |  | `skills/deep-dive/SKILL.md` |
-| **deep-interview** | Socratic deep interview with mathematical ambiguity gating. Use when applying patterns from Yeachan-Heo/deep-interview or when user mentions "deep-interview". |  | `skills/deep-interview/SKILL.md` |
-| **deepinit** | Deep codebase initialization with AGENTS.md documentation. Use when applying patterns from Yeachan-Heo/deepinit or when user mentions "deepinit". |  | `skills/deepinit/SKILL.md` |
-| **Defense-in-Depth Validation** | Validate at every layer data passes through to make bugs impossible |  | `skills/Defense-in-Depth Validation/SKILL.md` |
-| **defi-amm-security** | Security checklist for Solidity AMM contracts & pools. Use when applying patterns from affaan-m/defi-amm-security or when user mentions "defi-amm-security". |  | `skills/defi-amm-security/SKILL.md` |
-| **defuddle** | Converts cluttered HTML web pages into clean, readable Markdown. Strips cookie banners, ads, nav menus, scripts, and layout bloat (by kepano / Obsidian lead). Use when fetching web content for agen... |  | `skills/defuddle/SKILL.md` |
-| **delivery-gate** | Stop hook blocking completion until quality checks pass. Use when applying patterns from affaan-m/delivery-gate or when user mentions "delivery-gate". |  | `skills/delivery-gate/SKILL.md` |
-| **demo-video** | Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions. Orchestrates playwright,... |  | `skills/demo-video/SKILL.md` |
-| **dependabot** | Configuring and managing GitHub Dependabot. Use when applying patterns from github/dependabot or when user mentions "dependabot". |  | `skills/dependabot/SKILL.md` |
-| **dependency-updater** | Smart dependency updates across any language. Use when applying patterns from softaworks/dependency-updater or when user mentions "dependency-updater". |  | `skills/dependency-updater/SKILL.md` |
-| **deployment-patterns** | CI/CD pipelines, Docker, health checks & rollbacks. Use when applying patterns from affaan-m/deployment-patterns or when user mentions "deployment-patterns". |  | `skills/deployment-patterns/SKILL.md` |
-| **deprecation-and-migration** | Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset exi... |  | `skills/deprecation-and-migration/SKILL.md` |
-| **desk-journal** | Persistent desk journal memory entries. Use when applying patterns from github/desk-journal or when user mentions "desk-journal". |  | `skills/desk-journal/SKILL.md` |
-| **desk-open** | Open new desk in workshop. Use when applying patterns from github/desk-open or when user mentions "desk-open". |  | `skills/desk-open/SKILL.md` |
-| **detection-engineering-coverage-evaluation** | Google SecOps detection engineering workflow. Use when applying patterns from google/detection-engineering-coverage-evaluation or when user mentions "detection-engineering-coverage-evaluation". |  | `skills/detection-engineering-coverage-evaluation/SKILL.md` |
-| **dev-team** | Simulate collaborative dev team session. Use when applying patterns from affaan-m/dev-team or when user mentions "dev-team". |  | `skills/dev-team/SKILL.md` |
-| **develop-ai-functions-example** | Vercel AI SDK function examples. Use when applying patterns from vercel/develop-ai-functions-example or when user mentions "develop-ai-functions-example". |  | `skills/develop-ai-functions-example/SKILL.md` |
-| **develop-web-game** | Web game HTML/JS development loop. Use when applying patterns from openai/develop-web-game or when user mentions "develop-web-game". |  | `skills/develop-web-game/SKILL.md` |
-| **developer-device-platform-basics** | Remote Android device management. Use when applying patterns from google/developer-device-platform-basics or when user mentions "developer-device-platform-basics". |  | `skills/developer-device-platform-basics/SKILL.md` |
-| **developing-genkit-dart** | Genkit SDK for Dart AI agents. Use when applying patterns from google/developing-genkit-dart or when user mentions "developing-genkit-dart". |  | `skills/developing-genkit-dart/SKILL.md` |
-| **developing-genkit-go** | Genkit SDK for Go AI apps. Use when applying patterns from google/developing-genkit-go or when user mentions "developing-genkit-go". |  | `skills/developing-genkit-go/SKILL.md` |
-| **developing-genkit-js** | Genkit SDK for JS/TS AI apps. Use when applying patterns from google/developing-genkit-js or when user mentions "developing-genkit-js". |  | `skills/developing-genkit-js/SKILL.md` |
-| **developing-genkit-python** | Genkit SDK for Python AI apps. Use when applying patterns from google/developing-genkit-python or when user mentions "developing-genkit-python". |  | `skills/developing-genkit-python/SKILL.md` |
-| **devex-review** | Live developer experience audit. (gstack) |  | `skills/devex-review/SKILL.md` |
-| **diagnose** | Disciplined diagnosis loop for hard bugs. Use when applying patterns from mattpocock/diagnose or when user mentions "diagnose". |  | `skills/diagnose/SKILL.md` |
-| **diagram** | Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open (gstack) |  | `skills/diagram/SKILL.md` |
-| **difficult-workplace-conversations** | Workplace conflict & feedback framework. Use when applying patterns from softaworks/difficult-workplace-conversations or when user mentions "difficult-workplace-conversations". |  | `skills/difficult-workplace-conversations/SKILL.md` |
-| **discernment-nudge** | Nudge user to critically evaluate AI draft output. Use when applying patterns from anthropics/discernment-nudge or when user mentions "discernment-nudge". |  | `skills/discernment-nudge/SKILL.md` |
-| **dispatching-parallel-agents** | Dispatch parallel subagents for independent tasks. Use when applying patterns from obra/dispatching-parallel-agents or when user mentions "dispatching-parallel-agents". |  | `skills/dispatching-parallel-agents/SKILL.md` |
-| **dmux-workflows** | Multi-agent tmux pane orchestration. Use when applying patterns from affaan-m/dmux-workflows or when user mentions "dmux-workflows". |  | `skills/dmux-workflows/SKILL.md` |
-| **do** | Execute a phased implementation plan using subagents. Use when asked to execute, run, or carry out a plan — especially one created by make-plan. |  | `skills/do/SKILL.md` |
-| **document-api-endpoint** | Document & type Sentry API endpoints. Use when applying patterns from getsentry/document-api-endpoint or when user mentions "document-api-endpoint". |  | `skills/document-api-endpoint/SKILL.md` |
-| **document-generate** | Generate missing documentation from scratch for a feature, module, or entire project. (gstack) |  | `skills/document-generate/SKILL.md` |
-| **document-release** | Post-ship documentation update. (gstack) |  | `skills/document-release/SKILL.md` |
-| **docx** | Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document... |  | `skills/docx/SKILL.md` |
-| **docx-official** | Generating Word documents programmatically with docx library in Node.js. Use when generating .docx reports, contracts, invoices, or any structured Word document from data. |  | `skills/docx-official/SKILL.md` |
-| **domain-name-brainstormer** | Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking. |  | `skills/domain-name-brainstormer/SKILL.md` |
-| **dossier** | Decision-grade entity research skill — produces a hypothesis-tested dossier on a specific company, person, nonprofit, or government org, not a generic profile. Forcing intake makes the user state t... |  | `skills/dossier/SKILL.md` |
-| **doublecheck** | Three-layer verification pipeline for AI output. Use when applying patterns from github/doublecheck or when user mentions "doublecheck". |  | `skills/doublecheck/SKILL.md` |
-| **draw-io** | Draw.io XML editing & export. Use when applying patterns from softaworks/draw-io or when user mentions "draw-io". |  | `skills/draw-io/SKILL.md` |
-| **dynamic-workflow-mode** | Task-local harnesses & eval gates. Use when applying patterns from affaan-m/dynamic-workflow-mode or when user mentions "dynamic-workflow-mode". |  | `skills/dynamic-workflow-mode/SKILL.md` |
-| **e2e-testing** | Playwright E2E testing & POM patterns. Use when applying patterns from affaan-m/e2e-testing or when user mentions "e2e-testing". |  | `skills/e2e-testing/SKILL.md` |
-| **eas-app-stores** | Deploy Expo apps to App Store & Google Play. Use when applying patterns from expo/eas-app-stores or when user mentions "eas-app-stores". |  | `skills/eas-app-stores/SKILL.md` |
-| **eas-hosting** | Deploy Expo websites & APIs to EAS Hosting. Use when applying patterns from expo/eas-hosting or when user mentions "eas-hosting". |  | `skills/eas-hosting/SKILL.md` |
-| **eas-observe** | EAS Observe telemetry & interactive tracking. Use when applying patterns from expo/eas-observe or when user mentions "eas-observe". |  | `skills/eas-observe/SKILL.md` |
-| **eas-simulator** | Remote simulator control on EAS cloud. Use when applying patterns from expo/eas-simulator or when user mentions "eas-simulator". |  | `skills/eas-simulator/SKILL.md` |
-| **eas-update-insights** | Check EAS Update health & crash rates. Use when applying patterns from expo/eas-update-insights or when user mentions "eas-update-insights". |  | `skills/eas-update-insights/SKILL.md` |
-| **eas-workflows** | EAS workflow YAML CI/CD automation. Use when applying patterns from expo/eas-workflows or when user mentions "eas-workflows". |  | `skills/eas-workflows/SKILL.md` |
-| **ecc-guide** | Onboarding guide for ECC skills & commands. Use when applying patterns from affaan-m/ecc-guide or when user mentions "ecc-guide". |  | `skills/ecc-guide/SKILL.md` |
-| **ecc-recipes** | Workflow recipe families for ECC. Use when applying patterns from affaan-m/ecc-recipes or when user mentions "ecc-recipes". |  | `skills/ecc-recipes/SKILL.md` |
-| **ecc-tools-cost-audit** | Evidence-first tool usage & cost audit. Use when applying patterns from affaan-m/ecc-tools-cost-audit or when user mentions "ecc-tools-cost-audit". |  | `skills/ecc-tools-cost-audit/SKILL.md` |
-| **edit-article** | Edit and improve articles by restructuring sections, improving clarity, and tightening prose. Use when user wants to edit, revise, or improve an article draft. |  | `skills/edit-article/SKILL.md` |
-| **editor-pro-max** | Edición profesional de contenido, corrección de estilo, copywriting y pulido editorial de alto impacto. |  | `skills/editor-pro-max/SKILL.md` |
-| **editorconfig** | Generate best-practice .editorconfig file. Use when applying patterns from github/editorconfig or when user mentions "editorconfig". |  | `skills/editorconfig/SKILL.md` |
-| **ef-core** | Entity Framework Core best practices. Use when applying patterns from github/ef-core or when user mentions "ef-core". |  | `skills/ef-core/SKILL.md` |
-| **efcore-d2-db-diagram** | Generate D2 diagrams from EF Core models. Use when applying patterns from github/efcore-d2-db-diagram or when user mentions "efcore-d2-db-diagram". |  | `skills/efcore-d2-db-diagram/SKILL.md` |
-| **efficient-fable** | Orchestrate research & coding with cheap subagents. Use when applying patterns from BuilderIO/efficient-fable or when user mentions "efficient-fable". |  | `skills/efficient-fable/SKILL.md` |
-| **efficient-frontier** | Frontier model orchestration with subagents. Use when applying patterns from BuilderIO/efficient-frontier or when user mentions "efficient-frontier". |  | `skills/efficient-frontier/SKILL.md` |
-| **em-dash** | Proper typography & em-dash usage guidance. Use when applying patterns from github/em-dash or when user mentions "em-dash". |  | `skills/em-dash/SKILL.md` |
-| **emil-design-eng** | This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great. | `https://github.com/emilkowalski/skills` | `skills/emil-design-eng/SKILL.md` |
-| **energy-procurement** | Tariff optimization & energy cost management. Use when applying patterns from affaan-m/energy-procurement or when user mentions "energy-procurement". |  | `skills/energy-procurement/SKILL.md` |
-| **epic-design** | Build immersive, cinematic 2.5D interactive websites using scroll storytelling, parallax depth, text animations, and premium scroll effects — no WebGL required. Use this skill for any web design ta... |  | `skills/epic-design/SKILL.md` |
-| **error-handling** | Robust error handling across TS, Python & Go. Use when applying patterns from affaan-m/error-handling or when user mentions "error-handling". |  | `skills/error-handling/SKILL.md` |
-| **eval** | Evaluate and rank agent results by metric or LLM judge for an AgentHub session. Use when the user runs /hub:eval or asks to score, compare, or pick a winner among completed AgentHub agents. |  | `skills/eval/SKILL.md` |
-| **eval-driven-dev** | Evaluation-driven development workflow. Use when applying patterns from github/eval-driven-dev or when user mentions "eval-driven-dev". |  | `skills/eval-driven-dev/SKILL.md` |
-| **eval-harness** | Formal eval harness for session quality. Use when applying patterns from affaan-m/eval-harness or when user mentions "eval-harness". |  | `skills/eval-harness/SKILL.md` |
 | **events** | Plan, run & sponsor marketing events. Use when applying patterns from coreyhaines31/events or when user mentions "events". |  | `skills/events/SKILL.md` |
-| **evm-token-decimals** | Prevent EVM token decimal mismatch bugs. Use when applying patterns from affaan-m/evm-token-decimals or when user mentions "evm-token-decimals". |  | `skills/evm-token-decimals/SKILL.md` |
-| **exa-search** | Neural search via Exa MCP for web & code. Use when applying patterns from affaan-m/exa-search or when user mentions "exa-search". |  | `skills/exa-search/SKILL.md` |
-| **exam-ready** | Exam preparation from study notes & syllabus. Use when applying patterns from github/exam-ready or when user mentions "exam-ready". |  | `skills/exam-ready/SKILL.md` |
-| **excalidraw** | Excalidraw diagram authoring & editing. Use when applying patterns from softaworks/excalidraw or when user mentions "excalidraw". |  | `skills/excalidraw/SKILL.md` |
-| **executing-plans** | Execute implementation plan with checkpoints. Use when applying patterns from obra/executing-plans or when user mentions "executing-plans". |  | `skills/executing-plans/SKILL.md` |
 | **experiment-designer** | Use when planning product experiments, writing testable hypotheses, estimating sample size, prioritizing tests, or interpreting A/B outcomes with practical statistical rigor. |  | `skills/experiment-designer/SKILL.md` |
-| **expo-animation** | React Native & Expo animation decisions. Use when applying patterns from expo/expo-animation or when user mentions "expo-animation". |  | `skills/expo-animation/SKILL.md` |
-| **expo-app-clip** | Add iOS App Clip target to Expo app. Use when applying patterns from expo/expo-app-clip or when user mentions "expo-app-clip". |  | `skills/expo-app-clip/SKILL.md` |
-| **expo-brownfield** | Integrate Expo into existing native iOS/Android. Use when applying patterns from expo/expo-brownfield or when user mentions "expo-brownfield". |  | `skills/expo-brownfield/SKILL.md` |
-| **expo-data-fetching** | Data fetching & network requests in Expo. Use when applying patterns from expo/expo-data-fetching or when user mentions "expo-data-fetching". |  | `skills/expo-data-fetching/SKILL.md` |
-| **expo-design-system** | Theme design tokens in Expo apps. Use when applying patterns from expo/expo-design-system or when user mentions "expo-design-system". |  | `skills/expo-design-system/SKILL.md` |
-| **expo-dev-client** | Build & distribute Expo dev clients. Use when applying patterns from expo/expo-dev-client or when user mentions "expo-dev-client". |  | `skills/expo-dev-client/SKILL.md` |
-| **expo-dom** | Expo DOM components for webview on native. Use when applying patterns from expo/expo-dom or when user mentions "expo-dom". |  | `skills/expo-dom/SKILL.md` |
-| **expo-examples** | Official Expo example integration patterns. Use when applying patterns from expo/expo-examples or when user mentions "expo-examples". |  | `skills/expo-examples/SKILL.md` |
-| **expo-module** | Create Expo native modules in Swift & Kotlin. Use when applying patterns from expo/expo-module or when user mentions "expo-module". |  | `skills/expo-module/SKILL.md` |
-| **expo-native-ui** | Native-feeling UI elements in Expo. Use when applying patterns from expo/expo-native-ui or when user mentions "expo-native-ui". |  | `skills/expo-native-ui/SKILL.md` |
-| **expo-overview** | Entry point & router for Expo tasks. Use when applying patterns from expo/expo-overview or when user mentions "expo-overview". |  | `skills/expo-overview/SKILL.md` |
-| **expo-project-structure** | Folder layout for Expo Router apps. Use when applying patterns from expo/expo-project-structure or when user mentions "expo-project-structure". |  | `skills/expo-project-structure/SKILL.md` |
-| **expo-router** | File-based navigation with Expo Router. Use when applying patterns from expo/expo-router or when user mentions "expo-router". |  | `skills/expo-router/SKILL.md` |
-| **expo-skill-feedback** | Telemetry & feedback for Expo skills. Use when applying patterns from expo/expo-skill-feedback or when user mentions "expo-skill-feedback". |  | `skills/expo-skill-feedback/SKILL.md` |
-| **expo-tailwind-setup** | Tailwind CSS v4 & NativeWind in Expo. Use when applying patterns from expo/expo-tailwind-setup or when user mentions "expo-tailwind-setup". |  | `skills/expo-tailwind-setup/SKILL.md` |
-| **expo-ui** | SwiftUI & Jetpack Compose native UI in Expo. Use when applying patterns from expo/expo-ui or when user mentions "expo-ui". |  | `skills/expo-ui/SKILL.md` |
-| **expo-upgrade** | Upgrade Expo SDK versions & fix dependencies. Use when applying patterns from expo/expo-upgrade or when user mentions "expo-upgrade". |  | `skills/expo-upgrade/SKILL.md` |
-| **expo-web-to-native** | Migrate React web app to Expo mobile. Use when applying patterns from expo/expo-web-to-native or when user mentions "expo-web-to-native". |  | `skills/expo-web-to-native/SKILL.md` |
-| **external-context** | Invoke document-specialist subagents. Use when applying patterns from Yeachan-Heo/external-context or when user mentions "external-context". |  | `skills/external-context/SKILL.md` |
-| **eyeball** | Document analysis with inline screenshot evidence. Use when applying patterns from github/eyeball or when user mentions "eyeball". |  | `skills/eyeball/SKILL.md` |
-| **fabric-lakehouse** | Microsoft Fabric Lakehouse features & data. Use when applying patterns from github/fabric-lakehouse or when user mentions "fabric-lakehouse". |  | `skills/fabric-lakehouse/SKILL.md` |
-| **fal-ai-media** | Unified media generation via fal.ai MCP. Use when applying patterns from affaan-m/fal-ai-media or when user mentions "fal-ai-media". |  | `skills/fal-ai-media/SKILL.md` |
-| **fedora-linux-triage** | Fedora Linux systemd, dnf & SELinux triage. Use when applying patterns from github/fedora-linux-triage or when user mentions "fedora-linux-triage". |  | `skills/fedora-linux-triage/SKILL.md` |
-| **feedback-mastery** | Structured feedback delivery frameworks. Use when applying patterns from softaworks/feedback-mastery or when user mentions "feedback-mastery". |  | `skills/feedback-mastery/SKILL.md` |
-| **file-organizer** | Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load ... |  | `skills/file-organizer/SKILL.md` |
-| **finalize-agent-prompt** | Polish prompt file using AI agent persona. Use when applying patterns from github/finalize-agent-prompt or when user mentions "finalize-agent-prompt". |  | `skills/finalize-agent-prompt/SKILL.md` |
-| **find-animation-opportunities** | Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user ... | `https://github.com/emilkowalski/skills` | `skills/find-animation-opportunities/SKILL.md` |
-| **find-bugs** | Audit local branch changes for bugs & security. Use when applying patterns from getsentry/find-bugs or when user mentions "find-bugs". |  | `skills/find-bugs/SKILL.md` |
-| **find-security-vulnerabilities-in-code** | Find security vulnerabilities in a codebase or repository with Strix — a white-box AI security review that reads your source, reasons about the actual data flow and authorization model, then exploi... |  | `skills/find-security-vulnerabilities-in-code/SKILL.md` |
-| **finding-duplicate-functions** | Audit codebase for duplicate semantic functions. Use when applying patterns from obra/finding-duplicate-functions or when user mentions "finding-duplicate-functions". |  | `skills/finding-duplicate-functions/SKILL.md` |
-| **finetuning** | Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. ... |  | `skills/finetuning/SKILL.md` |
-| **finishing-a-development-branch** | Branch integration & PR completion checklist. Use when applying patterns from obra/finishing-a-development-branch or when user mentions "finishing-a-development-branch". |  | `skills/finishing-a-development-branch/SKILL.md` |
-| **finnish-humanizer** | Remove AI writing markers from Finnish text. Use when applying patterns from github/finnish-humanizer or when user mentions "finnish-humanizer". |  | `skills/finnish-humanizer/SKILL.md` |
-| **firebase-basics** | Firebase mobile & web app integration. Use when applying patterns from google/firebase-basics or when user mentions "firebase-basics". |  | `skills/firebase-basics/SKILL.md` |
-| **first-ask** | Task refinement workflow interrogating scope. Use when applying patterns from github/first-ask or when user mentions "first-ask". |  | `skills/first-ask/SKILL.md` |
-| **fix-security-vulnerabilities-with-strix** | Fix security vulnerabilities found by a Strix pentest (open-source CLI or app.strix.ai cloud) — triage by severity, patch the root cause rather than the symptom, and re-run Strix to prove each fix ... |  | `skills/fix-security-vulnerabilities-with-strix/SKILL.md` |
-| **flag-cleanup** |  |  | `skills/flag-cleanup/SKILL.md` |
-| **flowstudio-power-automate-build** | Build & deploy Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-build or when user mentions "flowstudio-power-automate-build". |  | `skills/flowstudio-power-automate-build/SKILL.md` |
-| **flowstudio-power-automate-debug** | Debug failing Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-debug or when user mentions "flowstudio-power-automate-debug". |  | `skills/flowstudio-power-automate-debug/SKILL.md` |
-| **flowstudio-power-automate-governance** | Govern Power Automate flows at scale. Use when applying patterns from github/flowstudio-power-automate-governance or when user mentions "flowstudio-power-automate-governance". |  | `skills/flowstudio-power-automate-governance/SKILL.md` |
-| **flowstudio-power-automate-mcp** | Foundation skill for Power Automate MCP. Use when applying patterns from github/flowstudio-power-automate-mcp or when user mentions "flowstudio-power-automate-mcp". |  | `skills/flowstudio-power-automate-mcp/SKILL.md` |
-| **flowstudio-power-automate-monitoring** | Tenant-wide Power Automate monitoring. Use when applying patterns from github/flowstudio-power-automate-monitoring or when user mentions "flowstudio-power-automate-monitoring". |  | `skills/flowstudio-power-automate-monitoring/SKILL.md` |
-| **flox-environments** | Reproducible Nix-based dev environments. Use when applying patterns from affaan-m/flox-environments or when user mentions "flox-environments". |  | `skills/flox-environments/SKILL.md` |
-| **fluentui-blazor** | Microsoft Fluent UI for Blazor apps. Use when applying patterns from github/fluentui-blazor or when user mentions "fluentui-blazor". |  | `skills/fluentui-blazor/SKILL.md` |
-| **folder-structure-blueprint-generator** | Document project folder structures. Use when applying patterns from github/folder-structure-blueprint-generator or when user mentions "folder-structure-blueprint-generator". |  | `skills/folder-structure-blueprint-generator/SKILL.md` |
-| **fork-discipline** | Audit and enforce the core/client boundary in multi-client projects. Detects where shared platform code is tangled with client-specific code, finds hardcoded client checks, config files that replac... |  | `skills/fork-discipline/SKILL.md` |
-| **foundation-models-on-device** | Apple FoundationModels on-device LLM. Use when applying patterns from affaan-m/foundation-models-on-device or when user mentions "foundation-models-on-device". |  | `skills/foundation-models-on-device/SKILL.md` |
-| **foundry-agent-sync** | Sync Azure AI Foundry agents from JSON. Use when applying patterns from github/foundry-agent-sync or when user mentions "foundry-agent-sync". |  | `skills/foundry-agent-sync/SKILL.md` |
-| **foundry-hosted-agent-copilotkit** | CopilotKit + Azure AI Foundry agents. Use when applying patterns from github/foundry-hosted-agent-copilotkit or when user mentions "foundry-hosted-agent-copilotkit". |  | `skills/foundry-hosted-agent-copilotkit/SKILL.md` |
 | **free-tool-strategy** | When the user wants to build a free tool for marketing — lead generation, SEO value, or brand awareness. Use when they mention 'engineering as marketing,' 'free tool,' 'calculator,' 'generator,' 'c... |  | `skills/free-tool-strategy/SKILL.md` |
-| **freecad-scripts** | FreeCAD Python scripting & macro automation. Use when applying patterns from github/freecad-scripts or when user mentions "freecad-scripts". |  | `skills/freecad-scripts/SKILL.md` |
-| **freeze** | Restrict file edits to a specific directory for the session. (gstack) |  | `skills/freeze/SKILL.md` |
-| **from-the-other-side-anitta** | Anitta assumption check profile. Use when applying patterns from github/from-the-other-side-anitta or when user mentions "from-the-other-side-anitta". |  | `skills/from-the-other-side-anitta/SKILL.md` |
-| **from-the-other-side-quinn** | Quinn implementation partnership profile. Use when applying patterns from github/from-the-other-side-quinn or when user mentions "from-the-other-side-quinn". |  | `skills/from-the-other-side-quinn/SKILL.md` |
-| **from-the-other-side-vega** | Vega long-term AI partner profile. Use when applying patterns from github/from-the-other-side-vega or when user mentions "from-the-other-side-vega". |  | `skills/from-the-other-side-vega/SKILL.md` |
-| **from-the-other-side-wiggins** | Wiggins narrative synthesis profile. Use when applying patterns from github/from-the-other-side-wiggins or when user mentions "from-the-other-side-wiggins". |  | `skills/from-the-other-side-wiggins/SKILL.md` |
-| **frontend-a11y** | Accessibility patterns for React & Next.js. Use when applying patterns from affaan-m/frontend-a11y or when user mentions "frontend-a11y". |  | `skills/frontend-a11y/SKILL.md` |
-| **frontend-patterns** | React, Next.js & UI best practices. Use when applying patterns from affaan-m/frontend-patterns or when user mentions "frontend-patterns". |  | `skills/frontend-patterns/SKILL.md` |
-| **frontend-skill** | Restrained landing page & app visual design. Use when applying patterns from openai/frontend-skill or when user mentions "frontend-skill". |  | `skills/frontend-skill/SKILL.md` |
-| **frontend-slides** | Animation-rich HTML presentation generator. Use when applying patterns from affaan-m/frontend-slides or when user mentions "frontend-slides". |  | `skills/frontend-slides/SKILL.md` |
-| **frontend-to-backend-requirements** | Document frontend API needs for backend. Use when applying patterns from softaworks/frontend-to-backend-requirements or when user mentions "frontend-to-backend-requirements". |  | `skills/frontend-to-backend-requirements/SKILL.md` |
-| **frontend-ui-dark-ts** | Build dark-themed React applications using Tailwind CSS with custom theming, glassmorphism effects, and Framer Motion animations. Use when creating dashboards, admin panels, or data-rich interfaces... |  | `skills/frontend-ui-dark-ts/SKILL.md` |
-| **fsharp-testing** | F# testing patterns with xUnit & FsCheck. Use when applying patterns from affaan-m/fsharp-testing or when user mentions "fsharp-testing". |  | `skills/fsharp-testing/SKILL.md` |
-| **game-changing-features** | Identify 10x product opportunities. Use when applying patterns from softaworks/game-changing-features or when user mentions "game-changing-features". |  | `skills/game-changing-features/SKILL.md` |
-| **game-engine** | Web HTML5 Canvas/WebGL game engines. Use when applying patterns from github/game-engine or when user mentions "game-engine". |  | `skills/game-engine/SKILL.md` |
-| **gan-style-harness** | Generator-Evaluator agent harness. Use when applying patterns from affaan-m/gan-style-harness or when user mentions "gan-style-harness". |  | `skills/gan-style-harness/SKILL.md` |
-| **gateguard** | Fact-forcing investigation gate. Use when applying patterns from affaan-m/gateguard or when user mentions "gateguard". |  | `skills/gateguard/SKILL.md` |
-| **gcloud** | Google Cloud gcloud CLI execution. Use when applying patterns from google/gcloud or when user mentions "gcloud". |  | `skills/gcloud/SKILL.md` |
-| **gem-design-md-guidelines** | Accessible cross-platform UI/UX guidelines. Use when applying patterns from github/gem-design-md-guidelines or when user mentions "gem-design-md-guidelines". |  | `skills/gem-design-md-guidelines/SKILL.md` |
-| **gem-devops-guidelines** | DevOps & infrastructure review guidelines. Use when applying patterns from github/gem-devops-guidelines or when user mentions "gem-devops-guidelines". |  | `skills/gem-devops-guidelines/SKILL.md` |
-| **gemini** | Gemini CLI code & plan review. Use when applying patterns from softaworks/gemini or when user mentions "gemini". |  | `skills/gemini/SKILL.md` |
-| **gemini-agents-api** | Manage Agent resources on Gemini Enterprise. Use when applying patterns from google/gemini-agents-api or when user mentions "gemini-agents-api". |  | `skills/gemini-agents-api/SKILL.md` |
-| **gemini-api** | Enterprise Vertex AI & Gemini API guide. Use when applying patterns from google/gemini-api or when user mentions "gemini-api". |  | `skills/gemini-api/SKILL.md` |
-| **gemini-api-dev** | Multimodal Gemini API application dev. Use when applying patterns from google-gemini/gemini-api-dev or when user mentions "gemini-api-dev". |  | `skills/gemini-api-dev/SKILL.md` |
-| **gemini-interactions-api** | Stateful server-managed Interactions API. Use when applying patterns from google/gemini-interactions-api or when user mentions "gemini-interactions-api". |  | `skills/gemini-interactions-api/SKILL.md` |
-| **gemini-live-api-dev** | Real-time bidirectional WebSocket streaming. Use when applying patterns from google-gemini/gemini-live-api-dev or when user mentions "gemini-live-api-dev". |  | `skills/gemini-live-api-dev/SKILL.md` |
-| **gemini-managed-agents-api** | Manage custom Agents on Gemini Platform. Use when applying patterns from google/gemini-managed-agents-api or when user mentions "gemini-managed-agents-api". |  | `skills/gemini-managed-agents-api/SKILL.md` |
-| **gemini-omni-flash-api** | Generative video editing & text-to-video. Use when applying patterns from google-gemini/gemini-omni-flash-api or when user mentions "gemini-omni-flash-api". |  | `skills/gemini-omni-flash-api/SKILL.md` |
-| **gen-specs-as-issues** | Identify missing features & create spec issues. Use when applying patterns from github/gen-specs-as-issues or when user mentions "gen-specs-as-issues". |  | `skills/gen-specs-as-issues/SKILL.md` |
-| **generate-custom-instructions-from-codebase** | Copilot instructions from git diff. Use when applying patterns from github/generate-custom-instructions-from-codebase or when user mentions "generate-custom-instructions-from-codebase". |  | `skills/generate-custom-instructions-from-codebase/SKILL.md` |
-| **generate-image** | Generate AI images & textures. Use when applying patterns from github/generate-image or when user mentions "generate-image". |  | `skills/generate-image/SKILL.md` |
-| **generating-python-installer** | Nuitka & Inno Setup Windows installer. Use when applying patterns from affaan-m/generating-python-installer or when user mentions "generating-python-installer". |  | `skills/generating-python-installer/SKILL.md` |
-| **geofeed-tuner** | RFC 8805 IP geolocation feeds. Use when applying patterns from github/geofeed-tuner or when user mentions "geofeed-tuner". |  | `skills/geofeed-tuner/SKILL.md` |
-| **gepetto** | Detailed implementation plans with research. Use when applying patterns from softaworks/gepetto or when user mentions "gepetto". |  | `skills/gepetto/SKILL.md` |
-| **gget** | Genomic database queries & BLAST search. Use when applying patterns from affaan-m/gget or when user mentions "gget". |  | `skills/gget/SKILL.md` |
-| **gha-security-review** | GitHub Actions workflow security audit. Use when applying patterns from getsentry/gha-security-review or when user mentions "gha-security-review". |  | `skills/gha-security-review/SKILL.md` |
-| **gitmoji** | Gitmoji commit message conventions. Use when applying patterns from github/gitmoji or when user mentions "gitmoji". |  | `skills/gitmoji/SKILL.md` |
-| **go-mcp-server-generator** | Generate Go MCP server project. Use when applying patterns from github/go-mcp-server-generator or when user mentions "go-mcp-server-generator". |  | `skills/go-mcp-server-generator/SKILL.md` |
-| **golang-patterns** | Idiomatic Go patterns & concurrency. Use when applying patterns from affaan-m/golang-patterns or when user mentions "golang-patterns". |  | `skills/golang-patterns/SKILL.md` |
-| **golang-testing** | Go table-driven tests & benchmarks. Use when applying patterns from affaan-m/golang-testing or when user mentions "golang-testing". |  | `skills/golang-testing/SKILL.md` |
-| **grants** | NIH grant research skill for clinical researchers. Grill-me intake (research idea + career stage + preliminary data + environment + submission posture + known institute targets) locks down the fund... |  | `skills/grants/SKILL.md` |
-| **graph** | Declarative DAG pipeline execution runtime. Use when applying patterns from yeachan-heo/graph or when user mentions "graph". |  | `skills/graph/SKILL.md` |
-| **graphify** | Use for any question about a codebase, its architecture, file relationships, or project content — especially when graphify-out/ exists, where the question should be treated as a graphify query firs... |  | `skills/graphify/SKILL.md` |
-| **gsd-core** | Get Shit Done (GSD) Core Framework: metodología imparable para completar objetivos de desarrollo sin bloqueos. |  | `skills/gsd-core/SKILL.md` |
-| **gstack** | Router for the gstack skill suite. (gstack) |  | `skills/gstack/SKILL.md` |
-| **gstack-openclaw-ceo-review** | Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan. |  | `skills/gstack-openclaw-ceo-review/SKILL.md` |
-| **gstack-openclaw-investigate** | Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working. |  | `skills/gstack-openclaw-investigate/SKILL.md` |
-| **gstack-openclaw-office-hours** | Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written. |  | `skills/gstack-openclaw-office-hours/SKILL.md` |
-| **gstack-openclaw-retro** | Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and ... |  | `skills/gstack-openclaw-retro/SKILL.md` |
-| **gstack-upgrade** | Upgrade gstack to the latest version. |  | `skills/gstack-upgrade/SKILL.md` |
 | **gtm-0-to-1-launch** | Launch products from idea to first customers. Use when applying patterns from github/gtm-0-to-1-launch or when user mentions "gtm-0-to-1-launch". |  | `skills/gtm-0-to-1-launch/SKILL.md` |
 | **gtm-ai-gtm** | Go-to-market strategy for AI products. Use when applying patterns from github/gtm-ai-gtm or when user mentions "gtm-ai-gtm". |  | `skills/gtm-ai-gtm/SKILL.md` |
 | **gtm-developer-ecosystem** | Build & scale developer ecosystem programs. Use when applying patterns from github/gtm-developer-ecosystem or when user mentions "gtm-developer-ecosystem". |  | `skills/gtm-developer-ecosystem/SKILL.md` |
 | **gtm-positioning-strategy** | Defensible market positioning strategy. Use when applying patterns from github/gtm-positioning-strategy or when user mentions "gtm-positioning-strategy". |  | `skills/gtm-positioning-strategy/SKILL.md` |
 | **gtm-product-led-growth** | Self-serve acquisition & PLG motions. Use when applying patterns from github/gtm-product-led-growth or when user mentions "gtm-product-led-growth". |  | `skills/gtm-product-led-growth/SKILL.md` |
-| **guard** | Full safety mode: destructive command warnings + directory-scoped edits. (gstack) |  | `skills/guard/SKILL.md` |
-| **hackernews-frontpage** | Scrape the Hacker News front page (titles, points, comment counts). |  | `skills/hackernews-frontpage/SKILL.md` |
-| **harness** | Test harness and continuous automated verification loop before task completion. |  | `skills/harness/SKILL.md` |
-| **harness-engineering** | Adopt repo-level harness engineering. Use when applying patterns from github/harness-engineering or when user mentions "harness-engineering". |  | `skills/harness-engineering/SKILL.md` |
-| **health** | Code quality dashboard. (gstack) |  | `skills/health/SKILL.md` |
-| **healthcare-cdss-patterns** | Clinical decision support patterns. Use when applying patterns from affaan-m/healthcare-cdss-patterns or when user mentions "healthcare-cdss-patterns". |  | `skills/healthcare-cdss-patterns/SKILL.md` |
-| **healthcare-emr-patterns** | EHR/EMR clinical safety & prescription flows. Use when applying patterns from affaan-m/healthcare-emr-patterns or when user mentions "healthcare-emr-patterns". |  | `skills/healthcare-emr-patterns/SKILL.md` |
-| **healthcare-eval-harness** | Patient safety evaluation harness. Use when applying patterns from affaan-m/healthcare-eval-harness or when user mentions "healthcare-eval-harness". |  | `skills/healthcare-eval-harness/SKILL.md` |
-| **healthcare-phi-compliance** | PHI & PII compliance patterns. Use when applying patterns from affaan-m/healthcare-phi-compliance or when user mentions "healthcare-phi-compliance". |  | `skills/healthcare-phi-compliance/SKILL.md` |
-| **hermes-desktop-plugins** | Write Hermes desktop UI plugins. Use when applying patterns from NousResearch/hermes-desktop-plugins or when user mentions "hermes-desktop-plugins". |  | `skills/hermes-desktop-plugins/SKILL.md` |
-| **hermes-themes** | Author Hermes UI color themes. Use when applying patterns from NousResearch/hermes-themes or when user mentions "hermes-themes". |  | `skills/hermes-themes/SKILL.md` |
-| **hexagonal-architecture** | Ports & Adapters clean architecture. Use when applying patterns from affaan-m/hexagonal-architecture or when user mentions "hexagonal-architecture". |  | `skills/hexagonal-architecture/SKILL.md` |
-| **hf-cli** | Hugging Face Hub CLI operations. Use when applying patterns from huggingface/hf-cli or when user mentions "hf-cli". |  | `skills/hf-cli/SKILL.md` |
-| **hf-mem** | Estimate GPU memory for Safetensors/GGUF. Use when applying patterns from huggingface/hf-mem or when user mentions "hf-mem". |  | `skills/hf-mem/SKILL.md` |
-| **hipaa-compliance** | HIPAA privacy & security compliance. Use when applying patterns from affaan-m/hipaa-compliance or when user mentions "hipaa-compliance". |  | `skills/hipaa-compliance/SKILL.md` |
-| **homelab-network-setup** | Practical homelab network planning. Use when applying patterns from affaan-m/homelab-network-setup or when user mentions "homelab-network-setup". |  | `skills/homelab-network-setup/SKILL.md` |
-| **homelab-pihole-dns** | Pi-hole installation & DNS management. Use when applying patterns from affaan-m/homelab-pihole-dns or when user mentions "homelab-pihole-dns". |  | `skills/homelab-pihole-dns/SKILL.md` |
-| **homelab-wireguard-vpn** | WireGuard VPN server setup. Use when applying patterns from affaan-m/homelab-wireguard-vpn or when user mentions "homelab-wireguard-vpn". |  | `skills/homelab-wireguard-vpn/SKILL.md` |
-| **hookify-rules** | Configure hookify rules. Use when applying patterns from affaan-m/hookify-rules or when user mentions "hookify-rules". |  | `skills/hookify-rules/SKILL.md` |
-| **how-it-works** | Explain how Codex-mem captures observations, when memory injection kicks in, and where data lives. Use when the user asks "how does Codex-mem work?" or "what is this thing doing?". |  | `skills/how-it-works/SKILL.md` |
-| **huashu-design** | Diseño UI/UX con estética asiática/china de alta precisión, micro-detalles visuales y tipografía cuidada. |  | `skills/huashu-design/SKILL.md` |
-| **hud** | Configure HUD display options. Use when applying patterns from Yeachan-Heo/hud or when user mentions "hud". |  | `skills/hud/SKILL.md` |
-| **huggingface-datasets** | Hugging Face Dataset Viewer API. Use when applying patterns from huggingface/huggingface-datasets or when user mentions "huggingface-datasets". |  | `skills/huggingface-datasets/SKILL.md` |
-| **huggingface-gradio** | Build Gradio web UIs in Python. Use when applying patterns from huggingface/huggingface-gradio or when user mentions "huggingface-gradio". |  | `skills/huggingface-gradio/SKILL.md` |
-| **huggingface-papers** | Hugging Face paper research lookup. Use when applying patterns from huggingface/huggingface-papers or when user mentions "huggingface-papers". |  | `skills/huggingface-papers/SKILL.md` |
-| **huggingface-spaces** | Deploy AI apps to Hugging Face Spaces. Use when applying patterns from huggingface/huggingface-spaces or when user mentions "huggingface-spaces". |  | `skills/huggingface-spaces/SKILL.md` |
-| **human-ai** | Rewrites English text to sound human, natural, and undetectable by AI detection tools. Removes machine language patterns and AI slop, restores semantic entropy, and injects voice and personality. U... |  | `skills/human-ai/SKILL.md` |
-| **humanizar** | Reescreve textos em português brasileiro para soarem mais humanos e naturais, reduzindo padrões típicos de escrita gerada por IA sem alterar fatos, argumento ou intenção. Use quando o texto em PT-B... |  | `skills/humanizar/SKILL.md` |
-| **humanizer** | Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive "Signs of AI writing" guide. D... |  | `skills/humanizer/SKILL.md` |
-| **i-have-adhd** | Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /... |  | `skills/i-have-adhd/SKILL.md` |
-| **impediment-prioritization** | Score & rank project impediments. Use when applying patterns from github/impediment-prioritization or when user mentions "impediment-prioritization". |  | `skills/impediment-prioritization/SKILL.md` |
-| **import-infrastructure-as-code** | Import Azure resources into Terraform. Use when applying patterns from github/import-infrastructure-as-code or when user mentions "import-infrastructure-as-code". |  | `skills/import-infrastructure-as-code/SKILL.md` |
-| **improve** | Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. Strictly read-only on source code — never implements, fixes,... |  | `skills/improve/SKILL.md` |
-| **improve-animations** | Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. R... | `https://github.com/emilkowalski/skills` | `skills/improve-animations/SKILL.md` |
-| **improve-code-quality** | Guided journey from a working-but-untested vibe-coded prototype to a production-ready product with tests, clean structure, a business-rules boundary, and resilience at scale. Orchestrates nine skil... |  | `skills/improve-code-quality/SKILL.md` |
-| **influencer-marketing** | Influencer & creator partnerships. Use when applying patterns from coreyhaines31/influencer-marketing or when user mentions "influencer-marketing". |  | `skills/influencer-marketing/SKILL.md` |
-| **inherit-legacy-style** | Inherit legacy codebase code style. Use when applying patterns from affaan-m/inherit-legacy-style or when user mentions "inherit-legacy-style". |  | `skills/inherit-legacy-style/SKILL.md` |
-| **integrate-context-matic** | Discover third-party APIs via context-matic. Use when applying patterns from github/integrate-context-matic or when user mentions "integrate-context-matic". |  | `skills/integrate-context-matic/SKILL.md` |
-| **intent-driven-development** | Turn product intent into verifiable criteria. Use when applying patterns from affaan-m/intent-driven-development or when user mentions "intent-driven-development". |  | `skills/intent-driven-development/SKILL.md` |
-| **internal-narrative** | Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed... |  | `skills/internal-narrative/SKILL.md` |
-| **interview-system-designer** | This skill should be used when the user asks to "design interview processes", "create hiring pipelines", "calibrate interview loops", "generate interview questions", "design competency matrices", "... |  | `skills/interview-system-designer/SKILL.md` |
-| **inventory-demand-planning** | Retail demand forecasting & inventory. Use when applying patterns from affaan-m/inventory-demand-planning or when user mentions "inventory-demand-planning". |  | `skills/inventory-demand-planning/SKILL.md` |
-| **Inversion Exercise** | Flip core assumptions to reveal hidden constraints and alternative approaches - "what if the opposite were true? |  | `skills/Inversion Exercise/SKILL.md` |
-| **investigate** | Systematic debugging with root cause investigation. (gstack) |  | `skills/investigate/SKILL.md` |
-| **investigate-first** | Diagnose failure before editing code. Use when applying patterns from juliusbrussee/investigate-first or when user mentions "investigate-first". |  | `skills/investigate-first/SKILL.md` |
-| **invoice-organizer** | Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours ... |  | `skills/invoice-organizer/SKILL.md` |
-| **ios-clean** | Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack) |  | `skills/ios-clean/SKILL.md` |
-| **ios-design-review** | Visual design audit for iOS apps on real hardware. (gstack) |  | `skills/ios-design-review/SKILL.md` |
-| **ios-fix** | Autonomous iOS bug fixer. (gstack) |  | `skills/ios-fix/SKILL.md` |
-| **ios-icon-gen** | Generate iOS app icons from SF Symbols. Use when applying patterns from affaan-m/ios-icon-gen or when user mentions "ios-icon-gen". |  | `skills/ios-icon-gen/SKILL.md` |
-| **ios-qa** | Live-device iOS QA for SwiftUI apps. (gstack) |  | `skills/ios-qa/SKILL.md` |
-| **ios-sync** | Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack) |  | `skills/ios-sync/SKILL.md` |
-| **issue-fields-migration** | Bulk-migrate metadata to GitHub issue fields. Use when applying patterns from github/issue-fields-migration or when user mentions "issue-fields-migration". |  | `skills/issue-fields-migration/SKILL.md` |
-| **iterate-pr** | Iterate on PR until CI passes & reviews addressed. Use when applying patterns from getsentry/iterate-pr or when user mentions "iterate-pr". |  | `skills/iterate-pr/SKILL.md` |
-| **iterative-retrieval** | Progressive context retrieval pattern. Use when applying patterns from affaan-m/iterative-retrieval or when user mentions "iterative-retrieval". |  | `skills/iterative-retrieval/SKILL.md` |
-| **ito-baskets** | Prediction-market basket catalog data. Use when applying patterns from affaan-m/ito-baskets or when user mentions "ito-baskets". |  | `skills/ito-baskets/SKILL.md` |
-| **ito-compute** | Query GPU inventory & submit RFQ. Use when applying patterns from affaan-m/ito-compute or when user mentions "ito-compute". |  | `skills/ito-compute/SKILL.md` |
-| **java-add-graalvm-native-image-support** | GraalVM native image build support. Use when applying patterns from github/java-add-graalvm-native-image-support or when user mentions "java-add-graalvm-native-image-support". |  | `skills/java-add-graalvm-native-image-support/SKILL.md` |
-| **java-coding-standards** | Java standards for Spring Boot & Quarkus. Use when applying patterns from affaan-m/java-coding-standards or when user mentions "java-coding-standards". |  | `skills/java-coding-standards/SKILL.md` |
-| **java-docs** | Javadoc comments & documentation standards. Use when applying patterns from github/java-docs or when user mentions "java-docs". |  | `skills/java-docs/SKILL.md` |
-| **java-helidon** | Helidon 4 SE & MP Java development. Use when applying patterns from github/java-helidon or when user mentions "java-helidon". |  | `skills/java-helidon/SKILL.md` |
-| **java-junit** | JUnit 5 unit testing & data-driven tests. Use when applying patterns from github/java-junit or when user mentions "java-junit". |  | `skills/java-junit/SKILL.md` |
-| **knowledge-ops** | Use when a Head of Ops, Knowledge Manager, or TPM-Internal needs to author, validate, or clean up company SOPs and internal runbooks (procurement intake, vendor offboarding, incident-comms cascade,... |  | `skills/knowledge-ops/SKILL.md` |
-| **land-and-deploy** | Land and deploy workflow. (gstack) |  | `skills/land-and-deploy/SKILL.md` |
-| **landing-report** | Read-only queue dashboard for workspace-aware ship. (gstack) |  | `skills/landing-report/SKILL.md` |
 | **lead-research-assistant** | Identifies high-quality leads for your product or service by analyzing your business, searching for target companies, and providing actionable contact strategies. Perfect for sales, business develo... |  | `skills/lead-research-assistant/SKILL.md` |
-| **lean-ux** | Apply lean thinking to UX: hypothesis-driven design, collaborative sketching, and rapid experiments instead of heavy deliverables. Use when the user mentions "Lean UX", "design hypothesis", "outcom... |  | `skills/lean-ux/SKILL.md` |
-| **learn** | Manage project learnings. |  | `skills/learn/SKILL.md` |
-| **litreview** | Academic literature orientation skill that searches papers via free keyless APIs (PubMed E-utilities + OpenAlex) by default — with the Consensus MCP as an optional enhancement lane when connected —... |  | `skills/litreview/SKILL.md` |
-| **loopy** | Autonomous iterative agent loops with explicit verification and stop conditions. Executes a "modify -> measure -> evaluate -> keep/revert -> check stop condition" cycle. Ideal for performance tunin... |  | `skills/loopy/SKILL.md` |
-| **make-interfaces-feel-better** | UI polish pass skill focused on micro-interactions, optical alignment, smooth hover states, typography rhythm, and tactile UI feedback. Use when an interface "works" but feels generic, cheap, or un... |  | `skills/make-interfaces-feel-better/SKILL.md` |
-| **make-pdf** | Turn any markdown file into a publication-quality PDF. (gstack) |  | `skills/make-pdf/SKILL.md` |
-| **managed-pentesting-with-strix** | Run a managed pentest of a web app, API, repository, or local workspace on the app.strix.ai platform with the `strix cloud` CLI or REST API — no local Docker or LLM key needed. Safely review and up... |  | `skills/managed-pentesting-with-strix/SKILL.md` |
-| **mattpocock** | Small, composable, editable TypeScript and engineering skills curated by Matt Pocock. Focuses on real engineering over vibe coding, modular architecture, type-level safety, and pragmatic daily deve... |  | `skills/mattpocock/SKILL.md` |
-| **meetings** | Use when someone wants to decide whether a meeting is worth calling, price a meeting in dollars, build a timeboxed agenda with desired outcomes, or turn messy meeting notes into owned action items ... |  | `skills/meetings/SKILL.md` |
-| **Meta-Pattern Recognition** | Spot patterns appearing in 3+ domains to find universal principles |  | `skills/Meta-Pattern Recognition/SKILL.md` |
-| **mi-skill** | Habilidad ingerida y registrada via SuperDuperSkills CLI (https://github.com/autor/mi-skill) |  | `skills/mi-skill/SKILL.md` |
-| **migrate** | Migrate from Cypress or Selenium to Playwright. Use when user mentions "cypress", "selenium", "migrate tests", "convert tests", "switch to playwright", "move from cypress", or "replace selenium". |  | `skills/migrate/SKILL.md` |
-| **minimalist** | Use when the user asks to write code efficiently, avoid over-engineering, reduce dependencies, or prevent unnecessary abstractions. Enforces a strict efficiency ladder: YAGNI, reuse, stdlib, native... |  | `skills/minimalist/SKILL.md` |
-| **minions** | Local Kanban task dashboard for agent task orchestration (runs on localhost:6969). Manages In Progress, Review, and Done states with human approval gates. Use when orchestrating multi-task agent wo... |  | `skills/minions/SKILL.md` |
-| **modo-tdah** | Modo de enfoque ejecutivo ultra-conciso: elimina explicaciones infladas, va directo a la solución y ejecuta paso a paso sin rodeos. |  | `skills/modo-tdah/SKILL.md` |
-| **n8n-agents** | Design n8n AI agents the right way. Use when building or editing any @n8n/n8n-nodes-langchain.* AI node — an AI Agent, LLM chain, Text Classifier, or Information Extractor — and whenever the user m... |  | `skills/n8n-agents/SKILL.md` |
-| **n8n-binary-and-data** | Handle files and binary data in n8n correctly. Use when working with files, images, PDFs, attachments, uploads or downloads, base64, vision/multimodal input, or when an AI agent needs a file as too... |  | `skills/n8n-binary-and-data/SKILL.md` |
-| **n8n-code-javascript** | Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with this.helpers / the $helpers global, working with dates using ... |  | `skills/n8n-code-javascript/SKILL.md` |
-| **n8n-code-python** | Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to understand Python limitations in n8n Code nodes. Use ... |  | `skills/n8n-code-python/SKILL.md` |
-| **n8n-code-tool** | Write JavaScript or Python for the n8n Custom Code Tool (@n8n/n8n-nodes-langchain.toolCode) — the AI-agent-callable tool, NOT the workflow Code node. Use when building a Code Tool attached to an AI... |  | `skills/n8n-code-tool/SKILL.md` |
-| **n8n-error-handling** | Wire n8n error handling so failures are loud, structured, and recoverable. Use when building any webhook/API workflow, a scheduled or unattended workflow, or any path where a silent failure would d... |  | `skills/n8n-error-handling/SKILL.md` |
-| **n8n-expression-syntax** | Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expression errors, mapping data between n... |  | `skills/n8n-expression-syntax/SKILL.md` |
-| **n8n-mcp-tools-expert** | Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nodes, validating configurations, accessing templates, managing workflows, organizing workflows into folders, managing c... |  | `skills/n8n-mcp-tools-expert/SKILL.md` |
-| **n8n-multi-instance** | Use when an n8n-mcp account targets more than one n8n instance — i.e. the `n8n_instances` tool is available, the user mentions multiple n8n instances or environments (prod vs staging, several teams... |  | `skills/n8n-multi-instance/SKILL.md` |
-| **n8n-node-configuration** | Operation-aware node configuration guidance. Use when configuring nodes, understanding property dependencies, determining required fields, choosing between get_node detail levels, or learning commo... |  | `skills/n8n-node-configuration/SKILL.md` |
-| **n8n-self-hosting** | Deploy a production self-hosted n8n end-to-end to a fresh Linux VM over SSH, using Docker Compose behind a Caddy reverse proxy with automatic HTTPS. Use whenever the user wants to self-host, instal... |  | `skills/n8n-self-hosting/SKILL.md` |
-| **n8n-subworkflows** | Build reusable, composable n8n sub-workflows. Use when extracting shared logic, building anything multi-step or reused across workflows, or any workflow over ~10 nodes — and whenever the user menti... |  | `skills/n8n-subworkflows/SKILL.md` |
-| **n8n-validation-expert** | Interpret validation errors and guide fixing them. Use when encountering validation errors, validation warnings, false positives, operator structure issues, or need help understanding validation re... |  | `skills/n8n-validation-expert/SKILL.md` |
-| **n8n-workflow-patterns** | Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, planning workflow architecture, or asking ... |  | `skills/n8n-workflow-patterns/SKILL.md` |
-| **named-persona-adversarial-review** | Code review through the lens of real engineers' documented philosophies (Torvalds, Thompson, Carmack, Kent Beck, Jobs, Cagan). Complements abstract-role adversarial review with named, sourced persp... |  | `skills/named-persona-adversarial-review/SKILL.md` |
-| **neuro-persuasion-toolkit** | Aplica neurociencia del comportamiento y neuromarketing a copy, anuncios, SEO/SEM/MEO, propuestas comerciales y scripts de ventas (frías, consultivas, cierres). Úsalo siempre que el usuario esté es... |  | `skills/neuro-persuasion-toolkit/SKILL.md` |
-| **obra-superpowers-brainstorming** | Interactive requirements crystallization before coding. Asks targeted clarifying questions, explores edge cases, and produces a clear specification chunk by chunk. |  | `skills/obra-superpowers-brainstorming/SKILL.md` |
-| **obra-superpowers-code-review** | Adversarial code review and quality check covering security, performance, readability, and adherence to requirements. |  | `skills/obra-superpowers-code-review/SKILL.md` |
-| **obra-superpowers-executing-plans** | Systematic plan execution with verification loops and progress tracking across long-running development tasks. |  | `skills/obra-superpowers-executing-plans/SKILL.md` |
-| **obra-superpowers-subagent-driven-development** | Orchestrates parallel or modular subagent execution loops for multi-task engineering workloads. |  | `skills/obra-superpowers-subagent-driven-development/SKILL.md` |
-| **obra-superpowers-systematic-debugging** | Root-cause driven debugging workflow. Inspects raw logs, forms empirical hypotheses, and verifies fixes with tests. |  | `skills/obra-superpowers-systematic-debugging/SKILL.md` |
-| **obra-superpowers-writing-plans** | Generates implementation plans designed for systematic subagent execution, stressing TDD, YAGNI, and DRY. |  | `skills/obra-superpowers-writing-plans/SKILL.md` |
-| **oh-my-hermes** | Multi-agent orchestration workflow (Research → Interview → Plan → Execution → Verification). Coordinates specialized sub-agents across complex phases. Use when running multi-agent tasks, swarm exec... |  | `skills/oh-my-hermes/SKILL.md` |
-| **oh-my-issues** | Cluster a GitHub issue backlog by root cause into a small set of plan-master issues, redirect children with a standardized comment, and bundle architectural-fix PRs that close clusters atomically. ... |  | `skills/oh-my-issues/SKILL.md` |
-| **omc-review** | Evaluate finished work for defects, risk, and simplification before it ships |  | `skills/omc-review/SKILL.md` |
-| **omc-setup** | Install or refresh oh-my-claudecode for plugin, npm, and local-dev setups from the canonical setup flow |  | `skills/omc-setup/SKILL.md` |
-| **omc-teams** | CLI-team runtime for claude, codex, or gemini workers in tmux panes when you need process-based parallel execution |  | `skills/omc-teams/SKILL.md` |
-| **oo-component-documentation** | Create or update standardized object-oriented component documentation. |  | `skills/oo-component-documentation/SKILL.md` |
-| **open-gstack-browser** | Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in. |  | `skills/open-gstack-browser/SKILL.md` |
-| **openapi-to-application-code** | Generate a complete, production-ready application from an OpenAPI specification |  | `skills/openapi-to-application-code/SKILL.md` |
-| **openapi-to-typescript** | Converts OpenAPI 3.0 JSON/YAML to TypeScript interfaces and type guards. |  | `skills/openapi-to-typescript/SKILL.md` |
-| **openclaw-persona-forge** | OpenClaw AI Agent soul forge and persona definition. |  | `skills/openclaw-persona-forge/SKILL.md` |
-| **openmontage** | Autonomous video production team skill for AI agents. Converts script & asset inputs into assembled video cuts, auto-subtitles, scene transitions, TTS audio generation, and media exports. Use when ... |  | `skills/openmontage/SKILL.md` |
-| **opensource-pipeline** | Open-source pipeline: fork, sanitize, and package private projects for safe public release. |  | `skills/opensource-pipeline/SKILL.md` |
-| **orch-add-feature** | Orchestrate building a brand-new feature end to end. |  | `skills/orch-add-feature/SKILL.md` |
-| **orch-build-mvp** | Orchestrate bootstrapping a working MVP from a design or spec document. |  | `skills/orch-build-mvp/SKILL.md` |
-| **orch-change-feature** | Orchestrate altering an existing, working feature to new desired behavior. |  | `skills/orch-change-feature/SKILL.md` |
-| **orch-fix-defect** | Orchestrate fixing a bug — reproduce as failing test, fix to green. |  | `skills/orch-fix-defect/SKILL.md` |
-| **orch-pipeline** | Shared orchestration engine for the orch-* skill family. |  | `skills/orch-pipeline/SKILL.md` |
-| **orch-refine-code** | Orchestrate a behavior-preserving refactor. |  | `skills/orch-refine-code/SKILL.md` |
-| **owasp-top-10-testing** | Test an application against the OWASP Top 10 with Strix — autonomous AI agents that attempt real exploits for each category of the current OWASP Top 10:2025 (broken access control including SSRF, s... |  | `skills/owasp-top-10-testing/SKILL.md` |
-| **Pair Programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... |  | `skills/Pair Programming/SKILL.md` |
-| **pair-agent** | Pair a remote AI agent with your browser. (gstack) |  | `skills/pair-agent/SKILL.md` |
-| **pair-programming** | Provides AI navigator for pair programming sessions with real-time code review, TDD guidance, and quality monitoring. Use when pair programming with AI assistance, practicing TDD with a navigator, ... |  | `skills/pair-programming/SKILL.md` |
-| **parallel-execution-optimizer** | Optimize task speed through parallel work and concurrent subagents. |  | `skills/parallel-execution-optimizer/SKILL.md` |
-| **parcel-tracking** | Track parcels and check delivery status for Australian and international couriers. Searches Gmail for dispatch/shipping emails and provides tracking links for all major Australian couriers includin... |  | `skills/parcel-tracking/SKILL.md` |
-| **pdf** | Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, r... |  | `skills/pdf/SKILL.md` |
-| **pdf-official** | Generating PDFs with pdfkit or puppeteer in Node.js. Use when generating PDF reports, invoices, certificates, or any printable document from data or HTML templates. |  | `skills/pdf-official/SKILL.md` |
-| **pdftk-server** | Command-line PDFtk Server integration for PDF manipulation. |  | `skills/pdftk-server/SKILL.md` |
-| **penetration-testing-with-strix** | Pentest a web app, API, codebase, repository, URL, domain, or IP with Strix — autonomous AI penetration testing that exploits and proves vulnerabilities (OWASP Top 10 and beyond — injection, XSS, S... |  | `skills/penetration-testing-with-strix/SKILL.md` |
-| **penpot-uiux-design** | Create professional UI/UX designs in Penpot using MCP tools. |  | `skills/penpot-uiux-design/SKILL.md` |
-| **performance** | Optimize UI performance against Core Web Vitals — LCP, INP, CLS — with loading/code-split strategy, layout-shift prevention, and animation performance rules. Use when the user wants to improve spee... |  | `skills/performance/SKILL.md` |
-| **perl-patterns** | Modern Perl 5.36+ idioms, best practices, and conventions. |  | `skills/perl-patterns/SKILL.md` |
-| **perl-security** | Perl security covering taint mode, input validation, safe process execution. |  | `skills/perl-security/SKILL.md` |
-| **perl-testing** | Perl testing patterns using Test2::V0, Test::More, prove runner. |  | `skills/perl-testing/SKILL.md` |
-| **perplexity** | Web search and research using Perplexity AI. |  | `skills/perplexity/SKILL.md` |
-| **persona** |  |  | `skills/persona/SKILL.md` |
-| **personwise-community-onboarding** | Community Onboarding from supplied source materials. |  | `skills/personwise-community-onboarding/SKILL.md` |
-| **personwise-compliance-training** | Compliance Training from supplied source materials. |  | `skills/personwise-compliance-training/SKILL.md` |
-| **personwise-content-repurposing** | Content Repurposing from supplied video/audio source materials. |  | `skills/personwise-content-repurposing/SKILL.md` |
-| **personwise-create-course** | Create, refine, resume, publish polished PersonWise courses. |  | `skills/personwise-create-course/SKILL.md` |
-| **pick-ui-library** | Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only... | `https://github.com/emilkowalski/skills` | `skills/pick-ui-library/SKILL.md` |
-| **pipeline** |  |  | `skills/pipeline/SKILL.md` |
-| **plan-ceo-review** | CEO/founder-mode plan review. (gstack) |  | `skills/plan-ceo-review/SKILL.md` |
-| **plan-design-review** | Designer's eye plan review — interactive, like CEO and Eng review. (gstack) |  | `skills/plan-design-review/SKILL.md` |
-| **plan-devex-review** | Interactive developer experience plan review. (gstack) |  | `skills/plan-devex-review/SKILL.md` |
-| **plan-eng-review** | Eng manager-mode plan review. (gstack) |  | `skills/plan-eng-review/SKILL.md` |
-| **plan-tune** | Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack) |  | `skills/plan-tune/SKILL.md` |
-| **playwright** | Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wra... |  | `skills/playwright/SKILL.md` |
-| **playwright-generate-test** | Generate a Playwright test based on scenario using Playwright MCP. |  | `skills/playwright-generate-test/SKILL.md` |
-| **playwright-interactive** | Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging. |  | `skills/playwright-interactive/SKILL.md` |
-| **plow-ahead** | Autonomous progress without routine clarification stops. |  | `skills/plow-ahead/SKILL.md` |
-| **plugin-creator** | Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use... |  | `skills/plugin-creator/SKILL.md` |
-| **plugin-forge** | Create and manage Claude Code plugins with proper manifests. |  | `skills/plugin-forge/SKILL.md` |
-| **podcast-generation** | Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creatio... |  | `skills/podcast-generation/SKILL.md` |
-| **poka-yoke** | Mistake-proof code so misuse cannot be expressed. |  | `skills/poka-yoke/SKILL.md` |
-| **post-mortem** | /cs:post-mortem <decision> — Honest retrospective on an executed decision, scored against original assumptions and dissent. Closes the strategic sprint loop. Use when a decision hits its 90-day rev... |  | `skills/post-mortem/SKILL.md` |
-| **postmortem** | /em:postmortem — Honest analysis of what went wrong. Use after a failed launch, missed quarter, or bad hire to run a blameless 5-Whys retrospective with a change register — e.g. dissecting why the ... |  | `skills/postmortem/SKILL.md` |
-| **potato-review** | Harsh doctoral-level rigor review & submission-readiness review. |  | `skills/potato-review/SKILL.md` |
-| **power-apps-code-app-scaffold** | Scaffold Power Apps Code App project with PAC CLI setup. |  | `skills/power-apps-code-app-scaffold/SKILL.md` |
-| **power-bi-dax-optimization** | Power BI DAX formula optimization prompt. |  | `skills/power-bi-dax-optimization/SKILL.md` |
-| **power-bi-model-design-review** | Power BI data model design review prompt. |  | `skills/power-bi-model-design-review/SKILL.md` |
-| **power-bi-performance-troubleshooting** | Systematic Power BI performance troubleshooting. |  | `skills/power-bi-performance-troubleshooting/SKILL.md` |
-| **power-bi-report-design-consultation** | Power BI report visualization design prompt. |  | `skills/power-bi-report-design-consultation/SKILL.md` |
-| **power-platform-architect** | Transform business requirements into Power Platform solution architecture. |  | `skills/power-platform-architect/SKILL.md` |
-| **power-platform-mcp-connector-suite** | Generate complete Power Platform custom connector with MCP integration. |  | `skills/power-platform-mcp-connector-suite/SKILL.md` |
-| **powerbi-modeling** | Power BI semantic modeling assistant for optimized data models. |  | `skills/powerbi-modeling/SKILL.md` |
-| **pptx** | Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting... |  | `skills/pptx/SKILL.md` |
-| **pptx-official** | Generating PowerPoint presentations with pptxgenjs in Node.js. Use when creating automated presentations, slide decks, pitch decks, or reports in .pptx format from data. |  | `skills/pptx-official/SKILL.md` |
-| **pr-dashboard** | Open GitHub PR dashboard in the browser. |  | `skills/pr-dashboard/SKILL.md` |
-| **pr-link-issue** | Link GitHub issue and Linear ticket in PR description. |  | `skills/pr-link-issue/SKILL.md` |
-| **pr-screenshots** | Embed before/after screenshots and annotated images in PRs. |  | `skills/pr-screenshots/SKILL.md` |
-| **pr-writer** | Create, refresh, and rewrite PR titles and descriptions. |  | `skills/pr-writer/SKILL.md` |
-| **prd** |  |  | `skills/prd/SKILL.md` |
-| **prediction-market-oracle-research** | Research prediction markets as data sources & oracle signals. |  | `skills/prediction-market-oracle-research/SKILL.md` |
-| **prediction-market-risk-review** | Review prediction market workflows for compliance and execution risk. |  | `skills/prediction-market-risk-review/SKILL.md` |
-| **premium-frontend-ui** | Immersive, high-performance web experiences with motion & craftsmanship. |  | `skills/premium-frontend-ui/SKILL.md` |
-| **prepare** |  |  | `skills/prepare/SKILL.md` |
-| **presentation-creator** | Data-driven presentation slides using React, Vite, and Recharts. |  | `skills/presentation-creator/SKILL.md` |
-| **preset** | Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR:... |  | `skills/preset/SKILL.md` |
-| **prisma-patterns** | Prisma ORM patterns for TypeScript backends — schema & query optimization. |  | `skills/prisma-patterns/SKILL.md` |
-| **process-mapper** | Use when a BizOps lead, COO, or process-improvement owner needs to document an end-to-end business process (procurement, employee onboarding, incident handoff, customer-onboarding, claims adjudicat... |  | `skills/process-mapper/SKILL.md` |
-| **production-audit** | Local-evidence production readiness audit for shipped apps. |  | `skills/production-audit/SKILL.md` |
-| **production-scheduling** | Production scheduling, job sequencing & bottleneck resolution. |  | `skills/production-scheduling/SKILL.md` |
-| **professional-communication** | Technical communication guide for developers. |  | `skills/professional-communication/SKILL.md` |
-| **project-architect** | Documentation-first project planning that produces implementation-ready blueprints and single-shot coding agent prompts. Generates 4 interconnected docs — SPECIFICATION.md, IMPLEMENTATION.md, TASKS... |  | `skills/project-architect/SKILL.md` |
-| **project-docs** | Generate project documentation from codebase analysis — ARCHITECTURE.md, API_ENDPOINTS.md, DATABASE_SCHEMA.md. Reads source code, schema files, routes, and config to produce accurate, structured do... |  | `skills/project-docs/SKILL.md` |
-| **project-flow-ops** | Operate execution flow across GitHub and Linear. |  | `skills/project-flow-ops/SKILL.md` |
-| **project-guidelines-example** | Project-specific skill template based on real production app. |  | `skills/project-guidelines-example/SKILL.md` |
-| **project-health** | All-in-one project configuration and health management. Sets up new projects (settings.local.json, AGENTS.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leak... |  | `skills/project-health/SKILL.md` |
-| **project-session-manager** | Worktree-first dev environment manager for issues & PRs. |  | `skills/project-session-manager/SKILL.md` |
-| **project-workflow-analysis-blueprint-generator** | Technology-agnostic prompt generator for end-to-end workflows. |  | `skills/project-workflow-analysis-blueprint-generator/SKILL.md` |
-| **Prompt Coach** | Analyze your Codex session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer. |  | `skills/Prompt Coach/SKILL.md` |
-| **prompt-governance** | Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for product... |  | `skills/prompt-governance/SKILL.md` |
-| **prompt-optimizer** | Optimize raw prompts into ready-to-send prompt for any LLM. |  | `skills/prompt-optimizer/SKILL.md` |
-| **prospeccion-aiq** | Construye y ejecuta una lista de prospectos calificados en Instagram para vender servicios de IA — descubre cuentas por bola de nieve, las enriquece con email y señal de monetización, las puntúa y ... |  | `skills/prospeccion-aiq/SKILL.md` |
 | **prospecting** | Find, qualify, and build a list of B2B/SaaS prospects. |  | `skills/prospecting/SKILL.md` |
-| **public-relations** | Earned media, press coverage, journalist outreach. |  | `skills/public-relations/SKILL.md` |
-| **publish-to-pages** | Publish presentations and web content to GitHub Pages. |  | `skills/publish-to-pages/SKILL.md` |
-| **pubmed-database** | PubMed and NCBI E-utilities search for biomedical literature. |  | `skills/pubmed-database/SKILL.md` |
-| **pulse** | Multi-source recency research skill that takes the pulse of any topic across Reddit, Hacker News, the open web, and optionally X/Twitter within a configurable recent window (default 30 days). Forci... |  | `skills/pulse/SKILL.md` |
-| **pytest-coverage** | Run pytest tests with coverage and target 100% coverage. |  | `skills/pytest-coverage/SKILL.md` |
-| **python-azure-iot-edge-modules** | Build and operate Python Azure IoT Edge modules. |  | `skills/python-azure-iot-edge-modules/SKILL.md` |
-| **python-mcp-server-generator** | Generate a complete MCP server project in Python. |  | `skills/python-mcp-server-generator/SKILL.md` |
-| **python-patterns** | Pythonic idioms, PEP 8 standards, and type hints. |  | `skills/python-patterns/SKILL.md` |
-| **python-pypi-package-builder** | End-to-end skill for building and publishing Python libraries to PyPI. |  | `skills/python-pypi-package-builder/SKILL.md` |
-| **python-testing** | Python testing strategies using pytest, fixtures & mocking. |  | `skills/python-testing/SKILL.md` |
-| **pytorch-patterns** | PyTorch deep learning training pipelines and architectures. |  | `skills/pytorch-patterns/SKILL.md` |
-| **qa-only** | Report-only QA testing. (gstack) |  | `skills/qa-only/SKILL.md` |
-| **qa-test-planner** | Generate comprehensive test plans, test cases & bug reports. |  | `skills/qa-test-planner/SKILL.md` |
-| **qdrant-clients-sdk** | Integrate Qdrant vector database client SDKs. |  | `skills/qdrant-clients-sdk/SKILL.md` |
-| **qdrant-deployment-options** | Guides Qdrant deployment selection (Docker, Cloud, local, embedded). |  | `skills/qdrant-deployment-options/SKILL.md` |
-| **qdrant-model-migration** | Embedding model migration in Qdrant without downtime. |  | `skills/qdrant-model-migration/SKILL.md` |
-| **qdrant-monitoring** | Qdrant monitoring and observability setup. |  | `skills/qdrant-monitoring/SKILL.md` |
-| **qdrant-performance-optimization** | Optimize Qdrant vector search performance and indexing. |  | `skills/qdrant-performance-optimization/SKILL.md` |
-| **qdrant-scaling** | Guides Qdrant cluster scaling decisions. |  | `skills/qdrant-scaling/SKILL.md` |
-| **qdrant-search-quality** | Diagnoses and improves Qdrant vector search relevance. |  | `skills/qdrant-search-quality/SKILL.md` |
-| **qdrant-version-upgrade** | Upgrade Qdrant version without downtime. |  | `skills/qdrant-version-upgrade/SKILL.md` |
-| **quality-documentation-manager** | Document control system management for medical device QMS. Covers document numbering, version control, change management, and 21 CFR Part 11 compliance. Use when working on document control procedu... |  | `skills/quality-documentation-manager/SKILL.md` |
-| **quality-metrics** | Tracks quality metrics including defect density, test effectiveness ratio, DORA metrics, and mean time to detection. Use when establishing quality dashboards, defining KPIs, evaluating test suite e... |  | `skills/quality-metrics/SKILL.md` |
-| **quality-nonconformance** | Quality control, non-conformance investigation & CAPA in manufacturing. |  | `skills/quality-nonconformance/SKILL.md` |
-| **quality-playbook** | Run complete quality engineering audit on any codebase. |  | `skills/quality-playbook/SKILL.md` |
-| **quarkus-patterns** | Quarkus 3.x LTS architecture patterns with Camel & Panache. |  | `skills/quarkus-patterns/SKILL.md` |
-| **quarkus-security** | Quarkus Security best practices for authn/authz & OIDC. |  | `skills/quarkus-security/SKILL.md` |
-| **quarkus-tdd** | Test-driven development for Quarkus 3.x using JUnit 5 & REST Assured. |  | `skills/quarkus-tdd/SKILL.md` |
-| **quarkus-verification** | Verification loop for Quarkus projects: build, tests & native compilation. |  | `skills/quarkus-verification/SKILL.md` |
-| **quasi-coder** | Implement code from shorthand, quasi-code, and natural language. |  | `skills/quasi-coder/SKILL.md` |
-| **quick-recap** | Status block convention for agent responses. |  | `skills/quick-recap/SKILL.md` |
-| **ralph** | Self-referential loop until task completion with verification reviewer. |  | `skills/ralph/SKILL.md` |
-| **ralphinho-rfc-pipeline** | RFC-driven multi-agent DAG execution pattern. |  | `skills/ralphinho-rfc-pipeline/SKILL.md` |
-| **ralplan** | Consensus planning entrypoint that auto-gates vague requests. |  | `skills/ralplan/SKILL.md` |
-| **read-the-damn-docs** | Ground implementations in third-party official docs before coding. |  | `skills/read-the-damn-docs/SKILL.md` |
-| **README** |  |  | `skills/README/SKILL.md` |
-| **readme-blueprint-generator** | Intelligent README.md generation prompt. |  | `skills/readme-blueprint-generator/SKILL.md` |
-| **receiving-code-review** | Evaluate code review feedback before implementing. |  | `skills/receiving-code-review/SKILL.md` |
-| **recsys-pipeline-architect** | Design recommendation, ranking, and feed pipelines. |  | `skills/recsys-pipeline-architect/SKILL.md` |
-| **recursive-decision-ledger** | Decision ledger for repeated rollouts and stochastic optimization. |  | `skills/recursive-decision-ledger/SKILL.md` |
-| **red-team** | Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations. Covers MITRE ATT&CK kill-chain planning, technique scoring, choke point iden... |  | `skills/red-team/SKILL.md` |
-| **redesign** | Upgrade an existing website or app to premium quality without breaking functionality — audit the current design, identify generic/AI tells, then apply taste and system rules surgically. Use when th... |  | `skills/redesign/SKILL.md` |
-| **redesign-existing-projects** | Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any C... |  | `skills/redesign-existing-projects/SKILL.md` |
-| **redesign-skill** | Website & UI redesign modernization skill by Open Design (nexu-io). Transforms legacy, outdated, or template-looking interfaces into modern, high-conversion, accessible web applications. Use when r... |  | `skills/redesign-skill/SKILL.md` |
-| **redis-patterns** | Redis data structure patterns, caching & distributed locks. |  | `skills/redis-patterns/SKILL.md` |
-| **reducing-entropy** | Manual-only skill for minimizing total codebase size. |  | `skills/reducing-entropy/SKILL.md` |
-| **refactor** | Surgical code refactoring to improve maintainability. |  | `skills/refactor/SKILL.md` |
-| **refactor-method-complexity-reduce** | Refactor methods to reduce cognitive complexity. |  | `skills/refactor-method-complexity-reduce/SKILL.md` |
-| **refactor-plan** | Create concrete plan before multi-file refactor. |  | `skills/refactor-plan/SKILL.md` |
-| **regex-vs-llm-structured-text** | Decision framework for regex vs LLM text parsing. |  | `skills/regex-vs-llm-structured-text/SKILL.md` |
-| **release** | End-to-end npm release workflow with verification gates and hardcoded-version protection |  | `skills/release/SKILL.md` |
-| **release-it** | Build production-ready systems with stability patterns: circuit breakers, bulkheads, timeouts, and retry logic. Use when the user mentions "production outage", "circuit breaker", "deployment pipeli... |  | `skills/release-it/SKILL.md` |
-| **remember-interactive-programming** | Micro-prompt for interactive REPL-based programming. |  | `skills/remember-interactive-programming/SKILL.md` |
-| **remotion-best-practices** | Remotion video creation best practices in React. |  | `skills/remotion-best-practices/SKILL.md` |
-| **remotion-video-creation** | Remotion video creation rules covering 3D, audio & captions. |  | `skills/remotion-video-creation/SKILL.md` |
 | **replay-ux-research** | Analyze Sentry session replays to surface UX patterns. |  | `skills/replay-ux-research/SKILL.md` |
-| **repo-scan** | Cross-stack source code asset audit. |  | `skills/repo-scan/SKILL.md` |
-| **repo-standardizer** | Polish repository surface — labels, templates, CODEOWNERS, rules. |  | `skills/repo-standardizer/SKILL.md` |
-| **repo-story-time** | Generate repository summary and narrative story from commit history. |  | `skills/repo-story-time/SKILL.md` |
-| **requesting-code-review** | Request code review before merging major features. |  | `skills/requesting-code-review/SKILL.md` |
-| **requirements-clarity** | Clarify ambiguous requirements through focused dialogue. |  | `skills/requirements-clarity/SKILL.md` |
-| **research** | Default entry point for any research request — a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, grants... |  | `skills/research/SKILL.md` |
-| **resemble-detect** | Detects AI-generated or synthetic audio, image, and video content using Resemble AI detection models. Use when analyzing media authenticity, content moderation pipelines, or when user mentions "res... |  | `skills/resemble-detect/SKILL.md` |
-| **resume** | Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment. |  | `skills/resume/SKILL.md` |
-| **resume-ats-beater** | Este skill deve ser usado para reescrever currículos com foco em compatibilidade ATS e impacto para recrutadores, e/ou auditar perfis LinkedIn para maximizar visibilidade e conversão profissional. ... |  | `skills/resume-ats-beater/SKILL.md` |
-| **resx-source-generator-migration** | Migrate .resx designer.cs files to C# source generator. |  | `skills/resx-source-generator-migration/SKILL.md` |
-| **retro** | Weekly engineering retrospective. (gstack) |  | `skills/retro/SKILL.md` |
-| **returns-reverse-logistics** | Returns authorization, inspection, disposition & warranty claims. |  | `skills/returns-reverse-logistics/SKILL.md` |
-| **review** | Pre-landing PR review. (gstack) |  | `skills/review/SKILL.md` |
-| **review-and-refactor** | Review and refactor code according to project instructions. |  | `skills/review-and-refactor/SKILL.md` |
-| **review-animations** | Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned. | `https://github.com/emilkowalski/skills` | `skills/review-animations/SKILL.md` |
-| **reviewing-oracle-to-postgres-migration** | Identify Oracle-to-PostgreSQL migration risks. |  | `skills/reviewing-oracle-to-postgres-migration/SKILL.md` |
-| **rewind** | Retrieve recent local Rewind context. |  | `skills/rewind/SKILL.md` |
-| **rhino3d-scripts** | Authoring and debugging scripts for Rhinoceros 3D (Rhino 8+). |  | `skills/rhino3d-scripts/SKILL.md` |
-| **Root Cause Tracing** | Systematically trace bugs backward through call stack to find original trigger |  | `skills/Root Cause Tracing/SKILL.md` |
-| **roslyn-analyzers** | Build, review, debug Roslyn analyzers and source generators. |  | `skills/roslyn-analyzers/SKILL.md` |
-| **roundup** | Generate personalized status briefings from GitHub, Teams, Slack. |  | `skills/roundup/SKILL.md` |
-| **roundup-setup** | Onboarding to configure personalized status briefings. |  | `skills/roundup-setup/SKILL.md` |
-| **rtk** | Rust Token Killer (RTK) & Runtime Token Compression skill. Provides CLI proxying, log filtering, and intelligent terminal output compression (cutting command output tokens by 60-90%). Use when runn... |  | `skills/rtk/SKILL.md` |
-| **ruby-mcp-server-generator** | Generate complete MCP server project in Ruby using official gem. |  | `skills/ruby-mcp-server-generator/SKILL.md` |
-| **ruff-recursive-fix** | Run Ruff checks and apply safe/unsafe autofixes iteratively. |  | `skills/ruff-recursive-fix/SKILL.md` |
-| **rules-distill** | Scan skills to extract cross-cutting principles into rule files. |  | `skills/rules-distill/SKILL.md` |
-| **rust-mcp-server-generator** | Generate complete Rust Model Context Protocol server project. |  | `skills/rust-mcp-server-generator/SKILL.md` |
-| **rust-patterns** | Idiomatic Rust patterns, ownership, traits & concurrency. |  | `skills/rust-patterns/SKILL.md` |
-| **rust-testing** | Rust testing patterns: unit, integration, async, property-based. |  | `skills/rust-testing/SKILL.md` |
-| **saas-scaffolder** | Generates complete, production-ready SaaS project boilerplate including authentication, database schemas, billing integration, API routes, and a working dashboard using Next.js 14+ App Router, Type... |  | `skills/saas-scaffolder/SKILL.md` |
-| **safe-refactor** | Restructure code while strictly preserving behavior. |  | `skills/safe-refactor/SKILL.md` |
-| **safety-guard** | Prevent destructive operations when working on production systems. |  | `skills/safety-guard/SKILL.md` |
-| **salesforce-apex-quality** | Apex code quality guardrails (bulk safety, FLS security). |  | `skills/salesforce-apex-quality/SKILL.md` |
-| **salesforce-component-standards** | Salesforce Lightning Web Components (LWC) standards & WCAG. |  | `skills/salesforce-component-standards/SKILL.md` |
-| **salesforce-flow-design** | Salesforce Flow architecture decisions & fault handling. |  | `skills/salesforce-flow-design/SKILL.md` |
-| **sandbox-npm-install** | Install npm packages in Docker sandbox environment. |  | `skills/sandbox-npm-install/SKILL.md` |
-| **santa-method** | Multi-agent adversarial verification with convergence loop. |  | `skills/santa-method/SKILL.md` |
-| **scaffold** |  |  | `skills/scaffold/SKILL.md` |
-| **scaffold-exercises** | Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course s... |  | `skills/scaffold-exercises/SKILL.md` |
-| **scaffolding-oracle-to-postgres-migration-test-project** | Scaffold xUnit integration test project for Oracle-to-Postgres. |  | `skills/scaffolding-oracle-to-postgres-migration-test-project/SKILL.md` |
-| **Scale Game** | Test at extremes (1000x bigger/smaller, instant/year-long) to expose fundamental truths hidden at normal scales |  | `skills/Scale Game/SKILL.md` |
-| **scholar-evaluation** | Structured evaluation for scholarly papers and research proposals. |  | `skills/scholar-evaluation/SKILL.md` |
-| **sciomc** | Orchestrate parallel scientist agents for analysis in AUTO mode. |  | `skills/sciomc/SKILL.md` |
-| **scoutqa-test** | Exploratory website QA testing & accessibility check. |  | `skills/scoutqa-test/SKILL.md` |
-| **scrape** | Pull data from a web page. (gstack) |  | `skills/scrape/SKILL.md` |
-| **screen-recording** | Create animated GIF demos and screen recordings for PRs. |  | `skills/screen-recording/SKILL.md` |
-| **screenshot** | Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-l... |  | `skills/screenshot/SKILL.md` |
-| **scroll-craft** | Advanced scroll-driven animations, CSS scroll timelines, parallax, and sticky interaction skill. Use when building immersive web experiences, scroll-triggered visual reveals, or when user mentions ... |  | `skills/scroll-craft/SKILL.md` |
-| **search-first** | Research-before-coding workflow — search existing tools first. |  | `skills/search-first/SKILL.md` |
-| **secret-scanning** | Configure GitHub secret scanning, push protection & remediation. |  | `skills/secret-scanning/SKILL.md` |
-| **selector-de-nicho** | Elige un nicho concreto para vender servicios de IA y lo valida con evidencia antes de invertir tiempo — cruza acceso real del usuario, dolor medible del sector y capacidad de pago, y devuelve un n... |  | `skills/selector-de-nicho/SKILL.md` |
-| **self-improve** | Autonomous evolutionary code improvement engine. |  | `skills/self-improve/SKILL.md` |
-| **semantic-kernel** | Semantic Kernel solution guide for .NET and Python. |  | `skills/semantic-kernel/SKILL.md` |
 | **server-side-conversion-tracking** | Server-side conversion tracking for Facebook, TikTok, Google Ads. |  | `skills/server-side-conversion-tracking/SKILL.md` |
-| **session-handoff** | Creates handoff documents for seamless AI agent session transfers. |  | `skills/session-handoff/SKILL.md` |
-| **setup-browser-cookies** | Import cookies from your real Chromium browser into the headless browse session. (gstack) |  | `skills/setup-browser-cookies/SKILL.md` |
-| **setup-deploy** | Configure deployment settings for /land-and-deploy. |  | `skills/setup-deploy/SKILL.md` |
-| **setup-gbrain** | Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack) |  | `skills/setup-gbrain/SKILL.md` |
-| **setup-my-iq** | Setup personal context portfolio & work style preferences. |  | `skills/setup-my-iq/SKILL.md` |
-| **setup-pre-commit** | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add com... |  | `skills/setup-pre-commit/SKILL.md` |
-| **setup-ts-deep-modules** | Wire dependency-cruiser into a TypeScript repo so each package is a deep module — implementation hidden in subfolders, reachable only through its entry-point files. User-invoked. |  | `skills/setup-ts-deep-modules/SKILL.md` |
-| **sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... |  | `skills/sfdipot-product-factors/SKILL.md` |
-| **ship** | Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack) |  | `skills/ship/SKILL.md` |
-| **ship-gate** | Pre-production audit that scans a codebase for security, database, deployment, code quality, AI/LLM, dependency, frontend, and observability issues. Intercepts deploy commands and blocks until crit... |  | `skills/ship-gate/SKILL.md` |
-| **ship-learn-next** | Transform learning content into actionable implementation plans. |  | `skills/ship-learn-next/SKILL.md` |
-| **shuffle-json-data** | Shuffle repetitive JSON objects safely with schema validation. |  | `skills/shuffle-json-data/SKILL.md` |
-| **signal-write** | Emit structured agent signals (blocked, done, checkpoint). |  | `skills/signal-write/SKILL.md` |
-| **Simplification Cascades** | Find one insight that eliminates multiple components - "if this is true, we don't need X, Y, or Z |  | `skills/Simplification Cascades/SKILL.md` |
-| **six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... |  | `skills/six-thinking-hats/SKILL.md` |
-| **skill** | Manage local skills — list, add, remove, search, edit. |  | `skills/skill/SKILL.md` |
-| **Skill Builder** | Create new Codex Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generat... |  | `skills/Skill Builder/SKILL.md` |
-| **skill-comply** | Visualize whether skills and rules are followed by agents. |  | `skills/skill-comply/SKILL.md` |
-| **skill-installer** | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep... |  | `skills/skill-installer/SKILL.md` |
-| **skill-inventory-manager** | Meta-skill that enumerates skills & generates custom pipelines. |  | `skills/skill-inventory-manager/SKILL.md` |
-| **skill-judge** | Evaluate Agent Skill design quality against specification. |  | `skills/skill-judge/SKILL.md` |
-| **skill-scanner** | Scan agent skills for security vulnerabilities & injection risks. |  | `skills/skill-scanner/SKILL.md` |
-| **skill-scout** | Search existing skill sources before creating a new skill. |  | `skills/skill-scout/SKILL.md` |
-| **skill-seekers** | Búsqueda activa, evaluación e ingesta automatizada de nuevas habilidades agenticas desde repositorios remotos. |  | `skills/skill-seekers/SKILL.md` |
-| **skill-share** | A skill that creates new Codex skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery. |  | `skills/skill-share/SKILL.md` |
-| **skill-stocktake** | Audit skills and commands for quality & effectiveness. |  | `skills/skill-stocktake/SKILL.md` |
-| **skill-vault** | Bóveda persistente de skills del repositorio para organización, versionado y almacenamiento offline. |  | `skills/skill-vault/SKILL.md` |
-| **skill-writer** | Create and refine agent skills following Agent Skills spec. |  | `skills/skill-writer/SKILL.md` |
-| **skill1ssue** | Find and discover agent skills across git forges. |  | `skills/skill1ssue/SKILL.md` |
-| **skillclaw** | Self-improving skill infrastructure that analyzes past session transcripts and automatically sharpens, refines, and updates the local skill library. Use when maintaining high-power skill collection... |  | `skills/skillclaw/SKILL.md` |
-| **skillify** | Codify the most recent successful /scrape flow into a permanent browser-skill on disk. (gstack) |  | `skills/skillify/SKILL.md` |
-| **skills-arquiteto-de-empresa** |  |  | `skills/skills-arquiteto-de-empresa/SKILL.md` |
-| **skills-chaos-engineering** |  |  | `skills/skills-chaos-engineering/SKILL.md` |
-| **skills-eu-ai-act-specialist** |  |  | `skills/skills-eu-ai-act-specialist/SKILL.md` |
-| **skills-feature-flags-architect** |  |  | `skills/skills-feature-flags-architect/SKILL.md` |
-| **skills-handoff** |  |  | `skills/skills-handoff/SKILL.md` |
-| **skills-init** |  |  | `skills/skills-init/SKILL.md` |
-| **skills-iso42001-specialist** |  |  | `skills/skills-iso42001-specialist/SKILL.md` |
-| **skills-kubernetes-operator** |  |  | `skills/skills-kubernetes-operator/SKILL.md` |
-| **skills-review** |  |  | `skills/skills-review/SKILL.md` |
-| **skills-run** |  |  | `skills/skills-run/SKILL.md` |
-| **skills-slo-architect** |  |  | `skills/skills-slo-architect/SKILL.md` |
-| **skills-status** |  |  | `skills/skills-status/SKILL.md` |
-| **skills-status-2** |  |  | `skills/skills-status-2/SKILL.md` |
-| **slang-shader-engineer** | Slang shaders, HLSL-compatible GPU code & compute pipelines. |  | `skills/slang-shader-engineer/SKILL.md` |
-| **slo-architect** | Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE... |  | `skills/slo-architect/SKILL.md` |
-| **slo-design** |  |  | `skills/slo-design/SKILL.md` |
 | **sms** | SMS/MMS marketing flows, abandoned cart & win-back texts. |  | `skills/sms/SKILL.md` |
-| **snowflake-semanticview** | Create and validate Snowflake semantic views via Snow CLI. |  | `skills/snowflake-semanticview/SKILL.md` |
 | **social-graph-ranker** | Weighted social-graph ranking for warm intro discovery. |  | `skills/social-graph-ranker/SKILL.md` |
 | **social-publisher** | Publish social media posts across 13 platforms via SocialClaw. |  | `skills/social-publisher/SKILL.md` |
-| **software-architecture** | System design patterns, Clean Architecture, SOLID principles, domain modeling. Use when making architectural decisions, designing new modules, refactoring a tangled codebase, or reviewing system de... |  | `skills/software-architecture/SKILL.md` |
-| **sora** | Generate, edit, and poll Sora AI video generation API. |  | `skills/sora/SKILL.md` |
-| **spanner-basics** | Provision instances, design schemas & query Google Cloud Spanner. |  | `skills/spanner-basics/SKILL.md` |
-| **speak-summary** | Convert text/markdown summaries to listenable MP3 using neural TTS. |  | `skills/speak-summary/SKILL.md` |
-| **spec** | Turn vague intent into a precise, executable spec in five phases. (gstack) |  | `skills/spec/SKILL.md` |
-| **spec-kit** | Spec-Driven Development (SDD) framework based on GitHub's official spec-kit (https://github.com/github/spec-kit). Enforces a specification-first approach where agents create executable specs, const... |  | `skills/spec-kit/SKILL.md` |
-| **speech** | Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_spee... |  | `skills/speech/SKILL.md` |
-| **sponsor-finder** | Find sponsorable GitHub dependencies via deps.dev. |  | `skills/sponsor-finder/SKILL.md` |
-| **spreadsheet** | Spreadsheet creation and formula analysis (.xlsx, .csv). |  | `skills/spreadsheet/SKILL.md` |
-| **springboot-patterns** | Spring Boot architecture patterns, REST API design & caching. |  | `skills/springboot-patterns/SKILL.md` |
-| **springboot-security** | Spring Security best practices for authn/authz & CSRF. |  | `skills/springboot-security/SKILL.md` |
-| **springboot-tdd** | Test-driven development for Spring Boot using JUnit 5 & Mockito. |  | `skills/springboot-tdd/SKILL.md` |
-| **springboot-verification** | Verification loop for Spring Boot projects: build, tests, security. |  | `skills/springboot-verification/SKILL.md` |
-| **sql-code-review** | Universal SQL code review assistant. |  | `skills/sql-code-review/SKILL.md` |
-| **sql-optimization** | Universal SQL performance optimization assistant. |  | `skills/sql-optimization/SKILL.md` |
-| **sql-server-table-reconciliation** | Compare SQL Server tables across instances & ETL validation. |  | `skills/sql-server-table-reconciliation/SKILL.md` |
-| **ssma-console** | SSMA console operations — Oracle to SQL Server schema migration. |  | `skills/ssma-console/SKILL.md` |
-| **stay-within-limits** | Respect agent rate limits and weekly usage caps. |  | `skills/stay-within-limits/SKILL.md` |
-| **steno-mode** | Shorthand response compression cutting ~40% response tokens. |  | `skills/steno-mode/SKILL.md` |
-| **strategic-compact** | Manual context compaction at logical task boundaries. |  | `skills/strategic-compact/SKILL.md` |
-| **stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows |  | `skills/stream-chain/SKILL.md` |
-| **strict-api** | Use when the user says 'no hallucinations', 'verify APIs', 'reality check', or 'don't invent functions'. Prevents the agent from calling methods, imports, or variables that do not provably exist in... |  | `skills/strict-api/SKILL.md` |
-| **stripe-apps** | Build, modify, and review Stripe Apps. |  | `skills/stripe-apps/SKILL.md` |
-| **stripe-best-practices** | Stripe API integration choices (Checkout vs PaymentIntents). |  | `skills/stripe-best-practices/SKILL.md` |
-| **stripe-directory** | Find Stripe partners & software for workflows. |  | `skills/stripe-directory/SKILL.md` |
-| **stripe-docs** | Search and look up official Stripe documentation. |  | `skills/stripe-docs/SKILL.md` |
-| **stripe-projects** | Bootstrap & manage Stripe Projects CLI. |  | `skills/stripe-projects/SKILL.md` |
-| **structured-autonomy-generate** | Structured Autonomy Implementation Generator. |  | `skills/structured-autonomy-generate/SKILL.md` |
-| **structured-autonomy-implement** | Structured Autonomy Implementation Prompt. |  | `skills/structured-autonomy-implement/SKILL.md` |
-| **structured-autonomy-plan** | Structured Autonomy Planning Prompt. |  | `skills/structured-autonomy-plan/SKILL.md` |
-| **subagent-driven-development** | Execute implementation plans using independent subagent tasks. |  | `skills/subagent-driven-development/SKILL.md` |
-| **suggest-awesome-github-copilot-agents** | Suggest relevant Copilot custom agents from awesome-copilot. |  | `skills/suggest-awesome-github-copilot-agents/SKILL.md` |
-| **suggest-awesome-github-copilot-instructions** | Suggest Copilot instruction files from awesome-copilot. |  | `skills/suggest-awesome-github-copilot-instructions/SKILL.md` |
-| **suggest-awesome-github-copilot-skills** | Suggest Copilot skills from awesome-copilot repository. |  | `skills/suggest-awesome-github-copilot-skills/SKILL.md` |
-| **surgical-patch** | Fix bugs at the narrowest responsible layer. |  | `skills/surgical-patch/SKILL.md` |
-| **syllabus** | Generates a curated supplementary reading list from any course syllabus using Consensus academic search. Grill-me intake (syllabus input format + course audience + year range) plus a grouping forci... |  | `skills/syllabus/SKILL.md` |
-| **sync-gbrain** | Keep gbrain current with this repo's code and refresh agent search guidance in AGENTS.md. Wraps the gstack-gbrain-sync orchestrator with state (gstack) |  | `skills/sync-gbrain/SKILL.md` |
-| **system-commandline-cli** | Add and review CLI commands in .NET using System.CommandLine. |  | `skills/system-commandline-cli/SKILL.md` |
-| **Systematic Debugging** | Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions. |  | `skills/Systematic Debugging/SKILL.md` |
-| **tailored-resume-generator** | Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements to maximize interview chances |  | `skills/tailored-resume-generator/SKILL.md` |
-| **taste** | Creative-direction (taste) layer for music videos & hyperpop edits. | `https://github.com/Leonxlnx/taste-skill` | `skills/taste/SKILL.md` |
-| **tasteforge-video** | Multimodal video & 3D-asset discovery with EDL/FCPXML exports. |  | `skills/tasteforge-video/SKILL.md` |
-| **tdd-workflow** | TDD workflow enforcing 80%+ test coverage. |  | `skills/tdd-workflow/SKILL.md` |
-| **team** | Coordinate N agents on shared task list using Claude native teams. |  | `skills/team/SKILL.md` |
-| **team-agent-orchestration** | Team-based agent squad orchestration & Kanban merge gates. |  | `skills/team-agent-orchestration/SKILL.md` |
-| **team-builder** | Interactive agent picker for dispatching parallel teams. |  | `skills/team-builder/SKILL.md` |
-| **technical-documentation** | Build and review high-quality technical docs as well as agent instruction files in your repository. |  | `skills/technical-documentation/SKILL.md` |
-| **technical-job-search** | Software engineer job search — CV tailoring & cover letters. |  | `skills/technical-job-search/SKILL.md` |
-| **technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. |  | `skills/technical-writing/SKILL.md` |
-| **technology-stack-blueprint-generator** | Technology stack blueprint generator from codebases. |  | `skills/technology-stack-blueprint-generator/SKILL.md` |
-| **TEMPLATE** |  |  | `skills/TEMPLATE/SKILL.md` |
-| **terminal-opener** | Open executable in visible terminal window safely. |  | `skills/terminal-opener/SKILL.md` |
-| **terminal-ops** | Evidence-first terminal execution workflow. |  | `skills/terminal-ops/SKILL.md` |
-| **testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... |  | `skills/testability-scoring/SKILL.md` |
-| **the-architect** | Interviews the user about what they want to build (phased discovery Q&A), classifies the project into an archetype (SaaS webapp, marketing site, mobile app, API backend, internal tool, content plat... |  | `skills/the-architect/SKILL.md` |
-| **threat-model-analyst** | STRIDE-A threat model analysis for repositories. |  | `skills/threat-model-analyst/SKILL.md` |
-| **timeline-report** | Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from Codex-mem's timeline. Use when asked for a timeline report, project history analysis, deve... |  | `skills/timeline-report/SKILL.md` |
-| **tiny-stepping** | Incremental development making smallest meaningful change per step. |  | `skills/tiny-stepping/SKILL.md` |
-| **tinystruct-patterns** | Developing with tinystruct Java framework. |  | `skills/tinystruct-patterns/SKILL.md` |
-| **tldr-prompt** | Create tldr summaries for Copilot files and MCP servers. |  | `skills/tldr-prompt/SKILL.md` |
-| **tm7-threat-model** | Create Microsoft Threat Modeling Tool (.tm7) files. |  | `skills/tm7-threat-model/SKILL.md` |
-| **to-issues** | Break plan/spec into independent issues on tracker. |  | `skills/to-issues/SKILL.md` |
-| **to-prd** | Turn conversation into PRD on issue tracker. |  | `skills/to-prd/SKILL.md` |
-| **token-budget-advisor** | Token budget control advisor for response depth. |  | `skills/token-budget-advisor/SKILL.md` |
-| **tokmax** | Compress text for maximum token efficiency & machine intent. |  | `skills/tokmax/SKILL.md` |
-| **trace** | Evidence-driven causal tracing lane with competing hypotheses. |  | `skills/trace/SKILL.md` |
-| **train-sentence-transformers** | Train or fine-tune SentenceTransformers bi-encoder models. |  | `skills/train-sentence-transformers/SKILL.md` |
-| **transcribe** | Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in inte... |  | `skills/transcribe/SKILL.md` |
-| **transformers-js** | Run ML models directly in JavaScript using Transformers.js. |  | `skills/transformers-js/SKILL.md` |
-| **transloadit-media-processing** | Process media files (video/audio/images) using Transloadit. |  | `skills/transloadit-media-processing/SKILL.md` |
-| **triage** | Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. |  | `skills/triage/SKILL.md` |
-| **triage-frontend-issues** | Triage Sentry JavaScript frontend errors. |  | `skills/triage-frontend-issues/SKILL.md` |
-| **trl-training** | Train transformer models using TRL (SFT, DPO, GRPO, KTO). |  | `skills/trl-training/SKILL.md` |
-| **tugboat** | Anxiety-aware evidence-driven collaboration for stalled work. |  | `skills/tugboat/SKILL.md` |
 | **twitter-algorithm-optimizer** | Analyze and optimize tweets for maximum reach using Twitter's open-source algorithm insights. Rewrite and edit user tweets to improve engagement and visibility based on how the recommendation syste... |  | `skills/twitter-algorithm-optimizer/SKILL.md` |
-| **typescript-mcp-server-generator** | Generate complete MCP server project in TypeScript. |  | `skills/typescript-mcp-server-generator/SKILL.md` |
-| **typespec-api-operations** | Add REST operations to TypeSpec API plugin. |  | `skills/typespec-api-operations/SKILL.md` |
-| **typespec-create-agent** | Generate TypeSpec declarative agent for M365 Copilot. |  | `skills/typespec-create-agent/SKILL.md` |
-| **typespec-create-api-plugin** | Generate TypeSpec API plugin for M365 Copilot. |  | `skills/typespec-create-api-plugin/SKILL.md` |
-| **typing-exclusion-worker** | Remove mypy exclusion modules in scoped batches. |  | `skills/typing-exclusion-worker/SKILL.md` |
-| **ui-demo** | Record polished UI demo videos using Playwright. |  | `skills/ui-demo/SKILL.md` |
-| **ui-screenshots** | Capture web app screenshots using Playwright and PIL. |  | `skills/ui-screenshots/SKILL.md` |
-| **ui-to-vue** | Convert UI screenshots into Vue 3 components (Element/AntD). |  | `skills/ui-to-vue/SKILL.md` |
-| **ui-widget-developer** | Build MCP servers for Copilot Chat using the OpenAI Apps SDK or MCP Apps SDK widget rendering support (any language). Use this skill when: - Creating MCP servers that integrate with M365 Copilot de... |  | `skills/ui-widget-developer/SKILL.md` |
-| **ultragoal** | Multi-goal workflow persisting plan artifacts under .omc/ultragoal. |  | `skills/ultragoal/SKILL.md` |
-| **ultraqa** | QA cycling workflow — test, verify, fix, repeat. |  | `skills/ultraqa/SKILL.md` |
-| **ultrawork** | Parallel execution engine for high-throughput task completion. |  | `skills/ultrawork/SKILL.md` |
-| **uncloud** | Deploy and manage services on Uncloud cluster with Caddy. |  | `skills/uncloud/SKILL.md` |
-| **unfreeze** | Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack) |  | `skills/unfreeze/SKILL.md` |
-| **unified-memory** | Share durable context across Claude, Codex, Cursor & OpenCode. |  | `skills/unified-memory/SKILL.md` |
-| **unified-notifications-ops** | Operate notifications across GitHub, Linear, desktop alerts. |  | `skills/unified-notifications-ops/SKILL.md` |
-| **unit-test-vue-pinia** | Write unit tests for Vue 3 + Vitest + Pinia. |  | `skills/unit-test-vue-pinia/SKILL.md` |
-| **update-avm-modules-in-bicep** | Update Azure Verified Modules in Bicep files. |  | `skills/update-avm-modules-in-bicep/SKILL.md` |
-| **update-harness-dependencies** | Update primary SDK dependencies of harness packages. |  | `skills/update-harness-dependencies/SKILL.md` |
-| **update-implementation-plan** | Update existing implementation plan file. |  | `skills/update-implementation-plan/SKILL.md` |
-| **update-llms** | Update root llms.txt following llmstxt.org spec. |  | `skills/update-llms/SKILL.md` |
-| **update-markdown-file-index** | Update markdown section with file index. |  | `skills/update-markdown-file-index/SKILL.md` |
-| **update-provider-models** | Add/remove model IDs for AI SDK providers. |  | `skills/update-provider-models/SKILL.md` |
-| **update-specification** | Update solution specification optimized for LLM consumption. |  | `skills/update-specification/SKILL.md` |
-| **upgrade-stripe** | Upgrade Stripe API versions and SDKs safely. |  | `skills/upgrade-stripe/SKILL.md` |
-| **user-story** |  |  | `skills/user-story/SKILL.md` |
-| **using-datahub** | Routing guidance for DataHub interaction skills. |  | `skills/using-datahub/SKILL.md` |
-| **using-git-worktrees** | Isolated worktree dev environment workflow. |  | `skills/using-git-worktrees/SKILL.md` |
-| **using-n8n-mcp-skills** | Use when building, editing, validating, testing, or debugging an n8n workflow through the n8n-mcp MCP server — designing a flow, configuring a node, writing an expression or Code node, wiring crede... |  | `skills/using-n8n-mcp-skills/SKILL.md` |
-| **using-superpowers** | Establishes skill invocation requirements before responding. |  | `skills/using-superpowers/SKILL.md` |
-| **using-tmux-for-interactive-commands** | Run interactive CLI tools (vim, rebase) in tmux. |  | `skills/using-tmux-for-interactive-commands/SKILL.md` |
-| **uspto-database** | USPTO patent and trademark data lookup. |  | `skills/uspto-database/SKILL.md` |
-| **V3 CLI Modernization** | CLI modernization and hooks system enhancement for Codex-flow v3. Implements interactive prompts, command decomposition, enhanced hooks integration, and intelligent workflow automation. |  | `skills/V3 CLI Modernization/SKILL.md` |
-| **V3 Core Implementation** | Core module implementation for Codex-flow v3. Implements DDD domains, clean architecture patterns, dependency injection, and modular TypeScript codebase with comprehensive testing. |  | `skills/V3 Core Implementation/SKILL.md` |
-| **V3 DDD Architecture** | Domain-Driven Design architecture for Codex-flow v3. Implements modular, bounded context architecture with clean separation of concerns and microkernel pattern. |  | `skills/V3 DDD Architecture/SKILL.md` |
-| **V3 Deep Integration** | Deep agentic-flow@alpha integration implementing ADR-001. Eliminates 10,000+ duplicate lines by building Codex-flow as specialized extension rather than parallel implementation. |  | `skills/V3 Deep Integration/SKILL.md` |
-| **V3 MCP Optimization** | MCP server optimization and transport layer enhancement for Codex-flow v3. Implements connection pooling, load balancing, tool registry optimization, and performance monitoring for sub-100ms respon... |  | `skills/V3 MCP Optimization/SKILL.md` |
-| **V3 Memory Unification** | Unify 6+ memory systems into AgentDB with HNSW indexing for 150x-12,500x search improvements. Implements ADR-006 (Unified Memory Service) and ADR-009 (Hybrid Memory Backend). |  | `skills/V3 Memory Unification/SKILL.md` |
-| **V3 Performance Optimization** | Achieve aggressive v3 performance targets: 2.49x-7.47x Flash Attention speedup, 150x-12,500x search improvements, 50-75% memory reduction. Comprehensive benchmarking and optimization suite. |  | `skills/V3 Performance Optimization/SKILL.md` |
-| **V3 Security Overhaul** | Complete security architecture overhaul for Codex-flow v3. Addresses critical CVEs (CVE-1, CVE-2, CVE-3) and implements secure-by-default patterns. Use for security-first v3 implementation. |  | `skills/V3 Security Overhaul/SKILL.md` |
-| **V3 Swarm Coordination** | 15-agent hierarchical mesh coordination for v3 implementation. Orchestrates parallel execution across security, core, and integration domains following 10 ADRs with 14-week timeline. |  | `skills/V3 Swarm Coordination/SKILL.md` |
-| **validation-pipeline** | Runs multi-stage validation gates with per-step scoring, pass/fail verdicts, and aggregate quality reports. Use when validating requirements, code, or artifacts through structured gate enforcement ... |  | `skills/validation-pipeline/SKILL.md` |
-| **vardoger-analyze** | Personalize Copilot CLI assistant to user's style. |  | `skills/vardoger-analyze/SKILL.md` |
-| **vcpkg** | Setting up vcpkg in C++ projects & cross-compiling. |  | `skills/vcpkg/SKILL.md` |
-| **vercel-composition-patterns** | React composition patterns that scale. |  | `skills/vercel-composition-patterns/SKILL.md` |
-| **vercel-react-native-skills** | React Native & Expo performance best practices. |  | `skills/vercel-react-native-skills/SKILL.md` |
-| **vercel-react-view-transitions** | Implement native-feeling animations using View Transition API. |  | `skills/vercel-react-view-transitions/SKILL.md` |
-| **Verification & Quality Assurance** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. |  | `skills/Verification & Quality Assurance/SKILL.md` |
-| **Verification Before Completion** | Run verification commands and confirm output before claiming success |  | `skills/Verification Before Completion/SKILL.md` |
-| **verification-loop** | Comprehensive verification system for agent sessions. |  | `skills/verification-loop/SKILL.md` |
-| **verify** | Verify change works before claiming completion. |  | `skills/verify/SKILL.md` |
-| **verify-agent-action** | Review proposed AI agent action packet before execution. |  | `skills/verify-agent-action/SKILL.md` |
-| **verify-and-stop** | Prove existing work meets acceptance criteria without expanding scope. |  | `skills/verify-and-stop/SKILL.md` |
-| **version-bump** | Automated semantic versioning and release workflow for Codex plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging, GitHu... |  | `skills/version-bump/SKILL.md` |
-| **visa-doc-translate** | Translate visa application document images to bilingual PDF. |  | `skills/visa-doc-translate/SKILL.md` |
-| **visual-edit** | Open local app in visual edit iframe screens. |  | `skills/visual-edit/SKILL.md` |
-| **visual-plan** | Turn text plans into rich interactive visual plans. |  | `skills/visual-plan/SKILL.md` |
-| **visual-recap** | Turn PR, branch, or git diff into interactive visual recap. |  | `skills/visual-recap/SKILL.md` |
-| **visual-verdict** | Structured visual QA verdict for UI comparisons. |  | `skills/visual-verdict/SKILL.md` |
-| **vite-patterns** | Vite build tool patterns: config, HMR, env, SSR, pre-bundling. |  | `skills/vite-patterns/SKILL.md` |
-| **vscode-ext-commands** | Guidelines for contributing commands in VS Code extensions. |  | `skills/vscode-ext-commands/SKILL.md` |
-| **vscode-ext-localization** | Localization patterns for VS Code extensions. |  | `skills/vscode-ext-localization/SKILL.md` |
-| **wait-what** | Re-pitch message when user indicates last message missed target. |  | `skills/wait-what/SKILL.md` |
-| **web** | Builds a complete website using visual assets generated with Forkads (saved in assets/) and a brief written in content/brief.md. Use when the user writes "/web" or says "read the web skill and buil... |  | `skills/web/SKILL.md` |
-| **web-app-penetration-testing** | Pentest a web app or website end to end — black-box testing of a live URL, staging environment, or local dev server that finds and exploits real vulnerabilities (auth bypass, broken access control,... |  | `skills/web-app-penetration-testing/SKILL.md` |
-| **web-design-reviewer** | Visual inspection of local/remote web app UI design. |  | `skills/web-design-reviewer/SKILL.md` |
-| **web-frameworks** | Build modern full-stack web applications with Next.js (App Router, Server Components, RSC, PPR, SSR, SSG, ISR), Turborepo (monorepo management, task pipelines, remote caching, parallel execution), ... |  | `skills/web-frameworks/SKILL.md` |
-| **web-perf** | Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (LCP, INP, CLS) and supplementary metrics (FCP, TBT, Speed Index), identifies render-blocking resources, network depende... |  | `skills/web-perf/SKILL.md` |
-| **web-research** | Search public web for authoritative sources and return cited answer. |  | `skills/web-research/SKILL.md` |
-| **web-to-markdown** | Convert webpage URLs to clean markdown. |  | `skills/web-to-markdown/SKILL.md` |
-| **webmcpify** | Make web app agent-ready with WebMCP tool manifest. |  | `skills/webmcpify/SKILL.md` |
-| **what-context-needed** | Ask Copilot what context files it needs to see. |  | `skills/what-context-needed/SKILL.md` |
-| **When Stuck - Problem-Solving Dispatch** | Dispatch to the right problem-solving technique based on how you're stuck |  | `skills/When Stuck - Problem-Solving Dispatch/SKILL.md` |
-| **wiki** | LLM Wiki — persistent markdown knowledge base compounding across sessions. |  | `skills/wiki/SKILL.md` |
-| **windows-desktop-e2e** | E2E testing for Windows native desktop apps (WPF, WinForms, Win32). |  | `skills/windows-desktop-e2e/SKILL.md` |
-| **windows-vm** | Manage headless Windows 11 VM running in Docker. |  | `skills/windows-vm/SKILL.md` |
-| **winmd-api-search** | Explore Windows desktop APIs (camera, file access, AI/ML). |  | `skills/winmd-api-search/SKILL.md` |
-| **winui3-migration-guide** | UWP to WinUI 3 migration reference and API mapping. |  | `skills/winui3-migration-guide/SKILL.md` |
-| **wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... |  | `skills/wms-testing-patterns/SKILL.md` |
-| **workiq-copilot** | Query M365 Copilot data via WorkIQ CLI/MCP server. |  | `skills/workiq-copilot/SKILL.md` |
-| **workload-manager-basics** | Manage Google Cloud Workload Manager evaluations and validation rules. |  | `skills/workload-manager-basics/SKILL.md` |
-| **workshop-create** | Create or initialize a workshop directory. |  | `skills/workshop-create/SKILL.md` |
-| **workspace-surface-audit** | Audit active repo, MCP servers, plugins & recommend ECC skills. |  | `skills/workspace-surface-audit/SKILL.md` |
-| **wowerpoint** | Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as share... |  | `skills/wowerpoint/SKILL.md` |
-| **write-coding-standards-from-file** | Write coding standards document from codebase files. |  | `skills/write-coding-standards-from-file/SKILL.md` |
-| **write-swift** | How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (... | `https://github.com/emilkowalski/skills` | `skills/write-swift/SKILL.md` |
-| **writer-memory** | Agentic memory system for fiction writers (characters & scenes). |  | `skills/writer-memory/SKILL.md` |
-| **writing-beats** | Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it. |  | `skills/writing-beats/SKILL.md` |
-| **writing-clearly-and-concisely** | Writing clear and concise prose for documentation & UI. |  | `skills/writing-clearly-and-concisely/SKILL.md` |
-| **writing-for-agents** | Writing documents for AI agents (AGENTS.md, skills). |  | `skills/writing-for-agents/SKILL.md` |
-| **writing-fragments** | Writing, explore — mine raw fragments, no structure yet. |  | `skills/writing-fragments/SKILL.md` |
-| **writing-plans** | Writing multi-step execution plans before touching code. |  | `skills/writing-plans/SKILL.md` |
-| **writing-shape** | Writing, exploit — shape raw material into an article, paragraph by paragraph. |  | `skills/writing-shape/SKILL.md` |
-| **writing-skills** | Creating, editing, and verifying AI agent skills. |  | `skills/writing-skills/SKILL.md` |
-| **x-api** | X/Twitter API integration for tweets, threads & search. |  | `skills/x-api/SKILL.md` |
 | **x-twitter-scraper** | X (Twitter) data platform with REST endpoints & MCP tools. |  | `skills/x-twitter-scraper/SKILL.md` |
-| **xlsx** | Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file ... |  | `skills/xlsx/SKILL.md` |
-| **xlsx-official** | Generating Excel files with xlsx/exceljs in Node.js. Use when generating .xlsx reports, data exports, dashboards, or spreadsheets from database data. |  | `skills/xlsx-official/SKILL.md` |
-| **youtube-downloader** | Download YouTube videos with customizable quality and format options. Use this skill when the user asks to download, save, or grab YouTube videos. Supports various quality settings (best, 1080p, 72... |  | `skills/youtube-downloader/SKILL.md` |
-| **yuanbao** | Yuanbao (元宝) chat group management. |  | `skills/yuanbao/SKILL.md` |
-| **zoom-out** | Provide broader context and higher-level architectural perspective. |  | `skills/zoom-out/SKILL.md` |
-| **zustand-store-ts** | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reacti... |  | `skills/zustand-store-ts/SKILL.md` |
-
----
-
 ## All Skills (Alphabetical)
 
 | # | Skill | Description | GitHub | Origin |
@@ -6757,3 +5968,855 @@ Total unique skills: **3326**
 | 3324 | **zustand-store-ts** | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reacti... | - | agents |
 | 3325 | **zylvie-automation** | Automate Zylvie tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 3326 | **zyte-api-automation** | Automate Zyte API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+
+### Video & Animation (6)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **demo-video** | Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions. Orchestrates playwright,... |  | `skills/demo-video/SKILL.md` |
+| **openmontage** | Autonomous video production team skill for AI agents. Converts script & asset inputs into assembled video cuts, auto-subtitles, scene transitions, TTS audio generation, and media exports. Use when ... |  | `skills/openmontage/SKILL.md` |
+| **remotion-best-practices** | Remotion video creation best practices in React. |  | `skills/remotion-best-practices/SKILL.md` |
+| **remotion-video-creation** | Remotion video creation rules covering 3D, audio & captions. |  | `skills/remotion-video-creation/SKILL.md` |
+| **screen-recording** | Create animated GIF demos and screen recordings for PRs. |  | `skills/screen-recording/SKILL.md` |
+| **tasteforge-video** | Multimodal video & 3D-asset discovery with EDL/FCPXML exports. |  | `skills/tasteforge-video/SKILL.md` |
+
+### Design & UX (47)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **algorithmic-art** | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields,... |  | `skills/algorithmic-art/SKILL.md` |
+| **animation-vocabulary** | Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term ("the bouncy thing when a popover opens" → Pop in; "the iOS rubber-band scroll" → Rubb... | `https://github.com/emilkowalski/skills` | `skills/animation-vocabulary/SKILL.md` |
+| **anti-ui-slop** | Stops AI models from shipping generic, boring UI by leveraging UIZZE's public catalog of 800,000+ real web and iOS screens. Use when designing production-grade interfaces, preventing AI UI slop, or... |  | `skills/anti-ui-slop/SKILL.md` |
+| **apple-design** | Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum... | `https://github.com/emilkowalski/skills` | `skills/apple-design/SKILL.md` |
+| **archify** | Turn a codebase or system description into a polished, interactive system map, architecture diagram, workflow, sequence, or data-flow diagram — directly in chat. MANDATORY PROTOCOLS: 1. ALWAYS AVAI... |  | `skills/archify/SKILL.md` |
+| **artifacts-builder** | Suite of tools for creating elaborate, multi-component Codex.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state man... |  | `skills/artifacts-builder/SKILL.md` |
+| **baoyu-diagram** | Creates professional, dark-themed SVG diagrams (architecture, flowcharts, sequence diagrams, mind maps, timelines). Use when rendering vector SVG diagrams, visual system maps, or when user mentions... |  | `skills/baoyu-diagram/SKILL.md` |
+| **cult-ui** | Componentes UI con estética de culto, brutalista y moderna (React, Tailwind, Framer Motion). |  | `skills/cult-ui/SKILL.md` |
+| **diagram** | Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open (gstack) |  | `skills/diagram/SKILL.md` |
+| **draw-io** | Draw.io XML editing & export. Use when applying patterns from softaworks/draw-io or when user mentions "draw-io". |  | `skills/draw-io/SKILL.md` |
+| **emil-design-eng** | This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great. | `https://github.com/emilkowalski/skills` | `skills/emil-design-eng/SKILL.md` |
+| **epic-design** | Build immersive, cinematic 2.5D interactive websites using scroll storytelling, parallax depth, text animations, and premium scroll effects — no WebGL required. Use this skill for any web design ta... |  | `skills/epic-design/SKILL.md` |
+| **excalidraw** | Excalidraw diagram authoring & editing. Use when applying patterns from softaworks/excalidraw or when user mentions "excalidraw". |  | `skills/excalidraw/SKILL.md` |
+| **find-animation-opportunities** | Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user ... | `https://github.com/emilkowalski/skills` | `skills/find-animation-opportunities/SKILL.md` |
+| **frontend-a11y** | Accessibility patterns for React & Next.js. Use when applying patterns from affaan-m/frontend-a11y or when user mentions "frontend-a11y". |  | `skills/frontend-a11y/SKILL.md` |
+| **frontend-skill** | Restrained landing page & app visual design. Use when applying patterns from openai/frontend-skill or when user mentions "frontend-skill". |  | `skills/frontend-skill/SKILL.md` |
+| **frontend-slides** | Animation-rich HTML presentation generator. Use when applying patterns from affaan-m/frontend-slides or when user mentions "frontend-slides". |  | `skills/frontend-slides/SKILL.md` |
+| **gem-design-md-guidelines** | Accessible cross-platform UI/UX guidelines. Use when applying patterns from github/gem-design-md-guidelines or when user mentions "gem-design-md-guidelines". |  | `skills/gem-design-md-guidelines/SKILL.md` |
+| **hermes-themes** | Author Hermes UI color themes. Use when applying patterns from NousResearch/hermes-themes or when user mentions "hermes-themes". |  | `skills/hermes-themes/SKILL.md` |
+| **huashu-design** | Diseño UI/UX con estética asiática/china de alta precisión, micro-detalles visuales y tipografía cuidada. |  | `skills/huashu-design/SKILL.md` |
+| **improve-animations** | Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. R... | `https://github.com/emilkowalski/skills` | `skills/improve-animations/SKILL.md` |
+| **ios-icon-gen** | Generate iOS app icons from SF Symbols. Use when applying patterns from affaan-m/ios-icon-gen or when user mentions "ios-icon-gen". |  | `skills/ios-icon-gen/SKILL.md` |
+| **lean-ux** | Apply lean thinking to UX: hypothesis-driven design, collaborative sketching, and rapid experiments instead of heavy deliverables. Use when the user mentions "Lean UX", "design hypothesis", "outcom... |  | `skills/lean-ux/SKILL.md` |
+| **make-interfaces-feel-better** | UI polish pass skill focused on micro-interactions, optical alignment, smooth hover states, typography rhythm, and tactile UI feedback. Use when an interface "works" but feels generic, cheap, or un... |  | `skills/make-interfaces-feel-better/SKILL.md` |
+| **minimalist** | Use when the user asks to write code efficiently, avoid over-engineering, reduce dependencies, or prevent unnecessary abstractions. Enforces a strict efficiency ladder: YAGNI, reuse, stdlib, native... |  | `skills/minimalist/SKILL.md` |
+| **penpot-uiux-design** | Create professional UI/UX designs in Penpot using MCP tools. |  | `skills/penpot-uiux-design/SKILL.md` |
+| **pick-ui-library** | Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only... | `https://github.com/emilkowalski/skills` | `skills/pick-ui-library/SKILL.md` |
+| **premium-frontend-ui** | Immersive, high-performance web experiences with motion & craftsmanship. |  | `skills/premium-frontend-ui/SKILL.md` |
+| **presentation-creator** | Data-driven presentation slides using React, Vite, and Recharts. |  | `skills/presentation-creator/SKILL.md` |
+| **redesign** | Upgrade an existing website or app to premium quality without breaking functionality — audit the current design, identify generic/AI tells, then apply taste and system rules surgically. Use when th... |  | `skills/redesign/SKILL.md` |
+| **redesign-existing-projects** | Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any C... |  | `skills/redesign-existing-projects/SKILL.md` |
+| **redesign-skill** | Website & UI redesign modernization skill by Open Design (nexu-io). Transforms legacy, outdated, or template-looking interfaces into modern, high-conversion, accessible web applications. Use when r... |  | `skills/redesign-skill/SKILL.md` |
+| **review-animations** | Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned. | `https://github.com/emilkowalski/skills` | `skills/review-animations/SKILL.md` |
+| **scroll-craft** | Advanced scroll-driven animations, CSS scroll timelines, parallax, and sticky interaction skill. Use when building immersive web experiences, scroll-triggered visual reveals, or when user mentions ... |  | `skills/scroll-craft/SKILL.md` |
+| **taste** | Creative-direction (taste) layer for music videos & hyperpop edits. | `https://github.com/Leonxlnx/taste-skill` | `skills/taste/SKILL.md` |
+| **ui-demo** | Record polished UI demo videos using Playwright. |  | `skills/ui-demo/SKILL.md` |
+| **ui-screenshots** | Capture web app screenshots using Playwright and PIL. |  | `skills/ui-screenshots/SKILL.md` |
+| **ui-to-vue** | Convert UI screenshots into Vue 3 components (Element/AntD). |  | `skills/ui-to-vue/SKILL.md` |
+| **ui-widget-developer** | Build MCP servers for Copilot Chat using the OpenAI Apps SDK or MCP Apps SDK widget rendering support (any language). Use this skill when: - Creating MCP servers that integrate with M365 Copilot de... |  | `skills/ui-widget-developer/SKILL.md` |
+| **visual-edit** | Open local app in visual edit iframe screens. |  | `skills/visual-edit/SKILL.md` |
+| **visual-plan** | Turn text plans into rich interactive visual plans. |  | `skills/visual-plan/SKILL.md` |
+| **visual-recap** | Turn PR, branch, or git diff into interactive visual recap. |  | `skills/visual-recap/SKILL.md` |
+| **visual-verdict** | Structured visual QA verdict for UI comparisons. |  | `skills/visual-verdict/SKILL.md` |
+| **web** | Builds a complete website using visual assets generated with Forkads (saved in assets/) and a brief written in content/brief.md. Use when the user writes "/web" or says "read the web skill and buil... |  | `skills/web/SKILL.md` |
+| **web-design-reviewer** | Visual inspection of local/remote web app UI design. |  | `skills/web-design-reviewer/SKILL.md` |
+| **web-frameworks** | Build modern full-stack web applications with Next.js (App Router, Server Components, RSC, PPR, SSR, SSG, ISR), Turborepo (monorepo management, task pipelines, remote caching, parallel execution), ... |  | `skills/web-frameworks/SKILL.md` |
+| **wowerpoint** | Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as share... |  | `skills/wowerpoint/SKILL.md` |
+
+### Development & Backend (131)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **alloydb-basics** | Manages clusters, instances, and backups for Google Cloud AlloyDB for PostgreSQL, and integrates with AlloyDB MCP tools for automated database operations and vector search. Use when configuring All... |  | `skills/alloydb-basics/SKILL.md` |
+| **android-clean-architecture** | Clean Architecture patterns for Android and Kotlin Multiplatform (KMP) projects — module structure, dependency rules, UseCases, Repositories, Coroutines/Flow, and ViewModel state mapping. Use when ... |  | `skills/android-clean-architecture/SKILL.md` |
+| **ask-sonner** | Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and... | `https://github.com/emilkowalski/skills` | `skills/ask-sonner/SKILL.md` |
+| **baoyu-compress-image** | Compresses images to WebP (default) or PNG with automatic tool selection (sharp, cwebp, pngquant). Use when optimizing image assets for web performance, converting to webp, or when user mentions "b... |  | `skills/baoyu-compress-image/SKILL.md` |
+| **baoyu-url-to-markdown** | Fetches any public URL and converts content to clean markdown using site-specific adapters (X/Twitter, YouTube transcripts, HackerNews, GitHub). Use when scraping web content, converting articles t... |  | `skills/baoyu-url-to-markdown/SKILL.md` |
+| **bun-runtime** | Guidance for using Bun as a runtime, package manager, bundler, and test runner. Explains Bun vs Node.js tradeoffs, native SQLite, Workspaces, and deployment. Use when working with Bun projects, con... |  | `skills/bun-runtime/SKILL.md` |
+| **claimable-postgres** | Provisions instant temporary PostgreSQL databases via Claimable Postgres by Neon (neon.new) without login or signup. Use when running quick SQL tests, provisioning sandbox DBs for CI, or when user ... |  | `skills/claimable-postgres/SKILL.md` |
+| **clickhouse-io** | ClickHouse column-oriented database patterns, query optimization, MergeTree engines, materialization, and analytics. Use when designing ClickHouse schemas, optimizing OLAP SQL queries, or when user... |  | `skills/clickhouse-io/SKILL.md` |
+| **codebase-memory-mcp** | Indexes a codebase into a persistent knowledge graph so agents can query callers, callees, type hierarchies, and module relationships instead of re-reading dozens of files each session. Save tokens... |  | `skills/codebase-memory-mcp/SKILL.md` |
+| **codehealth-mcp** | Real-time structural Code Health analysis via CodeScene MCP. Reviews code complexity before edits, verifies score deltas after changes, and gates commits/PRs against technical debt accumulation. Us... |  | `skills/codehealth-mcp/SKILL.md` |
+| **codigo-full-stack** | Construye aplicaciones completas de punta a punta — interfaz, API, base de datos, autenticación y despliegue — con criterio de producción y sin sobredimensionar. Cubre elección de stack, modelo de ... |  | `skills/codigo-full-stack/SKILL.md` |
+| **contract-first** | Contract-first API and event schema development pattern. Prevents field drift and breaking changes between frontend/backend or service providers by defining OpenAPI/TypeSpec/Protobuf contracts befo... |  | `skills/contract-first/SKILL.md` |
+| **cpp-coding-standards** | C++ coding standards based on the C++ Core Guidelines (isocpp.github.io). Enforces modern C++20/23 patterns, RAII, smart pointers (`std::unique_ptr`), const-correctness, and memory safety. Use when... |  | `skills/cpp-coding-standards/SKILL.md` |
+| **databases** | Work with MongoDB (document database, BSON documents, aggregation pipelines, Atlas cloud) and PostgreSQL (relational database, SQL queries, psql CLI, pgAdmin). Use when designing database schemas, ... |  | `skills/databases/SKILL.md` |
+| **db-seed** | Generate database seed scripts with realistic sample data. Reads Drizzle schemas or SQL migrations, respects foreign key ordering, produces idempotent TypeScript or SQL seed files. Handles D1 batch... |  | `skills/db-seed/SKILL.md` |
+| **defi-amm-security** | Security checklist for Solidity AMM contracts & pools. Use when applying patterns from affaan-m/defi-amm-security or when user mentions "defi-amm-security". |  | `skills/defi-amm-security/SKILL.md` |
+| **develop-web-game** | Web game HTML/JS development loop. Use when applying patterns from openai/develop-web-game or when user mentions "develop-web-game". |  | `skills/develop-web-game/SKILL.md` |
+| **developer-device-platform-basics** | Remote Android device management. Use when applying patterns from google/developer-device-platform-basics or when user mentions "developer-device-platform-basics". |  | `skills/developer-device-platform-basics/SKILL.md` |
+| **eas-app-stores** | Deploy Expo apps to App Store & Google Play. Use when applying patterns from expo/eas-app-stores or when user mentions "eas-app-stores". |  | `skills/eas-app-stores/SKILL.md` |
+| **eas-hosting** | Deploy Expo websites & APIs to EAS Hosting. Use when applying patterns from expo/eas-hosting or when user mentions "eas-hosting". |  | `skills/eas-hosting/SKILL.md` |
+| **eas-observe** | EAS Observe telemetry & interactive tracking. Use when applying patterns from expo/eas-observe or when user mentions "eas-observe". |  | `skills/eas-observe/SKILL.md` |
+| **eas-simulator** | Remote simulator control on EAS cloud. Use when applying patterns from expo/eas-simulator or when user mentions "eas-simulator". |  | `skills/eas-simulator/SKILL.md` |
+| **eas-update-insights** | Check EAS Update health & crash rates. Use when applying patterns from expo/eas-update-insights or when user mentions "eas-update-insights". |  | `skills/eas-update-insights/SKILL.md` |
+| **eas-workflows** | EAS workflow YAML CI/CD automation. Use when applying patterns from expo/eas-workflows or when user mentions "eas-workflows". |  | `skills/eas-workflows/SKILL.md` |
+| **ef-core** | Entity Framework Core best practices. Use when applying patterns from github/ef-core or when user mentions "ef-core". |  | `skills/ef-core/SKILL.md` |
+| **efcore-d2-db-diagram** | Generate D2 diagrams from EF Core models. Use when applying patterns from github/efcore-d2-db-diagram or when user mentions "efcore-d2-db-diagram". |  | `skills/efcore-d2-db-diagram/SKILL.md` |
+| **evm-token-decimals** | Prevent EVM token decimal mismatch bugs. Use when applying patterns from affaan-m/evm-token-decimals or when user mentions "evm-token-decimals". |  | `skills/evm-token-decimals/SKILL.md` |
+| **expo-animation** | React Native & Expo animation decisions. Use when applying patterns from expo/expo-animation or when user mentions "expo-animation". |  | `skills/expo-animation/SKILL.md` |
+| **expo-app-clip** | Add iOS App Clip target to Expo app. Use when applying patterns from expo/expo-app-clip or when user mentions "expo-app-clip". |  | `skills/expo-app-clip/SKILL.md` |
+| **expo-brownfield** | Integrate Expo into existing native iOS/Android. Use when applying patterns from expo/expo-brownfield or when user mentions "expo-brownfield". |  | `skills/expo-brownfield/SKILL.md` |
+| **expo-data-fetching** | Data fetching & network requests in Expo. Use when applying patterns from expo/expo-data-fetching or when user mentions "expo-data-fetching". |  | `skills/expo-data-fetching/SKILL.md` |
+| **expo-design-system** | Theme design tokens in Expo apps. Use when applying patterns from expo/expo-design-system or when user mentions "expo-design-system". |  | `skills/expo-design-system/SKILL.md` |
+| **expo-dev-client** | Build & distribute Expo dev clients. Use when applying patterns from expo/expo-dev-client or when user mentions "expo-dev-client". |  | `skills/expo-dev-client/SKILL.md` |
+| **expo-dom** | Expo DOM components for webview on native. Use when applying patterns from expo/expo-dom or when user mentions "expo-dom". |  | `skills/expo-dom/SKILL.md` |
+| **expo-examples** | Official Expo example integration patterns. Use when applying patterns from expo/expo-examples or when user mentions "expo-examples". |  | `skills/expo-examples/SKILL.md` |
+| **expo-module** | Create Expo native modules in Swift & Kotlin. Use when applying patterns from expo/expo-module or when user mentions "expo-module". |  | `skills/expo-module/SKILL.md` |
+| **expo-native-ui** | Native-feeling UI elements in Expo. Use when applying patterns from expo/expo-native-ui or when user mentions "expo-native-ui". |  | `skills/expo-native-ui/SKILL.md` |
+| **expo-overview** | Entry point & router for Expo tasks. Use when applying patterns from expo/expo-overview or when user mentions "expo-overview". |  | `skills/expo-overview/SKILL.md` |
+| **expo-project-structure** | Folder layout for Expo Router apps. Use when applying patterns from expo/expo-project-structure or when user mentions "expo-project-structure". |  | `skills/expo-project-structure/SKILL.md` |
+| **expo-router** | File-based navigation with Expo Router. Use when applying patterns from expo/expo-router or when user mentions "expo-router". |  | `skills/expo-router/SKILL.md` |
+| **expo-skill-feedback** | Telemetry & feedback for Expo skills. Use when applying patterns from expo/expo-skill-feedback or when user mentions "expo-skill-feedback". |  | `skills/expo-skill-feedback/SKILL.md` |
+| **expo-tailwind-setup** | Tailwind CSS v4 & NativeWind in Expo. Use when applying patterns from expo/expo-tailwind-setup or when user mentions "expo-tailwind-setup". |  | `skills/expo-tailwind-setup/SKILL.md` |
+| **expo-ui** | SwiftUI & Jetpack Compose native UI in Expo. Use when applying patterns from expo/expo-ui or when user mentions "expo-ui". |  | `skills/expo-ui/SKILL.md` |
+| **expo-upgrade** | Upgrade Expo SDK versions & fix dependencies. Use when applying patterns from expo/expo-upgrade or when user mentions "expo-upgrade". |  | `skills/expo-upgrade/SKILL.md` |
+| **expo-web-to-native** | Migrate React web app to Expo mobile. Use when applying patterns from expo/expo-web-to-native or when user mentions "expo-web-to-native". |  | `skills/expo-web-to-native/SKILL.md` |
+| **fabric-lakehouse** | Microsoft Fabric Lakehouse features & data. Use when applying patterns from github/fabric-lakehouse or when user mentions "fabric-lakehouse". |  | `skills/fabric-lakehouse/SKILL.md` |
+| **firebase-basics** | Firebase mobile & web app integration. Use when applying patterns from google/firebase-basics or when user mentions "firebase-basics". |  | `skills/firebase-basics/SKILL.md` |
+| **flag-cleanup** |  |  | `skills/flag-cleanup/SKILL.md` |
+| **foundation-models-on-device** | Apple FoundationModels on-device LLM. Use when applying patterns from affaan-m/foundation-models-on-device or when user mentions "foundation-models-on-device". |  | `skills/foundation-models-on-device/SKILL.md` |
+| **freecad-scripts** | FreeCAD Python scripting & macro automation. Use when applying patterns from github/freecad-scripts or when user mentions "freecad-scripts". |  | `skills/freecad-scripts/SKILL.md` |
+| **frontend-patterns** | React, Next.js & UI best practices. Use when applying patterns from affaan-m/frontend-patterns or when user mentions "frontend-patterns". |  | `skills/frontend-patterns/SKILL.md` |
+| **frontend-to-backend-requirements** | Document frontend API needs for backend. Use when applying patterns from softaworks/frontend-to-backend-requirements or when user mentions "frontend-to-backend-requirements". |  | `skills/frontend-to-backend-requirements/SKILL.md` |
+| **frontend-ui-dark-ts** | Build dark-themed React applications using Tailwind CSS with custom theming, glassmorphism effects, and Framer Motion animations. Use when creating dashboards, admin panels, or data-rich interfaces... |  | `skills/frontend-ui-dark-ts/SKILL.md` |
+| **game-engine** | Web HTML5 Canvas/WebGL game engines. Use when applying patterns from github/game-engine or when user mentions "game-engine". |  | `skills/game-engine/SKILL.md` |
+| **go-mcp-server-generator** | Generate Go MCP server project. Use when applying patterns from github/go-mcp-server-generator or when user mentions "go-mcp-server-generator". |  | `skills/go-mcp-server-generator/SKILL.md` |
+| **golang-patterns** | Idiomatic Go patterns & concurrency. Use when applying patterns from affaan-m/golang-patterns or when user mentions "golang-patterns". |  | `skills/golang-patterns/SKILL.md` |
+| **hexagonal-architecture** | Ports & Adapters clean architecture. Use when applying patterns from affaan-m/hexagonal-architecture or when user mentions "hexagonal-architecture". |  | `skills/hexagonal-architecture/SKILL.md` |
+| **ios-clean** | Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack) |  | `skills/ios-clean/SKILL.md` |
+| **ios-fix** | Autonomous iOS bug fixer. (gstack) |  | `skills/ios-fix/SKILL.md` |
+| **ios-sync** | Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack) |  | `skills/ios-sync/SKILL.md` |
+| **java-add-graalvm-native-image-support** | GraalVM native image build support. Use when applying patterns from github/java-add-graalvm-native-image-support or when user mentions "java-add-graalvm-native-image-support". |  | `skills/java-add-graalvm-native-image-support/SKILL.md` |
+| **java-coding-standards** | Java standards for Spring Boot & Quarkus. Use when applying patterns from affaan-m/java-coding-standards or when user mentions "java-coding-standards". |  | `skills/java-coding-standards/SKILL.md` |
+| **java-docs** | Javadoc comments & documentation standards. Use when applying patterns from github/java-docs or when user mentions "java-docs". |  | `skills/java-docs/SKILL.md` |
+| **java-helidon** | Helidon 4 SE & MP Java development. Use when applying patterns from github/java-helidon or when user mentions "java-helidon". |  | `skills/java-helidon/SKILL.md` |
+| **openapi-to-application-code** | Generate a complete, production-ready application from an OpenAPI specification |  | `skills/openapi-to-application-code/SKILL.md` |
+| **openapi-to-typescript** | Converts OpenAPI 3.0 JSON/YAML to TypeScript interfaces and type guards. |  | `skills/openapi-to-typescript/SKILL.md` |
+| **perl-patterns** | Modern Perl 5.36+ idioms, best practices, and conventions. |  | `skills/perl-patterns/SKILL.md` |
+| **perl-security** | Perl security covering taint mode, input validation, safe process execution. |  | `skills/perl-security/SKILL.md` |
+| **perl-testing** | Perl testing patterns using Test2::V0, Test::More, prove runner. |  | `skills/perl-testing/SKILL.md` |
+| **prisma-patterns** | Prisma ORM patterns for TypeScript backends — schema & query optimization. |  | `skills/prisma-patterns/SKILL.md` |
+| **python-azure-iot-edge-modules** | Build and operate Python Azure IoT Edge modules. |  | `skills/python-azure-iot-edge-modules/SKILL.md` |
+| **python-mcp-server-generator** | Generate a complete MCP server project in Python. |  | `skills/python-mcp-server-generator/SKILL.md` |
+| **python-patterns** | Pythonic idioms, PEP 8 standards, and type hints. |  | `skills/python-patterns/SKILL.md` |
+| **python-pypi-package-builder** | End-to-end skill for building and publishing Python libraries to PyPI. |  | `skills/python-pypi-package-builder/SKILL.md` |
+| **qdrant-clients-sdk** | Integrate Qdrant vector database client SDKs. |  | `skills/qdrant-clients-sdk/SKILL.md` |
+| **qdrant-deployment-options** | Guides Qdrant deployment selection (Docker, Cloud, local, embedded). |  | `skills/qdrant-deployment-options/SKILL.md` |
+| **qdrant-model-migration** | Embedding model migration in Qdrant without downtime. |  | `skills/qdrant-model-migration/SKILL.md` |
+| **qdrant-monitoring** | Qdrant monitoring and observability setup. |  | `skills/qdrant-monitoring/SKILL.md` |
+| **qdrant-performance-optimization** | Optimize Qdrant vector search performance and indexing. |  | `skills/qdrant-performance-optimization/SKILL.md` |
+| **qdrant-scaling** | Guides Qdrant cluster scaling decisions. |  | `skills/qdrant-scaling/SKILL.md` |
+| **qdrant-search-quality** | Diagnoses and improves Qdrant vector search relevance. |  | `skills/qdrant-search-quality/SKILL.md` |
+| **qdrant-version-upgrade** | Upgrade Qdrant version without downtime. |  | `skills/qdrant-version-upgrade/SKILL.md` |
+| **quarkus-patterns** | Quarkus 3.x LTS architecture patterns with Camel & Panache. |  | `skills/quarkus-patterns/SKILL.md` |
+| **quarkus-security** | Quarkus Security best practices for authn/authz & OIDC. |  | `skills/quarkus-security/SKILL.md` |
+| **quarkus-tdd** | Test-driven development for Quarkus 3.x using JUnit 5 & REST Assured. |  | `skills/quarkus-tdd/SKILL.md` |
+| **quarkus-verification** | Verification loop for Quarkus projects: build, tests & native compilation. |  | `skills/quarkus-verification/SKILL.md` |
+| **recsys-pipeline-architect** | Design recommendation, ranking, and feed pipelines. |  | `skills/recsys-pipeline-architect/SKILL.md` |
+| **redis-patterns** | Redis data structure patterns, caching & distributed locks. |  | `skills/redis-patterns/SKILL.md` |
+| **regex-vs-llm-structured-text** | Decision framework for regex vs LLM text parsing. |  | `skills/regex-vs-llm-structured-text/SKILL.md` |
+| **release-it** | Build production-ready systems with stability patterns: circuit breakers, bulkheads, timeouts, and retry logic. Use when the user mentions "production outage", "circuit breaker", "deployment pipeli... |  | `skills/release-it/SKILL.md` |
+| **resx-source-generator-migration** | Migrate .resx designer.cs files to C# source generator. |  | `skills/resx-source-generator-migration/SKILL.md` |
+| **reviewing-oracle-to-postgres-migration** | Identify Oracle-to-PostgreSQL migration risks. |  | `skills/reviewing-oracle-to-postgres-migration/SKILL.md` |
+| **rhino3d-scripts** | Authoring and debugging scripts for Rhinoceros 3D (Rhino 8+). |  | `skills/rhino3d-scripts/SKILL.md` |
+| **roslyn-analyzers** | Build, review, debug Roslyn analyzers and source generators. |  | `skills/roslyn-analyzers/SKILL.md` |
+| **ruby-mcp-server-generator** | Generate complete MCP server project in Ruby using official gem. |  | `skills/ruby-mcp-server-generator/SKILL.md` |
+| **ruff-recursive-fix** | Run Ruff checks and apply safe/unsafe autofixes iteratively. |  | `skills/ruff-recursive-fix/SKILL.md` |
+| **rust-mcp-server-generator** | Generate complete Rust Model Context Protocol server project. |  | `skills/rust-mcp-server-generator/SKILL.md` |
+| **rust-patterns** | Idiomatic Rust patterns, ownership, traits & concurrency. |  | `skills/rust-patterns/SKILL.md` |
+| **salesforce-apex-quality** | Apex code quality guardrails (bulk safety, FLS security). |  | `skills/salesforce-apex-quality/SKILL.md` |
+| **salesforce-component-standards** | Salesforce Lightning Web Components (LWC) standards & WCAG. |  | `skills/salesforce-component-standards/SKILL.md` |
+| **salesforce-flow-design** | Salesforce Flow architecture decisions & fault handling. |  | `skills/salesforce-flow-design/SKILL.md` |
+| **sandbox-npm-install** | Install npm packages in Docker sandbox environment. |  | `skills/sandbox-npm-install/SKILL.md` |
+| **scaffolding-oracle-to-postgres-migration-test-project** | Scaffold xUnit integration test project for Oracle-to-Postgres. |  | `skills/scaffolding-oracle-to-postgres-migration-test-project/SKILL.md` |
+| **shuffle-json-data** | Shuffle repetitive JSON objects safely with schema validation. |  | `skills/shuffle-json-data/SKILL.md` |
+| **slang-shader-engineer** | Slang shaders, HLSL-compatible GPU code & compute pipelines. |  | `skills/slang-shader-engineer/SKILL.md` |
+| **snowflake-semanticview** | Create and validate Snowflake semantic views via Snow CLI. |  | `skills/snowflake-semanticview/SKILL.md` |
+| **software-architecture** | System design patterns, Clean Architecture, SOLID principles, domain modeling. Use when making architectural decisions, designing new modules, refactoring a tangled codebase, or reviewing system de... |  | `skills/software-architecture/SKILL.md` |
+| **spanner-basics** | Provision instances, design schemas & query Google Cloud Spanner. |  | `skills/spanner-basics/SKILL.md` |
+| **springboot-patterns** | Spring Boot architecture patterns, REST API design & caching. |  | `skills/springboot-patterns/SKILL.md` |
+| **springboot-security** | Spring Security best practices for authn/authz & CSRF. |  | `skills/springboot-security/SKILL.md` |
+| **springboot-tdd** | Test-driven development for Spring Boot using JUnit 5 & Mockito. |  | `skills/springboot-tdd/SKILL.md` |
+| **springboot-verification** | Verification loop for Spring Boot projects: build, tests, security. |  | `skills/springboot-verification/SKILL.md` |
+| **sql-code-review** | Universal SQL code review assistant. |  | `skills/sql-code-review/SKILL.md` |
+| **sql-optimization** | Universal SQL performance optimization assistant. |  | `skills/sql-optimization/SKILL.md` |
+| **sql-server-table-reconciliation** | Compare SQL Server tables across instances & ETL validation. |  | `skills/sql-server-table-reconciliation/SKILL.md` |
+| **ssma-console** | SSMA console operations — Oracle to SQL Server schema migration. |  | `skills/ssma-console/SKILL.md` |
+| **system-commandline-cli** | Add and review CLI commands in .NET using System.CommandLine. |  | `skills/system-commandline-cli/SKILL.md` |
+| **transloadit-media-processing** | Process media files (video/audio/images) using Transloadit. |  | `skills/transloadit-media-processing/SKILL.md` |
+| **typescript-mcp-server-generator** | Generate complete MCP server project in TypeScript. |  | `skills/typescript-mcp-server-generator/SKILL.md` |
+| **typespec-api-operations** | Add REST operations to TypeSpec API plugin. |  | `skills/typespec-api-operations/SKILL.md` |
+| **typespec-create-agent** | Generate TypeSpec declarative agent for M365 Copilot. |  | `skills/typespec-create-agent/SKILL.md` |
+| **typespec-create-api-plugin** | Generate TypeSpec API plugin for M365 Copilot. |  | `skills/typespec-create-api-plugin/SKILL.md` |
+| **uncloud** | Deploy and manage services on Uncloud cluster with Caddy. |  | `skills/uncloud/SKILL.md` |
+| **using-datahub** | Routing guidance for DataHub interaction skills. |  | `skills/using-datahub/SKILL.md` |
+| **vcpkg** | Setting up vcpkg in C++ projects & cross-compiling. |  | `skills/vcpkg/SKILL.md` |
+| **web-to-markdown** | Convert webpage URLs to clean markdown. |  | `skills/web-to-markdown/SKILL.md` |
+| **winmd-api-search** | Explore Windows desktop APIs (camera, file access, AI/ML). |  | `skills/winmd-api-search/SKILL.md` |
+| **winui3-migration-guide** | UWP to WinUI 3 migration reference and API mapping. |  | `skills/winui3-migration-guide/SKILL.md` |
+| **workload-manager-basics** | Manage Google Cloud Workload Manager evaluations and validation rules. |  | `skills/workload-manager-basics/SKILL.md` |
+| **write-swift** | How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (... | `https://github.com/emilkowalski/skills` | `skills/write-swift/SKILL.md` |
+| **zustand-store-ts** | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reacti... |  | `skills/zustand-store-ts/SKILL.md` |
+
+### Testing & QA (36)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **accessibility-testing** | WCAG 2.2 compliance testing, screen reader validation, and inclusive design verification. Use when ensuring legal compliance (ADA, Section 508), testing for disabilities, or building accessible app... |  | `skills/accessibility-testing/SKILL.md` |
+| **browser-harness** | Arnés de pruebas de navegador y automatización e2e con inspección visual y capturas de pantalla. |  | `skills/browser-harness/SKILL.md` |
+| **browserstack** | Run tests on BrowserStack. Use when user mentions "browserstack", "cross-browser", "cloud testing", "browser matrix", "test on safari", "test on firefox", or "browser compatibility". |  | `skills/browserstack/SKILL.md` |
+| **bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. |  | `skills/bug-reporting-excellence/SKILL.md` |
+| **chaos-experiment** |  |  | `skills/chaos-experiment/SKILL.md` |
+| **e2e-testing** | Playwright E2E testing & POM patterns. Use when applying patterns from affaan-m/e2e-testing or when user mentions "e2e-testing". |  | `skills/e2e-testing/SKILL.md` |
+| **eyeball** | Document analysis with inline screenshot evidence. Use when applying patterns from github/eyeball or when user mentions "eyeball". |  | `skills/eyeball/SKILL.md` |
+| **find-bugs** | Audit local branch changes for bugs & security. Use when applying patterns from getsentry/find-bugs or when user mentions "find-bugs". |  | `skills/find-bugs/SKILL.md` |
+| **finding-duplicate-functions** | Audit codebase for duplicate semantic functions. Use when applying patterns from obra/finding-duplicate-functions or when user mentions "finding-duplicate-functions". |  | `skills/finding-duplicate-functions/SKILL.md` |
+| **fsharp-testing** | F# testing patterns with xUnit & FsCheck. Use when applying patterns from affaan-m/fsharp-testing or when user mentions "fsharp-testing". |  | `skills/fsharp-testing/SKILL.md` |
+| **golang-testing** | Go table-driven tests & benchmarks. Use when applying patterns from affaan-m/golang-testing or when user mentions "golang-testing". |  | `skills/golang-testing/SKILL.md` |
+| **ios-design-review** | Visual design audit for iOS apps on real hardware. (gstack) |  | `skills/ios-design-review/SKILL.md` |
+| **ios-qa** | Live-device iOS QA for SwiftUI apps. (gstack) |  | `skills/ios-qa/SKILL.md` |
+| **java-junit** | JUnit 5 unit testing & data-driven tests. Use when applying patterns from github/java-junit or when user mentions "java-junit". |  | `skills/java-junit/SKILL.md` |
+| **migrate** | Migrate from Cypress or Selenium to Playwright. Use when user mentions "cypress", "selenium", "migrate tests", "convert tests", "switch to playwright", "move from cypress", or "replace selenium". |  | `skills/migrate/SKILL.md` |
+| **playwright** | Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wra... |  | `skills/playwright/SKILL.md` |
+| **playwright-generate-test** | Generate a Playwright test based on scenario using Playwright MCP. |  | `skills/playwright-generate-test/SKILL.md` |
+| **playwright-interactive** | Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging. |  | `skills/playwright-interactive/SKILL.md` |
+| **potato-review** | Harsh doctoral-level rigor review & submission-readiness review. |  | `skills/potato-review/SKILL.md` |
+| **pytest-coverage** | Run pytest tests with coverage and target 100% coverage. |  | `skills/pytest-coverage/SKILL.md` |
+| **python-testing** | Python testing strategies using pytest, fixtures & mocking. |  | `skills/python-testing/SKILL.md` |
+| **qa-only** | Report-only QA testing. (gstack) |  | `skills/qa-only/SKILL.md` |
+| **qa-test-planner** | Generate comprehensive test plans, test cases & bug reports. |  | `skills/qa-test-planner/SKILL.md` |
+| **quality-metrics** | Tracks quality metrics including defect density, test effectiveness ratio, DORA metrics, and mean time to detection. Use when establishing quality dashboards, defining KPIs, evaluating test suite e... |  | `skills/quality-metrics/SKILL.md` |
+| **quality-playbook** | Run complete quality engineering audit on any codebase. |  | `skills/quality-playbook/SKILL.md` |
+| **rust-testing** | Rust testing patterns: unit, integration, async, property-based. |  | `skills/rust-testing/SKILL.md` |
+| **scoutqa-test** | Exploratory website QA testing & accessibility check. |  | `skills/scoutqa-test/SKILL.md` |
+| **sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... |  | `skills/sfdipot-product-factors/SKILL.md` |
+| **six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... |  | `skills/six-thinking-hats/SKILL.md` |
+| **tdd-workflow** | TDD workflow enforcing 80%+ test coverage. |  | `skills/tdd-workflow/SKILL.md` |
+| **testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... |  | `skills/testability-scoring/SKILL.md` |
+| **triage-frontend-issues** | Triage Sentry JavaScript frontend errors. |  | `skills/triage-frontend-issues/SKILL.md` |
+| **ultraqa** | QA cycling workflow — test, verify, fix, repeat. |  | `skills/ultraqa/SKILL.md` |
+| **unit-test-vue-pinia** | Write unit tests for Vue 3 + Vitest + Pinia. |  | `skills/unit-test-vue-pinia/SKILL.md` |
+| **windows-desktop-e2e** | E2E testing for Windows native desktop apps (WPF, WinForms, Win32). |  | `skills/windows-desktop-e2e/SKILL.md` |
+| **wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... |  | `skills/wms-testing-patterns/SKILL.md` |
+
+### Engineering Practices (234)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **addyosmani** | Senior engineering habits & full lifecycle suite by Addy Osmani (Google Chrome Lead). Enforces a structured lifecycle: /spec → /plan → /build → /test → /review → /ship, along with web performance a... | `https://github.com/addyosmani/agent-skills` | `skills/addyosmani/SKILL.md` |
+| **architecture-blueprint-generator** | Generates comprehensive architectural blueprints by scanning codebase dependencies, module boundaries, data flows, and deployment targets. Use when creating system architecture diagrams, onboarding... |  | `skills/architecture-blueprint-generator/SKILL.md` |
+| **architecture-decision-records** | Captures architectural decisions made during development sessions as structured Architecture Decision Records (ADRs). Auto-detects decision moments, records context, options considered, trade-offs,... |  | `skills/architecture-decision-records/SKILL.md` |
+| **benchmark-models** | Cross-model benchmark for gstack skills. (gstack) |  | `skills/benchmark-models/SKILL.md` |
+| **browse** | Fast headless browser for QA testing and site dogfooding. (gstack) |  | `skills/browse/SKILL.md` |
+| **c4-architecture** | Generates software architecture documentation using C4 model Mermaid diagrams (Context, Container, Component, Code). Use when asked to create architecture diagrams, document system boundaries, visu... |  | `skills/c4-architecture/SKILL.md` |
+| **capture** | Captures and organizes chaotic brain dumps into a structured, actionable system with zero information loss. Use this skill whenever the user says 'capture this', 'brain dump', 'let me dump some ide... |  | `skills/capture/SKILL.md` |
+| **careful** | Safety guardrails for destructive commands. (gstack) |  | `skills/careful/SKILL.md` |
+| **Collision-Zone Thinking** | Force unrelated concepts together to discover emergent properties - "What if we treated X like Y? |  | `skills/Collision-Zone Thinking/SKILL.md` |
+| **consultancy-practices** | Apply effective software quality consultancy practices. Use when consulting, advising clients, or establishing consultancy workflows. |  | `skills/consultancy-practices/SKILL.md` |
+| **conventional-branch** | Create Git branches following the Conventional Branch specification (feature/, bugfix/, hotfix/, release/, chore/). Use when creating a new branch, naming a branch, or when user mentions "conventio... |  | `skills/conventional-branch/SKILL.md` |
+| **Defense-in-Depth Validation** | Validate at every layer data passes through to make bugs impossible |  | `skills/Defense-in-Depth Validation/SKILL.md` |
+| **defuddle** | Converts cluttered HTML web pages into clean, readable Markdown. Strips cookie banners, ads, nav menus, scripts, and layout bloat (by kepano / Obsidian lead). Use when fetching web content for agen... |  | `skills/defuddle/SKILL.md` |
+| **delivery-gate** | Stop hook blocking completion until quality checks pass. Use when applying patterns from affaan-m/delivery-gate or when user mentions "delivery-gate". |  | `skills/delivery-gate/SKILL.md` |
+| **deprecation-and-migration** | Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset exi... |  | `skills/deprecation-and-migration/SKILL.md` |
+| **devex-review** | Live developer experience audit. (gstack) |  | `skills/devex-review/SKILL.md` |
+| **diagnose** | Disciplined diagnosis loop for hard bugs. Use when applying patterns from mattpocock/diagnose or when user mentions "diagnose". |  | `skills/diagnose/SKILL.md` |
+| **discernment-nudge** | Nudge user to critically evaluate AI draft output. Use when applying patterns from anthropics/discernment-nudge or when user mentions "discernment-nudge". |  | `skills/discernment-nudge/SKILL.md` |
+| **dmux-workflows** | Multi-agent tmux pane orchestration. Use when applying patterns from affaan-m/dmux-workflows or when user mentions "dmux-workflows". |  | `skills/dmux-workflows/SKILL.md` |
+| **do** | Execute a phased implementation plan using subagents. Use when asked to execute, run, or carry out a plan — especially one created by make-plan. |  | `skills/do/SKILL.md` |
+| **doublecheck** | Three-layer verification pipeline for AI output. Use when applying patterns from github/doublecheck or when user mentions "doublecheck". |  | `skills/doublecheck/SKILL.md` |
+| **dynamic-workflow-mode** | Task-local harnesses & eval gates. Use when applying patterns from affaan-m/dynamic-workflow-mode or when user mentions "dynamic-workflow-mode". |  | `skills/dynamic-workflow-mode/SKILL.md` |
+| **editorconfig** | Generate best-practice .editorconfig file. Use when applying patterns from github/editorconfig or when user mentions "editorconfig". |  | `skills/editorconfig/SKILL.md` |
+| **em-dash** | Proper typography & em-dash usage guidance. Use when applying patterns from github/em-dash or when user mentions "em-dash". |  | `skills/em-dash/SKILL.md` |
+| **error-handling** | Robust error handling across TS, Python & Go. Use when applying patterns from affaan-m/error-handling or when user mentions "error-handling". |  | `skills/error-handling/SKILL.md` |
+| **eval** | Evaluate and rank agent results by metric or LLM judge for an AgentHub session. Use when the user runs /hub:eval or asks to score, compare, or pick a winner among completed AgentHub agents. |  | `skills/eval/SKILL.md` |
+| **eval-driven-dev** | Evaluation-driven development workflow. Use when applying patterns from github/eval-driven-dev or when user mentions "eval-driven-dev". |  | `skills/eval-driven-dev/SKILL.md` |
+| **eval-harness** | Formal eval harness for session quality. Use when applying patterns from affaan-m/eval-harness or when user mentions "eval-harness". |  | `skills/eval-harness/SKILL.md` |
+| **executing-plans** | Execute implementation plan with checkpoints. Use when applying patterns from obra/executing-plans or when user mentions "executing-plans". |  | `skills/executing-plans/SKILL.md` |
+| **finalize-agent-prompt** | Polish prompt file using AI agent persona. Use when applying patterns from github/finalize-agent-prompt or when user mentions "finalize-agent-prompt". |  | `skills/finalize-agent-prompt/SKILL.md` |
+| **finishing-a-development-branch** | Branch integration & PR completion checklist. Use when applying patterns from obra/finishing-a-development-branch or when user mentions "finishing-a-development-branch". |  | `skills/finishing-a-development-branch/SKILL.md` |
+| **first-ask** | Task refinement workflow interrogating scope. Use when applying patterns from github/first-ask or when user mentions "first-ask". |  | `skills/first-ask/SKILL.md` |
+| **folder-structure-blueprint-generator** | Document project folder structures. Use when applying patterns from github/folder-structure-blueprint-generator or when user mentions "folder-structure-blueprint-generator". |  | `skills/folder-structure-blueprint-generator/SKILL.md` |
+| **freeze** | Restrict file edits to a specific directory for the session. (gstack) |  | `skills/freeze/SKILL.md` |
+| **gateguard** | Fact-forcing investigation gate. Use when applying patterns from affaan-m/gateguard or when user mentions "gateguard". |  | `skills/gateguard/SKILL.md` |
+| **gen-specs-as-issues** | Identify missing features & create spec issues. Use when applying patterns from github/gen-specs-as-issues or when user mentions "gen-specs-as-issues". |  | `skills/gen-specs-as-issues/SKILL.md` |
+| **generate-custom-instructions-from-codebase** | Copilot instructions from git diff. Use when applying patterns from github/generate-custom-instructions-from-codebase or when user mentions "generate-custom-instructions-from-codebase". |  | `skills/generate-custom-instructions-from-codebase/SKILL.md` |
+| **generating-python-installer** | Nuitka & Inno Setup Windows installer. Use when applying patterns from affaan-m/generating-python-installer or when user mentions "generating-python-installer". |  | `skills/generating-python-installer/SKILL.md` |
+| **gepetto** | Detailed implementation plans with research. Use when applying patterns from softaworks/gepetto or when user mentions "gepetto". |  | `skills/gepetto/SKILL.md` |
+| **gitmoji** | Gitmoji commit message conventions. Use when applying patterns from github/gitmoji or when user mentions "gitmoji". |  | `skills/gitmoji/SKILL.md` |
+| **gsd-core** | Get Shit Done (GSD) Core Framework: metodología imparable para completar objetivos de desarrollo sin bloqueos. |  | `skills/gsd-core/SKILL.md` |
+| **gstack** | Router for the gstack skill suite. (gstack) |  | `skills/gstack/SKILL.md` |
+| **gstack-openclaw-ceo-review** | Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan. |  | `skills/gstack-openclaw-ceo-review/SKILL.md` |
+| **gstack-openclaw-investigate** | Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working. |  | `skills/gstack-openclaw-investigate/SKILL.md` |
+| **gstack-openclaw-office-hours** | Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written. |  | `skills/gstack-openclaw-office-hours/SKILL.md` |
+| **gstack-openclaw-retro** | Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and ... |  | `skills/gstack-openclaw-retro/SKILL.md` |
+| **gstack-upgrade** | Upgrade gstack to the latest version. |  | `skills/gstack-upgrade/SKILL.md` |
+| **guard** | Full safety mode: destructive command warnings + directory-scoped edits. (gstack) |  | `skills/guard/SKILL.md` |
+| **harness** | Test harness and continuous automated verification loop before task completion. |  | `skills/harness/SKILL.md` |
+| **harness-engineering** | Adopt repo-level harness engineering. Use when applying patterns from github/harness-engineering or when user mentions "harness-engineering". |  | `skills/harness-engineering/SKILL.md` |
+| **hud** | Configure HUD display options. Use when applying patterns from Yeachan-Heo/hud or when user mentions "hud". |  | `skills/hud/SKILL.md` |
+| **improve** | Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. Strictly read-only on source code — never implements, fixes,... |  | `skills/improve/SKILL.md` |
+| **improve-code-quality** | Guided journey from a working-but-untested vibe-coded prototype to a production-ready product with tests, clean structure, a business-rules boundary, and resilience at scale. Orchestrates nine skil... |  | `skills/improve-code-quality/SKILL.md` |
+| **inherit-legacy-style** | Inherit legacy codebase code style. Use when applying patterns from affaan-m/inherit-legacy-style or when user mentions "inherit-legacy-style". |  | `skills/inherit-legacy-style/SKILL.md` |
+| **integrate-context-matic** | Discover third-party APIs via context-matic. Use when applying patterns from github/integrate-context-matic or when user mentions "integrate-context-matic". |  | `skills/integrate-context-matic/SKILL.md` |
+| **intent-driven-development** | Turn product intent into verifiable criteria. Use when applying patterns from affaan-m/intent-driven-development or when user mentions "intent-driven-development". |  | `skills/intent-driven-development/SKILL.md` |
+| **Inversion Exercise** | Flip core assumptions to reveal hidden constraints and alternative approaches - "what if the opposite were true? |  | `skills/Inversion Exercise/SKILL.md` |
+| **investigate** | Systematic debugging with root cause investigation. (gstack) |  | `skills/investigate/SKILL.md` |
+| **investigate-first** | Diagnose failure before editing code. Use when applying patterns from juliusbrussee/investigate-first or when user mentions "investigate-first". |  | `skills/investigate-first/SKILL.md` |
+| **iterate-pr** | Iterate on PR until CI passes & reviews addressed. Use when applying patterns from getsentry/iterate-pr or when user mentions "iterate-pr". |  | `skills/iterate-pr/SKILL.md` |
+| **iterative-retrieval** | Progressive context retrieval pattern. Use when applying patterns from affaan-m/iterative-retrieval or when user mentions "iterative-retrieval". |  | `skills/iterative-retrieval/SKILL.md` |
+| **learn** | Manage project learnings. |  | `skills/learn/SKILL.md` |
+| **mattpocock** | Small, composable, editable TypeScript and engineering skills curated by Matt Pocock. Focuses on real engineering over vibe coding, modular architecture, type-level safety, and pragmatic daily deve... |  | `skills/mattpocock/SKILL.md` |
+| **Meta-Pattern Recognition** | Spot patterns appearing in 3+ domains to find universal principles |  | `skills/Meta-Pattern Recognition/SKILL.md` |
+| **named-persona-adversarial-review** | Code review through the lens of real engineers' documented philosophies (Torvalds, Thompson, Carmack, Kent Beck, Jobs, Cagan). Complements abstract-role adversarial review with named, sourced persp... |  | `skills/named-persona-adversarial-review/SKILL.md` |
+| **obra-superpowers-brainstorming** | Interactive requirements crystallization before coding. Asks targeted clarifying questions, explores edge cases, and produces a clear specification chunk by chunk. |  | `skills/obra-superpowers-brainstorming/SKILL.md` |
+| **obra-superpowers-code-review** | Adversarial code review and quality check covering security, performance, readability, and adherence to requirements. |  | `skills/obra-superpowers-code-review/SKILL.md` |
+| **obra-superpowers-executing-plans** | Systematic plan execution with verification loops and progress tracking across long-running development tasks. |  | `skills/obra-superpowers-executing-plans/SKILL.md` |
+| **obra-superpowers-subagent-driven-development** | Orchestrates parallel or modular subagent execution loops for multi-task engineering workloads. |  | `skills/obra-superpowers-subagent-driven-development/SKILL.md` |
+| **obra-superpowers-systematic-debugging** | Root-cause driven debugging workflow. Inspects raw logs, forms empirical hypotheses, and verifies fixes with tests. |  | `skills/obra-superpowers-systematic-debugging/SKILL.md` |
+| **obra-superpowers-writing-plans** | Generates implementation plans designed for systematic subagent execution, stressing TDD, YAGNI, and DRY. |  | `skills/obra-superpowers-writing-plans/SKILL.md` |
+| **oh-my-issues** | Cluster a GitHub issue backlog by root cause into a small set of plan-master issues, redirect children with a standardized comment, and bundle architectural-fix PRs that close clusters atomically. ... |  | `skills/oh-my-issues/SKILL.md` |
+| **omc-review** | Evaluate finished work for defects, risk, and simplification before it ships |  | `skills/omc-review/SKILL.md` |
+| **omc-setup** | Install or refresh oh-my-claudecode for plugin, npm, and local-dev setups from the canonical setup flow |  | `skills/omc-setup/SKILL.md` |
+| **omc-teams** | CLI-team runtime for claude, codex, or gemini workers in tmux panes when you need process-based parallel execution |  | `skills/omc-teams/SKILL.md` |
+| **opensource-pipeline** | Open-source pipeline: fork, sanitize, and package private projects for safe public release. |  | `skills/opensource-pipeline/SKILL.md` |
+| **orch-add-feature** | Orchestrate building a brand-new feature end to end. |  | `skills/orch-add-feature/SKILL.md` |
+| **orch-build-mvp** | Orchestrate bootstrapping a working MVP from a design or spec document. |  | `skills/orch-build-mvp/SKILL.md` |
+| **orch-change-feature** | Orchestrate altering an existing, working feature to new desired behavior. |  | `skills/orch-change-feature/SKILL.md` |
+| **orch-fix-defect** | Orchestrate fixing a bug — reproduce as failing test, fix to green. |  | `skills/orch-fix-defect/SKILL.md` |
+| **orch-pipeline** | Shared orchestration engine for the orch-* skill family. |  | `skills/orch-pipeline/SKILL.md` |
+| **orch-refine-code** | Orchestrate a behavior-preserving refactor. |  | `skills/orch-refine-code/SKILL.md` |
+| **Pair Programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... |  | `skills/Pair Programming/SKILL.md` |
+| **pair-agent** | Pair a remote AI agent with your browser. (gstack) |  | `skills/pair-agent/SKILL.md` |
+| **pair-programming** | Provides AI navigator for pair programming sessions with real-time code review, TDD guidance, and quality monitoring. Use when pair programming with AI assistance, practicing TDD with a navigator, ... |  | `skills/pair-programming/SKILL.md` |
+| **parallel-execution-optimizer** | Optimize task speed through parallel work and concurrent subagents. |  | `skills/parallel-execution-optimizer/SKILL.md` |
+| **performance** | Optimize UI performance against Core Web Vitals — LCP, INP, CLS — with loading/code-split strategy, layout-shift prevention, and animation performance rules. Use when the user wants to improve spee... |  | `skills/performance/SKILL.md` |
+| **pipeline** |  |  | `skills/pipeline/SKILL.md` |
+| **plan-ceo-review** | CEO/founder-mode plan review. (gstack) |  | `skills/plan-ceo-review/SKILL.md` |
+| **plan-design-review** | Designer's eye plan review — interactive, like CEO and Eng review. (gstack) |  | `skills/plan-design-review/SKILL.md` |
+| **plan-devex-review** | Interactive developer experience plan review. (gstack) |  | `skills/plan-devex-review/SKILL.md` |
+| **plan-eng-review** | Eng manager-mode plan review. (gstack) |  | `skills/plan-eng-review/SKILL.md` |
+| **plan-tune** | Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack) |  | `skills/plan-tune/SKILL.md` |
+| **plow-ahead** | Autonomous progress without routine clarification stops. |  | `skills/plow-ahead/SKILL.md` |
+| **poka-yoke** | Mistake-proof code so misuse cannot be expressed. |  | `skills/poka-yoke/SKILL.md` |
+| **post-mortem** | /cs:post-mortem <decision> — Honest retrospective on an executed decision, scored against original assumptions and dissent. Closes the strategic sprint loop. Use when a decision hits its 90-day rev... |  | `skills/post-mortem/SKILL.md` |
+| **postmortem** | /em:postmortem — Honest analysis of what went wrong. Use after a failed launch, missed quarter, or bad hire to run a blameless 5-Whys retrospective with a change register — e.g. dissecting why the ... |  | `skills/postmortem/SKILL.md` |
+| **prd** |  |  | `skills/prd/SKILL.md` |
+| **prepare** |  |  | `skills/prepare/SKILL.md` |
+| **professional-communication** | Technical communication guide for developers. |  | `skills/professional-communication/SKILL.md` |
+| **project-architect** | Documentation-first project planning that produces implementation-ready blueprints and single-shot coding agent prompts. Generates 4 interconnected docs — SPECIFICATION.md, IMPLEMENTATION.md, TASKS... |  | `skills/project-architect/SKILL.md` |
+| **project-flow-ops** | Operate execution flow across GitHub and Linear. |  | `skills/project-flow-ops/SKILL.md` |
+| **project-guidelines-example** | Project-specific skill template based on real production app. |  | `skills/project-guidelines-example/SKILL.md` |
+| **project-health** | All-in-one project configuration and health management. Sets up new projects (settings.local.json, AGENTS.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leak... |  | `skills/project-health/SKILL.md` |
+| **project-session-manager** | Worktree-first dev environment manager for issues & PRs. |  | `skills/project-session-manager/SKILL.md` |
+| **project-workflow-analysis-blueprint-generator** | Technology-agnostic prompt generator for end-to-end workflows. |  | `skills/project-workflow-analysis-blueprint-generator/SKILL.md` |
+| **quick-recap** | Status block convention for agent responses. |  | `skills/quick-recap/SKILL.md` |
+| **ralplan** | Consensus planning entrypoint that auto-gates vague requests. |  | `skills/ralplan/SKILL.md` |
+| **read-the-damn-docs** | Ground implementations in third-party official docs before coding. |  | `skills/read-the-damn-docs/SKILL.md` |
+| **receiving-code-review** | Evaluate code review feedback before implementing. |  | `skills/receiving-code-review/SKILL.md` |
+| **reducing-entropy** | Manual-only skill for minimizing total codebase size. |  | `skills/reducing-entropy/SKILL.md` |
+| **refactor** | Surgical code refactoring to improve maintainability. |  | `skills/refactor/SKILL.md` |
+| **refactor-method-complexity-reduce** | Refactor methods to reduce cognitive complexity. |  | `skills/refactor-method-complexity-reduce/SKILL.md` |
+| **refactor-plan** | Create concrete plan before multi-file refactor. |  | `skills/refactor-plan/SKILL.md` |
+| **remember-interactive-programming** | Micro-prompt for interactive REPL-based programming. |  | `skills/remember-interactive-programming/SKILL.md` |
+| **repo-scan** | Cross-stack source code asset audit. |  | `skills/repo-scan/SKILL.md` |
+| **repo-standardizer** | Polish repository surface — labels, templates, CODEOWNERS, rules. |  | `skills/repo-standardizer/SKILL.md` |
+| **repo-story-time** | Generate repository summary and narrative story from commit history. |  | `skills/repo-story-time/SKILL.md` |
+| **requesting-code-review** | Request code review before merging major features. |  | `skills/requesting-code-review/SKILL.md` |
+| **requirements-clarity** | Clarify ambiguous requirements through focused dialogue. |  | `skills/requirements-clarity/SKILL.md` |
+| **retro** | Weekly engineering retrospective. (gstack) |  | `skills/retro/SKILL.md` |
+| **review** | Pre-landing PR review. (gstack) |  | `skills/review/SKILL.md` |
+| **review-and-refactor** | Review and refactor code according to project instructions. |  | `skills/review-and-refactor/SKILL.md` |
+| **Root Cause Tracing** | Systematically trace bugs backward through call stack to find original trigger |  | `skills/Root Cause Tracing/SKILL.md` |
+| **rtk** | Rust Token Killer (RTK) & Runtime Token Compression skill. Provides CLI proxying, log filtering, and intelligent terminal output compression (cutting command output tokens by 60-90%). Use when runn... |  | `skills/rtk/SKILL.md` |
+| **rules-distill** | Scan skills to extract cross-cutting principles into rule files. |  | `skills/rules-distill/SKILL.md` |
+| **safe-refactor** | Restructure code while strictly preserving behavior. |  | `skills/safe-refactor/SKILL.md` |
+| **safety-guard** | Prevent destructive operations when working on production systems. |  | `skills/safety-guard/SKILL.md` |
+| **scaffold** |  |  | `skills/scaffold/SKILL.md` |
+| **Scale Game** | Test at extremes (1000x bigger/smaller, instant/year-long) to expose fundamental truths hidden at normal scales |  | `skills/Scale Game/SKILL.md` |
+| **scrape** | Pull data from a web page. (gstack) |  | `skills/scrape/SKILL.md` |
+| **screenshot** | Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-l... |  | `skills/screenshot/SKILL.md` |
+| **self-improve** | Autonomous evolutionary code improvement engine. |  | `skills/self-improve/SKILL.md` |
+| **session-handoff** | Creates handoff documents for seamless AI agent session transfers. |  | `skills/session-handoff/SKILL.md` |
+| **setup-browser-cookies** | Import cookies from your real Chromium browser into the headless browse session. (gstack) |  | `skills/setup-browser-cookies/SKILL.md` |
+| **setup-gbrain** | Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack) |  | `skills/setup-gbrain/SKILL.md` |
+| **setup-my-iq** | Setup personal context portfolio & work style preferences. |  | `skills/setup-my-iq/SKILL.md` |
+| **setup-pre-commit** | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add com... |  | `skills/setup-pre-commit/SKILL.md` |
+| **setup-ts-deep-modules** | Wire dependency-cruiser into a TypeScript repo so each package is a deep module — implementation hidden in subfolders, reachable only through its entry-point files. User-invoked. |  | `skills/setup-ts-deep-modules/SKILL.md` |
+| **ship-learn-next** | Transform learning content into actionable implementation plans. |  | `skills/ship-learn-next/SKILL.md` |
+| **signal-write** | Emit structured agent signals (blocked, done, checkpoint). |  | `skills/signal-write/SKILL.md` |
+| **Simplification Cascades** | Find one insight that eliminates multiple components - "if this is true, we don't need X, Y, or Z |  | `skills/Simplification Cascades/SKILL.md` |
+| **skill** | Manage local skills — list, add, remove, search, edit. |  | `skills/skill/SKILL.md` |
+| **Skill Builder** | Create new Codex Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generat... |  | `skills/Skill Builder/SKILL.md` |
+| **skill-comply** | Visualize whether skills and rules are followed by agents. |  | `skills/skill-comply/SKILL.md` |
+| **skill-installer** | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep... |  | `skills/skill-installer/SKILL.md` |
+| **skill-inventory-manager** | Meta-skill that enumerates skills & generates custom pipelines. |  | `skills/skill-inventory-manager/SKILL.md` |
+| **skill-judge** | Evaluate Agent Skill design quality against specification. |  | `skills/skill-judge/SKILL.md` |
+| **skill-scanner** | Scan agent skills for security vulnerabilities & injection risks. |  | `skills/skill-scanner/SKILL.md` |
+| **skill-scout** | Search existing skill sources before creating a new skill. |  | `skills/skill-scout/SKILL.md` |
+| **skill-seekers** | Búsqueda activa, evaluación e ingesta automatizada de nuevas habilidades agenticas desde repositorios remotos. |  | `skills/skill-seekers/SKILL.md` |
+| **skill-share** | A skill that creates new Codex skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery. |  | `skills/skill-share/SKILL.md` |
+| **skill-stocktake** | Audit skills and commands for quality & effectiveness. |  | `skills/skill-stocktake/SKILL.md` |
+| **skill-vault** | Bóveda persistente de skills del repositorio para organización, versionado y almacenamiento offline. |  | `skills/skill-vault/SKILL.md` |
+| **skill-writer** | Create and refine agent skills following Agent Skills spec. |  | `skills/skill-writer/SKILL.md` |
+| **skill1ssue** | Find and discover agent skills across git forges. |  | `skills/skill1ssue/SKILL.md` |
+| **skillclaw** | Self-improving skill infrastructure that analyzes past session transcripts and automatically sharpens, refines, and updates the local skill library. Use when maintaining high-power skill collection... |  | `skills/skillclaw/SKILL.md` |
+| **skillify** | Codify the most recent successful /scrape flow into a permanent browser-skill on disk. (gstack) |  | `skills/skillify/SKILL.md` |
+| **skills-arquiteto-de-empresa** |  |  | `skills/skills-arquiteto-de-empresa/SKILL.md` |
+| **skills-chaos-engineering** |  |  | `skills/skills-chaos-engineering/SKILL.md` |
+| **skills-eu-ai-act-specialist** |  |  | `skills/skills-eu-ai-act-specialist/SKILL.md` |
+| **skills-feature-flags-architect** |  |  | `skills/skills-feature-flags-architect/SKILL.md` |
+| **skills-handoff** |  |  | `skills/skills-handoff/SKILL.md` |
+| **skills-init** |  |  | `skills/skills-init/SKILL.md` |
+| **skills-iso42001-specialist** |  |  | `skills/skills-iso42001-specialist/SKILL.md` |
+| **skills-kubernetes-operator** |  |  | `skills/skills-kubernetes-operator/SKILL.md` |
+| **skills-review** |  |  | `skills/skills-review/SKILL.md` |
+| **skills-run** |  |  | `skills/skills-run/SKILL.md` |
+| **skills-slo-architect** |  |  | `skills/skills-slo-architect/SKILL.md` |
+| **skills-status** |  |  | `skills/skills-status/SKILL.md` |
+| **skills-status-2** |  |  | `skills/skills-status-2/SKILL.md` |
+| **slo-architect** | Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE... |  | `skills/slo-architect/SKILL.md` |
+| **slo-design** |  |  | `skills/slo-design/SKILL.md` |
+| **spec** | Turn vague intent into a precise, executable spec in five phases. (gstack) |  | `skills/spec/SKILL.md` |
+| **spec-kit** | Spec-Driven Development (SDD) framework based on GitHub's official spec-kit (https://github.com/github/spec-kit). Enforces a specification-first approach where agents create executable specs, const... |  | `skills/spec-kit/SKILL.md` |
+| **stay-within-limits** | Respect agent rate limits and weekly usage caps. |  | `skills/stay-within-limits/SKILL.md` |
+| **steno-mode** | Shorthand response compression cutting ~40% response tokens. |  | `skills/steno-mode/SKILL.md` |
+| **strategic-compact** | Manual context compaction at logical task boundaries. |  | `skills/strategic-compact/SKILL.md` |
+| **strict-api** | Use when the user says 'no hallucinations', 'verify APIs', 'reality check', or 'don't invent functions'. Prevents the agent from calling methods, imports, or variables that do not provably exist in... |  | `skills/strict-api/SKILL.md` |
+| **structured-autonomy-generate** | Structured Autonomy Implementation Generator. |  | `skills/structured-autonomy-generate/SKILL.md` |
+| **structured-autonomy-implement** | Structured Autonomy Implementation Prompt. |  | `skills/structured-autonomy-implement/SKILL.md` |
+| **structured-autonomy-plan** | Structured Autonomy Planning Prompt. |  | `skills/structured-autonomy-plan/SKILL.md` |
+| **suggest-awesome-github-copilot-agents** | Suggest relevant Copilot custom agents from awesome-copilot. |  | `skills/suggest-awesome-github-copilot-agents/SKILL.md` |
+| **suggest-awesome-github-copilot-instructions** | Suggest Copilot instruction files from awesome-copilot. |  | `skills/suggest-awesome-github-copilot-instructions/SKILL.md` |
+| **suggest-awesome-github-copilot-skills** | Suggest Copilot skills from awesome-copilot repository. |  | `skills/suggest-awesome-github-copilot-skills/SKILL.md` |
+| **surgical-patch** | Fix bugs at the narrowest responsible layer. |  | `skills/surgical-patch/SKILL.md` |
+| **Systematic Debugging** | Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions. |  | `skills/Systematic Debugging/SKILL.md` |
+| **technology-stack-blueprint-generator** | Technology stack blueprint generator from codebases. |  | `skills/technology-stack-blueprint-generator/SKILL.md` |
+| **terminal-ops** | Evidence-first terminal execution workflow. |  | `skills/terminal-ops/SKILL.md` |
+| **the-architect** | Interviews the user about what they want to build (phased discovery Q&A), classifies the project into an archetype (SaaS webapp, marketing site, mobile app, API backend, internal tool, content plat... |  | `skills/the-architect/SKILL.md` |
+| **tiny-stepping** | Incremental development making smallest meaningful change per step. |  | `skills/tiny-stepping/SKILL.md` |
+| **tinystruct-patterns** | Developing with tinystruct Java framework. |  | `skills/tinystruct-patterns/SKILL.md` |
+| **tldr-prompt** | Create tldr summaries for Copilot files and MCP servers. |  | `skills/tldr-prompt/SKILL.md` |
+| **to-issues** | Break plan/spec into independent issues on tracker. |  | `skills/to-issues/SKILL.md` |
+| **to-prd** | Turn conversation into PRD on issue tracker. |  | `skills/to-prd/SKILL.md` |
+| **token-budget-advisor** | Token budget control advisor for response depth. |  | `skills/token-budget-advisor/SKILL.md` |
+| **tokmax** | Compress text for maximum token efficiency & machine intent. |  | `skills/tokmax/SKILL.md` |
+| **trace** | Evidence-driven causal tracing lane with competing hypotheses. |  | `skills/trace/SKILL.md` |
+| **triage** | Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. |  | `skills/triage/SKILL.md` |
+| **tugboat** | Anxiety-aware evidence-driven collaboration for stalled work. |  | `skills/tugboat/SKILL.md` |
+| **typing-exclusion-worker** | Remove mypy exclusion modules in scoped batches. |  | `skills/typing-exclusion-worker/SKILL.md` |
+| **unfreeze** | Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack) |  | `skills/unfreeze/SKILL.md` |
+| **user-story** |  |  | `skills/user-story/SKILL.md` |
+| **using-git-worktrees** | Isolated worktree dev environment workflow. |  | `skills/using-git-worktrees/SKILL.md` |
+| **using-superpowers** | Establishes skill invocation requirements before responding. |  | `skills/using-superpowers/SKILL.md` |
+| **using-tmux-for-interactive-commands** | Run interactive CLI tools (vim, rebase) in tmux. |  | `skills/using-tmux-for-interactive-commands/SKILL.md` |
+| **V3 CLI Modernization** | CLI modernization and hooks system enhancement for Codex-flow v3. Implements interactive prompts, command decomposition, enhanced hooks integration, and intelligent workflow automation. |  | `skills/V3 CLI Modernization/SKILL.md` |
+| **V3 Core Implementation** | Core module implementation for Codex-flow v3. Implements DDD domains, clean architecture patterns, dependency injection, and modular TypeScript codebase with comprehensive testing. |  | `skills/V3 Core Implementation/SKILL.md` |
+| **V3 DDD Architecture** | Domain-Driven Design architecture for Codex-flow v3. Implements modular, bounded context architecture with clean separation of concerns and microkernel pattern. |  | `skills/V3 DDD Architecture/SKILL.md` |
+| **V3 Deep Integration** | Deep agentic-flow@alpha integration implementing ADR-001. Eliminates 10,000+ duplicate lines by building Codex-flow as specialized extension rather than parallel implementation. |  | `skills/V3 Deep Integration/SKILL.md` |
+| **V3 MCP Optimization** | MCP server optimization and transport layer enhancement for Codex-flow v3. Implements connection pooling, load balancing, tool registry optimization, and performance monitoring for sub-100ms respon... |  | `skills/V3 MCP Optimization/SKILL.md` |
+| **V3 Memory Unification** | Unify 6+ memory systems into AgentDB with HNSW indexing for 150x-12,500x search improvements. Implements ADR-006 (Unified Memory Service) and ADR-009 (Hybrid Memory Backend). |  | `skills/V3 Memory Unification/SKILL.md` |
+| **V3 Performance Optimization** | Achieve aggressive v3 performance targets: 2.49x-7.47x Flash Attention speedup, 150x-12,500x search improvements, 50-75% memory reduction. Comprehensive benchmarking and optimization suite. |  | `skills/V3 Performance Optimization/SKILL.md` |
+| **V3 Security Overhaul** | Complete security architecture overhaul for Codex-flow v3. Addresses critical CVEs (CVE-1, CVE-2, CVE-3) and implements secure-by-default patterns. Use for security-first v3 implementation. |  | `skills/V3 Security Overhaul/SKILL.md` |
+| **V3 Swarm Coordination** | 15-agent hierarchical mesh coordination for v3 implementation. Orchestrates parallel execution across security, core, and integration domains following 10 ADRs with 14-week timeline. |  | `skills/V3 Swarm Coordination/SKILL.md` |
+| **validation-pipeline** | Runs multi-stage validation gates with per-step scoring, pass/fail verdicts, and aggregate quality reports. Use when validating requirements, code, or artifacts through structured gate enforcement ... |  | `skills/validation-pipeline/SKILL.md` |
+| **vardoger-analyze** | Personalize Copilot CLI assistant to user's style. |  | `skills/vardoger-analyze/SKILL.md` |
+| **Verification & Quality Assurance** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. |  | `skills/Verification & Quality Assurance/SKILL.md` |
+| **Verification Before Completion** | Run verification commands and confirm output before claiming success |  | `skills/Verification Before Completion/SKILL.md` |
+| **verification-loop** | Comprehensive verification system for agent sessions. |  | `skills/verification-loop/SKILL.md` |
+| **verify** | Verify change works before claiming completion. |  | `skills/verify/SKILL.md` |
+| **verify-agent-action** | Review proposed AI agent action packet before execution. |  | `skills/verify-agent-action/SKILL.md` |
+| **verify-and-stop** | Prove existing work meets acceptance criteria without expanding scope. |  | `skills/verify-and-stop/SKILL.md` |
+| **vscode-ext-commands** | Guidelines for contributing commands in VS Code extensions. |  | `skills/vscode-ext-commands/SKILL.md` |
+| **vscode-ext-localization** | Localization patterns for VS Code extensions. |  | `skills/vscode-ext-localization/SKILL.md` |
+| **wait-what** | Re-pitch message when user indicates last message missed target. |  | `skills/wait-what/SKILL.md` |
+| **web-perf** | Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (LCP, INP, CLS) and supplementary metrics (FCP, TBT, Speed Index), identifies render-blocking resources, network depende... |  | `skills/web-perf/SKILL.md` |
+| **web-research** | Search public web for authoritative sources and return cited answer. |  | `skills/web-research/SKILL.md` |
+| **what-context-needed** | Ask Copilot what context files it needs to see. |  | `skills/what-context-needed/SKILL.md` |
+| **When Stuck - Problem-Solving Dispatch** | Dispatch to the right problem-solving technique based on how you're stuck |  | `skills/When Stuck - Problem-Solving Dispatch/SKILL.md` |
+| **workshop-create** | Create or initialize a workshop directory. |  | `skills/workshop-create/SKILL.md` |
+| **workspace-surface-audit** | Audit active repo, MCP servers, plugins & recommend ECC skills. |  | `skills/workspace-surface-audit/SKILL.md` |
+| **write-coding-standards-from-file** | Write coding standards document from codebase files. |  | `skills/write-coding-standards-from-file/SKILL.md` |
+| **zoom-out** | Provide broader context and higher-level architectural perspective. |  | `skills/zoom-out/SKILL.md` |
+
+### DevOps & Cloud (40)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **all-deploy** | Deploys any web app, API, or agent to the internet with a strict pre-deploy audit and a preview → health-check → prod flow. Detects Next, Vite, Astro, Remix, Nuxt, SvelteKit, FastAPI, Flask, Expres... |  | `skills/all-deploy/SKILL.md` |
+| **benchmark** | Performance regression detection using the browse daemon. (gstack) |  | `skills/benchmark/SKILL.md` |
+| **canary** | Post-deploy canary monitoring. (gstack) |  | `skills/canary/SKILL.md` |
+| **customize** | Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI ... |  | `skills/customize/SKILL.md` |
+| **datadog-cli** | Datadog CLI for searching production logs, querying APM metrics, tracing requests, and inspecting dashboards. Use when debugging production issues, checking Datadog telemetry, or when user mentions... |  | `skills/datadog-cli/SKILL.md` |
+| **deployment-patterns** | CI/CD pipelines, Docker, health checks & rollbacks. Use when applying patterns from affaan-m/deployment-patterns or when user mentions "deployment-patterns". |  | `skills/deployment-patterns/SKILL.md` |
+| **ecc-tools-cost-audit** | Evidence-first tool usage & cost audit. Use when applying patterns from affaan-m/ecc-tools-cost-audit or when user mentions "ecc-tools-cost-audit". |  | `skills/ecc-tools-cost-audit/SKILL.md` |
+| **fedora-linux-triage** | Fedora Linux systemd, dnf & SELinux triage. Use when applying patterns from github/fedora-linux-triage or when user mentions "fedora-linux-triage". |  | `skills/fedora-linux-triage/SKILL.md` |
+| **flox-environments** | Reproducible Nix-based dev environments. Use when applying patterns from affaan-m/flox-environments or when user mentions "flox-environments". |  | `skills/flox-environments/SKILL.md` |
+| **foundry-agent-sync** | Sync Azure AI Foundry agents from JSON. Use when applying patterns from github/foundry-agent-sync or when user mentions "foundry-agent-sync". |  | `skills/foundry-agent-sync/SKILL.md` |
+| **gcloud** | Google Cloud gcloud CLI execution. Use when applying patterns from google/gcloud or when user mentions "gcloud". |  | `skills/gcloud/SKILL.md` |
+| **gem-devops-guidelines** | DevOps & infrastructure review guidelines. Use when applying patterns from github/gem-devops-guidelines or when user mentions "gem-devops-guidelines". |  | `skills/gem-devops-guidelines/SKILL.md` |
+| **geofeed-tuner** | RFC 8805 IP geolocation feeds. Use when applying patterns from github/geofeed-tuner or when user mentions "geofeed-tuner". |  | `skills/geofeed-tuner/SKILL.md` |
+| **health** | Code quality dashboard. (gstack) |  | `skills/health/SKILL.md` |
+| **homelab-network-setup** | Practical homelab network planning. Use when applying patterns from affaan-m/homelab-network-setup or when user mentions "homelab-network-setup". |  | `skills/homelab-network-setup/SKILL.md` |
+| **homelab-pihole-dns** | Pi-hole installation & DNS management. Use when applying patterns from affaan-m/homelab-pihole-dns or when user mentions "homelab-pihole-dns". |  | `skills/homelab-pihole-dns/SKILL.md` |
+| **homelab-wireguard-vpn** | WireGuard VPN server setup. Use when applying patterns from affaan-m/homelab-wireguard-vpn or when user mentions "homelab-wireguard-vpn". |  | `skills/homelab-wireguard-vpn/SKILL.md` |
+| **import-infrastructure-as-code** | Import Azure resources into Terraform. Use when applying patterns from github/import-infrastructure-as-code or when user mentions "import-infrastructure-as-code". |  | `skills/import-infrastructure-as-code/SKILL.md` |
+| **ito-compute** | Query GPU inventory & submit RFQ. Use when applying patterns from affaan-m/ito-compute or when user mentions "ito-compute". |  | `skills/ito-compute/SKILL.md` |
+| **land-and-deploy** | Land and deploy workflow. (gstack) |  | `skills/land-and-deploy/SKILL.md` |
+| **landing-report** | Read-only queue dashboard for workspace-aware ship. (gstack) |  | `skills/landing-report/SKILL.md` |
+| **open-gstack-browser** | Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in. |  | `skills/open-gstack-browser/SKILL.md` |
+| **preset** | Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR:... |  | `skills/preset/SKILL.md` |
+| **production-audit** | Local-evidence production readiness audit for shipped apps. |  | `skills/production-audit/SKILL.md` |
+| **publish-to-pages** | Publish presentations and web content to GitHub Pages. |  | `skills/publish-to-pages/SKILL.md` |
+| **release** | End-to-end npm release workflow with verification gates and hardcoded-version protection |  | `skills/release/SKILL.md` |
+| **setup-deploy** | Configure deployment settings for /land-and-deploy. |  | `skills/setup-deploy/SKILL.md` |
+| **ship** | Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack) |  | `skills/ship/SKILL.md` |
+| **ship-gate** | Pre-production audit that scans a codebase for security, database, deployment, code quality, AI/LLM, dependency, frontend, and observability issues. Intercepts deploy commands and blocks until crit... |  | `skills/ship-gate/SKILL.md` |
+| **terminal-opener** | Open executable in visible terminal window safely. |  | `skills/terminal-opener/SKILL.md` |
+| **update-avm-modules-in-bicep** | Update Azure Verified Modules in Bicep files. |  | `skills/update-avm-modules-in-bicep/SKILL.md` |
+| **update-harness-dependencies** | Update primary SDK dependencies of harness packages. |  | `skills/update-harness-dependencies/SKILL.md` |
+| **update-implementation-plan** | Update existing implementation plan file. |  | `skills/update-implementation-plan/SKILL.md` |
+| **update-llms** | Update root llms.txt following llmstxt.org spec. |  | `skills/update-llms/SKILL.md` |
+| **update-provider-models** | Add/remove model IDs for AI SDK providers. |  | `skills/update-provider-models/SKILL.md` |
+| **vercel-composition-patterns** | React composition patterns that scale. |  | `skills/vercel-composition-patterns/SKILL.md` |
+| **vercel-react-native-skills** | React Native & Expo performance best practices. |  | `skills/vercel-react-native-skills/SKILL.md` |
+| **vercel-react-view-transitions** | Implement native-feeling animations using View Transition API. |  | `skills/vercel-react-view-transitions/SKILL.md` |
+| **version-bump** | Automated semantic versioning and release workflow for Codex plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging, GitHu... |  | `skills/version-bump/SKILL.md` |
+| **windows-vm** | Manage headless Windows 11 VM running in Docker. |  | `skills/windows-vm/SKILL.md` |
+
+### AI & Agents (102)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **agentic-awesome-skills** | Directorio curado de habilidades avanzadas para agentes autónomos y sistemas multi-agente. |  | `skills/agentic-awesome-skills/SKILL.md` |
+| **agentic-engineering** | Operate as an agentic engineer using eval-first execution, task decomposition, and cost-aware model routing. Use when structuring complex software tasks, optimizing LLM token budget allocation, or ... |  | `skills/agentic-engineering/SKILL.md` |
+| **agentic-eval** | Patterns and techniques for evaluating and improving AI agent outputs. Implements self-critique, reflection loops, and quantitative evaluation suites. Use when building eval benchmarks, testing pro... |  | `skills/agentic-eval/SKILL.md` |
+| **agentic-os** | Build persistent multi-agent operating systems on Claude Code / Antigravity. Covers kernel architecture, specialist sub-agents, slash commands, file-based memory, and scheduled background tasks. Us... |  | `skills/agentic-os/SKILL.md` |
+| **agentic-quality-engineering** | Use when orchestrating QE agents, understanding PACTS principles, configuring the AQE v3 fleet, or leveraging AI agents as force multipliers for quality work. |  | `skills/agentic-quality-engineering/SKILL.md` |
+| **agents-md** | Creates and maintains concise AGENTS.md and CLAUDE.md project instruction files. Use when initializing agent rules in a repo, updating AGENTS.md, setting up project instructions, or when user menti... |  | `skills/agents-md/SKILL.md` |
+| **agentshield** | Escudo de seguridad para agentes de IA: previene prompt injection, filtrado de credenciales y ejecución de código peligroso. |  | `skills/agentshield/SKILL.md` |
+| **autofix** | Safely reviews and applies CodeRabbit PR review-thread feedback from GitHub with per-change approval. Use when applying PR comments, fixing reviewer feedback, or when user mentions "autofix", "code... |  | `skills/autofix/SKILL.md` |
+| **autoplan** | Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack) |  | `skills/autoplan/SKILL.md` |
+| **claude** | Claude Code CLI wrapper for non-Claude hosts - three modes. Review: independent diff review via claude -p. Challenge: adversarial failure-mode review. Consult: ask Claude about the repo with read-o... | `https://github.com/garrytan/gstack` | `skills/claude/SKILL.md` |
+| **claude-for-legal** | Análisis legal, revisión de contratos, cumplimiento normativo y síntesis de documentos jurídicos. |  | `skills/claude-for-legal/SKILL.md` |
+| **claude-mem** | Persistent architectural decisions and session memory across agent invocations. |  | `skills/claude-mem/SKILL.md` |
+| **claude-seo** | SEO técnico, Schema org markup, GEO (Generative Engine Optimization) y optimización de motores de búsqueda de IA. |  | `skills/claude-seo/SKILL.md` |
+| **codex** | OpenAI Codex CLI wrapper — three modes. (gstack) |  | `skills/codex/SKILL.md` |
+| **Codex** | Codex CLI wrapper for non-Codex hosts - three modes. Review: independent diff review via Codex -p. Challenge: adversarial failure-mode review. Consult: ask Codex about the repo with read-only file ... |  | `skills/Codex/SKILL.md` |
+| **Codex-api** | Reference for the Codex API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file; ... |  | `skills/Codex-api/SKILL.md` |
+| **Codex-coach** | Personal coach that teaches users to become Codex power users. Use this skill the FIRST time a user asks to "learn Codex", "be a power user", "coach me", "teach me Codex tricks", "what can Codex do... |  | `skills/Codex-coach/SKILL.md` |
+| **Codex-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. |  | `skills/Codex-handoff/SKILL.md` |
+| **collab-proof** | Use when you want to understand what Codex contributed vs what you drove in a session. Triggers on: /collab-proof, session retrospective, ai contribution analysis, collaboration evidence, what did ... |  | `skills/collab-proof/SKILL.md` |
+| **computer-use** | Drive the user's desktop in the background (clicking, typing, scrolling, dragging) without stealing cursor focus. Use when automating desktop applications, interacting with native GUIs, or when use... |  | `skills/computer-use/SKILL.md` |
+| **context-mode** | Gestión ultra-eficiente de la ventana de contexto de sesión, compresión dinámica de tokens y poda de información no relevante. |  | `skills/context-mode/SKILL.md` |
+| **context-restore** | Restore working context saved earlier by /context-save. (gstack) |  | `skills/context-restore/SKILL.md` |
+| **context-save** | Save working context. (gstack) |  | `skills/context-save/SKILL.md` |
+| **cost-aware-llm-pipeline** | Cost optimization patterns for LLM API usage — model routing by task complexity, budget tracking, retry logic, and prompt caching. Use when building production LLM apps, reducing token costs, confi... |  | `skills/cost-aware-llm-pipeline/SKILL.md` |
+| **create-mcp-eval** | Generates comprehensive evaluation suites for any Model Context Protocol (MCP) server using @mcpjam/sdk. Supports Vitest/Jest integration, deterministic tool assertions, and LLM-as-a-judge test cas... |  | `skills/create-mcp-eval/SKILL.md` |
+| **data-scraper-agent** | Build automated AI-powered data collection agents for public web sources (job boards, pricing, news, GitHub, sports). Runs on a schedule, enriches collected data, handles rate limits, and persists ... |  | `skills/data-scraper-agent/SKILL.md` |
+| **deep-dive** | 2-stage trace & interview pipeline (trace -> deep-interview). Use when applying patterns from Yeachan-Heo/deep-dive or when user mentions "deep-dive". |  | `skills/deep-dive/SKILL.md` |
+| **deep-interview** | Socratic deep interview with mathematical ambiguity gating. Use when applying patterns from Yeachan-Heo/deep-interview or when user mentions "deep-interview". |  | `skills/deep-interview/SKILL.md` |
+| **deepinit** | Deep codebase initialization with AGENTS.md documentation. Use when applying patterns from Yeachan-Heo/deepinit or when user mentions "deepinit". |  | `skills/deepinit/SKILL.md` |
+| **dev-team** | Simulate collaborative dev team session. Use when applying patterns from affaan-m/dev-team or when user mentions "dev-team". |  | `skills/dev-team/SKILL.md` |
+| **develop-ai-functions-example** | Vercel AI SDK function examples. Use when applying patterns from vercel/develop-ai-functions-example or when user mentions "develop-ai-functions-example". |  | `skills/develop-ai-functions-example/SKILL.md` |
+| **developing-genkit-dart** | Genkit SDK for Dart AI agents. Use when applying patterns from google/developing-genkit-dart or when user mentions "developing-genkit-dart". |  | `skills/developing-genkit-dart/SKILL.md` |
+| **developing-genkit-go** | Genkit SDK for Go AI apps. Use when applying patterns from google/developing-genkit-go or when user mentions "developing-genkit-go". |  | `skills/developing-genkit-go/SKILL.md` |
+| **developing-genkit-js** | Genkit SDK for JS/TS AI apps. Use when applying patterns from google/developing-genkit-js or when user mentions "developing-genkit-js". |  | `skills/developing-genkit-js/SKILL.md` |
+| **developing-genkit-python** | Genkit SDK for Python AI apps. Use when applying patterns from google/developing-genkit-python or when user mentions "developing-genkit-python". |  | `skills/developing-genkit-python/SKILL.md` |
+| **dispatching-parallel-agents** | Dispatch parallel subagents for independent tasks. Use when applying patterns from obra/dispatching-parallel-agents or when user mentions "dispatching-parallel-agents". |  | `skills/dispatching-parallel-agents/SKILL.md` |
+| **ecc-guide** | Onboarding guide for ECC skills & commands. Use when applying patterns from affaan-m/ecc-guide or when user mentions "ecc-guide". |  | `skills/ecc-guide/SKILL.md` |
+| **ecc-recipes** | Workflow recipe families for ECC. Use when applying patterns from affaan-m/ecc-recipes or when user mentions "ecc-recipes". |  | `skills/ecc-recipes/SKILL.md` |
+| **efficient-fable** | Orchestrate research & coding with cheap subagents. Use when applying patterns from BuilderIO/efficient-fable or when user mentions "efficient-fable". |  | `skills/efficient-fable/SKILL.md` |
+| **efficient-frontier** | Frontier model orchestration with subagents. Use when applying patterns from BuilderIO/efficient-frontier or when user mentions "efficient-frontier". |  | `skills/efficient-frontier/SKILL.md` |
+| **exa-search** | Neural search via Exa MCP for web & code. Use when applying patterns from affaan-m/exa-search or when user mentions "exa-search". |  | `skills/exa-search/SKILL.md` |
+| **external-context** | Invoke document-specialist subagents. Use when applying patterns from Yeachan-Heo/external-context or when user mentions "external-context". |  | `skills/external-context/SKILL.md` |
+| **fal-ai-media** | Unified media generation via fal.ai MCP. Use when applying patterns from affaan-m/fal-ai-media or when user mentions "fal-ai-media". |  | `skills/fal-ai-media/SKILL.md` |
+| **finetuning** | Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. ... |  | `skills/finetuning/SKILL.md` |
+| **foundry-hosted-agent-copilotkit** | CopilotKit + Azure AI Foundry agents. Use when applying patterns from github/foundry-hosted-agent-copilotkit or when user mentions "foundry-hosted-agent-copilotkit". |  | `skills/foundry-hosted-agent-copilotkit/SKILL.md` |
+| **from-the-other-side-anitta** | Anitta assumption check profile. Use when applying patterns from github/from-the-other-side-anitta or when user mentions "from-the-other-side-anitta". |  | `skills/from-the-other-side-anitta/SKILL.md` |
+| **from-the-other-side-quinn** | Quinn implementation partnership profile. Use when applying patterns from github/from-the-other-side-quinn or when user mentions "from-the-other-side-quinn". |  | `skills/from-the-other-side-quinn/SKILL.md` |
+| **from-the-other-side-vega** | Vega long-term AI partner profile. Use when applying patterns from github/from-the-other-side-vega or when user mentions "from-the-other-side-vega". |  | `skills/from-the-other-side-vega/SKILL.md` |
+| **from-the-other-side-wiggins** | Wiggins narrative synthesis profile. Use when applying patterns from github/from-the-other-side-wiggins or when user mentions "from-the-other-side-wiggins". |  | `skills/from-the-other-side-wiggins/SKILL.md` |
+| **gan-style-harness** | Generator-Evaluator agent harness. Use when applying patterns from affaan-m/gan-style-harness or when user mentions "gan-style-harness". |  | `skills/gan-style-harness/SKILL.md` |
+| **gemini** | Gemini CLI code & plan review. Use when applying patterns from softaworks/gemini or when user mentions "gemini". |  | `skills/gemini/SKILL.md` |
+| **gemini-agents-api** | Manage Agent resources on Gemini Enterprise. Use when applying patterns from google/gemini-agents-api or when user mentions "gemini-agents-api". |  | `skills/gemini-agents-api/SKILL.md` |
+| **gemini-api** | Enterprise Vertex AI & Gemini API guide. Use when applying patterns from google/gemini-api or when user mentions "gemini-api". |  | `skills/gemini-api/SKILL.md` |
+| **gemini-api-dev** | Multimodal Gemini API application dev. Use when applying patterns from google-gemini/gemini-api-dev or when user mentions "gemini-api-dev". |  | `skills/gemini-api-dev/SKILL.md` |
+| **gemini-interactions-api** | Stateful server-managed Interactions API. Use when applying patterns from google/gemini-interactions-api or when user mentions "gemini-interactions-api". |  | `skills/gemini-interactions-api/SKILL.md` |
+| **gemini-live-api-dev** | Real-time bidirectional WebSocket streaming. Use when applying patterns from google-gemini/gemini-live-api-dev or when user mentions "gemini-live-api-dev". |  | `skills/gemini-live-api-dev/SKILL.md` |
+| **gemini-managed-agents-api** | Manage custom Agents on Gemini Platform. Use when applying patterns from google/gemini-managed-agents-api or when user mentions "gemini-managed-agents-api". |  | `skills/gemini-managed-agents-api/SKILL.md` |
+| **gemini-omni-flash-api** | Generative video editing & text-to-video. Use when applying patterns from google-gemini/gemini-omni-flash-api or when user mentions "gemini-omni-flash-api". |  | `skills/gemini-omni-flash-api/SKILL.md` |
+| **generate-image** | Generate AI images & textures. Use when applying patterns from github/generate-image or when user mentions "generate-image". |  | `skills/generate-image/SKILL.md` |
+| **gget** | Genomic database queries & BLAST search. Use when applying patterns from affaan-m/gget or when user mentions "gget". |  | `skills/gget/SKILL.md` |
+| **graph** | Declarative DAG pipeline execution runtime. Use when applying patterns from yeachan-heo/graph or when user mentions "graph". |  | `skills/graph/SKILL.md` |
+| **graphify** | Use for any question about a codebase, its architecture, file relationships, or project content — especially when graphify-out/ exists, where the question should be treated as a graphify query firs... |  | `skills/graphify/SKILL.md` |
+| **hf-cli** | Hugging Face Hub CLI operations. Use when applying patterns from huggingface/hf-cli or when user mentions "hf-cli". |  | `skills/hf-cli/SKILL.md` |
+| **hf-mem** | Estimate GPU memory for Safetensors/GGUF. Use when applying patterns from huggingface/hf-mem or when user mentions "hf-mem". |  | `skills/hf-mem/SKILL.md` |
+| **how-it-works** | Explain how Codex-mem captures observations, when memory injection kicks in, and where data lives. Use when the user asks "how does Codex-mem work?" or "what is this thing doing?". |  | `skills/how-it-works/SKILL.md` |
+| **huggingface-datasets** | Hugging Face Dataset Viewer API. Use when applying patterns from huggingface/huggingface-datasets or when user mentions "huggingface-datasets". |  | `skills/huggingface-datasets/SKILL.md` |
+| **huggingface-gradio** | Build Gradio web UIs in Python. Use when applying patterns from huggingface/huggingface-gradio or when user mentions "huggingface-gradio". |  | `skills/huggingface-gradio/SKILL.md` |
+| **huggingface-papers** | Hugging Face paper research lookup. Use when applying patterns from huggingface/huggingface-papers or when user mentions "huggingface-papers". |  | `skills/huggingface-papers/SKILL.md` |
+| **huggingface-spaces** | Deploy AI apps to Hugging Face Spaces. Use when applying patterns from huggingface/huggingface-spaces or when user mentions "huggingface-spaces". |  | `skills/huggingface-spaces/SKILL.md` |
+| **loopy** | Autonomous iterative agent loops with explicit verification and stop conditions. Executes a "modify -> measure -> evaluate -> keep/revert -> check stop condition" cycle. Ideal for performance tunin... |  | `skills/loopy/SKILL.md` |
+| **minions** | Local Kanban task dashboard for agent task orchestration (runs on localhost:6969). Manages In Progress, Review, and Done states with human approval gates. Use when orchestrating multi-task agent wo... |  | `skills/minions/SKILL.md` |
+| **oh-my-hermes** | Multi-agent orchestration workflow (Research → Interview → Plan → Execution → Verification). Coordinates specialized sub-agents across complex phases. Use when running multi-agent tasks, swarm exec... |  | `skills/oh-my-hermes/SKILL.md` |
+| **openclaw-persona-forge** | OpenClaw AI Agent soul forge and persona definition. |  | `skills/openclaw-persona-forge/SKILL.md` |
+| **perplexity** | Web search and research using Perplexity AI. |  | `skills/perplexity/SKILL.md` |
+| **podcast-generation** | Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creatio... |  | `skills/podcast-generation/SKILL.md` |
+| **Prompt Coach** | Analyze your Codex session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer. |  | `skills/Prompt Coach/SKILL.md` |
+| **prompt-governance** | Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for product... |  | `skills/prompt-governance/SKILL.md` |
+| **prompt-optimizer** | Optimize raw prompts into ready-to-send prompt for any LLM. |  | `skills/prompt-optimizer/SKILL.md` |
+| **pubmed-database** | PubMed and NCBI E-utilities search for biomedical literature. |  | `skills/pubmed-database/SKILL.md` |
+| **pytorch-patterns** | PyTorch deep learning training pipelines and architectures. |  | `skills/pytorch-patterns/SKILL.md` |
+| **quasi-coder** | Implement code from shorthand, quasi-code, and natural language. |  | `skills/quasi-coder/SKILL.md` |
+| **ralph** | Self-referential loop until task completion with verification reviewer. |  | `skills/ralph/SKILL.md` |
+| **ralphinho-rfc-pipeline** | RFC-driven multi-agent DAG execution pattern. |  | `skills/ralphinho-rfc-pipeline/SKILL.md` |
+| **resemble-detect** | Detects AI-generated or synthetic audio, image, and video content using Resemble AI detection models. Use when analyzing media authenticity, content moderation pipelines, or when user mentions "res... |  | `skills/resemble-detect/SKILL.md` |
+| **rewind** | Retrieve recent local Rewind context. |  | `skills/rewind/SKILL.md` |
+| **santa-method** | Multi-agent adversarial verification with convergence loop. |  | `skills/santa-method/SKILL.md` |
+| **sciomc** | Orchestrate parallel scientist agents for analysis in AUTO mode. |  | `skills/sciomc/SKILL.md` |
+| **semantic-kernel** | Semantic Kernel solution guide for .NET and Python. |  | `skills/semantic-kernel/SKILL.md` |
+| **sora** | Generate, edit, and poll Sora AI video generation API. |  | `skills/sora/SKILL.md` |
+| **speech** | Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_spee... |  | `skills/speech/SKILL.md` |
+| **stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows |  | `skills/stream-chain/SKILL.md` |
+| **subagent-driven-development** | Execute implementation plans using independent subagent tasks. |  | `skills/subagent-driven-development/SKILL.md` |
+| **team-agent-orchestration** | Team-based agent squad orchestration & Kanban merge gates. |  | `skills/team-agent-orchestration/SKILL.md` |
+| **team-builder** | Interactive agent picker for dispatching parallel teams. |  | `skills/team-builder/SKILL.md` |
+| **train-sentence-transformers** | Train or fine-tune SentenceTransformers bi-encoder models. |  | `skills/train-sentence-transformers/SKILL.md` |
+| **transcribe** | Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in inte... |  | `skills/transcribe/SKILL.md` |
+| **transformers-js** | Run ML models directly in JavaScript using Transformers.js. |  | `skills/transformers-js/SKILL.md` |
+| **trl-training** | Train transformer models using TRL (SFT, DPO, GRPO, KTO). |  | `skills/trl-training/SKILL.md` |
+| **ultragoal** | Multi-goal workflow persisting plan artifacts under .omc/ultragoal. |  | `skills/ultragoal/SKILL.md` |
+| **ultrawork** | Parallel execution engine for high-throughput task completion. |  | `skills/ultrawork/SKILL.md` |
+| **unified-memory** | Share durable context across Claude, Codex, Cursor & OpenCode. |  | `skills/unified-memory/SKILL.md` |
+| **uspto-database** | USPTO patent and trademark data lookup. |  | `skills/uspto-database/SKILL.md` |
+
+### Integrations & Automation (65)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **cli-creator** | Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ... |  | `skills/cli-creator/SKILL.md` |
+| **connect** | Connect Codex to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services. |  | `skills/connect/SKILL.md` |
+| **dependabot** | Configuring and managing GitHub Dependabot. Use when applying patterns from github/dependabot or when user mentions "dependabot". |  | `skills/dependabot/SKILL.md` |
+| **dependency-updater** | Smart dependency updates across any language. Use when applying patterns from softaworks/dependency-updater or when user mentions "dependency-updater". |  | `skills/dependency-updater/SKILL.md` |
+| **file-organizer** | Intelligently organizes your files and folders across your computer by understanding context, finding duplicates, suggesting better structures, and automating cleanup tasks. Reduces cognitive load ... |  | `skills/file-organizer/SKILL.md` |
+| **flowstudio-power-automate-build** | Build & deploy Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-build or when user mentions "flowstudio-power-automate-build". |  | `skills/flowstudio-power-automate-build/SKILL.md` |
+| **flowstudio-power-automate-debug** | Debug failing Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-debug or when user mentions "flowstudio-power-automate-debug". |  | `skills/flowstudio-power-automate-debug/SKILL.md` |
+| **flowstudio-power-automate-governance** | Govern Power Automate flows at scale. Use when applying patterns from github/flowstudio-power-automate-governance or when user mentions "flowstudio-power-automate-governance". |  | `skills/flowstudio-power-automate-governance/SKILL.md` |
+| **flowstudio-power-automate-mcp** | Foundation skill for Power Automate MCP. Use when applying patterns from github/flowstudio-power-automate-mcp or when user mentions "flowstudio-power-automate-mcp". |  | `skills/flowstudio-power-automate-mcp/SKILL.md` |
+| **flowstudio-power-automate-monitoring** | Tenant-wide Power Automate monitoring. Use when applying patterns from github/flowstudio-power-automate-monitoring or when user mentions "flowstudio-power-automate-monitoring". |  | `skills/flowstudio-power-automate-monitoring/SKILL.md` |
+| **fluentui-blazor** | Microsoft Fluent UI for Blazor apps. Use when applying patterns from github/fluentui-blazor or when user mentions "fluentui-blazor". |  | `skills/fluentui-blazor/SKILL.md` |
+| **hermes-desktop-plugins** | Write Hermes desktop UI plugins. Use when applying patterns from NousResearch/hermes-desktop-plugins or when user mentions "hermes-desktop-plugins". |  | `skills/hermes-desktop-plugins/SKILL.md` |
+| **hookify-rules** | Configure hookify rules. Use when applying patterns from affaan-m/hookify-rules or when user mentions "hookify-rules". |  | `skills/hookify-rules/SKILL.md` |
+| **invoice-organizer** | Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours ... |  | `skills/invoice-organizer/SKILL.md` |
+| **issue-fields-migration** | Bulk-migrate metadata to GitHub issue fields. Use when applying patterns from github/issue-fields-migration or when user mentions "issue-fields-migration". |  | `skills/issue-fields-migration/SKILL.md` |
+| **mi-skill** | Habilidad ingerida y registrada via SuperDuperSkills CLI (https://github.com/autor/mi-skill) |  | `skills/mi-skill/SKILL.md` |
+| **n8n-agents** | Design n8n AI agents the right way. Use when building or editing any @n8n/n8n-nodes-langchain.* AI node — an AI Agent, LLM chain, Text Classifier, or Information Extractor — and whenever the user m... |  | `skills/n8n-agents/SKILL.md` |
+| **n8n-binary-and-data** | Handle files and binary data in n8n correctly. Use when working with files, images, PDFs, attachments, uploads or downloads, base64, vision/multimodal input, or when an AI agent needs a file as too... |  | `skills/n8n-binary-and-data/SKILL.md` |
+| **n8n-code-javascript** | Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with this.helpers / the $helpers global, working with dates using ... |  | `skills/n8n-code-javascript/SKILL.md` |
+| **n8n-code-python** | Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to understand Python limitations in n8n Code nodes. Use ... |  | `skills/n8n-code-python/SKILL.md` |
+| **n8n-code-tool** | Write JavaScript or Python for the n8n Custom Code Tool (@n8n/n8n-nodes-langchain.toolCode) — the AI-agent-callable tool, NOT the workflow Code node. Use when building a Code Tool attached to an AI... |  | `skills/n8n-code-tool/SKILL.md` |
+| **n8n-error-handling** | Wire n8n error handling so failures are loud, structured, and recoverable. Use when building any webhook/API workflow, a scheduled or unattended workflow, or any path where a silent failure would d... |  | `skills/n8n-error-handling/SKILL.md` |
+| **n8n-expression-syntax** | Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expression errors, mapping data between n... |  | `skills/n8n-expression-syntax/SKILL.md` |
+| **n8n-mcp-tools-expert** | Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nodes, validating configurations, accessing templates, managing workflows, organizing workflows into folders, managing c... |  | `skills/n8n-mcp-tools-expert/SKILL.md` |
+| **n8n-multi-instance** | Use when an n8n-mcp account targets more than one n8n instance — i.e. the `n8n_instances` tool is available, the user mentions multiple n8n instances or environments (prod vs staging, several teams... |  | `skills/n8n-multi-instance/SKILL.md` |
+| **n8n-node-configuration** | Operation-aware node configuration guidance. Use when configuring nodes, understanding property dependencies, determining required fields, choosing between get_node detail levels, or learning commo... |  | `skills/n8n-node-configuration/SKILL.md` |
+| **n8n-self-hosting** | Deploy a production self-hosted n8n end-to-end to a fresh Linux VM over SSH, using Docker Compose behind a Caddy reverse proxy with automatic HTTPS. Use whenever the user wants to self-host, instal... |  | `skills/n8n-self-hosting/SKILL.md` |
+| **n8n-subworkflows** | Build reusable, composable n8n sub-workflows. Use when extracting shared logic, building anything multi-step or reused across workflows, or any workflow over ~10 nodes — and whenever the user menti... |  | `skills/n8n-subworkflows/SKILL.md` |
+| **n8n-validation-expert** | Interpret validation errors and guide fixing them. Use when encountering validation errors, validation warnings, false positives, operator structure issues, or need help understanding validation re... |  | `skills/n8n-validation-expert/SKILL.md` |
+| **n8n-workflow-patterns** | Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, planning workflow architecture, or asking ... |  | `skills/n8n-workflow-patterns/SKILL.md` |
+| **parcel-tracking** | Track parcels and check delivery status for Australian and international couriers. Searches Gmail for dispatch/shipping emails and provides tracking links for all major Australian couriers includin... |  | `skills/parcel-tracking/SKILL.md` |
+| **plugin-creator** | Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use... |  | `skills/plugin-creator/SKILL.md` |
+| **plugin-forge** | Create and manage Claude Code plugins with proper manifests. |  | `skills/plugin-forge/SKILL.md` |
+| **power-apps-code-app-scaffold** | Scaffold Power Apps Code App project with PAC CLI setup. |  | `skills/power-apps-code-app-scaffold/SKILL.md` |
+| **power-bi-dax-optimization** | Power BI DAX formula optimization prompt. |  | `skills/power-bi-dax-optimization/SKILL.md` |
+| **power-bi-model-design-review** | Power BI data model design review prompt. |  | `skills/power-bi-model-design-review/SKILL.md` |
+| **power-bi-performance-troubleshooting** | Systematic Power BI performance troubleshooting. |  | `skills/power-bi-performance-troubleshooting/SKILL.md` |
+| **power-bi-report-design-consultation** | Power BI report visualization design prompt. |  | `skills/power-bi-report-design-consultation/SKILL.md` |
+| **power-platform-architect** | Transform business requirements into Power Platform solution architecture. |  | `skills/power-platform-architect/SKILL.md` |
+| **power-platform-mcp-connector-suite** | Generate complete Power Platform custom connector with MCP integration. |  | `skills/power-platform-mcp-connector-suite/SKILL.md` |
+| **powerbi-modeling** | Power BI semantic modeling assistant for optimized data models. |  | `skills/powerbi-modeling/SKILL.md` |
+| **pr-dashboard** | Open GitHub PR dashboard in the browser. |  | `skills/pr-dashboard/SKILL.md` |
+| **pr-link-issue** | Link GitHub issue and Linear ticket in PR description. |  | `skills/pr-link-issue/SKILL.md` |
+| **pr-screenshots** | Embed before/after screenshots and annotated images in PRs. |  | `skills/pr-screenshots/SKILL.md` |
+| **pr-writer** | Create, refresh, and rewrite PR titles and descriptions. |  | `skills/pr-writer/SKILL.md` |
+| **roundup** | Generate personalized status briefings from GitHub, Teams, Slack. |  | `skills/roundup/SKILL.md` |
+| **roundup-setup** | Onboarding to configure personalized status briefings. |  | `skills/roundup-setup/SKILL.md` |
+| **search-first** | Research-before-coding workflow — search existing tools first. |  | `skills/search-first/SKILL.md` |
+| **stripe-apps** | Build, modify, and review Stripe Apps. |  | `skills/stripe-apps/SKILL.md` |
+| **stripe-best-practices** | Stripe API integration choices (Checkout vs PaymentIntents). |  | `skills/stripe-best-practices/SKILL.md` |
+| **stripe-directory** | Find Stripe partners & software for workflows. |  | `skills/stripe-directory/SKILL.md` |
+| **stripe-docs** | Search and look up official Stripe documentation. |  | `skills/stripe-docs/SKILL.md` |
+| **stripe-projects** | Bootstrap & manage Stripe Projects CLI. |  | `skills/stripe-projects/SKILL.md` |
+| **sync-gbrain** | Keep gbrain current with this repo's code and refresh agent search guidance in AGENTS.md. Wraps the gstack-gbrain-sync orchestrator with state (gstack) |  | `skills/sync-gbrain/SKILL.md` |
+| **unified-notifications-ops** | Operate notifications across GitHub, Linear, desktop alerts. |  | `skills/unified-notifications-ops/SKILL.md` |
+| **update-markdown-file-index** | Update markdown section with file index. |  | `skills/update-markdown-file-index/SKILL.md` |
+| **update-specification** | Update solution specification optimized for LLM consumption. |  | `skills/update-specification/SKILL.md` |
+| **upgrade-stripe** | Upgrade Stripe API versions and SDKs safely. |  | `skills/upgrade-stripe/SKILL.md` |
+| **using-n8n-mcp-skills** | Use when building, editing, validating, testing, or debugging an n8n workflow through the n8n-mcp MCP server — designing a flow, configuring a node, writing an expression or Code node, wiring crede... |  | `skills/using-n8n-mcp-skills/SKILL.md` |
+| **visa-doc-translate** | Translate visa application document images to bilingual PDF. |  | `skills/visa-doc-translate/SKILL.md` |
+| **vite-patterns** | Vite build tool patterns: config, HMR, env, SSR, pre-bundling. |  | `skills/vite-patterns/SKILL.md` |
+| **workiq-copilot** | Query M365 Copilot data via WorkIQ CLI/MCP server. |  | `skills/workiq-copilot/SKILL.md` |
+| **x-api** | X/Twitter API integration for tweets, threads & search. |  | `skills/x-api/SKILL.md` |
+| **youtube-downloader** | Download YouTube videos with customizable quality and format options. Use this skill when the user asks to download, save, or grab YouTube videos. Supports various quality settings (best, 1080p, 72... |  | `skills/youtube-downloader/SKILL.md` |
+| **yuanbao** | Yuanbao (元宝) chat group management. |  | `skills/yuanbao/SKILL.md` |
+
+### SEO & Content (2)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **hackernews-frontpage** | Scrape the Hacker News front page (titles, points, comment counts). |  | `skills/hackernews-frontpage/SKILL.md` |
+| **webmcpify** | Make web app agent-ready with WebMCP tool manifest. |  | `skills/webmcpify/SKILL.md` |
+
+### Project Management (1)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **agile-product-owner** | Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use when writing user stories, creating ... |  | `skills/agile-product-owner/SKILL.md` |
+
+### Writing & Content (55)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **app-docs** | Generate complete user documentation for a web app with screenshots. Browses the app via browser automation, screenshots every screen, and produces a structured user guide with step-by-step instruc... |  | `skills/app-docs/SKILL.md` |
+| **convert-pdf-to-md** | Converts PDF (.pdf) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing PDF files, converting PDF to text/markdown, or when... |  | `skills/convert-pdf-to-md/SKILL.md` |
+| **convert-word-to-md** | Converts Word (.docx) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing Word documents, converting docx to markdown, or w... |  | `skills/convert-word-to-md/SKILL.md` |
+| **document-api-endpoint** | Document & type Sentry API endpoints. Use when applying patterns from getsentry/document-api-endpoint or when user mentions "document-api-endpoint". |  | `skills/document-api-endpoint/SKILL.md` |
+| **document-generate** | Generate missing documentation from scratch for a feature, module, or entire project. (gstack) |  | `skills/document-generate/SKILL.md` |
+| **document-release** | Post-ship documentation update. (gstack) |  | `skills/document-release/SKILL.md` |
+| **docx** | Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files) or Word templates (.dotx files). Triggers include: any mention of 'Word doc', 'word document... |  | `skills/docx/SKILL.md` |
+| **docx-official** | Generating Word documents programmatically with docx library in Node.js. Use when generating .docx reports, contracts, invoices, or any structured Word document from data. |  | `skills/docx-official/SKILL.md` |
+| **dossier** | Decision-grade entity research skill — produces a hypothesis-tested dossier on a specific company, person, nonprofit, or government org, not a generic profile. Forcing intake makes the user state t... |  | `skills/dossier/SKILL.md` |
+| **edit-article** | Edit and improve articles by restructuring sections, improving clarity, and tightening prose. Use when user wants to edit, revise, or improve an article draft. |  | `skills/edit-article/SKILL.md` |
+| **editor-pro-max** | Edición profesional de contenido, corrección de estilo, copywriting y pulido editorial de alto impacto. |  | `skills/editor-pro-max/SKILL.md` |
+| **finnish-humanizer** | Remove AI writing markers from Finnish text. Use when applying patterns from github/finnish-humanizer or when user mentions "finnish-humanizer". |  | `skills/finnish-humanizer/SKILL.md` |
+| **grants** | NIH grant research skill for clinical researchers. Grill-me intake (research idea + career stage + preliminary data + environment + submission posture + known institute targets) locks down the fund... |  | `skills/grants/SKILL.md` |
+| **human-ai** | Rewrites English text to sound human, natural, and undetectable by AI detection tools. Removes machine language patterns and AI slop, restores semantic entropy, and injects voice and personality. U... |  | `skills/human-ai/SKILL.md` |
+| **humanizar** | Reescreve textos em português brasileiro para soarem mais humanos e naturais, reduzindo padrões típicos de escrita gerada por IA sem alterar fatos, argumento ou intenção. Use quando o texto em PT-B... |  | `skills/humanizar/SKILL.md` |
+| **humanizer** | Remove signs of AI-generated writing from text. Use when editing or reviewing text to make it sound more natural and human-written. Based on Wikipedia's comprehensive "Signs of AI writing" guide. D... |  | `skills/humanizer/SKILL.md` |
+| **influencer-marketing** | Influencer & creator partnerships. Use when applying patterns from coreyhaines31/influencer-marketing or when user mentions "influencer-marketing". |  | `skills/influencer-marketing/SKILL.md` |
+| **internal-narrative** | Build and maintain one coherent company story across all audiences — employees, investors, customers, candidates, and partners. Detects narrative contradictions and ensures the same truth is framed... |  | `skills/internal-narrative/SKILL.md` |
+| **litreview** | Academic literature orientation skill that searches papers via free keyless APIs (PubMed E-utilities + OpenAlex) by default — with the Consensus MCP as an optional enhancement lane when connected —... |  | `skills/litreview/SKILL.md` |
+| **make-pdf** | Turn any markdown file into a publication-quality PDF. (gstack) |  | `skills/make-pdf/SKILL.md` |
+| **oo-component-documentation** | Create or update standardized object-oriented component documentation. |  | `skills/oo-component-documentation/SKILL.md` |
+| **pdf** | Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, r... |  | `skills/pdf/SKILL.md` |
+| **pdf-official** | Generating PDFs with pdfkit or puppeteer in Node.js. Use when generating PDF reports, invoices, certificates, or any printable document from data or HTML templates. |  | `skills/pdf-official/SKILL.md` |
+| **pdftk-server** | Command-line PDFtk Server integration for PDF manipulation. |  | `skills/pdftk-server/SKILL.md` |
+| **pptx** | Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting... |  | `skills/pptx/SKILL.md` |
+| **pptx-official** | Generating PowerPoint presentations with pptxgenjs in Node.js. Use when creating automated presentations, slide decks, pitch decks, or reports in .pptx format from data. |  | `skills/pptx-official/SKILL.md` |
+| **project-docs** | Generate project documentation from codebase analysis — ARCHITECTURE.md, API_ENDPOINTS.md, DATABASE_SCHEMA.md. Reads source code, schema files, routes, and config to produce accurate, structured do... |  | `skills/project-docs/SKILL.md` |
+| **public-relations** | Earned media, press coverage, journalist outreach. |  | `skills/public-relations/SKILL.md` |
+| **pulse** | Multi-source recency research skill that takes the pulse of any topic across Reddit, Hacker News, the open web, and optionally X/Twitter within a configurable recent window (default 30 days). Forci... |  | `skills/pulse/SKILL.md` |
+| **README** |  |  | `skills/README/SKILL.md` |
+| **readme-blueprint-generator** | Intelligent README.md generation prompt. |  | `skills/readme-blueprint-generator/SKILL.md` |
+| **research** | Default entry point for any research request — a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, grants... |  | `skills/research/SKILL.md` |
+| **resume** | Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment. |  | `skills/resume/SKILL.md` |
+| **resume-ats-beater** | Este skill deve ser usado para reescrever currículos com foco em compatibilidade ATS e impacto para recrutadores, e/ou auditar perfis LinkedIn para maximizar visibilidade e conversão profissional. ... |  | `skills/resume-ats-beater/SKILL.md` |
+| **scholar-evaluation** | Structured evaluation for scholarly papers and research proposals. |  | `skills/scholar-evaluation/SKILL.md` |
+| **speak-summary** | Convert text/markdown summaries to listenable MP3 using neural TTS. |  | `skills/speak-summary/SKILL.md` |
+| **spreadsheet** | Spreadsheet creation and formula analysis (.xlsx, .csv). |  | `skills/spreadsheet/SKILL.md` |
+| **syllabus** | Generates a curated supplementary reading list from any course syllabus using Consensus academic search. Grill-me intake (syllabus input format + course audience + year range) plus a grouping forci... |  | `skills/syllabus/SKILL.md` |
+| **tailored-resume-generator** | Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements to maximize interview chances |  | `skills/tailored-resume-generator/SKILL.md` |
+| **technical-documentation** | Build and review high-quality technical docs as well as agent instruction files in your repository. |  | `skills/technical-documentation/SKILL.md` |
+| **technical-job-search** | Software engineer job search — CV tailoring & cover letters. |  | `skills/technical-job-search/SKILL.md` |
+| **technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. |  | `skills/technical-writing/SKILL.md` |
+| **TEMPLATE** |  |  | `skills/TEMPLATE/SKILL.md` |
+| **timeline-report** | Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from Codex-mem's timeline. Use when asked for a timeline report, project history analysis, deve... |  | `skills/timeline-report/SKILL.md` |
+| **wiki** | LLM Wiki — persistent markdown knowledge base compounding across sessions. |  | `skills/wiki/SKILL.md` |
+| **writer-memory** | Agentic memory system for fiction writers (characters & scenes). |  | `skills/writer-memory/SKILL.md` |
+| **writing-beats** | Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it. |  | `skills/writing-beats/SKILL.md` |
+| **writing-clearly-and-concisely** | Writing clear and concise prose for documentation & UI. |  | `skills/writing-clearly-and-concisely/SKILL.md` |
+| **writing-for-agents** | Writing documents for AI agents (AGENTS.md, skills). |  | `skills/writing-for-agents/SKILL.md` |
+| **writing-fragments** | Writing, explore — mine raw fragments, no structure yet. |  | `skills/writing-fragments/SKILL.md` |
+| **writing-plans** | Writing multi-step execution plans before touching code. |  | `skills/writing-plans/SKILL.md` |
+| **writing-shape** | Writing, exploit — shape raw material into an article, paragraph by paragraph. |  | `skills/writing-shape/SKILL.md` |
+| **writing-skills** | Creating, editing, and verifying AI agent skills. |  | `skills/writing-skills/SKILL.md` |
+| **xlsx** | Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file ... |  | `skills/xlsx/SKILL.md` |
+| **xlsx-official** | Generating Excel files with xlsx/exceljs in Node.js. Use when generating .xlsx reports, data exports, dashboards, or spreadsheets from database data. |  | `skills/xlsx-official/SKILL.md` |
+
+### Business & Strategy (36)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **brief** | /cs:brief <topic> — Generate a one-page strategy brief from an office-hours intake. First step in the strategic sprint pipeline. Use when a strategic question needs to be framed before boardroom de... |  | `skills/brief/SKILL.md` |
+| **creacion-de-oferta** | Convierte un servicio difuso en una oferta que se puede vender — resultado concreto, plazo, precio anclado al valor y no a las horas, garantía defendible y entregables listados. Incluye las seis pr... |  | `skills/creacion-de-oferta/SKILL.md` |
+| **difficult-workplace-conversations** | Workplace conflict & feedback framework. Use when applying patterns from softaworks/difficult-workplace-conversations or when user mentions "difficult-workplace-conversations". |  | `skills/difficult-workplace-conversations/SKILL.md` |
+| **domain-name-brainstormer** | Generates creative domain name ideas for your project and checks availability across multiple TLDs (.com, .io, .dev, .ai, etc.). Saves hours of brainstorming and manual checking. |  | `skills/domain-name-brainstormer/SKILL.md` |
+| **energy-procurement** | Tariff optimization & energy cost management. Use when applying patterns from affaan-m/energy-procurement or when user mentions "energy-procurement". |  | `skills/energy-procurement/SKILL.md` |
+| **exam-ready** | Exam preparation from study notes & syllabus. Use when applying patterns from github/exam-ready or when user mentions "exam-ready". |  | `skills/exam-ready/SKILL.md` |
+| **feedback-mastery** | Structured feedback delivery frameworks. Use when applying patterns from softaworks/feedback-mastery or when user mentions "feedback-mastery". |  | `skills/feedback-mastery/SKILL.md` |
+| **fork-discipline** | Audit and enforce the core/client boundary in multi-client projects. Detects where shared platform code is tangled with client-specific code, finds hardcoded client checks, config files that replac... |  | `skills/fork-discipline/SKILL.md` |
+| **game-changing-features** | Identify 10x product opportunities. Use when applying patterns from softaworks/game-changing-features or when user mentions "game-changing-features". |  | `skills/game-changing-features/SKILL.md` |
+| **i-have-adhd** | Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /... |  | `skills/i-have-adhd/SKILL.md` |
+| **impediment-prioritization** | Score & rank project impediments. Use when applying patterns from github/impediment-prioritization or when user mentions "impediment-prioritization". |  | `skills/impediment-prioritization/SKILL.md` |
+| **interview-system-designer** | This skill should be used when the user asks to "design interview processes", "create hiring pipelines", "calibrate interview loops", "generate interview questions", "design competency matrices", "... |  | `skills/interview-system-designer/SKILL.md` |
+| **inventory-demand-planning** | Retail demand forecasting & inventory. Use when applying patterns from affaan-m/inventory-demand-planning or when user mentions "inventory-demand-planning". |  | `skills/inventory-demand-planning/SKILL.md` |
+| **ito-baskets** | Prediction-market basket catalog data. Use when applying patterns from affaan-m/ito-baskets or when user mentions "ito-baskets". |  | `skills/ito-baskets/SKILL.md` |
+| **knowledge-ops** | Use when a Head of Ops, Knowledge Manager, or TPM-Internal needs to author, validate, or clean up company SOPs and internal runbooks (procurement intake, vendor offboarding, incident-comms cascade,... |  | `skills/knowledge-ops/SKILL.md` |
+| **meetings** | Use when someone wants to decide whether a meeting is worth calling, price a meeting in dollars, build a timeboxed agenda with desired outcomes, or turn messy meeting notes into owned action items ... |  | `skills/meetings/SKILL.md` |
+| **modo-tdah** | Modo de enfoque ejecutivo ultra-conciso: elimina explicaciones infladas, va directo a la solución y ejecuta paso a paso sin rodeos. |  | `skills/modo-tdah/SKILL.md` |
+| **neuro-persuasion-toolkit** | Aplica neurociencia del comportamiento y neuromarketing a copy, anuncios, SEO/SEM/MEO, propuestas comerciales y scripts de ventas (frías, consultivas, cierres). Úsalo siempre que el usuario esté es... |  | `skills/neuro-persuasion-toolkit/SKILL.md` |
+| **persona** |  |  | `skills/persona/SKILL.md` |
+| **personwise-community-onboarding** | Community Onboarding from supplied source materials. |  | `skills/personwise-community-onboarding/SKILL.md` |
+| **personwise-compliance-training** | Compliance Training from supplied source materials. |  | `skills/personwise-compliance-training/SKILL.md` |
+| **personwise-content-repurposing** | Content Repurposing from supplied video/audio source materials. |  | `skills/personwise-content-repurposing/SKILL.md` |
+| **personwise-create-course** | Create, refine, resume, publish polished PersonWise courses. |  | `skills/personwise-create-course/SKILL.md` |
+| **prediction-market-oracle-research** | Research prediction markets as data sources & oracle signals. |  | `skills/prediction-market-oracle-research/SKILL.md` |
+| **prediction-market-risk-review** | Review prediction market workflows for compliance and execution risk. |  | `skills/prediction-market-risk-review/SKILL.md` |
+| **process-mapper** | Use when a BizOps lead, COO, or process-improvement owner needs to document an end-to-end business process (procurement, employee onboarding, incident handoff, customer-onboarding, claims adjudicat... |  | `skills/process-mapper/SKILL.md` |
+| **production-scheduling** | Production scheduling, job sequencing & bottleneck resolution. |  | `skills/production-scheduling/SKILL.md` |
+| **prospeccion-aiq** | Construye y ejecuta una lista de prospectos calificados en Instagram para vender servicios de IA — descubre cuentas por bola de nieve, las enriquece con email y señal de monetización, las puntúa y ... |  | `skills/prospeccion-aiq/SKILL.md` |
+| **quality-nonconformance** | Quality control, non-conformance investigation & CAPA in manufacturing. |  | `skills/quality-nonconformance/SKILL.md` |
+| **recursive-decision-ledger** | Decision ledger for repeated rollouts and stochastic optimization. |  | `skills/recursive-decision-ledger/SKILL.md` |
+| **returns-reverse-logistics** | Returns authorization, inspection, disposition & warranty claims. |  | `skills/returns-reverse-logistics/SKILL.md` |
+| **saas-scaffolder** | Generates complete, production-ready SaaS project boilerplate including authentication, database schemas, billing integration, API routes, and a working dashboard using Next.js 14+ App Router, Type... |  | `skills/saas-scaffolder/SKILL.md` |
+| **scaffold-exercises** | Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course s... |  | `skills/scaffold-exercises/SKILL.md` |
+| **selector-de-nicho** | Elige un nicho concreto para vender servicios de IA y lo valida con evidencia antes de invertir tiempo — cruza acceso real del usuario, dolor medible del sector y capacidad de pago, y devuelve un n... |  | `skills/selector-de-nicho/SKILL.md` |
+| **sponsor-finder** | Find sponsorable GitHub dependencies via deps.dev. |  | `skills/sponsor-finder/SKILL.md` |
+| **team** | Coordinate N agents on shared task list using Claude native teams. |  | `skills/team/SKILL.md` |
+
+### Compliance & Legal (23)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **application-security-testing** | Application security testing (AppSec) across a whole product with Strix — decide which asset needs which test (source code, running web app, API, CI pipeline), run it, and turn the results into a r... |  | `skills/application-security-testing/SKILL.md` |
+| **capa-officer** | CAPA system management for medical device QMS. Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA metrics. Use when running CAPA investigations, 5-Why anal... |  | `skills/capa-officer/SKILL.md` |
+| **ci-security-scanning-with-strix** | Add security scanning to CI/CD with Strix — GitHub Actions, GitLab CI, or any pipeline — so every pull request gets a diff-scoped AI pentest that blocks vulnerable code before it merges, with resul... |  | `skills/ci-security-scanning-with-strix/SKILL.md` |
+| **cso** | Chief Security Officer mode. (gstack) |  | `skills/cso/SKILL.md` |
+| **cybersecurity** | Community cybersecurity knowledge suite containing 817 security skills mapped to MITRE ATT&CK, NIST CSF, and OWASP standards. Covers vulnerability assessment, secret scanning, threat modeling, hard... |  | `skills/cybersecurity/SKILL.md` |
+| **detection-engineering-coverage-evaluation** | Google SecOps detection engineering workflow. Use when applying patterns from google/detection-engineering-coverage-evaluation or when user mentions "detection-engineering-coverage-evaluation". |  | `skills/detection-engineering-coverage-evaluation/SKILL.md` |
+| **find-security-vulnerabilities-in-code** | Find security vulnerabilities in a codebase or repository with Strix — a white-box AI security review that reads your source, reasons about the actual data flow and authorization model, then exploi... |  | `skills/find-security-vulnerabilities-in-code/SKILL.md` |
+| **fix-security-vulnerabilities-with-strix** | Fix security vulnerabilities found by a Strix pentest (open-source CLI or app.strix.ai cloud) — triage by severity, patch the root cause rather than the symptom, and re-run Strix to prove each fix ... |  | `skills/fix-security-vulnerabilities-with-strix/SKILL.md` |
+| **gha-security-review** | GitHub Actions workflow security audit. Use when applying patterns from getsentry/gha-security-review or when user mentions "gha-security-review". |  | `skills/gha-security-review/SKILL.md` |
+| **healthcare-cdss-patterns** | Clinical decision support patterns. Use when applying patterns from affaan-m/healthcare-cdss-patterns or when user mentions "healthcare-cdss-patterns". |  | `skills/healthcare-cdss-patterns/SKILL.md` |
+| **healthcare-emr-patterns** | EHR/EMR clinical safety & prescription flows. Use when applying patterns from affaan-m/healthcare-emr-patterns or when user mentions "healthcare-emr-patterns". |  | `skills/healthcare-emr-patterns/SKILL.md` |
+| **healthcare-eval-harness** | Patient safety evaluation harness. Use when applying patterns from affaan-m/healthcare-eval-harness or when user mentions "healthcare-eval-harness". |  | `skills/healthcare-eval-harness/SKILL.md` |
+| **healthcare-phi-compliance** | PHI & PII compliance patterns. Use when applying patterns from affaan-m/healthcare-phi-compliance or when user mentions "healthcare-phi-compliance". |  | `skills/healthcare-phi-compliance/SKILL.md` |
+| **hipaa-compliance** | HIPAA privacy & security compliance. Use when applying patterns from affaan-m/hipaa-compliance or when user mentions "hipaa-compliance". |  | `skills/hipaa-compliance/SKILL.md` |
+| **managed-pentesting-with-strix** | Run a managed pentest of a web app, API, repository, or local workspace on the app.strix.ai platform with the `strix cloud` CLI or REST API — no local Docker or LLM key needed. Safely review and up... |  | `skills/managed-pentesting-with-strix/SKILL.md` |
+| **owasp-top-10-testing** | Test an application against the OWASP Top 10 with Strix — autonomous AI agents that attempt real exploits for each category of the current OWASP Top 10:2025 (broken access control including SSRF, s... |  | `skills/owasp-top-10-testing/SKILL.md` |
+| **penetration-testing-with-strix** | Pentest a web app, API, codebase, repository, URL, domain, or IP with Strix — autonomous AI penetration testing that exploits and proves vulnerabilities (OWASP Top 10 and beyond — injection, XSS, S... |  | `skills/penetration-testing-with-strix/SKILL.md` |
+| **quality-documentation-manager** | Document control system management for medical device QMS. Covers document numbering, version control, change management, and 21 CFR Part 11 compliance. Use when working on document control procedu... |  | `skills/quality-documentation-manager/SKILL.md` |
+| **red-team** | Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations. Covers MITRE ATT&CK kill-chain planning, technique scoring, choke point iden... |  | `skills/red-team/SKILL.md` |
+| **secret-scanning** | Configure GitHub secret scanning, push protection & remediation. |  | `skills/secret-scanning/SKILL.md` |
+| **threat-model-analyst** | STRIDE-A threat model analysis for repositories. |  | `skills/threat-model-analyst/SKILL.md` |
+| **tm7-threat-model** | Create Microsoft Threat Modeling Tool (.tm7) files. |  | `skills/tm7-threat-model/SKILL.md` |
+| **web-app-penetration-testing** | Pentest a web app or website end to end — black-box testing of a live URL, staging environment, or local dev server that finds and exploits real vulnerabilities (auth bypass, broken access control,... |  | `skills/web-app-penetration-testing/SKILL.md` |
+
+### Productivity & People (4)
+
+| Skill | Description | GitHub | Location |
+|-------|-------------|--------|----------|
+| **aprende** | EN — Review the current conversation and surface reusable learnings across four categories (memory, lesson, skill, project-doc). Generate a numbered candidate list first; only write to disk after t... |  | `skills/aprende/SKILL.md` |
+| **aprende-skill** | Metodología de aprendizaje activo y aprendizaje acelerado para asimilar rápidamente nuevos dominios técnicos. |  | `skills/aprende-skill/SKILL.md` |
+| **desk-journal** | Persistent desk journal memory entries. Use when applying patterns from github/desk-journal or when user mentions "desk-journal". |  | `skills/desk-journal/SKILL.md` |
+| **desk-open** | Open new desk in workshop. Use when applying patterns from github/desk-open or when user mentions "desk-open". |  | `skills/desk-open/SKILL.md` |

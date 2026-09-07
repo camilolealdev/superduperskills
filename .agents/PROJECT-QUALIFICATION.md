@@ -1,7 +1,7 @@
 # 🛡️ Manifiesto de Cualificación del Proyecto — SuperDuperSkills
 
 **Proyecto:** `superduperskills`
-**Fase Actual:** 0-to-1 MVP / Desarrollo Activo
+**Fase Actual:** mvp
 **Objetivos Clave:** YAGNI Architecture, UI Polish, Automated Testing, Security Compliance
 
 ## ⛔ Protocolo de Seguridad y Lectura Mandatoria
@@ -29,5 +29,7 @@
 | 17 | CORE | `agentic-awesome-skills` | Catálogo de Patrones Agenticos Autónomos | ✅ Localizada | [`skills/agentic-awesome-skills/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/agentic-awesome-skills/SKILL.md) |
 | 18 | CORE | `gsd-core` | Get Shit Done (GSD) Execution Framework | ✅ Localizada | [`skills/gsd-core/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/gsd-core/SKILL.md) |
 | 19 | CORE | `i-have-adhd` | Formateo de Salida Action-First | ✅ Localizada | [`skills/i-have-adhd/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/i-have-adhd/SKILL.md) |
-| 20 | USER_SELECTED | `emil-design-eng` | Habilitada interactivamente por el usuario. | ✅ Localizada | [`skills/emil-design-eng/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/emil-design-eng/SKILL.md) |
-| 21 | USER_SELECTED | `mi-skill` | Habilitada interactivamente por el usuario. | ✅ Localizada | [`skills/mi-skill/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/mi-skill/SKILL.md) |
+| 20 | MODE_MVP | `prototype` | Prototipado rápido de interfaces de alta fidelidad | ✅ Localizada | [`skills/prototype/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/prototype/SKILL.md) |
+| 21 | MODE_MVP | `pick-ui-library` | Selección inteligente de librería UI sin sobrecarga | ✅ Localizada | [`skills/pick-ui-library/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/pick-ui-library/SKILL.md) |
+| 22 | MODE_MVP | `tailwind-theme-builder` | Tokens de diseño y configuración Tailwind | ✅ Localizada | [`skills/tailwind-theme-builder/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/tailwind-theme-builder/SKILL.md) |
+| 23 | MODE_MVP | `ask-sonner` | Patrones y troubleshooting del sistema de toasts | ✅ Localizada | [`skills/ask-sonner/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/ask-sonner/SKILL.md) |
