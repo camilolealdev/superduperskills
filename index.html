@@ -196,100 +196,303 @@ body::before {
 }
 
 /* ═══════════════════════════════════════════
-   ONBOARDING
+   ONBOARDING — INDUSTRIAL BRUTALIST HUD
    ═══════════════════════════════════════════ */
 .onboarding-overlay {
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: rgba(12,14,19,0.85);
-  backdrop-filter: blur(30px) saturate(1.2);
-  -webkit-backdrop-filter: blur(30px) saturate(1.2);
+  background: rgba(6, 8, 12, 0.94);
+  backdrop-filter: blur(25px) saturate(1.3);
+  -webkit-backdrop-filter: blur(25px) saturate(1.3);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.4s var(--ease-out), visibility 0.4s;
+  padding: var(--sp-4);
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.3s;
+}
+.onboarding-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0px, rgba(0, 0, 0, 0.35) 1px, transparent 1px, transparent 3px);
+  pointer-events: none;
+  opacity: 0.7;
 }
 .onboarding-overlay.hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
-.onboarding-content { text-align: center; max-width: 560px; padding: var(--sp-8); }
+.onboarding-hud {
+  position: relative;
+  width: 100%;
+  max-width: 680px;
+  background: #090c12;
+  border: 2px solid var(--accent);
+  box-shadow: 8px 8px 0px #000, 0 0 35px rgba(0, 229, 160, 0.2);
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+/* Corner Crosshairs */
+.onboarding-hud::before,
+.onboarding-hud::after {
+  content: "+";
+  position: absolute;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  color: var(--accent);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 2;
+}
+.onboarding-hud::before { top: 6px; left: 8px; }
+.onboarding-hud::after { top: 6px; right: 8px; }
 
+/* Top Telemetry Header */
+.hud-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: rgba(0, 229, 160, 0.08);
+  border-bottom: 1px solid var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.hud-title {
+  color: var(--accent);
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hud-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+}
+.hud-pulse {
+  width: 7px;
+  height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent);
+  animation: hudPulse 1.4s infinite;
+}
+@keyframes hudPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.7); }
+}
+
+/* Steps Body */
+.hud-body {
+  padding: var(--sp-6) var(--sp-8);
+  position: relative;
+  background: radial-gradient(circle at 50% 20%, rgba(0, 229, 160, 0.04) 0%, transparent 70%);
+}
 .onboarding-step { display: none; }
 .onboarding-step.active {
   display: block;
-  animation: stepEnter 0.45s var(--ease-out) forwards;
+  animation: hudStepEnter 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-@keyframes stepEnter {
-  from { opacity: 0; transform: translateY(12px) scale(0.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+@keyframes hudStepEnter {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-.onboarding-step .step-icon { font-size: 3.5rem; margin-bottom: var(--sp-3); display: block; }
+.hud-step-tag {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(0, 229, 160, 0.12);
+  border: 1px solid rgba(0, 229, 160, 0.35);
+  padding: 3px 10px;
+  margin-bottom: var(--sp-3);
+}
+.hud-step-tag.tag-mandatory {
+  color: #ff4757;
+  background: rgba(255, 71, 87, 0.12);
+  border-color: rgba(255, 71, 87, 0.4);
+}
+.hud-step-tag.tag-security {
+  color: #ffa502;
+  background: rgba(255, 165, 2, 0.12);
+  border-color: rgba(255, 165, 2, 0.4);
+}
+
 .onboarding-step h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.8rem, 5vw, 2.8rem);
-  letter-spacing: 0.04em;
-  line-height: 1.1;
-  margin-bottom: var(--sp-2);
-  background: linear-gradient(135deg, var(--accent), var(--comic-blue));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(1.6rem, 4.5vw, 2.3rem);
+  letter-spacing: 0.03em;
+  line-height: 1.15;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+  color: #ffffff;
+}
+.onboarding-step h2 .accent-word {
+  color: var(--accent);
+  text-shadow: 0 0 16px rgba(0, 229, 160, 0.4);
+}
+.onboarding-step h2 .danger-word {
+  color: #ff4757;
+  text-shadow: 0 0 16px rgba(255, 71, 87, 0.4);
 }
 .onboarding-step p {
   color: var(--ink-muted);
-  font-size: 1rem;
+  font-size: 0.95rem;
   line-height: 1.6;
-  max-width: 42ch;
-  margin: 0 auto var(--sp-6);
+  margin-bottom: var(--sp-4);
 }
 
-.step-dots { display: flex; gap: 6px; justify-content: center; margin-bottom: var(--sp-6); }
+/* Technical Telemetry Box in Step */
+.hud-telemetry-box {
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-left: 3px solid var(--accent);
+  padding: var(--sp-3) var(--sp-4);
+  margin-bottom: var(--sp-5);
+  text-align: left;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.hud-telemetry-box.mandatory {
+  border-left-color: #ff4757;
+  background: rgba(255, 71, 87, 0.06);
+  border-color: rgba(255, 71, 87, 0.28);
+}
+.hud-telemetry-box .box-title {
+  color: #ff4757;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 5px;
+  letter-spacing: 0.06em;
+}
+.hud-telemetry-box.accent .box-title {
+  color: var(--accent);
+}
+.hud-grid-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+.hud-spec-item {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 5px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.hud-spec-item b {
+  color: #fff;
+}
+
+/* Footer / Progress & Buttons */
+.hud-footer {
+  padding: var(--sp-4) var(--sp-8) var(--sp-6);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+}
+.hud-progress-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+.hud-step-counter {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--ink-muted);
+  letter-spacing: 0.08em;
+}
+.step-dots {
+  display: flex;
+  gap: 4px;
+}
 .step-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.15);
-  transition: all 0.3s var(--ease-out);
+  width: 24px;
+  height: 4px;
+  border-radius: 0;
+  background: rgba(255, 255, 255, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .step-dot.active {
   background: var(--accent);
-  box-shadow: 0 0 8px var(--glow);
-  width: 20px;
-  border-radius: 3px;
+  box-shadow: 0 0 10px var(--accent);
 }
 
+.hud-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 .btn-skip {
   font-family: var(--font-mono);
-  font-size: 0.78rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--ink-muted);
-  background: rgba(255,255,255,0.04);
-  border: 1px solid var(--border-glass);
-  padding: 7px var(--sp-5);
-  border-radius: 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 10px 16px;
+  border-radius: 0;
   cursor: pointer;
-  transition: all 0.2s var(--ease-out);
+  transition: all 0.15s ease;
 }
-.btn-skip:hover { color: var(--ink); border-color: rgba(255,255,255,0.15); }
-
+.btn-skip:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+}
 .btn-next {
-  font-family: var(--font-display);
-  font-size: 1.2rem;
-  letter-spacing: 0.06em;
-  color: var(--bg);
-  background: linear-gradient(135deg, var(--accent), var(--comic-blue));
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #000;
+  background: var(--accent);
   border: none;
-  padding: 11px var(--sp-8);
-  border-radius: 10px;
+  padding: 11px 24px;
+  border-radius: 0;
   cursor: pointer;
-  transition: transform 0.16s var(--ease-out), box-shadow 0.2s var(--ease-out);
-  margin-top: var(--sp-3);
-  box-shadow: 0 4px 16px rgba(0,229,160,0.25);
+  box-shadow: 4px 4px 0 #000, 4px 4px 0 1px var(--accent);
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+  margin-top: 0;
 }
-.btn-next:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(0,229,160,0.35); }
-.btn-next:active { transform: scale(0.97); }
+.btn-next:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 5px 5px 0 #000, 5px 5px 0 1px var(--accent);
+}
+.btn-next:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #000;
+}
+
+@media (max-width: 600px) {
+  .hud-body { padding: var(--sp-4); }
+  .hud-grid-specs { grid-template-columns: 1fr; }
+  .hud-footer { flex-direction: column; align-items: stretch; gap: var(--sp-3); }
+  .hud-actions { justify-content: space-between; }
+}
 
 /* ═══════════════════════════════════════════
    HEADER
@@ -967,38 +1170,101 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 
 <canvas id="particles" aria-hidden="true"></canvas>
 
-<!-- ONBOARDING -->
-<div class="onboarding-overlay" id="onboarding" role="dialog" aria-label="Welcome tutorial">
-  <div class="onboarding-content">
-    <div class="onboarding-step active" data-step="0">
-      <span class="step-icon" aria-hidden="true">⚡</span>
-      <h2>One Catalog, Every Agent</h2>
-      <p>3,325+ deduplicated skills for Claude Code, Gemini CLI, Codex, and Cursor — one install, every CLI.</p>
+<!-- ONBOARDING HUD -->
+<div class="onboarding-overlay" id="onboarding" role="dialog" aria-modal="true" aria-label="System Initializing Sequence">
+  <div class="onboarding-hud">
+    <!-- Top Telemetry Header -->
+    <div class="hud-header">
+      <div class="hud-title">
+        <span>⚡ SYS.INIT // SDS-CORE-V6</span>
+      </div>
+      <div class="hud-status">
+        <span class="hud-pulse" aria-hidden="true"></span>
+        <span>STATUS: 20 CORES MANDATORY</span>
+      </div>
     </div>
-    <div class="onboarding-step" data-step="1">
-      <span class="step-icon" aria-hidden="true">🧩</span>
-      <h2>3,325+ Skills. Zero Duplicates.</h2>
-      <p>Pulled from 30+ verified sources, deduplicated and organized into 17 high-performance categories.</p>
+
+    <!-- Steps Body -->
+    <div class="hud-body">
+      <!-- STEP 0 -->
+      <div class="onboarding-step active" data-step="0">
+        <div class="hud-step-tag">01 // UNIVERSAL ARCHITECTURE</div>
+        <h2>ONE CATALOG. <span class="accent-word">EVERY AGENT.</span></h2>
+        <p>3,325+ skills curados y deduplicados de más de 30 repositorios globales de vanguardia. Compatibilidad nativa e idéntica en todos tus agentes de IA.</p>
+        <div class="hud-telemetry-box accent">
+          <span class="box-title">▶ PROTOCOLO MULTI-AGENTE SOPORTADO</span>
+          <div class="hud-grid-specs">
+            <div class="hud-spec-item"><b>Claude Code:</b> ~/.claude/skills</div>
+            <div class="hud-spec-item"><b>Gemini CLI:</b> ~/.gemini/config</div>
+            <div class="hud-spec-item"><b>Codex / Cursor:</b> ~/.agents/skills</div>
+            <div class="hud-spec-item"><b>OpenCode:</b> ~/.config/opencode</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 1 (MANDATORY CORE SKILLS CONFIRMATION) -->
+      <div class="onboarding-step" data-step="1">
+        <div class="hud-step-tag tag-mandatory">02 // MANDATORY KERNEL — 100% OBLIGATORIO</div>
+        <h2>20 INVARIANT CORES <span class="danger-word">OBLIGATORIAS</span></h2>
+        <p>Regla inquebrantable de arquitectura: Las 20 skills Core se instalan y ejecutan <b>SIEMPRE de forma obligatoria</b> en cualquier proyecto antes de codificar.</p>
+        <div class="hud-telemetry-box mandatory">
+          <span class="box-title">⚠️ DIRECTIVA VITAL: CORE INCONDICIONAL</span>
+          Ningún agente tiene permitido escribir o modificar código sin tener activo el Kernel Invariante (Caveman, Ponytail, Spec-Kit, Claude-Mem, Strix, SpringBoot Security).
+          <div class="hud-grid-specs">
+            <div class="hud-spec-item"><b>YAGNI & Tokens:</b> -40% a -70% costo</div>
+            <div class="hud-spec-item"><b>Specs Previas:</b> Cero alucinación</div>
+            <div class="hud-spec-item"><b>Memoria Viva:</b> Contexto inter-sesión</div>
+            <div class="hud-spec-item"><b>Strix Defense:</b> Pentesting continuo</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2 (DYNAMIC SECURITY & PENTESTING) -->
+      <div class="onboarding-step" data-step="2">
+        <div class="hud-step-tag tag-security">03 // AUTONOMOUS RED-TEAM DEFENSE</div>
+        <h2>PENTESTING IA CON <span class="accent-word">STRIX</span></h2>
+        <p>Protección ofensiva de nivel militar: Strix descubre vulnerabilidades y las valida automáticamente mediante exploits PoC reales antes del despliegue.</p>
+        <div class="hud-telemetry-box accent">
+          <span class="box-title">▶ CAPAS DE BLINDAJE INTEGRADO</span>
+          <div class="hud-grid-specs">
+            <div class="hud-spec-item"><b>Strix Pentest:</b> Validación PoC autónoma</div>
+            <div class="hud-spec-item"><b>OWASP 2025:</b> Top 10 + ASVS 5.0</div>
+            <div class="hud-spec-item"><b>Spring Security:</b> Hardening empresarial</div>
+            <div class="hud-spec-item"><b>AgentShield:</b> Detección Prompt Injections</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 3 (DEPLOY & RUN) -->
+      <div class="onboarding-step" data-step="3">
+        <div class="hud-step-tag">04 // BOOTSTRAP IN 30 SECONDS</div>
+        <h2>DESPLIEGA EN <span class="accent-word">UN COMANDO</span></h2>
+        <p>Ejecuta el asistente interactivo o califica tu proyecto automáticamente con el CLI WorldClass v6.0.</p>
+        <div class="hud-telemetry-box accent">
+          <span class="box-title">▶ TERMINAL QUICKSTART</span>
+          <code>$ npx superduperskills</code><br>
+          <span style="color:var(--ink-muted); font-size:0.75rem;">o con interfaz gráfica web local:</span><br>
+          <code>$ python scripts/superduper_cli.py ui</code>
+        </div>
+      </div>
     </div>
-    <div class="onboarding-step" data-step="2">
-      <span class="step-icon" aria-hidden="true">🎯</span>
-      <h2>20 Invariant Cores First</h2>
-      <p>Mandatory kernel suite: compression, YAGNI, Spec-Kit, persistent memory, and autonomous AI pentesting with Strix & Spring Boot Security.</p>
+
+    <!-- Footer Controls -->
+    <div class="hud-footer">
+      <div class="hud-progress-block">
+        <span class="hud-step-counter" id="hudStepCounter">SEQUENCE [ 01 / 04 ]</span>
+        <div class="step-dots" aria-hidden="true">
+          <div class="step-dot active"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+          <div class="step-dot"></div>
+        </div>
+      </div>
+      <div class="hud-actions">
+        <button class="btn-skip" id="btn-skip">Skip [ESC]</button>
+        <button class="btn-next" id="btn-next">Next →</button>
+      </div>
     </div>
-    <div class="onboarding-step" data-step="3">
-      <span class="step-icon" aria-hidden="true">🛡️</span>
-      <h2>Autonomous Pentesting & Dynamic Security</h2>
-      <p>Strix dynamic red-team exploit verification with PoC validation and deep framework security built-in.</p>
-    </div>
-    <div class="step-dots" aria-hidden="true">
-      <div class="step-dot active"></div>
-      <div class="step-dot"></div>
-      <div class="step-dot"></div>
-      <div class="step-dot"></div>
-    </div>
-    <button class="btn-next" id="btn-next">Next →</button>
-    <br>
-    <button class="btn-skip" id="btn-skip">Skip</button>
   </div>
 </div>
 
@@ -1010,6 +1276,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
       <span><span class="num">3,325</span> skills</span>
       <span><span class="num">17</span> categories</span>
       <span><span class="num">20</span> cores</span>
+      <button class="header-link" id="btnTour" style="background:none; border:none; cursor:pointer; font:inherit; color:inherit; display:inline-flex; align-items:center; gap:4px;" aria-label="Open System Tour">⚡ Tour</button>
       <a class="header-link" href="/qualifier.html">🎯 Qualifier</a>
       <a class="header-link" href="https://github.com/camilolealdev/superduperskills" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -1706,12 +1973,14 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
     });
   });
 
-  // ─── ONBOARDING ───
+  // ─── ONBOARDING HUD ───
   const overlay = document.getElementById('onboarding');
   const steps = overlay.querySelectorAll('.onboarding-step');
   const dots = overlay.querySelectorAll('.step-dot');
   const btnNext = document.getElementById('btn-next');
   const btnSkip = document.getElementById('btn-skip');
+  const hudStepCounter = document.getElementById('hudStepCounter');
+  const btnTour = document.getElementById('btnTour');
   let current = 0;
 
   function showStep(i) {
@@ -1719,14 +1988,35 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
     dots.forEach(d => d.classList.remove('active'));
     steps[i].classList.add('active');
     dots[i].classList.add('active');
-    btnNext.textContent = i === steps.length - 1 ? "Let's go!" : 'Next →';
+    if (hudStepCounter) hudStepCounter.textContent = 'SEQUENCE [ 0' + (i + 1) + ' / 0' + steps.length + ' ]';
+    btnNext.textContent = i === steps.length - 1 ? "INITIALIZE ⚡" : 'Next →';
   }
+
+  function dismissOnboarding() {
+    overlay.classList.add('hidden');
+    try { localStorage.setItem('sds_onboarding_done', '1'); } catch(e) {}
+  }
+
+  // Check if previously dismissed
+  try {
+    if (localStorage.getItem('sds_onboarding_done') === '1') {
+      overlay.classList.add('hidden');
+    }
+  } catch(e) {}
 
   btnNext.addEventListener('click', () => {
     if (current < steps.length - 1) { current++; showStep(current); }
-    else { overlay.classList.add('hidden'); }
+    else { dismissOnboarding(); }
   });
-  btnSkip.addEventListener('click', () => overlay.classList.add('hidden'));
+  btnSkip.addEventListener('click', dismissOnboarding);
+
+  if (btnTour) {
+    btnTour.addEventListener('click', () => {
+      current = 0;
+      showStep(0);
+      overlay.classList.remove('hidden');
+    });
+  }
 
   // ─── SCROLL REVEAL ───
   const observer = new IntersectionObserver(entries => {
