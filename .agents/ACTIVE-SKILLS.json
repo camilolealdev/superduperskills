@@ -142,6 +142,13 @@
       "mandatory_view": true
     },
     {
+      "name": "penetration-testing-with-strix",
+      "category": "CORE",
+      "reason": "Autonomous AI Penetration Testing & PoC Exploit Validation",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
       "name": "prototype",
       "category": "MODE_MVP",
       "reason": "Prototipado rápido de interfaces de alta fidelidad",

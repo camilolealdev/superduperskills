@@ -15,7 +15,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 
 def detect_stack(workspace_dir):
     stack = {
-        'core': ['caveman', 'ponytail', 'spec-kit', 'token-savings', 'harness', 'claude-mem', 'rtk', 'graphify'],
+        'core': ['caveman', 'ponytail', 'spec-kit', 'token-savings', 'harness', 'claude-mem', 'rtk', 'graphify', 'penetration-testing-with-strix'],
         'frontend': [],
         'backend': [],
         'database': [],
@@ -48,6 +48,13 @@ def detect_stack(workspace_dir):
     if os.path.isfile(req_path) or os.path.isfile(pyproject_path):
         stack['backend'].append('python-expert')
 
+    # Check for Java / Spring Boot
+    if (os.path.isfile(os.path.join(workspace_dir, 'pom.xml')) or 
+        os.path.isfile(os.path.join(workspace_dir, 'build.gradle')) or 
+        os.path.isfile(os.path.join(workspace_dir, 'build.gradle.kts'))):
+        stack['backend'].append('springboot-patterns')
+        stack['security'].append('springboot-security')
+
     # Check for Go
     if os.path.isfile(os.path.join(workspace_dir, 'go.mod')):
         stack['backend'].append('golang-pro')
@@ -58,7 +65,14 @@ def detect_stack(workspace_dir):
     if os.path.isfile(os.path.join(workspace_dir, 'wrangler.toml')) or os.path.isfile(os.path.join(workspace_dir, 'wrangler.json')):
         stack['devops'].append('cloudflare-worker-builder')
 
+    # Check for CI/CD workflows -> Strix CI scanning
+    gh_workflows = os.path.join(workspace_dir, '.github', 'workflows')
+    gl_ci = os.path.join(workspace_dir, '.gitlab-ci.yml')
+    if (os.path.isdir(gh_workflows) and os.listdir(gh_workflows)) or os.path.isfile(gl_ci):
+        stack['security'].append('ci-security-scanning-with-strix')
+
     # Always add quality & security defaults
+    stack['security'].append('penetration-testing-with-strix')
     stack['security'].append('cybersecurity')
     stack['growth'].append('humanizer')
     
@@ -78,6 +92,13 @@ def print_stack_matrix(stack):
         'claude-mem': ('Persistent Memory', 'Remembers architectural decisions across turns and sessions.'),
         'rtk': ('Terminal Log Filter', 'Compresses git diff, test, and build outputs by 60-90%.'),
         'graphify': ('Codebase Knowledge Graph', 'Indexes symbols & callers to answer dependency queries without reloading 40+ files.'),
+        'penetration-testing-with-strix': ('Autonomous AI Pentesting', 'Simulates dynamic red-team attacks with PoC exploit validation.'),
+        'ci-security-scanning-with-strix': ('CI/CD Dynamic Pentesting', 'Runs automated penetration testing & vulnerability regression gates in CI pipelines.'),
+        'fix-security-vulnerabilities-with-strix': ('Autonomous PoC Remediation', 'Generates patches with automated regression tests proving exploit neutralization.'),
+        'managed-pentesting-with-strix': ('Enterprise Pentest Ops', 'Multi-agent orchestration and compliance-grade executive pentest reports.'),
+        'springboot-security': ('Spring Security 6 & OAuth2/JWT', 'Configures SecurityFilterChain, CSRF protection, method security, and JWT tokens.'),
+        'springboot-patterns': ('Spring Boot Architecture', 'Enterprise DDD layered architecture, REST APIs, JPA repositories, and caching.'),
+        'agentshield': ('Agent Security Guardrails', 'Protects against prompt injections, data exfiltration, and tool misuse in AI agents.'),
         'react-patterns': ('React 19 & Component Architecture', 'Optimizes re-renders and component composition.'),
         'nextjs-developer': ('Next.js App Router', 'Handles Server Components, Server Actions, and SSR patterns.'),
         'tailwind-theme-builder': ('Tailwind Styling', 'Configures accessible design tokens and utility classes.'),

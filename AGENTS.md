@@ -53,6 +53,8 @@ prompt-improver-skill-repo/ # Mejora prompts vagos antes de ejecutar (★1.8k)
 git-cicd-skills/            # Git workflow, CI/CD, PR review
 behisecc-security-skills/   # OWASP, STRIDE threat modeling, secret scanning
 owasp-security-skills/      # OWASP Top 10:2025, ASVS 5.0, Agentic AI security (★277)
+strix-security-skills/      # usestrix/strix: Pentesting autónomo IA, validación PoC, escaneo CI/CD
+ecc-security-skills/        # affaan-m/everything-claude-code: springboot-security, agentshield, auth
 antigravity-fullstack-hq/   # 10 agentes: frontend, backend, db, architect, security
 harness-skills/             # CI/CD oficial Harness.io
 ui-skills-repo/             # baseline-ui, fixing-motion-performance, fixing-accessibility (★6.6k)

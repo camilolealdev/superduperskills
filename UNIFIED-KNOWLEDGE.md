@@ -127,6 +127,8 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | laravel-specialist | `backend-skills` | laravel, eloquent, sanctum, livewire | Laravel 10+, Eloquent, Horizon |
 | rails-expert | `backend-skills` | rails, turbo, sidekiq, rspec | Rails 7+, Active Record, Hotwire |
 | spring-boot-engineer | `backend-skills` | spring, jpa, security, webflux | Spring Boot 3.x, Security 6 |
+| springboot-patterns | `backend-skills` | spring, ddd, jpa, rest | Spring Boot DDD architecture, repositories, caching |
+| springboot-security | `ecc-security-skills` | spring, security6, jwt, csrf | Spring Security 6, JWT tokens, CSRF, RBAC |
 | dotnet-core-expert | `backend-skills` | dotnet, ef-core, cqrs, aot | .NET 8 minimal APIs, Clean Architecture |
 | csharp-developer | `backend-skills` | csharp, blazor, signalr, ef | C#, ASP.NET Core, Blazor, EF Core |
 | golang-pro | `backend-skills` | go, goroutines, grpc, pprof | Go concurrency, gRPC, idiomatic Go |
@@ -388,6 +390,17 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | testcontainers-dotnet | `testcontainers` | dotnet, docker, integration | .NET integration tests |
 | testcontainers-go | `testcontainers` | go, docker, integration | Go integration tests |
 | debugging-wizard | `backend-skills` | debug, stacktrace, root-cause | Error parsing, root cause analysis |
+
+### 5.2 Dynamic Security & Autonomous Penetration Testing (Strix & Framework Security)
+
+| Skill | Fuentes | Tags | Propósito |
+|-------|---------|------|-----------|
+| penetration-testing-with-strix | `strix-security-skills` (`usestrix/strix`) | pentest, red-team, dynamic-security, poc | Red-team multi-agent pentesting, PoC exploit generation |
+| ci-security-scanning-with-strix | `strix-security-skills` (`usestrix/strix`) | ci-cd, pentest, github-actions, gitlab-ci | Automated regression pentesting in CI/CD pipelines |
+| fix-security-vulnerabilities-with-strix | `strix-security-skills` (`usestrix/strix`) | remediation, patches, security-test | Automated vulnerability patching verified by exploit replay |
+| managed-pentesting-with-strix | `strix-security-skills` (`usestrix/strix`) | enterprise, reporting, compliance | Enterprise pentest orchestration & executive compliance reports |
+| springboot-security | `ecc-security-skills` (`everything-claude-code`) | spring-security, oauth2, jwt, csrf, rbac | Spring Security 6, JWT filters, CSRF and method security |
+| agentshield | `ecc-security-skills` (`everything-claude-code`) | agent-security, prompt-injection, red-team | Security guardrails against prompt injection & data exfiltration |
 
 ---
 

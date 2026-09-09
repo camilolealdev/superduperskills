@@ -24,7 +24,8 @@ flowchart TD
     Ponytail --> RTK["6. Terminal Proxying<br>(rtk / rust-token-killer)"]
     RTK --> Caveman["7. Respuestas Concisas<br>(caveman)"]
     Caveman --> Harness["8. Verificación & Feedback<br>(harness / agent-harness)"]
-    Harness --> Done["Entrega Calificada"]
+    Harness --> Security["9. Seguridad Dinámica & Pentesting<br>(penetration-testing-with-strix / agentshield)"]
+    Security --> Done["Entrega Calificada"]
 ```
 
 ### Pillar 1: `mem` / `claude-mem` (Memoria Persistente)
@@ -63,6 +64,15 @@ flowchart TD
 ### Pillar 8: `harness` / `agent-harness` (Verificación Automatizada)
 - **Propósito**: Definir pruebas automatizadas y arneses de validación para confirmar que los cambios cumplen la especificación antes de finalizar la tarea.
 
+### Pillar 9: `penetration-testing-with-strix` & `agentshield` (Seguridad Dinámica & Pentesting Autónomo)
+- **Propósito**: Ejecutar análisis de vulnerabilidades activo, validación dinámica de exploits mediante PoC (Proof-of-Concept) y protección contra inyecciones/fuga de datos en agentes y APIs (`usestrix/strix`).
+- **Capacidades**:
+  - Simulación red-team autónoma con agentes de explotación dinámica.
+  - Generación de scripts PoC para reproducir y verificar fallos de seguridad sin falsos positivos.
+  - Parches asistidos con tests de regresión de seguridad (`fix-security-vulnerabilities-with-strix`).
+  - Escaneo continuo en CI/CD (`ci-security-scanning-with-strix`).
+  - Blindaje de backend con `springboot-security` (Spring Security 6, CSRF, JWT, RBAC) y `owasp-security`.
+
 ---
 
 ## 3. Matriz de Combinación y Sinergia
@@ -71,7 +81,9 @@ flowchart TD
 |-------------|-------------------------|-----------------------|
 | `spec-kit` + `ponytail` | Evita construir características no solicitadas y define contratos mínimos. | Cero código muerto, arquitectura limpia. |
 | `rtk` + `caveman` | Comprime tanto la entrada de la terminal como la salida explicativa. | Reducción global del >80% en costos de tokens. |
-| `mem` + `harness` | Recuerda errores pasados y los valida automáticamente. | Cero regresiones entre sesiones. |
+| `mem` + `harness` | Recuerda errores pasados y los valida automáticamente. | Cero regresiones funcionales entre sesiones. |
+| `harness` + `penetration-testing-with-strix` | Combina verificación funcional con pentesting autónomo y validación PoC. | Cero vulnerabilidades explotables en producción. |
+| `springboot-security` + `agentshield` | Blindaje de backend robusto con guardrails agénticos anti-inyección. | Seguridad en capas (Defense-in-Depth). |
 
 ---
 
@@ -84,4 +96,7 @@ Los agentes deben invocar estos skills usando las directivas estándar del entor
 - Para simplificar un diseño: /ponytail full
 - Para comprimir explicaciones: /caveman full
 - Para ejecutar tests comprimidos: rtk npm test
+- Para pentest dinámico con Strix: /penetration-testing-with-strix [target]
+- Para auditar CI/CD con Strix: /ci-security-scanning-with-strix
+- Para blindar endpoints Spring Boot: /springboot-security [module]
 ```

@@ -273,8 +273,8 @@ graph TD
     F --> G[7. High-Precision Coding]
 ```
 
-1. **Automatic Inspection / Socratic Interview** — detects config files (`package.json`, `requirements.txt`, `go.mod`, `pubspec.yaml`, `Dockerfile`).
-2. **Unconditional Core Load** — always injects the 9 infrastructure & compression skills before any other rule.
+1. **Automatic Inspection / Socratic Interview** — detects config files (`package.json`, `requirements.txt`, `go.mod`, `pom.xml`, `build.gradle`, `Dockerfile`, `.github/workflows`).
+2. **Unconditional Core Load** — always injects the 20 infrastructure, quality & dynamic security skills (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) before any other rule.
 3. **Manifest generation (`.agents/ACTIVE-SKILLS.json`)** — records project phase, key goals and exact local skill paths.
 4. **Mandatory read gate (`view_file`)** — no AI agent writes code without first reading each qualified skill's `SKILL.md`.
 
@@ -282,8 +282,8 @@ graph TD
 
 El **Orquestador de Agentes** evalúa la estructura de tu proyecto y realiza una **entrevista o escaneo automático** para determinar tus objetivos reales *antes* de permitir la generación de código (ver diagrama de arriba):
 
-1. **Inspección Automática / Entrevista Socrática** — detecta archivos de configuración (`package.json`, `requirements.txt`, `go.mod`, `pubspec.yaml`, `Dockerfile`).
-2. **Carga Incondicional Core** — inyecta siempre las 9 skills de infraestructura y compresión antes que cualquier otra regla.
+1. **Inspección Automática / Entrevista Socrática** — detecta archivos de configuración (`package.json`, `requirements.txt`, `go.mod`, `pom.xml`, `build.gradle`, `Dockerfile`, `.github/workflows`).
+2. **Carga Incondicional Core** — inyecta siempre las 20 skills de infraestructura, calidad y seguridad dinámica (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) antes que cualquier otra regla.
 3. **Generación del manifiesto (`.agents/ACTIVE-SKILLS.json`)** — registra la fase del proyecto, objetivos clave y rutas locales exactas.
 4. **Puerta de lectura obligatoria (`view_file`)** — ningún agente de IA escribe código sin leer antes el `SKILL.md` de cada skill cualificada.
 
@@ -291,10 +291,10 @@ El **Orquestador de Agentes** evalúa la estructura de tu proyecto y realiza una
 
 SuperDuperSkills organizes its **17 categories** (see `docs/assets/categories-infographic.jpg`) into five fundamental groups:
 
-1. **Core Suite** — token-compression, YAGNI architecture, persistent memory, interactive architecture diagrams.
+1. **Core Suite** — token-compression, YAGNI architecture, persistent memory, interactive architecture diagrams, autonomous dynamic pentesting (`usestrix/strix`).
 2. **Design & UI Craft (Anti-Slop)** — Emil Kowalski's design engineering (11 skills), Impeccable (23 commands), Taste framework, Apple HIG.
-3. **OWASP Security & Vulnerabilities** — code audits, secret scanning, threat modeling, GenAI security best practices.
-4. **Backend & DevOps** — Node.js, Python, Go, .NET, Docker, Kubernetes, Cloudflare Workers, CI/CD pipelines.
+3. **Dynamic Security & Pentesting (Strix, ECC, OWASP)** — autonomous AI red-teaming with verified PoC exploits (`usestrix/strix`), Spring Boot Security 6 (`springboot-security`), secret scanning, AgentShield LLM guardrails, threat modeling.
+4. **Backend & DevOps** — Node.js, Python, Go, Java / Spring Boot, .NET, Docker, Kubernetes, Cloudflare Workers, CI/CD pipelines.
 5. **GenAI & Testing** — TDD workflows, Playwright E2E, Gemini SDK, HuggingFace, model evaluators.
 
 ---

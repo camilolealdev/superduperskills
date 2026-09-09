@@ -38,6 +38,7 @@ graph TD
 | **`harness`** | Arneses de pruebas y validación. | Garantizar verificación automatizada antes de entregar la tarea. |
 | **`claude-mem`** | Memoria persistente. | Retener arquitectura y decisiones entre sesiones. |
 | **`rtk`** | Proxy de logs de terminal. | Filtrar salidas de `git diff`, `npm test` y `build` (-60% a -90% tokens). |
+| **`penetration-testing-with-strix`** | Pentesting autónomo con IA y validación PoC. | Detecta y reproduce exploits en tiempo real sin falsos positivos. |
 
 ---
 
@@ -54,13 +55,15 @@ graph TD
 ---
 
 ### Capa 2: Backend & APIs
-*Proyectos con Node.js, Express, Python (FastAPI/Django), Go:*
+*Proyectos con Node.js, Express, Python (FastAPI/Django), Go, Java/Spring Boot:*
 
 | Skill | Qué hace | Por qué usarlo en este stack |
 |-------|----------|------------------------------|
 | **`nodejs-backend-patterns`** | Middleware, auth y arquitectura de servicios Node. | Estructura rutas Express/Fastify de forma mantenible. |
 | **`python-expert`** | Type hints, pydantic y async Python. | Escribe código idiomático y estructurado en FastAPI/Django. |
 | **`golang-pro`** | Microservicios e interfaces idiomáticas en Go. | Diseña concurrencia segura con goroutines y canales. |
+| **`springboot-patterns`** | Arquitectura DDD, REST, JPA y caching en Spring Boot. | Implementa microservicios y APIs robustas en Java/Kotlin. |
+| **`springboot-security`** | Spring Security 6, CSRF, JWT, filtros y RBAC. | Configura autenticación/autorización robusta para backends Spring. |
 
 ---
 
@@ -72,15 +75,20 @@ graph TD
 | **`docker-patterns`** | Builds multi-etapa y seguridad en contenedores. | Minimiza el tamaño de las imágenes Docker y elimina permisos root. |
 | **`cloudflare-worker-builder`** | Edge Workers, D1 DB, R2 y Durable Objects. | Construye e implementa funciones Serverless en la red edge de Cloudflare. |
 | **`git-workflow`** | Estrategia de branches, commit conventions y PRs. | Mantiene historial de Git limpio y automatiza releases. |
+| **`ci-security-scanning-with-strix`** | Pentesting dinámico continuo en pipelines CI/CD. | Previene la integración de vulnerabilidades explotables en GitHub Actions o GitLab CI. |
 
 ---
 
-### Capa 4: Seguridad, QA & Moderación
-*Auditorías de seguridad, compliance y verificación:*
+### Capa 4: Seguridad, QA, Pentesting Dinámico & Moderación
+*Auditorías de seguridad, pentesting activo, guardrails y verificación:*
 
-| Skill | Qué hace | Por me usarlo en este stack |
-|-------|----------|-----------------------------|
-| **`cybersecurity`** | Auditorías mapeadas a MITRE ATT&CK / OWASP. | Escanea vulnerabilidades, secret leaks y configuraciones inseguras. |
+| Skill | Qué hace | Por qué usarlo en este stack |
+|-------|----------|------------------------------|
+| **`penetration-testing-with-strix`** | Red-teaming autónomo con agentes IA y generación PoC. | Encuentra y prueba exploits reales sin falsos positivos (`usestrix/strix`). |
+| **`fix-security-vulnerabilities-with-strix`** | Remediación asistida y parches validados con test de regresión. | Neutraliza exploits con verificación automatizada de cierre de brecha. |
+| **`managed-pentesting-with-strix`** | Orquestación multi-agente de pentest empresarial. | Genera reportes ejecutivos y de cumplimiento técnico para auditorías. |
+| **`agentshield`** | Guardrails de seguridad para agentes LLM. | Previene prompt injections, tool abuse y fuga de datos en agentes. |
+| **`cybersecurity`** | Auditorías estáticas mapeadas a MITRE ATT&CK / OWASP. | Escanea vulnerabilidades, secret leaks y configuraciones inseguras. |
 | **`resemble-detect`** | Detección de sintetizados por IA (audio/video/imagen). | Valida la autenticidad de archivos multimediales. |
 | **`loopy`** | Bucles iterativos de optimización con condición de parada. | Para corrección automatizada de tests inestables o benchmarks. |
 

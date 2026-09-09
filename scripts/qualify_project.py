@@ -63,7 +63,8 @@ CORE_SUITE = [
     {"name": "modo-tdah", "reason": "Ejecución Ultra-Focalizada sin Explicaciones Infladas"},
     {"name": "agentic-awesome-skills", "reason": "Catálogo de Patrones Agenticos Autónomos"},
     {"name": "gsd-core", "reason": "Get Shit Done (GSD) Execution Framework"},
-    {"name": "i-have-adhd", "reason": "Formateo de Salida Amigable ADHD (Acciones Primero)"}
+    {"name": "i-have-adhd", "reason": "Formateo de Salida Amigable ADHD (Acciones Primero)"},
+    {"name": "penetration-testing-with-strix", "reason": "Pentesting Dinámico Autónomo & PoC Exploits"}
 ]
 
 def render_box(title: str, lines: list, width: int = 72) -> str:
@@ -110,6 +111,12 @@ def detect_stack():
         detected['backend'].append('golang-patterns')
         detected['backend'].append('golang-testing')
 
+    # Java / Spring Boot detection
+    if any(os.path.isfile(os.path.join(WORKSPACE_DIR, f)) for f in ['pom.xml', 'build.gradle', 'build.gradle.kts', 'mvnw', 'gradlew']):
+        detected['backend'].append('springboot-patterns')
+        detected['backend'].append('springboot-tdd')
+        detected['security'].append('springboot-security')
+
     if glob.glob(os.path.join(WORKSPACE_DIR, '*.csproj')) or glob.glob(os.path.join(WORKSPACE_DIR, '*.sln')):
         detected['backend'].append('dotnet-patterns')
         detected['backend'].append('dotnet-best-practices')
@@ -123,6 +130,14 @@ def detect_stack():
 
     if os.path.isfile(os.path.join(WORKSPACE_DIR, 'Dockerfile')) or os.path.isfile(os.path.join(WORKSPACE_DIR, 'docker-compose.yml')):
         detected['devops'].append('docker-patterns')
+
+    # CI/CD and Autonomous Pentest Gates
+    if os.path.isdir(os.path.join(WORKSPACE_DIR, '.github', 'workflows')) or os.path.isfile(os.path.join(WORKSPACE_DIR, '.gitlab-ci.yml')):
+        detected['devops'].append('ci-security-scanning-with-strix')
+        detected['security'].append('ci-security-scanning-with-strix')
+
+    detected['security'].append('penetration-testing-with-strix')
+    detected['security'].append('agentshield')
 
     return detected
 

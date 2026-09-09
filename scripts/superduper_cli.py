@@ -226,7 +226,7 @@ class TerminalMouseManager:
 atexit.register(TerminalMouseManager.disable)
 
 # =============================================================================
-# 4. MANDATORY INVARIANT CORE SUITE (19 SKILLS)
+# 4. MANDATORY INVARIANT CORE SUITE (20 SKILLS)
 # =============================================================================
 MANDATORY_CORE_SUITE = [
     {"name": "caveman", "reason": "Output Compression (-75% token reduction)", "category": "CORE", "icon": "🪨"},
@@ -247,7 +247,8 @@ MANDATORY_CORE_SUITE = [
     {"name": "modo-tdah", "reason": "Ejecución Ultra-Focalizada sin Explicaciones Infladas", "category": "CORE", "icon": "🎯"},
     {"name": "agentic-awesome-skills", "reason": "Catálogo de Patrones Agenticos Autónomos", "category": "CORE", "icon": "🤖"},
     {"name": "gsd-core", "reason": "Get Shit Done (GSD) Execution Framework", "category": "CORE", "icon": "💥"},
-    {"name": "i-have-adhd", "reason": "Formateo de Salida Action-First", "category": "CORE", "icon": "⚡"}
+    {"name": "i-have-adhd", "reason": "Formateo de Salida Action-First", "category": "CORE", "icon": "⚡"},
+    {"name": "penetration-testing-with-strix", "reason": "Pentesting Dinámico Autónomo & PoC Exploits (Strix Core)", "category": "CORE", "icon": "🎯"}
 ]
 
 # =============================================================================
@@ -282,12 +283,17 @@ CATEGORY_REGISTRY = {
         ]
     },
     "SECURITY_OWASP": {
-        "title": "Seguridad, OWASP & Threat Modeling",
+        "title": "Seguridad, OWASP, Pentesting & Threat Modeling",
         "icon": "🛡️",
         "skills": [
+            ("penetration-testing-with-strix", "Pentest dinámico con IA autónoma, exploits PoC y SARIF (usestrix/strix)"),
+            ("ci-security-scanning-with-strix", "Diff-scoped PR security gate y escaneo CI/CD con Strix"),
+            ("fix-security-vulnerabilities-with-strix", "Triage, parche quirúrgico de causa raíz y re-escaneo verificador"),
+            ("managed-pentesting-with-strix", "Pentesting cloud gestionado en app.strix.ai sin Docker local"),
             ("agentshield", "Escudo contra prompt injection y comandos destructivos"),
+            ("springboot-security", "Spring Security hardening: authn/authz, CSRF, JWT y filtros seguros (ECC)"),
             ("cybersecurity", "Auditoría de seguridad general y escaneo de vulnerabilidades"),
-            ("owasp-top10", "Verificación exhaustiva de OWASP Top 10:2025"),
+            ("owasp-security", "Verificación exhaustiva de OWASP Top 10:2025"),
             ("threat-model-analyst", "Modelado de amenazas STRIDE y vectores de ataque"),
             ("security-auditor", "Auditoría estricta de código y sanitización de inputs"),
             ("secret-scanner", "Detección y prevención de fuga de API keys y credenciales"),
@@ -299,6 +305,9 @@ CATEGORY_REGISTRY = {
         "title": "Backend, APIs & Bases de Datos",
         "icon": "⚡",
         "skills": [
+            ("springboot-patterns", "Patrones enterprise en Spring Boot 3.x, REST APIs y caching"),
+            ("springboot-security", "Spring Security hardening, authn/authz, CSRF y JWT"),
+            ("springboot-tdd", "Test-driven development para Spring Boot con JUnit 5 & Mockito"),
             ("nodejs-backend-patterns", "Patrones de arquitectura Node.js / Express / Fastify"),
             ("python-patterns", "Desarrollo idiomático en Python / FastAPI / Django"),
             ("golang-patterns", "Concurrencia, goroutines y microservicios en Go"),
@@ -754,16 +763,29 @@ class ProjectDiscovery:
             report["mobile"].append("Flutter")
             report["recommended_skills"].extend(["flutter-apply-architecture-best-practices", "flutter-build-responsive-layout"])
 
+        # Java / Spring Boot
+        java_files = ['pom.xml', 'build.gradle', 'build.gradle.kts', 'mvnw', 'gradlew']
+        if any(os.path.isfile(os.path.join(root_path, f)) for f in java_files):
+            report["languages"].append("Java / Kotlin")
+            report["backend"].append("Spring Boot Enterprise")
+            report["recommended_skills"].extend(["springboot-security", "springboot-patterns", "springboot-tdd"])
+
+        # Security & Automated CI Gate (Strix + AgentShield)
+        if report["metrics"]["has_ci"]:
+            report["recommended_skills"].append("ci-security-scanning-with-strix")
+        if report["backend"] or report["frameworks"]:
+            report["recommended_skills"].append("penetration-testing-with-strix")
+
         # DevOps
         if os.path.isfile(os.path.join(root_path, 'Dockerfile')) or os.path.isfile(os.path.join(root_path, 'docker-compose.yml')):
             report["devops"].append("Docker")
             report["metrics"]["has_docker"] = True
             report["recommended_skills"].append("docker-patterns")
         
-        if os.path.isdir(os.path.join(root_path, '.github', 'workflows')):
-            report["devops"].append("GitHub Actions")
+        if os.path.isdir(os.path.join(root_path, '.github', 'workflows')) or os.path.isfile(os.path.join(root_path, '.gitlab-ci.yml')):
+            report["devops"].append("GitHub/GitLab CI")
             report["metrics"]["has_ci"] = True
-            report["recommended_skills"].append("github-actions-cicd")
+            report["recommended_skills"].extend(["github-actions-cicd", "ci-security-scanning-with-strix"])
             
         if os.path.isfile(os.path.join(root_path, 'wrangler.toml')) or os.path.isfile(os.path.join(root_path, 'wrangler.json')):
             report["devops"].append("Cloudflare Workers")
@@ -1427,6 +1449,11 @@ class StackWatcherEngine:
         "package.json": ("nodejs-backend-patterns", "Node.js & TypeScript Ecosystem"),
         "requirements.txt": ("python-patterns", "Python Idiomatic Development"),
         "go.mod": ("golang-patterns", "Go Concurrency & Patterns"),
+        "pom.xml": ("springboot-security", "Spring Boot & Java Enterprise Security"),
+        "build.gradle": ("springboot-security", "Spring Boot & Java Enterprise Security"),
+        "build.gradle.kts": ("springboot-security", "Spring Boot & Kotlin/Java Enterprise Security"),
+        ".github/workflows": ("ci-security-scanning-with-strix", "CI/CD Security Gate & Strix Pentesting"),
+        ".gitlab-ci.yml": ("ci-security-scanning-with-strix", "GitLab CI Security Gate & Strix Pentesting"),
     }
 
     @staticmethod
@@ -2025,9 +2052,10 @@ class SkillGraphEngine:
         lines = [
             f"{C.GEMINI_CYAN}✦ SuperDuperSkills Governance Graph Architecture{C.RESET}",
             f"{C.SLATE_DARK}│{C.RESET}",
-            f"{C.SLATE_DARK}├──{C.RESET} {C.GEMINI_VIOLET}◆ Invariant Core Kernel (19 mandatory){C.RESET}",
+            f"{C.SLATE_DARK}├──{C.RESET} {C.GEMINI_VIOLET}◆ Invariant Core Kernel (20 mandatory){C.RESET}",
             f"{C.SLATE_DARK}│   ├──{C.RESET} Output Compression: {C.SLATE_LIGHT}rtk, caveman, modo-tdah{C.RESET}",
             f"{C.SLATE_DARK}│   ├──{C.RESET} Simplicity & Specs: {C.SLATE_LIGHT}ponytail, spec-kit, harness{C.RESET}",
+            f"{C.SLATE_DARK}│   ├──{C.RESET} Dynamic Security & Pentest: {C.SLATE_LIGHT}agentshield, penetration-testing-with-strix{C.RESET}",
             f"{C.SLATE_DARK}│   └──{C.RESET} Memory & Topology: {C.SLATE_LIGHT}claude-mem, graphify, archify{C.RESET}",
             f"{C.SLATE_DARK}│{C.RESET}",
             f"{C.SLATE_DARK}└──{C.RESET} {C.EMERALD}● Specialized Project Layer ({len(specs)} active){C.RESET}"
@@ -2147,7 +2175,7 @@ def render_main_menu_grid() -> str:
     """Render a responsive 2-column interactive menu grid with clickable button cards."""
     items = [
         ("1", "🔍", "Deep Project Scan",    "Stack & recommendations"),
-        ("2", "🔒", "Core Invariant Suite",  "19 mandatory guardrails"),
+        ("2", "🔒", "Core Invariant Suite",  "20 mandatory guardrails"),
         ("3", "🎛️ ", "Category Manager",     "Interactive skill toggles"),
         ("4", "🔎", "Live Vault Search",     "Search 3,300+ skills"),
         ("5", "📥", "Skill Ingestion",       "Import remote GitHub URL"),
@@ -2356,7 +2384,7 @@ def view_project_discovery():
             print(f"\n  {BOX['check']} {C.EMERALD}All recommended skills synchronized into active manifest!{C.RESET}")
 
 def view_core_suite():
-    print_header("CORE INVARIANT SUITE — 19 MANDATORY SKILLS")
+    print_header("CORE INVARIANT SUITE — 20 MANDATORY SKILLS")
     
     headers = ["#", "Skill Name", "Purpose & Token Governance Rationale", "Disk Status"]
     rows = []
@@ -2373,7 +2401,7 @@ def view_core_suite():
         rows.append([f"{idx:02d}", skill_link, core['reason'], status])
         
     print(render_table(headers, rows, border_color=C.SLATE_DARK))
-    print(f"\n  {C.GEMINI_VIOLET}◆ Core Invariant Rule:{C.RESET} {C.SLATE_MUTED}These 19 skills form the unalterable governance kernel across every agent turn.{C.RESET}")
+    print(f"\n  {C.GEMINI_VIOLET}◆ Core Invariant Rule:{C.RESET} {C.SLATE_MUTED}These 20 skills form the unalterable governance kernel across every agent turn.{C.RESET}")
 
 def view_category_manager():
     while True:
@@ -2625,7 +2653,7 @@ def view_init_project():
     headers = ["Component", "Location", "Status"]
     rows = [
         ["Governance Root", make_file_link(".agents/", AGENTS_DIR), f"{C.EMERALD}Created{C.RESET}"],
-        ["Active Skills Manifest", make_file_link(".agents/ACTIVE-SKILLS.json", ACTIVE_MANIFEST), f"{C.EMERALD}Loaded (19 Cores){C.RESET}"],
+        ["Active Skills Manifest", make_file_link(".agents/ACTIVE-SKILLS.json", ACTIVE_MANIFEST), f"{C.EMERALD}Loaded (20 Cores){C.RESET}"],
         ["Project Qualification Doc", make_file_link(".agents/PROJECT-QUALIFICATION.md", QUALIFICATION_DOC), f"{C.EMERALD}Generated{C.RESET}"],
         ["Profile Presets Directory", make_file_link(".agents/profiles/", PROFILES_DIR), f"{C.EMERALD}Ready{C.RESET}"],
         ["Desktop Integration Config", make_file_link(".agents/desktop.json", DESKTOP_CONFIG), f"{C.EMERALD}Saved{C.RESET}"]
@@ -2764,7 +2792,7 @@ def view_mission_modes(mode_name: Optional[str] = None):
             f"{len(mdata['skills'])} skills"
         ])
     print(render_table(headers, rows, border_color=C.SLATE_DARK))
-    print(f"\n  {C.SLATE_MUTED}Tip: Activating a mode keeps the 19 Invariant Cores while swapping specialized skills.{C.RESET}\n")
+    print(f"\n  {C.SLATE_MUTED}Tip: Activating a mode keeps the 20 Invariant Cores while swapping specialized skills.{C.RESET}\n")
     
     choice = read_user_choice(f"  {C.GEMINI_CYAN}❯ Select mission mode [1-{len(modes_list)}] (or 0 to cancel):{C.RESET} ")
     if choice.isdigit() and 1 <= int(choice) <= len(modes_list):
