@@ -1,14 +1,13 @@
 # Skills Index
 
-Total unique skills: **3327**
+Total unique skills: **3330**
 
 ## Origin Repos
 
 | Repo | Location | Count |
 |------|----------|-------|
-| **agents** | `~/.agents/skills/` | 2628 |
-| **opencode** | `~/.config/opencode/skills/` | 0 |
-| **claude** | `~/.claude/skills/` | 699 |
+| **agents** | `~/.agents/skills/` | 3323 |
+| **claude** | `~/.claude/skills/` | 7 |
 
 ---
 
@@ -184,7 +183,7 @@ Total unique skills: **3327**
 | **walkthrough-video** | Generate professional walkthrough videos from app screenshots or live sites using Remotion. Smooth transitions, zoom effects, text overlays, and optional voiceover narration. Produces MP4 videos fo... |  | `skills/walkthrough-video/SKILL.md` |
 | **website-to-hyperframes** | Capture a website and create a HyperFrames video from it. Use when: (1) a user provides a URL and wants a video, (2) someone says "capture this site", "turn this into a video", "make a promo from m... |  | `skills/website-to-hyperframes/SKILL.md` |
 
-### Design & UX (128)
+### Design & UX (135)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -194,9 +193,12 @@ Total unique skills: **3327**
 | **aesthetic** | Create aesthetically beautiful interfaces following proven design principles. Use when building UI/UX, analyzing designs from inspiration sites, generating design images with ai-multimodal, impleme... |  | `skills/aesthetic/SKILL.md` |
 | **animate** | Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and dur... | `https://github.com/emilkowalski/skills` | `skills/animate/SKILL.md` |
 | **animate-expo** | Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing... | `https://github.com/emilkowalski/skills` | `skills/animate-expo/SKILL.md` |
+| **animation-vocabulary** | Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term ("the bouncy thing when a popover opens" → Pop in; "the iOS rubber-band scroll" → Rubb... | `https://github.com/emilkowalski/skills` | `skills/animation-vocabulary/SKILL.md` |
+| **apple-design** | Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum... | `https://github.com/emilkowalski/skills` | `skills/apple-design/SKILL.md` |
 | **apple-hig-expert** | Audits and designs iOS/macOS/watchOS/visionOS interfaces against the Apple Human Interface Guidelines, including the Liquid Glass design language (announced WWDC25, shipped with iOS 26/macOS Tahoe,... |  | `skills/apple-hig-expert/SKILL.md` |
 | **apply-aesthetic** | Apply a visual direction — an archetype (high-end agency, editorial minimal, brutalist, soft-SaaS, dark-tech) or one of 138 named design systems (apple, linear-app, stripe, vercel, notion, material... |  | `skills/apply-aesthetic/SKILL.md` |
 | **arrange** | Improve layout, spacing, and visual rhythm. Fixes monotonous grids, inconsistent spacing, and weak visual hierarchy. Use when the user mentions layout feeling off, spacing issues, visual hierarchy,... |  | `skills/arrange/SKILL.md` |
+| **ask-sonner** | Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and... | `https://github.com/emilkowalski/skills` | `skills/ask-sonner/SKILL.md` |
 | **astro** | Skill for building with the Astro web framework. Helps create Astro components and pages, configure SSR adapters, set up content collections, deploy static sites, and manage project structure and C... |  | `skills/astro/SKILL.md` |
 | **astro-sites-manager** | Comprehensive skill for building, migrating, and maintaining Astro v7 projects. Covers best practices from the official AGENTS.md, the v6→v7 migration path, validation of breaking/deprecated patter... |  | `skills/astro-sites-manager/SKILL.md` |
 | **audit** | Run technical quality checks across accessibility, performance, theming, responsive design, and anti-patterns. Generates a scored report with P0-P3 severity ratings and actionable plan. Use when th... |  | `skills/audit/SKILL.md` |
@@ -208,6 +210,7 @@ Total unique skills: **3327**
 | **brand-guidelines** | Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatt... |  | `skills/brand-guidelines/SKILL.md` |
 | **brandfetch-automation** | Automate Brandfetch tasks via Rube MCP (Composio). Always search tools first for current schemas. |  | `skills/brandfetch-automation/SKILL.md` |
 | **brandkit** | Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, d... |  | `skills/brandkit/SKILL.md` |
+| **break-ui** | Try to break a piece of UI by feeding it worst-case data — long names, unbreakable emails, one-letter names, missing fields, huge counts, zero items, long labels, non-Latin text, emoji, extreme num... | `https://github.com/emilkowalski/skills` | `skills/break-ui/SKILL.md` |
 | **canvas-design** | Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ... |  | `skills/canvas-design/SKILL.md` |
 | **ckm:banner-design** | Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with AI-generated visuals. Actions: design, create, generate banner. Platforms: Face... |  | `skills/ckm-banner-design/SKILL.md` |
 | **ckm:brand** | Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides. |  | `skills/ckm-brand/SKILL.md` |
@@ -246,6 +249,7 @@ Total unique skills: **3327**
 | **design-void** | Cyber-brutalism / high-contrast dark-mode design system reverse-engineered from the "VOID — Avant-Garde Web Creators" landing page. Use when the user wants an experimental, premium, tech-forward da... |  | `skills/design-void/SKILL.md` |
 | **distill** | Strip designs to their essence by removing unnecessary complexity. Great design is simple, powerful, and clean. Use when the user asks to simplify, declutter, reduce noise, remove elements, or make... |  | `skills/distill/SKILL.md` |
 | **drawio-skill** | Use when the user requests diagrams, flowcharts, architecture diagrams, ER diagrams, UML / sequence / class diagrams, network topology, cloud architecture from Terraform or Kubernetes manifests, ML... |  | `skills/drawio-skill/SKILL.md` |
+| **emil-design-eng** | This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great. | `https://github.com/emilkowalski/skills` | `skills/emil-design-eng/SKILL.md` |
 | **excalidraw-diagram** | Create Excalidraw diagram JSON files that make visual arguments. Use when the user wants to visualize workflows, architectures, or concepts. |  | `skills/excalidraw-diagram/SKILL.md` |
 | **extract** | Extract and consolidate reusable components, design tokens, and patterns into your design system. Identifies opportunities for systematic reuse and enriches your component library. Use when the use... |  | `skills/extract/SKILL.md` |
 | **extracta-ai-automation** | Automate Extracta AI tasks via Rube MCP (Composio). Always search tools first for current schemas. |  | `skills/extracta-ai-automation/SKILL.md` |
@@ -274,12 +278,14 @@ Total unique skills: **3327**
 | **microinteractions** | Design the small details -- triggers, rules, feedback, loops and modes -- that separate good products from great ones. Use when the user mentions "microinteraction", "button feedback", "loading sta... |  | `skills/microinteractions/SKILL.md` |
 | **migrate-design-system** | Map this token system to or from any external design system (Material Design 3, Apple HIG, Fluent, Carbon, Ant, shadcn/ui, Radix, Chakra, Mantine, Bootstrap…) — adopt their look, build on their sta... |  | `skills/migrate-design-system/SKILL.md` |
 | **minimalist-ui** | Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows. |  | `skills/minimalist-ui/SKILL.md` |
+| **mobile-native** | Make a web app feel native on a phone — the small CSS and meta-tag fixes that separate "a website in a browser" from something that feels installed. Covers sticky hover states, tap highlight flashe... | `https://github.com/emilkowalski/skills` | `skills/mobile-native/SKILL.md` |
 | **normalize** | Audits and realigns UI to match design system standards, spacing, tokens, and patterns. Use when the user mentions consistency, design drift, mismatched styles, tokens, or wants to bring a feature ... |  | `skills/normalize/SKILL.md` |
 | **onboard** | Designs and improves onboarding flows, empty states, and first-run experiences to help users reach value quickly. Use when the user mentions onboarding, first-time users, empty states, activation, ... |  | `skills/onboard/SKILL.md` |
 | **onboard-context-matic** | Interactive onboarding tour for the context-matic MCP server. |  | `skills/onboard-context-matic/SKILL.md` |
 | **optimize** | Diagnoses and fixes UI performance across loading speed, rendering, animations, images, and bundle size. Use when the user mentions slow, laggy, janky, performance, bundle size, load time, or wants... |  | `skills/optimize/SKILL.md` |
 | **optimize-simplicite-logs** | Capability to parse Simplicité logs from raw text to structured JSON. |  | `skills/optimize-simplicite-logs/SKILL.md` |
 | **overdrive** | Pushes interfaces past conventional limits with technically ambitious implementations — shaders, spring physics, scroll-driven reveals, 60fps animations. Use when the user wants to wow, impress, go... |  | `skills/overdrive/SKILL.md` |
+| **pick-ui-library** | Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only... | `https://github.com/emilkowalski/skills` | `skills/pick-ui-library/SKILL.md` |
 | **polish** | Performs a final quality pass fixing alignment, spacing, consistency, and micro-detail issues before shipping. Use when the user mentions polish, finishing touches, pre-launch review, something loo... |  | `skills/polish/SKILL.md` |
 | **ponytail** | Forces the laziest solution that actually works, simplest, shortest, most minimal. Channels a senior dev who has seen everything: question whether the task needs to exist at all (YAGNI), reach for ... | `https://github.com/DietrichGebert/ponytail` | `skills/ponytail/SKILL.md` |
 | **ponytail-audit** | Whole-repo audit for over-engineering. Like ponytail-review, but scans the entire codebase instead of a diff: a ranked list of what to delete, simplify, or replace with stdlib/native equivalents. U... | `https://github.com/DietrichGebert/ponytail` | `skills/ponytail-audit/SKILL.md` |
@@ -317,7 +323,7 @@ Total unique skills: **3327**
 | **web-design-guidelines** | Web design best practices, accessibility, responsive layout, color contrast. Use when auditing a UI for a11y compliance, designing responsive layouts, or establishing design standards across a web ... |  | `skills/web-design-guidelines/SKILL.md` |
 | **web-typography** | Select, pair, and implement typefaces for web projects. Use when the user mentions "font pairing", "which typeface", "line height", "responsive typography", "web font loading", "type hierarchy", "v... |  | `skills/web-typography/SKILL.md` |
 
-### Development & Backend (258)
+### Development & Backend (259)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -579,6 +585,7 @@ Total unique skills: **3327**
 | **wordpress-elementor** | Edit Elementor pages and manage templates on WordPress sites. Workflow: identify page, choose editing method (browser or WP-CLI), execute, verify. Use when editing Elementor pages, updating text in... |  | `skills/wordpress-elementor/SKILL.md` |
 | **wordpress-pro** | Develops custom WordPress themes and plugins, creates and registers Gutenberg blocks and block patterns, configures WooCommerce stores, implements WordPress REST API endpoints, applies security har... |  | `skills/wordpress-pro/SKILL.md` |
 | **wordpress-setup** | Connect to a WordPress site via WP-CLI over SSH or REST API. Workflow: check CLI, test SSH connection, set up auth, verify access, save config. Use when connecting to a WordPress site, setting up W... |  | `skills/wordpress-setup/SKILL.md` |
+| **write-swift** | How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (... | `https://github.com/emilkowalski/skills` | `skills/write-swift/SKILL.md` |
 
 ### Testing & QA (144)
 
@@ -729,7 +736,7 @@ Total unique skills: **3327**
 | **web-testing** | Web testing with Playwright, Vitest, k6. E2E/unit/integration/load/security/visual/a11y testing. Use for test automation, flakiness, Core Web Vitals, mobile gestures, cross-browser. |  | `skills/web-testing/SKILL.md` |
 | **webapp-testing** | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browse... |  | `skills/webapp-testing/SKILL.md` |
 
-### Engineering Practices (169)
+### Engineering Practices (170)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -744,7 +751,7 @@ Total unique skills: **3327**
 | **caveman-help** | Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, "caveman help", "what caveman commands", "how do I use caveman". |  | `skills/caveman-help/SKILL.md` |
 | **caveman-review** | Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use when user says "review this PR", "co... |  | `skills/caveman-review/SKILL.md` |
 | **caveman-stats** | Show real token usage and estimated savings for the current session. Reads directly from the Codex session log — no AI estimation. Triggers on /caveman-stats. Output is injected by the mode-tracker... |  | `skills/caveman-stats/SKILL.md` |
-| **claude-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. | `https://github.com/mattpocock/skills` | `skills/claude-handoff/SKILL.md` |
+| **claude-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. |  | `skills/claude-handoff/SKILL.md` |
 | **clean-architecture** | Structure software around the Dependency Rule: source code dependencies point inward from frameworks to use cases to entities. Use when the user mentions "architecture layers", "dependency rule", "... |  | `skills/clean-architecture/SKILL.md` |
 | **clean-code** | Write readable, maintainable code through disciplined naming, small functions, and clean error handling. Use when the user mentions "clean up this code", "this function is too long", "code smells",... |  | `skills/clean-code/SKILL.md` |
 | **codebase-design** | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or A... |  | `skills/codebase-design/SKILL.md` |
@@ -870,6 +877,7 @@ Total unique skills: **3327**
 | **setup** | Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator. Use when the user runs /ar:setup or asks to start optimizing a file... |  | `skills/setup/SKILL.md` |
 | **setup-matt-pocock-skills** | Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills. |  | `skills/setup-matt-pocock-skills/SKILL.md` |
 | **skill-creator** | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a sk... |  | `skills/skill-creator/SKILL.md` |
+| **skill-inspector** | Review AI agent skills before installation using NVIDIA SkillSpector and source-aware semantic review. Use when asked whether a skill or downloaded skill folder is safe, trustworthy, installable, o... | `https://github.com/NVIDIA/skillspector` | `skills/skill-inspector/SKILL.md` |
 | **skill-security-auditor** | Security audit and vulnerability scanner for AI agent skills before installation. Use when: (1) evaluating a skill from an untrusted source, (2) auditing a skill directory or git repo URL for malic... |  | `skills/skill-security-auditor/SKILL.md` |
 | **skill-stats** | Use when reviewing which QE skills are being used, finding undertriggering skills, or analyzing skill effectiveness. Shows usage patterns and recommendations. |  | `skills/skill-stats/SKILL.md` |
 | **skillopt-sleep** | Use when the user wants their Codex agent to self-improve from past usage, asks about a nightly/offline 'sleep' or 'dream' cycle, memory/skill consolidation, or says things like 'make my agent bett... |  | `skills/skillopt-sleep/SKILL.md` |
@@ -903,12 +911,13 @@ Total unique skills: **3327**
 | **xp-practices** | Apply XP practices including pair programming, ensemble programming, continuous integration, and sustainable pace. Use when implementing agile development practices, improving team collaboration, o... |  | `skills/xp-practices/SKILL.md` |
 | **yeet** | Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`). |  | `skills/yeet/SKILL.md` |
 
-### DevOps & Cloud (236)
+### DevOps & Cloud (238)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
 | **agents-sdk** | Build AI agents on Cloudflare Workers using the Agents SDK. Load when creating stateful agents, durable workflows, real-time WebSocket apps, scheduled tasks, MCP servers, chat applications, voice a... |  | `skills/agents-sdk/SKILL.md` |
 | **airunway-aks-setup** | Set up AI Runway on AKS — from bare cluster to running model. Covers cluster verification, controller install, GPU assessment, provider setup, and first deployment. WHEN: \"setup AI Runway\", \"onb... |  | `skills/airunway-aks-setup/SKILL.md` |
+| **all-deploy** | Deploys any web app, API, or agent to the internet with a strict pre-deploy audit and a preview → health-check → prod flow. Detects Next, Vite, Astro, Remix, Nuxt, SvelteKit, FastAPI, Flask, Expres... | `https://github.com/Hainrixz/all-deploy` | `skills/all-deploy/SKILL.md` |
 | **appinsights-instrumentation** | Guidance for instrumenting webapps with Azure Application Insights. Provides telemetry patterns, SDK setup, and configuration references. WHEN: how to instrument app, App Insights SDK, telemetry pa... |  | `skills/appinsights-instrumentation/SKILL.md` |
 | **applicationinsights-web-ts** | Instrument browser/web apps with the Application Insights JavaScript SDK (@microsoft/applicationinsights-web). Use for Real User Monitoring (RUM) — page views, clicks, AJAX/fetch dependencies, exce... |  | `skills/applicationinsights-web-ts/SKILL.md` |
 | **aspnet-core** | Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, co... |  | `skills/aspnet-core/SKILL.md` |
@@ -1090,7 +1099,7 @@ Total unique skills: **3327**
 | **gcp-cloud-architect** | Design GCP architectures for startups and enterprises. Use when asked to design Google Cloud infrastructure, deploy to GKE or Cloud Run, configure BigQuery pipelines, optimize GCP costs, or migrate... |  | `skills/gcp-cloud-architect/SKILL.md` |
 | **git-commit** | Creates git commits following Conventional Commits format with type/scope/subject. Use when user wants to commit changes, create commit, save work, or stage and commit. Enforces project-specific co... |  | `skills/git-commit/SKILL.md` |
 | **git-flow-branch-creator** | Git Flow branching model helper. Use when applying patterns from github/git-flow-branch-creator or when user mentions "git-flow-branch-creator". |  | `skills/git-flow-branch-creator/SKILL.md` |
-| **git-guardrails-claude-code** | Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety ... | `https://github.com/mattpocock/skills` | `skills/git-guardrails-claude-code/SKILL.md` |
+| **git-guardrails-claude-code** | Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety ... |  | `skills/git-guardrails-claude-code/SKILL.md` |
 | **git-guardrails-Codex** | Set up Codex hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks,... |  | `skills/git-guardrails-Codex/SKILL.md` |
 | **git-workflow** | Guided git workflows: prepare PRs, clean up branches, resolve merge conflicts, handle monorepo tags, squash-and-merge patterns. Use when asked to prepare a PR, clean branches, resolve conflicts, or... |  | `skills/git-workflow/SKILL.md` |
 | **git-workflow-and-versioning** | Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, or when you need to organize work across multiple parallel streams. Use when... |  | `skills/git-workflow-and-versioning/SKILL.md` |
@@ -1124,6 +1133,7 @@ Total unique skills: **3327**
 | **monitoring-expert** | Configures monitoring systems, implements structured logging pipelines, creates Prometheus/Grafana dashboards, defines alerting rules, and instruments distributed tracing. Implements Prometheus/Gra... |  | `skills/monitoring-expert/SKILL.md` |
 | **netlify-deploy** | Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys. |  | `skills/netlify-deploy/SKILL.md` |
 | **pier-cloud** | This skill should be used when the user needs to consume the Pier Cloud (Lighthouse) API for cloud cost management — including JWT authentication, listing contexts, workspaces, and FinOps data view... |  | `skills/pier-cloud/SKILL.md` |
+| **publish-website** | Puts a web page on the internet for free, with no terminal and no paid plan — a folder of HTML/CSS/JS, or a page Claude just built. Checks the page for the things that silently break it once it's l... | `https://github.com/Hainrixz/all-deploy` | `skills/publish-website/SKILL.md` |
 | **python-appservice-deploy** | Deploy Python (Flask/Django/FastAPI) code to Azure App Service Linux. WHEN: \"Flask App Service\", \"Django App Service\", \"FastAPI App Service\", \"deploy Python to App Service\". DO NOT USE FOR:... |  | `skills/python-appservice-deploy/SKILL.md` |
 | **render-deploy** | Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their applica... |  | `skills/render-deploy/SKILL.md` |
 | **runbook-generator** | Generate operational runbooks from a service name — deployment, incident response, maintenance, and rollback workflows. Templated structure customizable per environment. Use when documenting on-cal... |  | `skills/runbook-generator/SKILL.md` |
@@ -1216,7 +1226,7 @@ Total unique skills: **3327**
 | **chatbotkit-automation** | Automate Chatbotkit tasks via Rube MCP (Composio). Always search tools first for current schemas. |  | `skills/chatbotkit-automation/SKILL.md` |
 | **chatgpt-apps** | Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps br... |  | `skills/chatgpt-apps/SKILL.md` |
 | **chrome-devtools** | Browser automation, debugging, and performance analysis using Puppeteer CLI scripts. Use for automating browsers, taking screenshots, analyzing performance, monitoring network traffic, web scraping... |  | `skills/chrome-devtools/SKILL.md` |
-| **claude-api** | Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file;... | `https://github.com/anthropics/skills` | `skills/claude-api/SKILL.md` |
+| **claude-api** | Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file;... |  | `skills/claude-api/SKILL.md` |
 | **claude-coach** |  |  | `skills/claude-coach/SKILL.md` |
 | **claude-code** |  |  | `skills/claude-code/SKILL.md` |
 | **composio** | Use 1000+ external apps via Composio - either directly through the CLI or by building AI agents and apps with the SDK |  | `skills/composio/SKILL.md` |
@@ -2629,7 +2639,7 @@ Total unique skills: **3327**
 | **loop-library** | Discover, find, compare, audit, repair, adapt, and design repeatable AI-agent loops with explicit triggers, actions, verification, stopping conditions, guardrails, and handoffs. Use when a user ask... |  | `skills/loop-library/SKILL.md` |
 | **loop-me** | Grill me about specs for the workflows I want to build, within this workspace. |  | `skills/loop-me/SKILL.md` |
 
-### Other (792)
+### Other (784)
 
 | Skill | Description | GitHub | Location |
 |-------|-------------|--------|----------|
@@ -2644,13 +2654,10 @@ Total unique skills: **3327**
 | **agents-md** | Creates and maintains concise AGENTS.md and CLAUDE.md project instruction files. Use when initializing agent rules in a repo, updating AGENTS.md, setting up project instructions, or when user menti... |  | `skills/agents-md/SKILL.md` |
 | **agile-product-owner** | Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use when writing user stories, creating ... |  | `skills/agile-product-owner/SKILL.md` |
 | **algorithmic-art** | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields,... |  | `skills/algorithmic-art/SKILL.md` |
-| **all-deploy** | Deploys any web app, API, or agent to the internet with a strict pre-deploy audit and a preview → health-check → prod flow. Detects Next, Vite, Astro, Remix, Nuxt, SvelteKit, FastAPI, Flask, Expres... |  | `skills/all-deploy/SKILL.md` |
 | **alloydb-basics** | Manages clusters, instances, and backups for Google Cloud AlloyDB for PostgreSQL, and integrates with AlloyDB MCP tools for automated database operations and vector search. Use when configuring All... |  | `skills/alloydb-basics/SKILL.md` |
 | **android-clean-architecture** | Clean Architecture patterns for Android and Kotlin Multiplatform (KMP) projects — module structure, dependency rules, UseCases, Repositories, Coroutines/Flow, and ViewModel state mapping. Use when ... |  | `skills/android-clean-architecture/SKILL.md` |
-| **animation-vocabulary** | Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term ("the bouncy thing when a popover opens" → Pop in; "the iOS rubber-band scroll" → Rubb... | `https://github.com/emilkowalski/skills` | `skills/animation-vocabulary/SKILL.md` |
 | **anti-ui-slop** | Stops AI models from shipping generic, boring UI by leveraging UIZZE's public catalog of 800,000+ real web and iOS screens. Use when designing production-grade interfaces, preventing AI UI slop, or... |  | `skills/anti-ui-slop/SKILL.md` |
 | **app-docs** | Generate complete user documentation for a web app with screenshots. Browses the app via browser automation, screenshots every screen, and produces a structured user guide with step-by-step instruc... |  | `skills/app-docs/SKILL.md` |
-| **apple-design** | Apple's approach to interface design and fluid, physical motion, translated for the web. Use when building or reviewing gesture-driven UI, spring animations, drag/swipe/sheet interactions, momentum... | `https://github.com/emilkowalski/skills` | `skills/apple-design/SKILL.md` |
 | **application-security-testing** | Application security testing (AppSec) across a whole product with Strix — decide which asset needs which test (source code, running web app, API, CI pipeline), run it, and turn the results into a r... | `https://github.com/usestrix/strix` | `skills/application-security-testing/SKILL.md` |
 | **aprende** | EN — Review the current conversation and surface reusable learnings across four categories (memory, lesson, skill, project-doc). Generate a numbered candidate list first; only write to disk after t... |  | `skills/aprende/SKILL.md` |
 | **aprende-skill** | Metodología de aprendizaje activo y aprendizaje acelerado para asimilar rápidamente nuevos dominios técnicos. |  | `skills/aprende-skill/SKILL.md` |
@@ -2658,7 +2665,6 @@ Total unique skills: **3327**
 | **architecture-blueprint-generator** | Generates comprehensive architectural blueprints by scanning codebase dependencies, module boundaries, data flows, and deployment targets. Use when creating system architecture diagrams, onboarding... |  | `skills/architecture-blueprint-generator/SKILL.md` |
 | **architecture-decision-records** | Captures architectural decisions made during development sessions as structured Architecture Decision Records (ADRs). Auto-detects decision moments, records context, options considered, trade-offs,... |  | `skills/architecture-decision-records/SKILL.md` |
 | **artifacts-builder** | Suite of tools for creating elaborate, multi-component Codex.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state man... |  | `skills/artifacts-builder/SKILL.md` |
-| **ask-sonner** | Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and... | `https://github.com/emilkowalski/skills` | `skills/ask-sonner/SKILL.md` |
 | **autofix** | Safely reviews and applies CodeRabbit PR review-thread feedback from GitHub with per-change approval. Use when applying PR comments, fixing reviewer feedback, or when user mentions "autofix", "code... |  | `skills/autofix/SKILL.md` |
 | **autoplan** | Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack) |  | `skills/autoplan/SKILL.md` |
 | **baoyu-compress-image** | Compresses images to WebP (default) or PNG with automatic tool selection (sharp, cwebp, pngquant). Use when optimizing image assets for web performance, converting to webp, or when user mentions "b... |  | `skills/baoyu-compress-image/SKILL.md` |
@@ -2679,7 +2685,7 @@ Total unique skills: **3327**
 | **careful** | Safety guardrails for destructive commands. (gstack) |  | `skills/careful/SKILL.md` |
 | **chaos-experiment** |  |  | `skills/chaos-experiment/SKILL.md` |
 | **claimable-postgres** | Provisions instant temporary PostgreSQL databases via Claimable Postgres by Neon (neon.new) without login or signup. Use when running quick SQL tests, provisioning sandbox DBs for CI, or when user ... |  | `skills/claimable-postgres/SKILL.md` |
-| **claude** | Claude Code CLI wrapper for non-Claude hosts - three modes. Review: independent diff review via claude -p. Challenge: adversarial failure-mode review. Consult: ask Claude about the repo with read-o... | `https://github.com/garrytan/gstack` | `skills/claude/SKILL.md` |
+| **claude** | Claude Code CLI wrapper for non-Claude hosts - three modes. Review: independent diff review via claude -p. Challenge: adversarial failure-mode review. Consult: ask Claude about the repo with read-o... |  | `skills/claude/SKILL.md` |
 | **claude-for-legal** | Análisis legal, revisión de contratos, cumplimiento normativo y síntesis de documentos jurídicos. |  | `skills/claude-for-legal/SKILL.md` |
 | **claude-mem** | Persistent architectural decisions and session memory across agent invocations. |  | `skills/claude-mem/SKILL.md` |
 | **claude-seo** | SEO técnico, Schema org markup, GEO (Generative Engine Optimization) y optimización de motores de búsqueda de IA. |  | `skills/claude-seo/SKILL.md` |
@@ -2687,8 +2693,7 @@ Total unique skills: **3327**
 | **clickhouse-io** | ClickHouse column-oriented database patterns, query optimization, MergeTree engines, materialization, and analytics. Use when designing ClickHouse schemas, optimizing OLAP SQL queries, or when user... |  | `skills/clickhouse-io/SKILL.md` |
 | **codebase-memory-mcp** | Indexes a codebase into a persistent knowledge graph so agents can query callers, callees, type hierarchies, and module relationships instead of re-reading dozens of files each session. Save tokens... |  | `skills/codebase-memory-mcp/SKILL.md` |
 | **codehealth-mcp** | Real-time structural Code Health analysis via CodeScene MCP. Reviews code complexity before edits, verifies score deltas after changes, and gates commits/PRs against technical debt accumulation. Us... |  | `skills/codehealth-mcp/SKILL.md` |
-| **codex** | OpenAI Codex CLI wrapper — three modes. (gstack) |  | `skills/codex/SKILL.md` |
-| **Codex** | Codex CLI wrapper for non-Codex hosts - three modes. Review: independent diff review via Codex -p. Challenge: adversarial failure-mode review. Consult: ask Codex about the repo with read-only file ... |  | `skills/Codex/SKILL.md` |
+| **Codex** | Codex CLI wrapper for non-Codex hosts - three modes. Review: independent diff review via Codex -p. Challenge: adversarial failure-mode review. Consult: ask Codex about the repo with read-only file ... |  | `skills/codex/SKILL.md` |
 | **Codex-api** | Reference for the Codex API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file; ... |  | `skills/Codex-api/SKILL.md` |
 | **Codex-coach** | Personal coach that teaches users to become Codex power users. Use this skill the FIRST time a user asks to "learn Codex", "be a power user", "coach me", "teach me Codex tricks", "what can Codex do... |  | `skills/Codex-coach/SKILL.md` |
 | **Codex-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. |  | `skills/Codex-handoff/SKILL.md` |
@@ -2776,7 +2781,6 @@ Total unique skills: **3327**
 | **efficient-fable** | Orchestrate research & coding with cheap subagents. Use when applying patterns from BuilderIO/efficient-fable or when user mentions "efficient-fable". |  | `skills/efficient-fable/SKILL.md` |
 | **efficient-frontier** | Frontier model orchestration with subagents. Use when applying patterns from BuilderIO/efficient-frontier or when user mentions "efficient-frontier". |  | `skills/efficient-frontier/SKILL.md` |
 | **em-dash** | Proper typography & em-dash usage guidance. Use when applying patterns from github/em-dash or when user mentions "em-dash". |  | `skills/em-dash/SKILL.md` |
-| **emil-design-eng** | This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great. | `https://github.com/emilkowalski/skills` | `skills/emil-design-eng/SKILL.md` |
 | **energy-procurement** | Tariff optimization & energy cost management. Use when applying patterns from affaan-m/energy-procurement or when user mentions "energy-procurement". |  | `skills/energy-procurement/SKILL.md` |
 | **epic-design** | Build immersive, cinematic 2.5D interactive websites using scroll storytelling, parallax depth, text animations, and premium scroll effects — no WebGL required. Use this skill for any web design ta... |  | `skills/epic-design/SKILL.md` |
 | **error-handling** | Robust error handling across TS, Python & Go. Use when applying patterns from affaan-m/error-handling or when user mentions "error-handling". |  | `skills/error-handling/SKILL.md` |
@@ -3034,7 +3038,6 @@ Total unique skills: **3327**
 | **personwise-compliance-training** | Compliance Training from supplied source materials. |  | `skills/personwise-compliance-training/SKILL.md` |
 | **personwise-content-repurposing** | Content Repurposing from supplied video/audio source materials. |  | `skills/personwise-content-repurposing/SKILL.md` |
 | **personwise-create-course** | Create, refine, resume, publish polished PersonWise courses. |  | `skills/personwise-create-course/SKILL.md` |
-| **pick-ui-library** | Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only... | `https://github.com/emilkowalski/skills` | `skills/pick-ui-library/SKILL.md` |
 | **pipeline** |  |  | `skills/pipeline/SKILL.md` |
 | **plan-ceo-review** | CEO/founder-mode plan review. (gstack) |  | `skills/plan-ceo-review/SKILL.md` |
 | **plan-design-review** | Designer's eye plan review — interactive, like CEO and Eng review. (gstack) |  | `skills/plan-design-review/SKILL.md` |
@@ -3408,7 +3411,6 @@ Total unique skills: **3327**
 | **workspace-surface-audit** | Audit active repo, MCP servers, plugins & recommend ECC skills. |  | `skills/workspace-surface-audit/SKILL.md` |
 | **wowerpoint** | Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as share... |  | `skills/wowerpoint/SKILL.md` |
 | **write-coding-standards-from-file** | Write coding standards document from codebase files. |  | `skills/write-coding-standards-from-file/SKILL.md` |
-| **write-swift** | How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (... | `https://github.com/emilkowalski/skills` | `skills/write-swift/SKILL.md` |
 | **writer-memory** | Agentic memory system for fiction writers (characters & scenes). |  | `skills/writer-memory/SKILL.md` |
 | **writing-beats** | Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it. |  | `skills/writing-beats/SKILL.md` |
 | **writing-clearly-and-concisely** | Writing clear and concise prose for documentation & UI. |  | `skills/writing-clearly-and-concisely/SKILL.md` |
@@ -3451,7 +3453,7 @@ Total unique skills: **3327**
 | 17 | **ad-creative** | When the user needs to generate, iterate, or scale ad creative for paid advertising. Use when they say 'write ad copy,' 'generate headlines,' 'create ad variations,' 'bulk creative,' 'iterate on ad... | - | agents |
 | 18 | **adapt** | Adapt designs to work across different screen sizes, devices, contexts, or platforms. Implements breakpoints, fluid layouts, and touch targets. Use when the user mentions responsive design, mobile ... | - | agents |
 | 19 | **addresszen-automation** | Automate Addresszen tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 20 | **addyosmani** | Senior engineering habits & full lifecycle suite by Addy Osmani (Google Chrome Lead). Enforces a structured lifecycle: /spec → /plan → /build → /test → /review → /ship, along with web performance a... | https://github.com/addyosmani/agent-skills | claude |
+| 20 | **addyosmani** | Senior engineering habits & full lifecycle suite by Addy Osmani (Google Chrome Lead). Enforces a structured lifecycle: /spec → /plan → /build → /test → /review → /ship, along with web performance a... | https://github.com/addyosmani/agent-skills | agents |
 | 21 | **adobe-automation** | Automate Adobe tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 22 | **adrapid-automation** | Automate Adrapid tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 23 | **ads** | Operate professional paid advertising across Google, Meta, YouTube, LinkedIn, TikTok, Microsoft, Apple, Amazon, Reddit, Pinterest, Snapchat, and X. Use for account intake, source-grounded audits, s... | - | agents |
@@ -3504,7 +3506,7 @@ Total unique skills: **3327**
 | 70 | **agent-harness** | Turn any domain folder of skills into a bounded agentic loop: compile a goal into a verifiable task plan, execute tasks with the domain's own tools, verify every task with machine-run checks, retry... | - | agents |
 | 71 | **agent-mail-automation** | Automate Agent Mail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 72 | **agent-protocol** | Inter-agent communication protocol for C-suite agent teams. Defines invocation syntax, loop prevention, isolation rules, and response formats. Use when C-suite agents need to query each other, coor... | - | agents |
-| 73 | **agent-reach** | Web & social intelligence scraper for AI agents. Enables agents to search and inspect content across X/Twitter, Reddit, YouTube, and GitHub without paid API keys. Use when conducting market researc... | - | claude |
+| 73 | **agent-reach** | Web & social intelligence scraper for AI agents. Enables agents to search and inspect content across X/Twitter, Reddit, YouTube, and GitHub without paid API keys. Use when conducting market researc... | - | agents |
 | 74 | **agent-ready-a2a-agent-card** | Sub-skill de agent-ready-cloudflare: Implement A2A Agent Card | - | agents |
 | 75 | **agent-ready-acp** | Sub-skill de agent-ready-cloudflare: Implement ACP Discovery Document | - | agents |
 | 76 | **agent-ready-agent-skills** | Sub-skill de agent-ready-cloudflare: Implement Agent Skills Discovery Index | - | agents |
@@ -3529,12 +3531,12 @@ Total unique skills: **3327**
 | 95 | **agent-ready-web-bot-auth** | Sub-skill de agent-ready-cloudflare: Implement Web Bot Auth | - | agents |
 | 96 | **agent-ready-webmcp** | Sub-skill de agent-ready-cloudflare: Implement WebMCP | - | agents |
 | 97 | **agent-ready-x402** | Sub-skill de agent-ready-cloudflare: Implement x402 Payment Protocol | - | agents |
-| 98 | **agent-skill-generator** | Analyzes the current codebase and automatically generates a reusable AI agent skill capturing project-specific patterns, conventions, and workflows. Use when distilling a project's architecture int... | - | claude |
-| 99 | **agent-skill-stack** | Finds, evaluates, and assembles the smallest compatible set of AI Agent Skills for an end-to-end natural language goal. Use when user wants to discover, bundle, or combine skills for complex multi-... | - | claude |
-| 100 | **agent-skill-validator** | Validates SKILL.md files against the official agentskills.io specification before publishing. Checks YAML frontmatter, name formatting, description clarity, argument hint syntax, and file structure... | - | claude |
-| 101 | **agent-sort** | Builds an evidence-backed ECC install plan for a repo by sorting skills, commands, rules, hooks, and extras into DAILY (frequent use) vs LIBRARY (on-demand) buckets. Use when organizing agent confi... | - | claude |
-| 102 | **agent-supply-chain** | Verifies supply chain integrity for AI agent plugins, tools, and dependencies. Generates SHA-256 integrity manifests and audits third-party agent packages before installation. Use when verifying se... | - | claude |
-| 103 | **agent-watchdog** | Audits, reviews, compares, or fixes another agent's work from a Codex session ID, Claude Code session transcript, or chat link. Use when babysitting background agents, reviewing subagent outputs, d... | - | claude |
+| 98 | **agent-skill-generator** | Analyzes the current codebase and automatically generates a reusable AI agent skill capturing project-specific patterns, conventions, and workflows. Use when distilling a project's architecture int... | - | agents |
+| 99 | **agent-skill-stack** | Finds, evaluates, and assembles the smallest compatible set of AI Agent Skills for an end-to-end natural language goal. Use when user wants to discover, bundle, or combine skills for complex multi-... | - | agents |
+| 100 | **agent-skill-validator** | Validates SKILL.md files against the official agentskills.io specification before publishing. Checks YAML frontmatter, name formatting, description clarity, argument hint syntax, and file structure... | - | agents |
+| 101 | **agent-sort** | Builds an evidence-backed ECC install plan for a repo by sorting skills, commands, rules, hooks, and extras into DAILY (frequent use) vs LIBRARY (on-demand) buckets. Use when organizing agent confi... | - | agents |
+| 102 | **agent-supply-chain** | Verifies supply chain integrity for AI agent plugins, tools, and dependencies. Generates SHA-256 integrity manifests and audits third-party agent packages before installation. Use when verifying se... | - | agents |
+| 103 | **agent-watchdog** | Audits, reviews, compares, or fixes another agent's work from a Codex session ID, Claude Code session transcript, or chat link. Use when babysitting background agents, reviewing subagent outputs, d... | - | agents |
 | 104 | **agent-workflow-designer** | Design production-grade multi-agent workflows with clear pattern choice (sequential, parallel, hierarchical), handoff contracts, failure handling, and cost/context controls. Use when architecting a... | - | agents |
 | 105 | **AgentDB Advanced Features** | Master advanced AgentDB features including QUIC synchronization, multi-database management, custom distance metrics, hybrid search, and distributed systems integration. Use when building distribute... | - | agents |
 | 106 | **AgentDB Learning Plugins** | Create and train AI learning plugins with AgentDB's 9 reinforcement learning algorithms. Includes Decision Transformer, Q-Learning, SARSA, Actor-Critic, and more. Use when building self-learning ag... | - | agents |
@@ -3542,33 +3544,33 @@ Total unique skills: **3327**
 | 108 | **AgentDB Performance Optimization** | Optimize AgentDB performance with quantization (4-32x memory reduction), HNSW indexing (150x faster search), caching, and batch operations. Use when optimizing memory usage, improving search speed,... | - | agents |
 | 109 | **AgentDB Vector Search** | Implement semantic vector search with AgentDB for intelligent document retrieval, similarity matching, and context-aware querying. Use when building RAG systems, semantic search engines, or intelli... | - | agents |
 | 110 | **agenthub** | Multi-agent collaboration plugin that spawns N parallel subagents competing on the same task via git worktree isolation. Agents work independently, results are evaluated by metric or LLM judge, and... | - | agents |
-| 111 | **agentic-awesome-skills** | Directorio curado de habilidades avanzadas para agentes autónomos y sistemas multi-agente. | - | claude |
-| 112 | **agentic-engineering** | Operate as an agentic engineer using eval-first execution, task decomposition, and cost-aware model routing. Use when structuring complex software tasks, optimizing LLM token budget allocation, or ... | - | claude |
-| 113 | **agentic-eval** | Patterns and techniques for evaluating and improving AI agent outputs. Implements self-critique, reflection loops, and quantitative evaluation suites. Use when building eval benchmarks, testing pro... | - | claude |
-| 114 | **agentic-os** | Build persistent multi-agent operating systems on Claude Code / Antigravity. Covers kernel architecture, specialist sub-agents, slash commands, file-based memory, and scheduled background tasks. Us... | - | claude |
+| 111 | **agentic-awesome-skills** | Directorio curado de habilidades avanzadas para agentes autónomos y sistemas multi-agente. | - | agents |
+| 112 | **agentic-engineering** | Operate as an agentic engineer using eval-first execution, task decomposition, and cost-aware model routing. Use when structuring complex software tasks, optimizing LLM token budget allocation, or ... | - | agents |
+| 113 | **agentic-eval** | Patterns and techniques for evaluating and improving AI agent outputs. Implements self-critique, reflection loops, and quantitative evaluation suites. Use when building eval benchmarks, testing pro... | - | agents |
+| 114 | **agentic-os** | Build persistent multi-agent operating systems on Claude Code / Antigravity. Covers kernel architecture, specialist sub-agents, slash commands, file-based memory, and scheduled background tasks. Us... | - | agents |
 | 115 | **agentic-quality-engineering** | Use when orchestrating QE agents, understanding PACTS principles, configuring the AQE v3 fleet, or leveraging AI agents as force multipliers for quality work. | - | agents |
 | 116 | **agentql-automation** | Automate Agentql tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 117 | **agents-md** | Creates and maintains concise AGENTS.md and CLAUDE.md project instruction files. Use when initializing agent rules in a repo, updating AGENTS.md, setting up project instructions, or when user menti... | - | claude |
+| 117 | **agents-md** | Creates and maintains concise AGENTS.md and CLAUDE.md project instruction files. Use when initializing agent rules in a repo, updating AGENTS.md, setting up project instructions, or when user menti... | - | agents |
 | 118 | **agents-sdk** | Build AI agents on Cloudflare Workers using the Agents SDK. Load when creating stateful agents, durable workflows, real-time WebSocket apps, scheduled tasks, MCP servers, chat applications, voice a... | - | agents |
-| 119 | **agentshield** | Escudo de seguridad para agentes de IA: previene prompt injection, filtrado de credenciales y ejecución de código peligroso. | https://github.com/affaan-m/everything-claude-code | claude |
+| 119 | **agentshield** | Escudo de seguridad para agentes de IA: previene prompt injection, filtrado de credenciales y ejecución de código peligroso. | https://github.com/affaan-m/everything-claude-code | agents |
 | 120 | **agenty-automation** | Automate Agenty tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 121 | **agile-product-owner** | Agile product ownership for backlog management and sprint execution. Covers user story writing, acceptance criteria, sprint planning, and velocity tracking. Use when writing user stories, creating ... | - | agents |
 | 122 | **agiled-automation** | Automate Agiled tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 123 | **agility-cms-automation** | Automate Agility CMS tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 124 | **Ahrefs Automation** | Automate SEO research with Ahrefs -- analyze backlink profiles, research keywords, track domain metrics history, audit organic rankings, and perform batch URL analysis through the Composio Ahrefs i... | - | agents |
 | 125 | **ai-act-readiness** | /cs:ai-act-readiness <system> — EU AI Act 6-question forcing interrogation. Use during AI-system intake, before EU deployment, or during annual compliance refresh as Article 113 obligations phase i... | - | agents |
-| 126 | **ai-first-engineering** | Engineering operating model for development teams where AI agents generate a large share of implementation output. Focuses on code review rigor, automated test gates, and human oversight. Use when ... | - | claude |
+| 126 | **ai-first-engineering** | Engineering operating model for development teams where AI agents generate a large share of implementation output. Focuses on code review rigor, automated test gates, and human oversight. Use when ... | - | agents |
 | 127 | **ai-image-generator** | Generate AI images using Gemini or GPT APIs directly. Covers model selection (Gemini for scenes, GPT for transparent icons), the 5-part prompting framework, API calling patterns, multi-turn editing... | - | agents |
 | 128 | **ai-ml-api-automation** | Automate AI ML API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 129 | **ai-multimodal** | Process and generate multimedia content using Google Gemini API. Capabilities include analyze audio files (transcription with timestamps, summarization, speech understanding, music/sound analysis u... | - | agents |
-| 130 | **ai-prompt-engineering-safety-review** | Comprehensive AI prompt engineering safety review. Analyzes system prompts, skill instructions, and agent rules for safety, bias, security vulnerabilities (prompt injection, jailbreaks), and perfor... | - | claude |
-| 131 | **ai-ready** | Makes any repository AI-ready. Analyzes codebase structure and automatically generates AGENTS.md, copilot-instructions.md, CI workflows, and issue templates by mining historical PR reviews and comm... | - | claude |
-| 132 | **ai-regression-testing** | Regression testing strategies for AI-assisted development. Implements sandbox-mode API testing without DB dependencies, automated bug-check workflows, and regression prevention patterns. Use when s... | - | claude |
-| 133 | **ai-sdk** | Guidance and code generation for Vercel AI SDK (generateText, streamText, useChat, ToolLoop, etc.). Use when building AI features in React/Next.js/Node apps, stream responses, configure LLM provide... | - | claude |
+| 130 | **ai-prompt-engineering-safety-review** | Comprehensive AI prompt engineering safety review. Analyzes system prompts, skill instructions, and agent rules for safety, bias, security vulnerabilities (prompt injection, jailbreaks), and perfor... | - | agents |
+| 131 | **ai-ready** | Makes any repository AI-ready. Analyzes codebase structure and automatically generates AGENTS.md, copilot-instructions.md, CI workflows, and issue templates by mining historical PR reviews and comm... | - | agents |
+| 132 | **ai-regression-testing** | Regression testing strategies for AI-assisted development. Implements sandbox-mode API testing without DB dependencies, automated bug-check workflows, and regression prevention patterns. Use when s... | - | agents |
+| 133 | **ai-sdk** | Guidance and code generation for Vercel AI SDK (generateText, streamText, useChat, ToolLoop, etc.). Use when building AI features in React/Next.js/Node apps, stream responses, configure LLM provide... | - | agents |
 | 134 | **ai-security** | Use when assessing AI/ML systems for prompt injection, jailbreak vulnerabilities, model inversion risk, data poisoning exposure, or agent tool abuse. Covers MITRE ATLAS technique mapping, injection... | - | agents |
 | 135 | **ai-seo** | When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers. Also use when the user mentions 'AI SEO,' 'AEO,' 'GEO,' 'LLMO,' 'answer engine o... | - | agents |
-| 136 | **ai-slop-cleaner** | Cleans AI-generated code slop with a regression-safe, deletion-first workflow and optional reviewer-only mode. Strips redundant try/catch blocks, unused interfaces, over-commented boilerplate, and ... | - | claude |
-| 137 | **ai-team-orchestration** | Bootstrap and run a multi-agent AI development team. Sets up parallel dev/QA agents, sprint management, and task assignment protocols for multi-agent software projects. Use when starting projects w... | - | claude |
+| 136 | **ai-slop-cleaner** | Cleans AI-generated code slop with a regression-safe, deletion-first workflow and optional reviewer-only mode. Strips redundant try/catch blocks, unused interfaces, over-commented boilerplate, and ... | - | agents |
+| 137 | **ai-team-orchestration** | Bootstrap and run a multi-agent AI development team. Sets up parallel dev/QA agents, sprint management, and task assignment protocols for multi-agent software projects. Use when starting projects w... | - | agents |
 | 138 | **ai-visibility** | Check if your brand and content appear in AI-generated answers across Google AI Overviews, ChatGPT, Perplexity, Codex, Copilot, and Gemini. Audit citation-readiness, crawl access, and content extra... | - | agents |
 | 139 | **aims-audit** | /cs:aims-audit <scope> — ISO/IEC 42001 AIMS internal-audit 6-question forcing interrogation. Use before certification stage 1, before annual internal audit cycles, or when onboarding a new AI syste... | - | agents |
 | 140 | **airunway-aks-setup** | Set up AI Runway on AKS — from bare cluster to running model. Covers cluster verification, controller install, GPU assessment, provider setup, and first deployment. WHEN: \"setup AI Runway\", \"onb... | - | agents |
@@ -3578,9 +3580,9 @@ Total unique skills: **3327**
 | 144 | **algodocs-automation** | Automate Algodocs tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 145 | **algolia-automation** | Automate Algolia tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 146 | **algorithmic-art** | Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields,... | - | agents |
-| 147 | **all-deploy** | Deploys any web app, API, or agent to the internet with a strict pre-deploy audit and a preview → health-check → prod flow. Detects Next, Vite, Astro, Remix, Nuxt, SvelteKit, FastAPI, Flask, Expres... | - | agents |
+| 147 | **all-deploy** | Deploys any web app, API, or agent to the internet with a strict pre-deploy audit and a preview → health-check → prod flow. Detects Next, Vite, Astro, Remix, Nuxt, SvelteKit, FastAPI, Flask, Expres... | https://github.com/Hainrixz/all-deploy | agents |
 | 148 | **all-images-ai-automation** | Automate All Images AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 149 | **alloydb-basics** | Manages clusters, instances, and backups for Google Cloud AlloyDB for PostgreSQL, and integrates with AlloyDB MCP tools for automated database operations and vector search. Use when configuring All... | - | claude |
+| 149 | **alloydb-basics** | Manages clusters, instances, and backups for Google Cloud AlloyDB for PostgreSQL, and integrates with AlloyDB MCP tools for automated database operations and vector search. Use when configuring All... | - | agents |
 | 150 | **alpha-vantage-automation** | Automate Alpha Vantage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 151 | **altoviz-automation** | Automate Altoviz tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 152 | **alttext-ai-automation** | Automate Alttext AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -3593,9 +3595,9 @@ Total unique skills: **3327**
 | 159 | **analytics-tracking** | Set up, audit, and debug analytics tracking implementation — GA4, Google Tag Manager, event taxonomy, conversion tracking, and data quality. Use when building a tracking plan from scratch, auditing... | - | agents |
 | 160 | **anchor-browser-automation** | Automate Anchor Browser tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 161 | **andreessen** | Marc Andreessen-mode decision and productivity skill. A blunt, market-first operator that pressure-tests ideas, ventures, features, and career bets through Andreessen's actual frameworks — market d... | - | agents |
-| 162 | **android-clean-architecture** | Clean Architecture patterns for Android and Kotlin Multiplatform (KMP) projects — module structure, dependency rules, UseCases, Repositories, Coroutines/Flow, and ViewModel state mapping. Use when ... | - | claude |
+| 162 | **android-clean-architecture** | Clean Architecture patterns for Android and Kotlin Multiplatform (KMP) projects — module structure, dependency rules, UseCases, Repositories, Coroutines/Flow, and ViewModel state mapping. Use when ... | - | agents |
 | 163 | **angular-architect** | Generates Angular 17+ standalone components, configures advanced routing with lazy loading and guards, implements NgRx state management, applies RxJS patterns, and optimizes bundle performance. Use... | - | agents |
-| 164 | **angular-developer** | Generates Angular 18+ code and architectural guidance using Signals, Standalone Components, inject(), defer blocks, and RxJS interoperability. Use when building Angular apps, refactoring Angular co... | - | claude |
+| 164 | **angular-developer** | Generates Angular 18+ code and architectural guidance using Signals, Standalone Components, inject(), defer blocks, and RxJS interoperability. Use when building Angular apps, refactoring Angular co... | - | agents |
 | 165 | **animate** | Build an animation from scratch, making the decisions in the order that determines whether it feels right — should it animate at all, what purpose, which tool, which properties, which curve and dur... | https://github.com/emilkowalski/skills | agents |
 | 166 | **animate-expo** | Build animations in React Native and Expo, making the decisions in the order that determines whether they feel right — should it animate, which thread it runs on, which properties, spring or timing... | https://github.com/emilkowalski/skills | agents |
 | 167 | **animation-vocabulary** | Reverse-lookup glossary that turns a vague description of a web animation or motion effect into its exact term ("the bouncy thing when a popover opens" → Pop in; "the iOS rubber-band scroll" → Rubb... | https://github.com/emilkowalski/skills | agents |
@@ -3603,12 +3605,12 @@ Total unique skills: **3327**
 | 169 | **anonyflow-automation** | Automate Anonyflow tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 170 | **anthropic-administrator-automation** | Automate Anthropic Admin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 171 | **anthropic_administrator-automation** | Automate Anthropic Admin tasks via Rube MCP (Composio): API keys, usage, workspaces, and organization management. Always search tools first for current schemas. | - | agents |
-| 172 | **anti-ui-slop** | Stops AI models from shipping generic, boring UI by leveraging UIZZE's public catalog of 800,000+ real web and iOS screens. Use when designing production-grade interfaces, preventing AI UI slop, or... | - | claude |
+| 172 | **anti-ui-slop** | Stops AI models from shipping generic, boring UI by leveraging UIZZE's public catalog of 800,000+ real web and iOS screens. Use when designing production-grade interfaces, preventing AI UI slop, or... | - | agents |
 | 173 | **apaleo-automation** | Automate Apaleo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 174 | **apex27-automation** | Automate Apex27 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 175 | **api-and-interface-design** | Guides stable API and interface design. Use when designing APIs, module boundaries, or any public interface. Use when creating REST or GraphQL endpoints, defining type contracts between modules, or... | - | agents |
 | 176 | **api-bible-automation** | Automate API Bible tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 177 | **api-design** | Production REST API design patterns including resource naming, status codes, cursor pagination, filtering, standardized error envelopes, versioning, and rate-limiting headers. Use when creating or ... | - | claude |
+| 177 | **api-design** | Production REST API design patterns including resource naming, status codes, cursor pagination, filtering, standardized error envelopes, versioning, and rate-limiting headers. Use when creating or ... | - | agents |
 | 178 | **api-design-patterns** | REST API design, versioning, error responses, pagination, OpenAPI conventions. Use when designing new API endpoints, reviewing API contracts, or setting up Swagger/OpenAPI documentation. | - | agents |
 | 179 | **api-design-reviewer** | Comprehensive REST API design review with automated linting, breaking-change detection, and design scorecards. Catches inconsistent conventions, missing versioning, and design smells before APIs sh... | - | agents |
 | 180 | **api-designer** | Use when designing REST or GraphQL APIs, creating OpenAPI specifications, or planning API architecture. Invoke for resource modeling, versioning strategies, pagination patterns, error handling stan... | - | agents |
@@ -3640,10 +3642,10 @@ Total unique skills: **3327**
 | 206 | **appsflyer-automation** | Automate Appsflyer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 207 | **appveyor-automation** | Automate Appveyor tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 208 | **aprende** | EN — Review the current conversation and surface reusable learnings across four categories (memory, lesson, skill, project-doc). Generate a numbered candidate list first; only write to disk after t... | - | agents |
-| 209 | **aprende-skill** | Metodología de aprendizaje activo y aprendizaje acelerado para asimilar rápidamente nuevos dominios técnicos. | - | claude |
-| 210 | **archify** | Turn a codebase or system description into a polished, interactive system map, architecture diagram, workflow, sequence, or data-flow diagram — directly in chat. MANDATORY PROTOCOLS: 1. ALWAYS AVAI... | - | claude |
-| 211 | **architecture-blueprint-generator** | Generates comprehensive architectural blueprints by scanning codebase dependencies, module boundaries, data flows, and deployment targets. Use when creating system architecture diagrams, onboarding... | - | claude |
-| 212 | **architecture-decision-records** | Captures architectural decisions made during development sessions as structured Architecture Decision Records (ADRs). Auto-detects decision moments, records context, options considered, trade-offs,... | - | claude |
+| 209 | **aprende-skill** | Metodología de aprendizaje activo y aprendizaje acelerado para asimilar rápidamente nuevos dominios técnicos. | - | agents |
+| 210 | **archify** | Turn a codebase or system description into a polished, interactive system map, architecture diagram, workflow, sequence, or data-flow diagram — directly in chat. MANDATORY PROTOCOLS: 1. ALWAYS AVAI... | - | agents |
+| 211 | **architecture-blueprint-generator** | Generates comprehensive architectural blueprints by scanning codebase dependencies, module boundaries, data flows, and deployment targets. Use when creating system architecture diagrams, onboarding... | - | agents |
+| 212 | **architecture-decision-records** | Captures architectural decisions made during development sessions as structured Architecture Decision Records (ADRs). Auto-detects decision moments, records context, options considered, trade-offs,... | - | agents |
 | 213 | **architecture-designer** | Use when designing new high-level system architecture, reviewing existing designs, or making architectural decisions. Invoke to create architecture diagrams, write Architecture Decision Records (AD... | - | agents |
 | 214 | **arquiteto-de-empresa** | Company Architect: builds a business from scratch as an OKF (Open Knowledge Format) bundle — a tree of version-controllable .md files with frontmatter type, links forming a graph, and reserved inde... | - | agents |
 | 215 | **arrange** | Improve layout, spacing, and visual rhythm. Fixes monotonous grids, inconsistent spacing, and weak visual hierarchy. Use when the user mentions layout feeling off, spacing issues, visual hierarchy,... | - | agents |
@@ -3655,7 +3657,7 @@ Total unique skills: **3327**
 | 221 | **ask-matt** | Ask which skill or flow fits your situation. A router over the skills in this repo. | - | agents |
 | 222 | **ask-sonner** | Guide to Sonner, the React toast library — install and wire up the Toaster, pick the right toast() call, promise and loading toasts, updating, dismissing and persisting toasts, styling, theming and... | https://github.com/emilkowalski/skills | agents |
 | 223 | **aso** | When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions 'ASO audit,' 'app store optimization,' 'optimize my app listing,' 'improve app visibili... | - | agents |
-| 224 | **aso-audit** | Audits and optimizes App Store (iOS) and Google Play Store listings for maximum organic search visibility and conversion rate. Covers app title keywords, subtitle optimization, screenshots, preview... | - | claude |
+| 224 | **aso-audit** | Audits and optimizes App Store (iOS) and Google Play Store listings for maximum organic search visibility and conversion rate. Covers app title keywords, subtitle optimization, screenshots, preview... | - | agents |
 | 225 | **aspnet-core** | Build, review, refactor, or architect ASP.NET Core web applications using current official guidance for .NET web development. Use when working on Blazor Web Apps, Razor Pages, MVC, Minimal APIs, co... | - | agents |
 | 226 | **astica-ai-automation** | Automate Astica AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 227 | **astro** | Skill for building with the Astro web framework. Helps create Astro components and pages, configure SSR adapters, set up content collections, deploy static sites, and manage project structure and C... | - | agents |
@@ -3667,21 +3669,21 @@ Total unique skills: **3327**
 | 233 | **atlassian-templates** | Atlassian Template and Files Creator/Modifier expert for creating, modifying, and managing Jira and Confluence templates, blueprints, custom layouts, reusable components, and standardized content s... | - | agents |
 | 234 | **Attio Automation** | Automate Attio CRM operations -- search records, query contacts and companies with advanced filters, manage notes, list attributes, and navigate your relationship data -- using natural language thr... | - | agents |
 | 235 | **audit** | Run technical quality checks across accessibility, performance, theming, responsive design, and anti-patterns. Generates a scored report with P0-P3 severity ratings and actionable plan. Use when th... | - | agents |
-| 236 | **auditoria-fullstack-master** | Documento maestro de auditoria y rearquitectura full-stack (v11.4, 33 fases, 45 reglas) - seguridad, secretos, multi-tenancy, RBAC, base de datos (incluye auditoria DBRE de integridad/concurrencia)... | - | claude |
+| 236 | **auditoria-fullstack-master** | Documento maestro de auditoria y rearquitectura full-stack (v11.4, 33 fases, 45 reglas) - seguridad, secretos, multi-tenancy, RBAC, base de datos (incluye auditoria DBRE de integridad/concurrencia)... | - | agents |
 | 237 | **aussie-business-english** | Australian business English writing style for professional communications. Warm, direct, EN-AU spelling. Use when writing emails, chat messages, proposals, client communications, or any business wr... | - | agents |
 | 238 | **auth-md** | Generate, validate, and explain `auth.md` files — the open protocol that lets AI agents register for services on behalf of users. Use this skill whenever the user wants to make their app agent-read... | - | agents |
 | 239 | **auth-patterns** | JWT access/refresh tokens, Passport.js strategies, session management, OAuth. Use when implementing authentication, authorization, or setting up OAuth providers in a NestJS + Next.js app. | - | agents |
 | 240 | **auth0-automation** | Automate Auth0 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 241 | **autobound-automation** | Automate Autobound tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 242 | **autofix** | Safely reviews and applies CodeRabbit PR review-thread feedback from GitHub with per-change approval. Use when applying PR comments, fixing reviewer feedback, or when user mentions "autofix", "code... | - | claude |
+| 242 | **autofix** | Safely reviews and applies CodeRabbit PR review-thread feedback from GitHub with per-change approval. Use when applying PR comments, fixing reviewer feedback, or when user mentions "autofix", "code... | - | agents |
 | 243 | **autom-automation** | Automate Autom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 244 | **autonomous-loops** | Patterns and architectures for autonomous Claude Code execution loops — from simple sequential pipelines to RFC-driven multi-agent DAG systems. Use when designing long-running agent workflows, sett... | - | claude |
+| 244 | **autonomous-loops** | Patterns and architectures for autonomous Claude Code execution loops — from simple sequential pipelines to RFC-driven multi-agent DAG systems. Use when designing long-running agent workflows, sett... | - | agents |
 | 245 | **autoplan** | Auto-review pipeline — reads the full CEO, design, eng, and DX review skills from disk and runs them sequentially with auto-decisions using 6 decision principles. (gstack) | - | agents |
-| 246 | **autoresearch** | Autonomous iterative experimentation loop for programming and optimization tasks. Guides users through goal definition, measurable metrics, and scope constraints, then runs autonomous experiment it... | - | claude |
+| 246 | **autoresearch** | Autonomous iterative experimentation loop for programming and optimization tasks. Guides users through goal definition, measurable metrics, and scope constraints, then runs autonomous experiment it... | - | agents |
 | 247 | **autoresearch-agent** | Autonomous experiment loop that optimizes any file by a measurable metric. Inspired by Karpathy's autoresearch. The agent edits a target file, runs a fixed evaluation, keeps improvements (git commi... | - | agents |
 | 248 | **award-application** | Write compelling award submissions, grant applications, and competition entries. Maps achievements to selection criteria using evidence-based narratives. Handles business awards (Telstra, chamber o... | - | agents |
 | 249 | **awesome-design-md** | Reference library of DESIGN.md files documenting the visual language of 74 well-known products and brands (design-md/<brand>/DESIGN.md — e.g. Stripe, Linear, Apple, Notion, Vercel, Spotify, Tesla, ... | - | agents |
-| 250 | **aws-cost-optimize** | Analyzes AWS infrastructure (IaC Terraform/CDK or CloudWatch metrics) to identify cost optimizations and automatically create remediation plans and GitHub issues. Use when auditing AWS spend, reduc... | - | claude |
+| 250 | **aws-cost-optimize** | Analyzes AWS infrastructure (IaC Terraform/CDK or CloudWatch metrics) to identify cost optimizations and automatically create remediation plans and GitHub issues. Use when auditing AWS spend, reduc... | - | agents |
 | 251 | **aws-solution-architect** | Design AWS architectures for startups using serverless patterns and IaC templates. Use when asked to design serverless architecture, create CloudFormation templates, optimize AWS costs, set up CI/C... | - | agents |
 | 252 | **axonaut-automation** | Automate Axonaut tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 253 | **ayrshare-automation** | Automate Ayrshare tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -3832,9 +3834,9 @@ Total unique skills: **3327**
 | 398 | **backendless-automation** | Automate Backendless tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 399 | **backlink-analyzer** | Analyze backlinks: link authority, toxic links, building opportunities, competitor gaps. "Who links to me" / "外链怎么做" / "有垃圾外链". 外链分析/反向链接/有毒链接/链接建设 被リンク分析 백링크분석 análisis de backlinks | - | agents |
 | 400 | **bannerbear-automation** | Automate Bannerbear tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 401 | **baoyu-compress-image** | Compresses images to WebP (default) or PNG with automatic tool selection (sharp, cwebp, pngquant). Use when optimizing image assets for web performance, converting to webp, or when user mentions "b... | - | claude |
-| 402 | **baoyu-diagram** | Creates professional, dark-themed SVG diagrams (architecture, flowcharts, sequence diagrams, mind maps, timelines). Use when rendering vector SVG diagrams, visual system maps, or when user mentions... | - | claude |
-| 403 | **baoyu-url-to-markdown** | Fetches any public URL and converts content to clean markdown using site-specific adapters (X/Twitter, YouTube transcripts, HackerNews, GitHub). Use when scraping web content, converting articles t... | - | claude |
+| 401 | **baoyu-compress-image** | Compresses images to WebP (default) or PNG with automatic tool selection (sharp, cwebp, pngquant). Use when optimizing image assets for web performance, converting to webp, or when user mentions "b... | - | agents |
+| 402 | **baoyu-diagram** | Creates professional, dark-themed SVG diagrams (architecture, flowcharts, sequence diagrams, mind maps, timelines). Use when rendering vector SVG diagrams, visual system maps, or when user mentions... | - | agents |
+| 403 | **baoyu-url-to-markdown** | Fetches any public URL and converts content to clean markdown using site-specific adapters (X/Twitter, YouTube transcripts, HackerNews, GitHub). Use when scraping web content, converting articles t... | - | agents |
 | 404 | **bart-automation** | Automate Bart tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 405 | **baseline-ui** | Quickly deslop UI code by fixing spacing, hierarchy, typography, and small layout issues. Use when the interface needs a fast cleanup or polish pass. | - | agents |
 | 406 | **baselinker-automation** | Automate Baselinker tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -3894,192 +3896,192 @@ Total unique skills: **3327**
 | 460 | **brand-guidelines** | Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatt... | - | agents |
 | 461 | **brandfetch-automation** | Automate Brandfetch tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 462 | **brandkit** | Premium brand-kit image generation skill for creating high-end brand-guidelines boards, logo systems, identity decks, and visual-world presentations. Trained for minimalist, cinematic, editorial, d... | - | agents |
-| 463 | **breeze-automation** | Automate Breeze tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 464 | **breezy-hr-automation** | Automate Breezy HR tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 465 | **brex-automation** | Automate Brex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 466 | **brex-staging-automation** | Automate Brex Staging tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 467 | **brief** | /cs:brief <topic> — Generate a one-page strategy brief from an office-hours intake. First step in the strategic sprint pipeline. Use when a strategic question needs to be framed before boardroom de... | - | agents |
-| 468 | **brightdata-automation** | Automate Brightdata tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 469 | **brightpearl-automation** | Automate Brightpearl tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 470 | **brilliant-directories-automation** | Automate Brilliant Directories tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 471 | **browse** | Fast headless browser for QA testing and site dogfooding. (gstack) | - | agents |
-| 472 | **browseai-automation** | Automate Browseai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 473 | **browser** | Web browser automation with AI-optimized snapshots for Codex-flow agents | - | agents |
-| 474 | **browser-automation** | Use when the user asks to automate browser tasks, scrape websites, fill forms, capture screenshots, extract structured data from web pages, or build web automation workflows. NOT for testing — use ... | - | agents |
-| 475 | **browser-harness** | Arnés de pruebas de navegador y automatización e2e con inspección visual y capturas de pantalla. | - | claude |
-| 476 | **browser-testing-with-devtools** | Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network request... | - | agents |
-| 477 | **browser-tool-automation** | Automate Browser Tool tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 478 | **browserbase-tool-automation** | Automate Browserbase Tool tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 479 | **browserhub-automation** | Automate Browserhub tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 480 | **browserless-automation** | Automate Browserless tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 481 | **browserstack** | Run tests on BrowserStack. Use when user mentions "browserstack", "cross-browser", "cloud testing", "browser matrix", "test on safari", "test on firefox", or "browser compatibility". | - | agents |
-| 482 | **brutal-honesty-review** | Unvarnished technical criticism combining Linus Torvalds' precision, Gordon Ramsay's standards, and James Bach's BS-detection. Use when code/tests need harsh reality checks, certification schemes s... | - | agents |
-| 483 | **btcpay-server-automation** | Automate Btcpay Server tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 484 | **bubble-automation** | Automate Bubble tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 485 | **bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. | - | agents |
-| 486 | **bugbug-automation** | Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 487 | **bugherd-automation** | Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 488 | **bugsnag-automation** | Automate Bugsnag tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 489 | **buildkite-automation** | Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 490 | **builtwith-automation** | Automate Builtwith tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 491 | **bun-runtime** | Guidance for using Bun as a runtime, package manager, bundler, and test runner. Explains Bun vs Node.js tradeoffs, native SQLite, Workspaces, and deployment. Use when working with Bun projects, con... | - | claude |
-| 492 | **bunny** | Integrate Bunny.net services (CDN, Storage, Stream, DNS, Edge Scripting, Shield, Magic Containers, Optimizer, Database). Use when building with Bunny.net APIs, deploying to Bunny CDN, uploading fil... | - | agents |
-| 493 | **bunnycdn-automation** | Automate Bunnycdn tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 494 | **business-growth-skills** | Router/index for the 4 business & growth skills bundled in this plugin: customer-success-manager (health scoring, churn risk, expansion), sales-engineer (RFP analysis, competitive matrices, PoC pla... | - | agents |
-| 495 | **business-investment-advisor** | Business investment analysis and capital allocation advisor. Use when evaluating whether to invest in equipment, real estate, a new business, hiring, technology, or any capital expenditure. Also us... | - | agents |
-| 496 | **business-operations-skills** | Use when running, diagnosing, or designing internal business operations — process documentation, vendor SLAs, capacity planning, internal comms, SOP/runbook authoring, procurement spend. Triggers o... | - | agents |
-| 497 | **byteforms-automation** | Automate Byteforms tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 498 | **c-level-agents** | Founder-mode executive team. 13 cs-* C-suite agents (CFO, CMO, CRO, CPO, COO, CHRO, CISO, GC, CDO, CAIO, CCO, VPE, Chief of Staff) and 21 /cs:* slash commands for forcing-question office hours, mul... | - | agents |
-| 499 | **c-level-skills** | Index and router for the C-level advisory bundle: 33 skills covering 14 C-suite roles, orchestration, cross-cutting capabilities, and culture. Use when exploring what the c-level-advisor bundle con... | - | agents |
-| 500 | **c4-architecture** | Generates software architecture documentation using C4 model Mermaid diagrams (Context, Container, Component, Code). Use when asked to create architecture diagrams, document system boundaries, visu... | - | claude |
-| 501 | **cabinpanda-automation** | Automate Cabinpanda tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 502 | **caio-review** | /cs:caio-review <plan> — Eval-demanding Chief AI Officer interrogation of any plan that involves AI: model selection, risk classification, cost economics, or AI hiring. Use when shipping an AI feat... | - | agents |
-| 503 | **cal-automation** | Automate Cal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 504 | **calendarhero-automation** | Automate Calendarhero tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 505 | **callerapi-automation** | Automate Callerapi tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 506 | **callingly-automation** | Automate Callingly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 507 | **callpage-automation** | Automate Callpage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 508 | **campaign-analytics** | Analyzes campaign performance with multi-touch attribution, funnel conversion analysis, and ROI calculation for marketing optimization. Use when analyzing marketing campaigns, ad performance, attri... | - | agents |
-| 509 | **campaign-cleaner-automation** | Automate Campaign Cleaner tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 510 | **campayn-automation** | Automate Campayn tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 511 | **canary** | Post-deploy canary monitoring. (gstack) | - | agents |
-| 512 | **cannibalization** | Detect keyword cannibalization across your site using GSC data and SERP analysis. Scores severity, recommends resolution (consolidate, differentiate, canonicalize, or noindex), and outputs an actio... | - | agents |
-| 513 | **canny-automation** | Automate Canny tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 514 | **canvas-automation** | Automate Canvas tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 515 | **canvas-design** | Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ... | - | agents |
-| 516 | **capa-officer** | CAPA system management for medical device QMS. Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA metrics. Use when running CAPA investigations, 5-Why anal... | - | agents |
-| 517 | **capacity** | Discovers available Azure OpenAI model capacity across regions and projects. Analyzes quota limits, compares availability, and recommends optimal deployment locations based on capacity requirements... | - | agents |
-| 518 | **capacity-planner** | Use when an ops leader (Director of CX, Head of Support, VP Ops, Head of BizOps, Head of IT ops, Head of Finance ops) is sizing ops capacity, building a headcount plan, modeling utilization risk, p... | - | agents |
-| 519 | **Capsule CRM Automation** | Automate Capsule CRM operations -- manage contacts (parties), run structured filter queries, track tasks and projects, log entries, and handle organizations -- using natural language through the Co... | - | agents |
-| 520 | **capsule_crm-automation** | Automate Capsule CRM tasks via Rube MCP (Composio): contacts, opportunities, cases, tasks, and pipeline management. Always search tools first for current schemas. | - | agents |
-| 521 | **capture** | Captures and organizes chaotic brain dumps into a structured, actionable system with zero information loss. Use this skill whenever the user says 'capture this', 'brain dump', 'let me dump some ide... | - | agents |
-| 522 | **carbone-automation** | Automate Carbone tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 523 | **cardly-automation** | Automate Cardly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 524 | **careful** | Safety guardrails for destructive commands. (gstack) | - | agents |
-| 525 | **castingwords-automation** | Automate Castingwords tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 526 | **cats-automation** | Automate Cats tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 527 | **cavecrew** | Decision guide for delegating to caveman-style subagents. Tells the main thread WHEN to spawn `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit), or `cavecrew-reviewer` (diff... | - | agents |
-| 528 | **caveman** | Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, and pleasantries while keeping full technical accuracy. Use when user says "caveman mode", "talk like cavema... | - | agents |
-| 529 | **caveman-commit** | Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when "why" isn't obvious.... | - | agents |
-| 530 | **caveman-compress** | Compress natural language memory files (AGENTS.md, todos, preferences) into caveman format to save input tokens. Preserves all technical substance, code, URLs, and structure. Compressed version ove... | - | agents |
-| 531 | **caveman-help** | Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, "caveman help", "what caveman commands", "how do I use caveman". | - | agents |
-| 532 | **caveman-review** | Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use when user says "review this PR", "co... | - | agents |
-| 533 | **caveman-stats** | Show real token usage and estimated savings for the current session. Reads directly from the Codex session log — no AI estimation. Triggers on /caveman-stats. Output is injected by the mode-tracker... | - | agents |
-| 534 | **cco-review** | /cs:cco-review <plan> — Retention-obsessed Chief Customer Officer interrogation of any plan that touches customer retention, segmentation, CS team sizing, or CS team hiring. Use when gross retentio... | - | agents |
-| 535 | **cdo-review** | /cs:cdo-review <plan> — Decision-driven Chief Data Officer interrogation of any plan that touches training data, data architecture, data productization, or data team hiring. Use when validating tra... | - | agents |
-| 536 | **cdr-platform-automation** | Automate Cdr Platform tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 537 | **census-bureau-automation** | Automate Census Bureau tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 538 | **centralstationcrm-automation** | Automate Centralstationcrm tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 539 | **ceo-advisor** | Executive leadership guidance for strategic decision-making, organizational development, and stakeholder management. Use when planning strategy, preparing board presentations, managing investors, d... | - | agents |
-| 540 | **certifier-automation** | Automate Certifier tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 541 | **cfo-advisor** | Financial leadership for startups and scaling companies. Financial modeling, unit economics, fundraising strategy, cash management, and board financial packages. Use when building financial models,... | - | agents |
-| 542 | **cfo-review** | /cs:cfo-review <plan> — Numerate-skeptic interrogation of any plan that touches money. Unit economics, runway, dilution, capital allocation. Use when a plan commits meaningful spend — e.g. a hiring... | - | agents |
-| 543 | **challenge** | Pre-mortem plan analysis. Imagine the plan failed 12 months from now and work backwards to find the weaknesses. Surfaces assumptions, dependencies, and execution risks before committing resources. ... | - | agents |
-| 544 | **change-management** | Framework for rolling out organizational changes without chaos. Covers the ADKAR model adapted for startups, communication templates, resistance patterns, and change fatigue management. Handles pro... | - | agents |
-| 545 | **changelog** |  | - | agents |
-| 546 | **changelog-generator** | Produce consistent, auditable release notes from Conventional Commits. Separates commit parsing, semantic-bump logic, and changelog rendering for automated releases with editorial control. Use when... | - | agents |
-| 547 | **channel-economics** | Use when reviewing or rebalancing direct vs. partner-led channel economics — computing fully-loaded cost-to-serve per channel, channel ROI with cash / LTV / marginal lenses, and optimal channel mix... | - | agents |
-| 548 | **chaos-engineer** | Designs chaos experiments, creates failure injection frameworks, and facilitates game day exercises for distributed systems — producing runbooks, experiment manifests, rollback procedures, and post... | - | agents |
-| 549 | **chaos-engineering** | Use when planning, running, or learning from chaos engineering experiments. Triggers on "chaos experiment", "fault injection", "gameday", "resilience test", "blast radius", "steady state", "abort c... | - | agents |
-| 550 | **chaos-engineering-resilience** | Chaos engineering principles, controlled failure injection, resilience testing, and system recovery validation. Use when testing distributed systems, building confidence in fault tolerance, or vali... | - | agents |
-| 551 | **chaos-experiment** |  | - | agents |
-| 552 | **chaser-automation** | Automate Chaser tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 553 | **chatbotkit-automation** | Automate Chatbotkit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 554 | **chatfai-automation** | Automate Chatfai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 555 | **chatgpt-apps** | Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps br... | - | agents |
-| 556 | **chatwork-automation** | Automate Chatwork tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 557 | **chief-ai-officer-advisor** | Chief AI Officer advisory for startups: model build-vs-buy decisions (API vs fine-tune vs in-house), AI risk classification under EU AI Act + US state patchwork, AI cost economics (API-to-self-host... | - | agents |
-| 558 | **chief-customer-officer-advisor** | Chief Customer Officer advisory for startups: retention decomposition (gross retention vs NRR honesty, churn root-cause taxonomy), customer segmentation strategy (differential investment across tie... | - | agents |
-| 559 | **chief-data-officer-advisor** | Chief Data Officer advisory for startups: AI training data rights and consent provenance, data product strategy (warehouse vs lakehouse vs mesh, build-vs-buy), B2B customer-data-as-asset valuation ... | - | agents |
-| 560 | **chief-of-staff** | C-suite orchestration layer. Routes founder questions to the right advisor role(s), triggers multi-role board meetings for complex decisions, synthesizes outputs, and tracks decisions. Every C-suit... | - | agents |
-| 561 | **chmeetings-automation** | Automate Chmeetings tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 562 | **chro-advisor** | People leadership for scaling companies. Hiring strategy, compensation design, org structure, culture, and retention. Use when building hiring plans, designing comp frameworks, restructuring teams,... | - | agents |
-| 563 | **chrome-devtools** | Browser automation, debugging, and performance analysis using Puppeteer CLI scripts. Use for automating browsers, taking screenshots, analyzing performance, monitoring network traffic, web scraping... | - | agents |
-| 564 | **churn-prevention** | Reduce voluntary and involuntary churn through cancel flow design, save offers, exit surveys, and dunning sequences. Use when designing or optimizing a cancel flow, building save offers, setting up... | - | agents |
-| 565 | **ci-cd-and-automation** | Automates CI/CD pipeline setup. Use when setting up or modifying build and deployment pipelines. Use when you need to automate quality gates, configure test runners in CI, or establish deployment s... | - | agents |
-| 566 | **ci-cd-pipeline-builder** | Generate pragmatic CI/CD pipelines from detected project stack signals — fast baseline generation, repeatable checks, environment-aware deployment stages. Use when setting up CI for a new project, ... | - | agents |
-| 567 | **ci-security-scanning-with-strix** | Add security scanning to CI/CD with Strix — GitHub Actions, GitLab CI, or any pipeline — so every pull request gets a diff-scoped AI pentest that blocks vulnerable code before it merges, with resul... | https://github.com/usestrix/strix | agents |
-| 568 | **cicd-pipeline-qe-orchestrator** | Orchestrate quality engineering across CI/CD pipeline phases. Use when designing test strategies, planning quality gates, or implementing shift-left/shift-right testing. | - | agents |
-| 569 | **cincopa-automation** | Automate Cincopa tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 570 | **ciso-advisor** | Security leadership for growth-stage companies. Risk quantification in dollars, compliance roadmap (SOC 2/ISO 27001/HIPAA/GDPR), security architecture strategy, incident response leadership, and bo... | - | agents |
-| 571 | **ciso-review** | /cs:ciso-review <plan> — Risk-paranoid interrogation of any plan that touches data, compliance, or production access. Use when launching features that handle customer data, before a SOC 2 / ISO aud... | - | agents |
-| 572 | **ckm:banner-design** | Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with AI-generated visuals. Actions: design, create, generate banner. Platforms: Face... | - | agents |
-| 573 | **ckm:brand** | Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides. | - | agents |
-| 574 | **ckm:design** | Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.j... | - | agents |
-| 575 | **ckm:design-system** | Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide cre... | - | agents |
-| 576 | **ckm:slides** | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. | - | agents |
-| 577 | **ckm:ui-styling** | Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user in... | - | agents |
-| 578 | **claid-ai-automation** | Automate Claid AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 579 | **claimable-postgres** | Provisions instant temporary PostgreSQL databases via Claimable Postgres by Neon (neon.new) without login or signup. Use when running quick SQL tests, provisioning sandbox DBs for CI, or when user ... | - | claude |
-| 580 | **clarify** | Improve unclear UX copy, error messages, microcopy, labels, and instructions to make interfaces easier to understand. Use when the user mentions confusing text, unclear labels, bad error messages, ... | - | agents |
-| 581 | **classmarker-automation** | Automate Classmarker tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 582 | **claude** | Claude Code CLI wrapper for non-Claude hosts - three modes. Review: independent diff review via claude -p. Challenge: adversarial failure-mode review. Consult: ask Claude about the repo with read-o... | https://github.com/garrytan/gstack | claude |
-| 583 | **claude-api** | Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file;... | https://github.com/anthropics/skills | claude |
-| 584 | **claude-coach** |  | - | agents |
-| 585 | **claude-code** |  | - | agents |
-| 586 | **claude-for-legal** | Análisis legal, revisión de contratos, cumplimiento normativo y síntesis de documentos jurídicos. | - | claude |
-| 587 | **claude-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. | https://github.com/mattpocock/skills | claude |
-| 588 | **claude-mem** | Persistent architectural decisions and session memory across agent invocations. | - | claude |
-| 589 | **claude-seo** | SEO técnico, Schema org markup, GEO (Generative Engine Optimization) y optimización de motores de búsqueda de IA. | - | claude |
-| 590 | **clean-architecture** | Structure software around the Dependency Rule: source code dependencies point inward from frameworks to use cases to entities. Use when the user mentions "architecture layers", "dependency rule", "... | - | agents |
-| 591 | **clean-code** | Write readable, maintainable code through disciplined naming, small functions, and clean error handling. Use when the user mentions "clean up this code", "this function is too long", "code smells",... | - | agents |
-| 592 | **clearout-automation** | Automate Clearout tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 593 | **cli-creator** | Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ... | - | agents |
-| 594 | **cli-developer** | Use when building CLI tools, implementing argument parsing, or adding interactive prompts. Invoke for parsing flags and subcommands, displaying progress bars and spinners, generating bash/zsh/fish ... | - | agents |
-| 595 | **clickhouse-io** | ClickHouse column-oriented database patterns, query optimization, MergeTree engines, materialization, and analytics. Use when designing ClickHouse schemas, optimizing OLAP SQL queries, or when user... | - | claude |
-| 596 | **clickmeeting-automation** | Automate Clickmeeting tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 597 | **clinical-research** | Use when designing a prospective clinical study before submission — selecting and classifying endpoints (primary / key-secondary / exploratory, with surrogate-endpoint flagging), estimating sample ... | - | agents |
-| 598 | **Clockify Automation** | Automate time tracking workflows in Clockify -- create and manage time entries, workspaces, and users through natural language commands. | - | agents |
-| 599 | **clone-website** | Reverse-engineer and clone one or more websites in one shot — extracts assets, CSS, and content section-by-section and proactively dispatches parallel builder agents in worktrees as it goes. Use th... | - | claude |
-| 600 | **cloud-architect** | Designs cloud architectures, creates migration plans, generates cost optimization recommendations, and produces disaster recovery strategies across AWS, Azure, and GCP. Use when designing cloud arc... | - | agents |
-| 601 | **cloud-security** | Use when assessing cloud infrastructure for security misconfigurations, IAM privilege escalation paths, S3 public exposure, open security group rules, or IaC security gaps. Covers AWS, Azure, and G... | - | agents |
-| 602 | **cloud-solution-architect** | Transform the agent into a Cloud Solution Architect following Azure Architecture Center best practices. Use when designing cloud architectures, reviewing system designs, selecting architecture styl... | - | agents |
-| 603 | **cloud-sync** | Set up or check Codex-mem cloud sync with cmem.ai Pro. Use when the user says "set up cloud sync", "sync my memories", "cmem pro", "cloud backup", "sync status", or wants their memory database back... | - | agents |
-| 604 | **cloudcart-automation** | Automate Cloudcart tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 605 | **cloudconvert-automation** | Automate Cloudconvert tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 606 | **cloudflare** | Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), feature flags (Flagship), networking (Tunnel, Spectrum), security (WAF... | - | agents |
-| 607 | **cloudflare-api** | Hit the Cloudflare REST API directly for operations that wrangler and MCP can't handle well. Bulk DNS, custom hostnames, email routing, cache purge, WAF rules, redirect rules, zone settings, Worker... | - | agents |
-| 608 | **cloudflare-api-key-automation** | Automate Cloudflare API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 609 | **cloudflare-automation** | Automate Cloudflare tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 610 | **cloudflare-browser-rendering-automation** | Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 611 | **cloudflare-deploy** | Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare. | - | agents |
-| 612 | **cloudflare-email-service** | Send and receive transactional emails with Cloudflare Email Service (Email Sending + Email Routing). Use when building email sending (Workers binding or REST API), email routing, Agents SDK email h... | - | agents |
-| 613 | **cloudflare-one** | Guides Cloudflare One Zero Trust and SASE work across Access, Gateway, WARP, Tunnel, Cloudflare WAN, DLP, CASB, device posture, and identity. Use when designing, configuring, troubleshooting, or re... | - | agents |
-| 614 | **cloudflare-one-migrations** | Plans migrations from Zscaler ZIA/ZPA, Palo Alto, legacy VPN, SWG, or SASE stacks to Cloudflare One. Use for migration assessments, policy mapping, rollout plans, and parity/gap analysis. | - | agents |
-| 615 | **cloudflare-worker-builder** | Scaffold and deploy Cloudflare Workers with Hono routing, Vite plugin, and Static Assets. Workflow: describe project, scaffold structure, configure bindings, deploy. Use when creating Workers proje... | - | agents |
-| 616 | **Cloudinary Automation** | Automate Cloudinary media management including folder organization, upload presets, asset lookup, transformations, and usage monitoring through natural language commands | - | agents |
-| 617 | **cloudlayer-automation** | Automate Cloudlayer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 618 | **cloudpress-automation** | Automate Cloudpress tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 619 | **cmd-a11y-audit** |  | - | agents |
-| 620 | **cmd-code-to-prd** |  | - | agents |
-| 621 | **cmd-cs-aeo** |  | - | agents |
-| 622 | **cmd-focused-fix** |  | - | agents |
-| 623 | **cmo-advisor** | Marketing leadership for scaling companies. Brand positioning, growth model design, marketing budget allocation, and marketing org design. Use when designing brand strategy, selecting growth models... | - | agents |
-| 624 | **cmo-review** | /cs:cmo-review <plan> — Narrative-first interrogation of positioning, ICP, message house, and channel mix. Use when launching a campaign or repositioning, or when CAC is rising and the one-sentence... | - | agents |
-| 625 | **co-marketing** | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Use when the user says 'co-marketing,' 'partner marketing,' 'joint campaign,' 'who ... | - | agents |
-| 626 | **coassemble-automation** | Automate Coassemble tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 627 | **codacy-automation** | Automate Codacy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 628 | **code-documenter** | Generates, formats, and validates technical documentation — including docstrings, OpenAPI/Swagger specs, JSDoc annotations, doc portals, and user guides. Use when adding docstrings to functions or ... | - | agents |
-| 629 | **code-review** | Use when receiving code review feedback (especially if unclear or technically questionable), when completing tasks or major features requiring review before proceeding, or before making any complet... | - | agents |
-| 630 | **code-review-and-quality** | Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dime... | - | agents |
-| 631 | **code-review-patterns** | Code review checklist, what to look for, how to give feedback, PR review flow. Use when reviewing a pull request, or when preparing code for review. | - | agents |
-| 632 | **code-review-quality** | Conduct context-driven code reviews focusing on quality, testability, and maintainability. Use when reviewing code, providing feedback, or establishing review practices. | - | agents |
-| 633 | **code-reviewer** | Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin, C#, .NET, Java, C, C++, Rust, Ruby, PHP, and Dart/Flutter. Analyzes PRs for complexity and risk, checks code quality fo... | - | agents |
-| 634 | **code-simplification** | Simplifies code for clarity. Use when refactoring code for clarity without changing behavior. Use when code works but is harder to read, maintain, or extend than it should be. Use when reviewing co... | - | agents |
-| 635 | **code-to-prd** | Reverse-engineer any codebase into a complete Product Requirements Document (PRD). Analyzes routes, components, state management, API integrations, and user interactions to produce business-readabl... | - | agents |
-| 636 | **code-tour** | Use when the user asks to create a CodeTour .tour file — persona-targeted, step-by-step walkthroughs that link to real files and line numbers. Trigger for: create a tour, onboarding tour, architect... | - | agents |
-| 637 | **codebase-design** | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or A... | - | agents |
-| 638 | **codebase-memory-mcp** | Indexes a codebase into a persistent knowledge graph so agents can query callers, callees, type hierarchies, and module relationships instead of re-reading dozens of files each session. Save tokens... | - | claude |
-| 639 | **codebase-onboarding** | Analyze a codebase and generate onboarding documentation for engineers, tech leads, and contractors. Fast fact-gathering and repeatable onboarding outputs. Use when onboarding a new engineer, writi... | - | agents |
-| 640 | **codehealth-mcp** | Real-time structural Code Health analysis via CodeScene MCP. Reviews code complexity before edits, verifies score deltas after changes, and gates commits/PRs against technical debt accumulation. Us... | - | claude |
-| 641 | **codeinterpreter-automation** | Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 642 | **codereadr-automation** | Automate Codereadr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 643 | **codex** | OpenAI Codex CLI wrapper — three modes. (gstack) | - | agents |
+| 463 | **break-ui** | Try to break a piece of UI by feeding it worst-case data — long names, unbreakable emails, one-letter names, missing fields, huge counts, zero items, long labels, non-Latin text, emoji, extreme num... | https://github.com/emilkowalski/skills | agents |
+| 464 | **breeze-automation** | Automate Breeze tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 465 | **breezy-hr-automation** | Automate Breezy HR tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 466 | **brex-automation** | Automate Brex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 467 | **brex-staging-automation** | Automate Brex Staging tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 468 | **brief** | /cs:brief <topic> — Generate a one-page strategy brief from an office-hours intake. First step in the strategic sprint pipeline. Use when a strategic question needs to be framed before boardroom de... | - | agents |
+| 469 | **brightdata-automation** | Automate Brightdata tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 470 | **brightpearl-automation** | Automate Brightpearl tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 471 | **brilliant-directories-automation** | Automate Brilliant Directories tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 472 | **browse** | Fast headless browser for QA testing and site dogfooding. (gstack) | - | agents |
+| 473 | **browseai-automation** | Automate Browseai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 474 | **browser** | Web browser automation with AI-optimized snapshots for Codex-flow agents | - | agents |
+| 475 | **browser-automation** | Use when the user asks to automate browser tasks, scrape websites, fill forms, capture screenshots, extract structured data from web pages, or build web automation workflows. NOT for testing — use ... | - | agents |
+| 476 | **browser-harness** | Arnés de pruebas de navegador y automatización e2e con inspección visual y capturas de pantalla. | - | agents |
+| 477 | **browser-testing-with-devtools** | Tests in real browsers via Chrome DevTools MCP. Use when building or debugging anything that runs in a browser. Use when you need to inspect the DOM, capture console errors, analyze network request... | - | agents |
+| 478 | **browser-tool-automation** | Automate Browser Tool tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 479 | **browserbase-tool-automation** | Automate Browserbase Tool tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 480 | **browserhub-automation** | Automate Browserhub tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 481 | **browserless-automation** | Automate Browserless tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 482 | **browserstack** | Run tests on BrowserStack. Use when user mentions "browserstack", "cross-browser", "cloud testing", "browser matrix", "test on safari", "test on firefox", or "browser compatibility". | - | agents |
+| 483 | **brutal-honesty-review** | Unvarnished technical criticism combining Linus Torvalds' precision, Gordon Ramsay's standards, and James Bach's BS-detection. Use when code/tests need harsh reality checks, certification schemes s... | - | agents |
+| 484 | **btcpay-server-automation** | Automate Btcpay Server tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 485 | **bubble-automation** | Automate Bubble tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 486 | **bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. | - | agents |
+| 487 | **bugbug-automation** | Automate Bugbug tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 488 | **bugherd-automation** | Automate Bugherd tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 489 | **bugsnag-automation** | Automate Bugsnag tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 490 | **buildkite-automation** | Automate Buildkite tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 491 | **builtwith-automation** | Automate Builtwith tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 492 | **bun-runtime** | Guidance for using Bun as a runtime, package manager, bundler, and test runner. Explains Bun vs Node.js tradeoffs, native SQLite, Workspaces, and deployment. Use when working with Bun projects, con... | - | agents |
+| 493 | **bunny** | Integrate Bunny.net services (CDN, Storage, Stream, DNS, Edge Scripting, Shield, Magic Containers, Optimizer, Database). Use when building with Bunny.net APIs, deploying to Bunny CDN, uploading fil... | - | agents |
+| 494 | **bunnycdn-automation** | Automate Bunnycdn tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 495 | **business-growth-skills** | Router/index for the 4 business & growth skills bundled in this plugin: customer-success-manager (health scoring, churn risk, expansion), sales-engineer (RFP analysis, competitive matrices, PoC pla... | - | agents |
+| 496 | **business-investment-advisor** | Business investment analysis and capital allocation advisor. Use when evaluating whether to invest in equipment, real estate, a new business, hiring, technology, or any capital expenditure. Also us... | - | agents |
+| 497 | **business-operations-skills** | Use when running, diagnosing, or designing internal business operations — process documentation, vendor SLAs, capacity planning, internal comms, SOP/runbook authoring, procurement spend. Triggers o... | - | agents |
+| 498 | **byteforms-automation** | Automate Byteforms tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 499 | **c-level-agents** | Founder-mode executive team. 13 cs-* C-suite agents (CFO, CMO, CRO, CPO, COO, CHRO, CISO, GC, CDO, CAIO, CCO, VPE, Chief of Staff) and 21 /cs:* slash commands for forcing-question office hours, mul... | - | agents |
+| 500 | **c-level-skills** | Index and router for the C-level advisory bundle: 33 skills covering 14 C-suite roles, orchestration, cross-cutting capabilities, and culture. Use when exploring what the c-level-advisor bundle con... | - | agents |
+| 501 | **c4-architecture** | Generates software architecture documentation using C4 model Mermaid diagrams (Context, Container, Component, Code). Use when asked to create architecture diagrams, document system boundaries, visu... | - | agents |
+| 502 | **cabinpanda-automation** | Automate Cabinpanda tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 503 | **caio-review** | /cs:caio-review <plan> — Eval-demanding Chief AI Officer interrogation of any plan that involves AI: model selection, risk classification, cost economics, or AI hiring. Use when shipping an AI feat... | - | agents |
+| 504 | **cal-automation** | Automate Cal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 505 | **calendarhero-automation** | Automate Calendarhero tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 506 | **callerapi-automation** | Automate Callerapi tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 507 | **callingly-automation** | Automate Callingly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 508 | **callpage-automation** | Automate Callpage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 509 | **campaign-analytics** | Analyzes campaign performance with multi-touch attribution, funnel conversion analysis, and ROI calculation for marketing optimization. Use when analyzing marketing campaigns, ad performance, attri... | - | agents |
+| 510 | **campaign-cleaner-automation** | Automate Campaign Cleaner tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 511 | **campayn-automation** | Automate Campayn tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 512 | **canary** | Post-deploy canary monitoring. (gstack) | - | agents |
+| 513 | **cannibalization** | Detect keyword cannibalization across your site using GSC data and SERP analysis. Scores severity, recommends resolution (consolidate, differentiate, canonicalize, or noindex), and outputs an actio... | - | agents |
+| 514 | **canny-automation** | Automate Canny tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 515 | **canvas-automation** | Automate Canvas tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 516 | **canvas-design** | Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create ... | - | agents |
+| 517 | **capa-officer** | CAPA system management for medical device QMS. Covers root cause analysis, corrective action planning, effectiveness verification, and CAPA metrics. Use when running CAPA investigations, 5-Why anal... | - | agents |
+| 518 | **capacity** | Discovers available Azure OpenAI model capacity across regions and projects. Analyzes quota limits, compares availability, and recommends optimal deployment locations based on capacity requirements... | - | agents |
+| 519 | **capacity-planner** | Use when an ops leader (Director of CX, Head of Support, VP Ops, Head of BizOps, Head of IT ops, Head of Finance ops) is sizing ops capacity, building a headcount plan, modeling utilization risk, p... | - | agents |
+| 520 | **Capsule CRM Automation** | Automate Capsule CRM operations -- manage contacts (parties), run structured filter queries, track tasks and projects, log entries, and handle organizations -- using natural language through the Co... | - | agents |
+| 521 | **capsule_crm-automation** | Automate Capsule CRM tasks via Rube MCP (Composio): contacts, opportunities, cases, tasks, and pipeline management. Always search tools first for current schemas. | - | agents |
+| 522 | **capture** | Captures and organizes chaotic brain dumps into a structured, actionable system with zero information loss. Use this skill whenever the user says 'capture this', 'brain dump', 'let me dump some ide... | - | agents |
+| 523 | **carbone-automation** | Automate Carbone tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 524 | **cardly-automation** | Automate Cardly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 525 | **careful** | Safety guardrails for destructive commands. (gstack) | - | agents |
+| 526 | **castingwords-automation** | Automate Castingwords tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 527 | **cats-automation** | Automate Cats tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 528 | **cavecrew** | Decision guide for delegating to caveman-style subagents. Tells the main thread WHEN to spawn `cavecrew-investigator` (locate code), `cavecrew-builder` (1-2 file edit), or `cavecrew-reviewer` (diff... | - | agents |
+| 529 | **caveman** | Ultra-compressed communication mode. Cuts token usage ~75% by dropping filler, articles, and pleasantries while keeping full technical accuracy. Use when user says "caveman mode", "talk like cavema... | - | agents |
+| 530 | **caveman-commit** | Ultra-compressed commit message generator. Cuts noise from commit messages while preserving intent and reasoning. Conventional Commits format. Subject ≤50 chars, body only when "why" isn't obvious.... | - | agents |
+| 531 | **caveman-compress** | Compress natural language memory files (AGENTS.md, todos, preferences) into caveman format to save input tokens. Preserves all technical substance, code, URLs, and structure. Compressed version ove... | - | agents |
+| 532 | **caveman-help** | Quick-reference card for all caveman modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /caveman-help, "caveman help", "what caveman commands", "how do I use caveman". | - | agents |
+| 533 | **caveman-review** | Ultra-compressed code review comments. Cuts noise from PR feedback while preserving the actionable signal. Each comment is one line: location, problem, fix. Use when user says "review this PR", "co... | - | agents |
+| 534 | **caveman-stats** | Show real token usage and estimated savings for the current session. Reads directly from the Codex session log — no AI estimation. Triggers on /caveman-stats. Output is injected by the mode-tracker... | - | agents |
+| 535 | **cco-review** | /cs:cco-review <plan> — Retention-obsessed Chief Customer Officer interrogation of any plan that touches customer retention, segmentation, CS team sizing, or CS team hiring. Use when gross retentio... | - | agents |
+| 536 | **cdo-review** | /cs:cdo-review <plan> — Decision-driven Chief Data Officer interrogation of any plan that touches training data, data architecture, data productization, or data team hiring. Use when validating tra... | - | agents |
+| 537 | **cdr-platform-automation** | Automate Cdr Platform tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 538 | **census-bureau-automation** | Automate Census Bureau tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 539 | **centralstationcrm-automation** | Automate Centralstationcrm tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 540 | **ceo-advisor** | Executive leadership guidance for strategic decision-making, organizational development, and stakeholder management. Use when planning strategy, preparing board presentations, managing investors, d... | - | agents |
+| 541 | **certifier-automation** | Automate Certifier tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 542 | **cfo-advisor** | Financial leadership for startups and scaling companies. Financial modeling, unit economics, fundraising strategy, cash management, and board financial packages. Use when building financial models,... | - | agents |
+| 543 | **cfo-review** | /cs:cfo-review <plan> — Numerate-skeptic interrogation of any plan that touches money. Unit economics, runway, dilution, capital allocation. Use when a plan commits meaningful spend — e.g. a hiring... | - | agents |
+| 544 | **challenge** | Pre-mortem plan analysis. Imagine the plan failed 12 months from now and work backwards to find the weaknesses. Surfaces assumptions, dependencies, and execution risks before committing resources. ... | - | agents |
+| 545 | **change-management** | Framework for rolling out organizational changes without chaos. Covers the ADKAR model adapted for startups, communication templates, resistance patterns, and change fatigue management. Handles pro... | - | agents |
+| 546 | **changelog** |  | - | agents |
+| 547 | **changelog-generator** | Produce consistent, auditable release notes from Conventional Commits. Separates commit parsing, semantic-bump logic, and changelog rendering for automated releases with editorial control. Use when... | - | agents |
+| 548 | **channel-economics** | Use when reviewing or rebalancing direct vs. partner-led channel economics — computing fully-loaded cost-to-serve per channel, channel ROI with cash / LTV / marginal lenses, and optimal channel mix... | - | agents |
+| 549 | **chaos-engineer** | Designs chaos experiments, creates failure injection frameworks, and facilitates game day exercises for distributed systems — producing runbooks, experiment manifests, rollback procedures, and post... | - | agents |
+| 550 | **chaos-engineering** | Use when planning, running, or learning from chaos engineering experiments. Triggers on "chaos experiment", "fault injection", "gameday", "resilience test", "blast radius", "steady state", "abort c... | - | agents |
+| 551 | **chaos-engineering-resilience** | Chaos engineering principles, controlled failure injection, resilience testing, and system recovery validation. Use when testing distributed systems, building confidence in fault tolerance, or vali... | - | agents |
+| 552 | **chaos-experiment** |  | - | agents |
+| 553 | **chaser-automation** | Automate Chaser tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 554 | **chatbotkit-automation** | Automate Chatbotkit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 555 | **chatfai-automation** | Automate Chatfai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 556 | **chatgpt-apps** | Build, scaffold, refactor, and troubleshoot ChatGPT Apps SDK applications that combine an MCP server and widget UI. Use when Codex needs to design tools, register UI resources, wire the MCP Apps br... | - | agents |
+| 557 | **chatwork-automation** | Automate Chatwork tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 558 | **chief-ai-officer-advisor** | Chief AI Officer advisory for startups: model build-vs-buy decisions (API vs fine-tune vs in-house), AI risk classification under EU AI Act + US state patchwork, AI cost economics (API-to-self-host... | - | agents |
+| 559 | **chief-customer-officer-advisor** | Chief Customer Officer advisory for startups: retention decomposition (gross retention vs NRR honesty, churn root-cause taxonomy), customer segmentation strategy (differential investment across tie... | - | agents |
+| 560 | **chief-data-officer-advisor** | Chief Data Officer advisory for startups: AI training data rights and consent provenance, data product strategy (warehouse vs lakehouse vs mesh, build-vs-buy), B2B customer-data-as-asset valuation ... | - | agents |
+| 561 | **chief-of-staff** | C-suite orchestration layer. Routes founder questions to the right advisor role(s), triggers multi-role board meetings for complex decisions, synthesizes outputs, and tracks decisions. Every C-suit... | - | agents |
+| 562 | **chmeetings-automation** | Automate Chmeetings tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 563 | **chro-advisor** | People leadership for scaling companies. Hiring strategy, compensation design, org structure, culture, and retention. Use when building hiring plans, designing comp frameworks, restructuring teams,... | - | agents |
+| 564 | **chrome-devtools** | Browser automation, debugging, and performance analysis using Puppeteer CLI scripts. Use for automating browsers, taking screenshots, analyzing performance, monitoring network traffic, web scraping... | - | agents |
+| 565 | **churn-prevention** | Reduce voluntary and involuntary churn through cancel flow design, save offers, exit surveys, and dunning sequences. Use when designing or optimizing a cancel flow, building save offers, setting up... | - | agents |
+| 566 | **ci-cd-and-automation** | Automates CI/CD pipeline setup. Use when setting up or modifying build and deployment pipelines. Use when you need to automate quality gates, configure test runners in CI, or establish deployment s... | - | agents |
+| 567 | **ci-cd-pipeline-builder** | Generate pragmatic CI/CD pipelines from detected project stack signals — fast baseline generation, repeatable checks, environment-aware deployment stages. Use when setting up CI for a new project, ... | - | agents |
+| 568 | **ci-security-scanning-with-strix** | Add security scanning to CI/CD with Strix — GitHub Actions, GitLab CI, or any pipeline — so every pull request gets a diff-scoped AI pentest that blocks vulnerable code before it merges, with resul... | https://github.com/usestrix/strix | agents |
+| 569 | **cicd-pipeline-qe-orchestrator** | Orchestrate quality engineering across CI/CD pipeline phases. Use when designing test strategies, planning quality gates, or implementing shift-left/shift-right testing. | - | agents |
+| 570 | **cincopa-automation** | Automate Cincopa tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 571 | **ciso-advisor** | Security leadership for growth-stage companies. Risk quantification in dollars, compliance roadmap (SOC 2/ISO 27001/HIPAA/GDPR), security architecture strategy, incident response leadership, and bo... | - | agents |
+| 572 | **ciso-review** | /cs:ciso-review <plan> — Risk-paranoid interrogation of any plan that touches data, compliance, or production access. Use when launching features that handle customer data, before a SOC 2 / ISO aud... | - | agents |
+| 573 | **ckm:banner-design** | Design banners for social media, ads, website heroes, creative assets, and print. Multiple art direction options with AI-generated visuals. Actions: design, create, generate banner. Platforms: Face... | - | agents |
+| 574 | **ckm:brand** | Brand voice, visual identity, messaging frameworks, asset management, brand consistency. Activate for branded content, tone of voice, marketing assets, brand compliance, style guides. | - | agents |
+| 575 | **ckm:design** | Comprehensive design skill: brand identity, design tokens, UI styling, logo generation (55 styles, Gemini AI), corporate identity program (50 deliverables, CIP mockups), HTML presentations (Chart.j... | - | agents |
+| 576 | **ckm:design-system** | Token architecture, component specifications, and slide generation. Three-layer tokens (primitive→semantic→component), CSS variables, spacing/typography scales, component specs, strategic slide cre... | - | agents |
+| 577 | **ckm:slides** | Create strategic HTML presentations with Chart.js, design tokens, responsive layouts, copywriting formulas, and contextual slide strategies. | - | agents |
+| 578 | **ckm:ui-styling** | Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user in... | - | agents |
+| 579 | **claid-ai-automation** | Automate Claid AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 580 | **claimable-postgres** | Provisions instant temporary PostgreSQL databases via Claimable Postgres by Neon (neon.new) without login or signup. Use when running quick SQL tests, provisioning sandbox DBs for CI, or when user ... | - | agents |
+| 581 | **clarify** | Improve unclear UX copy, error messages, microcopy, labels, and instructions to make interfaces easier to understand. Use when the user mentions confusing text, unclear labels, bad error messages, ... | - | agents |
+| 582 | **classmarker-automation** | Automate Classmarker tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 583 | **claude** | Claude Code CLI wrapper for non-Claude hosts - three modes. Review: independent diff review via claude -p. Challenge: adversarial failure-mode review. Consult: ask Claude about the repo with read-o... | - | claude |
+| 584 | **claude-api** | Reference for the Claude API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file;... | - | claude |
+| 585 | **claude-coach** |  | - | agents |
+| 586 | **claude-code** |  | - | agents |
+| 587 | **claude-for-legal** | Análisis legal, revisión de contratos, cumplimiento normativo y síntesis de documentos jurídicos. | - | claude |
+| 588 | **claude-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. | - | claude |
+| 589 | **claude-mem** | Persistent architectural decisions and session memory across agent invocations. | - | claude |
+| 590 | **claude-seo** | SEO técnico, Schema org markup, GEO (Generative Engine Optimization) y optimización de motores de búsqueda de IA. | - | claude |
+| 591 | **clean-architecture** | Structure software around the Dependency Rule: source code dependencies point inward from frameworks to use cases to entities. Use when the user mentions "architecture layers", "dependency rule", "... | - | agents |
+| 592 | **clean-code** | Write readable, maintainable code through disciplined naming, small functions, and clean error handling. Use when the user mentions "clean up this code", "this function is too long", "code smells",... | - | agents |
+| 593 | **clearout-automation** | Automate Clearout tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 594 | **cli-creator** | Build a composable CLI for Codex from API docs, an OpenAPI spec, existing curl examples, an SDK, a web app, an admin tool, or a local script. Use when the user wants Codex to create a command-line ... | - | agents |
+| 595 | **cli-developer** | Use when building CLI tools, implementing argument parsing, or adding interactive prompts. Invoke for parsing flags and subcommands, displaying progress bars and spinners, generating bash/zsh/fish ... | - | agents |
+| 596 | **clickhouse-io** | ClickHouse column-oriented database patterns, query optimization, MergeTree engines, materialization, and analytics. Use when designing ClickHouse schemas, optimizing OLAP SQL queries, or when user... | - | agents |
+| 597 | **clickmeeting-automation** | Automate Clickmeeting tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 598 | **clinical-research** | Use when designing a prospective clinical study before submission — selecting and classifying endpoints (primary / key-secondary / exploratory, with surrogate-endpoint flagging), estimating sample ... | - | agents |
+| 599 | **Clockify Automation** | Automate time tracking workflows in Clockify -- create and manage time entries, workspaces, and users through natural language commands. | - | agents |
+| 600 | **clone-website** | Reverse-engineer and clone one or more websites in one shot — extracts assets, CSS, and content section-by-section and proactively dispatches parallel builder agents in worktrees as it goes. Use th... | - | agents |
+| 601 | **cloud-architect** | Designs cloud architectures, creates migration plans, generates cost optimization recommendations, and produces disaster recovery strategies across AWS, Azure, and GCP. Use when designing cloud arc... | - | agents |
+| 602 | **cloud-security** | Use when assessing cloud infrastructure for security misconfigurations, IAM privilege escalation paths, S3 public exposure, open security group rules, or IaC security gaps. Covers AWS, Azure, and G... | - | agents |
+| 603 | **cloud-solution-architect** | Transform the agent into a Cloud Solution Architect following Azure Architecture Center best practices. Use when designing cloud architectures, reviewing system designs, selecting architecture styl... | - | agents |
+| 604 | **cloud-sync** | Set up or check Codex-mem cloud sync with cmem.ai Pro. Use when the user says "set up cloud sync", "sync my memories", "cmem pro", "cloud backup", "sync status", or wants their memory database back... | - | agents |
+| 605 | **cloudcart-automation** | Automate Cloudcart tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 606 | **cloudconvert-automation** | Automate Cloudconvert tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 607 | **cloudflare** | Comprehensive Cloudflare platform skill covering Workers, Pages, storage (KV, D1, R2), AI (Workers AI, Vectorize, Agents SDK), feature flags (Flagship), networking (Tunnel, Spectrum), security (WAF... | - | agents |
+| 608 | **cloudflare-api** | Hit the Cloudflare REST API directly for operations that wrangler and MCP can't handle well. Bulk DNS, custom hostnames, email routing, cache purge, WAF rules, redirect rules, zone settings, Worker... | - | agents |
+| 609 | **cloudflare-api-key-automation** | Automate Cloudflare API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 610 | **cloudflare-automation** | Automate Cloudflare tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 611 | **cloudflare-browser-rendering-automation** | Automate Cloudflare Browser Rendering tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 612 | **cloudflare-deploy** | Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare. | - | agents |
+| 613 | **cloudflare-email-service** | Send and receive transactional emails with Cloudflare Email Service (Email Sending + Email Routing). Use when building email sending (Workers binding or REST API), email routing, Agents SDK email h... | - | agents |
+| 614 | **cloudflare-one** | Guides Cloudflare One Zero Trust and SASE work across Access, Gateway, WARP, Tunnel, Cloudflare WAN, DLP, CASB, device posture, and identity. Use when designing, configuring, troubleshooting, or re... | - | agents |
+| 615 | **cloudflare-one-migrations** | Plans migrations from Zscaler ZIA/ZPA, Palo Alto, legacy VPN, SWG, or SASE stacks to Cloudflare One. Use for migration assessments, policy mapping, rollout plans, and parity/gap analysis. | - | agents |
+| 616 | **cloudflare-worker-builder** | Scaffold and deploy Cloudflare Workers with Hono routing, Vite plugin, and Static Assets. Workflow: describe project, scaffold structure, configure bindings, deploy. Use when creating Workers proje... | - | agents |
+| 617 | **Cloudinary Automation** | Automate Cloudinary media management including folder organization, upload presets, asset lookup, transformations, and usage monitoring through natural language commands | - | agents |
+| 618 | **cloudlayer-automation** | Automate Cloudlayer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 619 | **cloudpress-automation** | Automate Cloudpress tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 620 | **cmd-a11y-audit** |  | - | agents |
+| 621 | **cmd-code-to-prd** |  | - | agents |
+| 622 | **cmd-cs-aeo** |  | - | agents |
+| 623 | **cmd-focused-fix** |  | - | agents |
+| 624 | **cmo-advisor** | Marketing leadership for scaling companies. Brand positioning, growth model design, marketing budget allocation, and marketing org design. Use when designing brand strategy, selecting growth models... | - | agents |
+| 625 | **cmo-review** | /cs:cmo-review <plan> — Narrative-first interrogation of positioning, ICP, message house, and channel mix. Use when launching a campaign or repositioning, or when CAC is rising and the one-sentence... | - | agents |
+| 626 | **co-marketing** | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Use when the user says 'co-marketing,' 'partner marketing,' 'joint campaign,' 'who ... | - | agents |
+| 627 | **coassemble-automation** | Automate Coassemble tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 628 | **codacy-automation** | Automate Codacy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 629 | **code-documenter** | Generates, formats, and validates technical documentation — including docstrings, OpenAPI/Swagger specs, JSDoc annotations, doc portals, and user guides. Use when adding docstrings to functions or ... | - | agents |
+| 630 | **code-review** | Use when receiving code review feedback (especially if unclear or technically questionable), when completing tasks or major features requiring review before proceeding, or before making any complet... | - | agents |
+| 631 | **code-review-and-quality** | Conducts multi-axis code review. Use before merging any change. Use when reviewing code written by yourself, another agent, or a human. Use when you need to assess code quality across multiple dime... | - | agents |
+| 632 | **code-review-patterns** | Code review checklist, what to look for, how to give feedback, PR review flow. Use when reviewing a pull request, or when preparing code for review. | - | agents |
+| 633 | **code-review-quality** | Conduct context-driven code reviews focusing on quality, testability, and maintainability. Use when reviewing code, providing feedback, or establishing review practices. | - | agents |
+| 634 | **code-reviewer** | Code review automation for TypeScript, JavaScript, Python, Go, Swift, Kotlin, C#, .NET, Java, C, C++, Rust, Ruby, PHP, and Dart/Flutter. Analyzes PRs for complexity and risk, checks code quality fo... | - | agents |
+| 635 | **code-simplification** | Simplifies code for clarity. Use when refactoring code for clarity without changing behavior. Use when code works but is harder to read, maintain, or extend than it should be. Use when reviewing co... | - | agents |
+| 636 | **code-to-prd** | Reverse-engineer any codebase into a complete Product Requirements Document (PRD). Analyzes routes, components, state management, API integrations, and user interactions to produce business-readabl... | - | agents |
+| 637 | **code-tour** | Use when the user asks to create a CodeTour .tour file — persona-targeted, step-by-step walkthroughs that link to real files and line numbers. Trigger for: create a tour, onboarding tour, architect... | - | agents |
+| 638 | **codebase-design** | Shared vocabulary for designing deep modules. Use when the user wants to design or improve a module's interface, find deepening opportunities, decide where a seam goes, make code more testable or A... | - | agents |
+| 639 | **codebase-memory-mcp** | Indexes a codebase into a persistent knowledge graph so agents can query callers, callees, type hierarchies, and module relationships instead of re-reading dozens of files each session. Save tokens... | - | agents |
+| 640 | **codebase-onboarding** | Analyze a codebase and generate onboarding documentation for engineers, tech leads, and contractors. Fast fact-gathering and repeatable onboarding outputs. Use when onboarding a new engineer, writi... | - | agents |
+| 641 | **codehealth-mcp** | Real-time structural Code Health analysis via CodeScene MCP. Reviews code complexity before edits, verifies score deltas after changes, and gates commits/PRs against technical debt accumulation. Us... | - | agents |
+| 642 | **codeinterpreter-automation** | Automate Codeinterpreter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 643 | **codereadr-automation** | Automate Codereadr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 644 | **Codex** | Codex CLI wrapper for non-Codex hosts - three modes. Review: independent diff review via Codex -p. Challenge: adversarial failure-mode review. Consult: ask Codex about the repo with read-only file ... | - | agents |
 | 645 | **Codex-api** | Reference for the Codex API / Anthropic SDK — model ids, pricing, params, streaming, tool use, MCP, agents, caching, token counting, model migration. TRIGGER — read BEFORE opening the target file; ... | - | agents |
 | 646 | **Codex-coach** | Personal coach that teaches users to become Codex power users. Use this skill the FIRST time a user asks to "learn Codex", "be a power user", "coach me", "teach me Codex tricks", "what can Codex do... | - | agents |
 | 647 | **Codex-handoff** | Hand the current conversation off to a fresh background agent that picks up the work immediately. | - | agents |
-| 648 | **codigo-full-stack** | Construye aplicaciones completas de punta a punta — interfaz, API, base de datos, autenticación y despliegue — con criterio de producción y sin sobredimensionar. Cubre elección de stack, modelo de ... | - | claude |
+| 648 | **codigo-full-stack** | Construye aplicaciones completas de punta a punta — interfaz, API, base de datos, autenticación y despliegue — con criterio de producción y sin sobredimensionar. Cubre elección de stack, modelo de ... | - | agents |
 | 649 | **Coinbase Automation** | Coinbase Automation: list and manage cryptocurrency wallets, accounts, and portfolio data via Coinbase CDP SDK | - | agents |
 | 650 | **coinmarketcal-automation** | Automate Coinmarketcal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 651 | **coinmarketcap-automation** | Automate Coinmarketcap tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4112,7 +4114,7 @@ Total unique skills: **3327**
 | 678 | **composio** | Use 1000+ external apps via Composio - either directly through the CLI or by building AI agents and apps with the SDK | - | agents |
 | 679 | **composio-automation** | Automate Composio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 680 | **composio-search-automation** | Automate Composio Search tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 681 | **computer-use** | Drive the user's desktop in the background (clicking, typing, scrolling, dragging) without stealing cursor focus. Use when automating desktop applications, interacting with native GUIs, or when use... | - | claude |
+| 681 | **computer-use** | Drive the user's desktop in the background (clicking, typing, scrolling, dragging) without stealing cursor focus. Use when automating desktop applications, interacting with native GUIs, or when use... | - | agents |
 | 682 | **confluence-expert** | Atlassian Confluence expert for creating and managing spaces, knowledge bases, and documentation. Configures space permissions and hierarchies, creates page templates with macros, sets up documenta... | - | agents |
 | 683 | **connect** | Connect Codex to any app. Send emails, create issues, post messages, update databases - take real actions across Gmail, Slack, GitHub, Notion, and 1000+ services. | - | agents |
 | 684 | **connect-apps** | Connect Codex to external apps like Gmail, Slack, GitHub. Use this skill when the user wants to send emails, create issues, post messages, or take actions in external services. | - | agents |
@@ -4134,19 +4136,19 @@ Total unique skills: **3327**
 | 700 | **context-driven-testing** | Apply context-driven testing principles where practices are chosen based on project context, not universal 'best practices'. Use when making testing decisions, questioning dogma, or adapting approa... | - | agents |
 | 701 | **context-engine** | Loads and manages company context for all C-suite advisor skills. Reads ~/.Codex/company-context.md, detects stale context (>90 days), enriches context during conversations, and enforces privacy/an... | - | agents |
 | 702 | **context-engineering** | Master context engineering for AI agent systems. Use when designing agent architectures, debugging context failures, optimizing token usage, implementing memory systems, building multi-agent coordi... | - | agents |
-| 703 | **context-mode** | Gestión ultra-eficiente de la ventana de contexto de sesión, compresión dinámica de tokens y poda de información no relevante. | - | claude |
+| 703 | **context-mode** | Gestión ultra-eficiente de la ventana de contexto de sesión, compresión dinámica de tokens y poda de información no relevante. | - | agents |
 | 704 | **context-restore** | Restore working context saved earlier by /context-save. (gstack) | - | agents |
 | 705 | **context-save** | Save working context. (gstack) | - | agents |
 | 706 | **continual-learning** | Guide for implementing continual learning in AI coding agents — hooks, memory scoping, reflection patterns. Use when setting up learning infrastructure for agents. | - | agents |
 | 707 | **continuous-discovery** | Build a weekly cadence of customer touchpoints using Opportunity Solution Trees, assumption mapping, and interview snapshots. Use when the user mentions "continuous discovery", "opportunity solutio... | - | agents |
 | 708 | **contract-and-proposal-writer** | Generate professional, jurisdiction-aware business documents: freelance contracts, project proposals, SOWs, NDAs, and MSAs. Structured Markdown output with docx conversion instructions. Covers US (... | - | agents |
-| 709 | **contract-first** | Contract-first API and event schema development pattern. Prevents field drift and breaking changes between frontend/backend or service providers by defining OpenAPI/TypeSpec/Protobuf contracts befo... | - | claude |
+| 709 | **contract-first** | Contract-first API and event schema development pattern. Prevents field drift and breaking changes between frontend/backend or service providers by defining OpenAPI/TypeSpec/Protobuf contracts befo... | - | agents |
 | 710 | **contract-testing** | Consumer-driven contract testing for microservices using Pact, schema validation, API versioning, and backward compatibility testing. Use when testing API contracts or coordinating distributed teams. | - | agents |
 | 711 | **control-d-automation** | Automate Control D tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 712 | **conventional-branch** | Create Git branches following the Conventional Branch specification (feature/, bugfix/, hotfix/, release/, chore/). Use when creating a new branch, naming a branch, or when user mentions "conventio... | - | claude |
+| 712 | **conventional-branch** | Create Git branches following the Conventional Branch specification (feature/, bugfix/, hotfix/, release/, chore/). Use when creating a new branch, naming a branch, or when user mentions "conventio... | - | agents |
 | 713 | **conversion-tools-automation** | Automate Conversion Tools tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 714 | **convert-pdf-to-md** | Converts PDF (.pdf) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing PDF files, converting PDF to text/markdown, or when... | - | claude |
-| 715 | **convert-word-to-md** | Converts Word (.docx) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing Word documents, converting docx to markdown, or w... | - | claude |
+| 714 | **convert-pdf-to-md** | Converts PDF (.pdf) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing PDF files, converting PDF to text/markdown, or when... | - | agents |
+| 715 | **convert-word-to-md** | Converts Word (.docx) documents into structured Markdown so their contents can be analyzed, summarized, searched, or extracted. Use when processing Word documents, converting docx to markdown, or w... | - | agents |
 | 716 | **convertapi-automation** | Automate Convertapi tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 717 | **conveyor-automation** | Automate Conveyor tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 718 | **convolo-ai-automation** | Automate Convolo AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4156,7 +4158,7 @@ Total unique skills: **3327**
 | 722 | **copy-editing** | When the user wants to edit, review, or improve existing marketing copy. Also use when the user mentions 'edit this copy,' 'review my copy,' 'copy feedback,' 'proofread,' 'polish this,' 'make this ... | - | agents |
 | 723 | **copywriting** | When the user wants to write, rewrite, or improve marketing copy for any page — including homepage, landing pages, pricing pages, feature pages, about pages, or product pages. Also use when the use... | - | agents |
 | 724 | **corrently-automation** | Automate Corrently tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 725 | **cost-aware-llm-pipeline** | Cost optimization patterns for LLM API usage — model routing by task complexity, budget tracking, retry logic, and prompt caching. Use when building production LLM apps, reducing token costs, confi... | - | claude |
+| 725 | **cost-aware-llm-pipeline** | Cost optimization patterns for LLM API usage — model routing by task complexity, budget tracking, retry logic, and prompt caching. Use when building production LLM apps, reducing token costs, confi... | - | agents |
 | 726 | **countdown-api-automation** | Automate Countdown API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 727 | **coupa-automation** | Automate Coupa tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 728 | **coverage** | Analyze test coverage gaps. Use when user says "test coverage", "what's not tested", "coverage gaps", "missing tests", "coverage report", or "what needs testing". | - | agents |
@@ -4164,14 +4166,14 @@ Total unique skills: **3327**
 | 730 | **coverage-guard** | Use when you want to prevent coverage regressions during development. Activate with /coverage-guard to warn when coverage drops below threshold after code changes. | - | agents |
 | 731 | **cpo-advisor** | Product leadership for scaling companies. Product vision, portfolio strategy, product-market fit, and product org design. Use when setting product vision, managing a product portfolio, measuring PM... | - | agents |
 | 732 | **cpo-review** | /cs:cpo-review <plan> — JTBD-driven interrogation of product roadmap, PMF signal, and portfolio focus. Use when committing a quarter's roadmap, deciding whether to kill a feature, or claiming PMF w... | - | agents |
-| 733 | **cpp-coding-standards** | C++ coding standards based on the C++ Core Guidelines (isocpp.github.io). Enforces modern C++20/23 patterns, RAII, smart pointers (`std::unique_ptr`), const-correctness, and memory safety. Use when... | - | claude |
+| 733 | **cpp-coding-standards** | C++ coding standards based on the C++ Core Guidelines (isocpp.github.io). Enforces modern C++20/23 patterns, RAII, smart pointers (`std::unique_ptr`), const-correctness, and memory safety. Use when... | - | agents |
 | 734 | **cpp-pro** | Writes, optimizes, and debugs C++ applications using modern C++20/23 features, template metaprogramming, and high-performance systems techniques. Use when building or refactoring C++ code requiring... | - | agents |
 | 735 | **craftmypdf-automation** | Automate Craftmypdf tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 736 | **creacion-de-oferta** | Convierte un servicio difuso en una oferta que se puede vender — resultado concreto, plazo, precio anclado al valor y no a las horas, garantía defendible y entregables listados. Incluye las seis pr... | - | claude |
+| 736 | **creacion-de-oferta** | Convierte un servicio difuso en una oferta que se puede vender — resultado concreto, plazo, precio anclado al valor y no a las horas, garantía defendible y entregables listados. Incluye las seis pr... | - | agents |
 | 737 | **create-app** | Guided journey from a raw app idea to a validated, cleanly architected first version that ships on a sustainable cadence. Orchestrates ten skills phase by phase - lean-startup, design-sprint, clean... | - | agents |
 | 738 | **create-business** | Guided journey from raw idea to a validated, positioned, priced business with a chosen beachhead. Orchestrates ten skills phase by phase - jobs-to-be-done, mom-test, design-sprint, lean-startup, go... | - | agents |
 | 739 | **create-design-md** | Create or update a DESIGN.md from an existing product repository or public website. Use when asked to document an interface's design language, reconstruct its visual system, extract design tokens a... | - | agents |
-| 740 | **create-mcp-eval** | Generates comprehensive evaluation suites for any Model Context Protocol (MCP) server using @mcpjam/sdk. Supports Vitest/Jest integration, deterministic tool assertions, and LLM-as-a-judge test cas... | - | claude |
+| 740 | **create-mcp-eval** | Generates comprehensive evaluation suites for any Model Context Protocol (MCP) server using @mcpjam/sdk. Supports Vitest/Jest integration, deterministic tool assertions, and LLM-as-a-judge test cas... | - | agents |
 | 741 | **create-voltagent** | Skill for creating AI agent projects using the VoltAgent framework. Guide for CLI setup and manual bootstrapping. | - | agents |
 | 742 | **create-website** | Guided journey from a blank page to a live, high-converting website, built message-first, then design, then conversion. Orchestrates ten skills phase by phase - one-page-marketing, storybrand-messa... | - | agents |
 | 743 | **creating-skills** | Guide for creating Codex skills following Anthropic's official best practices. Use when user wants to create a new skill, build a skill, write SKILL.md, update an existing skill, or needs skill cre... | - | agents |
@@ -4216,12 +4218,12 @@ Total unique skills: **3327**
 | 782 | **cs-wiki-linter** |  | - | agents |
 | 783 | **cs-workspace-admin** |  | - | agents |
 | 784 | **csharp-developer** | Use when building C# applications with .NET 8+, ASP.NET Core APIs, or Blazor web apps. Builds REST APIs using minimal or controller-based routing, configures database access with Entity Framework C... | - | agents |
-| 785 | **csharp-testing** | C# and .NET testing patterns with xUnit, FluentAssertions, NSubstitute/Moq, AutoFixture, and WebApplicationFactory integration tests. Use when writing unit or integration tests in .NET, configuring... | - | claude |
+| 785 | **csharp-testing** | C# and .NET testing patterns with xUnit, FluentAssertions, NSubstitute/Moq, AutoFixture, and WebApplicationFactory integration tests. Use when writing unit or integration tests in .NET, configuring... | - | agents |
 | 786 | **cso** | Chief Security Officer mode. (gstack) | - | agents |
 | 787 | **css-animations** | CSS animation adapter patterns for HyperFrames. Use when authoring CSS keyframes, animation-delay based timing, animation-fill-mode, animation-play-state, or CSS-only motion that HyperFrames must s... | - | agents |
 | 788 | **cto-advisor** | Technical leadership guidance for engineering teams, architecture decisions, and technology strategy. Use when assessing technical debt, scaling engineering teams, evaluating technologies, making a... | - | agents |
 | 789 | **cto-review** | /cs:cto-review <plan> — Architecture and scaling interrogation. Tech debt, scaling cliffs, team scaling, build-vs-buy. Use when committing to an architecture, planning for 10x load, or weighing a r... | - | agents |
-| 790 | **cult-ui** | Componentes UI con estética de culto, brutalista y moderna (React, Tailwind, Framer Motion). | - | claude |
+| 790 | **cult-ui** | Componentes UI con estética de culto, brutalista y moderna (React, Tailwind, Framer Motion). | - | agents |
 | 791 | **cults-automation** | Automate Cults tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 792 | **culture-architect** | Build, measure, and evolve company culture as operational behavior — not wall posters. Covers mission/vision/values workshops, values-to-behaviors translation, culture code creation, culture health... | - | agents |
 | 793 | **curated-automation** | Automate Curated tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4233,7 +4235,7 @@ Total unique skills: **3327**
 | 799 | **customize** | Interactive guided deployment flow for Azure OpenAI models with full customization control. Step-by-step selection of model version, SKU (GlobalStandard/Standard/ProvisionedManaged), capacity, RAI ... | - | agents |
 | 800 | **customjs-automation** | Automate Customjs tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 801 | **cutt-ly-automation** | Automate Cutt Ly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 802 | **cybersecurity** | Community cybersecurity knowledge suite containing 817 security skills mapped to MITRE ATT&CK, NIST CSF, and OWASP standards. Covers vulnerability assessment, secret scanning, threat modeling, hard... | - | claude |
+| 802 | **cybersecurity** | Community cybersecurity knowledge suite containing 817 security skills mapped to MITRE ATT&CK, NIST CSF, and OWASP standards. Covers vulnerability assessment, secret scanning, threat modeling, hard... | - | agents |
 | 803 | **d1-drizzle-schema** | Generate Drizzle ORM schemas for Cloudflare D1 databases with correct D1-specific patterns. Produces schema files, migration commands, type exports, and DATABASE_SCHEMA.md documentation. Handles D1... | - | agents |
 | 804 | **d1-migration** | Cloudflare D1 migration workflow: generate with Drizzle, inspect SQL for gotchas, apply to local and remote, fix stuck migrations, handle partial failures. Use when running migrations, fixing migra... | - | agents |
 | 805 | **d2lbrightspace-automation** | Automate D2lbrightspace tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4241,14 +4243,14 @@ Total unique skills: **3327**
 | 807 | **daffy-automation** | Automate Daffy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 808 | **dailybot-automation** | Automate Dailybot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 809 | **data-quality-auditor** | Audit datasets for completeness, consistency, accuracy, and validity. Profile data distributions, detect anomalies and outliers, surface structural issues, and produce an actionable remediation pla... | - | agents |
-| 810 | **data-scraper-agent** | Build automated AI-powered data collection agents for public web sources (job boards, pricing, news, GitHub, sports). Runs on a schedule, enriches collected data, handles rate limits, and persists ... | - | claude |
+| 810 | **data-scraper-agent** | Build automated AI-powered data collection agents for public web sources (job boards, pricing, news, GitHub, sports). Runs on a schedule, enriches collected data, handles rate limits, and persists ... | - | agents |
 | 811 | **database-designer** | Use when the user asks to design database schemas, plan data migrations, optimize queries, choose between SQL and NoSQL, or model data relationships. | - | agents |
-| 812 | **database-migrations** | Database migration best practices for schema changes, data migrations, rollbacks, and zero-downtime deployments across PostgreSQL, MySQL, Prisma, Drizzle, and Flyway. Use when writing schema migrat... | - | claude |
+| 812 | **database-migrations** | Database migration best practices for schema changes, data migrations, rollbacks, and zero-downtime deployments across PostgreSQL, MySQL, Prisma, Drizzle, and Flyway. Use when writing schema migrat... | - | agents |
 | 813 | **database-optimizer** | Optimizes database queries and improves performance across PostgreSQL and MySQL systems. Use when investigating slow queries, analyzing execution plans, or optimizing database performance. Invoke f... | - | agents |
 | 814 | **database-schema-designer** | Use when the user asks to create ERD diagrams, normalize database schemas, design table relationships, or plan schema migrations. | - | agents |
 | 815 | **database-testing** | Database schema validation, data integrity testing, migration testing, transaction isolation, and query performance. Use when testing data persistence, ensuring referential integrity, or validating... | - | agents |
 | 816 | **databases** | Work with MongoDB (document database, BSON documents, aggregation pipelines, Atlas cloud) and PostgreSQL (relational database, SQL queries, psql CLI, pgAdmin). Use when designing database schemas, ... | - | agents |
-| 817 | **datadog-cli** | Datadog CLI for searching production logs, querying APM metrics, tracing requests, and inspecting dashboards. Use when debugging production issues, checking Datadog telemetry, or when user mentions... | - | claude |
+| 817 | **datadog-cli** | Datadog CLI for searching production logs, querying APM metrics, tracing requests, and inspecting dashboards. Use when debugging production issues, checking Datadog telemetry, or when user mentions... | - | agents |
 | 818 | **datagma-automation** | Automate Datagma tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 819 | **datarobot-automation** | Automate Datarobot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 820 | **db-seed** | Generate database seed scripts with realistic sample data. Reads Drizzle schemas or SQL migrations, respects foreign key ordering, produces idempotent TypeScript or SQL seed files. Handles D1 batch... | - | agents |
@@ -4264,35 +4266,35 @@ Total unique skills: **3327**
 | 830 | **decision-logger** | Two-layer memory architecture for board meeting decisions. Manages raw transcripts (Layer 1) and approved decisions (Layer 2). Use when logging decisions after a board meeting, reviewing past decis... | - | agents |
 | 831 | **declarative-agent-developer** | Create, build, deploy, and localize declarative agents for M365 Copilot and Teams. USE THIS SKILL for ANY task involving a declarative agent — including localization, scaffolding, editing manifests... | - | agents |
 | 832 | **deel-automation** | Automate Deel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 833 | **deep-dive** | 2-stage trace & interview pipeline (trace -> deep-interview). Use when applying patterns from Yeachan-Heo/deep-dive or when user mentions "deep-dive". | - | claude |
-| 834 | **deep-interview** | Socratic deep interview with mathematical ambiguity gating. Use when applying patterns from Yeachan-Heo/deep-interview or when user mentions "deep-interview". | - | claude |
+| 833 | **deep-dive** | 2-stage trace & interview pipeline (trace -> deep-interview). Use when applying patterns from Yeachan-Heo/deep-dive or when user mentions "deep-dive". | - | agents |
+| 834 | **deep-interview** | Socratic deep interview with mathematical ambiguity gating. Use when applying patterns from Yeachan-Heo/deep-interview or when user mentions "deep-interview". | - | agents |
 | 835 | **deep-research** | Run a disciplined, multi-source research investigation for a high-stakes question or decision — fan-out web search across many channels, parallel sub-agents, source triangulation (each claim backed... | - | agents |
 | 836 | **deep-work** | Use when someone wants to plan a deep work day, time-block their calendar or task list, budget or cut shallow work, protect focus hours, track deep-work sessions and streaks, run an end-of-day shut... | - | agents |
 | 837 | **deepgram-automation** | Automate Deepgram tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 838 | **deepinit** | Deep codebase initialization with AGENTS.md documentation. Use when applying patterns from Yeachan-Heo/deepinit or when user mentions "deepinit". | - | claude |
+| 838 | **deepinit** | Deep codebase initialization with AGENTS.md documentation. Use when applying patterns from Yeachan-Heo/deepinit or when user mentions "deepinit". | - | agents |
 | 839 | **Defense-in-Depth Validation** | Validate at every layer data passes through to make bugs impossible | - | agents |
-| 840 | **defi-amm-security** | Security checklist for Solidity AMM contracts & pools. Use when applying patterns from affaan-m/defi-amm-security or when user mentions "defi-amm-security". | - | claude |
+| 840 | **defi-amm-security** | Security checklist for Solidity AMM contracts & pools. Use when applying patterns from affaan-m/defi-amm-security or when user mentions "defi-amm-security". | - | agents |
 | 841 | **define-goal** | Help the user define a concrete, measurable goal before starting work, especially when they ask to use the goal tool, create a goal, set an objective, clarify success criteria, or turn a fuzzy inte... | - | agents |
-| 842 | **defuddle** | Converts cluttered HTML web pages into clean, readable Markdown. Strips cookie banners, ads, nav menus, scripts, and layout bloat (by kepano / Obsidian lead). Use when fetching web content for agen... | - | claude |
+| 842 | **defuddle** | Converts cluttered HTML web pages into clean, readable Markdown. Strips cookie banners, ads, nav menus, scripts, and layout bloat (by kepano / Obsidian lead). Use when fetching web content for agen... | - | agents |
 | 843 | **delight** | Add moments of joy, personality, and unexpected touches that make interfaces memorable and enjoyable to use. Elevates functional to delightful. Use when the user asks to add polish, personality, an... | - | agents |
-| 844 | **delivery-gate** | Stop hook blocking completion until quality checks pass. Use when applying patterns from affaan-m/delivery-gate or when user mentions "delivery-gate". | - | claude |
+| 844 | **delivery-gate** | Stop hook blocking completion until quality checks pass. Use when applying patterns from affaan-m/delivery-gate or when user mentions "delivery-gate". | - | agents |
 | 845 | **demio-automation** | Automate Demio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 846 | **demo-video** | Use when the user asks to create a demo video, product walkthrough, feature showcase, animated presentation, marketing video, or GIF from screenshots or scene descriptions. Orchestrates playwright,... | - | agents |
-| 847 | **dependabot** | Configuring and managing GitHub Dependabot. Use when applying patterns from github/dependabot or when user mentions "dependabot". | - | claude |
+| 847 | **dependabot** | Configuring and managing GitHub Dependabot. Use when applying patterns from github/dependabot or when user mentions "dependabot". | - | agents |
 | 848 | **dependency-auditor** | Audit and manage dependencies across multi-language projects. Identifies vulnerabilities, license conflicts, transitive dependency risks, and safe-upgrade paths. Use when auditing third-party packa... | - | agents |
-| 849 | **dependency-updater** | Smart dependency updates across any language. Use when applying patterns from softaworks/dependency-updater or when user mentions "dependency-updater". | - | claude |
+| 849 | **dependency-updater** | Smart dependency updates across any language. Use when applying patterns from softaworks/dependency-updater or when user mentions "dependency-updater". | - | agents |
 | 850 | **deploy** |  | - | agents |
 | 851 | **deploy-model** | Unified Azure OpenAI model deployment skill with intelligent intent-based routing. Handles quick preset deployments, fully customized deployments (version/SKU/capacity/RAI policy), and capacity dis... | - | agents |
 | 852 | **deployment-guide** | Vercel frontend + Railway/Fly.io backend deployment, env vars, health checks. Use when deploying a Next.js frontend to Vercel or a NestJS backend to Railway or Fly.io, or troubleshooting a deployme... | - | agents |
-| 853 | **deployment-patterns** | CI/CD pipelines, Docker, health checks & rollbacks. Use when applying patterns from affaan-m/deployment-patterns or when user mentions "deployment-patterns". | - | claude |
+| 853 | **deployment-patterns** | CI/CD pipelines, Docker, health checks & rollbacks. Use when applying patterns from affaan-m/deployment-patterns or when user mentions "deployment-patterns". | - | agents |
 | 854 | **deprecation-and-migration** | Manages deprecation and migration. Use when removing old systems, APIs, or features. Use when migrating users from one implementation to another. Use when deciding whether to maintain or sunset exi... | - | agents |
 | 855 | **design-an-interface** | Generate multiple radically different interface designs for a module using parallel sub-agents. Use when user wants to design an API, explore interface options, compare module shapes, or mentions "... | - | agents |
 | 856 | **design-code** | Generate production-ready, accessible, token-driven component code for ANY framework — React+Tailwind, Next.js, SwiftUI, Vue, Svelte, Angular, Solid, Web Components/Lit, React Native, Flutter, Jetp... | - | agents |
 | 857 | **design-code-architecture** | Guided journey from an app idea to a deliberate architecture: boundaries, domain model, data decisions, and resilience, making only the expensive-to-reverse decisions and deferring the rest. Orches... | - | agents |
 | 858 | **design-component** | Design a UI component spec to the house quality bar — anatomy, variants, sizes, the 8 states, token mapping, and accessibility. Use when the user wants to design or document a component (button, in... | - | agents |
 | 859 | **design-consultation** | Design consultation: understands your product, researches the landscape, proposes a complete design system (aesthetic, typography, color, layout, spacing, motion), and generates font+color preview.... | - | agents |
-| 860 | **design-deploy** | GCP infrastructure design with Terraform. Use when applying patterns from google/design-deploy or when user mentions "design-deploy". | - | claude |
-| 861 | **design-dna** | Brand identity and design system extraction skill. Extracts color palettes, typography scales, component primitives, and design tokens from websites or screenshots into structured JSON/CSS. Use whe... | - | claude |
+| 860 | **design-deploy** | GCP infrastructure design with Terraform. Use when applying patterns from google/design-deploy or when user mentions "design-deploy". | - | agents |
+| 861 | **design-dna** | Brand identity and design system extraction skill. Extracts color palettes, typography scales, component primitives, and design tokens from websites or screenshots into structured JSON/CSS. Use whe... | - | agents |
 | 862 | **design-everyday-things** | Apply foundational design principles: affordances, signifiers, constraints, feedback, and conceptual models. Use when the user mentions "why is this confusing", "affordance", "error prevention", "d... | - | agents |
 | 863 | **design-html** | Design finalization: generates production-quality Pretext-native HTML/CSS. (gstack) | - | agents |
 | 864 | **design-is** | Audit a design against Dieter Rams' ten "Good design is..." principles, then hand off a /make-plan prompt for one of three outcomes — new design, refine design, or redesign. Use when the user says ... | - | agents |
@@ -4303,56 +4305,56 @@ Total unique skills: **3327**
 | 869 | **design-shotgun** | Design shotgun: generate multiple AI design variants, open a comparison board, collect structured feedback, and iterate. (gstack) | - | agents |
 | 870 | **design-sprint** | Run a structured 5-day process to prototype, test, and validate product ideas with real users. Use when the user mentions "design sprint", "validate before we build", "rapid prototype", "test with ... | - | agents |
 | 871 | **design-system** | Captures the user's brand identity once via a 10-question onboarding wizard (primary/accent HEX + heading + body Google Fonts + design style editorial/technical/minimal/playful + default output dir... | - | agents |
-| 872 | **design-system-starter** | Create design tokens & component architecture. Use when applying patterns from softaworks/design-system-starter or when user mentions "design-system-starter". | - | claude |
+| 872 | **design-system-starter** | Create design tokens & component architecture. Use when applying patterns from softaworks/design-system-starter or when user mentions "design-system-starter". | - | agents |
 | 873 | **design-taste-frontend** | Anti-slop frontend skill for landing pages, portfolios, and redesigns. The agent reads the brief, infers the right design direction, and ships interfaces that do not look templated. Real design sys... | https://github.com/Leonxlnx/taste-skill | agents |
 | 874 | **design-taste-frontend-v1** | The original v1 taste-skill, preserved for projects depending on its exact behavior. The current default is `design-taste-frontend` (v2 experimental), which is a substantial rewrite. Use this v1 in... | https://github.com/Leonxlnx/taste-skill | agents |
 | 875 | **design-tokens** | Generate, extend, or audit design tokens in DTCG format with the 3-tier architecture (primitive → semantic → component). Use when the user wants a color palette, type scale, spacing/shadow/radius/m... | - | agents |
 | 876 | **design-void** | Cyber-brutalism / high-contrast dark-mode design system reverse-engineered from the "VOID — Avant-Garde Web Creators" landing page. Use when the user wants an experimental, premium, tech-forward da... | - | agents |
-| 877 | **desk-journal** | Persistent desk journal memory entries. Use when applying patterns from github/desk-journal or when user mentions "desk-journal". | - | claude |
-| 878 | **desk-open** | Open new desk in workshop. Use when applying patterns from github/desk-open or when user mentions "desk-open". | - | claude |
+| 877 | **desk-journal** | Persistent desk journal memory entries. Use when applying patterns from github/desk-journal or when user mentions "desk-journal". | - | agents |
+| 878 | **desk-open** | Open new desk in workshop. Use when applying patterns from github/desk-open or when user mentions "desk-open". | - | agents |
 | 879 | **desktime-automation** | Automate Desktime tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 880 | **detection-engineering-coverage-evaluation** | Google SecOps detection engineering workflow. Use when applying patterns from google/detection-engineering-coverage-evaluation or when user mentions "detection-engineering-coverage-evaluation". | - | claude |
+| 880 | **detection-engineering-coverage-evaluation** | Google SecOps detection engineering workflow. Use when applying patterns from google/detection-engineering-coverage-evaluation or when user mentions "detection-engineering-coverage-evaluation". | - | agents |
 | 881 | **detrack-automation** | Automate Detrack tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 882 | **dev-team** | Simulate collaborative dev team session. Use when applying patterns from affaan-m/dev-team or when user mentions "dev-team". | - | claude |
-| 883 | **develop-ai-functions-example** | Vercel AI SDK function examples. Use when applying patterns from vercel/develop-ai-functions-example or when user mentions "develop-ai-functions-example". | - | claude |
-| 884 | **develop-web-game** | Web game HTML/JS development loop. Use when applying patterns from openai/develop-web-game or when user mentions "develop-web-game". | - | claude |
-| 885 | **developer-device-platform-basics** | Remote Android device management. Use when applying patterns from google/developer-device-platform-basics or when user mentions "developer-device-platform-basics". | - | claude |
+| 882 | **dev-team** | Simulate collaborative dev team session. Use when applying patterns from affaan-m/dev-team or when user mentions "dev-team". | - | agents |
+| 883 | **develop-ai-functions-example** | Vercel AI SDK function examples. Use when applying patterns from vercel/develop-ai-functions-example or when user mentions "develop-ai-functions-example". | - | agents |
+| 884 | **develop-web-game** | Web game HTML/JS development loop. Use when applying patterns from openai/develop-web-game or when user mentions "develop-web-game". | - | agents |
+| 885 | **developer-device-platform-basics** | Remote Android device management. Use when applying patterns from google/developer-device-platform-basics or when user mentions "developer-device-platform-basics". | - | agents |
 | 886 | **developer-growth-analysis** | Analyzes your recent Codex chat history to identify coding patterns, development gaps, and areas for improvement, curates relevant learning resources from HackerNews, and automatically sends a pers... | - | agents |
-| 887 | **developing-genkit-dart** | Genkit SDK for Dart AI agents. Use when applying patterns from google/developing-genkit-dart or when user mentions "developing-genkit-dart". | - | claude |
-| 888 | **developing-genkit-go** | Genkit SDK for Go AI apps. Use when applying patterns from google/developing-genkit-go or when user mentions "developing-genkit-go". | - | claude |
-| 889 | **developing-genkit-js** | Genkit SDK for JS/TS AI apps. Use when applying patterns from google/developing-genkit-js or when user mentions "developing-genkit-js". | - | claude |
-| 890 | **developing-genkit-python** | Genkit SDK for Python AI apps. Use when applying patterns from google/developing-genkit-python or when user mentions "developing-genkit-python". | - | claude |
+| 887 | **developing-genkit-dart** | Genkit SDK for Dart AI agents. Use when applying patterns from google/developing-genkit-dart or when user mentions "developing-genkit-dart". | - | agents |
+| 888 | **developing-genkit-go** | Genkit SDK for Go AI apps. Use when applying patterns from google/developing-genkit-go or when user mentions "developing-genkit-go". | - | agents |
+| 889 | **developing-genkit-js** | Genkit SDK for JS/TS AI apps. Use when applying patterns from google/developing-genkit-js or when user mentions "developing-genkit-js". | - | agents |
+| 890 | **developing-genkit-python** | Genkit SDK for Python AI apps. Use when applying patterns from google/developing-genkit-python or when user mentions "developing-genkit-python". | - | agents |
 | 891 | **devex-review** | Live developer experience audit. (gstack) | - | agents |
 | 892 | **devops** | Deploy to Cloudflare (Workers, R2, D1), Docker, GCP (Cloud Run, GKE), Kubernetes (kubectl, Helm). Use for serverless, containers, CI/CD, GitOps, security audit. | - | agents |
 | 893 | **devops-engineer** | Creates Dockerfiles, configures CI/CD pipelines, writes Kubernetes manifests, and generates Terraform/Pulumi infrastructure templates. Handles deployment automation, GitOps configuration, incident ... | - | agents |
-| 894 | **devops-rollout-plan** | Rollout plans with preflight checks & rollbacks. Use when applying patterns from github/devops-rollout-plan or when user mentions "devops-rollout-plan". | - | claude |
-| 895 | **diagnose** | Disciplined diagnosis loop for hard bugs. Use when applying patterns from mattpocock/diagnose or when user mentions "diagnose". | - | claude |
+| 894 | **devops-rollout-plan** | Rollout plans with preflight checks & rollbacks. Use when applying patterns from github/devops-rollout-plan or when user mentions "devops-rollout-plan". | - | agents |
+| 895 | **diagnose** | Disciplined diagnosis loop for hard bugs. Use when applying patterns from mattpocock/diagnose or when user mentions "diagnose". | - | agents |
 | 896 | **diagnosing-bugs** | Diagnosis loop for hard bugs and performance regressions. Use when the user says "diagnose"/"debug this", or reports something broken/throwing/failing/slow. | - | agents |
 | 897 | **diagram** | Turn an English description (or mermaid source) into a diagram triplet: the source, an editable .excalidraw file you can open (gstack) | - | agents |
 | 898 | **dialmycalls-automation** | Automate Dialmycalls tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 899 | **dialpad-automation** | Automate Dialpad tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 900 | **dictionary-api-automation** | Automate Dictionary API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 901 | **diffbot-automation** | Automate Diffbot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 902 | **difficult-workplace-conversations** | Workplace conflict & feedback framework. Use when applying patterns from softaworks/difficult-workplace-conversations or when user mentions "difficult-workplace-conversations". | - | claude |
+| 902 | **difficult-workplace-conversations** | Workplace conflict & feedback framework. Use when applying patterns from softaworks/difficult-workplace-conversations or when user mentions "difficult-workplace-conversations". | - | agents |
 | 903 | **digicert-automation** | Automate Digicert tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 904 | **digital-ocean-automation** | Automate DigitalOcean tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 905 | **directory-submissions** | When the user wants to submit their product to startup, SaaS, AI, agent, MCP, no-code, or review directories for backlinks, domain rating, and discovery. Also use when the user mentions "directory ... | - | agents |
-| 906 | **discernment-nudge** | Nudge user to critically evaluate AI draft output. Use when applying patterns from anthropics/discernment-nudge or when user mentions "discernment-nudge". | - | claude |
+| 906 | **discernment-nudge** | Nudge user to critically evaluate AI draft output. Use when applying patterns from anthropics/discernment-nudge or when user mentions "discernment-nudge". | - | agents |
 | 907 | **discordbot-automation** | Automate Discordbot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 908 | **dispatching-parallel-agents** | Dispatch parallel subagents for independent tasks. Use when applying patterns from obra/dispatching-parallel-agents or when user mentions "dispatching-parallel-agents". | - | claude |
+| 908 | **dispatching-parallel-agents** | Dispatch parallel subagents for independent tasks. Use when applying patterns from obra/dispatching-parallel-agents or when user mentions "dispatching-parallel-agents". | - | agents |
 | 909 | **distill** | Strip designs to their essence by removing unnecessary complexity. Great design is simple, powerful, and clean. Use when the user asks to simplify, declutter, reduce noise, remove elements, or make... | - | agents |
-| 910 | **django-access-review** | Django access control & IDOR security review. Use when applying patterns from getsentry/django-access-review or when user mentions "django-access-review". | - | claude |
-| 911 | **django-celery** | Django + Celery async task patterns. Use when applying patterns from affaan-m/django-celery or when user mentions "django-celery". | - | claude |
+| 910 | **django-access-review** | Django access control & IDOR security review. Use when applying patterns from getsentry/django-access-review or when user mentions "django-access-review". | - | agents |
+| 911 | **django-celery** | Django + Celery async task patterns. Use when applying patterns from affaan-m/django-celery or when user mentions "django-celery". | - | agents |
 | 912 | **django-expert** | Use when building Django web applications or REST APIs with Django REST Framework. Invoke when working with settings.py, models.py, manage.py, or any Django project file. Creates Django models with... | - | agents |
-| 913 | **django-patterns** | Django architecture patterns & DRF best practices. Use when applying patterns from affaan-m/django-patterns or when user mentions "django-patterns". | - | claude |
-| 914 | **django-perf-review** | Django N+1 query and ORM performance review. Use when applying patterns from getsentry/django-perf-review or when user mentions "django-perf-review". | - | claude |
-| 915 | **django-security** | Django security best practices & CSRF/SQLi prevention. Use when applying patterns from affaan-m/django-security or when user mentions "django-security". | - | claude |
-| 916 | **django-tdd** | Django testing strategies with pytest-django. Use when applying patterns from affaan-m/django-tdd or when user mentions "django-tdd". | - | claude |
-| 917 | **django-verification** | Django verification loop & deployment checks. Use when applying patterns from affaan-m/django-verification or when user mentions "django-verification". | - | claude |
-| 918 | **dmux-workflows** | Multi-agent tmux pane orchestration. Use when applying patterns from affaan-m/dmux-workflows or when user mentions "dmux-workflows". | - | claude |
+| 913 | **django-patterns** | Django architecture patterns & DRF best practices. Use when applying patterns from affaan-m/django-patterns or when user mentions "django-patterns". | - | agents |
+| 914 | **django-perf-review** | Django N+1 query and ORM performance review. Use when applying patterns from getsentry/django-perf-review or when user mentions "django-perf-review". | - | agents |
+| 915 | **django-security** | Django security best practices & CSRF/SQLi prevention. Use when applying patterns from affaan-m/django-security or when user mentions "django-security". | - | agents |
+| 916 | **django-tdd** | Django testing strategies with pytest-django. Use when applying patterns from affaan-m/django-tdd or when user mentions "django-tdd". | - | agents |
+| 917 | **django-verification** | Django verification loop & deployment checks. Use when applying patterns from affaan-m/django-verification or when user mentions "django-verification". | - | agents |
+| 918 | **dmux-workflows** | Multi-agent tmux pane orchestration. Use when applying patterns from affaan-m/dmux-workflows or when user mentions "dmux-workflows". | - | agents |
 | 919 | **dnsfilter-automation** | Automate Dnsfilter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 920 | **do** | Execute a phased implementation plan using subagents. Use when asked to execute, run, or carry out a plan — especially one created by make-plan. | - | agents |
-| 921 | **doc-and-modernize** | Comprehensive architecture documentation & modernization. Use when applying patterns from github/doc-and-modernize or when user mentions "doc-and-modernize". | - | claude |
+| 921 | **doc-and-modernize** | Comprehensive architecture documentation & modernization. Use when applying patterns from github/doc-and-modernize or when user mentions "doc-and-modernize". | - | agents |
 | 922 | **doc-coauthoring** | Guide users through a structured workflow for co-authoring documentation. Use when user wants to write documentation, proposals, technical specs, decision docs, or similar structured content. This ... | - | agents |
 | 923 | **dock-certs-automation** | Automate Dock Certs tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 924 | **docker** | Container-based development for isolated, reproducible environments. Use when running npm commands, installing packages, executing code, or managing project dependencies. Trigger phrases include "n... | https://github.com/wrsmith108/docker-claude-skill | agents |
@@ -4367,12 +4369,12 @@ Total unique skills: **3327**
 | 933 | **docsumo-automation** | Automate Docsumo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 934 | **docugenerate-automation** | Automate Docugenerate tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 935 | **documenso-automation** | Automate Documenso tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 936 | **document-api-endpoint** | Document & type Sentry API endpoints. Use when applying patterns from getsentry/document-api-endpoint or when user mentions "document-api-endpoint". | - | claude |
+| 936 | **document-api-endpoint** | Document & type Sentry API endpoints. Use when applying patterns from getsentry/document-api-endpoint or when user mentions "document-api-endpoint". | - | agents |
 | 937 | **document-generate** | Generate missing documentation from scratch for a feature, module, or entire project. (gstack) | - | agents |
 | 938 | **document-release** | Post-ship documentation update. (gstack) | - | agents |
 | 939 | **documentation-and-adrs** | Records decisions and documentation. Use when making architectural decisions, changing public APIs, shipping features, or when you need to record context that future engineers and agents will need ... | - | agents |
-| 940 | **documentation-lookup** | Context7 live documentation search. Use when applying patterns from affaan-m/documentation-lookup or when user mentions "documentation-lookup". | - | claude |
-| 941 | **documentation-writer** | Diátaxis framework technical documentation. Use when applying patterns from github/documentation-writer or when user mentions "documentation-writer". | - | claude |
+| 940 | **documentation-lookup** | Context7 live documentation search. Use when applying patterns from affaan-m/documentation-lookup or when user mentions "documentation-lookup". | - | agents |
+| 941 | **documentation-writer** | Diátaxis framework technical documentation. Use when applying patterns from github/documentation-writer or when user mentions "documentation-writer". | - | agents |
 | 942 | **documint-automation** | Automate Documint tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 943 | **docupilot-automation** | Automate Docupilot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 944 | **docupost-automation** | Automate Docupost tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4386,20 +4388,20 @@ Total unique skills: **3327**
 | 952 | **doppler-marketing-automation-automation** | Automate Doppler Marketing Automation tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 953 | **doppler-secretops-automation** | Automate Doppler Secretops tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 954 | **dossier** | Decision-grade entity research skill — produces a hypothesis-tested dossier on a specific company, person, nonprofit, or government org, not a generic profile. Forcing intake makes the user state t... | - | agents |
-| 955 | **dotnet-best-practices** | .NET / C# best practices enforcement. Use when applying patterns from github/dotnet-best-practices or when user mentions "dotnet-best-practices". | - | claude |
+| 955 | **dotnet-best-practices** | .NET / C# best practices enforcement. Use when applying patterns from github/dotnet-best-practices or when user mentions "dotnet-best-practices". | - | agents |
 | 956 | **dotnet-core-expert** | Use when building .NET 8 applications with minimal APIs, clean architecture, or cloud-native microservices. Invoke for Entity Framework Core, CQRS with MediatR, JWT authentication, AOT compilation. | - | agents |
-| 957 | **dotnet-design-pattern-review** | Review C# / .NET design patterns. Use when applying patterns from github/dotnet-design-pattern-review or when user mentions "dotnet-design-pattern-review". | - | claude |
-| 958 | **dotnet-mcp-builder** | Build MCP servers in C# / .NET. Use when applying patterns from github/dotnet-mcp-builder or when user mentions "dotnet-mcp-builder". | - | claude |
-| 959 | **dotnet-patterns** | Idiomatic C# / .NET patterns & async. Use when applying patterns from affaan-m/dotnet-patterns or when user mentions "dotnet-patterns". | - | claude |
-| 960 | **dotnet-timezone** | .NET timezone handling guidance. Use when applying patterns from github/dotnet-timezone or when user mentions "dotnet-timezone". | - | claude |
-| 961 | **dotnet-upgrade** | .NET framework upgrade analysis. Use when applying patterns from github/dotnet-upgrade or when user mentions "dotnet-upgrade". | - | claude |
+| 957 | **dotnet-design-pattern-review** | Review C# / .NET design patterns. Use when applying patterns from github/dotnet-design-pattern-review or when user mentions "dotnet-design-pattern-review". | - | agents |
+| 958 | **dotnet-mcp-builder** | Build MCP servers in C# / .NET. Use when applying patterns from github/dotnet-mcp-builder or when user mentions "dotnet-mcp-builder". | - | agents |
+| 959 | **dotnet-patterns** | Idiomatic C# / .NET patterns & async. Use when applying patterns from affaan-m/dotnet-patterns or when user mentions "dotnet-patterns". | - | agents |
+| 960 | **dotnet-timezone** | .NET timezone handling guidance. Use when applying patterns from github/dotnet-timezone or when user mentions "dotnet-timezone". | - | agents |
+| 961 | **dotnet-upgrade** | .NET framework upgrade analysis. Use when applying patterns from github/dotnet-upgrade or when user mentions "dotnet-upgrade". | - | agents |
 | 962 | **dotsimple-automation** | Automate Dotsimple tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 963 | **doublecheck** | Three-layer verification pipeline for AI output. Use when applying patterns from github/doublecheck or when user mentions "doublecheck". | - | claude |
+| 963 | **doublecheck** | Three-layer verification pipeline for AI output. Use when applying patterns from github/doublecheck or when user mentions "doublecheck". | - | agents |
 | 964 | **doubt-driven-development** | Subjects every non-trivial decision to a fresh-context adversarial review before it stands. Use when correctness matters more than speed, when working in unfamiliar code, when stakes are high (prod... | - | agents |
 | 965 | **dovetail-automation** | Automate Dovetail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 966 | **dpd2-automation** | Automate Dpd2 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 967 | **draftable-automation** | Automate Draftable tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 968 | **draw-io** | Draw.io XML editing & export. Use when applying patterns from softaworks/draw-io or when user mentions "draw-io". | - | claude |
+| 968 | **draw-io** | Draw.io XML editing & export. Use when applying patterns from softaworks/draw-io or when user mentions "draw-io". | - | agents |
 | 969 | **drawio-skill** | Use when the user requests diagrams, flowcharts, architecture diagrams, ER diagrams, UML / sequence / class diagrams, network topology, cloud architecture from Terraform or Kubernetes manifests, ML... | - | agents |
 | 970 | **dreamstudio-automation** | Automate Dreamstudio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 971 | **drip-jobs-automation** | Automate Drip Jobs tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4410,33 +4412,33 @@ Total unique skills: **3327**
 | 976 | **dropcontact-automation** | Automate Dropcontact tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 977 | **dungeon-fighter-online-automation** | Automate Dungeon Fighter Online tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 978 | **durable-objects** | Create and review Cloudflare Durable Objects. Use when building stateful coordination (chat rooms, multiplayer games, booking systems), implementing RPC methods, SQLite storage, alarms, WebSockets,... | - | agents |
-| 979 | **dynamic-workflow-mode** | Task-local harnesses & eval gates. Use when applying patterns from affaan-m/dynamic-workflow-mode or when user mentions "dynamic-workflow-mode". | - | claude |
+| 979 | **dynamic-workflow-mode** | Task-local harnesses & eval gates. Use when applying patterns from affaan-m/dynamic-workflow-mode or when user mentions "dynamic-workflow-mode". | - | agents |
 | 980 | **Dynamics 365 Automation** | Dynamics 365 Automation: manage CRM contacts, accounts, leads, opportunities, sales orders, invoices, and cases via the Dynamics CRM Web API | - | agents |
 | 981 | **e2e-flow-verifier** | Use when verifying complete user flows end-to-end with the qe-browser skill (Vibium), recording session evidence, and asserting state at each step. For product verification with real browser automa... | - | agents |
-| 982 | **e2e-testing** | Playwright E2E testing & POM patterns. Use when applying patterns from affaan-m/e2e-testing or when user mentions "e2e-testing". | - | claude |
-| 983 | **eas-app-stores** | Deploy Expo apps to App Store & Google Play. Use when applying patterns from expo/eas-app-stores or when user mentions "eas-app-stores". | - | claude |
-| 984 | **eas-hosting** | Deploy Expo websites & APIs to EAS Hosting. Use when applying patterns from expo/eas-hosting or when user mentions "eas-hosting". | - | claude |
-| 985 | **eas-observe** | EAS Observe telemetry & interactive tracking. Use when applying patterns from expo/eas-observe or when user mentions "eas-observe". | - | claude |
-| 986 | **eas-simulator** | Remote simulator control on EAS cloud. Use when applying patterns from expo/eas-simulator or when user mentions "eas-simulator". | - | claude |
-| 987 | **eas-update-insights** | Check EAS Update health & crash rates. Use when applying patterns from expo/eas-update-insights or when user mentions "eas-update-insights". | - | claude |
-| 988 | **eas-workflows** | EAS workflow YAML CI/CD automation. Use when applying patterns from expo/eas-workflows or when user mentions "eas-workflows". | - | claude |
-| 989 | **ecc-guide** | Onboarding guide for ECC skills & commands. Use when applying patterns from affaan-m/ecc-guide or when user mentions "ecc-guide". | https://github.com/affaan-m/everything-claude-code | claude |
-| 990 | **ecc-recipes** | Workflow recipe families for ECC. Use when applying patterns from affaan-m/ecc-recipes or when user mentions "ecc-recipes". | https://github.com/affaan-m/everything-claude-code | claude |
-| 991 | **ecc-tools-cost-audit** | Evidence-first tool usage & cost audit. Use when applying patterns from affaan-m/ecc-tools-cost-audit or when user mentions "ecc-tools-cost-audit". | https://github.com/affaan-m/everything-claude-code | claude |
+| 982 | **e2e-testing** | Playwright E2E testing & POM patterns. Use when applying patterns from affaan-m/e2e-testing or when user mentions "e2e-testing". | - | agents |
+| 983 | **eas-app-stores** | Deploy Expo apps to App Store & Google Play. Use when applying patterns from expo/eas-app-stores or when user mentions "eas-app-stores". | - | agents |
+| 984 | **eas-hosting** | Deploy Expo websites & APIs to EAS Hosting. Use when applying patterns from expo/eas-hosting or when user mentions "eas-hosting". | - | agents |
+| 985 | **eas-observe** | EAS Observe telemetry & interactive tracking. Use when applying patterns from expo/eas-observe or when user mentions "eas-observe". | - | agents |
+| 986 | **eas-simulator** | Remote simulator control on EAS cloud. Use when applying patterns from expo/eas-simulator or when user mentions "eas-simulator". | - | agents |
+| 987 | **eas-update-insights** | Check EAS Update health & crash rates. Use when applying patterns from expo/eas-update-insights or when user mentions "eas-update-insights". | - | agents |
+| 988 | **eas-workflows** | EAS workflow YAML CI/CD automation. Use when applying patterns from expo/eas-workflows or when user mentions "eas-workflows". | - | agents |
+| 989 | **ecc-guide** | Onboarding guide for ECC skills & commands. Use when applying patterns from affaan-m/ecc-guide or when user mentions "ecc-guide". | https://github.com/affaan-m/everything-claude-code | agents |
+| 990 | **ecc-recipes** | Workflow recipe families for ECC. Use when applying patterns from affaan-m/ecc-recipes or when user mentions "ecc-recipes". | https://github.com/affaan-m/everything-claude-code | agents |
+| 991 | **ecc-tools-cost-audit** | Evidence-first tool usage & cost audit. Use when applying patterns from affaan-m/ecc-tools-cost-audit or when user mentions "ecc-tools-cost-audit". | https://github.com/affaan-m/everything-claude-code | agents |
 | 992 | **echtpost-automation** | Automate Echtpost tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 993 | **edit-article** | Edit and improve articles by restructuring sections, improving clarity, and tightening prose. Use when user wants to edit, revise, or improve an article draft. | - | agents |
-| 994 | **editor-pro-max** | Edición profesional de contenido, corrección de estilo, copywriting y pulido editorial de alto impacto. | - | claude |
-| 995 | **editorconfig** | Generate best-practice .editorconfig file. Use when applying patterns from github/editorconfig or when user mentions "editorconfig". | - | claude |
-| 996 | **ef-core** | Entity Framework Core best practices. Use when applying patterns from github/ef-core or when user mentions "ef-core". | - | claude |
-| 997 | **efcore-d2-db-diagram** | Generate D2 diagrams from EF Core models. Use when applying patterns from github/efcore-d2-db-diagram or when user mentions "efcore-d2-db-diagram". | - | claude |
-| 998 | **efficient-fable** | Orchestrate research & coding with cheap subagents. Use when applying patterns from BuilderIO/efficient-fable or when user mentions "efficient-fable". | - | claude |
-| 999 | **efficient-frontier** | Frontier model orchestration with subagents. Use when applying patterns from BuilderIO/efficient-frontier or when user mentions "efficient-frontier". | - | claude |
+| 994 | **editor-pro-max** | Edición profesional de contenido, corrección de estilo, copywriting y pulido editorial de alto impacto. | - | agents |
+| 995 | **editorconfig** | Generate best-practice .editorconfig file. Use when applying patterns from github/editorconfig or when user mentions "editorconfig". | - | agents |
+| 996 | **ef-core** | Entity Framework Core best practices. Use when applying patterns from github/ef-core or when user mentions "ef-core". | - | agents |
+| 997 | **efcore-d2-db-diagram** | Generate D2 diagrams from EF Core models. Use when applying patterns from github/efcore-d2-db-diagram or when user mentions "efcore-d2-db-diagram". | - | agents |
+| 998 | **efficient-fable** | Orchestrate research & coding with cheap subagents. Use when applying patterns from BuilderIO/efficient-fable or when user mentions "efficient-fable". | - | agents |
+| 999 | **efficient-frontier** | Frontier model orchestration with subagents. Use when applying patterns from BuilderIO/efficient-frontier or when user mentions "efficient-frontier". | - | agents |
 | 1000 | **ElevenLabs Automation** | Automate ElevenLabs text-to-speech workflows -- generate speech from text, browse and inspect voices, check subscription limits, list models, stream audio, and retrieve history via the Composio MCP... | - | agents |
 | 1001 | **elevenlabs-agents** | Build conversational AI voice agents with ElevenLabs Platform. Workflow: configure agent, add tools and knowledge base, integrate SDK, test, deploy. Supports React, React Native, and Swift SDKs. Us... | - | agents |
 | 1002 | **elorus-automation** | Automate Elorus tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1003 | **em-dash** | Proper typography & em-dash usage guidance. Use when applying patterns from github/em-dash or when user mentions "em-dash". | - | claude |
-| 1004 | **email-drafter** | Draft & review emails matching personal style. Use when applying patterns from github/email-drafter or when user mentions "email-drafter". | - | claude |
-| 1005 | **email-ops** | Mailbox triage & send verification. Use when applying patterns from affaan-m/email-ops or when user mentions "email-ops". | - | claude |
+| 1003 | **em-dash** | Proper typography & em-dash usage guidance. Use when applying patterns from github/em-dash or when user mentions "em-dash". | - | agents |
+| 1004 | **email-drafter** | Draft & review emails matching personal style. Use when applying patterns from github/email-drafter or when user mentions "email-drafter". | - | agents |
+| 1005 | **email-ops** | Mailbox triage & send verification. Use when applying patterns from affaan-m/email-ops or when user mentions "email-ops". | - | agents |
 | 1006 | **email-reader** | Reads and fetches emails from Gmail (all folders/labels) and IMAP accounts. Use when the user asks to check email, read inbox, show unread messages, list folders, or fetch messages from any mailbox... | - | agents |
 | 1007 | **email-sequence** | When the user wants to create or optimize an email sequence, drip campaign, automated email flow, or lifecycle email program. Also use when the user mentions "email sequence," "drip campaign," "nur... | - | agents |
 | 1008 | **email-template-builder** | Build complete transactional email systems: React Email templates, provider integration (Resend, Postmark, SendGrid, AWS SES), preview server, i18n support, dark mode, spam optimization, analytics ... | - | agents |
@@ -4449,82 +4451,82 @@ Total unique skills: **3327**
 | 1015 | **emil-design-eng** | This skill encodes Emil Kowalski's philosophy on UI polish, component design, animation decisions, and the invisible details that make software feel great. | https://github.com/emilkowalski/skills | agents |
 | 1016 | **encodian-automation** | Automate Encodian tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1017 | **endorsal-automation** | Automate Endorsal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1018 | **energy-procurement** | Tariff optimization & energy cost management. Use when applying patterns from affaan-m/energy-procurement or when user mentions "energy-procurement". | - | claude |
+| 1018 | **energy-procurement** | Tariff optimization & energy cost management. Use when applying patterns from affaan-m/energy-procurement or when user mentions "energy-procurement". | - | agents |
 | 1019 | **engineering-advanced-skills** | Index of 37 advanced engineering agent skills for Codex, Codex, Gemini CLI, Cursor, OpenClaw. Use when browsing or choosing among the POWERFUL-tier engineering skills: agent design, RAG, MCP server... | - | agents |
 | 1020 | **engineering-skills** | Index of the engineering-team skills bundle for Codex, Codex, Gemini CLI, Cursor, OpenClaw, and 6 more tools. Architecture, frontend, backend, QA, DevOps, security, AI/ML, data engineering, Playwri... | - | agents |
 | 1021 | **enginemailer-automation** | Automate Enginemailer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1022 | **enigma-automation** | Automate Enigma tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1023 | **entelligence-automation** | Automate Entelligence tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1024 | **enterprise-agent-ops** | Long-lived agent workloads & observability. Use when applying patterns from affaan-m/enterprise-agent-ops or when user mentions "enterprise-agent-ops". | - | claude |
+| 1024 | **enterprise-agent-ops** | Long-lived agent workloads & observability. Use when applying patterns from affaan-m/enterprise-agent-ops or when user mentions "enterprise-agent-ops". | - | agents |
 | 1025 | **enterprise-integration-testing** | Use when testing enterprise integrations across SAP, middleware, WMS, or backend systems, validating E2E enterprise flows, testing SAP-specific patterns (RFC, BAPI, IDoc, OData, Fiori), or enforcin... | - | agents |
 | 1026 | **entity-optimizer** | Build entity presence in Knowledge Graph, Wikidata, AI systems for brand recognition and citations. \"Google doesn't know my brand\" / \"品牌搜不到\" / \"没有知识面板\". 实体优化/知识图谱/品牌实体 エンティティ 엔티티 entidad SEO | - | agents |
 | 1027 | **entra-agent-id** | Provision Microsoft Entra Agent Identity Blueprints, BlueprintPrincipals, and per-instance Agent Identities via Microsoft Graph, and configure OAuth 2.0 token exchange (fmi_path, OBO, cross-tenant)... | - | agents |
-| 1028 | **entra-agent-user** | Create Entra ID Agent Users for digital workers. Use when applying patterns from github/entra-agent-user or when user mentions "entra-agent-user". | - | claude |
+| 1028 | **entra-agent-user** | Create Entra ID Agent Users for digital workers. Use when applying patterns from github/entra-agent-user or when user mentions "entra-agent-user". | - | agents |
 | 1029 | **entra-app-registration** | Guides Microsoft Entra ID app registration, OAuth 2.0 authentication, and MSAL integration. USE FOR: create app registration, register Azure AD app, configure OAuth, set up authentication, add API ... | - | agents |
 | 1030 | **env-secrets-manager** | Manage environment-variable hygiene and secrets safety across local development and production. Practical auditing, drift awareness, rotation readiness. Use when auditing .env files for committed s... | - | agents |
 | 1031 | **eodhd-apis-automation** | Automate Eodhd Apis tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1032 | **epic-design** | Build immersive, cinematic 2.5D interactive websites using scroll storytelling, parallax depth, text animations, and premium scroll effects — no WebGL required. Use this skill for any web design ta... | - | agents |
 | 1033 | **epic-games-automation** | Automate Epic Games tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1034 | **error-handling** | Robust error handling across TS, Python & Go. Use when applying patterns from affaan-m/error-handling or when user mentions "error-handling". | - | claude |
+| 1034 | **error-handling** | Robust error handling across TS, Python & Go. Use when applying patterns from affaan-m/error-handling or when user mentions "error-handling". | - | agents |
 | 1035 | **esignatures-io-automation** | Automate Esignatures IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1036 | **espocrm-automation** | Automate Espocrm tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1037 | **esputnik-automation** | Automate Esputnik tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1038 | **etermin-automation** | Automate Etermin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1039 | **eu-ai-act-specialist** | EU AI Act (Regulation (EU) 2024/1689) operational compliance for compliance teams. Three Article-level decisions: (1) What's the risk tier of this AI system — prohibited (Art. 5), high-risk (Art. 6... | - | agents |
 | 1040 | **eval** | Evaluate and rank agent results by metric or LLM judge for an AgentHub session. Use when the user runs /hub:eval or asks to score, compare, or pick a winner among completed AgentHub agents. | - | agents |
-| 1041 | **eval-driven-dev** | Evaluation-driven development workflow. Use when applying patterns from github/eval-driven-dev or when user mentions "eval-driven-dev". | - | claude |
-| 1042 | **eval-harness** | Formal eval harness for session quality. Use when applying patterns from affaan-m/eval-harness or when user mentions "eval-harness". | - | claude |
+| 1041 | **eval-driven-dev** | Evaluation-driven development workflow. Use when applying patterns from github/eval-driven-dev or when user mentions "eval-driven-dev". | - | agents |
+| 1042 | **eval-harness** | Formal eval harness for session quality. Use when applying patterns from affaan-m/eval-harness or when user mentions "eval-harness". | - | agents |
 | 1043 | **evenium-automation** | Automate Evenium tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1044 | **Eventbrite Automation** | Automate Eventbrite event management, attendee tracking, organization discovery, and category browsing through natural language commands | - | agents |
 | 1045 | **eventee-automation** | Automate Eventee tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1046 | **events** | Plan, run & sponsor marketing events. Use when applying patterns from coreyhaines31/events or when user mentions "events". | - | claude |
+| 1046 | **events** | Plan, run & sponsor marketing events. Use when applying patterns from coreyhaines31/events or when user mentions "events". | - | agents |
 | 1047 | **eventzilla-automation** | Automate Eventzilla tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1048 | **everhour-automation** | Automate Everhour tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1049 | **eversign-automation** | Automate Eversign tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1050 | **evm-token-decimals** | Prevent EVM token decimal mismatch bugs. Use when applying patterns from affaan-m/evm-token-decimals or when user mentions "evm-token-decimals". | - | claude |
+| 1050 | **evm-token-decimals** | Prevent EVM token decimal mismatch bugs. Use when applying patterns from affaan-m/evm-token-decimals or when user mentions "evm-token-decimals". | - | agents |
 | 1051 | **exa-automation** | Automate Exa tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1052 | **exa-search** | Neural search via Exa MCP for web & code. Use when applying patterns from affaan-m/exa-search or when user mentions "exa-search". | - | claude |
-| 1053 | **exam-ready** | Exam preparation from study notes & syllabus. Use when applying patterns from github/exam-ready or when user mentions "exam-ready". | - | claude |
-| 1054 | **excalidraw** | Excalidraw diagram authoring & editing. Use when applying patterns from softaworks/excalidraw or when user mentions "excalidraw". | - | claude |
+| 1052 | **exa-search** | Neural search via Exa MCP for web & code. Use when applying patterns from affaan-m/exa-search or when user mentions "exa-search". | - | agents |
+| 1053 | **exam-ready** | Exam preparation from study notes & syllabus. Use when applying patterns from github/exam-ready or when user mentions "exam-ready". | - | agents |
+| 1054 | **excalidraw** | Excalidraw diagram authoring & editing. Use when applying patterns from softaworks/excalidraw or when user mentions "excalidraw". | - | agents |
 | 1055 | **excalidraw-diagram** | Create Excalidraw diagram JSON files that make visual arguments. Use when the user wants to visualize workflows, architectures, or concepts. | - | agents |
 | 1056 | **Excel Automation** | Excel Automation: create workbooks, manage worksheets, read/write cell data, and format spreadsheets via Microsoft Excel and Google Sheets integration | - | agents |
 | 1057 | **execute** | /cs:execute <decision> — Generate a 90-day execution plan with weekly milestones, DRIs, and check-in cadence from an approved decision. Use when a logged decision needs to become an operating plan ... | - | agents |
-| 1058 | **executing-plans** | Execute implementation plan with checkpoints. Use when applying patterns from obra/executing-plans or when user mentions "executing-plans". | - | claude |
+| 1058 | **executing-plans** | Execute implementation plan with checkpoints. Use when applying patterns from obra/executing-plans or when user mentions "executing-plans". | - | agents |
 | 1059 | **executive-mentor** | Adversarial thinking partner for founders and executives. Stress-tests plans, prepares for brutal board meetings, dissects decisions with no good options, and forces honest post-mortems. Use when y... | - | agents |
 | 1060 | **exist-automation** | Automate Exist tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1061 | **experiment-designer** | Use when planning product experiments, writing testable hypotheses, estimating sample size, prioritizing tests, or interpreting A/B outcomes with practical statistical rigor. | - | agents |
 | 1062 | **exploratory-testing-advanced** | Advanced exploratory testing techniques with Session-Based Test Management (SBTM), RST heuristics, and test tours. Use when planning exploration sessions, investigating bugs, or discovering unknown... | - | agents |
-| 1063 | **expo-animation** | React Native & Expo animation decisions. Use when applying patterns from expo/expo-animation or when user mentions "expo-animation". | - | claude |
-| 1064 | **expo-app-clip** | Add iOS App Clip target to Expo app. Use when applying patterns from expo/expo-app-clip or when user mentions "expo-app-clip". | - | claude |
-| 1065 | **expo-brownfield** | Integrate Expo into existing native iOS/Android. Use when applying patterns from expo/expo-brownfield or when user mentions "expo-brownfield". | - | claude |
-| 1066 | **expo-data-fetching** | Data fetching & network requests in Expo. Use when applying patterns from expo/expo-data-fetching or when user mentions "expo-data-fetching". | - | claude |
-| 1067 | **expo-design-system** | Theme design tokens in Expo apps. Use when applying patterns from expo/expo-design-system or when user mentions "expo-design-system". | - | claude |
-| 1068 | **expo-dev-client** | Build & distribute Expo dev clients. Use when applying patterns from expo/expo-dev-client or when user mentions "expo-dev-client". | - | claude |
-| 1069 | **expo-dom** | Expo DOM components for webview on native. Use when applying patterns from expo/expo-dom or when user mentions "expo-dom". | - | claude |
-| 1070 | **expo-examples** | Official Expo example integration patterns. Use when applying patterns from expo/expo-examples or when user mentions "expo-examples". | - | claude |
-| 1071 | **expo-module** | Create Expo native modules in Swift & Kotlin. Use when applying patterns from expo/expo-module or when user mentions "expo-module". | - | claude |
-| 1072 | **expo-native-ui** | Native-feeling UI elements in Expo. Use when applying patterns from expo/expo-native-ui or when user mentions "expo-native-ui". | - | claude |
-| 1073 | **expo-overview** | Entry point & router for Expo tasks. Use when applying patterns from expo/expo-overview or when user mentions "expo-overview". | - | claude |
-| 1074 | **expo-project-structure** | Folder layout for Expo Router apps. Use when applying patterns from expo/expo-project-structure or when user mentions "expo-project-structure". | - | claude |
-| 1075 | **expo-router** | File-based navigation with Expo Router. Use when applying patterns from expo/expo-router or when user mentions "expo-router". | - | claude |
-| 1076 | **expo-skill-feedback** | Telemetry & feedback for Expo skills. Use when applying patterns from expo/expo-skill-feedback or when user mentions "expo-skill-feedback". | - | claude |
-| 1077 | **expo-tailwind-setup** | Tailwind CSS v4 & NativeWind in Expo. Use when applying patterns from expo/expo-tailwind-setup or when user mentions "expo-tailwind-setup". | - | claude |
-| 1078 | **expo-ui** | SwiftUI & Jetpack Compose native UI in Expo. Use when applying patterns from expo/expo-ui or when user mentions "expo-ui". | - | claude |
-| 1079 | **expo-upgrade** | Upgrade Expo SDK versions & fix dependencies. Use when applying patterns from expo/expo-upgrade or when user mentions "expo-upgrade". | - | claude |
-| 1080 | **expo-web-to-native** | Migrate React web app to Expo mobile. Use when applying patterns from expo/expo-web-to-native or when user mentions "expo-web-to-native". | - | claude |
+| 1063 | **expo-animation** | React Native & Expo animation decisions. Use when applying patterns from expo/expo-animation or when user mentions "expo-animation". | - | agents |
+| 1064 | **expo-app-clip** | Add iOS App Clip target to Expo app. Use when applying patterns from expo/expo-app-clip or when user mentions "expo-app-clip". | - | agents |
+| 1065 | **expo-brownfield** | Integrate Expo into existing native iOS/Android. Use when applying patterns from expo/expo-brownfield or when user mentions "expo-brownfield". | - | agents |
+| 1066 | **expo-data-fetching** | Data fetching & network requests in Expo. Use when applying patterns from expo/expo-data-fetching or when user mentions "expo-data-fetching". | - | agents |
+| 1067 | **expo-design-system** | Theme design tokens in Expo apps. Use when applying patterns from expo/expo-design-system or when user mentions "expo-design-system". | - | agents |
+| 1068 | **expo-dev-client** | Build & distribute Expo dev clients. Use when applying patterns from expo/expo-dev-client or when user mentions "expo-dev-client". | - | agents |
+| 1069 | **expo-dom** | Expo DOM components for webview on native. Use when applying patterns from expo/expo-dom or when user mentions "expo-dom". | - | agents |
+| 1070 | **expo-examples** | Official Expo example integration patterns. Use when applying patterns from expo/expo-examples or when user mentions "expo-examples". | - | agents |
+| 1071 | **expo-module** | Create Expo native modules in Swift & Kotlin. Use when applying patterns from expo/expo-module or when user mentions "expo-module". | - | agents |
+| 1072 | **expo-native-ui** | Native-feeling UI elements in Expo. Use when applying patterns from expo/expo-native-ui or when user mentions "expo-native-ui". | - | agents |
+| 1073 | **expo-overview** | Entry point & router for Expo tasks. Use when applying patterns from expo/expo-overview or when user mentions "expo-overview". | - | agents |
+| 1074 | **expo-project-structure** | Folder layout for Expo Router apps. Use when applying patterns from expo/expo-project-structure or when user mentions "expo-project-structure". | - | agents |
+| 1075 | **expo-router** | File-based navigation with Expo Router. Use when applying patterns from expo/expo-router or when user mentions "expo-router". | - | agents |
+| 1076 | **expo-skill-feedback** | Telemetry & feedback for Expo skills. Use when applying patterns from expo/expo-skill-feedback or when user mentions "expo-skill-feedback". | - | agents |
+| 1077 | **expo-tailwind-setup** | Tailwind CSS v4 & NativeWind in Expo. Use when applying patterns from expo/expo-tailwind-setup or when user mentions "expo-tailwind-setup". | - | agents |
+| 1078 | **expo-ui** | SwiftUI & Jetpack Compose native UI in Expo. Use when applying patterns from expo/expo-ui or when user mentions "expo-ui". | - | agents |
+| 1079 | **expo-upgrade** | Upgrade Expo SDK versions & fix dependencies. Use when applying patterns from expo/expo-upgrade or when user mentions "expo-upgrade". | - | agents |
+| 1080 | **expo-web-to-native** | Migrate React web app to Expo mobile. Use when applying patterns from expo/expo-web-to-native or when user mentions "expo-web-to-native". | - | agents |
 | 1081 | **expofp-automation** | Automate Expofp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1082 | **external-context** | Invoke document-specialist subagents. Use when applying patterns from Yeachan-Heo/external-context or when user mentions "external-context". | - | claude |
+| 1082 | **external-context** | Invoke document-specialist subagents. Use when applying patterns from Yeachan-Heo/external-context or when user mentions "external-context". | - | agents |
 | 1083 | **extract** | Extract and consolidate reusable components, design tokens, and patterns into your design system. Identifies opportunities for systematic reuse and enriches your component library. Use when the use... | - | agents |
 | 1084 | **extracta-ai-automation** | Automate Extracta AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1085 | **eyeball** | Document analysis with inline screenshot evidence. Use when applying patterns from github/eyeball or when user mentions "eyeball". | - | claude |
+| 1085 | **eyeball** | Document analysis with inline screenshot evidence. Use when applying patterns from github/eyeball or when user mentions "eyeball". | - | agents |
 | 1086 | **fable-goal** | Convert a rambling description of a desired outcome into one polished, autonomous /goal prompt ready to paste into a fresh session. Use when the user says "/fable-goal", "turn this into a goal prom... | - | agents |
-| 1087 | **fabric-lakehouse** | Microsoft Fabric Lakehouse features & data. Use when applying patterns from github/fabric-lakehouse or when user mentions "fabric-lakehouse". | - | claude |
+| 1087 | **fabric-lakehouse** | Microsoft Fabric Lakehouse features & data. Use when applying patterns from github/fabric-lakehouse or when user mentions "fabric-lakehouse". | - | agents |
 | 1088 | **Facebook Automation** | Automate Facebook Page management including post creation, scheduling, video uploads, Messenger conversations, and audience engagement via Composio | - | agents |
 | 1089 | **faceup-automation** | Automate Faceup tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1090 | **factorial-automation** | Automate Factorial tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1091 | **fal-ai-media** | Unified media generation via fal.ai MCP. Use when applying patterns from affaan-m/fal-ai-media or when user mentions "fal-ai-media". | - | claude |
+| 1091 | **fal-ai-media** | Unified media generation via fal.ai MCP. Use when applying patterns from affaan-m/fal-ai-media or when user mentions "fal-ai-media". | - | agents |
 | 1092 | **fastapi-expert** | Use when building high-performance async Python APIs with FastAPI and Pydantic V2. Invoke to create REST endpoints, define Pydantic models, implement authentication flows, set up async SQLAlchemy d... | - | agents |
-| 1093 | **fastapi-patterns** | FastAPI best practices & Pydantic v2 schemas. Use when applying patterns from affaan-m/fastapi-patterns or when user mentions "fastapi-patterns". | - | claude |
+| 1093 | **fastapi-patterns** | FastAPI best practices & Pydantic v2 schemas. Use when applying patterns from affaan-m/fastapi-patterns or when user mentions "fastapi-patterns". | - | agents |
 | 1094 | **fastapi-router-py** | Create FastAPI routers with CRUD operations, authentication dependencies, and proper response models. Use when building REST API endpoints, creating new routes, implementing CRUD operations, or add... | - | agents |
 | 1095 | **favicon-gen** | Generate custom favicons from logos, text, or brand colours. Produces all required formats: favicon.svg, favicon.ico, apple-touch-icon.png, icon-192/512.png, and web manifest. Use when initialising... | - | agents |
 | 1096 | **fda-consultant-specialist** | FDA regulatory consultant for medical device companies. Provides 510(k)/PMA/De Novo pathway guidance, QMSR (21 CFR 820, which incorporates ISO 13485:2016 by reference since 2026-02-02; formerly QSR... | - | agents |
@@ -4532,8 +4534,8 @@ Total unique skills: **3327**
 | 1098 | **feathery-automation** | Automate Feathery tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1099 | **feature-flags-architect** | Use when adding, retiring, or auditing feature flags. Triggers on "add a flag", "ship behind a flag", "rollout plan", "kill switch", "stale flags", "flag debt", "LaunchDarkly", "GrowthBook", "Stats... | - | agents |
 | 1100 | **feature-forge** | Conducts structured requirements workshops to produce feature specifications, user stories, EARS-format functional requirements, acceptance criteria, and implementation checklists. Use when definin... | - | agents |
-| 1101 | **fedora-linux-triage** | Fedora Linux systemd, dnf & SELinux triage. Use when applying patterns from github/fedora-linux-triage or when user mentions "fedora-linux-triage". | - | claude |
-| 1102 | **feedback-mastery** | Structured feedback delivery frameworks. Use when applying patterns from softaworks/feedback-mastery or when user mentions "feedback-mastery". | - | claude |
+| 1101 | **fedora-linux-triage** | Fedora Linux systemd, dnf & SELinux triage. Use when applying patterns from github/fedora-linux-triage or when user mentions "fedora-linux-triage". | - | agents |
+| 1102 | **feedback-mastery** | Structured feedback delivery frameworks. Use when applying patterns from softaworks/feedback-mastery or when user mentions "feedback-mastery". | - | agents |
 | 1103 | **felt-automation** | Automate Felt tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1104 | **fibery-automation** | Automate Fibery tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1105 | **fidel-api-automation** | Automate Fidel API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4551,31 +4553,31 @@ Total unique skills: **3327**
 | 1117 | **fillout-forms-automation** | Automate Fillout tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1118 | **fillout_forms-automation** | Automate Fillout tasks via Rube MCP (Composio): forms, submissions, workflows, and form builder. Always search tools first for current schemas. | - | agents |
 | 1119 | **finage-automation** | Automate Finage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1120 | **finalize-agent-prompt** | Polish prompt file using AI agent persona. Use when applying patterns from github/finalize-agent-prompt or when user mentions "finalize-agent-prompt". | - | claude |
-| 1121 | **finance-billing-ops** | Revenue, pricing & team billing operations. Use when applying patterns from affaan-m/finance-billing-ops or when user mentions "finance-billing-ops". | - | claude |
+| 1120 | **finalize-agent-prompt** | Polish prompt file using AI agent persona. Use when applying patterns from github/finalize-agent-prompt or when user mentions "finalize-agent-prompt". | - | agents |
+| 1121 | **finance-billing-ops** | Revenue, pricing & team billing operations. Use when applying patterns from affaan-m/finance-billing-ops or when user mentions "finance-billing-ops". | - | agents |
 | 1122 | **finance-lead** |  | - | agents |
 | 1123 | **finance-skills** | Router/index for the 2 finance skills bundled in this plugin: financial-analyst (ratio analysis, DCF valuation, budget variance, rolling forecasts) and saas-metrics-coach (ARR/MRR, churn, CAC/LTV, ... | - | agents |
 | 1124 | **financial-analyst** | Performs financial ratio analysis, DCF valuation, budget variance analysis, and rolling forecast construction for strategic decision-making. Use when analyzing financial statements, building valuat... | - | agents |
 | 1125 | **financial-health** |  | - | agents |
 | 1126 | **find-animation-opportunities** | Search a codebase or UI for places that don't animate but should, and reject everything that shouldn't. Read-only; it proposes motion with exact values, it does not implement it. Use when the user ... | https://github.com/emilkowalski/skills | agents |
-| 1127 | **find-bugs** | Audit local branch changes for bugs & security. Use when applying patterns from getsentry/find-bugs or when user mentions "find-bugs". | - | claude |
+| 1127 | **find-bugs** | Audit local branch changes for bugs & security. Use when applying patterns from getsentry/find-bugs or when user mentions "find-bugs". | - | agents |
 | 1128 | **find-security-vulnerabilities-in-code** | Find security vulnerabilities in a codebase or repository with Strix — a white-box AI security review that reads your source, reasons about the actual data flow and authorization model, then exploi... | https://github.com/usestrix/strix | agents |
 | 1129 | **find-skills** | Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities. This... | - | agents |
-| 1130 | **finding-duplicate-functions** | Audit codebase for duplicate semantic functions. Use when applying patterns from obra/finding-duplicate-functions or when user mentions "finding-duplicate-functions". | - | claude |
+| 1130 | **finding-duplicate-functions** | Audit codebase for duplicate semantic functions. Use when applying patterns from obra/finding-duplicate-functions or when user mentions "finding-duplicate-functions". | - | agents |
 | 1131 | **findymail-automation** | Automate Findymail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1132 | **fine-tuning-expert** | Use when fine-tuning LLMs, training custom models, or adapting foundation models for specific tasks. Invoke for configuring LoRA/QLoRA adapters, preparing JSONL training datasets, setting hyperpara... | - | agents |
 | 1133 | **finerworks-automation** | Automate Finerworks tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1134 | **finetuning** | Fine-tune models on Azure AI Foundry using SFT (supervised), DPO (preference), or RFT (reinforcement with graders). Covers dataset preparation, training job submission, deployment, and evaluation. ... | - | agents |
 | 1135 | **fingertip-automation** | Automate Fingertip tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1136 | **finishing-a-development-branch** | Branch integration & PR completion checklist. Use when applying patterns from obra/finishing-a-development-branch or when user mentions "finishing-a-development-branch". | - | claude |
+| 1136 | **finishing-a-development-branch** | Branch integration & PR completion checklist. Use when applying patterns from obra/finishing-a-development-branch or when user mentions "finishing-a-development-branch". | - | agents |
 | 1137 | **finmei-automation** | Automate Finmei tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1138 | **finnish-humanizer** | Remove AI writing markers from Finnish text. Use when applying patterns from github/finnish-humanizer or when user mentions "finnish-humanizer". | - | claude |
-| 1139 | **firebase-basics** | Firebase mobile & web app integration. Use when applying patterns from google/firebase-basics or when user mentions "firebase-basics". | - | claude |
+| 1138 | **finnish-humanizer** | Remove AI writing markers from Finnish text. Use when applying patterns from github/finnish-humanizer or when user mentions "finnish-humanizer". | - | agents |
+| 1139 | **firebase-basics** | Firebase mobile & web app integration. Use when applying patterns from google/firebase-basics or when user mentions "firebase-basics". | - | agents |
 | 1140 | **fireberry-automation** | Automate Fireberry tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1141 | **Firecrawl Automation** | Automate web crawling and data extraction with Firecrawl -- scrape pages, crawl sites, extract structured data, batch scrape URLs, and map website structures through the Composio Firecrawl integrat... | - | agents |
 | 1142 | **fireflies-automation** | Automate Fireflies tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1143 | **firmao-automation** | Automate Firmao tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1144 | **first-ask** | Task refinement workflow interrogating scope. Use when applying patterns from github/first-ask or when user mentions "first-ask". | - | claude |
+| 1144 | **first-ask** | Task refinement workflow interrogating scope. Use when applying patterns from github/first-ask or when user mentions "first-ask". | - | agents |
 | 1145 | **fitbit-automation** | Automate Fitbit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1146 | **fix** | Fix failing or flaky Playwright tests. Use when user says "fix test", "flaky test", "test failing", "debug test", "test broken", "test passes sometimes", or "intermittent failure". | - | agents |
 | 1147 | **fix-security-vulnerabilities-with-strix** | Fix security vulnerabilities found by a Strix pentest (open-source CLI or app.strix.ai cloud) — triage by severity, patch the root cause rather than the symptom, and re-run Strix to prove each fix ... | https://github.com/usestrix/strix | agents |
@@ -4590,29 +4592,29 @@ Total unique skills: **3327**
 | 1156 | **flow-nexus-platform** | Comprehensive Flow Nexus platform management - authentication, sandboxes, app deployment, payments, and challenges | - | agents |
 | 1157 | **flow-nexus-swarm** | Cloud-based AI swarm deployment and event-driven workflow automation with Flow Nexus platform | - | agents |
 | 1158 | **flowiseai-automation** | Automate Flowiseai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1159 | **flowstudio-power-automate-build** | Build & deploy Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-build or when user mentions "flowstudio-power-automate-build". | - | claude |
-| 1160 | **flowstudio-power-automate-debug** | Debug failing Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-debug or when user mentions "flowstudio-power-automate-debug". | - | claude |
-| 1161 | **flowstudio-power-automate-governance** | Govern Power Automate flows at scale. Use when applying patterns from github/flowstudio-power-automate-governance or when user mentions "flowstudio-power-automate-governance". | - | claude |
-| 1162 | **flowstudio-power-automate-mcp** | Foundation skill for Power Automate MCP. Use when applying patterns from github/flowstudio-power-automate-mcp or when user mentions "flowstudio-power-automate-mcp". | - | claude |
-| 1163 | **flowstudio-power-automate-monitoring** | Tenant-wide Power Automate monitoring. Use when applying patterns from github/flowstudio-power-automate-monitoring or when user mentions "flowstudio-power-automate-monitoring". | - | claude |
-| 1164 | **flox-environments** | Reproducible Nix-based dev environments. Use when applying patterns from affaan-m/flox-environments or when user mentions "flox-environments". | - | claude |
-| 1165 | **fluentui-blazor** | Microsoft Fluent UI for Blazor apps. Use when applying patterns from github/fluentui-blazor or when user mentions "fluentui-blazor". | - | claude |
-| 1166 | **flutter-add-integration-test** | Flutter Driver integration tests. Use when applying patterns from flutter/flutter-add-integration-test or when user mentions "flutter-add-integration-test". | - | claude |
-| 1167 | **flutter-add-widget-preview** | Interactive widget previews in Flutter. Use when applying patterns from flutter/flutter-add-widget-preview or when user mentions "flutter-add-widget-preview". | - | claude |
-| 1168 | **flutter-add-widget-test** | Component-level WidgetTester tests. Use when applying patterns from flutter/flutter-add-widget-test or when user mentions "flutter-add-widget-test". | - | claude |
-| 1169 | **flutter-apply-architecture-best-practices** | Layered Flutter architecture patterns. Use when applying patterns from flutter/flutter-apply-architecture-best-practices or when user mentions "flutter-apply-architecture-best-practices". | - | claude |
-| 1170 | **flutter-build-responsive-layout** | Responsive layout building in Flutter. Use when applying patterns from flutter/flutter-build-responsive-layout or when user mentions "flutter-build-responsive-layout". | - | claude |
-| 1171 | **flutter-dart-code-review** | Flutter/Dart code review checklist. Use when applying patterns from affaan-m/flutter-dart-code-review or when user mentions "flutter-dart-code-review". | - | claude |
+| 1159 | **flowstudio-power-automate-build** | Build & deploy Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-build or when user mentions "flowstudio-power-automate-build". | - | agents |
+| 1160 | **flowstudio-power-automate-debug** | Debug failing Power Automate flows. Use when applying patterns from github/flowstudio-power-automate-debug or when user mentions "flowstudio-power-automate-debug". | - | agents |
+| 1161 | **flowstudio-power-automate-governance** | Govern Power Automate flows at scale. Use when applying patterns from github/flowstudio-power-automate-governance or when user mentions "flowstudio-power-automate-governance". | - | agents |
+| 1162 | **flowstudio-power-automate-mcp** | Foundation skill for Power Automate MCP. Use when applying patterns from github/flowstudio-power-automate-mcp or when user mentions "flowstudio-power-automate-mcp". | - | agents |
+| 1163 | **flowstudio-power-automate-monitoring** | Tenant-wide Power Automate monitoring. Use when applying patterns from github/flowstudio-power-automate-monitoring or when user mentions "flowstudio-power-automate-monitoring". | - | agents |
+| 1164 | **flox-environments** | Reproducible Nix-based dev environments. Use when applying patterns from affaan-m/flox-environments or when user mentions "flox-environments". | - | agents |
+| 1165 | **fluentui-blazor** | Microsoft Fluent UI for Blazor apps. Use when applying patterns from github/fluentui-blazor or when user mentions "fluentui-blazor". | - | agents |
+| 1166 | **flutter-add-integration-test** | Flutter Driver integration tests. Use when applying patterns from flutter/flutter-add-integration-test or when user mentions "flutter-add-integration-test". | - | agents |
+| 1167 | **flutter-add-widget-preview** | Interactive widget previews in Flutter. Use when applying patterns from flutter/flutter-add-widget-preview or when user mentions "flutter-add-widget-preview". | - | agents |
+| 1168 | **flutter-add-widget-test** | Component-level WidgetTester tests. Use when applying patterns from flutter/flutter-add-widget-test or when user mentions "flutter-add-widget-test". | - | agents |
+| 1169 | **flutter-apply-architecture-best-practices** | Layered Flutter architecture patterns. Use when applying patterns from flutter/flutter-apply-architecture-best-practices or when user mentions "flutter-apply-architecture-best-practices". | - | agents |
+| 1170 | **flutter-build-responsive-layout** | Responsive layout building in Flutter. Use when applying patterns from flutter/flutter-build-responsive-layout or when user mentions "flutter-build-responsive-layout". | - | agents |
+| 1171 | **flutter-dart-code-review** | Flutter/Dart code review checklist. Use when applying patterns from affaan-m/flutter-dart-code-review or when user mentions "flutter-dart-code-review". | - | agents |
 | 1172 | **flutter-expert** | Use when building cross-platform applications with Flutter 3+ and Dart. Invoke for widget development, Riverpod/Bloc state management, GoRouter navigation, platform-specific implementations, perfor... | - | agents |
-| 1173 | **flutter-fix-layout-issues** | Fix RenderFlex overflow layout issues. Use when applying patterns from flutter/flutter-fix-layout-issues or when user mentions "flutter-fix-layout-issues". | - | claude |
-| 1174 | **flutter-implement-json-serialization** | Manual JSON serialization in Flutter. Use when applying patterns from flutter/flutter-implement-json-serialization or when user mentions "flutter-implement-json-serialization". | - | claude |
-| 1175 | **flutter-setup-declarative-routing** | go_router declarative routing setup. Use when applying patterns from flutter/flutter-setup-declarative-routing or when user mentions "flutter-setup-declarative-routing". | - | claude |
-| 1176 | **flutter-setup-localization** | Localization & l10n.yaml in Flutter. Use when applying patterns from flutter/flutter-setup-localization or when user mentions "flutter-setup-localization". | - | claude |
-| 1177 | **flutter-use-http-package** | HTTP REST API client in Flutter. Use when applying patterns from flutter/flutter-use-http-package or when user mentions "flutter-use-http-package". | - | claude |
+| 1173 | **flutter-fix-layout-issues** | Fix RenderFlex overflow layout issues. Use when applying patterns from flutter/flutter-fix-layout-issues or when user mentions "flutter-fix-layout-issues". | - | agents |
+| 1174 | **flutter-implement-json-serialization** | Manual JSON serialization in Flutter. Use when applying patterns from flutter/flutter-implement-json-serialization or when user mentions "flutter-implement-json-serialization". | - | agents |
+| 1175 | **flutter-setup-declarative-routing** | go_router declarative routing setup. Use when applying patterns from flutter/flutter-setup-declarative-routing or when user mentions "flutter-setup-declarative-routing". | - | agents |
+| 1176 | **flutter-setup-localization** | Localization & l10n.yaml in Flutter. Use when applying patterns from flutter/flutter-setup-localization or when user mentions "flutter-setup-localization". | - | agents |
+| 1177 | **flutter-use-http-package** | HTTP REST API client in Flutter. Use when applying patterns from flutter/flutter-use-http-package or when user mentions "flutter-use-http-package". | - | agents |
 | 1178 | **flutterwave-automation** | Automate Flutterwave tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1179 | **fluxguard-automation** | Automate Fluxguard tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1180 | **focused-fix** | Use when the user asks to fix, debug, or make a specific feature/module/area work end-to-end. Triggers: 'make X work', 'fix the Y feature', 'the Z module is broken', 'focus on [area]'. Not for quic... | - | agents |
-| 1181 | **folder-structure-blueprint-generator** | Document project folder structures. Use when applying patterns from github/folder-structure-blueprint-generator or when user mentions "folder-structure-blueprint-generator". | - | claude |
+| 1181 | **folder-structure-blueprint-generator** | Document project folder structures. Use when applying patterns from github/folder-structure-blueprint-generator or when user mentions "folder-structure-blueprint-generator". | - | agents |
 | 1182 | **folk-automation** | Automate Folk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1183 | **fomo-automation** | Automate Fomo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1184 | **forcemanager-automation** | Automate Forcemanager tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4622,111 +4624,111 @@ Total unique skills: **3327**
 | 1188 | **formcarry-automation** | Automate Formcarry tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1189 | **formdesk-automation** | Automate Formdesk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1190 | **formsite-automation** | Automate Formsite tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1191 | **foundation-models-on-device** | Apple FoundationModels on-device LLM. Use when applying patterns from affaan-m/foundation-models-on-device or when user mentions "foundation-models-on-device". | - | claude |
+| 1191 | **foundation-models-on-device** | Apple FoundationModels on-device LLM. Use when applying patterns from affaan-m/foundation-models-on-device or when user mentions "foundation-models-on-device". | - | agents |
 | 1192 | **founder-coach** | Personal leadership development for founders and first-time CEOs. Covers founder archetype identification, delegation frameworks, energy management, CEO calendar audits, leadership style evolution,... | - | agents |
 | 1193 | **founder-mode** | /cs:founder-mode <question> — Auto-routes any founder question to the right C-role advisor or to /cs:boardroom for multi-role topics. The single-command entry point. Use when a founder asks any str... | - | agents |
-| 1194 | **foundry-agent-sync** | Sync Azure AI Foundry agents from JSON. Use when applying patterns from github/foundry-agent-sync or when user mentions "foundry-agent-sync". | - | claude |
-| 1195 | **foundry-hosted-agent-copilotkit** | CopilotKit + Azure AI Foundry agents. Use when applying patterns from github/foundry-hosted-agent-copilotkit or when user mentions "foundry-hosted-agent-copilotkit". | - | claude |
+| 1194 | **foundry-agent-sync** | Sync Azure AI Foundry agents from JSON. Use when applying patterns from github/foundry-agent-sync or when user mentions "foundry-agent-sync". | - | agents |
+| 1195 | **foundry-hosted-agent-copilotkit** | CopilotKit + Azure AI Foundry agents. Use when applying patterns from github/foundry-hosted-agent-copilotkit or when user mentions "foundry-hosted-agent-copilotkit". | - | agents |
 | 1196 | **foursquare-automation** | Automate Foursquare tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1197 | **fraudlabs-pro-automation** | Automate Fraudlabs Pro tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1198 | **free-tool-strategy** | When the user wants to build a free tool for marketing — lead generation, SEO value, or brand awareness. Use when they mention 'engineering as marketing,' 'free tool,' 'calculator,' 'generator,' 'c... | - | agents |
 | 1199 | **free-tools** | When the user wants to plan, evaluate, or build a free tool for marketing purposes — lead generation, SEO value, or brand awareness. Also use when the user mentions "engineering as marketing," "fre... | - | agents |
-| 1200 | **freecad-scripts** | FreeCAD Python scripting & macro automation. Use when applying patterns from github/freecad-scripts or when user mentions "freecad-scripts". | - | claude |
+| 1200 | **freecad-scripts** | FreeCAD Python scripting & macro automation. Use when applying patterns from github/freecad-scripts or when user mentions "freecad-scripts". | - | agents |
 | 1201 | **freeze** | Restrict file edits to a specific directory for the session. (gstack) | - | agents |
 | 1202 | **freeze-tests** | Use when refactoring production code and you want to ensure test files are not modified. Activate with /freeze-tests to block all edits to test files for safe refactoring. | - | agents |
 | 1203 | **FreshBooks Automation** | FreshBooks Automation: manage businesses, projects, time tracking, and billing in FreshBooks cloud accounting | - | agents |
-| 1204 | **from-the-other-side-anitta** | Anitta assumption check profile. Use when applying patterns from github/from-the-other-side-anitta or when user mentions "from-the-other-side-anitta". | - | claude |
-| 1205 | **from-the-other-side-quinn** | Quinn implementation partnership profile. Use when applying patterns from github/from-the-other-side-quinn or when user mentions "from-the-other-side-quinn". | - | claude |
-| 1206 | **from-the-other-side-vega** | Vega long-term AI partner profile. Use when applying patterns from github/from-the-other-side-vega or when user mentions "from-the-other-side-vega". | - | claude |
-| 1207 | **from-the-other-side-wiggins** | Wiggins narrative synthesis profile. Use when applying patterns from github/from-the-other-side-wiggins or when user mentions "from-the-other-side-wiggins". | - | claude |
+| 1204 | **from-the-other-side-anitta** | Anitta assumption check profile. Use when applying patterns from github/from-the-other-side-anitta or when user mentions "from-the-other-side-anitta". | - | agents |
+| 1205 | **from-the-other-side-quinn** | Quinn implementation partnership profile. Use when applying patterns from github/from-the-other-side-quinn or when user mentions "from-the-other-side-quinn". | - | agents |
+| 1206 | **from-the-other-side-vega** | Vega long-term AI partner profile. Use when applying patterns from github/from-the-other-side-vega or when user mentions "from-the-other-side-vega". | - | agents |
+| 1207 | **from-the-other-side-wiggins** | Wiggins narrative synthesis profile. Use when applying patterns from github/from-the-other-side-wiggins or when user mentions "from-the-other-side-wiggins". | - | agents |
 | 1208 | **front-automation** | Automate Front tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1209 | **frontend-a11y** | Accessibility patterns for React & Next.js. Use when applying patterns from affaan-m/frontend-a11y or when user mentions "frontend-a11y". | - | claude |
+| 1209 | **frontend-a11y** | Accessibility patterns for React & Next.js. Use when applying patterns from affaan-m/frontend-a11y or when user mentions "frontend-a11y". | - | agents |
 | 1210 | **frontend-design** | Guidance for distinctive, intentional visual design when building new UI or reshaping an existing one. Helps with aesthetic direction, typography, and making choices that don't read as templated de... | - | agents |
-| 1211 | **frontend-design-direction** | Production UI frontend design direction. Use when applying patterns from affaan-m/frontend-design-direction or when user mentions "frontend-design-direction". | - | claude |
+| 1211 | **frontend-design-direction** | Production UI frontend design direction. Use when applying patterns from affaan-m/frontend-design-direction or when user mentions "frontend-design-direction". | - | agents |
 | 1212 | **frontend-design-review** | Review and create distinctive, production-grade frontend interfaces with high design quality and design system compliance. Evaluates using three pillars: frictionless insight-to-action, quality cra... | - | agents |
 | 1213 | **frontend-dev-guidelines** | Frontend development guidelines for React/TypeScript applications. Modern patterns including Suspense, lazy loading, useSuspenseQuery, file organization with features directory, MUI v7 styling, Tan... | - | agents |
-| 1214 | **frontend-patterns** | React, Next.js & UI best practices. Use when applying patterns from affaan-m/frontend-patterns or when user mentions "frontend-patterns". | - | claude |
-| 1215 | **frontend-skill** | Restrained landing page & app visual design. Use when applying patterns from openai/frontend-skill or when user mentions "frontend-skill". | - | claude |
-| 1216 | **frontend-slides** | Animation-rich HTML presentation generator. Use when applying patterns from affaan-m/frontend-slides or when user mentions "frontend-slides". | - | claude |
-| 1217 | **frontend-to-backend-requirements** | Document frontend API needs for backend. Use when applying patterns from softaworks/frontend-to-backend-requirements or when user mentions "frontend-to-backend-requirements". | - | claude |
+| 1214 | **frontend-patterns** | React, Next.js & UI best practices. Use when applying patterns from affaan-m/frontend-patterns or when user mentions "frontend-patterns". | - | agents |
+| 1215 | **frontend-skill** | Restrained landing page & app visual design. Use when applying patterns from openai/frontend-skill or when user mentions "frontend-skill". | - | agents |
+| 1216 | **frontend-slides** | Animation-rich HTML presentation generator. Use when applying patterns from affaan-m/frontend-slides or when user mentions "frontend-slides". | - | agents |
+| 1217 | **frontend-to-backend-requirements** | Document frontend API needs for backend. Use when applying patterns from softaworks/frontend-to-backend-requirements or when user mentions "frontend-to-backend-requirements". | - | agents |
 | 1218 | **frontend-ui-dark-ts** | Build dark-themed React applications using Tailwind CSS with custom theming, glassmorphism effects, and Framer Motion animations. Use when creating dashboards, admin panels, or data-rich interfaces... | - | agents |
 | 1219 | **frontend-ui-engineering** | Builds production-quality UIs. Use when building or modifying user-facing interfaces. Use when creating components, implementing layouts, managing state, or when the output needs to look and feel p... | - | agents |
-| 1220 | **fsharp-testing** | F# testing patterns with xUnit & FsCheck. Use when applying patterns from affaan-m/fsharp-testing or when user mentions "fsharp-testing". | - | claude |
+| 1220 | **fsharp-testing** | F# testing patterns with xUnit & FsCheck. Use when applying patterns from affaan-m/fsharp-testing or when user mentions "fsharp-testing". | - | agents |
 | 1221 | **full-output-enforcement** | Overrides default LLM truncation behavior. Enforces complete code generation, bans placeholder patterns, and handles token-limit splits cleanly. Apply to any task requiring exhaustive, unabridged o... | - | agents |
 | 1222 | **full-page-screenshot** | Use when the user asks to capture a full-page screenshot, long screenshot, or complete page capture of a web page. Handles SPA scroll containers, lazy-loaded images, and very tall pages via Chrome ... | - | agents |
 | 1223 | **fullenrich-automation** | Automate Fullenrich tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1224 | **fullstack-guardian** | Builds security-focused full-stack web applications by implementing integrated frontend and backend components with layered security at every level. Covers the complete stack from database to UI, e... | - | agents |
 | 1225 | **gagelist-automation** | Automate Gagelist tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1226 | **game-changing-features** | Identify 10x product opportunities. Use when applying patterns from softaworks/game-changing-features or when user mentions "game-changing-features". | - | claude |
+| 1226 | **game-changing-features** | Identify 10x product opportunities. Use when applying patterns from softaworks/game-changing-features or when user mentions "game-changing-features". | - | agents |
 | 1227 | **game-developer** | Use when building game systems, implementing Unity/Unreal Engine features, or optimizing game performance. Invoke to implement ECS architecture, configure physics systems and colliders, set up mult... | - | agents |
-| 1228 | **game-engine** | Web HTML5 Canvas/WebGL game engines. Use when applying patterns from github/game-engine or when user mentions "game-engine". | - | claude |
+| 1228 | **game-engine** | Web HTML5 Canvas/WebGL game engines. Use when applying patterns from github/game-engine or when user mentions "game-engine". | - | agents |
 | 1229 | **gamma-automation** | Automate Gamma tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1230 | **gan-ai-automation** | Automate Gan AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1231 | **gan-style-harness** | Generator-Evaluator agent harness. Use when applying patterns from affaan-m/gan-style-harness or when user mentions "gan-style-harness". | - | claude |
-| 1232 | **gateguard** | Fact-forcing investigation gate. Use when applying patterns from affaan-m/gateguard or when user mentions "gateguard". | - | claude |
+| 1231 | **gan-style-harness** | Generator-Evaluator agent harness. Use when applying patterns from affaan-m/gan-style-harness or when user mentions "gan-style-harness". | - | agents |
+| 1232 | **gateguard** | Fact-forcing investigation gate. Use when applying patterns from affaan-m/gateguard or when user mentions "gateguard". | - | agents |
 | 1233 | **gatherup-automation** | Automate Gatherup tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1234 | **gc-review** | /cs:gc-review <plan> — General Counsel interrogation of contracts, IP, regulatory, term sheets, and employment-law surface. Use when reviewing a term sheet before signing, redlining a customer MSA,... | - | agents |
-| 1235 | **gcloud** | Google Cloud gcloud CLI execution. Use when applying patterns from google/gcloud or when user mentions "gcloud". | - | claude |
+| 1235 | **gcloud** | Google Cloud gcloud CLI execution. Use when applying patterns from google/gcloud or when user mentions "gcloud". | - | agents |
 | 1236 | **gcp-cloud-architect** | Design GCP architectures for startups and enterprises. Use when asked to design Google Cloud infrastructure, deploy to GKE or Cloud Run, configure BigQuery pipelines, optimize GCP costs, or migrate... | - | agents |
 | 1237 | **gdpr-audit-prep** | /cs:gdpr-audit-prep <scope> — GDPR audit 6-question Article-cited forcing interrogation. Use before annual internal GDPR review, post-breach internal audit, DPA investigation readiness, or acquisit... | - | agents |
-| 1238 | **gdpr-compliant** | GDPR compliance engineering practices. Use when applying patterns from github/gdpr-compliant or when user mentions "gdpr-compliant". | - | claude |
+| 1238 | **gdpr-compliant** | GDPR compliance engineering practices. Use when applying patterns from github/gdpr-compliant or when user mentions "gdpr-compliant". | - | agents |
 | 1239 | **gdpr-dsgvo-expert** | GDPR and German DSGVO compliance automation. Scans codebases for privacy risks, generates DPIA documentation, tracks data subject rights requests with Art. 12(3) one-month deadlines. Use when runni... | - | agents |
-| 1240 | **gem-design-md-guidelines** | Accessible cross-platform UI/UX guidelines. Use when applying patterns from github/gem-design-md-guidelines or when user mentions "gem-design-md-guidelines". | - | claude |
-| 1241 | **gem-devops-guidelines** | DevOps & infrastructure review guidelines. Use when applying patterns from github/gem-devops-guidelines or when user mentions "gem-devops-guidelines". | - | claude |
-| 1242 | **gemini** | Gemini CLI code & plan review. Use when applying patterns from softaworks/gemini or when user mentions "gemini". | - | claude |
-| 1243 | **gemini-agents-api** | Manage Agent resources on Gemini Enterprise. Use when applying patterns from google/gemini-agents-api or when user mentions "gemini-agents-api". | - | claude |
-| 1244 | **gemini-api** | Enterprise Vertex AI & Gemini API guide. Use when applying patterns from google/gemini-api or when user mentions "gemini-api". | - | claude |
-| 1245 | **gemini-api-dev** | Multimodal Gemini API application dev. Use when applying patterns from google-gemini/gemini-api-dev or when user mentions "gemini-api-dev". | - | claude |
+| 1240 | **gem-design-md-guidelines** | Accessible cross-platform UI/UX guidelines. Use when applying patterns from github/gem-design-md-guidelines or when user mentions "gem-design-md-guidelines". | - | agents |
+| 1241 | **gem-devops-guidelines** | DevOps & infrastructure review guidelines. Use when applying patterns from github/gem-devops-guidelines or when user mentions "gem-devops-guidelines". | - | agents |
+| 1242 | **gemini** | Gemini CLI code & plan review. Use when applying patterns from softaworks/gemini or when user mentions "gemini". | - | agents |
+| 1243 | **gemini-agents-api** | Manage Agent resources on Gemini Enterprise. Use when applying patterns from google/gemini-agents-api or when user mentions "gemini-agents-api". | - | agents |
+| 1244 | **gemini-api** | Enterprise Vertex AI & Gemini API guide. Use when applying patterns from google/gemini-api or when user mentions "gemini-api". | - | agents |
+| 1245 | **gemini-api-dev** | Multimodal Gemini API application dev. Use when applying patterns from google-gemini/gemini-api-dev or when user mentions "gemini-api-dev". | - | agents |
 | 1246 | **gemini-automation** | Automate Gemini tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1247 | **gemini-interactions-api** | Stateful server-managed Interactions API. Use when applying patterns from google/gemini-interactions-api or when user mentions "gemini-interactions-api". | - | claude |
-| 1248 | **gemini-live-api-dev** | Real-time bidirectional WebSocket streaming. Use when applying patterns from google-gemini/gemini-live-api-dev or when user mentions "gemini-live-api-dev". | - | claude |
-| 1249 | **gemini-managed-agents-api** | Manage custom Agents on Gemini Platform. Use when applying patterns from google/gemini-managed-agents-api or when user mentions "gemini-managed-agents-api". | - | claude |
-| 1250 | **gemini-omni-flash-api** | Generative video editing & text-to-video. Use when applying patterns from google-gemini/gemini-omni-flash-api or when user mentions "gemini-omni-flash-api". | - | claude |
-| 1251 | **gen-specs-as-issues** | Identify missing features & create spec issues. Use when applying patterns from github/gen-specs-as-issues or when user mentions "gen-specs-as-issues". | - | claude |
+| 1247 | **gemini-interactions-api** | Stateful server-managed Interactions API. Use when applying patterns from google/gemini-interactions-api or when user mentions "gemini-interactions-api". | - | agents |
+| 1248 | **gemini-live-api-dev** | Real-time bidirectional WebSocket streaming. Use when applying patterns from google-gemini/gemini-live-api-dev or when user mentions "gemini-live-api-dev". | - | agents |
+| 1249 | **gemini-managed-agents-api** | Manage custom Agents on Gemini Platform. Use when applying patterns from google/gemini-managed-agents-api or when user mentions "gemini-managed-agents-api". | - | agents |
+| 1250 | **gemini-omni-flash-api** | Generative video editing & text-to-video. Use when applying patterns from google-gemini/gemini-omni-flash-api or when user mentions "gemini-omni-flash-api". | - | agents |
+| 1251 | **gen-specs-as-issues** | Identify missing features & create spec issues. Use when applying patterns from github/gen-specs-as-issues or when user mentions "gen-specs-as-issues". | - | agents |
 | 1252 | **gender-api-automation** | Automate Gender API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1253 | **genderapi-io-automation** | Automate Genderapi IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1254 | **genderize-automation** | Automate Genderize tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1255 | **general-counsel-advisor** | General Counsel advisory for startups: contract review (MSA, SaaS, NDA, DPA, employment), IP strategy, term sheet decoding, and regulatory landscape mapping. Use when reviewing any contract or term... | - | agents |
 | 1256 | **generate** | Generate Playwright tests. Use when user says "write tests", "generate tests", "add tests for", "test this component", "e2e test", "create test for", "test this page", or "test this feature". | - | agents |
-| 1257 | **generate-custom-instructions-from-codebase** | Copilot instructions from git diff. Use when applying patterns from github/generate-custom-instructions-from-codebase or when user mentions "generate-custom-instructions-from-codebase". | - | claude |
-| 1258 | **generate-image** | Generate AI images & textures. Use when applying patterns from github/generate-image or when user mentions "generate-image". | - | claude |
-| 1259 | **generating-python-installer** | Nuitka & Inno Setup Windows installer. Use when applying patterns from affaan-m/generating-python-installer or when user mentions "generating-python-installer". | - | claude |
+| 1257 | **generate-custom-instructions-from-codebase** | Copilot instructions from git diff. Use when applying patterns from github/generate-custom-instructions-from-codebase or when user mentions "generate-custom-instructions-from-codebase". | - | agents |
+| 1258 | **generate-image** | Generate AI images & textures. Use when applying patterns from github/generate-image or when user mentions "generate-image". | - | agents |
+| 1259 | **generating-python-installer** | Nuitka & Inno Setup Windows installer. Use when applying patterns from affaan-m/generating-python-installer or when user mentions "generating-python-installer". | - | agents |
 | 1260 | **geo-content-optimizer** | Optimize content for AI citations: ChatGPT, Perplexity, AI Overviews, Gemini, Codex, Copilot. Quotable statements, Q&A, attribution. \"AI doesn't mention my brand\" / \"让AI引用我\" / \"AI搜不到\". AI引用优化... | - | agents |
 | 1261 | **geo-optimization** | Optimize content for AI-generated responses and LLM citations (ChatGPT, Perplexity, Google AI Overview, Codex, Gemini). Use when the user mentions 'GEO', 'AEO', 'AI SEO', 'LLM optimization', 'citat... | - | agents |
 | 1262 | **geoapify-automation** | Automate Geoapify tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1263 | **geocodio-automation** | Automate Geocodio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1264 | **geofeed-tuner** | RFC 8805 IP geolocation feeds. Use when applying patterns from github/geofeed-tuner or when user mentions "geofeed-tuner". | - | claude |
+| 1264 | **geofeed-tuner** | RFC 8805 IP geolocation feeds. Use when applying patterns from github/geofeed-tuner or when user mentions "geofeed-tuner". | - | agents |
 | 1265 | **geokeo-automation** | Automate Geokeo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1266 | **gepetto** | Detailed implementation plans with research. Use when applying patterns from softaworks/gepetto or when user mentions "gepetto". | - | claude |
+| 1266 | **gepetto** | Detailed implementation plans with research. Use when applying patterns from softaworks/gepetto or when user mentions "gepetto". | - | agents |
 | 1267 | **getform-automation** | Automate Getform tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1268 | **gget** | Genomic database queries & BLAST search. Use when applying patterns from affaan-m/gget or when user mentions "gget". | - | claude |
+| 1268 | **gget** | Genomic database queries & BLAST search. Use when applying patterns from affaan-m/gget or when user mentions "gget". | - | agents |
 | 1269 | **gh-address-comments** | Help address review/issue comments on the open GitHub PR for the current branch using gh CLI; verify gh auth first and prompt the user to authenticate if not logged in. | - | agents |
-| 1270 | **gh-attach** | Upload file attachments to GitHub PRs. Use when applying patterns from github/gh-attach or when user mentions "gh-attach". | - | claude |
+| 1270 | **gh-attach** | Upload file attachments to GitHub PRs. Use when applying patterns from github/gh-attach or when user mentions "gh-attach". | - | agents |
 | 1271 | **gh-fix-ci** | Use when a user asks to debug or fix failing GitHub PR checks that run in GitHub Actions; use `gh` to inspect checks and logs, summarize failure context, draft a fix plan, and implement only after ... | - | agents |
-| 1272 | **gh-review-requests** | Fetch unread GitHub notifications for PRs. Use when applying patterns from getsentry/gh-review-requests or when user mentions "gh-review-requests". | - | claude |
-| 1273 | **gha-security-review** | GitHub Actions workflow security audit. Use when applying patterns from getsentry/gha-security-review or when user mentions "gha-security-review". | - | claude |
+| 1272 | **gh-review-requests** | Fetch unread GitHub notifications for PRs. Use when applying patterns from getsentry/gh-review-requests or when user mentions "gh-review-requests". | - | agents |
+| 1273 | **gha-security-review** | GitHub Actions workflow security audit. Use when applying patterns from getsentry/gha-security-review or when user mentions "gha-security-review". | - | agents |
 | 1274 | **gift-up-automation** | Automate Gift Up tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1275 | **gigasheet-automation** | Automate Gigasheet tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1276 | **giphy-automation** | Automate Giphy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1277 | **gist-automation** | Automate Gist tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1278 | **git-commit** | Creates git commits following Conventional Commits format with type/scope/subject. Use when user wants to commit changes, create commit, save work, or stage and commit. Enforces project-specific co... | - | agents |
-| 1279 | **git-flow-branch-creator** | Git Flow branching model helper. Use when applying patterns from github/git-flow-branch-creator or when user mentions "git-flow-branch-creator". | - | claude |
-| 1280 | **git-guardrails-claude-code** | Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety ... | https://github.com/mattpocock/skills | claude |
+| 1279 | **git-flow-branch-creator** | Git Flow branching model helper. Use when applying patterns from github/git-flow-branch-creator or when user mentions "git-flow-branch-creator". | - | agents |
+| 1280 | **git-guardrails-claude-code** | Set up Claude Code hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety ... | - | claude |
 | 1281 | **git-guardrails-Codex** | Set up Codex hooks to block dangerous git commands (push, reset --hard, clean, branch -D, etc.) before they execute. Use when user wants to prevent destructive git operations, add git safety hooks,... | - | agents |
 | 1282 | **git-workflow** | Guided git workflows: prepare PRs, clean up branches, resolve merge conflicts, handle monorepo tags, squash-and-merge patterns. Use when asked to prepare a PR, clean branches, resolve conflicts, or... | - | agents |
 | 1283 | **git-workflow-and-versioning** | Structures git workflow practices. Use when making any code change. Use when committing, branching, resolving conflicts, or when you need to organize work across multiple parallel streams. Use when... | - | agents |
 | 1284 | **git-worktree-manager** | Run parallel feature work safely with Git worktrees. Standardizes branch isolation, port allocation, environment sync, and cleanup so each worktree behaves like an independent local app. Optimized ... | - | agents |
 | 1285 | **github-actions** | CI/CD workflow patterns, testing pipelines, deployment automation. Use when setting up GitHub Actions workflows for testing, building, linting, or deploying a fullstack app. | - | agents |
-| 1286 | **github-actions-efficiency** | Reduce CI minutes & cost in GitHub Actions. Use when applying patterns from github/github-actions-efficiency or when user mentions "github-actions-efficiency". | - | claude |
-| 1287 | **github-actions-hardening** | Security hardening for GitHub Actions YAML. Use when applying patterns from github/github-actions-hardening or when user mentions "github-actions-hardening". | - | claude |
-| 1288 | **github-actions-runtime-upgrade-conventions** | Upgrade GitHub Actions to supported runtimes. Use when applying patterns from github/github-actions-runtime-upgrade-conventions or when user mentions "github-actions-runtime-upgrade-conventions". | - | claude |
+| 1286 | **github-actions-efficiency** | Reduce CI minutes & cost in GitHub Actions. Use when applying patterns from github/github-actions-efficiency or when user mentions "github-actions-efficiency". | - | agents |
+| 1287 | **github-actions-hardening** | Security hardening for GitHub Actions YAML. Use when applying patterns from github/github-actions-hardening or when user mentions "github-actions-hardening". | - | agents |
+| 1288 | **github-actions-runtime-upgrade-conventions** | Upgrade GitHub Actions to supported runtimes. Use when applying patterns from github/github-actions-runtime-upgrade-conventions or when user mentions "github-actions-runtime-upgrade-conventions". | - | agents |
 | 1289 | **github-code-review** | Comprehensive GitHub code review with AI-powered swarm coordination | - | agents |
-| 1290 | **github-codespaces-efficiency** | Faster startup & lower cost for Codespaces. Use when applying patterns from github/github-codespaces-efficiency or when user mentions "github-codespaces-efficiency". | - | claude |
-| 1291 | **github-copilot-starter** | Set up Copilot config for new project. Use when applying patterns from github/github-copilot-starter or when user mentions "github-copilot-starter". | - | claude |
+| 1290 | **github-codespaces-efficiency** | Faster startup & lower cost for Codespaces. Use when applying patterns from github/github-codespaces-efficiency or when user mentions "github-codespaces-efficiency". | - | agents |
+| 1291 | **github-copilot-starter** | Set up Copilot config for new project. Use when applying patterns from github/github-copilot-starter or when user mentions "github-copilot-starter". | - | agents |
 | 1292 | **github-issue-creator** | Convert raw notes, error logs, voice dictation, or screenshots into crisp GitHub-flavored markdown issue reports. Use when the user pastes bug info, error messages, or informal descriptions and wan... | - | agents |
-| 1293 | **github-issues** | Manage GitHub issues via MCP tools. Use when applying patterns from github/github-issues or when user mentions "github-issues". | - | claude |
+| 1293 | **github-issues** | Manage GitHub issues via MCP tools. Use when applying patterns from github/github-issues or when user mentions "github-issues". | - | agents |
 | 1294 | **github-multi-repo** | Multi-repository coordination, synchronization, and architecture management with AI swarm orchestration | - | agents |
-| 1295 | **github-ops** | GitHub repository operations & issue triage. Use when applying patterns from affaan-m/github-ops or when user mentions "github-ops". | - | claude |
+| 1295 | **github-ops** | GitHub repository operations & issue triage. Use when applying patterns from affaan-m/github-ops or when user mentions "github-ops". | - | agents |
 | 1296 | **github-pr-creation** | Creates GitHub Pull Requests with automated validation and task tracking. Use when user wants to create PR, open pull request, submit for review, or check if ready for PR. Analyzes commits, validat... | - | agents |
 | 1297 | **github-pr-merge** | Merges GitHub Pull Requests after validating pre-merge checklist. Use when user wants to merge PR, close PR, finalize PR, complete merge, approve and merge, or execute merge. Runs pre-merge validat... | - | agents |
 | 1298 | **github-pr-review** | Handles PR review comments and feedback resolution. Use when user wants to resolve PR comments, handle review feedback, fix review comments, address PR review, check review status, respond to revie... | - | agents |
@@ -4734,17 +4736,17 @@ Total unique skills: **3327**
 | 1300 | **github-release** | Prepare and publish GitHub releases. Sanitizes code for public release (secrets scan, personal artifacts, LICENSE/README validation), creates version tags, and publishes via gh CLI. Trigger with 'r... | - | agents |
 | 1301 | **github-release-management** | Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management | - | agents |
 | 1302 | **github-workflow-automation** | Advanced GitHub Actions workflow automation with AI swarm coordination, intelligent CI/CD pipelines, and comprehensive repository management | - | agents |
-| 1303 | **gitmoji** | Gitmoji commit message conventions. Use when applying patterns from github/gitmoji or when user mentions "gitmoji". | - | claude |
+| 1303 | **gitmoji** | Gitmoji commit message conventions. Use when applying patterns from github/gitmoji or when user mentions "gitmoji". | - | agents |
 | 1304 | **givebutter-automation** | Automate Givebutter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1305 | **gladia-automation** | Automate Gladia tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1306 | **gleap-automation** | Automate Gleap tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1307 | **globalping-automation** | Automate Globalping tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1308 | **go-mcp-server-generator** | Generate Go MCP server project. Use when applying patterns from github/go-mcp-server-generator or when user mentions "go-mcp-server-generator". | - | claude |
+| 1308 | **go-mcp-server-generator** | Generate Go MCP server project. Use when applying patterns from github/go-mcp-server-generator or when user mentions "go-mcp-server-generator". | - | agents |
 | 1309 | **go-to-webinar-automation** | Automate GoToWebinar tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1310 | **godial-automation** | Automate Godial tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1311 | **golang-patterns** | Idiomatic Go patterns & concurrency. Use when applying patterns from affaan-m/golang-patterns or when user mentions "golang-patterns". | - | claude |
+| 1311 | **golang-patterns** | Idiomatic Go patterns & concurrency. Use when applying patterns from affaan-m/golang-patterns or when user mentions "golang-patterns". | - | agents |
 | 1312 | **golang-pro** | Implements concurrent Go patterns using goroutines and channels, designs and builds microservices with gRPC or REST, optimizes Go application performance with pprof, and enforces idiomatic Go with ... | - | agents |
-| 1313 | **golang-testing** | Go table-driven tests & benchmarks. Use when applying patterns from affaan-m/golang-testing or when user mentions "golang-testing". | - | claude |
+| 1313 | **golang-testing** | Go table-driven tests & benchmarks. Use when applying patterns from affaan-m/golang-testing or when user mentions "golang-testing". | - | agents |
 | 1314 | **Gong Automation** | Automate Gong conversation intelligence -- retrieve call recordings, transcripts, detailed analytics, speaker stats, and workspace data -- using natural language through the Composio MCP integration. | - | agents |
 | 1315 | **good-strategy-bad-strategy** | Formulate and audit real strategy using Richard Rumelt''s "Good Strategy Bad Strategy": an honest diagnosis, a guiding policy, and coherent action instead of goals, vision, and wishful thinking. Us... | - | agents |
 | 1316 | **goodbits-automation** | Automate Goodbits tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4752,21 +4754,21 @@ Total unique skills: **3327**
 | 1318 | **google-address-validation-automation** | Automate Google Address Validation tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1319 | **google-adk-python** |  | - | agents |
 | 1320 | **google-admin-automation** | Automate Google Workspace Admin tasks via Rube MCP (Composio): manage users, groups, memberships, suspend accounts, create users, add aliases. Always search tools first for current schemas. | - | agents |
-| 1321 | **google-agents-cli-onboarding** | Onboarding entrypoint for agents-cli. Use when applying patterns from google/google-agents-cli-onboarding or when user mentions "google-agents-cli-onboarding". | - | claude |
+| 1321 | **google-agents-cli-onboarding** | Onboarding entrypoint for agents-cli. Use when applying patterns from google/google-agents-cli-onboarding or when user mentions "google-agents-cli-onboarding". | - | agents |
 | 1322 | **google-apps-script** | Build Google Apps Script automation for Sheets and Workspace apps. Produces scripts with custom menus, triggers, dialogs, email automation, PDF export, and external API integration. | - | agents |
 | 1323 | **google-chat-messages** | Send Google Chat messages via webhook — text, rich cards (cardsV2), threaded replies. Includes TypeScript types, card builder utility, and widget reference. | - | agents |
 | 1324 | **google-classroom-automation** | Automate Google Classroom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1325 | **google-cloud-filestore-autoscale** | GCP Filestore capacity autoscaling. Use when applying patterns from google/google-cloud-filestore-autoscale or when user mentions "google-cloud-filestore-autoscale". | - | claude |
-| 1326 | **google-cloud-global-frontend-configuration** | GCP Global Load Balancer & CDN design. Use when applying patterns from google/google-cloud-global-frontend-configuration or when user mentions "google-cloud-global-frontend-configuration". | - | claude |
-| 1327 | **google-cloud-networking-observability** | Investigate GCP VPC Flow Logs & NAT. Use when applying patterns from google/google-cloud-networking-observability or when user mentions "google-cloud-networking-observability". | - | claude |
-| 1328 | **google-cloud-recipe-auth** | Google Cloud authentication & ADC setup. Use when applying patterns from google/google-cloud-recipe-auth or when user mentions "google-cloud-recipe-auth". | - | claude |
-| 1329 | **google-cloud-scc-query** | Query Security Command Center findings. Use when applying patterns from google/google-cloud-scc-query or when user mentions "google-cloud-scc-query". | - | claude |
+| 1325 | **google-cloud-filestore-autoscale** | GCP Filestore capacity autoscaling. Use when applying patterns from google/google-cloud-filestore-autoscale or when user mentions "google-cloud-filestore-autoscale". | - | agents |
+| 1326 | **google-cloud-global-frontend-configuration** | GCP Global Load Balancer & CDN design. Use when applying patterns from google/google-cloud-global-frontend-configuration or when user mentions "google-cloud-global-frontend-configuration". | - | agents |
+| 1327 | **google-cloud-networking-observability** | Investigate GCP VPC Flow Logs & NAT. Use when applying patterns from google/google-cloud-networking-observability or when user mentions "google-cloud-networking-observability". | - | agents |
+| 1328 | **google-cloud-recipe-auth** | Google Cloud authentication & ADC setup. Use when applying patterns from google/google-cloud-recipe-auth or when user mentions "google-cloud-recipe-auth". | - | agents |
+| 1329 | **google-cloud-scc-query** | Query Security Command Center findings. Use when applying patterns from google/google-cloud-scc-query or when user mentions "google-cloud-scc-query". | - | agents |
 | 1330 | **google-cloud-vision-automation** | Automate Google Cloud Vision tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1331 | **google-maps-automation** | Automate Google Maps tasks via Rube MCP (Composio): geocode addresses, search places, get directions, compute route matrices, reverse geocode, autocomplete, get place details. Always search tools f... | - | agents |
 | 1332 | **google-search-console-automation** | Automate Google Search Console tasks via Rube MCP (Composio): query search analytics, list sites, inspect URLs, submit sitemaps, monitor search performance. Always search tools first for current sc... | - | agents |
 | 1333 | **google-workspace** |  | - | agents |
 | 1334 | **google-workspace-cli** | Google Workspace administration via the gws CLI (github.com/googleworkspace/cli). Install, authenticate, and automate Gmail, Drive, Sheets, Calendar, Docs, Chat, and Tasks. Run security audits and ... | - | agents |
-| 1335 | **google-workspace-ops** | Operate across Drive, Docs, Sheets & Slides. Use when applying patterns from affaan-m/google-workspace-ops or when user mentions "google-workspace-ops". | - | claude |
+| 1335 | **google-workspace-ops** | Operate across Drive, Docs, Sheets & Slides. Use when applying patterns from affaan-m/google-workspace-ops or when user mentions "google-workspace-ops". | - | agents |
 | 1336 | **google_admin-automation** | Automate Google Admin tasks via Rube MCP (Composio): user management, org units, groups, and domain administration. Always search tools first for current schemas. | - | agents |
 | 1337 | **google_classroom-automation** | Automate Google Classroom tasks via Rube MCP (Composio): course management, assignments, student rosters, and announcements. Always search tools first for current schemas. | - | agents |
 | 1338 | **google_maps-automation** | Automate Google Maps tasks via Rube MCP (Composio): geocoding, directions, place search, and distance calculations. Always search tools first for current schemas. | - | agents |
@@ -4787,7 +4789,7 @@ Total unique skills: **3327**
 | 1353 | **gpt-taste** | Elite UX/UI & Advanced GSAP Motion Engineer. Enforces Python-driven true randomization for layout variance, strict AIDA page structure, wide editorial typography (bans 6-line wraps), gapless bento ... | - | agents |
 | 1354 | **grafbase-automation** | Automate Grafbase tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1355 | **grants** | NIH grant research skill for clinical researchers. Grill-me intake (research idea + career stage + preliminary data + environment + submission posture + known institute targets) locks down the fund... | - | agents |
-| 1356 | **graph** | Declarative DAG pipeline execution runtime. Use when applying patterns from yeachan-heo/graph or when user mentions "graph". | - | claude |
+| 1356 | **graph** | Declarative DAG pipeline execution runtime. Use when applying patterns from yeachan-heo/graph or when user mentions "graph". | - | agents |
 | 1357 | **graphhopper-automation** | Automate Graphhopper tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1358 | **graphify** | Use for any question about a codebase, its architecture, file relationships, or project content — especially when graphify-out/ exists, where the question should be treated as a graphify query firs... | - | agents |
 | 1359 | **graphql-architect** | Use when designing GraphQL schemas, implementing Apollo Federation, or building real-time subscriptions. Invoke for schema design, resolvers with DataLoader, query optimization, federation directives. | - | agents |
@@ -4800,22 +4802,22 @@ Total unique skills: **3327**
 | 1366 | **grow-app** | Guided journey from an app people sign up for and then quietly abandon to a sealed retention engine with a habit loop, an activated first run, and one metric the whole team trusts. Orchestrates eig... | - | agents |
 | 1367 | **grow-business** | Guided journey from a business with lucky months to a repeatable growth engine that produces a forecast. Orchestrates nine skills phase by phase - one-page-marketing, hundred-million-offers, predic... | - | agents |
 | 1368 | **grow-website** | Guided journey from a website with traffic it under-converts to a research-driven growth engine that captures more leads, persuades more buyers, sells a sharper offer, and earns referrals. Orchestr... | - | agents |
-| 1369 | **growth-log** | Extract reusable lessons from complex tasks. Use when applying patterns from affaan-m/growth-log or when user mentions "growth-log". | - | claude |
+| 1369 | **growth-log** | Extract reusable lessons from complex tasks. Use when applying patterns from affaan-m/growth-log or when user mentions "growth-log". | - | agents |
 | 1370 | **growth-marketer** |  | - | agents |
 | 1371 | **gsap** | GSAP animation reference for HyperFrames. Covers gsap.to(), from(), fromTo(), easing, stagger, defaults, timelines (gsap.timeline(), position parameter, labels, nesting, playback), and performance ... | - | agents |
-| 1372 | **gsap-framer-scroll-animation** | Use this skill whenever the user wants to build scroll animations, scroll effects, parallax, scroll-triggered reveals, pinned sections, horizontal scroll, text animations, or any motion tied to scr... | - | claude |
-| 1373 | **gsd-core** | Get Shit Done (GSD) Core Framework: metodología imparable para completar objetivos de desarrollo sin bloqueos. | - | claude |
+| 1372 | **gsap-framer-scroll-animation** | Use this skill whenever the user wants to build scroll animations, scroll effects, parallax, scroll-triggered reveals, pinned sections, horizontal scroll, text animations, or any motion tied to scr... | - | agents |
+| 1373 | **gsd-core** | Get Shit Done (GSD) Core Framework: metodología imparable para completar objetivos de desarrollo sin bloqueos. | - | agents |
 | 1374 | **gstack** | Router for the gstack skill suite. (gstack) | - | agents |
 | 1375 | **gstack-openclaw-ceo-review** | Use when asked to review a plan, challenge a proposal, run a CEO review, poke holes in an approach, think bigger about scope, or decide whether to expand or reduce the plan. | - | agents |
 | 1376 | **gstack-openclaw-investigate** | Use when asked to debug, fix a bug, investigate an error, or do root cause analysis, and when users report errors, stack traces, unexpected behavior, or say something stopped working. | - | agents |
 | 1377 | **gstack-openclaw-office-hours** | Use when asked to brainstorm, evaluate whether an idea is worth building, run office hours, or think through a new product idea or design direction before any code is written. | - | agents |
 | 1378 | **gstack-openclaw-retro** | Weekly engineering retrospective. Analyzes commit history, work patterns, and code quality metrics with persistent history and trend tracking. Team-aware with per-person contributions, praise, and ... | - | agents |
 | 1379 | **gstack-upgrade** | Upgrade gstack to the latest version. | - | agents |
-| 1380 | **gtm-0-to-1-launch** | Launch products from idea to first customers. Use when applying patterns from github/gtm-0-to-1-launch or when user mentions "gtm-0-to-1-launch". | - | claude |
-| 1381 | **gtm-ai-gtm** | Go-to-market strategy for AI products. Use when applying patterns from github/gtm-ai-gtm or when user mentions "gtm-ai-gtm". | - | claude |
-| 1382 | **gtm-developer-ecosystem** | Build & scale developer ecosystem programs. Use when applying patterns from github/gtm-developer-ecosystem or when user mentions "gtm-developer-ecosystem". | - | claude |
-| 1383 | **gtm-positioning-strategy** | Defensible market positioning strategy. Use when applying patterns from github/gtm-positioning-strategy or when user mentions "gtm-positioning-strategy". | - | claude |
-| 1384 | **gtm-product-led-growth** | Self-serve acquisition & PLG motions. Use when applying patterns from github/gtm-product-led-growth or when user mentions "gtm-product-led-growth". | - | claude |
+| 1380 | **gtm-0-to-1-launch** | Launch products from idea to first customers. Use when applying patterns from github/gtm-0-to-1-launch or when user mentions "gtm-0-to-1-launch". | - | agents |
+| 1381 | **gtm-ai-gtm** | Go-to-market strategy for AI products. Use when applying patterns from github/gtm-ai-gtm or when user mentions "gtm-ai-gtm". | - | agents |
+| 1382 | **gtm-developer-ecosystem** | Build & scale developer ecosystem programs. Use when applying patterns from github/gtm-developer-ecosystem or when user mentions "gtm-developer-ecosystem". | - | agents |
+| 1383 | **gtm-positioning-strategy** | Defensible market positioning strategy. Use when applying patterns from github/gtm-positioning-strategy or when user mentions "gtm-positioning-strategy". | - | agents |
+| 1384 | **gtm-product-led-growth** | Self-serve acquisition & PLG motions. Use when applying patterns from github/gtm-product-led-growth or when user mentions "gtm-product-led-growth". | - | agents |
 | 1385 | **guard** | Full safety mode: destructive command warnings + directory-scoped edits. (gstack) | - | agents |
 | 1386 | **Gumroad Automation** | Automate Gumroad product management, sales tracking, license verification, and webhook subscriptions using natural language through the Composio MCP integration. | - | agents |
 | 1387 | **gws-install** | Quick install of the Google Workspace CLI (gws) on an additional machine using existing OAuth credentials. Requires client_secret.json from a previous gws-setup. Use when setting up gws on a new co... | - | agents |
@@ -4827,55 +4829,55 @@ Total unique skills: **3327**
 | 1393 | **happy-scribe-automation** | Automate Happy Scribe tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1394 | **hard-call** | /em:hard-call — Framework for decisions with no good options. Use when every option is painful and a structured 10/10/10 + regret-minimization pass is needed — e.g. choosing between a layoff and a ... | - | agents |
 | 1395 | **harden** | Improve interface resilience through better error handling, i18n support, text overflow handling, and edge case management. Makes interfaces robust and production-ready. Use when the user asks to h... | - | agents |
-| 1396 | **harness** | Test harness and continuous automated verification loop before task completion. | - | claude |
-| 1397 | **harness-engineering** | Adopt repo-level harness engineering. Use when applying patterns from github/harness-engineering or when user mentions "harness-engineering". | - | claude |
+| 1396 | **harness** | Test harness and continuous automated verification loop before task completion. | - | agents |
+| 1397 | **harness-engineering** | Adopt repo-level harness engineering. Use when applying patterns from github/harness-engineering or when user mentions "harness-engineering". | - | agents |
 | 1398 | **Harvest Automation** | Automate time tracking, project management, and invoicing workflows in Harvest -- log hours, manage projects, clients, and tasks through natural language commands. | - | agents |
 | 1399 | **hashnode-automation** | Automate Hashnode tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1400 | **hatch-pet** | Create, repair, validate, visually QA, and package Codex-compatible animated pets and pet spritesheets from character art, generated images, company or prospect brand cues, or visual references. Us... | - | agents |
 | 1401 | **health** | Code quality dashboard. (gstack) | - | agents |
-| 1402 | **healthcare-cdss-patterns** | Clinical decision support patterns. Use when applying patterns from affaan-m/healthcare-cdss-patterns or when user mentions "healthcare-cdss-patterns". | - | claude |
-| 1403 | **healthcare-emr-patterns** | EHR/EMR clinical safety & prescription flows. Use when applying patterns from affaan-m/healthcare-emr-patterns or when user mentions "healthcare-emr-patterns". | - | claude |
-| 1404 | **healthcare-eval-harness** | Patient safety evaluation harness. Use when applying patterns from affaan-m/healthcare-eval-harness or when user mentions "healthcare-eval-harness". | - | claude |
-| 1405 | **healthcare-phi-compliance** | PHI & PII compliance patterns. Use when applying patterns from affaan-m/healthcare-phi-compliance or when user mentions "healthcare-phi-compliance". | - | claude |
+| 1402 | **healthcare-cdss-patterns** | Clinical decision support patterns. Use when applying patterns from affaan-m/healthcare-cdss-patterns or when user mentions "healthcare-cdss-patterns". | - | agents |
+| 1403 | **healthcare-emr-patterns** | EHR/EMR clinical safety & prescription flows. Use when applying patterns from affaan-m/healthcare-emr-patterns or when user mentions "healthcare-emr-patterns". | - | agents |
+| 1404 | **healthcare-eval-harness** | Patient safety evaluation harness. Use when applying patterns from affaan-m/healthcare-eval-harness or when user mentions "healthcare-eval-harness". | - | agents |
+| 1405 | **healthcare-phi-compliance** | PHI & PII compliance patterns. Use when applying patterns from affaan-m/healthcare-phi-compliance or when user mentions "healthcare-phi-compliance". | - | agents |
 | 1406 | **helcim-automation** | Automate Helcim tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1407 | **helloleads-automation** | Automate Helloleads tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1408 | **helm-chart-builder** | Helm chart development agent skill and plugin for Codex, Codex, Gemini CLI, Cursor, OpenClaw — chart scaffolding, values design, template patterns, dependency management, security hardening, and ch... | - | agents |
 | 1409 | **helpwise-automation** | Automate Helpwise tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1410 | **here-automation** | Automate Here tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1411 | **hermes-desktop-plugins** | Write Hermes desktop UI plugins. Use when applying patterns from NousResearch/hermes-desktop-plugins or when user mentions "hermes-desktop-plugins". | - | claude |
-| 1412 | **hermes-themes** | Author Hermes UI color themes. Use when applying patterns from NousResearch/hermes-themes or when user mentions "hermes-themes". | - | claude |
-| 1413 | **hexagonal-architecture** | Ports & Adapters clean architecture. Use when applying patterns from affaan-m/hexagonal-architecture or when user mentions "hexagonal-architecture". | - | claude |
+| 1411 | **hermes-desktop-plugins** | Write Hermes desktop UI plugins. Use when applying patterns from NousResearch/hermes-desktop-plugins or when user mentions "hermes-desktop-plugins". | - | agents |
+| 1412 | **hermes-themes** | Author Hermes UI color themes. Use when applying patterns from NousResearch/hermes-themes or when user mentions "hermes-themes". | - | agents |
+| 1413 | **hexagonal-architecture** | Ports & Adapters clean architecture. Use when applying patterns from affaan-m/hexagonal-architecture or when user mentions "hexagonal-architecture". | - | agents |
 | 1414 | **HeyGen Automation** | Automate AI video generation, avatar browsing, template-based video creation, and video status tracking through HeyGen's platform via Composio | - | agents |
 | 1415 | **heyreach-automation** | Automate Heyreach tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1416 | **heyzine-automation** | Automate Heyzine tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1417 | **hf-cli** | Hugging Face Hub CLI operations. Use when applying patterns from huggingface/hf-cli or when user mentions "hf-cli". | - | claude |
-| 1418 | **hf-mem** | Estimate GPU memory for Safetensors/GGUF. Use when applying patterns from huggingface/hf-mem or when user mentions "hf-mem". | - | claude |
+| 1417 | **hf-cli** | Hugging Face Hub CLI operations. Use when applying patterns from huggingface/hf-cli or when user mentions "hf-cli". | - | agents |
+| 1418 | **hf-mem** | Estimate GPU memory for Safetensors/GGUF. Use when applying patterns from huggingface/hf-mem or when user mentions "hf-mem". | - | agents |
 | 1419 | **high-end-visual-design** | Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that make a website feel expensive. Blocks all the common defaults that m... | - | agents |
 | 1420 | **high-output-management** | Manage for output using Grove''s "High Output Management": a manager''s output is their organization''s output, raised by high-leverage activities. Use when the user mentions "high output managemen... | - | agents |
 | 1421 | **high-perf-browser** | Optimize web performance through network protocols, resource loading, and browser rendering internals. Use when the user mentions "my site is slow", "Core Web Vitals", "HTTP/2 or HTTP/3", "resource... | - | agents |
 | 1422 | **highergov-automation** | Automate Highergov tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1423 | **highlevel-automation** | Automate Highlevel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1424 | **hipaa-compliance** | HIPAA privacy & security compliance. Use when applying patterns from affaan-m/hipaa-compliance or when user mentions "hipaa-compliance". | - | claude |
+| 1424 | **hipaa-compliance** | HIPAA privacy & security compliance. Use when applying patterns from affaan-m/hipaa-compliance or when user mentions "hipaa-compliance". | - | agents |
 | 1425 | **holistic-testing-pact** | Apply the Holistic Testing Model evolved with PACTS (Proactive, Autonomous, Collaborative, Targeted, Structured) principles. Use when designing comprehensive test strategies for Classical, AI-assis... | - | agents |
-| 1426 | **homelab-network-setup** | Practical homelab network planning. Use when applying patterns from affaan-m/homelab-network-setup or when user mentions "homelab-network-setup". | - | claude |
-| 1427 | **homelab-pihole-dns** | Pi-hole installation & DNS management. Use when applying patterns from affaan-m/homelab-pihole-dns or when user mentions "homelab-pihole-dns". | - | claude |
-| 1428 | **homelab-wireguard-vpn** | WireGuard VPN server setup. Use when applying patterns from affaan-m/homelab-wireguard-vpn or when user mentions "homelab-wireguard-vpn". | - | claude |
+| 1426 | **homelab-network-setup** | Practical homelab network planning. Use when applying patterns from affaan-m/homelab-network-setup or when user mentions "homelab-network-setup". | - | agents |
+| 1427 | **homelab-pihole-dns** | Pi-hole installation & DNS management. Use when applying patterns from affaan-m/homelab-pihole-dns or when user mentions "homelab-pihole-dns". | - | agents |
+| 1428 | **homelab-wireguard-vpn** | WireGuard VPN server setup. Use when applying patterns from affaan-m/homelab-wireguard-vpn or when user mentions "homelab-wireguard-vpn". | - | agents |
 | 1429 | **honeybadger-automation** | Automate Honeybadger tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1430 | **honeyhive-automation** | Automate Honeyhive tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1431 | **hono-api-scaffolder** | Scaffold Hono API routes for Cloudflare Workers. Produces route files, middleware, typed bindings, Zod validation, error handling, and API_ENDPOINTS.md documentation. Use after a project is set up ... | - | agents |
 | 1432 | **hookdeck-automation** | Automate Hookdeck tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1433 | **hooked-ux** | Design habit-forming product loops using the Hook Model (Trigger, Action, Variable Reward, Investment). Use when the user mentions "users arent coming back", "habit formation", "engagement loops", ... | - | agents |
-| 1434 | **hookify-rules** | Configure hookify rules. Use when applying patterns from affaan-m/hookify-rules or when user mentions "hookify-rules". | - | claude |
+| 1434 | **hookify-rules** | Configure hookify rules. Use when applying patterns from affaan-m/hookify-rules or when user mentions "hookify-rules". | - | agents |
 | 1435 | **Hooks Automation** | Automated coordination, formatting, and learning from Codex operations using intelligent hooks with MCP integration. Includes pre/post task hooks, session management, Git integration, memory coordi... | - | agents |
 | 1436 | **hotspotsystem-automation** | Automate Hotspotsystem tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1437 | **how-it-works** | Explain how Codex-mem captures observations, when memory injection kicks in, and where data lives. Use when the user asks "how does Codex-mem work?" or "what is this thing doing?". | - | agents |
 | 1438 | **html-to-image-automation** | Automate Html To Image tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1439 | **huashu-design** | Diseño UI/UX con estética asiática/china de alta precisión, micro-detalles visuales y tipografía cuidada. | - | claude |
-| 1440 | **hud** | Configure HUD display options. Use when applying patterns from Yeachan-Heo/hud or when user mentions "hud". | - | claude |
-| 1441 | **huggingface-datasets** | Hugging Face Dataset Viewer API. Use when applying patterns from huggingface/huggingface-datasets or when user mentions "huggingface-datasets". | - | claude |
-| 1442 | **huggingface-gradio** | Build Gradio web UIs in Python. Use when applying patterns from huggingface/huggingface-gradio or when user mentions "huggingface-gradio". | - | claude |
-| 1443 | **huggingface-papers** | Hugging Face paper research lookup. Use when applying patterns from huggingface/huggingface-papers or when user mentions "huggingface-papers". | - | claude |
-| 1444 | **huggingface-spaces** | Deploy AI apps to Hugging Face Spaces. Use when applying patterns from huggingface/huggingface-spaces or when user mentions "huggingface-spaces". | - | claude |
+| 1439 | **huashu-design** | Diseño UI/UX con estética asiática/china de alta precisión, micro-detalles visuales y tipografía cuidada. | - | agents |
+| 1440 | **hud** | Configure HUD display options. Use when applying patterns from Yeachan-Heo/hud or when user mentions "hud". | - | agents |
+| 1441 | **huggingface-datasets** | Hugging Face Dataset Viewer API. Use when applying patterns from huggingface/huggingface-datasets or when user mentions "huggingface-datasets". | - | agents |
+| 1442 | **huggingface-gradio** | Build Gradio web UIs in Python. Use when applying patterns from huggingface/huggingface-gradio or when user mentions "huggingface-gradio". | - | agents |
+| 1443 | **huggingface-papers** | Hugging Face paper research lookup. Use when applying patterns from huggingface/huggingface-papers or when user mentions "huggingface-papers". | - | agents |
+| 1444 | **huggingface-spaces** | Deploy AI apps to Hugging Face Spaces. Use when applying patterns from huggingface/huggingface-spaces or when user mentions "huggingface-spaces". | - | agents |
 | 1445 | **human-ai** | Rewrites English text to sound human, natural, and undetectable by AI detection tools. Removes machine language patterns and AI slop, restores semantic entropy, and injects voice and personality. U... | - | agents |
 | 1446 | **humanitix-automation** | Automate Humanitix tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1447 | **humanizar** | Reescreve textos em português brasileiro para soarem mais humanos e naturais, reduzindo padrões típicos de escrita gerada por IA sem alterar fatos, argumento ou intenção. Use quando o texto em PT-B... | - | agents |
@@ -4891,7 +4893,7 @@ Total unique skills: **3327**
 | 1457 | **hyperframes-registry** | Install and wire registry blocks and components into HyperFrames compositions. Use when running hyperframes add, installing a block or component, wiring an installed item into index.html, or workin... | - | agents |
 | 1458 | **hyperise-automation** | Automate Hyperise tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1459 | **hystruct-automation** | Automate Hystruct tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1460 | **i-have-adhd** | Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /... | - | claude |
+| 1460 | **i-have-adhd** | Shape output for a reader with ADHD: lead with the next action, number multi-step work, restate state across turns, suppress tangents, give specific time estimates, make wins visible. Invoke with /... | - | agents |
 | 1461 | **icims-talent-cloud-automation** | Automate Icims Talent Cloud tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1462 | **icon-set-generator** | Generate cohesive, project-specific SVG icon sets for websites and applications. Use this skill whenever the user needs custom icons, an icon set for a website or app, icons for a client project, o... | - | agents |
 | 1463 | **icypeas-automation** | Automate Icypeas tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4900,9 +4902,9 @@ Total unique skills: **3327**
 | 1466 | **identitycheck-automation** | Automate Identitycheck tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1467 | **ignisign-automation** | Automate Ignisign tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1468 | **image** | When the user wants to create, generate, edit, or optimize images for marketing — blog heroes, social graphics, product mockups, profile banners, listing visuals, or brand assets. Also use when the... | - | agents |
-| 1469 | **image-annotations** | Annotate screenshots with callouts & arrows. Use when applying patterns from github/image-annotations or when user mentions "image-annotations". | - | claude |
+| 1469 | **image-annotations** | Annotate screenshots with callouts & arrows. Use when applying patterns from github/image-annotations or when user mentions "image-annotations". | - | agents |
 | 1470 | **image-enhancer** | Improves the quality of images, especially screenshots, by enhancing resolution, sharpness, and clarity. Perfect for preparing images for presentations, documentation, or social media posts. | - | agents |
-| 1471 | **image-manipulation-image-magick** | ImageMagick image processing & resize. Use when applying patterns from github/image-manipulation-image-magick or when user mentions "image-manipulation-image-magick". | - | claude |
+| 1471 | **image-manipulation-image-magick** | ImageMagick image processing & resize. Use when applying patterns from github/image-manipulation-image-magick or when user mentions "image-manipulation-image-magick". | - | agents |
 | 1472 | **image-processing** | Process images for web development — resize, crop, trim whitespace, convert formats (PNG/WebP/JPG), optimise file size, generate thumbnails, create OG card images. Uses Pillow (Python) — no ImageMa... | - | agents |
 | 1473 | **image-to-code** | Elite website image-to-code skill for Codex. For visually important web tasks, it must first generate the design image(s) itself, deeply analyze them, then implement the website to match them as cl... | - | agents |
 | 1474 | **imagegen** | Generate or edit raster images when the task benefits from AI-created bitmap visuals such as photos, illustrations, textures, sprites, mockups, or transparent-background cutouts. Use when Codex sho... | - | agents |
@@ -4911,10 +4913,10 @@ Total unique skills: **3327**
 | 1477 | **imagekit-io-automation** | Automate Imagekit IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1478 | **imgbb-automation** | Automate Imgbb tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1479 | **imgix-automation** | Automate Imgix tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1480 | **impeccable** | Paul Bakaus's Impeccable UI skill framework: 23 commands (polish, audit, critique, distill, animate, bolder, quieter, shape, harden, etc.) and anti-slop rules. | https://github.com/pbakaus/impeccable | claude |
-| 1481 | **impediment-prioritization** | Score & rank project impediments. Use when applying patterns from github/impediment-prioritization or when user mentions "impediment-prioritization". | - | claude |
+| 1480 | **impeccable** | Paul Bakaus's Impeccable UI skill framework: 23 commands (polish, audit, critique, distill, animate, bolder, quieter, shape, harden, etc.) and anti-slop rules. | https://github.com/pbakaus/impeccable | agents |
+| 1481 | **impediment-prioritization** | Score & rank project impediments. Use when applying patterns from github/impediment-prioritization or when user mentions "impediment-prioritization". | - | agents |
 | 1482 | **implement** | Implement a piece of work based on a spec or set of tickets. | - | agents |
-| 1483 | **import-infrastructure-as-code** | Import Azure resources into Terraform. Use when applying patterns from github/import-infrastructure-as-code or when user mentions "import-infrastructure-as-code". | - | claude |
+| 1483 | **import-infrastructure-as-code** | Import Azure resources into Terraform. Use when applying patterns from github/import-infrastructure-as-code or when user mentions "import-infrastructure-as-code". | - | agents |
 | 1484 | **improve** | Survey any codebase as a senior advisor and produce prioritized, self-contained implementation plans for OTHER models/agents to execute. Strictly read-only on source code — never implements, fixes,... | - | agents |
 | 1485 | **improve-animations** | Survey a codebase's animation and motion code as a senior motion advisor, then produce a prioritized audit and self-contained implementation plans for other agents (or cheaper models) to execute. R... | https://github.com/emilkowalski/skills | agents |
 | 1486 | **improve-app** | Guided journey from a shipped app that works but feels rough to a product that fits the job, flows without friction, reads clearly, and persuades honestly. Orchestrates nine skills phase by phase -... | - | agents |
@@ -4927,24 +4929,24 @@ Total unique skills: **3327**
 | 1493 | **inbox-setup** | One-time setup skill that builds a personalized inbox triage knowledge base via interactive interview. Interviews the user about their email patterns, business context, reply style, and priorities ... | - | agents |
 | 1494 | **inbox-triage** | Runs a full inbox triage using the knowledge base created by the 'inbox-setup' skill. Light-intake by design (most invocations skip questions and run with KB-default preferences); asks at most 2 gr... | - | agents |
 | 1495 | **incident-commander** | Comprehensive incident response framework from detection through resolution and post-incident review. Battle-tested SRE/DevOps practices: severity classification, timeline reconstruction, structure... | - | agents |
-| 1496 | **incident-postmortem** | Blameless incident post-mortem report. Use when applying patterns from github/incident-postmortem or when user mentions "incident-postmortem". | - | claude |
+| 1496 | **incident-postmortem** | Blameless incident post-mortem report. Use when applying patterns from github/incident-postmortem or when user mentions "incident-postmortem". | - | agents |
 | 1497 | **incident-response** | Use when a security incident has been detected or declared and needs classification, triage, escalation path determination, and forensic evidence collection. Covers SEV1-SEV4 classification, false ... | - | agents |
 | 1498 | **incremental-implementation** | Delivers changes incrementally. Use when implementing any feature or change that touches more than one file. Use when you're about to write a large amount of code at once, or when a task feels too ... | - | agents |
 | 1499 | **industrial-brutalist-ui** | Raw mechanical interfaces fusing Swiss typographic print with military terminal aesthetics. Rigid grids, extreme type scale contrast, utilitarian color, analog degradation effects. For data-heavy d... | - | agents |
 | 1500 | **influence-psychology** | Apply the seven principles of ethical persuasion (reciprocity, commitment, social proof, authority, liking, scarcity, unity) to product design, copy, and sales. Use when the user mentions "social p... | - | agents |
-| 1501 | **influencer-marketing** | Influencer & creator partnerships. Use when applying patterns from coreyhaines31/influencer-marketing or when user mentions "influencer-marketing". | - | claude |
+| 1501 | **influencer-marketing** | Influencer & creator partnerships. Use when applying patterns from coreyhaines31/influencer-marketing or when user mentions "influencer-marketing". | - | agents |
 | 1502 | **influxdb-cloud-automation** | Automate Influxdb Cloud tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1503 | **information-security-manager-iso27001** | ISO 27001 ISMS implementation and cybersecurity governance for HealthTech and MedTech companies. Use when designing an ISMS, running security risk assessments, implementing controls, pursuing ISO 2... | - | agents |
-| 1504 | **inherit-legacy-style** | Inherit legacy codebase code style. Use when applying patterns from affaan-m/inherit-legacy-style or when user mentions "inherit-legacy-style". | - | claude |
+| 1504 | **inherit-legacy-style** | Inherit legacy codebase code style. Use when applying patterns from affaan-m/inherit-legacy-style or when user mentions "inherit-legacy-style". | - | agents |
 | 1505 | **init** | Set up Playwright in a project. Use when user says "set up playwright", "add e2e tests", "configure playwright", "testing setup", "init playwright", or "add test infrastructure". | - | agents |
 | 1506 | **insighto-ai-automation** | Automate Insighto AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1507 | **inspired-product** | Build empowered product teams using discovery and delivery dual-track. Use when the user mentions "product discovery", "empowered teams", "feature factory", "opportunity assessment", "product visio... | - | agents |
 | 1508 | **instacart-automation** | Automate Instacart tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1509 | **install-atk** | Install or update the M365 Agents Toolkit (ATK) CLI and VS Code extension. Triggers: "install atk", "update atk", "install agents toolkit", "update agents toolkit", "install the toolkit", "setup at... | - | agents |
 | 1510 | **Instantly Automation** | Automate Instantly cold email outreach -- manage campaigns, sending accounts, lead lists, bulk lead imports, and campaign analytics -- using natural language through the Composio MCP integration. | - | agents |
-| 1511 | **integrate-context-matic** | Discover third-party APIs via context-matic. Use when applying patterns from github/integrate-context-matic or when user mentions "integrate-context-matic". | - | claude |
+| 1511 | **integrate-context-matic** | Discover third-party APIs via context-matic. Use when applying patterns from github/integrate-context-matic or when user mentions "integrate-context-matic". | - | agents |
 | 1512 | **intelliprint-automation** | Automate Intelliprint tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1513 | **intent-driven-development** | Turn product intent into verifiable criteria. Use when applying patterns from affaan-m/intent-driven-development or when user mentions "intent-driven-development". | - | claude |
+| 1513 | **intent-driven-development** | Turn product intent into verifiable criteria. Use when applying patterns from affaan-m/intent-driven-development or when user mentions "intent-driven-development". | - | agents |
 | 1514 | **internal-comms** | A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Codex should use this skill whenever asked to write some sort of internal c... | - | agents |
 | 1515 | **internal-linking-optimizer** | Optimize internal links: site architecture, authority distribution, orphan pages, crawl depth. "Site structure is messy" / "内链怎么做" / "孤立页面". 内链优化/站内链接/网站架构/权重 内部リンク最適化 내부링크 enlaces internos | - | agents |
 | 1516 | **internal-links** | Analyze internal linking structure, find orphan pages, audit anchor text, map hub-spoke topology, and generate prioritized link insertion recommendations with suggested anchor text and context sent... | - | agents |
@@ -4953,18 +4955,18 @@ Total unique skills: **3327**
 | 1519 | **interview-system-designer** | This skill should be used when the user asks to "design interview processes", "create hiring pipelines", "calibrate interview loops", "generate interview questions", "design competency matrices", "... | - | agents |
 | 1520 | **interzoid-automation** | Automate Interzoid tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1521 | **intl-expansion** | International market expansion strategy. Market selection, entry modes, localization, regulatory compliance, and go-to-market by region. Use when expanding to new countries, evaluating internationa... | - | agents |
-| 1522 | **inventory-demand-planning** | Retail demand forecasting & inventory. Use when applying patterns from affaan-m/inventory-demand-planning or when user mentions "inventory-demand-planning". | - | claude |
+| 1522 | **inventory-demand-planning** | Retail demand forecasting & inventory. Use when applying patterns from affaan-m/inventory-demand-planning or when user mentions "inventory-demand-planning". | - | agents |
 | 1523 | **Inversion Exercise** | Flip core assumptions to reveal hidden constraints and alternative approaches - "what if the opposite were true? | - | agents |
 | 1524 | **investigate** | Systematic debugging with root cause investigation. (gstack) | - | agents |
-| 1525 | **investigate-first** | Diagnose failure before editing code. Use when applying patterns from juliusbrussee/investigate-first or when user mentions "investigate-first". | - | claude |
-| 1526 | **investor-materials** | Pitch decks & investor application materials. Use when applying patterns from affaan-m/investor-materials or when user mentions "investor-materials". | - | claude |
-| 1527 | **investor-outreach** | Cold emails & warm intro blurbs for VCs. Use when applying patterns from affaan-m/investor-outreach or when user mentions "investor-outreach". | - | claude |
+| 1525 | **investigate-first** | Diagnose failure before editing code. Use when applying patterns from juliusbrussee/investigate-first or when user mentions "investigate-first". | - | agents |
+| 1526 | **investor-materials** | Pitch decks & investor application materials. Use when applying patterns from affaan-m/investor-materials or when user mentions "investor-materials". | - | agents |
+| 1527 | **investor-outreach** | Cold emails & warm intro blurbs for VCs. Use when applying patterns from affaan-m/investor-outreach or when user mentions "investor-outreach". | - | agents |
 | 1528 | **invoice-organizer** | Automatically organizes invoices and receipts for tax preparation by reading messy files, extracting key information, renaming them consistently, and sorting them into logical folders. Turns hours ... | - | agents |
 | 1529 | **ios-clean** | Remove the DebugBridge SPM package and all #if DEBUG wiring from an iOS app. (gstack) | - | agents |
 | 1530 | **ios-design-review** | Visual design audit for iOS apps on real hardware. (gstack) | - | agents |
 | 1531 | **ios-fix** | Autonomous iOS bug fixer. (gstack) | - | agents |
 | 1532 | **ios-hig-design** | Design native iOS interfaces following Apple Human Interface Guidelines. Use when the user mentions "iPhone app", "iPad layout", "SwiftUI", "UIKit", "Dynamic Island", "safe areas", "HIG compliance"... | - | agents |
-| 1533 | **ios-icon-gen** | Generate iOS app icons from SF Symbols. Use when applying patterns from affaan-m/ios-icon-gen or when user mentions "ios-icon-gen". | - | claude |
+| 1533 | **ios-icon-gen** | Generate iOS app icons from SF Symbols. Use when applying patterns from affaan-m/ios-icon-gen or when user mentions "ios-icon-gen". | - | agents |
 | 1534 | **ios-qa** | Live-device iOS QA for SwiftUI apps. (gstack) | - | agents |
 | 1535 | **ios-sync** | Regenerate the iOS debug bridge against the latest upstream gstack templates. (gstack) | - | agents |
 | 1536 | **ip2location-automation** | Automate Ip2location tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
@@ -4978,18 +4980,18 @@ Total unique skills: **3327**
 | 1544 | **iso13485-audit-prep** | /cs:iso13485-audit-prep <scope> — ISO 13485 QMS audit 6-question forcing interrogation. Design controls + CAPA + post-market focused. Use before Clause 8.2.4 internal audit, MDR / FDA QSR alignment... | - | agents |
 | 1545 | **iso27001-audit-prep** | /cs:iso27001-audit-prep <scope> — ISO 27001 ISMS audit readiness 6-question forcing interrogation. Use before annual Clause 9.2 internal audit, surveillance audit prep, or stage 1 certification rea... | - | agents |
 | 1546 | **iso42001-specialist** | ISO/IEC 42001:2023 AI Management System (AIMS) specialist for compliance teams running internal audits. Three decisions: (1) Where are the gaps against Clauses 4-10 and what do we close first? (2) ... | - | agents |
-| 1547 | **issue-fields-migration** | Bulk-migrate metadata to GitHub issue fields. Use when applying patterns from github/issue-fields-migration or when user mentions "issue-fields-migration". | - | claude |
-| 1548 | **iterate-pr** | Iterate on PR until CI passes & reviews addressed. Use when applying patterns from getsentry/iterate-pr or when user mentions "iterate-pr". | - | claude |
+| 1547 | **issue-fields-migration** | Bulk-migrate metadata to GitHub issue fields. Use when applying patterns from github/issue-fields-migration or when user mentions "issue-fields-migration". | - | agents |
+| 1548 | **iterate-pr** | Iterate on PR until CI passes & reviews addressed. Use when applying patterns from getsentry/iterate-pr or when user mentions "iterate-pr". | - | agents |
 | 1549 | **iterative-loop** | Runs continuous AI iteration loops that repeat build-test-fix cycles until success criteria are met. Use when building features requiring test-driven refinement, implementing tasks with clear pass/... | - | agents |
-| 1550 | **iterative-retrieval** | Progressive context retrieval pattern. Use when applying patterns from affaan-m/iterative-retrieval or when user mentions "iterative-retrieval". | - | claude |
-| 1551 | **ito-baskets** | Prediction-market basket catalog data. Use when applying patterns from affaan-m/ito-baskets or when user mentions "ito-baskets". | - | claude |
-| 1552 | **ito-compute** | Query GPU inventory & submit RFQ. Use when applying patterns from affaan-m/ito-compute or when user mentions "ito-compute". | - | claude |
-| 1553 | **java-add-graalvm-native-image-support** | GraalVM native image build support. Use when applying patterns from github/java-add-graalvm-native-image-support or when user mentions "java-add-graalvm-native-image-support". | - | claude |
+| 1550 | **iterative-retrieval** | Progressive context retrieval pattern. Use when applying patterns from affaan-m/iterative-retrieval or when user mentions "iterative-retrieval". | - | agents |
+| 1551 | **ito-baskets** | Prediction-market basket catalog data. Use when applying patterns from affaan-m/ito-baskets or when user mentions "ito-baskets". | - | agents |
+| 1552 | **ito-compute** | Query GPU inventory & submit RFQ. Use when applying patterns from affaan-m/ito-compute or when user mentions "ito-compute". | - | agents |
+| 1553 | **java-add-graalvm-native-image-support** | GraalVM native image build support. Use when applying patterns from github/java-add-graalvm-native-image-support or when user mentions "java-add-graalvm-native-image-support". | - | agents |
 | 1554 | **java-architect** | Use when building, configuring, or debugging enterprise Java applications with Spring Boot 3.x, microservices, or reactive programming. Invoke to implement WebFlux endpoints, optimize JPA queries a... | - | agents |
-| 1555 | **java-coding-standards** | Java standards for Spring Boot & Quarkus. Use when applying patterns from affaan-m/java-coding-standards or when user mentions "java-coding-standards". | - | claude |
-| 1556 | **java-docs** | Javadoc comments & documentation standards. Use when applying patterns from github/java-docs or when user mentions "java-docs". | - | claude |
-| 1557 | **java-helidon** | Helidon 4 SE & MP Java development. Use when applying patterns from github/java-helidon or when user mentions "java-helidon". | - | claude |
-| 1558 | **java-junit** | JUnit 5 unit testing & data-driven tests. Use when applying patterns from github/java-junit or when user mentions "java-junit". | - | claude |
+| 1555 | **java-coding-standards** | Java standards for Spring Boot & Quarkus. Use when applying patterns from affaan-m/java-coding-standards or when user mentions "java-coding-standards". | - | agents |
+| 1556 | **java-docs** | Javadoc comments & documentation standards. Use when applying patterns from github/java-docs or when user mentions "java-docs". | - | agents |
+| 1557 | **java-helidon** | Helidon 4 SE & MP Java development. Use when applying patterns from github/java-helidon or when user mentions "java-helidon". | - | agents |
+| 1558 | **java-junit** | JUnit 5 unit testing & data-driven tests. Use when applying patterns from github/java-junit or when user mentions "java-junit". | - | agents |
 | 1559 | **javascript-pro** | Writes, debugs, and refactors JavaScript code using modern ES2023+ features, async/await patterns, ESM module systems, and Node.js APIs. Use when building vanilla JavaScript applications, implement... | - | agents |
 | 1560 | **jigsawstack-automation** | Automate Jigsawstack tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1561 | **jira-expert** | Atlassian Jira expert for creating and managing projects, planning, product discovery, JQL queries, workflows, custom fields, automation, reporting, and all Jira features. Use when setting up or co... | - | agents |
@@ -5206,7 +5208,7 @@ Total unique skills: **3327**
 | 1772 | **loop-architect** | Design well-structured agent loops with best-practice coaching and cross-model review gates before you run them. Use when the user wants to design, build, or set up an agent loop, iterative agent w... | - | agents |
 | 1773 | **loop-library** | Discover, find, compare, audit, repair, adapt, and design repeatable AI-agent loops with explicit triggers, actions, verification, stopping conditions, guardrails, and handoffs. Use when a user ask... | - | agents |
 | 1774 | **loop-me** | Grill me about specs for the workflows I want to build, within this workspace. | - | agents |
-| 1775 | **loopy** | Autonomous iterative agent loops with explicit verification and stop conditions. Executes a "modify -> measure -> evaluate -> keep/revert -> check stop condition" cycle. Ideal for performance tunin... | - | claude |
+| 1775 | **loopy** | Autonomous iterative agent loops with explicit verification and stop conditions. Executes a "modify -> measure -> evaluate -> keep/revert -> check stop condition" cycle. Ideal for performance tunin... | - | agents |
 | 1776 | **lottie** | Lottie and dotLottie adapter patterns for HyperFrames. Use when embedding lottie-web JSON animations, .lottie files, @lottiefiles/dotlottie-web players, registering instances on window.__hfLottie, ... | - | agents |
 | 1777 | **loyverse-automation** | Automate Loyverse tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1778 | **m365-agent-evaluator** | Use this skill when a user wants to create, run, or analyze evaluation suites for Microsoft 365 Copilot declarative agents with the public @microsoft/m365-copilot-eval CLI. Trigger on intents such ... | - | agents |
@@ -5225,7 +5227,7 @@ Total unique skills: **3327**
 | 1791 | **mails-so-automation** | Automate Mails So tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1792 | **mailsoftly-automation** | Automate Mailsoftly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1793 | **maintainx-automation** | Automate Maintainx tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1794 | **make-interfaces-feel-better** | UI polish pass skill focused on micro-interactions, optical alignment, smooth hover states, typography rhythm, and tactile UI feedback. Use when an interface "works" but feels generic, cheap, or un... | - | claude |
+| 1794 | **make-interfaces-feel-better** | UI polish pass skill focused on micro-interactions, optical alignment, smooth hover states, typography rhythm, and tactile UI feedback. Use when an interface "works" but feels generic, cheap, or un... | - | agents |
 | 1795 | **make-pdf** | Turn any markdown file into a publication-quality PDF. (gstack) | - | agents |
 | 1796 | **make-plan** | Create a detailed, phased implementation plan with documentation discovery. Use when asked to plan a feature, task, or multi-step implementation — especially before executing with do. | - | agents |
 | 1797 | **managed-pentesting-with-strix** | Run a managed pentest of a web app, API, repository, or local workspace on the app.strix.ai platform with the `strix cloud` CLI or REST API — no local Docker or LLM key needed. Safely review and up... | https://github.com/usestrix/strix | agents |
@@ -5242,7 +5244,7 @@ Total unique skills: **3327**
 | 1808 | **marketing-psychology** | When the user wants to apply psychological principles, mental models, or behavioral science to marketing. Also use when the user mentions 'psychology,' 'mental models,' 'cognitive bias,' 'persuasio... | - | agents |
 | 1809 | **marketing-skills** | Directory and router for the marketing skills library. Use when you need to find the right marketing skill for a task, see what marketing capabilities exist, or get oriented in this plugin. 44 spec... | - | agents |
 | 1810 | **marketing-strategy-pmm** | Product marketing skill for positioning, GTM strategy, competitive intelligence, and product launches. Use when the user asks about product positioning, go-to-market planning, competitive analysis,... | - | agents |
-| 1811 | **mattpocock** | Small, composable, editable TypeScript and engineering skills curated by Matt Pocock. Focuses on real engineering over vibe coding, modular architecture, type-level safety, and pragmatic daily deve... | - | claude |
+| 1811 | **mattpocock** | Small, composable, editable TypeScript and engineering skills curated by Matt Pocock. Focuses on real engineering over vibe coding, modular architecture, type-level safety, and pragmatic daily deve... | - | agents |
 | 1812 | **mboum-automation** | Automate Mboum tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1813 | **mcp-builder** | Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate exte... | - | agents |
 | 1814 | **mcp-developer** | Use when building, debugging, or extending MCP servers or clients that connect AI systems with external tools and data sources. Invoke to implement tool handlers, configure resource providers, set ... | - | agents |
@@ -5274,7 +5276,7 @@ Total unique skills: **3327**
 | 1840 | **metaads-automation** | Automate Metaads tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1841 | **metaphor-automation** | Automate Metaphor tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1842 | **mezmo-automation** | Automate Mezmo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1843 | **mi-skill** | Habilidad ingerida y registrada via SuperDuperSkills CLI (https://github.com/autor/mi-skill) | - | claude |
+| 1843 | **mi-skill** | Habilidad ingerida y registrada via SuperDuperSkills CLI (https://github.com/autor/mi-skill) | - | agents |
 | 1844 | **microinteractions** | Design the small details -- triggers, rules, feedback, loops and modes -- that separate good products from great ones. Use when the user mentions "microinteraction", "button feedback", "loading sta... | - | agents |
 | 1845 | **microservices-architect** | Designs distributed system architectures, decomposes monoliths into bounded-context services, recommends communication patterns, and produces service boundary diagrams and resilience strategies. Us... | - | agents |
 | 1846 | **Microsoft Clarity Automation** | Automate user behavior analytics with Microsoft Clarity -- export heatmap data, session metrics, and engagement analytics segmented by browser, device, country, source, and more through the Composi... | - | agents |
@@ -5292,1470 +5294,1473 @@ Total unique skills: **3327**
 | 1858 | **minerstat-automation** | Automate Minerstat tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1859 | **minimalist** | Use when the user asks to write code efficiently, avoid over-engineering, reduce dependencies, or prevent unnecessary abstractions. Enforces a strict efficiency ladder: YAGNI, reuse, stdlib, native... | - | agents |
 | 1860 | **minimalist-ui** | Clean editorial-style interfaces. Warm monochrome palette, typographic contrast, flat bento grids, muted pastels. No gradients, no heavy shadows. | - | agents |
-| 1861 | **minions** | Local Kanban task dashboard for agent task orchestration (runs on localhost:6969). Manages In Progress, Review, and Done states with human approval gates. Use when orchestrating multi-task agent wo... | - | claude |
+| 1861 | **minions** | Local Kanban task dashboard for agent task orchestration (runs on localhost:6969). Manages In Progress, Review, and Done states with human approval gates. Use when orchestrating multi-task agent wo... | - | agents |
 | 1862 | **missive-automation** | Automate Missive tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
 | 1863 | **Mistral AI Automation** | Automate Mistral AI operations -- manage files and libraries, upload documents for fine-tuning, batch processing, and OCR, track fine-tuning jobs, and build RAG pipelines via the Composio MCP integ... | - | agents |
 | 1864 | **mistral_ai-automation** | Automate Mistral AI tasks via Rube MCP (Composio): completions, embeddings, fine-tuning, and model management. Always search tools first for current schemas. | - | agents |
 | 1865 | **ml-pipeline** | Designs and implements production-grade ML pipeline infrastructure: configures experiment tracking with MLflow or Weights & Biases, creates Kubeflow or Airflow DAGs for training orchestration, buil... | - | agents |
-| 1866 | **mobile-testing** | Comprehensive mobile testing for iOS and Android platforms including gestures, sensors, permissions, device fragmentation, and performance. Use when testing native apps, hybrid apps, or mobile web,... | - | agents |
-| 1867 | **mocean-automation** | Automate Mocean tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1868 | **moco-automation** | Automate Moco tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1869 | **modelry-automation** | Automate Modelry tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1870 | **modo-tdah** | Modo de enfoque ejecutivo ultra-conciso: elimina explicaciones infladas, va directo a la solución y ejecuta paso a paso sin rodeos. | - | claude |
-| 1871 | **mom-test** | Talk to customers without leading them using Mom Test rules: discuss their life not your idea, ask about specifics in the past, and talk less. Use when the user mentions "customer interviews", "val... | - | agents |
-| 1872 | **monetizing-innovation** | Design products and pricing around validated willingness to pay, from Ramanujam & Tacke''s "Monetizing Innovation". Use when the user mentions "pricing", "how much should we charge", "willingness t... | - | agents |
-| 1873 | **moneybird-automation** | Automate Moneybird tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1874 | **monitoring-expert** | Configures monitoring systems, implements structured logging pipelines, creates Prometheus/Grafana dashboards, defines alerting rules, and instruments distributed tracing. Implements Prometheus/Gra... | - | agents |
-| 1875 | **monorepo-navigator** | Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces, and Lerna. Cross-package impact analysis, selective builds/tests on affected packages, remote caching, dependency gr... | - | agents |
-| 1876 | **moonclerk-automation** | Automate Moonclerk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1877 | **moosend-automation** | Automate Moosend tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1878 | **mopinion-automation** | Automate Mopinion tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1879 | **more-trees-automation** | Automate More Trees tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1880 | **moxie-automation** | Automate Moxie tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1881 | **moz-automation** | Automate Moz tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1882 | **ms365-tenant-manager** | Microsoft 365 tenant administration for Global Administrators. Automate M365 tenant setup, Office 365 admin tasks, Azure AD user management, Exchange Online configuration, Teams administration, and... | - | agents |
-| 1883 | **msg91-automation** | Automate Msg91 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1884 | **mural-automation** | Automate Mural tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1885 | **mutation-testing** | Test quality validation through mutation testing, assessing test suite effectiveness by introducing code mutations and measuring kill rate. Use when evaluating test quality, identifying weak tests,... | - | agents |
-| 1886 | **mx-technologies-automation** | Automate MX Technologies tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1887 | **mx-toolbox-automation** | Automate Mx Toolbox tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1888 | **n8n-agents** | Design n8n AI agents the right way. Use when building or editing any @n8n/n8n-nodes-langchain.* AI node — an AI Agent, LLM chain, Text Classifier, or Information Extractor — and whenever the user m... | - | claude |
-| 1889 | **n8n-binary-and-data** | Handle files and binary data in n8n correctly. Use when working with files, images, PDFs, attachments, uploads or downloads, base64, vision/multimodal input, or when an AI agent needs a file as too... | - | claude |
-| 1890 | **n8n-code-javascript** | Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with this.helpers / the $helpers global, working with dates using ... | - | claude |
-| 1891 | **n8n-code-python** | Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to understand Python limitations in n8n Code nodes. Use ... | - | claude |
-| 1892 | **n8n-code-tool** | Write JavaScript or Python for the n8n Custom Code Tool (@n8n/n8n-nodes-langchain.toolCode) — the AI-agent-callable tool, NOT the workflow Code node. Use when building a Code Tool attached to an AI... | - | claude |
-| 1893 | **n8n-error-handling** | Wire n8n error handling so failures are loud, structured, and recoverable. Use when building any webhook/API workflow, a scheduled or unattended workflow, or any path where a silent failure would d... | - | claude |
-| 1894 | **n8n-expression-syntax** | Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expression errors, mapping data between n... | - | claude |
-| 1895 | **n8n-expression-testing** | n8n expression syntax validation, context-aware testing, common pitfalls detection, and performance optimization. Use when validating n8n expressions and data transformations. | - | agents |
-| 1896 | **n8n-integration-testing-patterns** | API contract testing, authentication flows, rate limit handling, and error scenario coverage for n8n integrations with external services. Use when testing n8n node integrations. | - | agents |
-| 1897 | **n8n-mcp-tools-expert** | Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nodes, validating configurations, accessing templates, managing workflows, organizing workflows into folders, managing c... | - | claude |
-| 1898 | **n8n-multi-instance** | Use when an n8n-mcp account targets more than one n8n instance — i.e. the `n8n_instances` tool is available, the user mentions multiple n8n instances or environments (prod vs staging, several teams... | - | claude |
-| 1899 | **n8n-node-configuration** | Operation-aware node configuration guidance. Use when configuring nodes, understanding property dependencies, determining required fields, choosing between get_node detail levels, or learning commo... | - | claude |
-| 1900 | **n8n-security-testing** | Credential exposure detection, OAuth flow validation, API key management testing, and data sanitization verification for n8n workflows. Use when validating n8n workflow security. | - | agents |
-| 1901 | **n8n-self-hosting** | Deploy a production self-hosted n8n end-to-end to a fresh Linux VM over SSH, using Docker Compose behind a Caddy reverse proxy with automatic HTTPS. Use whenever the user wants to self-host, instal... | - | claude |
-| 1902 | **n8n-subworkflows** | Build reusable, composable n8n sub-workflows. Use when extracting shared logic, building anything multi-step or reused across workflows, or any workflow over ~10 nodes — and whenever the user menti... | - | claude |
-| 1903 | **n8n-trigger-testing-strategies** | Webhook testing, schedule validation, event-driven triggers, and polling mechanism testing for n8n workflows. Use when testing how workflows are triggered. | - | agents |
-| 1904 | **n8n-validation-expert** | Interpret validation errors and guide fixing them. Use when encountering validation errors, validation warnings, false positives, operator structure issues, or need help understanding validation re... | - | claude |
-| 1905 | **n8n-workflow-patterns** | Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, planning workflow architecture, or asking ... | - | claude |
-| 1906 | **n8n-workflow-testing-fundamentals** | Comprehensive n8n workflow testing including execution lifecycle, node connection patterns, data flow validation, and error handling strategies. Use when testing n8n workflow automation applications. | - | agents |
-| 1907 | **named-persona-adversarial-review** | Code review through the lens of real engineers' documented philosophies (Torvalds, Thompson, Carmack, Kent Beck, Jobs, Cagan). Complements abstract-role adversarial review with named, sourced persp... | - | agents |
-| 1908 | **nango-automation** | Automate Nango tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1909 | **nano-nets-automation** | Automate Nano Nets tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1910 | **nasa-automation** | Automate Nasa tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1911 | **nasdaq-automation** | Automate Nasdaq tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1912 | **ncscale-automation** | Automate Ncscale tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1913 | **needle-automation** | Automate Needle tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1914 | **negotiation** | Prepare and execute negotiations using tactical empathy, calibrated questions, and the Ackerman method. Use when the user mentions "salary negotiation", "contract terms", "handling objections", "mi... | - | agents |
-| 1915 | **nemoclaw-setup** | Install and configure NVIDIA NemoClaw (sandboxed OpenClaw agent platform) on Linux. Handles cloudflared tunnels, Docker cgroup fixes, OpenShell, sandbox creation, remote access via Cloudflare Tunne... | - | agents |
-| 1916 | **Neon Automation** | Automate Neon serverless Postgres operations -- manage projects, branches, databases, roles, and connection URIs via the Composio MCP integration. | - | agents |
-| 1917 | **nestjs-expert** | Creates and configures NestJS modules, controllers, services, DTOs, guards, and interceptors for enterprise-grade TypeScript backend applications. Use when building NestJS REST APIs or GraphQL serv... | - | agents |
-| 1918 | **nestjs-patterns** | NestJS best practices, module architecture, DTOs, Guards, Interceptors, and common patterns. Use when building or reviewing NestJS backend services. | - | agents |
-| 1919 | **netlify-deploy** | Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys. | - | agents |
-| 1920 | **NetSuite Automation** | NetSuite Automation: manage customers, sales orders, invoices, inventory, and records via Oracle NetSuite ERP with SuiteQL queries | - | agents |
-| 1921 | **neuro-persuasion-toolkit** | Aplica neurociencia del comportamiento y neuromarketing a copy, anuncios, SEO/SEM/MEO, propuestas comerciales y scripts de ventas (frías, consultivas, cierres). Úsalo siempre que el usuario esté es... | - | agents |
-| 1922 | **neuronwriter-automation** | Automate Neuronwriter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1923 | **neutrino-automation** | Automate Neutrino tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1924 | **neverbounce-automation** | Automate Neverbounce tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1925 | **New Relic Automation** | Automate New Relic observability workflows -- manage alert policies, notification channels, alert conditions, and monitor applications and browser apps via the Composio MCP integration. | - | agents |
-| 1926 | **new_relic-automation** | Automate New Relic tasks via Rube MCP (Composio): APM, alerts, dashboards, NRQL queries, and infrastructure monitoring. Always search tools first for current schemas. | - | agents |
-| 1927 | **news-api-automation** | Automate News API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1928 | **nextdns-automation** | Automate Nextdns tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1929 | **nextjs-app-router** | Next.js App Router best practices, Server Components, Server Actions, routing patterns, and data fetching strategies. Use when building Next.js applications with the App Router. | - | agents |
-| 1930 | **nextjs-developer** | Use when building Next.js 14+ applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, wri... | - | agents |
-| 1931 | **ngrok-automation** | Automate Ngrok tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1932 | **ninox-automation** | Automate Ninox tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1933 | **no-skip** | Use when you want to prevent .skip(), .only(), xit(), and xdescribe() from being committed to test files. Activate with /no-skip for session-scoped test skip prevention. | - | agents |
-| 1934 | **nocrm-io-automation** | Automate Nocrm IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1935 | **normalize** | Audits and realigns UI to match design system standards, spacing, tokens, and patterns. Use when the user mentions consistency, design drift, mismatched styles, tokens, or wants to bring a feature ... | - | agents |
-| 1936 | **notebooklm** | Use this skill to query your Google NotebookLM notebooks directly from Codex for source-grounded, citation-backed answers from Gemini. Browser automation, library management, persistent auth. Drast... | - | agents |
-| 1937 | **notion-knowledge-capture** | Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking. | - | agents |
-| 1938 | **notion-meeting-intelligence** | Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees. | - | agents |
-| 1939 | **notion-research-documentation** | Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations. | - | agents |
-| 1940 | **notion-spec-to-implementation** | Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them. | - | agents |
-| 1941 | **npm-automation** | Automate NPM tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1942 | **nz-business-english** | New Zealand business English writing style for professional communications. Warm, inclusive, EN-NZ spelling. Use when writing emails, chat messages, proposals, client communications, or any busines... | - | agents |
-| 1943 | **obra-superpowers-brainstorming** | Interactive requirements crystallization before coding. Asks targeted clarifying questions, explores edge cases, and produces a clear specification chunk by chunk. | - | claude |
-| 1944 | **obra-superpowers-code-review** | Adversarial code review and quality check covering security, performance, readability, and adherence to requirements. | - | claude |
-| 1945 | **obra-superpowers-executing-plans** | Systematic plan execution with verification loops and progress tracking across long-running development tasks. | - | claude |
-| 1946 | **obra-superpowers-subagent-driven-development** | Orchestrates parallel or modular subagent execution loops for multi-task engineering workloads. | - | claude |
-| 1947 | **obra-superpowers-systematic-debugging** | Root-cause driven debugging workflow. Inspects raw logs, forms empirical hypotheses, and verifies fixes with tests. | - | claude |
-| 1948 | **obra-superpowers-writing-plans** | Generates implementation plans designed for systematic subagent execution, stressing TDD, YAGNI, and DRY. | - | claude |
-| 1949 | **observability-and-instrumentation** | Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting. Use when shipping any feature that runs in production and you need eviden... | - | agents |
-| 1950 | **observability-designer** | Design production-ready observability strategies combining metrics, logs, and traces. Includes SLI/SLO design, golden-signals monitoring, alert optimization. Use when adding observability to a new ... | - | agents |
-| 1951 | **observability-testing-patterns** | Observability and monitoring validation patterns for dashboards, alerting, log aggregation, APM traces, and SLA/SLO verification. Use when testing monitoring infrastructure, dashboard accuracy, ale... | - | agents |
-| 1952 | **obsidian-vault** | Search, create, and manage notes in the Obsidian vault with wikilinks and index notes. Use when user wants to find, create, or organize notes in Obsidian. | - | agents |
-| 1953 | **obviously-awesome** | Define product positioning by mapping competitive alternatives, unique attributes, and best-fit customers to the right market category. Use when the user mentions "positioning", "competitive altern... | - | agents |
-| 1954 | **ocr-web-service-automation** | Automate OCR Web Service tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1955 | **ocrspace-automation** | Automate Ocrspace tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1956 | **office-hours** | YC Office Hours — two modes. (gstack) | - | agents |
-| 1957 | **oh-my-hermes** | Multi-agent orchestration workflow (Research → Interview → Plan → Execution → Verification). Coordinates specialized sub-agents across complex phases. Use when running multi-agent tasks, swarm exec... | - | claude |
-| 1958 | **oh-my-issues** | Cluster a GitHub issue backlog by root cause into a small set of plan-master issues, redirect children with a standardized comment, and bundle architectural-fix PRs that close clusters atomically. ... | - | agents |
-| 1959 | **okf-open-knowledge-format** | Create, validate, and enrich Open Knowledge Format (OKF) bundles — the open spec for representing organizational knowledge as markdown files with YAML frontmatter. Use when the user mentions 'OKF',... | - | agents |
-| 1960 | **okr** |  | - | agents |
-| 1961 | **omc-review** | Evaluate finished work for defects, risk, and simplification before it ships | - | claude |
-| 1962 | **omc-setup** | Install or refresh oh-my-claudecode for plugin, npm, and local-dev setups from the canonical setup flow | - | claude |
-| 1963 | **omc-teams** | CLI-team runtime for claude, codex, or gemini workers in tmux panes when you need process-based parallel execution | - | claude |
-| 1964 | **Omnisend Automation** | Automate ecommerce marketing workflows including contact management, bulk operations, and subscriber segmentation through Omnisend via Composio | - | agents |
-| 1965 | **on-page-seo-auditor** | Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. \"Why isn't this ranking\" / \"页面诊断\" / \"SEO评分\". 页面SEO审计/排名诊断/网页优化/H1检查 ページSEO監査 페이지SEO감사 auditoría on-page | - | agents |
-| 1966 | **onboard** | Designs and improves onboarding flows, empty states, and first-run experiences to help users reach value quickly. Use when the user mentions onboarding, first-time users, empty states, activation, ... | - | agents |
-| 1967 | **onboard-context-matic** | Interactive onboarding tour for the context-matic MCP server. | - | claude |
-| 1968 | **onboarding** | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onboarding flow," "activation rate," "user activati... | - | agents |
-| 1969 | **onboarding-cro** | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onboarding flow," "activation rate," "user activati... | - | agents |
-| 1970 | **onboarding-ux** | Audit and generate in-app user guidance — onboarding flows, empty states, tooltips, feature tours, contextual help, defaults, and inline hints. Browses the app to find where new users would get stu... | - | agents |
-| 1971 | **oncehub-automation** | Automate Oncehub tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1972 | **one-page-marketing** | Build a complete marketing plan covering the full customer journey from stranger to raving fan. Use when the user mentions "marketing plan", "marketing strategy", "target market", "USP", "lead nurt... | - | agents |
-| 1973 | **onedesk-automation** | Automate Onedesk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1974 | **onepage-automation** | Automate Onepage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1975 | **onesignal-rest-api-automation** | Automate OneSignal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1976 | **onesignal-user-auth-automation** | Automate Onesignal User Auth tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1977 | **onesignal_rest_api-automation** | Automate OneSignal tasks via Rube MCP (Composio): push notifications, segments, templates, and messaging. Always search tools first for current schemas. | - | agents |
-| 1978 | **oo-component-documentation** | Create or update standardized object-oriented component documentation. | - | claude |
-| 1979 | **open-gstack-browser** | Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in. | - | agents |
-| 1980 | **open-sea-automation** | Automate Open Sea tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1981 | **OpenAI Automation** | Automate OpenAI API operations -- generate responses with multimodal and structured output support, create embeddings, generate images, and list models via the Composio MCP integration. | - | agents |
-| 1982 | **openai-docs** | Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the lates... | - | agents |
-| 1983 | **openapi-to-application-code** | Generate a complete, production-ready application from an OpenAPI specification | - | claude |
-| 1984 | **openapi-to-typescript** | Converts OpenAPI 3.0 JSON/YAML to TypeScript interfaces and type guards. | - | claude |
-| 1985 | **opencage-automation** | Automate Opencage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1986 | **openclaw** |  | - | agents |
-| 1987 | **openclaw-persona-forge** | OpenClaw AI Agent soul forge and persona definition. | - | claude |
-| 1988 | **opengraph-io-automation** | Automate Opengraph IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1989 | **openmontage** | Autonomous video production team skill for AI agents. Converts script & asset inputs into assembled video cuts, auto-subtitles, scene transitions, TTS audio generation, and media exports. Use when ... | - | claude |
-| 1990 | **openperplex-automation** | Automate Openperplex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1991 | **openrouter-automation** | Automate Openrouter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1992 | **opensource-pipeline** | Open-source pipeline: fork, sanitize, and package private projects for safe public release. | - | claude |
-| 1993 | **openweather-api-automation** | Automate Openweather API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1994 | **operator-audit** |  | - | agents |
-| 1995 | **optimize** | Diagnoses and fixes UI performance across loading speed, rendering, animations, images, and bundle size. Use when the user mentions slow, laggy, janky, performance, bundle size, load time, or wants... | - | agents |
-| 1996 | **optimize-simplicite-logs** | Capability to parse Simplicité logs from raw text to structured JSON. | - | claude |
-| 1997 | **optimoroute-automation** | Automate Optimoroute tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 1998 | **orch-add-feature** | Orchestrate building a brand-new feature end to end. | - | claude |
-| 1999 | **orch-build-mvp** | Orchestrate bootstrapping a working MVP from a design or spec document. | - | claude |
-| 2000 | **orch-change-feature** | Orchestrate altering an existing, working feature to new desired behavior. | - | claude |
-| 2001 | **orch-fix-defect** | Orchestrate fixing a bug — reproduce as failing test, fix to green. | - | claude |
-| 2002 | **orch-pipeline** | Shared orchestration engine for the orch-* skill family. | - | claude |
-| 2003 | **orch-refine-code** | Orchestrate a behavior-preserving refactor. | - | claude |
-| 2004 | **org-health-diagnostic** | Cross-functional organizational health check combining signals from all C-suite roles. Scores 8 dimensions on a traffic-light scale with drill-down recommendations. Use when assessing overall compa... | - | agents |
-| 2005 | **overdrive** | Pushes interfaces past conventional limits with technically ambitious implementations — shaders, spring physics, scroll-driven reveals, 60fps animations. Use when the user wants to wow, impress, go... | - | agents |
-| 2006 | **owasp-security** | Use when reviewing code for security vulnerabilities, implementing authentication/authorization, handling user input, or discussing web application security. Covers OWASP Top 10:2025, ASVS 5.0, LLM... | https://github.com/behisecc/claude-security-skills | agents |
-| 2007 | **owasp-top-10-testing** | Test an application against the OWASP Top 10 with Strix — autonomous AI agents that attempt real exploits for each category of the current OWASP Top 10:2025 (broken access control including SSRF, s... | https://github.com/usestrix/strix | agents |
-| 2008 | **owl-protocol-automation** | Automate Owl Protocol tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2009 | **page-cro** | When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says... | - | agents |
-| 2010 | **page-x-automation** | Automate Page X tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2011 | **paid-ads** | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' '... | - | agents |
-| 2012 | **Pair Programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... | - | agents |
-| 2013 | **pair-agent** | Pair a remote AI agent with your browser. (gstack) | - | agents |
-| 2014 | **pair-programming** | Provides AI navigator for pair programming sessions with real-time code review, TDD guidance, and quality monitoring. Use when pair programming with AI assistance, practicing TDD with a navigator, ... | - | agents |
-| 2015 | **PandaDoc Automation** | Automate document workflows with PandaDoc -- create documents from files, manage contacts, organize folders, set up webhooks, create templates, and track document status through the Composio PandaD... | - | agents |
-| 2016 | **pandas-pro** | Performs pandas DataFrame operations for data analysis, manipulation, and transformation. Use when working with pandas DataFrames, data cleaning, aggregation, merging, or time series analysis. Invo... | - | agents |
-| 2017 | **paradym-automation** | Automate Paradym tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2018 | **parallel-automation** | Automate Parallel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2019 | **parallel-execution-optimizer** | Optimize task speed through parallel work and concurrent subagents. | - | claude |
-| 2020 | **parcel-tracking** | Track parcels and check delivery status for Australian and international couriers. Searches Gmail for dispatch/shipping emails and provides tracking links for all major Australian couriers includin... | - | agents |
-| 2021 | **parma-automation** | Automate Parma tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2022 | **parsehub-automation** | Automate Parsehub tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2023 | **parsera-automation** | Automate Parsera tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2024 | **parseur-automation** | Automate Parseur tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2025 | **partnerships-architect** | Use when a startup is approached by a prospective partner and someone has to decide should we sign this partner, at what partner tier (referral / reseller / OEM / SI-consulting / strategic alliance... | - | agents |
-| 2026 | **passcreator-automation** | Automate Passcreator tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2027 | **passslot-automation** | Automate Passslot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2028 | **patent** | Patent prior-art and landscape intelligence skill — not generic patent help. Commits to one of five sub-use-cases via forcing intake (novelty search / freedom-to-operate / competitive landscape / a... | - | agents |
-| 2029 | **pathfinder** | Map a codebase into feature-grouped flowcharts, identify duplicated concerns across features, and propose a unified architecture. Use when asked to "find the ideal path," unify duplicated systems, ... | - | agents |
-| 2030 | **payhip-automation** | Automate Payhip tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2031 | **payment-integration** | Integrate payments with SePay (VietQR), Polar, Stripe, Paddle (MoR subscriptions), Creem.io (licensing). Checkout, webhooks, subscriptions, QR codes, multi-provider orders. | - | agents |
-| 2032 | **paywall-upgrade-cro** | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions "paywall," "upgrade screen," "upgrade modal," "upsell," ... | - | agents |
-| 2033 | **paywalls** | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions "paywall," "upgrade screen," "upgrade modal," "upsell," ... | - | agents |
-| 2034 | **pdf** | Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, r... | - | agents |
-| 2035 | **pdf-api-io-automation** | Automate PDF API IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2036 | **pdf-co-automation** | Automate PDF co tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2037 | **pdf-official** | Generating PDFs with pdfkit or puppeteer in Node.js. Use when generating PDF reports, invoices, certificates, or any printable document from data or HTML templates. | - | agents |
-| 2038 | **pdf4me-automation** | Automate Pdf4me tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2039 | **pdfless-automation** | Automate Pdfless tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2040 | **pdfmonkey-automation** | Automate Pdfmonkey tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2041 | **pdftk-server** | Command-line PDFtk Server integration for PDF manipulation. | - | claude |
-| 2042 | **penetration-testing-with-strix** | Pentest a web app, API, codebase, repository, URL, domain, or IP with Strix — autonomous AI penetration testing that exploits and proves vulnerabilities (OWASP Top 10 and beyond — injection, XSS, S... | https://github.com/usestrix/strix | agents |
-| 2043 | **penpot-uiux-design** | Create professional UI/UX designs in Penpot using MCP tools. | - | claude |
-| 2044 | **pentest-validation** | Use when validating security findings from SAST/DAST scans, proving exploitability of reported vulnerabilities, eliminating false positives, or running the 4-phase pentest pipeline (recon, analysis... | - | agents |
-| 2045 | **peopledatalabs-automation** | Automate Peopledatalabs tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2046 | **performance** | Optimize UI performance against Core Web Vitals — LCP, INP, CLS — with loading/code-split strategy, layout-shift prevention, and animation performance rules. Use when the user wants to improve spee... | - | agents |
-| 2047 | **performance-optimization** | Optimizes application performance. Use when performance requirements exist, when you suspect performance regressions, or when Core Web Vitals or load times need improvement. Use when profiling reve... | - | agents |
-| 2048 | **performance-profiler** | Systematic performance profiling for Node.js, Python, and Go applications. Identifies CPU, memory, and I/O bottlenecks, generates flamegraphs, analyzes bundle sizes, optimizes database queries, run... | - | agents |
-| 2049 | **performance-reporter** | SEO/GEO dashboards: rankings, traffic, backlinks, AI visibility for stakeholders and executives. "Monthly SEO report" / "出SEO报告" / "汇报给老板". SEO报告/绩效仪表盘/流量报告 SEOレポート SEO리포트 informe SEO | - | agents |
-| 2050 | **performance-review-writer** | Draft performance reviews, self-assessments, and peer reviews. | - | claude |
-| 2051 | **performance-testing** | Profiles application performance under load using k6, Artillery, or JMeter to measure latency, throughput, and error rates. Use when planning load tests, stress tests, soak tests, benchmarking APIs... | - | agents |
-| 2052 | **perigon-automation** | Automate Perigon tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2053 | **perl-patterns** | Modern Perl 5.36+ idioms, best practices, and conventions. | - | claude |
-| 2054 | **perl-security** | Perl security covering taint mode, input validation, safe process execution. | - | claude |
-| 2055 | **perl-testing** | Perl testing patterns using Test2::V0, Test::More, prove runner. | - | claude |
-| 2056 | **perplexity** | Web search and research using Perplexity AI. | - | claude |
-| 2057 | **perplexityai-automation** | Automate Perplexityai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2058 | **persistiq-automation** | Automate Persistiq tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2059 | **persona** |  | - | agents |
-| 2060 | **personwise-community-onboarding** | Community Onboarding from supplied source materials. | - | claude |
-| 2061 | **personwise-compliance-training** | Compliance Training from supplied source materials. | - | claude |
-| 2062 | **personwise-content-repurposing** | Content Repurposing from supplied video/audio source materials. | - | claude |
-| 2063 | **personwise-create-course** | Create, refine, resume, publish polished PersonWise courses. | - | claude |
-| 2064 | **pexels-automation** | Automate Pexels tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2065 | **PhantomBuster Automation** | Automate lead generation, web scraping, and social media data extraction workflows through PhantomBuster's cloud platform via Composio | - | agents |
-| 2066 | **php-pro** | Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invokes strict typing, PHPStan level 9, async patterns with Swoole, and PSR standards. Creates cont... | - | agents |
-| 2067 | **pi-planning-with-files** | Implements Manus-style file-based planning to organize and track progress on complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when asked to plan out, break down, or organize a... | - | agents |
-| 2068 | **pick-ui-library** | Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only... | https://github.com/emilkowalski/skills | agents |
-| 2069 | **pier-cloud** | This skill should be used when the user needs to consume the Pier Cloud (Lighthouse) API for cloud cost management — including JWT authentication, listing contexts, workspaces, and FinOps data view... | - | agents |
-| 2070 | **piggy-automation** | Automate Piggy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2071 | **piloterr-automation** | Automate Piloterr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2072 | **pilvio-automation** | Automate Pilvio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2073 | **pingdom-automation** | Automate Pingdom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2074 | **pinokio** | Discover, launch, and use apps and tools for the current task. | - | agents |
-| 2075 | **pipeline** |  | - | agents |
-| 2076 | **pipeline-crm-automation** | Automate Pipeline CRM tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2077 | **placekey-automation** | Automate Placekey tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2078 | **placid-automation** | Automate Placid tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2079 | **plain-automation** | Automate Plain tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2080 | **plan-ceo-review** | CEO/founder-mode plan review. (gstack) | - | agents |
-| 2081 | **plan-design-review** | Designer's eye plan review — interactive, like CEO and Eng review. (gstack) | - | agents |
-| 2082 | **plan-devex-review** | Interactive developer experience plan review. (gstack) | - | agents |
-| 2083 | **plan-eng-review** | Eng manager-mode plan review. (gstack) | - | agents |
-| 2084 | **plan-tune** | Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack) | - | agents |
-| 2085 | **planning-and-task-breakdown** | Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate s... | - | agents |
-| 2086 | **planning-with-files** | Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break... | https://github.com/OthmanAdi/planning-with-files | agents |
-| 2087 | **planning-with-files-ar** | نظام تخطيط الملفات بنمط Manus لتنظيم وتتبع تقدم المهام المعقدة. ينشئ ملفات task_plan.md و findings.md و progress.md. يُستخدم عند طلب التخطيط أو تحليل المهام أو تنظيم المشاريع أو تتبع التقدم أو الخط... | - | agents |
-| 2088 | **planning-with-files-de** | Manus-artiges Dateiplanungssystem zur Organisation und Verfolgung des Fortschritts komplexer Aufgaben. Erstellt task_plan.md, findings.md und progress.md. Wird verwendet, wenn der Benutzer plant, z... | - | agents |
-| 2089 | **planning-with-files-es** | Sistema de planificación basado en archivos estilo Manus para organizar y rastrear el progreso de tareas complejas. Crea task_plan.md, findings.md y progress.md. Cuando el usuario solicita planific... | - | agents |
-| 2090 | **planning-with-files-zh** | 基于 Manus 风格的文件规划系统，用于组织和跟踪复杂任务的进度。创建 task_plan.md、findings.md 和 progress.md 三个文件。当用户要求规划、拆解或组织多步骤项目、研究任务或需要超过5次工具调用的工作时使用。支持 /clear 后的自动会话恢复。触发词：任务规划、项目计划、制定计划、分解任务、多步骤规划、进度跟踪、文件规划、帮我规划、拆解项目 | - | agents |
-| 2091 | **planning-with-files-zht** | 基於 Manus 風格的檔案規劃系統，用於組織和追蹤複雜任務的進度。建立 task_plan.md、findings.md 和 progress.md 三個檔案。當使用者要求規劃、拆解或組織多步驟專案、研究任務或需要超過5次工具呼叫的工作時使用。支援 /clear 後的自動會話恢復。觸發詞：任務規劃、專案計畫、制定計畫、分解任務、多步驟規劃、進度追蹤、檔案規劃、幫我規劃、拆解專案 | - | agents |
-| 2092 | **plasmic-automation** | Automate Plasmic tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2093 | **platerecognizer-automation** | Automate Platerecognizer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2094 | **playwright** | Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wra... | - | agents |
-| 2095 | **playwright-expert** | Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up repo... | - | agents |
-| 2096 | **playwright-generate-test** | Generate a Playwright test based on scenario using Playwright MCP. | - | claude |
-| 2097 | **playwright-interactive** | Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging. | - | agents |
-| 2098 | **playwright-pro** | Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. ... | - | agents |
-| 2099 | **plisio-automation** | Automate Plisio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2100 | **plow-ahead** | Autonomous progress without routine clarification stops. | - | claude |
-| 2101 | **plugin-audit** |  | - | agents |
-| 2102 | **plugin-creator** | Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use... | - | agents |
-| 2103 | **plugin-forge** | Create and manage Claude Code plugins with proper manifests. | - | claude |
-| 2104 | **pm-skills** | Use when coordinating project-delivery work across the 8 project-management sub-skills — sprint/velocity analytics, portfolio health, Jira/JQL, Confluence, Atlassian admin, templates, meeting analy... | - | agents |
-| 2105 | **podcast-generation** | Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creatio... | - | agents |
-| 2106 | **poka-yoke** | Mistake-proof code so misuse cannot be expressed. | - | claude |
-| 2107 | **polish** | Performs a final quality pass fixing alignment, spacing, consistency, and micro-detail issues before shipping. Use when the user mentions polish, finishing touches, pre-launch review, something loo... | - | agents |
-| 2108 | **polygon-automation** | Automate Polygon tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2109 | **polygon-io-automation** | Automate Polygon IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2110 | **ponytail** | Forces the laziest solution that actually works, simplest, shortest, most minimal. Channels a senior dev who has seen everything: question whether the task needs to exist at all (YAGNI), reach for ... | https://github.com/DietrichGebert/ponytail | agents |
-| 2111 | **ponytail-audit** | Whole-repo audit for over-engineering. Like ponytail-review, but scans the entire codebase instead of a diff: a ranked list of what to delete, simplify, or replace with stdlib/native equivalents. U... | https://github.com/DietrichGebert/ponytail | agents |
-| 2112 | **ponytail-debt** | Harvest every `ponytail:` comment in the codebase into a debt ledger, so the deliberate shortcuts and deferrals ponytail leaves behind get tracked instead of rotting into "later means never". Use w... | https://github.com/DietrichGebert/ponytail | agents |
-| 2113 | **ponytail-gain** | Show ponytail's measured impact as a compact scoreboard: less code, less cost, more speed, from the benchmark medians. One-shot display, not a persistent mode, and not a per-repo number. Trigger: /... | https://github.com/DietrichGebert/ponytail | agents |
-| 2114 | **ponytail-help** | Quick-reference card for all ponytail modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /ponytail-help, "ponytail help", "what ponytail commands", "how do I use ponytail". | https://github.com/DietrichGebert/ponytail | agents |
-| 2115 | **ponytail-review** | Code review focused exclusively on over-engineering. Finds what to delete: reinvented standard library, unneeded dependencies, speculative abstractions, dead flexibility. One line per finding: loca... | https://github.com/DietrichGebert/ponytail | agents |
-| 2116 | **poptin-automation** | Automate Poptin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2117 | **popup-cro** | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions "exit intent," "popup conversions," "modal optimiz... | - | agents |
-| 2118 | **popups** | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions "exit intent," "popup conversions," "modal optimiz... | - | agents |
-| 2119 | **pos-saas-colombia-multitenant** | Arquitecto de referencia para diseñar y mantener el backend de un POS (Punto de Venta) SaaS B2B multitenant con facturación recurrente mensual/anual, usando pasarelas de pago colombianas (Wompi, eP... | - | claude |
-| 2120 | **post-mortem** | /cs:post-mortem <decision> — Honest retrospective on an executed decision, scored against original assumptions and dissent. Closes the strategic sprint loop. Use when a decision hits its 90-day rev... | - | agents |
-| 2121 | **postgres-patterns** | PostgreSQL database patterns for query optimization and schema design. | - | claude |
-| 2122 | **postgres-pro** | Use when optimizing PostgreSQL queries, configuring replication, or implementing advanced database features. Invoke for EXPLAIN analysis, JSONB operations, extension usage, VACUUM tuning, performan... | - | agents |
-| 2123 | **postgresql-code-review** | PostgreSQL-specific code review assistant. | - | claude |
-| 2124 | **postgresql-optimization** | PostgreSQL query tuning and JSONB optimization. | - | claude |
-| 2125 | **postgrid-automation** | Automate Postgrid tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2126 | **postgrid-verify-automation** | Automate Postgrid Verify tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2127 | **postmortem** | /em:postmortem — Honest analysis of what went wrong. Use after a failed launch, missed quarter, or bad hire to run a blameless 5-Whys retrospective with a change register — e.g. dissecting why the ... | - | agents |
-| 2128 | **potato-review** | Harsh doctoral-level rigor review & submission-readiness review. | - | claude |
-| 2129 | **power-apps-code-app-scaffold** | Scaffold Power Apps Code App project with PAC CLI setup. | - | claude |
-| 2130 | **power-bi-dax-optimization** | Power BI DAX formula optimization prompt. | - | claude |
-| 2131 | **power-bi-model-design-review** | Power BI data model design review prompt. | - | claude |
-| 2132 | **power-bi-performance-troubleshooting** | Systematic Power BI performance troubleshooting. | - | claude |
-| 2133 | **power-bi-report-design-consultation** | Power BI report visualization design prompt. | - | claude |
-| 2134 | **power-platform-architect** | Transform business requirements into Power Platform solution architecture. | - | claude |
-| 2135 | **power-platform-mcp-connector-suite** | Generate complete Power Platform custom connector with MCP integration. | - | claude |
-| 2136 | **powerbi-modeling** | Power BI semantic modeling assistant for optimized data models. | - | claude |
-| 2137 | **pptx** | Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting... | - | agents |
-| 2138 | **pptx-official** | Generating PowerPoint presentations with pptxgenjs in Node.js. Use when creating automated presentations, slide decks, pitch decks, or reports in .pptx format from data. | - | agents |
-| 2139 | **pr-dashboard** | Open GitHub PR dashboard in the browser. | - | claude |
-| 2140 | **pr-link-issue** | Link GitHub issue and Linear ticket in PR description. | - | claude |
-| 2141 | **pr-review** | Use when reviewing a GitHub PR for quality, scope correctness, trust tier compliance, or generating user-friendly review feedback. | - | agents |
-| 2142 | **pr-review-expert** | Use when the user asks to review pull requests, analyze code changes, check for security issues in PRs, or assess code quality of diffs. | - | agents |
-| 2143 | **pr-screenshots** | Embed before/after screenshots and annotated images in PRs. | - | claude |
-| 2144 | **pr-writer** | Create, refresh, and rewrite PR titles and descriptions. | - | claude |
-| 2145 | **pragmatic-programmer** | Apply meta-principles of software craftsmanship: DRY, orthogonality, tracer bullets, and design by contract. Use when the user mentions "best practices", "pragmatic approach", "broken windows", "tr... | - | agents |
-| 2146 | **prd** |  | - | agents |
-| 2147 | **precoro-automation** | Automate Precoro tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2148 | **predictable-revenue** | Build a scalable outbound B2B sales machine with specialized roles (SDR, AE, CSM). Use when the user mentions "outbound sales", "Cold Calling 2.0", "cold email sequences", "sales pipeline", "SDR pr... | - | agents |
-| 2149 | **prediction-market-oracle-research** | Research prediction markets as data sources & oracle signals. | - | claude |
-| 2150 | **prediction-market-risk-review** | Review prediction market workflows for compliance and execution risk. | - | claude |
-| 2151 | **premium-frontend-ui** | Immersive, high-performance web experiences with motion & craftsmanship. | - | claude |
-| 2152 | **prepare** |  | - | agents |
-| 2153 | **prerender-automation** | Automate Prerender tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2154 | **presentation-creator** | Data-driven presentation slides using React, Vite, and Recharts. | - | claude |
-| 2155 | **preset** | Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR:... | - | agents |
-| 2156 | **pricing** | When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price incre... | - | agents |
-| 2157 | **pricing-strategist** | Use when designing or revisiting product pricing — selecting a pricing model (subscription seat-based, usage-based, value-based, freemium, or hybrid), running Van Westendorp Price Sensitivity Meter... | - | agents |
-| 2158 | **pricing-strategy** | Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and price increase strategy. Use when building a pricing model from scratch, redesigning existing pric... | - | agents |
-| 2159 | **printautopilot-automation** | Automate Printautopilot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2160 | **prisma-automation** | Automate Prisma tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2161 | **prisma-patterns** | Prisma ORM patterns for TypeScript backends — schema & query optimization. | - | claude |
-| 2162 | **prisma-workflow** | Prisma ORM best practices, schema design, migrations, seeding, and query optimization for PostgreSQL. Use when working with database schemas, migrations, or Prisma queries. | - | agents |
-| 2163 | **Prismic Automation** | Automate headless CMS operations in Prismic -- query documents, search content, retrieve custom types, and manage repository refs through the Composio Prismic integration. | - | agents |
-| 2164 | **problem-solving** | Creative problem-solving techniques for breaking through stuck points - includes collision-zone thinking, inversion, pattern recognition, and simplification | - | agents |
-| 2165 | **process-mapper** | Use when a BizOps lead, COO, or process-improvement owner needs to document an end-to-end business process (procurement, employee onboarding, incident handoff, customer-onboarding, claims adjudicat... | - | agents |
-| 2166 | **process-street-automation** | Automate Process Street tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2167 | **procfu-automation** | Automate Procfu tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2168 | **procurement-optimizer** | Use when running an annual SaaS audit, doing category-level spend review, or rationalizing the supplier base — when the user needs a spend audit, spend categorization (UNSPSC-aligned with Pareto br... | - | agents |
-| 2169 | **product-analytics** | Use when defining product KPIs, building metric dashboards, running cohort or retention analysis, or interpreting feature adoption trends across product stages. | - | agents |
-| 2170 | **product-capability** | Translate PRD intent into an implementation-ready capability plan. | - | claude |
-| 2171 | **product-discovery** | Use when validating product opportunities, mapping assumptions, planning discovery sprints, or testing problem-solution fit before committing delivery resources. | - | agents |
-| 2172 | **product-lens** | Validate the "why" before building and run product diagnostics. | - | claude |
-| 2173 | **product-manager** |  | - | agents |
-| 2174 | **product-manager-toolkit** | Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use when prioritizing featur... | - | agents |
-| 2175 | **product-marketing** | When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my... | - | agents |
-| 2176 | **product-marketing-context** | Product marketing context setup and maintenance. | - | claude |
-| 2177 | **product-research** | Use when planning and synthesizing product/user research as a method-and-repository discipline — selecting the right method for the goal (generative interviews vs usability test vs concept test vs ... | - | agents |
-| 2178 | **product-showcase** | Generate a comprehensive marketing website for a web app — multi-page with real screenshots, animated GIF walkthroughs, feature deep-dives, and workflow demonstrations. Browses the running app, cap... | - | agents |
-| 2179 | **product-skills** | Use when coordinating product work across the 12 bundled product sub-skills (RICE, OKRs, UX research, design tokens, competitive teardown, analytics, experiments, discovery, roadmaps, spec-to-repo,... | - | agents |
-| 2180 | **product-strategist** | Strategic product leadership toolkit for Head of Product covering OKR cascade generation, quarterly planning, competitive landscape analysis, product vision documents, and team scaling proposals. U... | - | agents |
-| 2181 | **Productboard Automation** | Automate product management workflows in Productboard -- manage features, notes, objectives, components, and releases through natural language commands. | - | agents |
-| 2182 | **production-audit** | Local-evidence production readiness audit for shipped apps. | - | claude |
-| 2183 | **production-scheduling** | Production scheduling, job sequencing & bottleneck resolution. | - | claude |
-| 2184 | **productlane-automation** | Automate Productlane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2185 | **professional-communication** | Technical communication guide for developers. | - | claude |
-| 2186 | **programmatic-seo** | When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions "programmatic SEO," "template pages," "pages at scale," "directory pages," "locatio... | - | agents |
-| 2187 | **project-architect** | Documentation-first project planning that produces implementation-ready blueprints and single-shot coding agent prompts. Generates 4 interconnected docs — SPECIFICATION.md, IMPLEMENTATION.md, TASKS... | - | agents |
-| 2188 | **project-bubble-automation** | Automate Project Bubble tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2189 | **project-docs** | Generate project documentation from codebase analysis — ARCHITECTURE.md, API_ENDPOINTS.md, DATABASE_SCHEMA.md. Reads source code, schema files, routes, and config to produce accurate, structured do... | - | agents |
-| 2190 | **project-flow-ops** | Operate execution flow across GitHub and Linear. | - | claude |
-| 2191 | **project-guidelines-example** | Project-specific skill template based on real production app. | - | claude |
-| 2192 | **project-health** | All-in-one project configuration and health management. Sets up new projects (settings.local.json, AGENTS.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leak... | - | agents |
-| 2193 | **project-session-manager** | Worktree-first dev environment manager for issues & PRs. | - | claude |
-| 2194 | **project-workflow-analysis-blueprint-generator** | Technology-agnostic prompt generator for end-to-end workflows. | - | claude |
-| 2195 | **promote** | Graduate a proven pattern from auto-memory (MEMORY.md) to AGENTS.md or .Codex/rules/ for permanent enforcement. Use when the user runs /si:promote or asks to make a learned behavior permanent. | - | agents |
-| 2196 | **Prompt Coach** | Analyze your Codex session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer. | - | agents |
-| 2197 | **prompt-architect** | Analyzes and improves prompts using 27 research-backed frameworks across 7 intent categories. Use when a user wants to improve, rewrite, structure, or engineer a prompt — including requests like "h... | https://github.com/ckelsoe/claude-skill-prompt-architect | agents |
-| 2198 | **prompt-engineer** | Writes, refactors, and evaluates prompts for LLMs — generating optimized prompt templates, structured output schemas, evaluation rubrics, and test suites. Use when designing prompts for new LLM app... | - | agents |
-| 2199 | **prompt-engineer-toolkit** | Turns marketing prompts into tested, versioned production assets: A/B prompt evaluation against structured test cases, immutable prompt version history with diffs, ready-to-use marketing prompt tem... | - | agents |
-| 2200 | **prompt-engineering** | Comprehensive prompt engineering framework for designing, optimizing, and iterating LLM prompts. Use when creating prompts, optimizing existing prompts, or improving AI instructions. | - | agents |
-| 2201 | **prompt-governance** | Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for product... | - | agents |
-| 2202 | **prompt-improver** | This skill enriches vague prompts with targeted research and clarification before execution. Should be used when a prompt is determined to be vague and requires systematic research, question genera... | - | agents |
-| 2203 | **prompt-optimizer** | Optimize raw prompts into ready-to-send prompt for any LLM. | - | claude |
-| 2204 | **proofly-automation** | Automate Proofly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2205 | **proposal-writer** | Write a client proposal or quote for a service business. Covers project understanding, scope, timeline, pricing presentation, and terms. Works for web development, consulting, trades, professional ... | - | agents |
-| 2206 | **prospeccion-aiq** | Construye y ejecuta una lista de prospectos calificados en Instagram para vender servicios de IA — descubre cuentas por bola de nieve, las enriquece con email y señal de monetización, las puntúa y ... | - | claude |
-| 2207 | **prospecting** | Find, qualify, and build a list of B2B/SaaS prospects. | - | claude |
-| 2208 | **prototype** | Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like. | https://github.com/emilkowalski/skills | agents |
-| 2209 | **proxiedmail-automation** | Automate Proxiedmail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2210 | **public-relations** | Earned media, press coverage, journalist outreach. | - | claude |
-| 2211 | **publish-to-pages** | Publish presentations and web content to GitHub Pages. | - | claude |
-| 2212 | **pubmed-database** | PubMed and NCBI E-utilities search for biomedical literature. | - | claude |
-| 2213 | **pulse** | Multi-source recency research skill that takes the pulse of any topic across Reddit, Hacker News, the open web, and optionally X/Twitter within a configurable recent window (default 30 days). Forci... | - | agents |
-| 2214 | **pushbullet-automation** | Automate Pushbullet tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2215 | **pushover-automation** | Automate Pushover tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2216 | **pw** |  | - | agents |
-| 2217 | **pydantic-models-py** | Create Pydantic models following the multi-model pattern with Base, Create, Update, Response, and InDB variants. Use when defining API request/response schemas, database models, or data validation ... | - | agents |
-| 2218 | **pytest-coverage** | Run pytest tests with coverage and target 100% coverage. | - | claude |
-| 2219 | **python-appservice-deploy** | Deploy Python (Flask/Django/FastAPI) code to Azure App Service Linux. WHEN: \"Flask App Service\", \"Django App Service\", \"FastAPI App Service\", \"deploy Python to App Service\". DO NOT USE FOR:... | - | agents |
-| 2220 | **python-azure-iot-edge-modules** | Build and operate Python Azure IoT Edge modules. | - | claude |
-| 2221 | **python-mcp-server-generator** | Generate a complete MCP server project in Python. | - | claude |
-| 2222 | **python-patterns** | Pythonic idioms, PEP 8 standards, and type hints. | - | claude |
-| 2223 | **python-pro** | Use when building Python 3.11+ applications requiring type safety, async programming, or robust error handling. Generates type-annotated Python code, configures mypy in strict mode, writes pytest t... | - | agents |
-| 2224 | **python-pypi-package-builder** | End-to-end skill for building and publishing Python libraries to PyPI. | - | claude |
-| 2225 | **python-testing** | Python testing strategies using pytest, fixtures & mocking. | - | claude |
-| 2226 | **pytorch-patterns** | PyTorch deep learning training pipelines and architectures. | - | claude |
-| 2227 | **qa** | Systematically QA test a web application and fix bugs found. (gstack) | - | agents |
-| 2228 | **qa-only** | Report-only QA testing. (gstack) | - | agents |
-| 2229 | **qa-test-planner** | Generate comprehensive test plans, test cases & bug reports. | - | claude |
-| 2230 | **qcsd-cicd-swarm** | Use when enforcing CI/CD quality gates before release, running regression analysis, detecting flaky tests, or assessing deployment readiness in the QCSD Verification phase. | - | agents |
-| 2231 | **qcsd-development-swarm** | Use when monitoring in-sprint code quality with TDD adherence checks, complexity analysis, coverage gap detection, or defect prediction in the QCSD Development phase. | - | agents |
-| 2232 | **qcsd-ideation-swarm** | Use when running Quality Criteria sessions during PI/Sprint planning with HTSM v6.3, Risk Storming, or Testability analysis in the QCSD Ideation phase. | - | agents |
-| 2233 | **qcsd-production-swarm** | Use when assessing post-release production health with DORA metrics, root cause analysis, defect prediction, or cross-phase feedback loops in the QCSD Production phase. | - | agents |
-| 2234 | **qcsd-refinement-swarm** | Use when running Sprint Refinement sessions with SFDIPOT product factors, generating BDD scenarios, or validating requirements in the QCSD Refinement phase. | - | agents |
-| 2235 | **qdrant-clients-sdk** | Integrate Qdrant vector database client SDKs. | - | claude |
-| 2236 | **qdrant-deployment-options** | Guides Qdrant deployment selection (Docker, Cloud, local, embedded). | - | claude |
-| 2237 | **qdrant-model-migration** | Embedding model migration in Qdrant without downtime. | - | claude |
-| 2238 | **qdrant-monitoring** | Qdrant monitoring and observability setup. | - | claude |
-| 2239 | **qdrant-performance-optimization** | Optimize Qdrant vector search performance and indexing. | - | claude |
-| 2240 | **qdrant-scaling** | Guides Qdrant cluster scaling decisions. | - | claude |
-| 2241 | **qdrant-search-quality** | Diagnoses and improves Qdrant vector search relevance. | - | claude |
-| 2242 | **qdrant-version-upgrade** | Upgrade Qdrant version without downtime. | - | claude |
-| 2243 | **qe-a11y-ally** | Comprehensive WCAG accessibility auditing with multi-tool testing (axe-core + pa11y + Lighthouse), TRUE PARALLEL execution with Promise.allSettled, graceful degradation, retry with backoff, context... | - | agents |
-| 2244 | **qe-accessibility-testing** | WCAG 2.2 compliance testing, screen reader validation, and inclusive design verification. Use when ensuring legal compliance (ADA, Section 508), testing for disabilities, or building accessible app... | - | agents |
-| 2245 | **qe-agentic-jujutsu** | Quantum-resistant, self-learning version control for AI agents with ReasoningBank intelligence and multi-agent coordination | - | agents |
-| 2246 | **qe-agentic-quality-engineering** | AI agents as force multipliers for quality work. Core skill for all 19 QE agents using PACTS principles. | - | agents |
-| 2247 | **qe-api-testing-patterns** | Comprehensive API testing patterns including contract testing, REST/GraphQL testing, and integration testing. Use when testing APIs or designing API test strategies. | - | agents |
-| 2248 | **qe-aqe-v2-v3-migration** | Migrate Agentic QE projects from v2 to v3 with zero data loss | - | agents |
-| 2249 | **qe-browser** | Browser automation for QE agents using Vibium (WebDriver BiDi) with assertions, batch execution, visual diff, prompt-injection scanning, and semantic intents. Use when any QE skill needs to drive a... | - | agents |
-| 2250 | **qe-brutal-honesty-review** | Unvarnished technical criticism combining Linus Torvalds' precision, Gordon Ramsay's standards, and James Bach's BS-detection. Use when code/tests need harsh reality checks, certification schemes s... | - | agents |
-| 2251 | **qe-bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. | - | agents |
-| 2252 | **qe-chaos-engineering-resilience** | Chaos engineering principles, controlled failure injection, resilience testing, and system recovery validation. Use when testing distributed systems, building confidence in fault tolerance, or vali... | - | agents |
-| 2253 | **qe-chaos-resilience** | Injects controlled faults (network partition, latency, process kill, disk pressure) into distributed systems and validates recovery behavior. Use when testing circuit breakers, failover paths, retr... | - | agents |
-| 2254 | **qe-cicd-pipeline-qe-orchestrator** | Orchestrate quality engineering across CI/CD pipeline phases. Use when designing test strategies, planning quality gates, or implementing shift-left/shift-right testing. | - | agents |
-| 2255 | **qe-code-intelligence** | Builds semantic code indexes, maps dependency graphs, and performs intelligent code search across large codebases. Use when understanding unfamiliar code, tracing call chains, analyzing import depe... | - | agents |
-| 2256 | **qe-code-review-quality** | Conduct context-driven code reviews focusing on quality, testability, and maintainability. Use when reviewing code, providing feedback, or establishing review practices. | - | agents |
-| 2257 | **qe-compatibility-testing** | Cross-browser, cross-platform, and cross-device compatibility testing ensuring consistent experience across environments. Use when validating browser support, testing responsive design, or ensuring... | - | agents |
-| 2258 | **qe-compliance-testing** | Regulatory compliance testing for GDPR, CCPA, HIPAA, SOC2, PCI-DSS and industry-specific regulations. Use when ensuring legal compliance, preparing for audits, or handling sensitive data. | - | agents |
-| 2259 | **qe-consultancy-practices** | Apply effective software quality consultancy practices. Use when consulting, advising clients, or establishing consultancy workflows. | - | agents |
-| 2260 | **qe-context-driven-testing** | Apply context-driven testing principles where practices are chosen based on project context, not universal 'best practices'. Use when making testing decisions, questioning dogma, or adapting approa... | - | agents |
-| 2261 | **qe-contract-testing** | Consumer-driven contract testing for APIs including REST, GraphQL, and event-driven systems with schema validation. | - | agents |
-| 2262 | **qe-coverage-analysis** | Analyzes test coverage data (Istanbul, c8, lcov) to identify uncovered lines, branches, and functions with risk-weighted gap detection. Use when analyzing coverage reports, identifying coverage gap... | - | agents |
-| 2263 | **qe-database-testing** | Database schema validation, data integrity testing, migration testing, transaction isolation, and query performance. Use when testing data persistence, ensuring referential integrity, or validating... | - | agents |
-| 2264 | **qe-debug-loop** | Hypothesis-driven autonomous debugging with real command validation | - | agents |
-| 2265 | **qe-defect-intelligence** | Predicts defect-prone code using change frequency, complexity metrics, and historical bug patterns. Use when predicting defects before they escape, analyzing root causes of test failures, learning ... | - | agents |
-| 2266 | **qe-enterprise-integration-testing** | Orchestration skill for enterprise integration testing across SAP, middleware, WMS, and backend systems. Covers E2E enterprise flows, SAP-specific patterns (RFC, BAPI, IDoc, OData, Fiori), cross-sy... | - | agents |
-| 2267 | **qe-exploratory-testing-advanced** | Advanced exploratory testing techniques with Session-Based Test Management (SBTM), RST heuristics, and test tours. Use when planning exploration sessions, investigating bugs, or discovering unknown... | - | agents |
-| 2268 | **qe-github-code-review** | Comprehensive GitHub code review with AI-powered swarm coordination | - | agents |
-| 2269 | **qe-github-multi-repo** | Multi-repository coordination, synchronization, and architecture management with AI swarm orchestration | - | agents |
-| 2270 | **qe-github-project-management** | Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning | - | agents |
-| 2271 | **qe-github-release-management** | Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management | - | agents |
-| 2272 | **qe-github-workflow-automation** | Advanced GitHub Actions workflow automation with AI swarm coordination, intelligent CI/CD pipelines, and comprehensive repository management | - | agents |
-| 2273 | **qe-holistic-testing-pact** | Apply the Holistic Testing Model evolved with PACTS (Proactive, Autonomous, Collaborative, Targeted, Structured) principles. Use when designing comprehensive test strategies for Classical, AI-assis... | - | agents |
-| 2274 | **qe-iterative-loop** | Runs autonomous red-green-refactor loops to fix failing tests, reach coverage targets, and satisfy quality gates. Use when tests need to pass, coverage thresholds must be met, quality gates require... | - | agents |
-| 2275 | **qe-learning-optimization** | Optimizes QE agent performance through transfer learning, hyperparameter tuning, and pattern distillation across test domains. Use when improving agent accuracy, applying learned patterns to new pr... | - | agents |
-| 2276 | **qe-localization-testing** | Internationalization (i18n) and localization (l10n) testing for global products including translations, locale formats, RTL languages, and cultural appropriateness. Use when launching in new market... | - | agents |
-| 2277 | **qe-middleware-testing-patterns** | Enterprise middleware testing patterns for message routing, transformation, DLQ, protocol mediation, ESB error handling, and EIP patterns. Use when testing middleware layers, message brokers, ESBs,... | - | agents |
-| 2278 | **qe-mobile-testing** | Comprehensive mobile testing for iOS and Android platforms including gestures, sensors, permissions, device fragmentation, and performance. Use when testing native apps, hybrid apps, or mobile web,... | - | agents |
-| 2279 | **qe-mutation-testing** | Test quality validation through mutation testing, assessing test suite effectiveness by introducing code mutations and measuring kill rate. Use when evaluating test quality, identifying weak tests,... | - | agents |
-| 2280 | **qe-n8n-expression-testing** | n8n expression syntax validation, context-aware testing, common pitfalls detection, and performance optimization. Use when validating n8n expressions and data transformations. | - | agents |
-| 2281 | **qe-n8n-integration-testing-patterns** | API contract testing, authentication flows, rate limit handling, and error scenario coverage for n8n integrations with external services. Use when testing n8n node integrations. | - | agents |
-| 2282 | **qe-n8n-security-testing** | Credential exposure detection, OAuth flow validation, API key management testing, and data sanitization verification for n8n workflows. Use when validating n8n workflow security. | - | agents |
-| 2283 | **qe-n8n-trigger-testing-strategies** | Webhook testing, schedule validation, event-driven triggers, and polling mechanism testing for n8n workflows. Use when testing how workflows are triggered. | - | agents |
-| 2284 | **qe-n8n-workflow-testing-fundamentals** | Comprehensive n8n workflow testing including execution lifecycle, node connection patterns, data flow validation, and error handling strategies. Use when testing n8n workflow automation applications. | - | agents |
-| 2285 | **qe-observability-testing-patterns** | Observability and monitoring validation patterns for dashboards, alerting, log aggregation, APM traces, and SLA/SLO verification. Use when testing monitoring infrastructure, dashboard accuracy, ale... | - | agents |
-| 2286 | **qe-pair-programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... | - | agents |
-| 2287 | **qe-pentest-validation** | Orchestrate security finding validation through graduated exploitation. 4-phase pipeline: recon (SAST/DAST), analysis (code review), validation (exploit proof), report (No Exploit, No Report gate).... | - | agents |
-| 2288 | **qe-performance-analysis** | Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Codex Flow swarms | - | agents |
-| 2289 | **qe-performance-testing** | Test application performance, scalability, and resilience. Use when planning load testing, stress testing, or optimizing system performance. | - | agents |
-| 2290 | **qe-pr-review** | Scope-aware GitHub PR review with user-friendly tone and trust tier validation | - | agents |
-| 2291 | **qe-quality-assessment** | Evaluates code quality through complexity analysis, lint results, code smell detection, and test health metrics. Use when assessing deployment readiness, configuring quality gates, scoring a codeba... | - | agents |
-| 2292 | **qe-quality-metrics** | Measure quality effectively with actionable metrics. Use when establishing quality dashboards, defining KPIs, or evaluating test effectiveness. | - | agents |
-| 2293 | **qe-refactoring-patterns** | Apply safe refactoring patterns to improve code structure without changing behavior. Use when cleaning up code, reducing technical debt, or improving maintainability. | - | agents |
-| 2294 | **qe-regression-testing** | Strategic regression testing with test selection, impact analysis, and continuous regression management. Use when verifying fixes don't break existing functionality, planning regression suites, or ... | - | agents |
-| 2295 | **qe-release** | End-to-end npm release workflow with verification gates and hardcoded-version protection | - | agents |
-| 2296 | **qe-requirements-validation** | Validates acceptance criteria for testability, traces requirements to test cases, and generates BDD scenarios from user stories. Use when validating acceptance criteria, building requirements trace... | - | agents |
-| 2297 | **qe-risk-based-testing** | Focus testing effort on highest-risk areas using risk assessment and prioritization. Use when planning test strategy, allocating testing resources, or making coverage decisions. | - | agents |
-| 2298 | **qe-security-compliance** | Security auditing, vulnerability scanning, and compliance validation for OWASP, SOC2, GDPR, and other standards. | - | agents |
-| 2299 | **qe-security-testing** | Test for security vulnerabilities using OWASP principles. Use when conducting security audits, testing auth, or implementing security practices. | - | agents |
-| 2300 | **qe-security-visual-testing** | Security-first visual testing combining URL validation, PII detection, and visual regression with parallel viewport support. Use when testing web applications that handle sensitive data, need visua... | - | agents |
-| 2301 | **qe-sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... | - | agents |
-| 2302 | **qe-sherlock-review** | Evidence-based investigative code review using deductive reasoning to determine what actually happened versus what was claimed. Use when verifying implementation claims, investigating bugs, validat... | - | agents |
-| 2303 | **qe-shift-left-testing** | Move testing activities earlier in the development lifecycle to catch defects when they're cheapest to fix. Use when implementing TDD, CI/CD, or early quality practices. | - | agents |
-| 2304 | **qe-shift-right-testing** | Testing in production with feature flags, canary deployments, synthetic monitoring, and chaos engineering. Use when implementing production observability or progressive delivery. | - | agents |
-| 2305 | **qe-six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... | - | agents |
-| 2306 | **qe-skill-builder** | Create new Codex Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generat... | - | agents |
-| 2307 | **qe-sparc-methodology** | SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration | - | agents |
-| 2308 | **qe-stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows | - | agents |
-| 2309 | **qe-tdd-london-chicago** | Apply London (mock-based) and Chicago (state-based) TDD schools. Use when practicing test-driven development or choosing testing style for your context. | - | agents |
-| 2310 | **qe-technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. | - | agents |
-| 2311 | **qe-test-automation-strategy** | Design and implement effective test automation with proper pyramid, patterns, and CI/CD integration. Use when building automation frameworks or improving test efficiency. | - | agents |
-| 2312 | **qe-test-data-management** | Strategic test data generation, management, and privacy compliance. Use when creating test data, handling PII, ensuring GDPR/CCPA compliance, or scaling data generation for realistic testing scenar... | - | agents |
-| 2313 | **qe-test-design-techniques** | Systematic test design with boundary value analysis, equivalence partitioning, decision tables, state transition testing, and combinatorial testing. Use when designing comprehensive test cases, red... | - | agents |
-| 2314 | **qe-test-environment-management** | Test environment provisioning, infrastructure as code for testing, Docker/Kubernetes for test environments, service virtualization, and cost optimization. Use when managing test infrastructure, ens... | - | agents |
-| 2315 | **qe-test-execution** | Orchestrates test suite execution with parallel sharding, intelligent retry, and real-time reporting across Jest, Vitest, and Playwright. Use when running test suites, optimizing execution time, ha... | - | agents |
-| 2316 | **qe-test-generation** | Generates durable-first tests — invariants, contracts, and property-based tests at boundaries that survive a reimplementation — plus unit, integration, and e2e coverage. Use when creating tests for... | - | agents |
-| 2317 | **qe-test-idea-rewriting** | Transform passive 'Verify X' test descriptions into active, observable test actions. Use when test ideas lack specificity, use vague language, or fail quality validation. Converts to action-verb fo... | - | agents |
-| 2318 | **qe-test-reporting-analytics** | Advanced test reporting, quality dashboards, predictive analytics, trend analysis, and executive reporting for QE metrics. Use when communicating quality status, tracking trends, or making data-dri... | - | agents |
-| 2319 | **qe-testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... | - | agents |
-| 2320 | **qe-verification-quality** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. | - | agents |
-| 2321 | **qe-visual-accessibility** | Captures and compares screenshots across viewports, runs axe-core accessibility scans, and detects visual regressions with pixel-diff analysis. Use when detecting UI regressions, validating respons... | - | agents |
-| 2322 | **qe-visual-testing-advanced** | Advanced visual regression testing with pixel-perfect comparison, AI-powered diff analysis, responsive design validation, and cross-browser visual consistency. Use when detecting UI regressions, va... | - | agents |
-| 2323 | **qe-wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... | - | agents |
-| 2324 | **qe-xp-practices** | Apply XP practices including pair programming, ensemble programming, continuous integration, and sustainable pace. Use when implementing agile development practices, improving team collaboration, o... | - | agents |
-| 2325 | **qms-audit-expert** | ISO 13485 internal audit expertise for medical device QMS. Covers audit planning, execution, nonconformity classification, and CAPA verification. Use when planning internal audits, executing audits... | - | agents |
-| 2326 | **quaderno-automation** | Automate Quaderno tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2327 | **qualaroo-automation** | Automate Qualaroo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2328 | **quality-documentation-manager** | Document control system management for medical device QMS. Covers document numbering, version control, change management, and 21 CFR Part 11 compliance. Use when working on document control procedu... | - | agents |
-| 2329 | **quality-manager-qmr** | Senior Quality Manager Responsible Person (QMR) for HealthTech and MedTech companies. Provides quality system governance, management review leadership, regulatory compliance oversight, and quality ... | - | agents |
-| 2330 | **quality-manager-qms-iso13485** | ISO 13485 Quality Management System implementation and maintenance for medical device organizations. Provides QMS design, documentation control, internal auditing, CAPA management, and certificatio... | - | agents |
-| 2331 | **quality-metrics** | Tracks quality metrics including defect density, test effectiveness ratio, DORA metrics, and mean time to detection. Use when establishing quality dashboards, defining KPIs, evaluating test suite e... | - | agents |
-| 2332 | **quality-nonconformance** | Quality control, non-conformance investigation & CAPA in manufacturing. | - | claude |
-| 2333 | **quality-playbook** | Run complete quality engineering audit on any codebase. | - | claude |
-| 2334 | **quarkus-patterns** | Quarkus 3.x LTS architecture patterns with Camel & Panache. | - | claude |
-| 2335 | **quarkus-security** | Quarkus Security best practices for authn/authz & OIDC. | - | claude |
-| 2336 | **quarkus-tdd** | Test-driven development for Quarkus 3.x using JUnit 5 & REST Assured. | - | claude |
-| 2337 | **quarkus-verification** | Verification loop for Quarkus projects: build, tests & native compilation. | - | claude |
-| 2338 | **quasi-coder** | Implement code from shorthand, quasi-code, and natural language. | - | claude |
-| 2339 | **quick-recap** | Status block convention for agent responses. | - | claude |
-| 2340 | **QuickBooks Automation** | QuickBooks Automation: manage invoices, customers, accounts, and payments in QuickBooks Online for streamlined bookkeeping | - | agents |
-| 2341 | **quieter** | Tones down visually aggressive or overstimulating designs, reducing intensity while preserving quality. Use when the user mentions too bold, too loud, overwhelming, aggressive, garish, or wants a c... | - | agents |
-| 2342 | **ra-qm-skills** | Router/index for the 15 regulatory & quality-management skills bundled in this plugin (ISO 13485 QMS, EU MDR 2017/745, FDA submissions under QMSR, ISO 14971 risk, CAPA, document control, ISO 27001/... | - | agents |
-| 2343 | **radar-automation** | Automate Radar tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2344 | **raffle-winner-picker** | Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency. | - | agents |
-| 2345 | **rafflys-automation** | Automate Rafflys tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2346 | **rag-architect** | Use when the user asks to design a RAG pipeline, choose a chunking strategy or embedding model, pick a vector database, or evaluate retrieval quality (precision@k, recall@k, NDCG). Examples: 'desig... | - | agents |
-| 2347 | **ragic-automation** | Automate Ragic tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2348 | **rails-expert** | Rails 7+ specialist that optimizes Active Record queries with includes/eager_load, implements Turbo Frames and Turbo Streams for partial page updates, configures Action Cable for WebSocket connecti... | - | agents |
-| 2349 | **raisely-automation** | Automate Raisely tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2350 | **ralph** | Self-referential loop until task completion with verification reviewer. | - | claude |
-| 2351 | **ralph-loop-kiro-specs** | Automated iterative agent runner for spec-based development in Kiro. Wraps kiro-cli in a self-correcting bash loop that picks up tasks from a Kiro spec, implements them one at a time, verifies agai... | - | agents |
-| 2352 | **ralphinho-rfc-pipeline** | RFC-driven multi-agent DAG execution pattern. | - | claude |
-| 2353 | **ralplan** | Consensus planning entrypoint that auto-gates vague requests. | - | claude |
-| 2354 | **Ramp Automation** | Ramp Automation: manage corporate card transactions, reimbursements, users, and expense tracking via the Ramp platform | - | agents |
-| 2355 | **rank-tracker** | Track keyword rankings and SERP changes in traditional search and AI responses over time. "How am I ranking" / "查排名" / "排名变了吗". 排名追踪/关键词排名/SERP监控/排名变化 ランキング追跡 순위추적 seguimiento rankings | - | agents |
-| 2356 | **ravenseotools-automation** | Automate Ravenseotools tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2357 | **re-amaze-automation** | Automate Re Amaze tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2358 | **react-audit-grep-patterns** | Grep scan command library for auditing React codebases before React 19. | - | claude |
-| 2359 | **react-best-practices** | React component patterns, hooks, state management, and performance best practices. Use when building or reviewing React components. | - | agents |
-| 2360 | **react-container-presentation-component** | Create React component using Container/Presentation pattern. | - | claude |
-| 2361 | **react-dev** | React components with TypeScript, hooks, React 19 & Server Components. | - | claude |
-| 2362 | **react-expert** | Use when building React 18+ applications in .jsx or .tsx files, Next.js App Router projects, or create-react-app setups. Creates components, implements custom hooks, debugs rendering issues, migrat... | - | agents |
-| 2363 | **react-flow-node-ts** | Create React Flow node components with TypeScript types, handles, and Zustand integration. Use when building custom nodes for React Flow canvas, creating visual workflow editors, or implementing no... | - | agents |
-| 2364 | **react-native** | React Native and Expo patterns for building performant mobile apps. Covers list performance, animations with Reanimated, navigation, UI patterns, state management, platform-specific code, and Expo ... | - | agents |
-| 2365 | **react-native-expert** | Builds, optimizes, and debugs cross-platform mobile applications with React Native and Expo. Implements navigation hierarchies (tabs, stacks, drawers), configures native modules, optimizes FlatList... | - | agents |
-| 2366 | **react-native-patterns** | React Native and Expo app patterns — Expo Router navigation & Query. | - | claude |
-| 2367 | **react-patterns** | React 19 performance patterns and composition architecture for Vite + Cloudflare projects. 50+ rules ranked by impact — eliminating waterfalls, bundle optimisation, re-render prevention, compositio... | - | agents |
-| 2368 | **react-performance** | React and Next.js performance optimization patterns. | - | claude |
-| 2369 | **react-testing** | React component testing with RTL, Vitest/Jest, MSW & axe. | - | claude |
-| 2370 | **react-useeffect** | React useEffect best practices from official docs. | - | claude |
-| 2371 | **react18-batching-patterns** | Diagnose and fix automatic batching regressions in React 18. | - | claude |
-| 2372 | **react18-dep-compatibility** | React 18.3.1 and React 19 dependency compatibility matrix. | - | claude |
-| 2373 | **react18-enzyme-to-rtl** | Enzyme to React Testing Library migration patterns. | - | claude |
-| 2374 | **react18-legacy-context** | Migrate React legacy context API to createContext. | - | claude |
-| 2375 | **react18-lifecycle-patterns** | Migrate unsafe class component lifecycle methods. | - | claude |
-| 2376 | **react18-string-refs** | Migrate React string refs to React.createRef(). | - | claude |
-| 2377 | **react19-concurrent-patterns** | Adopt React 19 APIs (useTransition, useDeferredValue, Actions). | - | claude |
-| 2378 | **react19-source-patterns** | React 19 source-file migration patterns. | - | claude |
-| 2379 | **react19-test-patterns** | Migrating test files to React 19 compatibility. | - | claude |
-| 2380 | **read-the-damn-docs** | Ground implementations in third-party official docs before coding. | - | claude |
-| 2381 | **README** |  | - | agents |
-| 2382 | **readme-blueprint-generator** | Intelligent README.md generation prompt. | - | claude |
-| 2383 | **realphonevalidation-automation** | Automate Realphonevalidation tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2384 | **ReasoningBank Intelligence** | Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and continuous improvement. Use when building self-learning agents, optimizing workflows, or implement... | - | agents |
-| 2385 | **ReasoningBank with AgentDB** | Implement ReasoningBank adaptive learning with AgentDB's 150x faster vector database. Includes trajectory tracking, verdict judgment, memory distillation, and pattern recognition. Use when building... | - | agents |
-| 2386 | **recallai-automation** | Automate Recallai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2387 | **receiving-code-review** | Evaluate code review feedback before implementing. | - | claude |
-| 2388 | **recruitee-automation** | Automate Recruitee tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2389 | **recsys-pipeline-architect** | Design recommendation, ranking, and feed pipelines. | - | claude |
-| 2390 | **recursive-decision-ledger** | Decision ledger for repeated rollouts and stochastic optimization. | - | claude |
-| 2391 | **red-team** | Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations. Covers MITRE ATT&CK kill-chain planning, technique scoring, choke point iden... | - | agents |
-| 2392 | **redesign** | Upgrade an existing website or app to premium quality without breaking functionality — audit the current design, identify generic/AI tells, then apply taste and system rules surgically. Use when th... | - | agents |
-| 2393 | **redesign-existing-projects** | Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any C... | - | agents |
-| 2394 | **redesign-skill** | Website & UI redesign modernization skill by Open Design (nexu-io). Transforms legacy, outdated, or template-looking interfaces into modern, high-conversion, accessible web applications. Use when r... | - | claude |
-| 2395 | **redis-patterns** | Redis data structure patterns, caching & distributed locks. | - | claude |
-| 2396 | **reducing-entropy** | Manual-only skill for minimizing total codebase size. | - | claude |
-| 2397 | **refactor** | Surgical code refactoring to improve maintainability. | - | claude |
-| 2398 | **refactor-method-complexity-reduce** | Refactor methods to reduce cognitive complexity. | - | claude |
-| 2399 | **refactor-plan** | Create concrete plan before multi-file refactor. | - | claude |
-| 2400 | **refactoring-patterns** | Apply named refactoring transformations to improve code structure without changing behavior. Use when the user mentions "refactor this", "code smells", "extract method", "replace conditional", "tec... | - | agents |
-| 2401 | **refactoring-ui** | Audit and fix visual hierarchy, spacing, color, and depth in web UIs. Use when the user mentions "my UI looks off" (or amateur/unprofessional), "fix the design", "Tailwind styling", "color palette"... | - | agents |
-| 2402 | **referral-program** | When the user wants to design, launch, or optimize a referral or affiliate program. Use when they mention 'referral program,' 'affiliate program,' 'word of mouth,' 'refer a friend,' 'incentive prog... | - | agents |
-| 2403 | **referrals** | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of... | - | agents |
-| 2404 | **refiner-automation** | Automate Refiner tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2405 | **reflect** | Mid-conversation reflection skill that pauses execution and zooms out from detail-mode to honestly reassess direction, assumptions, and bias. Use when the user says 'reflect', 'take a step back', '... | - | agents |
-| 2406 | **regex-vs-llm-structured-text** | Decision framework for regex vs LLM text parsing. | - | claude |
-| 2407 | **regression-testing** | Strategic regression testing with test selection, impact analysis, and continuous regression management. Use when verifying fixes don't break existing functionality, planning regression suites, or ... | - | agents |
-| 2408 | **regulatory-affairs-head** | Senior Regulatory Affairs Manager for HealthTech and MedTech companies. Prepares FDA 510(k), De Novo, and PMA submission packages; analyzes regulatory pathways for new medical devices; drafts respo... | - | agents |
-| 2409 | **release** | End-to-end npm release workflow with verification gates and hardcoded-version protection | - | agents |
-| 2410 | **release-it** | Build production-ready systems with stability patterns: circuit breakers, bulkheads, timeouts, and retry logic. Use when the user mentions "production outage", "circuit breaker", "deployment pipeli... | - | agents |
-| 2411 | **remarkety-automation** | Automate Remarkety tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2412 | **remember** | Explicitly save important knowledge to auto-memory with timestamp and context. Use when a discovery is too important to rely on auto-capture. | - | agents |
-| 2413 | **remember-interactive-programming** | Micro-prompt for interactive REPL-based programming. | - | claude |
-| 2414 | **remote-retrieval-automation** | Automate Remote Retrieval tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2415 | **remotion-best-practices** | Remotion video creation best practices in React. | - | claude |
-| 2416 | **remotion-to-hyperframes** | Translate an existing Remotion (React-based) video composition into a HyperFrames HTML composition. Use ONLY when the user explicitly asks to port, convert, migrate, translate, or rewrite a Remotio... | - | agents |
-| 2417 | **remotion-video-creation** | Remotion video creation rules covering 3D, audio & captions. | - | claude |
-| 2418 | **remove-bg-automation** | Automate Remove Bg tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2419 | **remove-technical-debt** | Guided journey from a large aged codebase everyone fears to touch to one that is safe to change, legible, bounded, and resilient - paid down in place without a rewrite. Orchestrates eight skills ph... | - | agents |
-| 2420 | **render-deploy** | Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their applica... | - | agents |
-| 2421 | **renderform-automation** | Automate Renderform tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2422 | **repairshopr-automation** | Automate Repairshopr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2423 | **replay-ux-research** | Analyze Sentry session replays to surface UX patterns. | - | claude |
-| 2424 | **Replicate Automation** | Automate Replicate AI model operations -- run predictions, upload files, inspect model schemas, list versions, and manage prediction history via the Composio MCP integration. | - | agents |
-| 2425 | **reply-automation** | Automate Reply tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2426 | **reply-io-automation** | Automate Reply IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2427 | **repo-scan** | Cross-stack source code asset audit. | - | claude |
-| 2428 | **repo-standardizer** | Polish repository surface — labels, templates, CODEOWNERS, rules. | - | claude |
-| 2429 | **repo-story-time** | Generate repository summary and narrative story from commit history. | - | claude |
-| 2430 | **repomix** | Package entire code repositories into single AI-friendly files using Repomix. Capabilities include pack codebases with customizable include/exclude patterns, generate multiple output formats (XML, ... | - | agents |
-| 2431 | **report** | Generate test report. Use when user says "test report", "results summary", "test status", "show results", "test dashboard", or "how did tests go". | - | agents |
-| 2432 | **request-refactor-plan** | Create a detailed refactor plan with tiny commits via user interview, then file it as a GitHub issue. Use when user wants to plan a refactor, create a refactoring RFC, or break a refactor into safe... | - | agents |
-| 2433 | **requesting-code-review** | Request code review before merging major features. | - | claude |
-| 2434 | **requirements-clarity** | Clarify ambiguous requirements through focused dialogue. | - | claude |
-| 2435 | **research** | Default entry point for any research request — a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, grants... | - | agents |
-| 2436 | **research-bundle** |  | - | agents |
-| 2437 | **research-finance** | Use when managing the money for an internal R&D program or portfolio — building a multi-period program budget with the F&A (indirect) split, tracking burn rate and runway against value-inflection m... | - | agents |
-| 2438 | **research-ops** | Evidence-first research workflow for current-state facts. | - | claude |
-| 2439 | **research-ops-skills** | Use when planning, funding, scoping, or synthesizing enterprise research across workstreams — clinical study design, R&D program finance, market sizing/surveys, or product/user research. Triggers o... | - | agents |
-| 2440 | **research-summarizer** | Structured research summarization agent skill for non-dev users. Handles academic papers, web articles, reports, and documentation. Extracts key findings, generates comparative analyses, and produc... | - | agents |
-| 2441 | **resemble-detect** | Detects AI-generated or synthetic audio, image, and video content using Resemble AI detection models. Use when analyzing media authenticity, content moderation pipelines, or when user mentions "res... | - | claude |
-| 2442 | **resend-automation** | Automate Resend tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2443 | **resolving-merge-conflicts** | Use when you need to resolve an in-progress git merge/rebase conflict. | - | agents |
-| 2444 | **respond-io-automation** | Automate Respond IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2445 | **responsiveness-check** | Test website responsiveness across viewport widths using browser automation. Resizes a single session through breakpoints, screenshots each width, and detects layout transitions (column changes, na... | - | agents |
-| 2446 | **resume** | Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment. | - | agents |
-| 2447 | **resume-ats-beater** | Este skill deve ser usado para reescrever currículos com foco em compatibilidade ATS e impacto para recrutadores, e/ou auditar perfis LinkedIn para maximizar visibilidade e conversão profissional. ... | - | agents |
-| 2448 | **resume-cover-letter** | Write a resume/CV or cover letter tailored to a specific role. Handles regional format differences (AU/NZ, US, UK), ATS-friendly formatting, achievement-focused bullets, and cover letter structure.... | - | agents |
-| 2449 | **resx-source-generator-migration** | Migrate .resx designer.cs files to C# source generator. | - | claude |
-| 2450 | **retailed-automation** | Automate Retailed tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2451 | **retellai-automation** | Automate Retellai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2452 | **retently-automation** | Automate Retently tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2453 | **retro** | Weekly engineering retrospective. (gstack) | - | agents |
-| 2454 | **returns-reverse-logistics** | Returns authorization, inspection, disposition & warranty claims. | - | claude |
-| 2455 | **rev-ai-automation** | Automate Rev AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2456 | **revenue-centric-design** | Revenue-Centric Design (RCD) — evidence-backed principles for making a SaaS or startup product convert, retain, and monetize. Use when the user works on a landing page or CRO ("my page isn't conver... | - | agents |
-| 2457 | **revenue-operations** | Analyzes sales pipeline health, revenue forecasting accuracy, and go-to-market efficiency metrics for SaaS revenue optimization. Use when analyzing sales pipeline coverage, forecasting revenue, eva... | - | agents |
-| 2458 | **review** | Pre-landing PR review. (gstack) | - | agents |
-| 2459 | **review-and-refactor** | Review and refactor code according to project instructions. | - | claude |
-| 2460 | **review-animations** | Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned. | https://github.com/emilkowalski/skills | agents |
-| 2461 | **reviewing-oracle-to-postgres-migration** | Identify Oracle-to-PostgreSQL migration risks. | - | claude |
-| 2462 | **revolt-automation** | Automate Revolt tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2463 | **revops** | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes. Also use when the user mentions 'RevOps,' 'revenue operations,' 'lead scoring,'... | - | agents |
-| 2464 | **rewind** | Retrieve recent local Rewind context. | - | claude |
-| 2465 | **rfp-responder** | Use when an RFP, RFI, RFQ, security questionnaire, vendor questionnaire, or proposal request arrives and the team needs a structured response — parsing multi-section buyer-dictated requirements (MA... | - | agents |
-| 2466 | **rhino3d-scripts** | Authoring and debugging scripts for Rhinoceros 3D (Rhino 8+). | - | claude |
-| 2467 | **rice** |  | - | agents |
-| 2468 | **ring:adding-multi-tenancy** | Adding database-per-tenant isolation into a Go service end-to-end via an 11-gate cycle: detects the stack, audits compliance, then dispatches backend agents to implement tenantId-from-JWT routing t... | - | agents |
-| 2469 | **ring:adopting-lib-commons-huma-wrapper** | Adopting the lib-commons/v5 shared Huma (OAS 3.1) OpenAPI wrapper + RFC 9457 problem model (commons/net/http/{openapi,problem}) in a Lerian Go service: wire openapi.New/ServeSpec + problem.Install ... | - | agents |
-| 2470 | **ring:analyzing-options** | Analyzing different approaches for a task or problem with structured comparisons, effort estimates, and recommendations. Use when facing strategic decisions, architecture choices, or multiple viabl... | - | agents |
-| 2471 | **ring:applying-composition-patterns** | React composition patterns that scale. Avoid boolean prop proliferation by using compound components, lifting state, and composing internals. Use when refactoring components with boolean prop proli... | - | agents |
-| 2472 | **ring:applying-licenses** | Applying or switching a repository's license (Apache 2.0, Elastic License v2, or Proprietary): rewrites the LICENSE file, updates Go/TS source headers, sets SPDX identifiers, and validates consiste... | - | agents |
-| 2473 | **ring:applying-voice-and-tone** | Applying the technical-writing voice and tone style guide: second person, present tense, active voice, short sentences, sentence-case headings, product/entity capitalization, contractions, and spar... | - | agents |
-| 2474 | **ring:auditing-dependency-security** | Auditing a dependency for supply-chain risk before install (pip/npm/go/cargo): checks typosquatting, maintainer/age risk, vulnerability DBs (OSV, GHSA, Socket), and lockfile hash pinning, then emit... | - | agents |
-| 2475 | **ring:auditing-production-readiness** | Auditing a service's production readiness against Ring engineering standards across base dimensions plus a conditional multi-tenant dimension, then emitting a scored report and an HTML dashboard. U... | - | agents |
-| 2476 | **ring:checking-frontend-quality** | Checking frontend quality against changed UI via ring:qa-frontend in accessibility, visual, e2e, or performance mode and aggregating pass/fail verdicts. Use when a frontend change needs standalone ... | - | agents |
-| 2477 | **ring:cleaning-comments** | Cleaning redundant and obvious comments following clean code principles while preserving meaningful documentation. Supports git scope filtering (staged, unstaged, branch, commit-range). Use when co... | - | agents |
-| 2478 | **ring:committing-changes** | Commit changes with scope allowlist enforcement, atomic grouping, GPG-signed conventional commits, and trailer management. Detects the repo's PR-validation scope policy before proposing any message... | - | agents |
-| 2479 | **ring:creating-grafana-dashboards** | Authoring Grafana dashboards for Go services instrumented with lib-observability telemetry (tracing, metrics, log), plus a reference mode for RED/USE panel patterns and Grafonnet templates. Sweep m... | - | agents |
-| 2480 | **ring:creating-handoffs** | Creating a handoff document that captures session state (completed work, decisions, open items, next steps) and delivering it via Plan Mode so the user gets the native 'clear context and continue i... | - | agents |
-| 2481 | **ring:creating-helm-charts** | Creating Helm charts to Lerian conventions via ring:helm: standardized chart structure, full env-var coverage from .env.example, security defaults (runAsNonRoot, readOnlyRootFilesystem), ClusterIP-... | - | agents |
-| 2482 | **ring:creating-worktrees** | Creating an isolated git worktree for parallel branch work: selects the directory by priority order, verifies/adds .gitignore safety, auto-installs the detected toolchain's dependencies, runs a bas... | - | agents |
-| 2483 | **ring:designing-api-contracts** | Designing the API contract as a real OpenAPI 3.1 specification (openapi.yaml with full paths, operations, schemas, components, Lerian error envelope, and auth schemes) from the validated TRD. Gate ... | - | agents |
-| 2484 | **ring:designing-data-model** | Designing the physical data model as a real stack-native schema (schema.sql with CREATE TABLE DDL, indexes, and constraints for Postgres/Go; schema.prisma for Prisma/TS; Postgres schema.sql as fall... | - | agents |
-| 2485 | **ring:detecting-goroutine-leaks** | Detecting goroutine leaks in Go: greps for goroutine patterns, audits goleak coverage (VerifyTestMain/VerifyNone), runs goleak, and dispatches ring:backend-go to fix leaks and add regression tests.... | - | agents |
-| 2486 | **ring:dispatching-workflows** | Executing a phased plan in rolling waves where each phase runs as one multi-agent workflow harness: the supervisor elaborates the phase into tasks against the real landed code, launches a workflow ... | - | agents |
-| 2487 | **ring:engineering-prompts** | Expert prompt engineering and optimization for LLMs and AI systems. Covers core patterns (zero-shot, few-shot, CoT, role-playing, constitutional, tree-of-thoughts), common use cases, and a three-ph... | - | agents |
-| 2488 | **ring:executing-plans** | Controlled plan execution with human review checkpoints - loads plan, executes in batches, pauses for feedback. Supports one-go (autonomous) or batch modes. | - | agents |
-| 2489 | **ring:exploring-codebases** | Exploring a codebase across phases: scopes the target, detects architecture, components, and layers, deep-dives each discovered perspective, then synthesizes findings into actionable guidance with ... | - | agents |
-| 2490 | **ring:fixing-lint** | Fixing lint to a clean state: runs the linter, groups reported issues into independent streams, and dispatches one parallel fixer agent per stream (ring:backend-go for Go, ring:general-purpose othe... | - | agents |
-| 2491 | **ring:generating-llms-txt** | Generating or auditing a repository's llms.txt per the llmstxt.org spec, and creating AGENTS.md / AGENTS.md when missing, by analyzing README, build files, docs, and API surface. Use when creating ... | - | agents |
-| 2492 | **ring:generating-pr-descriptions** | Generating pull request descriptions from git branch changes with automatic title generation, change-type detection, and smart analysis. Uses branch-only scope to avoid full history analysis. Use w... | - | agents |
-| 2493 | **ring:generating-release-guides** | Generating an internal Operations-facing update/migration guide from the git diff between two refs, documenting per-change client impact, deploy ordering, monitoring, and rollback notes in English,... | - | agents |
-| 2494 | **ring:hardening-dockerfiles** | Hardening Dockerfiles to reach Docker Hub Health Score grade A: enforcing a non-root USER, minimal/distroless multi-stage base images, no fixable critical/high CVEs, no AGPL-3.0 deps, and SBOM+prov... | - | agents |
-| 2495 | **ring:implementing-readyz** | Implementing the canonical /readyz readiness-probe contract across Go, TypeScript, and Next.js via a 12-gate cycle: detects stack, audits compliance, then dispatches agents to build the dependency ... | - | agents |
-| 2496 | **ring:implementing-tasks** | Implementing a single planned task (Task N.M.T) end-to-end: selects the right backend agent by language and service type, drives one TDD RED->GREEN turn, then verifies coverage, lint, license heade... | - | agents |
-| 2497 | **ring:instrumenting-streaming-events** | Instrumenting streaming events: wires lib-streaming event emission end-to-end into a Lerian Go service via a 13-gate cycle (catalog, Builder bootstrap, Emit sites, outbox, HTTP manifest, NoopEmitte... | - | agents |
-| 2498 | **ring:managing-dev-cycle** | Managing an in-progress development cycle without driving it: status reports phase, epic/gate progress, assertiveness, and elapsed time from current-cycle.json; cancel confirms, marks the cycle can... | - | agents |
-| 2499 | **ring:mapping-feature-relationships** | Mapping how features relate and phasing the work: categorizing PRD features, grouping them into domains, charting cross-feature journeys, dependencies, and integration points, and defining the bind... | - | agents |
-| 2500 | **ring:mapping-service-resources** | Mapping a Go service's Service -> Module -> Resource hierarchy for dispatch-layer registration: detects modules and per-module PostgreSQL/MongoDB/RabbitMQ resources, database names, and shared data... | - | agents |
-| 2501 | **ring:mapping-streaming-events** | Mapping the eventable points in a Lerian Go service where lib-streaming should emit past-tense, durable, tenant-scoped business events, producing a PM-validated event catalog and instrumentation-ma... | - | agents |
-| 2502 | **ring:migrating-to-lib-observability** | Migrating a Lerian Go app off lib-commons observability imports (deprecated shims or removed APIs) to lib-observability via a fixed mapping table, then bumps go.mod and validates the build; ring:ba... | - | agents |
-| 2503 | **ring:migrating-to-lib-systemplane** | Migrating Lerian Go services from .env/YAML operational knobs (log levels, feature flags, rate limits, timeouts) to the lib-systemplane hot-reloadable runtime config client, wiring the migration-on... | - | agents |
-| 2504 | **ring:opening-pull-requests** | Open a GitHub Pull Request with automatic base branch detection, scope allowlist enforcement, PR template filling, and post-create base verification. Replaces ring:generating-pr-descriptions. Use a... | - | agents |
-| 2505 | **ring:pinning-dependency-versions** | Pinning an explicit versioned dependency manifest (dependencies.md plus PROJECT_RULES.md): exact package versions, CVE and license checks, compatibility matrices, and per-component cost analysis ag... | - | agents |
-| 2506 | **ring:planning-backend-refactor** | Planning a backend refactor: audits an existing Go or TypeScript backend against Ring/Lerian standards and produces a prioritized task list (findings.md + tasks.md) ready for ring:running-dev-cycle... | - | agents |
-| 2507 | **ring:planning-codebase-simplification** | Planning a whole-codebase simplification: audits a Go/TS codebase for needless abstraction and emits a KILL/REVIEW/KEEP plan plus a ring:running-dev-cycle task array. Plans only — no edits. Detects... | - | agents |
-| 2508 | **ring:planning-frontend-refactor** | Planning a frontend refactor: audits an existing React/Next.js frontend against Ring standards (architecture, design system, accessibility, testing) and produces a prioritized task list (findings.m... | - | agents |
-| 2509 | **ring:planning-large-features** | Planning the 8-gate Large Track pre-dev workflow (research, PRD, feature map, TRD, API contract, data model, dependency map, plan) with per-gate human approval. Use for features 2+ days that add de... | - | agents |
-| 2510 | **ring:planning-small-features** | Planning the lightweight 4-gate Small Track pre-dev workflow (research, PRD, TRD, plan) with human approval and state tracking at each gate. Use for features under 2 days that reuse existing patter... | - | agents |
-| 2511 | **ring:reconciling-predev-docs** | Reconciling pre-dev artifacts (research.md, prd.md, feature-map.md, trd.md, openapi.yaml, schema file, dependencies.md, plan.md) against each other to surface contradictions and gaps that break imp... | - | agents |
-| 2512 | **ring:researching-features** | Researching the product/feature in depth before any planning document is written: the product itself, technical approach, third-party integrations, prior art, and existing codebase grounding (file:... | - | agents |
-| 2513 | **ring:reviewing-code** | Reviewing code by dispatching the default reviewer subagents in parallel (plus conditional specialists for lib-observability, lib-systemplane, or lib-streaming when the diff triggers them), then ag... | - | agents |
-| 2514 | **ring:reviewing-docs** | Reviewing end-user and product documentation quality across voice/tone, structure, completeness, clarity, and technical accuracy; flags issues with prioritized findings and a pass/needs-revision ve... | - | agents |
-| 2515 | **ring:reviewing-operational-risk** | Reviewing a Go/TS service's operational risk by mapping integration failure points (external HTTP calls, queue consumers, outbound webhooks), simulating stuck intermediate states for each entity in... | - | agents |
-| 2516 | **ring:running-dev-cycle** | Running the backend dev cycle: implements every task in a rolling-wave plan.md (ring:writing-plans format) for a Go/TS service, driving specialist agents through Gate 0 implementation/TDD, Gate 8 p... | - | agents |
-| 2517 | **ring:running-dev-cycle-frontend** | Running the frontend (React/Next.js/TS) dev cycle from a plan.md (ring:writing-plans format; legacy tasks.md only for in-flight cycles) or backend handoff: drives frontend agents through Gate 0 TDD... | - | agents |
-| 2518 | **ring:searching-code** | Forensic code search and analysis with optional Chain of Draft (CoD) ultra-concise mode. Five-phase methodology (clarification, planning, execution, analysis, synthesis) with severity assessment. U... | - | agents |
-| 2519 | **ring:shipping-changes** | End-to-end git orchestrator: branch → commit → push → PR, with a full plan presented before any execution. Detects base branch and scope allowlist once and propagates to all phases. Use when ready ... | - | agents |
-| 2520 | **ring:structuring-documentation** | Structuring documentation: content hierarchy, overview/conceptual/task page structures, section dividers, navigation, tables-vs-lists, code placement, cross-linking, and page-length targets. Use wh... | - | agents |
-| 2521 | **ring:test-driven-development** | Enforcing the RED-GREEN-REFACTOR loop: write one failing test and watch it fail, write minimal code to pass, then refactor green. Use when starting implementation of a new feature or bugfix, or wri... | - | agents |
-| 2522 | **ring:testing-skills-with-subagents** | Hardening a skill so it resists rationalization under pressure: run combined-pressure scenarios on a subagent without the skill (RED), capture excuses verbatim, write/edit the skill (GREEN), then p... | - | agents |
-| 2523 | **ring:using-assert** | Using lib-observability/assert, Lerian's runtime assertion package, in two modes. Sweep Mode detects panic()/log.Fatal zero-panic violations, DIY invariant checks, hand-rolled domain predicates, an... | - | agents |
-| 2524 | **ring:using-dev-team** | Selecting and dispatching the right Ring developer specialist agent (backend Go/TS, frontend, UI designer/engineer, Helm, frontend QA, prompt reviewer) for a technology task. Use when you need deep... | - | agents |
-| 2525 | **ring:using-lib-commons** | Using lib-commons v5, Lerian's shared Go library (non-observability surface), in two modes. Sweep Mode detects DIY code replaceable by lib-commons at file:line. Reference Mode catalogs lifecycle (L... | - | agents |
-| 2526 | **ring:using-lib-observability** | Using lib-observability v1.1.0, Lerian's OpenTelemetry foundation (lib-commons, lib-systemplane, lib-streaming depend on it), in two modes. Sweep Mode detects DIY zap/slog logging, raw OTel metrics... | - | agents |
-| 2527 | **ring:using-lib-streaming** | Using lib-streaming, Lerian's producer-only event publication library (Kafka/SQS/RabbitMQ/EventBridge), in two modes. Sweep Mode detects DIY publishers (franz-go, sarama, amqp091, watermill, raw AW... | - | agents |
-| 2528 | **ring:using-lib-systemplane** | Using lib-systemplane, the hot-reload runtime-config plane (Postgres LISTEN/NOTIFY or MongoDB change streams), in two modes. Sweep Mode detects DIY config reload (SIGHUP, fsnotify, viper, pgx LISTE... | - | agents |
-| 2529 | **ring:using-outbox** | Using the transactional-outbox pattern across lib-streaming (writer) and lib-commons/v5/commons/outbox (repository + relay), in two modes. Sweep Mode detects DIY outbox tables, hand-rolled relay lo... | - | agents |
-| 2530 | **ring:using-pm-team** | Routing feature planning through the ring-pm-team pre-dev workflow: choosing the Small Track (4 gates, <2 days) or Large Track (8 gates, 2+ days) and entering via ring:planning-small-features or ri... | - | agents |
-| 2531 | **ring:using-ring** | Enforcing Ring's orchestrator protocol every conversation: dispatch specialist/Explore agents instead of operating tools directly, honor the >3-file hard gate, and run skill discovery before any ta... | - | agents |
-| 2532 | **ring:using-runtime** | Using lib-observability/runtime, which turns silent goroutine deaths into log/span/metric signal, in two modes. Sweep Mode detects naked goroutines, unobservable defer recover(), missing InitPanicM... | - | agents |
-| 2533 | **ring:using-tracing** | Using lib-observability/tracing for OTEL provider lifecycle, trace-context propagation across HTTP/gRPC/queues, span error/event recording, and PII redaction, in two modes. Sweep Mode detects raw O... | - | agents |
-| 2534 | **ring:using-tw-team** | Using the ring-tw-team plugin and orchestrating its documentation specialists in parallel: guide-writer (guides/concepts/tutorials), api-writer (REST API reference), and docs-reviewer (quality revi... | - | agents |
-| 2535 | **ring:validating-acceptance-criteria** | Validating a completed task against its acceptance criteria, mapping each AC to evidence, and gating completion on explicit user sign-off (self-approval prohibited). Gate 5 of ring:running-dev-cycl... | - | agents |
-| 2536 | **ring:validating-ux-completeness** | Validating that UX specifications are complete before technical design: a read-only checklist over wireframes, states, responsive behavior, accessibility, and component-library alignment, emitting ... | - | agents |
-| 2537 | **ring:verifying-code** | Verifying a Go project: runs every quality check (lint, vet, imports, format, docs, unit, integration, E2E) and returns a single MERGE_READY or NEEDS_FIX verdict. Report-only: never fixes anything.... | - | agents |
-| 2538 | **ring:visualizing** | Generating self-contained, Lerian-branded HTML artifacts — D2 diagrams, comparison tables/matrices, code diffs, dashboards, slide decks, and plan/diff/recap reviews — from mandatory templates, then... | - | agents |
-| 2539 | **ring:writing-dev-reports** | Writing a structured markdown dev report for a completed development epic: reads accumulated epic metrics (TDD, coverage, delivery, lint, file-size, license), computes a quality score with tiers, a... | - | agents |
-| 2540 | **ring:writing-plans** | Writing a rolling-wave phased implementation plan from a spec before coding: a phase-epic-task hierarchy where Phase 1 is detailed into dispatch-ready tasks and later phases stay epic-level for ela... | - | agents |
-| 2541 | **ring:writing-prds** | Writing a Product Requirements Document that explains to the squad WHAT is being built and WHY: problem, explicit scope in/out, functional requirements, and testable acceptance criteria. Gate 1 of ... | - | agents |
-| 2542 | **ring:writing-skills** | Writing or editing a Ring skill: SKILL.md structure, frontmatter and Agent-Search-Optimization rules, token-efficiency targets, and bulletproofing (Iron Law, rationalization tables, Red Flags) so d... | - | agents |
-| 2543 | **ring:writing-trds** | Writing a Technical Requirements Document that designs the technical architecture of the system or feature: components and boundaries, data flow, integration points, failure modes, and the mandator... | - | agents |
-| 2544 | **ring_central-automation** | Automate RingCentral tasks via Rube MCP (Composio): calls, messages, meetings, and unified communications. Always search tools first for current schemas. | - | agents |
-| 2545 | **RingCentral Automation** | RingCentral automation via Rube MCP -- toolkit not currently available in Composio; no RING_CENTRAL_ tools found | - | agents |
-| 2546 | **rippling-automation** | Automate Rippling tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2547 | **risk-based-testing** | Focus testing effort on highest-risk areas using risk assessment and prioritization. Use when planning test strategy, allocating testing resources, or making coverage decisions. | - | agents |
-| 2548 | **risk-management-specialist** | Medical device risk management specialist implementing ISO 14971 throughout product lifecycle. Provides risk analysis, risk evaluation, risk control, and post-production information analysis. Use w... | - | agents |
-| 2549 | **ritekit-automation** | Automate Ritekit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2550 | **rkvst-automation** | Automate Rkvst tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2551 | **roadmap** | Plan and execute entire application builds. Generates phased delivery roadmaps, then executes them autonomously — phase by phase, committing at milestones, deploying, testing, and continuing until ... | - | agents |
-| 2552 | **roadmap-communicator** | Use when preparing roadmap narratives, release notes, changelogs, or stakeholder updates tailored for executives, engineering teams, and customers. | - | agents |
-| 2553 | **roast** | Use when someone asks to roast an idea, pressure-test or stress-test an idea, validate a business idea, "convene the panel", get a brutal second opinion before building something, or says "/roast".... | - | agents |
-| 2554 | **rocketlane-automation** | Automate Rocketlane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2555 | **Root Cause Tracing** | Systematically trace bugs backward through call stack to find original trigger | - | agents |
-| 2556 | **rootly-automation** | Automate Rootly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2557 | **rosette-text-analytics-automation** | Automate Rosette Text Analytics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2558 | **roslyn-analyzers** | Build, review, debug Roslyn analyzers and source generators. | - | claude |
-| 2559 | **roundup** | Generate personalized status briefings from GitHub, Teams, Slack. | - | claude |
-| 2560 | **roundup-setup** | Onboarding to configure personalized status briefings. | - | claude |
-| 2561 | **route4me-automation** | Automate Route4me tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2562 | **rtk** | Rust Token Killer (RTK) & Runtime Token Compression skill. Provides CLI proxying, log filtering, and intelligent terminal output compression (cutting command output tokens by 60-90%). Use when runn... | - | claude |
-| 2563 | **ruby-mcp-server-generator** | Generate complete MCP server project in Ruby using official gem. | - | claude |
-| 2564 | **ruff-recursive-fix** | Run Ruff checks and apply safe/unsafe autofixes iteratively. | - | claude |
-| 2565 | **rules-distill** | Scan skills to extract cross-cutting principles into rule files. | - | claude |
-| 2566 | **run** | Run a single experiment iteration. Edit the target file, evaluate, keep or discard. Use when the user runs /ar:run or asks for one manual autoresearch iteration. | - | agents |
-| 2567 | **runbook-generator** | Generate operational runbooks from a service name — deployment, incident response, maintenance, and rollback workflows. Templated structure customizable per environment. Use when documenting on-cal... | - | agents |
-| 2568 | **rust-engineer** | Writes, reviews, and debugs idiomatic Rust code with memory safety and zero-cost abstractions. Implements ownership patterns, manages lifetimes, designs trait hierarchies, builds async applications... | - | agents |
-| 2569 | **rust-mcp-server-generator** | Generate complete Rust Model Context Protocol server project. | - | claude |
-| 2570 | **rust-patterns** | Idiomatic Rust patterns, ownership, traits & concurrency. | - | claude |
-| 2571 | **rust-testing** | Rust testing patterns: unit, integration, async, property-based. | - | claude |
-| 2572 | **saas-health** |  | - | agents |
-| 2573 | **saas-metrics-coach** | SaaS financial health advisor. Use when a user shares revenue or customer numbers, or mentions ARR, MRR, churn, LTV, CAC, NRR, or asks how their SaaS business is doing. | - | agents |
-| 2574 | **saas-scaffolder** | Generates complete, production-ready SaaS project boilerplate including authentication, database schemas, billing integration, API routes, and a working dashboard using Next.js 14+ App Router, Type... | - | agents |
-| 2575 | **safe-refactor** | Restructure code while strictly preserving behavior. | - | claude |
-| 2576 | **safety-guard** | Prevent destructive operations when working on production systems. | - | claude |
-| 2577 | **safetyculture-automation** | Automate Safetyculture tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2578 | **sage-automation** | Automate Sage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2579 | **sales-enablement** | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-be... | - | agents |
-| 2580 | **sales-engineer** | Analyzes RFP/RFI responses for coverage gaps, builds competitive feature comparison matrices, and plans proof-of-concept (POC) engagements for pre-sales engineering. Use when responding to RFPs, bi... | - | agents |
-| 2581 | **salesforce-apex-quality** | Apex code quality guardrails (bulk safety, FLS security). | - | claude |
-| 2582 | **salesforce-component-standards** | Salesforce Lightning Web Components (LWC) standards & WCAG. | - | claude |
-| 2583 | **salesforce-developer** | Writes and debugs Apex code, builds Lightning Web Components, optimizes SOQL queries, implements triggers, batch jobs, platform events, and integrations on the Salesforce platform. Use when develop... | - | agents |
-| 2584 | **salesforce-flow-design** | Salesforce Flow architecture decisions & fault handling. | - | claude |
-| 2585 | **salesforce-marketing-cloud-automation** | Automate Salesforce Marketing Cloud tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2586 | **salesforce-service-cloud-automation** | Automate Salesforce Service Cloud tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2587 | **salesmate-automation** | Automate Salesmate tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2588 | **sample-skill** |  | - | agents |
-| 2589 | **sandbox-npm-install** | Install npm packages in Docker sandbox environment. | - | claude |
-| 2590 | **sandbox-sdk** | Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers San... | - | agents |
-| 2591 | **santa-method** | Multi-agent adversarial verification with convergence loop. | - | claude |
-| 2592 | **sap-successfactors-automation** | Automate SAP SuccessFactors tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2593 | **satismeter-automation** | Automate Satismeter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2594 | **scaffold** |  | - | agents |
-| 2595 | **scaffold-exercises** | Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course s... | - | agents |
-| 2596 | **scaffolding-oracle-to-postgres-migration-test-project** | Scaffold xUnit integration test project for Oracle-to-Postgres. | - | claude |
-| 2597 | **Scale Game** | Test at extremes (1000x bigger/smaller, instant/year-long) to expose fundamental truths hidden at normal scales | - | agents |
-| 2598 | **scenario-war-room** | Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all business functions simultaneously. Use w... | - | agents |
-| 2599 | **schema** | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions "schema markup," "structured data," "JSON-LD," "rich snippets," "schema... | - | agents |
-| 2600 | **schema-gen** | Generate valid JSON-LD structured data for any page type. Trigger: 'generate schema for [page type]' or 'schema [URL] | - | agents |
-| 2601 | **schema-markup** | When the user wants to implement, audit, or validate structured data (schema markup) on their website. Use when the user mentions 'structured data,' 'schema.org,' 'JSON-LD,' 'rich results,' 'rich s... | - | agents |
-| 2602 | **schema-markup-generator** | Generate JSON-LD for FAQ, HowTo, Article, Product, LocalBusiness rich results and AI understanding. "Add structured data" / "添加结构化数据" / "要星级评分". Schema标记/富摘要/JSON-LD/结构化 構造化データ 스키마마크업 datos estruct... | - | agents |
-| 2603 | **scholar-evaluation** | Structured evaluation for scholarly papers and research proposals. | - | claude |
-| 2604 | **sciomc** | Orchestrate parallel scientist agents for analysis in AUTO mode. | - | claude |
-| 2605 | **scorecard-marketing** | Build quiz and assessment funnels that generate qualified leads at 30-50% conversion. Use when the user mentions "quiz funnel", "scorecard", "lead magnet", "score-based segmentation", or "lead qual... | - | agents |
-| 2606 | **scoutqa-test** | Exploratory website QA testing & accessibility check. | - | claude |
-| 2607 | **scrape** | Pull data from a web page. (gstack) | - | agents |
-| 2608 | **scrape-do-automation** | Automate Scrape Do tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2609 | **scrapegraph-ai-automation** | Automate Scrapegraph AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2610 | **scrapfly-automation** | Automate Scrapfly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2611 | **scrapingant-automation** | Automate Scrapingant tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2612 | **scrapingbee-automation** | Automate Scrapingbee tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2613 | **screen-recording** | Create animated GIF demos and screen recordings for PRs. | - | claude |
-| 2614 | **screenshot** | Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-l... | - | agents |
-| 2615 | **screenshot-fyi-automation** | Automate Screenshot Fyi tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2616 | **screenshotone-automation** | Automate Screenshotone tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2617 | **scroll-craft** | Advanced scroll-driven animations, CSS scroll timelines, parallax, and sticky interaction skill. Use when building immersive web experiences, scroll-triggered visual reveals, or when user mentions ... | - | claude |
-| 2618 | **scrum-master** | Advanced Scrum Master skill for data-driven agile team analysis and coaching. Use when the user asks about sprint planning, velocity tracking, retrospectives, standup facilitation, backlog grooming... | - | agents |
-| 2619 | **search-first** | Research-before-coding workflow — search existing tools first. | - | claude |
-| 2620 | **seat-geek-automation** | Automate Seat Geek tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2621 | **secret-scanning** | Configure GitHub secret scanning, push protection & remediation. | - | claude |
-| 2622 | **secrets-vault-manager** | Use when the user asks to set up secret management infrastructure, integrate HashiCorp Vault, configure cloud secret stores (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager), implement sec... | - | agents |
-| 2623 | **secure-code-guardian** | Use when implementing authentication/authorization, securing user input, or preventing OWASP Top 10 vulnerabilities — including custom security implementations such as hashing passwords with bcrypt... | - | agents |
-| 2624 | **security-and-hardening** | Hardens code against vulnerabilities. Use when handling user input, authentication, data storage, or external integrations. Use when building any feature that accepts untrusted data, manages user s... | - | agents |
-| 2625 | **security-best-practices** | Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/r... | - | agents |
-| 2626 | **security-bounty-hunter** | Hunt for exploitable security vulnerabilities in repos. | - | claude |
-| 2627 | **security-checklist** | OWASP Top 10, input validation, SQL injection prevention, rate limiting, CORS. Use when reviewing code for security issues, setting up a new API, or doing a pre-deploy security audit. | - | agents |
-| 2628 | **security-guidance** | PreToolUse security-anti-pattern hook for Codex. Catches 12 common security risks (command injection, XSS, SQL injection, unsafe deserialization, GitHub Actions workflow injection, eval/new Functio... | - | agents |
-| 2629 | **security-ownership-map** | Analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases and visualization. Trigger... | - | agents |
-| 2630 | **security-pen-testing** | Use when the user asks to perform security audits, penetration testing, vulnerability scanning, OWASP Top 10 checks, or offensive security assessments. Covers static analysis, dependency scanning, ... | - | agents |
-| 2631 | **security-review** | AI-powered codebase security scanner. | - | claude |
-| 2632 | **security-reviewer** | Identifies security vulnerabilities, generates structured audit reports with severity ratings, and provides actionable remediation guidance. Use when conducting security audits, reviewing code for ... | - | agents |
-| 2633 | **security-scan** | Scan agent configuration for security injection risks. | - | claude |
-| 2634 | **security-specialist** | Runs security audits on codebases — full scans, diff reviews, threat models, vulnerability triage, remediation guidance, and finding tracking. Activate when the user says "security scan", "audit th... | - | agents |
-| 2635 | **security-testing** | Scans for security vulnerabilities including XSS, SQL injection, CSRF, and auth flaws using OWASP Top 10 methodology. Use when conducting SAST/DAST scans, auditing authentication flows, testing aut... | - | agents |
-| 2636 | **security-threat-model** | Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. Trigger only when the ... | - | agents |
-| 2637 | **security-visual-testing** | Security-first visual testing combining URL validation, PII detection, and visual regression with parallel viewport support. Use when testing web applications that handle sensitive data, need visua... | - | agents |
-| 2638 | **security-watch** | Use when working on security-sensitive code to catch secrets, eval(), innerHTML, and other dangerous patterns before they're written. Activate with /security-watch for real-time security scanning. | - | agents |
-| 2639 | **securitytrails-automation** | Automate Securitytrails tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2640 | **segmetrics-automation** | Automate Segmetrics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2641 | **seismic-automation** | Automate Seismic tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2642 | **selector-de-nicho** | Elige un nicho concreto para vender servicios de IA y lo valida con evidencia antes de invertir tiempo — cruza acceso real del usuario, dolor medible del sector y capacidad de pago, y devuelve un n... | - | claude |
-| 2643 | **self-eval** | Honestly evaluate AI work quality using a two-axis scoring system. Use after completing a task, code review, or work session to get an unbiased assessment. Detects score inflation, forces devil's a... | - | agents |
-| 2644 | **self-improve** | Autonomous evolutionary code improvement engine. | - | claude |
-| 2645 | **self-improving-agent** | Curate Codex's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to AGENTS.md and .Codex/rules/, extract recurring solutions into reusable skills.... | - | agents |
-| 2646 | **semantic-kernel** | Semantic Kernel solution guide for .NET and Python. | - | claude |
-| 2647 | **semanticscholar-automation** | Automate Semanticscholar tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2648 | **SEMrush Automation** | Automate SEO analysis with SEMrush -- research keywords, analyze domain organic rankings, audit backlinks, assess keyword difficulty, and discover related terms through the Composio SEMrush integra... | - | agents |
-| 2649 | **sendbird-ai-chabot-automation** | Automate Sendbird AI Chabot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2650 | **sendbird-automation** | Automate Sendbird tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2651 | **sendfox-automation** | Automate Sendfox tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2652 | **sendlane-automation** | Automate Sendlane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2653 | **sendloop-automation** | Automate Sendloop tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2654 | **sendspark-automation** | Automate Sendspark tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2655 | **senior-architect** | This skill should be used when the user asks to "design system architecture", "evaluate microservices vs monolith", "create architecture diagrams", "analyze dependencies", "choose a database", "pla... | - | agents |
-| 2656 | **senior-backend** | Designs and implements backend systems including REST APIs, microservices, database architectures, authentication flows, and security hardening. Use when the user asks to "design REST APIs", "optim... | - | agents |
-| 2657 | **senior-computer-vision** | Computer vision engineering skill for object detection, image segmentation, and visual AI systems. Covers CNN and Vision Transformer architectures, YOLO/Faster R-CNN/DETR detection, Mask R-CNN/SAM ... | - | agents |
-| 2658 | **senior-data-engineer** | Data engineering skill for building scalable data pipelines, ETL/ELT systems, and data infrastructure. Expertise in Python, SQL, Spark, Airflow, dbt, Kafka, and modern data stack. Includes data mod... | - | agents |
-| 2659 | **senior-data-scientist** | World-class senior data scientist skill specialising in statistical modeling, experiment design, causal inference, and predictive analytics. Covers A/B testing (sample sizing, two-proportion z-test... | - | agents |
-| 2660 | **senior-devops** | Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and... | - | agents |
-| 2661 | **senior-frontend** | Frontend development skill for React, Next.js, TypeScript, and Tailwind CSS applications. Use when building React components, optimizing Next.js performance, analyzing bundle sizes, scaffolding fro... | - | agents |
-| 2662 | **senior-fullstack** | Fullstack development toolkit with project scaffolding for Next.js, FastAPI, MERN, and Django stacks, code quality analysis with security and complexity scoring, and stack selection guidance. Use w... | - | agents |
-| 2663 | **senior-ml-engineer** | ML engineering skill for productionizing models, building MLOps pipelines, and integrating LLMs. Covers model deployment, feature stores, drift monitoring, RAG systems, and cost optimization. Use w... | - | agents |
-| 2664 | **senior-pm** | Senior Project Manager for enterprise software, SaaS, and digital transformation projects. Specializes in portfolio management, quantitative risk analysis, resource optimization, stakeholder alignm... | - | agents |
-| 2665 | **senior-prompt-engineer** | Use when the user asks to optimize prompts, design prompt templates, evaluate LLM outputs with an eval set, measure RAG retrieval quality, validate agent/tool configurations, analyze token usage, o... | - | agents |
-| 2666 | **senior-qa** | Generates unit tests, integration tests, and E2E tests for React/Next.js applications. Scans components to create Jest + React Testing Library test stubs, analyzes Istanbul/LCOV coverage reports to... | - | agents |
-| 2667 | **senior-secops** | Senior SecOps engineer skill for application security, vulnerability management, compliance verification, and secure development practices. Runs SAST/DAST scans, generates CVE remediation plans, ch... | - | agents |
-| 2668 | **senior-security** | Use when the user asks for STRIDE threat modeling, DREAD risk scoring, data-flow-diagram threat analysis, or a quick secret scan — or when a security request needs routing to the right specialist s... | - | agents |
-| 2669 | **sensibo-automation** | Automate Sensibo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2670 | **sentry** | Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` comm... | - | agents |
-| 2671 | **seo** | Comprehensive SEO analysis for any website or business type. Full site audits, single-page analysis, technical SEO (crawlability, indexability, Core Web Vitals with INP), schema markup, content qua... | https://github.com/ccforseo/seo-claude-code-skills | agents |
-| 2672 | **seo-ahrefs** | Ahrefs API analyst (extension). Reads referring domains, backlinks, organic keywords, and content explorer data via the tested @ahrefs/mcp@0.0.11 server. Pairs with seo-backlinks for multi-source c... | - | agents |
-| 2673 | **seo-audit** | When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta ... | - | agents |
-| 2674 | **seo-auditor** |  | - | agents |
-| 2675 | **seo-backlinks** | Backlink profile analysis: referring domains, anchor text distribution, toxic link detection, competitor gap analysis. Works with free APIs (Moz, Bing Webmaster, Common Crawl) and DataForSEO extens... | - | agents |
-| 2676 | **seo-bing** | Bing Webmaster Tools + IndexNow extension. Microsoft Copilot citations are fed by the Bing index; this skill makes Bing visibility, link data, and IndexNow URL submission first-class. | - | agents |
-| 2677 | **seo-cluster** | SERP-based semantic topic clustering for content architecture planning. Groups keywords by actual Google SERP overlap (not text similarity), designs hub-and-spoke content clusters with internal lin... | - | agents |
-| 2678 | **seo-competitor-pages** | Generate SEO-optimized competitor comparison and alternatives pages. Covers "X vs Y" layouts, "alternatives to X" pages, feature matrices, schema markup, and conversion optimization. Use when user ... | - | agents |
-| 2679 | **seo-content** | Content quality and E-E-A-T analysis with AI citation readiness assessment. Use when user says "content quality", "E-E-A-T", "content analysis", "readability check", "thin content", or "content aud... | - | agents |
-| 2680 | **seo-content-brief** | Generate competitive SEO content briefs with per-section word counts, competitor scoring, keyword density guidance, and page-type templates. Supports both new page briefs and improve-existing-page ... | - | agents |
-| 2681 | **seo-content-writer** | Write SEO blog posts, articles, landing pages with keywords, headers, snippet targeting. "Write me a blog post" / "帮我写文章" / "写一篇好文章". SEO文章写作/博客创作/内容优化/排名提升 SEOライティング SEO글쓰기/블로그작성 redacción SEO | - | agents |
-| 2682 | **seo-dataforseo** | Live SEO data via DataForSEO MCP server: SERP analysis, keyword research (volume, difficulty, intent, trends), backlink profiles, on-page analysis, competitor and content analysis, business listing... | - | agents |
-| 2683 | **seo-drift** | SEO drift monitoring: capture baselines of SEO-critical elements, detect changes, and track regressions over time. Git for SEO: baseline, diff, and track changes to your on-page SEO. Use when user ... | - | agents |
-| 2684 | **seo-ecommerce** | E-commerce SEO analysis: Google Shopping visibility, Amazon marketplace intelligence, product schema validation, competitor pricing analysis, and marketplace keyword gaps. Combines on-page product ... | - | agents |
-| 2685 | **seo-firecrawl** | Full-site crawling, scraping, and site mapping via Firecrawl MCP. Use when user says "crawl site", "map site", "full crawl", "find all pages", "broken links", "site structure", "discover pages", "J... | - | agents |
-| 2686 | **seo-flow** | FLOW framework integration: evidence-led SEO using the Find → Leverage → Optimize → Win loop. Surfaces stage-specific AI prompts from the FLOW knowledge base (41 prompts, CC BY 4.0). Use when user ... | - | agents |
-| 2687 | **seo-geo** | Optimize content for AI Overviews (formerly SGE), ChatGPT web search, Perplexity, and other AI-powered search experiences. Generative Engine Optimization (GEO) analysis including brand mention sign... | https://github.com/aaron-he-zhu/seo-geo-claude-skills | agents |
-| 2688 | **seo-google** | Google SEO APIs: Search Console (Search Analytics, URL Inspection, Sitemaps), PageSpeed Insights v5, CrUX field data with 25-week history, Indexing API v3, and GA4 organic traffic. Provides real Go... | - | agents |
-| 2689 | **seo-hreflang** | Hreflang and international SEO audit, validation, and generation. Detects common mistakes, validates language/region codes, and generates correct hreflang implementations. Use when user says "hrefl... | - | agents |
-| 2690 | **seo-image-gen** | AI image generation for SEO assets: OG/social preview images, blog hero images, schema images, product photography, infographics. Powered by Gemini via nanobanana-mcp. Requires banana extension ins... | - | agents |
-| 2691 | **seo-images** | Image optimization analysis for SEO and performance. Checks alt text, file sizes, formats, responsive images, lazy loading, CLS prevention, image SERP rankings (via DataForSEO), and image file opti... | - | agents |
-| 2692 | **seo-local** | Local SEO analysis covering Google Business Profile optimization, NAP consistency, citation health, review signals, local schema markup, location page quality, multi-location SEO, and industry-spec... | - | agents |
-| 2693 | **seo-local-business** | Generate complete SEO setup for local business websites — HTML head tags, JSON-LD LocalBusiness schema, robots.txt, sitemap.xml. Australian-optimised with +61 phone, ABN, suburb patterns. | - | agents |
-| 2694 | **seo-maps** | Maps intelligence for local SEO: geo-grid rank tracking, GBP profile auditing via API, review intelligence across Google/Tripadvisor/Trustpilot, cross-platform NAP verification, competitor radius m... | - | agents |
-| 2695 | **seo-page** | Deep single-page SEO analysis covering on-page elements, content quality, technical meta tags, schema, images, and performance. Use when user says "analyze this page", "check page SEO", "single URL... | - | agents |
-| 2696 | **seo-plan** | Strategic SEO planning for new or existing websites. Industry-specific templates, competitive analysis, content strategy, and implementation roadmap. Use when user says "SEO plan", "SEO strategy", ... | - | agents |
-| 2697 | **seo-profound** | Profound LLM citation tracker (extension). Time-series brand citation rates across ChatGPT, Perplexity, and other LLMs. Pairs with seo-seranking for triangulated AI visibility coverage. | - | agents |
-| 2698 | **seo-programmatic** | Programmatic SEO planning and analysis for pages generated at scale from data sources. Covers template engines, URL patterns, internal linking automation, thin content safeguards, and index bloat p... | - | agents |
-| 2699 | **seo-schema** | Detect, validate, and generate Schema.org structured data. JSON-LD format preferred. Use when user says "schema", "structured data", "rich results", "JSON-LD", or "markup". | - | agents |
-| 2700 | **seo-seranking** | SE Ranking AI visibility analyst (extension). Tracks AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, and AI Mode in a single query. | - | agents |
-| 2701 | **seo-sitemap** | Analyze existing XML sitemaps or generate new ones with industry templates. Validates format, URLs, and structure. Use when user says "sitemap", "generate sitemap", "sitemap issues", or "XML sitemap". | - | agents |
-| 2702 | **seo-sxo** | Search Experience Optimization: reads Google SERPs backwards to detect page-type mismatches, derives user stories from search intent signals, and scores pages from multiple persona perspectives. Id... | - | agents |
-| 2703 | **seo-technical** | Technical SEO audit across 9 categories: crawlability, indexability, security, URL structure, mobile, Core Web Vitals, structured data, JavaScript rendering, and IndexNow protocol. Use when user sa... | - | agents |
-| 2704 | **seo-unlighthouse** | Multi-page Lighthouse audit via the MIT-licensed Unlighthouse CLI. Free-tier alternative to running PageSpeed against every URL on a site, no API quota burn, runs locally. | - | agents |
-| 2705 | **seqera-automation** | Automate Seqera tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2706 | **sequential-thinking** | Use when complex problems require systematic step-by-step reasoning with ability to revise thoughts, branch into alternative approaches, or dynamically adjust scope. Ideal for multi-stage analysis,... | - | agents |
-| 2707 | **serp-analysis** | Analyze SERPs: ranking factors, features, intent, AI overviews, featured snippets, People Also Ask. "What ranks for this" / "谁排第一" / "搜索结果分析". SERP分析/搜索结果/精选摘要 検索結果チェック/リッチリザルト 검색결과분석 análisis SERP | - | agents |
-| 2708 | **serpapi-automation** | Automate Serpapi tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2709 | **serpdog-automation** | Automate Serpdog tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2710 | **serply-automation** | Automate Serply tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2711 | **server-side-conversion-tracking** | Server-side conversion tracking for Facebook, TikTok, Google Ads. | - | claude |
-| 2712 | **servicem8-automation** | Automate Servicem8 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2713 | **session-handoff** | Creates handoff documents for seamless AI agent session transfers. | - | claude |
-| 2714 | **setup** | Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator. Use when the user runs /ar:setup or asks to start optimizing a file... | - | agents |
-| 2715 | **setup-browser-cookies** | Import cookies from your real Chromium browser into the headless browse session. (gstack) | - | agents |
-| 2716 | **setup-deploy** | Configure deployment settings for /land-and-deploy. | - | agents |
-| 2717 | **setup-gbrain** | Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack) | - | agents |
-| 2718 | **setup-matt-pocock-skills** | Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills. | - | agents |
-| 2719 | **setup-my-iq** | Setup personal context portfolio & work style preferences. | - | claude |
-| 2720 | **setup-pre-commit** | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add com... | - | agents |
-| 2721 | **setup-ts-deep-modules** | Wire dependency-cruiser into a TypeScript repo so each package is a deep module — implementation hidden in subfolders, reachable only through its entry-point files. User-invoked. | - | agents |
-| 2722 | **sevdesk-automation** | Automate Sevdesk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2723 | **sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... | - | agents |
-| 2724 | **shadcn-ui** | Install and configure shadcn/ui components for React projects. Guides component selection, installation order, dependency management, customisation with semantic tokens, and common UI recipes (form... | - | agents |
-| 2725 | **share_point-automation** | Automate SharePoint tasks via Rube MCP (Composio): document libraries, sites, lists, and content management. Always search tools first for current schemas. | - | agents |
-| 2726 | **SharePoint Automation** | SharePoint Automation: manage sites, lists, documents, folders, pages, and search content across SharePoint and OneDrive | - | agents |
-| 2727 | **sherlock-review** | Evidence-based investigative code review using deductive reasoning to determine what actually happened versus what was claimed. Use when verifying implementation claims, investigating bugs, validat... | - | agents |
-| 2728 | **shift-left-testing** | Move testing activities earlier in the development lifecycle to catch defects when they're cheapest to fix. Use when implementing TDD, CI/CD, or early quality practices. | - | agents |
-| 2729 | **shift-right-testing** | Testing in production with feature flags, canary deployments, synthetic monitoring, and chaos engineering. Use when implementing production observability or progressive delivery. | - | agents |
-| 2730 | **ship** | Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack) | - | agents |
-| 2731 | **ship-gate** | Pre-production audit that scans a codebase for security, database, deployment, code quality, AI/LLM, dependency, frontend, and observability issues. Intercepts deploy commands and blocks until crit... | - | agents |
-| 2732 | **ship-learn-next** | Transform learning content into actionable implementation plans. | - | claude |
-| 2733 | **shipengine-automation** | Automate Shipengine tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2734 | **shipping-and-launch** | Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a ro... | - | agents |
-| 2735 | **shopify** | Build Shopify applications, extensions, and themes using GraphQL/REST APIs, Shopify CLI, Polaris UI components, and Liquid templating. Capabilities include app development with OAuth authentication... | - | agents |
-| 2736 | **shopify-content** | Create and manage Shopify pages, blog posts, navigation, and SEO metadata. Workflow: determine content type, generate content, create via API or browser, verify. Use when creating pages, writing bl... | - | agents |
-| 2737 | **shopify-expert** | Builds and debugs Shopify themes (.liquid files, theme.json, sections), develops custom Shopify apps (shopify.app.toml, OAuth, webhooks), and implements Storefront API integrations for headless sto... | - | agents |
-| 2738 | **shopify-products** | Create and manage Shopify products via the Admin API. Workflow: gather product data, choose method (API or CSV), execute, verify. Use when adding products, bulk importing, updating variants, managi... | - | agents |
-| 2739 | **shopify-review-triage** | Shopify App Store reviews triage & feature prioritization. | - | claude |
-| 2740 | **shopify-setup** | Set up Shopify CLI auth and Admin API access for a store. Workflow: install CLI, authenticate, create custom app, store access token, verify. Use when connecting to a Shopify store, setting up API ... | - | agents |
-| 2741 | **short-io-automation** | Automate Short IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2742 | **short-menu-automation** | Automate Short Menu tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2743 | **Shortcut Automation** | Automate project management workflows in Shortcut -- create stories, manage tasks, track epics, and organize workflows through natural language commands. | - | agents |
-| 2744 | **shorten-rest-automation** | Automate Shorten Rest tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2745 | **shortpixel-automation** | Automate Shortpixel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2746 | **shotstack-automation** | Automate Shotstack tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2747 | **shuffle-json-data** | Shuffle repetitive JSON objects safely with schema validation. | - | claude |
-| 2748 | **sidetracker-automation** | Automate Sidetracker tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2749 | **signal-write** | Emit structured agent signals (blocked, done, checkpoint). | - | claude |
-| 2750 | **signaturely-automation** | Automate Signaturely tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2751 | **signpath-automation** | Automate Signpath tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2752 | **signup** | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions "signup conversions," "registration friction," "signup form optimi... | - | agents |
-| 2753 | **signup-flow-cro** | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions "signup conversions," "registration friction," "signup form optimi... | - | agents |
-| 2754 | **signwell-automation** | Automate Signwell tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2755 | **similarweb-digitalrank-api-automation** | Automate SimilarWeb tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2756 | **similarweb_digitalrank_api-automation** | Automate SimilarWeb tasks via Rube MCP (Composio): website traffic, rankings, and digital market intelligence. Always search tools first for current schemas. | - | agents |
-| 2757 | **simla-com-automation** | Automate Simla Com tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2758 | **simple-analytics-automation** | Automate Simple Analytics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2759 | **simplesat-automation** | Automate Simplesat tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2760 | **Simplification Cascades** | Find one insight that eliminates multiple components - "if this is true, we don't need X, Y, or Z | - | agents |
-| 2761 | **site-architecture** | When the user wants to audit, redesign, or plan their website's structure, URL hierarchy, navigation design, or internal linking strategy. Use when the user mentions 'site architecture,' 'URL struc... | - | agents |
-| 2762 | **sitespeakai-automation** | Automate Sitespeakai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2763 | **six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... | - | agents |
-| 2764 | **skill** | Manage local skills — list, add, remove, search, edit. | - | claude |
-| 2765 | **Skill Builder** | Create new Codex Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generat... | - | agents |
-| 2766 | **skill-comply** | Visualize whether skills and rules are followed by agents. | - | claude |
-| 2767 | **skill-creator** | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a sk... | - | agents |
-| 2768 | **skill-evaluation** | Evaluate any agent skill against a merged framework — Anthropic's Codex best practices plus Matt Pocock's writing-great-skills methodology — across 4 axes (Trigger, Structure, Steering, Pruning). P... | - | agents |
-| 2769 | **skill-installer** | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep... | - | agents |
-| 2770 | **skill-inventory-manager** | Meta-skill that enumerates skills & generates custom pipelines. | - | claude |
-| 2771 | **skill-judge** | Evaluate Agent Skill design quality against specification. | - | claude |
-| 2772 | **skill-scanner** | Scan agent skills for security vulnerabilities & injection risks. | - | claude |
-| 2773 | **skill-scout** | Search existing skill sources before creating a new skill. | - | claude |
-| 2774 | **skill-security-auditor** | Security audit and vulnerability scanner for AI agent skills before installation. Use when: (1) evaluating a skill from an untrusted source, (2) auditing a skill directory or git repo URL for malic... | - | agents |
-| 2775 | **skill-seekers** | Búsqueda activa, evaluación e ingesta automatizada de nuevas habilidades agenticas desde repositorios remotos. | - | claude |
-| 2776 | **skill-share** | A skill that creates new Codex skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery. | - | agents |
-| 2777 | **skill-stats** | Use when reviewing which QE skills are being used, finding undertriggering skills, or analyzing skill effectiveness. Shows usage patterns and recommendations. | - | agents |
-| 2778 | **skill-stocktake** | Audit skills and commands for quality & effectiveness. | - | claude |
-| 2779 | **skill-tester** | Validate, test, and score the quality of skills within the Codex-skills ecosystem. Comprehensive meta-skill: structure validation, Python script testing (syntax + imports + runtime + output format)... | - | agents |
-| 2780 | **skill-vault** | Bóveda persistente de skills del repositorio para organización, versionado y almacenamiento offline. | - | claude |
-| 2781 | **skill-writer** | Create and refine agent skills following Agent Skills spec. | - | claude |
-| 2782 | **skill1ssue** | Find and discover agent skills across git forges. | - | claude |
-| 2783 | **skillclaw** | Self-improving skill infrastructure that analyzes past session transcripts and automatically sharpens, refines, and updates the local skill library. Use when maintaining high-power skill collection... | - | claude |
-| 2784 | **skillify** | Codify the most recent successful /scrape flow into a permanent browser-skill on disk. (gstack) | - | agents |
-| 2785 | **skillopt-sleep** | Use when the user wants their Codex agent to self-improve from past usage, asks about a nightly/offline 'sleep' or 'dream' cycle, memory/skill consolidation, or says things like 'make my agent bett... | - | agents |
-| 2786 | **skills-arquiteto-de-empresa** |  | - | agents |
-| 2787 | **skills-chaos-engineering** |  | - | agents |
-| 2788 | **skills-chief-ai-officer-advisor** |  | - | agents |
-| 2789 | **skills-chief-customer-officer-advisor** |  | - | agents |
-| 2790 | **skills-chief-data-officer-advisor** |  | - | agents |
-| 2791 | **skills-eu-ai-act-specialist** |  | - | agents |
-| 2792 | **skills-feature-flags-architect** |  | - | agents |
-| 2793 | **skills-general-counsel-advisor** |  | - | agents |
-| 2794 | **skills-handoff** |  | - | agents |
-| 2795 | **skills-init** |  | - | agents |
-| 2796 | **skills-iso42001-specialist** |  | - | agents |
-| 2797 | **skills-kubernetes-operator** |  | - | agents |
-| 2798 | **skills-review** |  | - | agents |
-| 2799 | **skills-run** |  | - | agents |
-| 2800 | **skills-slo-architect** |  | - | agents |
-| 2801 | **skills-status** |  | - | agents |
-| 2802 | **skills-status-2** |  | - | agents |
-| 2803 | **skills-vpe-advisor** |  | - | agents |
-| 2804 | **skyfire-automation** | Automate Skyfire tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2805 | **slack-gif-creator** | Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me ... | - | agents |
-| 2806 | **slack-messaging** | Send/read Slack messages & interact with workspaces via CLI. | - | claude |
-| 2807 | **slack-to-teams** | Sub-skill of microsoft-365-agents-toolkit. Routed expert system with 100+ micro-expert files for migrating Slack bots to Teams, cross-platform bridging, and dual-platform bot development. USE FOR: ... | - | agents |
-| 2808 | **slackbot-automation** | Automate Slackbot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2809 | **slang-shader-engineer** | Slang shaders, HLSL-compatible GPU code & compute pipelines. | - | claude |
-| 2810 | **slides** | Create and edit presentation slide decks (.pptx) with PptxGenJS. | - | claude |
-| 2811 | **slo-architect** | Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE... | - | agents |
-| 2812 | **slo-design** |  | - | agents |
-| 2813 | **slop-eval** | Objectively evaluate a UI/web design against the pols.dev anti-slop design law: detect catalogued slop tells with cited evidence, score 8 weighted axes (color, type, components, layout, motion, exe... | - | agents |
-| 2814 | **smart-explore** | Token-optimized structural code search using tree-sitter AST parsing. Use instead of reading full files when you need to understand code structure, find functions, or explore a codebase efficiently. | - | agents |
-| 2815 | **smartproxy-automation** | Automate Smartproxy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2816 | **smartrecruiters-automation** | Automate Smartrecruiters tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2817 | **sms** | SMS/MMS marketing flows, abandoned cart & win-back texts. | - | claude |
-| 2818 | **sms-alert-automation** | Automate SMS Alert tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2819 | **smtp2go-automation** | Automate Smtp2go tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2820 | **smugmug-automation** | Automate Smugmug tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2821 | **Snowflake Automation** | Automate Snowflake data warehouse operations -- list databases, schemas, and tables, execute SQL statements, and manage data workflows via the Composio MCP integration. | - | agents |
-| 2822 | **snowflake-development** | Use when writing Snowflake SQL, building data pipelines with Dynamic Tables or Streams/Tasks, using Cortex AI functions, creating Cortex Agents, writing Snowpark Python, configuring dbt for Snowfla... | - | agents |
-| 2823 | **snowflake-semanticview** | Create and validate Snowflake semantic views via Snow CLI. | - | claude |
-| 2824 | **soc2-audit-prep** | /cs:soc2-audit-prep <scope> — SOC 2 Type II readiness 6-question forcing interrogation. Observation-period focused. Use before Type II observation begins, mid-period checkpoint, or pre-field-test m... | - | agents |
-| 2825 | **soc2-compliance** | Use when the user asks to prepare for SOC 2 audits, map Trust Service Criteria, build control matrices, collect audit evidence, perform gap analysis, or assess SOC 2 Type I vs Type II readiness. | - | agents |
-| 2826 | **social** | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn... | - | agents |
-| 2827 | **social-content** | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn... | - | agents |
-| 2828 | **social-graph-ranker** | Weighted social-graph ranking for warm intro discovery. | - | claude |
-| 2829 | **social-media-analyzer** | Social media campaign analysis and performance tracking. Calculates engagement rates, ROI, and benchmarks across platforms. Use when analyzing social media performance, calculating engagement rate,... | - | agents |
-| 2830 | **social-media-manager** | When the user wants to develop social media strategy, plan content calendars, manage community engagement, or grow their social presence across platforms. Also use when the user mentions 'social me... | - | agents |
-| 2831 | **social-media-posts** | Create platform-specific social media posts for LinkedIn, Facebook, Instagram, and Reddit. Handles character limits, hashtag strategies, hook placement, and image specs per platform. Works from scr... | - | agents |
-| 2832 | **social-publisher** | Publish social media posts across 13 platforms via SocialClaw. | - | claude |
-| 2833 | **software-architecture** | System design patterns, Clean Architecture, SOLID principles, domain modeling. Use when making architectural decisions, designing new modules, refactoring a tangled codebase, or reviewing system de... | - | agents |
-| 2834 | **software-design-philosophy** | Manage software complexity through deep modules, information hiding, and strategic programming. Use when the user mentions "module design", "API too complex", "shallow class", "complexity budget", ... | - | agents |
-| 2835 | **solo-founder** |  | - | agents |
-| 2836 | **sora** | Generate, edit, and poll Sora AI video generation API. | - | claude |
-| 2837 | **source-driven-development** | Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library wher... | - | agents |
-| 2838 | **sourcegraph-automation** | Automate Sourcegraph tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2839 | **spanner-basics** | Provision instances, design schemas & query Google Cloud Spanner. | - | claude |
-| 2840 | **sparc-methodology** | SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration | - | agents |
-| 2841 | **spark-engineer** | Use when writing Spark jobs, debugging performance issues, or configuring cluster settings for Apache Spark applications, distributed data processing pipelines, or big data workloads. Invoke to wri... | - | agents |
-| 2842 | **spawn** | Launch N parallel subagents in isolated git worktrees to compete on the session task. Use when the user runs /hub:spawn or asks to start the competing agents for an initialized AgentHub session. | - | agents |
-| 2843 | **speak-summary** | Convert text/markdown summaries to listenable MP3 using neural TTS. | - | claude |
-| 2844 | **spec** | Turn vague intent into a precise, executable spec in five phases. (gstack) | - | agents |
-| 2845 | **spec-driven-development** | Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when requirements are unclear, ambiguous, or only exist as a vague ... | - | agents |
-| 2846 | **spec-driven-workflow** | Use when the user asks to write specs before code, define acceptance criteria, plan features before implementation, generate tests from specifications, or follow spec-first development practices. | - | agents |
-| 2847 | **spec-kit** | Spec-Driven Development (SDD) framework based on GitHub's official spec-kit (https://github.com/github/spec-kit). Enforces a specification-first approach where agents create executable specs, const... | - | claude |
-| 2848 | **spec-miner** | Reverse-engineering specialist that extracts specifications from existing codebases. Use when working with legacy or undocumented systems, inherited projects, or old codebases with no documentation... | - | agents |
-| 2849 | **spec-to-repo** | Use when the user says 'build me an app', 'create a project from this spec', 'scaffold a new repo', 'generate a starter', 'turn this idea into code', 'bootstrap a project', 'I have requirements and... | - | agents |
-| 2850 | **speech** | Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_spee... | - | agents |
-| 2851 | **splitwise-automation** | Automate Splitwise tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2852 | **spoki-automation** | Automate Spoki tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2853 | **spondyr-automation** | Automate Spondyr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2854 | **sponsor-finder** | Find sponsorable GitHub dependencies via deps.dev. | - | claude |
-| 2855 | **Spotify Automation** | Automate Spotify workflows including playlist management, music search, playback control, and user profile access via Composio | - | agents |
-| 2856 | **spotlightr-automation** | Automate Spotlightr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2857 | **spreadsheet** | Spreadsheet creation and formula analysis (.xlsx, .csv). | - | claude |
-| 2858 | **spring-boot-engineer** | Generates Spring Boot 3.x configurations, creates REST controllers, implements Spring Security 6 authentication flows, sets up Spring Data JPA repositories, and configures reactive WebFlux endpoint... | https://github.com/affaan-m/everything-claude-code | agents |
-| 2859 | **spring-boot-testing** | Spring Boot 4 testing with JUnit 6 and AssertJ. | https://github.com/affaan-m/everything-claude-code | claude |
-| 2860 | **springboot-patterns** | Spring Boot architecture patterns, REST API design & caching. | https://github.com/affaan-m/everything-claude-code | claude |
-| 2861 | **springboot-security** | Spring Security best practices for authn/authz & CSRF. | https://github.com/affaan-m/everything-claude-code | claude |
-| 2862 | **springboot-tdd** | Test-driven development for Spring Boot using JUnit 5 & Mockito. | https://github.com/affaan-m/everything-claude-code | claude |
-| 2863 | **springboot-verification** | Verification loop for Spring Boot projects: build, tests, security. | https://github.com/affaan-m/everything-claude-code | claude |
-| 2864 | **sprint-health** |  | - | agents |
-| 2865 | **sprint-plan** |  | - | agents |
-| 2866 | **sql-code-review** | Universal SQL code review assistant. | - | claude |
-| 2867 | **sql-database-assistant** | Use when the user asks to write SQL queries, optimize database performance, generate migrations, explore database schemas, or work with ORMs like Prisma, Drizzle, TypeORM, or SQLAlchemy. | - | agents |
-| 2868 | **sql-optimization** | Universal SQL performance optimization assistant. | - | claude |
-| 2869 | **sql-pro** | Optimizes SQL queries, designs database schemas, and troubleshoots performance issues. Use when a user asks why their query is slow, needs help writing complex joins or aggregations, mentions datab... | - | agents |
-| 2870 | **sql-server-table-reconciliation** | Compare SQL Server tables across instances & ETL validation. | - | claude |
-| 2871 | **sre-engineer** | Defines service level objectives, creates error budget policies, designs incident response procedures, develops capacity models, and produces monitoring configurations and automation scripts for pr... | - | agents |
-| 2872 | **sred-project-organizer** | Organize project documentation into SR&ED tax format. | - | claude |
-| 2873 | **sred-work-summary** | Create SR&ED project summary docs from year of work. | - | claude |
-| 2874 | **sslmate-cert-spotter-api-automation** | Automate Sslmate Cert Spotter API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2875 | **ssma-console** | SSMA console operations — Oracle to SQL Server schema migration. | - | claude |
-| 2876 | **stack-exchange-automation** | Automate Stack Exchange tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2877 | **standup** | Facilitate a read-only standup across git worktrees, branches, or PRs to compare changes and produce one consolidation plan. | - | agents |
-| 2878 | **stannp-automation** | Automate Stannp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2879 | **starton-automation** | Automate Starton tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2880 | **startup-cto** |  | - | agents |
-| 2881 | **startup-idea** | Analyze startups comprehensively with a Paul Graham mindset plus monetization, | - | agents |
-| 2882 | **statistical-analyst** | Run hypothesis tests, analyze A/B experiment results, calculate sample sizes, and interpret statistical significance with effect sizes. Use when you need to validate whether observed differences ar... | - | agents |
-| 2883 | **status** | Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations. Use when the user runs /si:status or asks how full or healthy the agent memory is. | - | agents |
-| 2884 | **statuscake-automation** | Automate Statuscake tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2885 | **stay-within-limits** | Respect agent rate limits and weekly usage caps. | - | claude |
-| 2886 | **steno-mode** | Shorthand response compression cutting ~40% response tokens. | - | claude |
-| 2887 | **steve-jobs-design-review** | Review designs, products, and features with Steve Jobs'' standards: ruthless simplicity, focus, and end-to-end excellence. Use when the user mentions "Steve Jobs review", "design review", "product ... | - | agents |
-| 2888 | **stitch-design-taste** | Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, p... | - | agents |
-| 2889 | **storeganise-automation** | Automate Storeganise tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2890 | **storerocket-automation** | Automate Storerocket tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2891 | **stormglass-io-automation** | Automate Stormglass IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2892 | **storybrand-messaging** | Clarify brand messaging using narrative structure that positions the customer as hero. Use when the user mentions "brand message", "website copy", "elevator pitch", "one-liner", "brand script", "St... | - | agents |
-| 2893 | **strategic-alignment** | Cascades strategy from boardroom to individual contributor. Detects and fixes misalignment between company goals and team execution. Covers strategy articulation, cascade mapping, orphan goal detec... | - | agents |
-| 2894 | **strategic-compact** | Manual context compaction at logical task boundaries. | - | claude |
-| 2895 | **strategy-document** | Write structured strategic documents for small and medium businesses. Produces SWOT analyses, lean business plans, OKRs, and competitive analyses. Each mode has a defined structure and quality bar.... | - | agents |
-| 2896 | **strava-automation** | Automate Strava tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2897 | **stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows | - | agents |
-| 2898 | **streamtime-automation** | Automate Streamtime tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2899 | **stress-test** | /em:stress-test — Business assumption stress testing. Use before betting on a plan whose core assumptions are unvalidated — e.g. stress-testing 'enterprise buyers will tolerate a 6-month pilot' or ... | - | agents |
-| 2900 | **strict-api** | Use when the user says 'no hallucinations', 'verify APIs', 'reality check', or 'don't invent functions'. Prevents the agent from calling methods, imports, or variables that do not provably exist in... | - | agents |
-| 2901 | **strict-tdd** | Use when enforcing TDD discipline — blocks writing production code unless a failing test exists first. Activate with /strict-tdd to enable session-scoped Red-Green-Refactor guardrail. | - | agents |
-| 2902 | **stripe-apps** | Build, modify, and review Stripe Apps. | - | claude |
-| 2903 | **stripe-best-practices** | Stripe API integration choices (Checkout vs PaymentIntents). | - | claude |
-| 2904 | **stripe-directory** | Find Stripe partners & software for workflows. | - | claude |
-| 2905 | **stripe-docs** | Search and look up official Stripe documentation. | - | claude |
-| 2906 | **stripe-integration-expert** | Production-grade Stripe integrations: subscriptions with trials and proration, one-time payments, usage-based billing, checkout sessions, idempotent webhook handlers, customer portal, and invoicing... | - | agents |
-| 2907 | **stripe-payments** | Add Stripe payments to a web app — Checkout Sessions, Payment Intents, subscriptions, webhooks, customer portal, and pricing pages. Covers the decision of which Stripe API to use, produces working ... | - | agents |
-| 2908 | **stripe-projects** | Bootstrap & manage Stripe Projects CLI. | - | claude |
-| 2909 | **structured-autonomy-generate** | Structured Autonomy Implementation Generator. | - | claude |
-| 2910 | **structured-autonomy-implement** | Structured Autonomy Implementation Prompt. | - | claude |
-| 2911 | **structured-autonomy-plan** | Structured Autonomy Planning Prompt. | - | claude |
-| 2912 | **subagent-driven-development** | Execute implementation plans using independent subagent tasks. | - | claude |
-| 2913 | **substack-expert** | This skill should be used when creating, formatting, or optimizing content for a Substack newsletter. Covers post structure, SEO metadata (titles, slugs, meta descriptions), native engagement featu... | - | agents |
-| 2914 | **suggest-awesome-github-copilot-agents** | Suggest relevant Copilot custom agents from awesome-copilot. | - | claude |
-| 2915 | **suggest-awesome-github-copilot-instructions** | Suggest Copilot instruction files from awesome-copilot. | - | claude |
-| 2916 | **suggest-awesome-github-copilot-skills** | Suggest Copilot skills from awesome-copilot repository. | - | claude |
-| 2917 | **supabase** | Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client libraries and SSR integrations (supabase-j... | - | agents |
-| 2918 | **supabase-postgres-best-practices** | Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations. | - | agents |
-| 2919 | **supadata-automation** | Automate Supadata tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2920 | **superchat-automation** | Automate Superchat tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2921 | **supportbee-automation** | Automate Supportbee tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2922 | **supportivekoala-automation** | Automate Supportivekoala tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2923 | **surgical-patch** | Fix bugs at the narrowest responsible layer. | - | claude |
-| 2924 | **survey_monkey-automation** | Automate SurveyMonkey tasks via Rube MCP (Composio): surveys, responses, collectors, and survey analytics. Always search tools first for current schemas. | - | agents |
-| 2925 | **SurveyMonkey Automation** | Automate SurveyMonkey survey creation, response collection, collector management, and survey discovery through natural language commands | - | agents |
-| 2926 | **svix-automation** | Automate Svix tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2927 | **Swarm Orchestration** | Orchestrate multi-agent swarms with agentic-flow for parallel task execution, dynamic topology, and intelligent coordination. Use when scaling beyond single agents, implementing complex workflows, ... | - | agents |
-| 2928 | **swarm-advanced** | Advanced swarm orchestration patterns for research, development, testing, and complex distributed workflows | - | agents |
-| 2929 | **swift-actor-persistence** | Thread-safe data persistence in Swift using actors. | - | claude |
-| 2930 | **swift-concurrency-6-2** | Swift 6.2 Approachable Concurrency patterns. | - | claude |
-| 2931 | **swift-expert** | Builds iOS/macOS/watchOS/tvOS applications, implements SwiftUI views and state management, designs protocol-oriented architectures, handles async/await concurrency, implements actors for thread saf... | - | agents |
-| 2932 | **swift-mcp-server-generator** | Generate complete MCP server project in Swift. | - | claude |
-| 2933 | **swift-protocol-di-testing** | Protocol-based dependency injection for testable Swift. | - | claude |
-| 2934 | **swiftui-patterns** | SwiftUI architecture patterns and state management with @Observable. | - | claude |
-| 2935 | **syllabus** | Generates a curated supplementary reading list from any course syllabus using Consensus academic search. Grill-me intake (syllabus input format + course audience + year range) plus a grouping forci... | - | agents |
-| 2936 | **sympla-automation** | Automate Sympla tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2937 | **sync-gbrain** | Keep gbrain current with this repo's code and refresh agent search guidance in AGENTS.md. Wraps the gstack-gbrain-sync orchestrator with state (gstack) | - | agents |
-| 2938 | **synthflow-ai-automation** | Automate Synthflow AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2939 | **system-commandline-cli** | Add and review CLI commands in .NET using System.CommandLine. | - | claude |
-| 2940 | **system-design** | Design scalable distributed systems using structured approaches for load balancing, caching, database scaling, and message queues. Use when the user mentions "system design", "scale this", "high av... | - | agents |
-| 2941 | **Systematic Debugging** | Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions. | - | agents |
-| 2942 | **systematic-debugging** | Debugging methodology, hypothesis testing, reading stack traces, isolating issues. Use when facing an unexpected bug, a flaky test, a production incident, or any situation where the cause isn't imm... | - | agents |
-| 2943 | **taggun-automation** | Automate Taggun tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2944 | **tailored-resume-generator** | Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements to maximize interview chances | - | agents |
-| 2945 | **tailwind** | Tailwind CSS v4.2 browser-runtime patterns for HyperFrames compositions. Use when scaffolding or editing projects created with `hyperframes init --tailwind`, writing Tailwind utility classes in com... | - | agents |
-| 2946 | **tailwind-patterns** | Tailwind CSS v4 patterns, component styling, dark mode, responsive design, and design system integration. Use when styling components or reviewing CSS. | - | agents |
-| 2947 | **tailwind-theme-builder** | Set up Tailwind v4 with shadcn/ui themed UI. Workflow: install dependencies, configure CSS variables with @theme inline, set up dark mode, verify. Use when initialising React projects with Tailwind... | - | agents |
-| 2948 | **talenthr-automation** | Automate Talenthr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2949 | **tally-automation** | Automate Tally tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2950 | **tanstack-start** | Build a full-stack TanStack Start app on Cloudflare Workers from scratch — SSR, file-based routing, server functions, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui. No template repo — Codex genera... | - | agents |
-| 2951 | **tapfiliate-automation** | Automate Tapfiliate tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2952 | **tapform-automation** | Automate Tapform tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2953 | **taste** | Creative-direction (taste) layer for music videos & hyperpop edits. | https://github.com/Leonxlnx/taste-skill | claude |
-| 2954 | **taste-skill** | Leonxlnx's Taste Skill: The Anti-Slop Frontend Framework for AI Agents. Upgrades layout, typography, motion, and spacing. | - | claude |
-| 2955 | **tasteforge-video** | Multimodal video & 3D-asset discovery with EDL/FCPXML exports. | - | claude |
-| 2956 | **tavily-automation** | Automate Tavily tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2957 | **taxjar-automation** | Automate Taxjar tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2958 | **tc** |  | - | agents |
-| 2959 | **tc-tracker** | Use when the user asks to track technical changes, create change records, manage TC lifecycles, or hand off work between AI sessions. Covers init/create/update/status/resume/close/export workflows ... | - | agents |
-| 2960 | **tdd** | Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests. | - | agents |
-| 2961 | **tdd-guide** | Test-driven development skill for writing unit tests, generating test fixtures and mocks, analyzing coverage gaps, and guiding red-green-refactor workflows across Jest, Pytest, JUnit, Vitest, and M... | - | agents |
-| 2962 | **tdd-london-chicago** | Apply London (mock-based) and Chicago (state-based) TDD schools. Use when practicing test-driven development or choosing testing style for your context. | - | agents |
-| 2963 | **tdd-workflow** | TDD workflow enforcing 80%+ test coverage. | - | claude |
-| 2964 | **teach** | Teach the user a new skill or concept, within this workspace. | - | agents |
-| 2965 | **teach-impeccable** | One-time setup that gathers design context for your project and saves it to your AI config file. Run once to establish persistent design guidelines. | - | agents |
-| 2966 | **team** | Coordinate N agents on shared task list using Claude native teams. | - | claude |
-| 2967 | **team-agent-orchestration** | Team-based agent squad orchestration & Kanban merge gates. | - | claude |
-| 2968 | **team-builder** | Interactive agent picker for dispatching parallel teams. | - | claude |
-| 2969 | **team-communications** | Write internal company communications — 3P updates (Progress/Plans/Problems), company-wide newsletters, FAQ roundups, incident reports, leadership updates, status reports, project updates, and gene... | - | agents |
-| 2970 | **team-topologies** | Organize business and technology teams for fast flow using Skelton & Pais''s "Team Topologies". Use when the user mentions "team topologies", "Conway''s law", "platform team", "stream-aligned team"... | - | agents |
-| 2971 | **team-update** | Post project updates to team chat, gather feedback, triage responses, and plan next steps. Adapts to available tools (chat, git, issues, tasks). First run discovers tools and saves a playbook; subs... | - | agents |
-| 2972 | **teamcamp-automation** | Automate Teamcamp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2973 | **teams-app-developer** | Builds, tests, and deploys Microsoft 365 apps and agents for Teams and Copilot. Includes sub-skills for project creation, local testing, cloud deployment, troubleshooting, and Slack-to-Teams migrat... | - | agents |
-| 2974 | **tech-debt** |  | - | agents |
-| 2975 | **tech-debt-tracker** | Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans. Use when users mention tech debt, code quality, refactoring priority, debt scoring, clea... | - | agents |
-| 2976 | **tech-stack-evaluator** | Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring. Use when comparing frameworks, evaluating technology stacks, calculating total cost ... | - | agents |
-| 2977 | **technical-documentation** | Build and review high-quality technical docs as well as agent instruction files in your repository. | - | claude |
-| 2978 | **technical-job-search** | Software engineer job search — CV tailoring & cover letters. | - | claude |
-| 2979 | **technical-seo-checker** | Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. \"My site is slow\" / \"Google找不到\" / \"网站打不开\". 技术SEO/网站速度/爬虫/索引/CWV テクニカルSEO/サイト速度 기술SEO/사이트속도 SEO t... | - | agents |
-| 2980 | **technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. | - | agents |
-| 2981 | **technology-stack-blueprint-generator** | Technology stack blueprint generator from codebases. | - | claude |
-| 2982 | **telnyx-automation** | Automate Telnyx tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2983 | **teltel-automation** | Automate Teltel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2984 | **TEMPLATE** |  | - | agents |
-| 2985 | **template-skill** | Replace with description of the skill and when Codex should use it. | - | agents |
-| 2986 | **templated-automation** | Automate Templated tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2987 | **terminal-opener** | Open executable in visible terminal window safely. | - | claude |
-| 2988 | **terminal-ops** | Evidence-first terminal execution workflow. | - | claude |
-| 2989 | **terraform-azurerm-set-diff-analyzer** | Analyze Terraform plan JSON for AzureRM provider diffs. | - | claude |
-| 2990 | **terraform-engineer** | Use when implementing infrastructure as code with Terraform across AWS, Azure, or GCP. Invoke for module development (create reusable modules, manage module versioning), state management (migrate b... | - | agents |
-| 2991 | **terraform-patterns** | Terraform infrastructure-as-code agent skill and plugin for Codex, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security ... | - | agents |
-| 2992 | **test-app-automation** | Automate Test App tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 2993 | **test-automation-strategy** | Design and implement effective test automation with proper pyramid, patterns, and CI/CD integration. Use when building automation frameworks or improving test efficiency. | - | agents |
-| 2994 | **test-data-management** | Strategic test data generation, management, and privacy compliance. Use when creating test data, handling PII, ensuring GDPR/CCPA compliance, or scaling data generation for realistic testing scenar... | - | agents |
-| 2995 | **test-design-techniques** | Systematic test design with boundary value analysis, equivalence partitioning, decision tables, state transition testing, and combinatorial testing. Use when designing comprehensive test cases, red... | - | agents |
-| 2996 | **test-driven-development** | Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about... | - | agents |
-| 2997 | **test-environment-management** | Test environment provisioning, infrastructure as code for testing, Docker/Kubernetes for test environments, service virtualization, and cost optimization. Use when managing test infrastructure, ens... | - | agents |
-| 2998 | **test-failure-investigator** | Use when a test is failing and you need to determine root cause: is it flaky, an environment issue, or a real regression? Traces failure from symptom to fix. | - | agents |
-| 2999 | **test-idea-rewriting** | Transform passive 'Verify X' test descriptions into active, observable test actions. Use when test ideas lack specificity, use vague language, or fail quality validation. Converts to action-verb fo... | - | agents |
-| 3000 | **test-master** | Generates test files, creates mocking strategies, analyzes code coverage, designs test architectures, and produces test plans and defect reports across functional, performance, and security testing... | - | agents |
-| 3001 | **test-metrics-dashboard** | Use when querying test history, analyzing flakiness rates, tracking MTTR, or building quality trend dashboards from test execution data. | - | agents |
-| 3002 | **test-reporting-analytics** | Advanced test reporting, quality dashboards, predictive analytics, trend analysis, and executive reporting for QE metrics. Use when communicating quality status, tracking trends, or making data-dri... | - | agents |
-| 3003 | **testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... | - | agents |
-| 3004 | **testcontainers-dotnet** | A comprehensive guide for using Testcontainers for .NET (4.10.0+) to write reliable integration tests with Docker containers in .NET projects. Supports 65+ pre-configured modules for databases, mes... | - | agents |
-| 3005 | **testcontainers-go** | A comprehensive guide for using Testcontainers for Go to write reliable integration tests with Docker containers in Go projects. Supports 62+ pre-configured modules for databases, message queues, c... | - | agents |
-| 3006 | **testing-comply-quick** | Test Comply-Quick compliance wizard & paywall. | - | claude |
-| 3007 | **testrail** | Sync tests with TestRail. Use when user mentions "testrail", "test management", "test cases", "test run", "sync test cases", "push results to testrail", or "import from testrail". | - | agents |
-| 3008 | **text-to-pdf-automation** | Automate Text To PDF tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3009 | **textcortex-automation** | Automate Textcortex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3010 | **textit-automation** | Automate Textit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3011 | **textrazor-automation** | Automate Textrazor tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3012 | **thanks-io-automation** | Automate Thanks IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3013 | **the-architect** | Interviews the user about what they want to build (phased discovery Q&A), classifies the project into an archetype (SaaS webapp, marketing site, mobile app, API backend, internal tool, content plat... | - | agents |
-| 3014 | **the-fool** | Use when challenging ideas, plans, decisions, or proposals using structured critical reasoning. Invoke to play devil's advocate, run a pre-mortem, red team, or audit evidence and assumptions. | - | agents |
-| 3015 | **the-odds-api-automation** | Automate The Odds API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3016 | **theme-factory** | Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifac... | - | agents |
-| 3017 | **threat-detection** | Use when hunting for threats in an environment, analyzing IOCs, or detecting behavioral anomalies in telemetry. Covers hypothesis-driven threat hunting, IOC sweep generation, z-score anomaly detect... | - | agents |
-| 3018 | **threat-model-analyst** | STRIDE-A threat model analysis for repositories. | https://github.com/behisecc/claude-security-skills | claude |
-| 3019 | **three** | Three.js and WebGL adapter patterns for HyperFrames. Use when creating deterministic Three.js scenes, WebGL canvas layers, AnimationMixer timelines, camera motion, shader-driven visuals, or canvas ... | - | agents |
-| 3020 | **threejs** | Build 3D web apps with Three.js (WebGL/WebGPU). Use for 3D scenes, animations, custom shaders, PBR materials, VR/XR experiences, games, data visualizations, product configurators. | - | agents |
-| 3021 | **ticketmaster-automation** | Automate Ticketmaster tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3022 | **ticktick-automation** | Automate Ticktick tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3023 | **timecamp-automation** | Automate Timecamp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3024 | **timekit-automation** | Automate Timekit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3025 | **timeline-report** | Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from Codex-mem's timeline. Use when asked for a timeline report, project history analysis, deve... | - | agents |
-| 3026 | **timelinesai-automation** | Automate Timelinesai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3027 | **timelink-automation** | Automate Timelink tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3028 | **timely-automation** | Automate Timely tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3029 | **tiny-stepping** | Incremental development making smallest meaningful change per step. | - | claude |
-| 3030 | **tinystruct-patterns** | Developing with tinystruct Java framework. | - | claude |
-| 3031 | **tinyurl-automation** | Automate Tinyurl tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3032 | **tisane-automation** | Automate Tisane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3033 | **tldr-prompt** | Create tldr summaries for Copilot files and MCP servers. | - | claude |
-| 3034 | **tm7-threat-model** | Create Microsoft Threat Modeling Tool (.tm7) files. | - | claude |
-| 3035 | **to-issues** | Break plan/spec into independent issues on tracker. | - | claude |
-| 3036 | **to-prd** | Turn conversation into PRD on issue tracker. | - | claude |
-| 3037 | **to-questionnaire** | Turn a decision you can't fully answer into a questionnaire for someone else to fill in. | - | agents |
-| 3038 | **to-spec** | Turn the current conversation into a spec and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed. | - | agents |
-| 3039 | **to-tickets** | Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker — edges as text in one file per ticket lo... | - | agents |
-| 3040 | **tododeia-animaciones** | Colección de animaciones diarias de UI, efectos micro-interactivos y presets de movimiento. | - | claude |
-| 3041 | **Toggl Automation** | Automate time tracking workflows in Toggl Track -- create time entries, manage projects, clients, tags, and workspaces through natural language commands. | - | agents |
-| 3042 | **token-budget-advisor** | Token budget control advisor for response depth. | - | claude |
-| 3043 | **token-build** | Set up or run the token build pipeline — transform the DTCG tokens/*.json (source of truth) into platform artifacts (CSS variables, Tailwind @theme, JS/TS, iOS Asset Catalog, Android, Compose) with... | - | agents |
-| 3044 | **token-efficiency** | Use always as a background discipline to minimize token usage and API costs — controls verbosity, avoids re-reading files, prevents unnecessary tool calls | - | agents |
-| 3045 | **token-metrics-automation** | Automate Token Metrics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3046 | **token-savings** | Confirms which skills are actually relevant to a project BEFORE work starts, instead of the model guessing, loading, or invoking skills ad-hoc — the single biggest lever for cutting wasted tokens a... | - | agents |
-| 3047 | **tokensaver** | Runtime context optimization - structured summarization, tool output pruning, importance-based retention | - | agents |
-| 3048 | **tokmax** | Compress text for maximum token efficiency & machine intent. | - | claude |
-| 3049 | **tomba-automation** | Automate Tomba tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3050 | **tomtom-automation** | Automate Tomtom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3051 | **toneden-automation** | Automate Toneden tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3052 | **top-design** | Create award-winning, immersive web experiences at the level of Awwwards-featured agencies. Use when the user mentions "Awwwards quality", "make my site stunning", "scroll animations", "parallax st... | - | agents |
-| 3053 | **tpscheck-automation** | Automate Tpscheck tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3054 | **trace** | Evidence-driven causal tracing lane with competing hypotheses. | - | claude |
-| 3055 | **traction-eos** | Implement the Entrepreneurial Operating System (EOS) to align vision and execution across a company. Use when the user mentions "EOS", "Entrepreneurial Operating System", "V/TO", "quarterly rocks",... | - | agents |
-| 3056 | **train-sentence-transformers** | Train or fine-tune SentenceTransformers bi-encoder models. | - | claude |
-| 3057 | **transcribe** | Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in inte... | - | agents |
-| 3058 | **transformers-js** | Run ML models directly in JavaScript using Transformers.js. | - | claude |
-| 3059 | **transloadit-media-processing** | Process media files (video/audio/images) using Transloadit. | - | claude |
-| 3060 | **triage** | Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. | - | agents |
-| 3061 | **triage-frontend-issues** | Triage Sentry JavaScript frontend errors. | - | claude |
-| 3062 | **triggercmd-automation** | Automate Triggercmd tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3063 | **tripadvisor-content-api-automation** | Automate TripAdvisor tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3064 | **trl-training** | Train transformer models using TRL (SFT, DPO, GRPO, KTO). | - | claude |
-| 3065 | **tugboat** | Anxiety-aware evidence-driven collaboration for stalled work. | - | claude |
-| 3066 | **turbot-pipes-automation** | Automate Turbot Pipes tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3067 | **turnstile-spin** | Set up Cloudflare Turnstile end-to-end in a project. Scan the codebase, create the widget via the Cloudflare API, embed it where user requests need bot verification (form submissions, SPA actions, ... | - | agents |
-| 3068 | **turso-automation** | Automate Turso tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3069 | **twelve-data-automation** | Automate Twelve Data tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3070 | **twitch-automation** | Automate Twitch tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3071 | **twitter-algorithm-optimizer** | Analyze and optimize tweets for maximum reach using Twitter's open-source algorithm insights. Rewrite and edit user tweets to improve engagement and visibility based on how the recommendation syste... | - | agents |
-| 3072 | **twocaptcha-automation** | Automate Twocaptcha tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3073 | **typefully-automation** | Automate Typefully tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3074 | **typescript-mcp-server-generator** | Generate complete MCP server project in TypeScript. | - | claude |
-| 3075 | **typescript-patterns** | TypeScript type system patterns, generics, utility types, and strict mode best practices. Use when writing or reviewing TypeScript code. | - | agents |
-| 3076 | **typescript-pro** | Implements advanced TypeScript type systems, creates custom type guards, utility types, and branded types, and configures tRPC for end-to-end type safety. Use when building TypeScript applications ... | - | agents |
-| 3077 | **typeset** | Improves typography by fixing font choices, hierarchy, sizing, weight, and readability so text feels intentional. Use when the user mentions fonts, type, readability, text hierarchy, sizing looks o... | - | agents |
-| 3078 | **typespec-api-operations** | Add REST operations to TypeSpec API plugin. | - | claude |
-| 3079 | **typespec-create-agent** | Generate TypeSpec declarative agent for M365 Copilot. | - | claude |
-| 3080 | **typespec-create-api-plugin** | Generate TypeSpec API plugin for M365 Copilot. | - | claude |
-| 3081 | **typing-exclusion-worker** | Remove mypy exclusion modules in scoped batches. | - | claude |
-| 3082 | **typless-automation** | Automate Typless tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3083 | **u301-automation** | Automate U301 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3084 | **ubiquitous-language** | Extract a DDD-style ubiquitous language glossary from the current conversation, flagging ambiguities and proposing canonical terms. Saves to UBIQUITOUS_LANGUAGE.md. Use when user wants to define do... | - | agents |
-| 3085 | **ui-demo** | Record polished UI demo videos using Playwright. | - | claude |
-| 3086 | **ui-design-system** | UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive design calculations, and developer handoff tools. Use when creating design sys... | - | agents |
-| 3087 | **ui-screenshots** | Capture web app screenshots using Playwright and PIL. | - | claude |
-| 3088 | **ui-skills-root** | Use before UI-related work to select the smallest useful UI Skills context through the ui-skills CLI. | - | agents |
-| 3089 | **ui-styling** | Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user in... | - | agents |
-| 3090 | **ui-to-vue** | Convert UI screenshots into Vue 3 components (Element/AntD). | - | claude |
-| 3091 | **ui-ux-pro-max** | UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vu... | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill | agents |
-| 3092 | **ui-widget-developer** | Build MCP servers for Copilot Chat using the OpenAI Apps SDK or MCP Apps SDK widget rendering support (any language). Use this skill when: - Creating MCP servers that integrate with M365 Copilot de... | - | agents |
-| 3093 | **uk-business-english** | British business English writing style for professional communications. Polished, understated, EN-GB spelling. Use when writing emails, chat messages, proposals, client communications, or any busin... | - | agents |
-| 3094 | **ultimate-design-system-master** | Create comprehensive design systems, brand identities, and UI component libraries. Use when the user says "create design system", "build brand identity", "design UI components", "generate design to... | - | agents |
-| 3095 | **ultragoal** | Multi-goal workflow persisting plan artifacts under .omc/ultragoal. | - | claude |
-| 3096 | **ultraqa** | QA cycling workflow — test, verify, fix, repeat. | - | claude |
-| 3097 | **ultrawork** | Parallel execution engine for high-throughput task completion. | - | claude |
-| 3098 | **uncloud** | Deploy and manage services on Uncloud cluster with Caddy. | - | claude |
-| 3099 | **unfreeze** | Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack) | - | agents |
-| 3100 | **unified-memory** | Share durable context across Claude, Codex, Cursor & OpenCode. | - | claude |
-| 3101 | **unified-notifications-ops** | Operate notifications across GitHub, Linear, desktop alerts. | - | claude |
-| 3102 | **unione-automation** | Automate Unione tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3103 | **unit-test-vue-pinia** | Write unit tests for Vue 3 + Vitest + Pinia. | - | claude |
-| 3104 | **universal-scraping-architect** | Use for web scraping, crawling, document extraction, API parsing, or building validation-heavy data pipelines using Firecrawl or local Python scripts. | - | agents |
-| 3105 | **update-avm-modules-in-bicep** | Update Azure Verified Modules in Bicep files. | - | claude |
-| 3106 | **update-harness-dependencies** | Update primary SDK dependencies of harness packages. | - | claude |
-| 3107 | **update-implementation-plan** | Update existing implementation plan file. | - | claude |
-| 3108 | **update-llms** | Update root llms.txt following llmstxt.org spec. | - | claude |
-| 3109 | **update-markdown-file-index** | Update markdown section with file index. | - | claude |
-| 3110 | **update-provider-models** | Add/remove model IDs for AI SDK providers. | - | claude |
-| 3111 | **update-specification** | Update solution specification optimized for LLM consumption. | - | claude |
-| 3112 | **updown-io-automation** | Automate Updown IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3113 | **upgrade-stripe** | Upgrade Stripe API versions and SDKs safely. | - | claude |
-| 3114 | **Uploadcare Automation** | Automate Uploadcare file management including listing, storing, inspecting, downloading, and organizing file groups through natural language commands | - | agents |
-| 3115 | **uptimerobot-automation** | Automate Uptimerobot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3116 | **us-business-english** | American business English writing style for professional communications. Direct, action-oriented, EN-US spelling. Use when writing emails, chat messages, proposals, client communications, or any bu... | - | agents |
-| 3117 | **user-story** |  | - | agents |
-| 3118 | **userlist-automation** | Automate Userlist tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3119 | **using-agent-skills** | Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are di... | - | agents |
-| 3120 | **using-datahub** | Routing guidance for DataHub interaction skills. | - | claude |
-| 3121 | **using-git-worktrees** | Isolated worktree dev environment workflow. | - | claude |
-| 3122 | **using-n8n-mcp-skills** | Use when building, editing, validating, testing, or debugging an n8n workflow through the n8n-mcp MCP server — designing a flow, configuring a node, writing an expression or Code node, wiring crede... | - | claude |
-| 3123 | **using-superpowers** | Establishes skill invocation requirements before responding. | - | claude |
-| 3124 | **using-tmux-for-interactive-commands** | Run interactive CLI tools (vim, rebase) in tmux. | - | claude |
-| 3125 | **uspto-database** | USPTO patent and trademark data lookup. | - | claude |
-| 3126 | **ux-audit** | Dogfood web apps — browse as a real user, notice friction, document findings. Adopts a user persona, tracks emotional friction (trust, anxiety, confusion), counts click efficiency, tests resilience... | - | agents |
-| 3127 | **ux-heuristics** | Evaluate and improve interface usability using heuristic analysis. Use when the user mentions "usability audit", "users are confused", "form usability", "navigation problems", "Nielsen heuristics",... | - | agents |
-| 3128 | **ux-researcher-designer** | UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use when conducting... | - | agents |
-| 3129 | **ux-writing** | Write or review UI copy — buttons, errors, empty states, microcopy, notifications, labels — using the voice & tone system (clear, concise, useful, human, honest) with the what→why→how error formula... | - | agents |
-| 3130 | **v0-automation** | Automate V0 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3131 | **V3 CLI Modernization** | CLI modernization and hooks system enhancement for Codex-flow v3. Implements interactive prompts, command decomposition, enhanced hooks integration, and intelligent workflow automation. | - | agents |
-| 3132 | **V3 Core Implementation** | Core module implementation for Codex-flow v3. Implements DDD domains, clean architecture patterns, dependency injection, and modular TypeScript codebase with comprehensive testing. | - | agents |
-| 3133 | **V3 DDD Architecture** | Domain-Driven Design architecture for Codex-flow v3. Implements modular, bounded context architecture with clean separation of concerns and microkernel pattern. | - | agents |
-| 3134 | **V3 Deep Integration** | Deep agentic-flow@alpha integration implementing ADR-001. Eliminates 10,000+ duplicate lines by building Codex-flow as specialized extension rather than parallel implementation. | - | agents |
-| 3135 | **V3 MCP Optimization** | MCP server optimization and transport layer enhancement for Codex-flow v3. Implements connection pooling, load balancing, tool registry optimization, and performance monitoring for sub-100ms respon... | - | agents |
-| 3136 | **V3 Memory Unification** | Unify 6+ memory systems into AgentDB with HNSW indexing for 150x-12,500x search improvements. Implements ADR-006 (Unified Memory Service) and ADR-009 (Hybrid Memory Backend). | - | agents |
-| 3137 | **V3 Performance Optimization** | Achieve aggressive v3 performance targets: 2.49x-7.47x Flash Attention speedup, 150x-12,500x search improvements, 50-75% memory reduction. Comprehensive benchmarking and optimization suite. | - | agents |
-| 3138 | **V3 Security Overhaul** | Complete security architecture overhaul for Codex-flow v3. Addresses critical CVEs (CVE-1, CVE-2, CVE-3) and implements secure-by-default patterns. Use for security-first v3 implementation. | - | agents |
-| 3139 | **V3 Swarm Coordination** | 15-agent hierarchical mesh coordination for v3 implementation. Orchestrates parallel execution across security, core, and integration domains following 10 ADRs with 14-week timeline. | - | agents |
-| 3140 | **validation-pipeline** | Runs multi-stage validation gates with per-step scoring, pass/fail verdicts, and aggregate quality reports. Use when validating requirements, code, or artifacts through structured gate enforcement ... | - | agents |
-| 3141 | **vardoger-analyze** | Personalize Copilot CLI assistant to user's style. | - | claude |
-| 3142 | **vcpkg** | Setting up vcpkg in C++ projects & cross-compiling. | - | claude |
-| 3143 | **vendor-management** | Use when reviewing, scoring, or auditing third-party SaaS / vendor relationships — running a vendor scorecard with industry tuning, tracking SLA compliance with credit-claim flags, classifying thir... | - | agents |
-| 3144 | **venly-automation** | Automate Venly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3145 | **veo-automation** | Automate Veo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3146 | **vercel-composition-patterns** | React composition patterns that scale. | - | claude |
-| 3147 | **vercel-deploy** | Deploy applications and websites to Vercel. Use when the user requests deployment actions like "deploy my app", "deploy and give me the link", "push this live", or "create a preview deployment". | - | agents |
-| 3148 | **vercel-react-best-practices** | React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance pat... | - | agents |
-| 3149 | **vercel-react-native-skills** | React Native & Expo performance best practices. | - | claude |
-| 3150 | **vercel-react-view-transitions** | Implement native-feeling animations using View Transition API. | - | claude |
-| 3151 | **Verification & Quality Assurance** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. | - | agents |
-| 3152 | **Verification Before Completion** | Run verification commands and confirm output before claiming success | - | agents |
-| 3153 | **verification-before-completion** | Verification commands required before claiming completion. | - | claude |
-| 3154 | **verification-loop** | Comprehensive verification system for agent sessions. | - | claude |
-| 3155 | **verifiedemail-automation** | Automate Verifiedemail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3156 | **verify** | Verify change works before claiming completion. | - | claude |
-| 3157 | **verify-agent-action** | Review proposed AI agent action packet before execution. | - | claude |
-| 3158 | **verify-and-stop** | Prove existing work meets acceptance criteria without expanding scope. | - | claude |
-| 3159 | **veriphone-automation** | Automate Veriphone tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3160 | **vero-automation** | Automate Vero tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3161 | **version-bump** | Automated semantic versioning and release workflow for Codex plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging, GitHu... | - | agents |
-| 3162 | **vestaboard-automation** | Automate Vestaboard tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3163 | **video** | When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. Also use when the user mentions 'video production,' 'AI video,' 'Remotion,' 'Hyperframes... | - | agents |
-| 3164 | **video-content-strategist** | Use when planning video content strategy, writing video scripts, optimizing YouTube channels, building short-form video pipelines (Reels, TikTok, Shorts), or repurposing long-form content into vide... | - | agents |
-| 3165 | **video-editing** | AI-assisted video editing pipeline with FFmpeg and Remotion. | - | claude |
-| 3166 | **videodb** | Ingest, search, understand & stream video context via VideoDB. | - | claude |
-| 3167 | **virustotal-automation** | Automate Virustotal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3168 | **visa-doc-translate** | Translate visa application document images to bilingual PDF. | - | claude |
-| 3169 | **visme-automation** | Automate Visme tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3170 | **visual-edit** | Open local app in visual edit iframe screens. | - | claude |
-| 3171 | **visual-plan** | Turn text plans into rich interactive visual plans. | - | claude |
-| 3172 | **visual-recap** | Turn PR, branch, or git diff into interactive visual recap. | - | claude |
-| 3173 | **visual-testing-advanced** | Advanced visual regression testing with pixel-perfect comparison, AI-powered diff analysis, responsive design validation, and cross-browser visual consistency. Use when detecting UI regressions, va... | - | agents |
-| 3174 | **visual-verdict** | Structured visual QA verdict for UI comparisons. | - | claude |
-| 3175 | **vite-flare-starter** | Scaffold a full-stack Cloudflare app from vite-flare-starter — React 19, Hono, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui, TanStack Query, R2, Workers AI. Run setup.sh to clone, configure, and ... | - | agents |
-| 3176 | **vite-patterns** | Vite build tool patterns: config, HMR, env, SSR, pre-bundling. | - | claude |
-| 3177 | **vitest** | Set up Vitest testing in any project — detects project type (Cloudflare Workers, React, Node), generates vitest.config.ts, test setup, utilities, and sample tests. Also covers mocking patterns, cov... | - | agents |
-| 3178 | **voltagent-best-practices** | VoltAgent architectural patterns and conventions. Covers agents vs workflows, project layout, memory, servers, and observability. | - | agents |
-| 3179 | **voltagent-docs-bundle** | Look up VoltAgent documentation embedded in node_modules/@voltagent/core/docs for version-matched docs. Use for API signatures, guides, and examples. | - | agents |
-| 3180 | **vpe-advisor** | VP of Engineering advisory for startups: delivery throughput (DORA 4 metrics + bottleneck identification), engineering hiring funnel (sourcing → screen → onsite → offer conversion + time-to-fill + ... | - | agents |
-| 3181 | **vpe-review** | /cs:vpe-review <plan> — Throughput-first VP of Engineering interrogation of any plan that touches delivery, eng hiring, team structure, or production discipline. Use when cycle time balloons, DORA ... | - | agents |
-| 3182 | **vscode-ext-commands** | Guidelines for contributing commands in VS Code extensions. | - | claude |
-| 3183 | **vscode-ext-localization** | Localization patterns for VS Code extensions. | - | claude |
-| 3184 | **vue-best-practices** | Vue 3 Composition API with <script setup> and TypeScript. | - | claude |
-| 3185 | **vue-debug-guides** | Vue 3 debugging and error handling for runtime & SSR issues. | - | claude |
-| 3186 | **vue-expert** | Builds Vue 3 components with Composition API patterns, configures Nuxt 3 SSR/SSG projects, sets up Pinia stores, scaffolds Quasar/Capacitor mobile apps, implements PWA features, and optimises Vite ... | - | agents |
-| 3187 | **vue-expert-js** | Creates Vue 3 components, builds vanilla JS composables, configures Vite projects, and sets up routing and state management using JavaScript only — no TypeScript. Generates JSDoc-typed code with @t... | - | agents |
-| 3188 | **vue-jsx-best-practices** | JSX syntax in Vue 3 components. | - | claude |
-| 3189 | **vue-options-api-best-practices** | Vue 3 Options API best practices. | - | claude |
-| 3190 | **vue-patterns** | Vue.js 3 Composition API, Pinia, Vue Router & Nuxt patterns. | - | claude |
-| 3191 | **vue-pinia-best-practices** | Pinia state management setup & reactivity in Vue 3. | - | claude |
-| 3192 | **vue-router-best-practices** | Vue Router 4 patterns & navigation guards. | - | claude |
-| 3193 | **vue-testing-best-practices** | Vue.js testing with Vitest, Vue Test Utils & Playwright. | - | claude |
-| 3194 | **waapi** | Web Animations API adapter patterns for HyperFrames. Use when authoring element.animate() motion, Animation currentTime seeking, document.getAnimations(), KeyframeEffect timing, fill modes, or nati... | - | agents |
-| 3195 | **waboxapp-automation** | Automate Waboxapp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3196 | **wachete-automation** | Automate Wachete tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3197 | **wait-what** | Re-pitch message when user indicates last message missed target. | - | claude |
-| 3198 | **waiverfile-automation** | Automate Waiverfile tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3199 | **wakatime-automation** | Automate Wakatime tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3200 | **walkthrough-video** | Generate professional walkthrough videos from app screenshots or live sites using Remotion. Smooth transitions, zoom effects, text overlays, and optional voiceover narration. Produces MP4 videos fo... | - | agents |
-| 3201 | **wati-automation** | Automate Wati tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3202 | **Wave Accounting Automation** | Wave Accounting toolkit is not currently available as a native integration. No Wave-specific tools were found in the Composio platform. This skill is a placeholder pending future integration. | - | agents |
-| 3203 | **wave_accounting-automation** | Automate Wave Accounting tasks via Rube MCP (Composio): invoices, customers, payments, and small business accounting. Always search tools first for current schemas. | - | agents |
-| 3204 | **wayfinder** | Plan a huge chunk of work — more than one agent session can hold — as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear. | - | agents |
-| 3205 | **weathermap-automation** | Automate Weathermap tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3206 | **web** | Builds a complete website using visual assets generated with Forkads (saved in assets/) and a brief written in content/brief.md. Use when the user writes "/web" or says "read the web skill and buil... | - | agents |
-| 3207 | **web-app-penetration-testing** | Pentest a web app or website end to end — black-box testing of a live URL, staging environment, or local dev server that finds and exploits real vulnerabilities (auth bypass, broken access control,... | - | agents |
-| 3208 | **web-artifacts-builder** | Suite of tools for creating elaborate, multi-component Codex.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state man... | - | agents |
-| 3209 | **web-design-guidelines** | Web design best practices, accessibility, responsive layout, color contrast. Use when auditing a UI for a11y compliance, designing responsive layouts, or establishing design standards across a web ... | - | agents |
-| 3210 | **web-design-reviewer** | Visual inspection of local/remote web app UI design. | - | claude |
-| 3211 | **web-frameworks** | Build modern full-stack web applications with Next.js (App Router, Server Components, RSC, PPR, SSR, SSG, ISR), Turborepo (monorepo management, task pipelines, remote caching, parallel execution), ... | - | agents |
-| 3212 | **web-perf** | Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (LCP, INP, CLS) and supplementary metrics (FCP, TBT, Speed Index), identifies render-blocking resources, network depende... | - | agents |
-| 3213 | **web-research** | Search public web for authoritative sources and return cited answer. | - | claude |
-| 3214 | **web-testing** | Web testing with Playwright, Vitest, k6. E2E/unit/integration/load/security/visual/a11y testing. Use for test automation, flakiness, Core Web Vitals, mobile gestures, cross-browser. | - | agents |
-| 3215 | **web-to-markdown** | Convert webpage URLs to clean markdown. | - | claude |
-| 3216 | **web-typography** | Select, pair, and implement typefaces for web projects. Use when the user mentions "font pairing", "which typeface", "line height", "responsive typography", "web font loading", "type hierarchy", "v... | - | agents |
-| 3217 | **webapp-testing** | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browse... | - | agents |
-| 3218 | **Webex Automation** | Automate Cisco Webex messaging, rooms, teams, webhooks, and people management through natural language commands | - | agents |
-| 3219 | **webinar-marketing** | When the user wants to plan, promote, run, or improve a webinar or virtual event to generate and convert demand. Use when the user mentions 'webinar,' 'virtual event,' 'online event,' 'live demo,' ... | - | agents |
-| 3220 | **webmcpify** | Make web app agent-ready with WebMCP tool manifest. | - | claude |
-| 3221 | **webscraping-ai-automation** | Automate Webscraping AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3222 | **website-to-hyperframes** | Capture a website and create a HyperFrames video from it. Use when: (1) a user provides a URL and wants a video, (2) someone says "capture this site", "turn this into a video", "make a promo from m... | - | agents |
-| 3223 | **websocket-engineer** | Use when building real-time communication systems with WebSockets or Socket.IO. Invoke for bidirectional messaging, horizontal scaling with Redis, presence tracking, room management. | - | agents |
-| 3224 | **webvizio-automation** | Automate Webvizio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3225 | **weekly-digests** | Generate a serial week-by-week narrative digest of a project's full Codex-mem timeline. Splits the timeline into per-ISO-week files, then runs one consecutive subagent per week — each receiving the... | - | agents |
-| 3226 | **weekly-review** | Use when someone wants to run a weekly review, close open loops, audit stalled projects and commitments, get their system back to trusted, restart a lapsed review habit, or says "/cs:weekly-review"... | - | agents |
-| 3227 | **what-context-needed** | Ask Copilot what context files it needs to see. | - | claude |
-| 3228 | **what-the** | What the? Use when the user wants a plain-English breakdown of something technical — the who, what, where, why, and when. | - | agents |
-| 3229 | **whautomate-automation** | Automate Whautomate tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3230 | **When Stuck - Problem-Solving Dispatch** | Dispatch to the right problem-solving technique based on how you're stuck | - | agents |
-| 3231 | **wiki** | LLM Wiki — persistent markdown knowledge base compounding across sessions. | - | claude |
-| 3232 | **wiki-ado-convert** | Converts VitePress/GFM wiki markdown to Azure DevOps Wiki-compatible format. Generates a Node.js build script that transforms Mermaid syntax, strips front matter, fixes links, and outputs ADO-compa... | - | agents |
-| 3233 | **wiki-agents-md** | Generates AGENTS.md files for repository folders — coding agent context files with build commands, testing instructions, code style, project structure, and boundaries. Only generates where AGENTS.m... | - | agents |
-| 3234 | **wiki-architect** | Analyzes code repositories and generates hierarchical documentation structures with onboarding guides. Use when the user wants to create a wiki, generate documentation, map a codebase structure, or... | - | agents |
-| 3235 | **wiki-changelog** | Analyzes git commit history and generates structured changelogs categorized by change type. Use when the user asks about recent changes, wants a changelog, or needs to understand what changed in th... | - | agents |
-| 3236 | **wiki-ingest** |  | - | agents |
-| 3237 | **wiki-init** |  | - | agents |
-| 3238 | **wiki-lint** |  | - | agents |
-| 3239 | **wiki-llms-txt** | Generates llms.txt and llms-full.txt files for LLM-friendly project documentation following the llms.txt specification. Use when the user wants to create LLM-readable summaries, llms.txt files, or ... | - | agents |
-| 3240 | **wiki-log** |  | - | agents |
-| 3241 | **wiki-onboarding** | Generates four audience-tailored onboarding guides in an onboarding/ folder — Contributor, Staff Engineer, Executive, and Product Manager. Use when the user wants onboarding documentation for a cod... | - | agents |
-| 3242 | **wiki-page-writer** | Generates rich technical documentation pages with dark-mode Mermaid diagrams, source code citations, and first-principles depth. Use when writing documentation, generating wiki pages, creating tech... | - | agents |
-| 3243 | **wiki-qa** | Answers questions about a code repository using source file analysis. Use when the user asks a question about how something works, wants to understand a component, or needs help navigating the code... | - | agents |
-| 3244 | **wiki-query** |  | - | agents |
-| 3245 | **wiki-researcher** | Conducts multi-turn iterative deep research on specific topics within a codebase with zero tolerance for shallow analysis. Use when the user wants an in-depth investigation, needs to understand how... | - | agents |
-| 3246 | **wiki-vitepress** | Packages generated wiki Markdown into a VitePress static site with dark theme, dark-mode Mermaid diagrams with click-to-zoom, and production build output. Use when the user wants to create a browsa... | - | agents |
-| 3247 | **windows-desktop-e2e** | E2E testing for Windows native desktop apps (WPF, WinForms, Win32). | - | claude |
-| 3248 | **windows-vm** | Manage headless Windows 11 VM running in Docker. | - | claude |
-| 3249 | **winmd-api-search** | Explore Windows desktop APIs (camera, file access, AI/ML). | - | claude |
-| 3250 | **winston-ai-automation** | Automate Winston AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3251 | **winui-app** | Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityT... | - | agents |
-| 3252 | **winui3-migration-guide** | UWP to WinUI 3 migration reference and API mapping. | - | claude |
-| 3253 | **wit-ai-automation** | Automate Wit AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3254 | **wiz-automation** | Automate Wiz tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3255 | **wizard** | Generate an interactive bash wizard that walks a human through a manual procedure — third-party setup, a one-off migration, an A→B state transition — opening URLs, capturing values, confirming each... | - | agents |
-| 3256 | **wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... | - | agents |
-| 3257 | **wolfram-alpha-api-automation** | Automate Wolfram Alpha API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3258 | **woodpecker-co-automation** | Automate Woodpecker co tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3259 | **wordpress-content** | Create and manage WordPress posts, pages, media, categories, and menus. Workflow: determine content type, choose method (WP-CLI or REST API), execute, verify. Use when creating blog posts, updating... | - | agents |
-| 3260 | **wordpress-elementor** | Edit Elementor pages and manage templates on WordPress sites. Workflow: identify page, choose editing method (browser or WP-CLI), execute, verify. Use when editing Elementor pages, updating text in... | - | agents |
-| 3261 | **wordpress-pro** | Develops custom WordPress themes and plugins, creates and registers Gutenberg blocks and block patterns, configures WooCommerce stores, implements WordPress REST API endpoints, applies security har... | - | agents |
-| 3262 | **wordpress-setup** | Connect to a WordPress site via WP-CLI over SSH or REST API. Workflow: check CLI, test SSH connection, set up auth, verify access, save config. Use when connecting to a WordPress site, setting up W... | - | agents |
-| 3263 | **workable-automation** | Automate Workable tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3264 | **Workday Automation** | Automate HR operations in Workday -- manage workers, time off requests, absence balances, and employee data through natural language commands. | - | agents |
-| 3265 | **workers-best-practices** | Reviews and authors Cloudflare Workers code against production best practices. Load when writing new Workers, reviewing Worker code, configuring wrangler.jsonc, or checking for common Workers anti-... | - | agents |
-| 3266 | **workflow-builder** | Design and write deterministic multi-agent workflow scripts (.js files in .Codex/workflows/) for Codex's Workflow tool. Use when a user wants to build, create, author, scaffold, or run a custom Cod... | - | agents |
-| 3267 | **working-with-legacy-code** | Safely change and test untested codebases using Feathers'' "Working Effectively with Legacy Code". Use when the user mentions "legacy code", "no tests", "untested codebase", "how do I test this", "... | - | agents |
-| 3268 | **workiom-automation** | Automate Workiom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3269 | **workiq-copilot** | Query M365 Copilot data via WorkIQ CLI/MCP server. | - | claude |
-| 3270 | **workload-manager-basics** | Manage Google Cloud Workload Manager evaluations and validation rules. | - | claude |
-| 3271 | **workshop-create** | Create or initialize a workshop directory. | - | claude |
-| 3272 | **worksnaps-automation** | Automate Worksnaps tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3273 | **workspace-surface-audit** | Audit active repo, MCP servers, plugins & recommend ECC skills. | - | claude |
-| 3274 | **wowerpoint** | Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as share... | - | agents |
-| 3275 | **wrangler** | Cloudflare Workers CLI for deploying, developing, and managing Workers, KV, R2, D1, Vectorize, Hyperdrive, Workers AI, Containers, Queues, Workflows, Pipelines, and Secrets Store. Load before runni... | - | agents |
-| 3276 | **write-a-skill** | Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, build, or author a new skill. | - | agents |
-| 3277 | **write-coding-standards-from-file** | Write coding standards document from codebase files. | - | claude |
-| 3278 | **write-swift** | How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (... | https://github.com/emilkowalski/skills | agents |
-| 3279 | **writer-automation** | Automate Writer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3280 | **writer-memory** | Agentic memory system for fiction writers (characters & scenes). | - | claude |
-| 3281 | **writing-beats** | Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it. | - | agents |
-| 3282 | **writing-clearly-and-concisely** | Writing clear and concise prose for documentation & UI. | - | claude |
-| 3283 | **writing-for-agents** | Writing documents for AI agents (AGENTS.md, skills). | - | claude |
-| 3284 | **writing-fragments** | Writing, explore — mine raw fragments, no structure yet. | - | agents |
-| 3285 | **writing-great-skills** | Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable. | - | agents |
-| 3286 | **writing-plans** | Writing multi-step execution plans before touching code. | - | claude |
-| 3287 | **writing-shape** | Writing, exploit — shape raw material into an article, paragraph by paragraph. | - | agents |
-| 3288 | **writing-skills** | Creating, editing, and verifying AI agent skills. | - | claude |
-| 3289 | **x-api** | X/Twitter API integration for tweets, threads & search. | - | claude |
-| 3290 | **x-twitter-growth** | X/Twitter growth engine for building audience, crafting viral content, and analyzing engagement. Use when the user wants to grow on X/Twitter, write tweets or threads, analyze their X profile, rese... | - | agents |
-| 3291 | **x-twitter-scraper** | X (Twitter) data platform with REST endpoints & MCP tools. | - | claude |
-| 3292 | **Xero Automation** | Xero Automation: manage invoices, contacts, payments, bank transactions, and accounts in Xero for cloud-based bookkeeping | - | agents |
-| 3293 | **xlsx** | Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file ... | - | agents |
-| 3294 | **xlsx-official** | Generating Excel files with xlsx/exceljs in Node.js. Use when generating .xlsx reports, data exports, dashboards, or spreadsheets from database data. | - | agents |
-| 3295 | **xp-practices** | Apply XP practices including pair programming, ensemble programming, continuous integration, and sustainable pace. Use when implementing agile development practices, improving team collaboration, o... | - | agents |
-| 3296 | **y-gy-automation** | Automate Y Gy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3297 | **yandex-automation** | Automate Yandex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3298 | **yeet** | Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`). | - | agents |
-| 3299 | **yelp-automation** | Automate Yelp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3300 | **ynab-automation** | Automate Ynab tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3301 | **yousearch-automation** | Automate Yousearch tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3302 | **youtube-downloader** | Download YouTube videos with customizable quality and format options. Use this skill when the user asks to download, save, or grab YouTube videos. Supports various quality settings (best, 1080p, 72... | - | agents |
-| 3303 | **youtube-full** | Use when the user needs YouTube transcripts, video search, channel browsing, playlist extraction, or content monitoring. Trigger phrases: 'get the transcript for', 'search YouTube for', 'what are t... | - | agents |
-| 3304 | **yuanbao** | Yuanbao (元宝) chat group management. | - | claude |
-| 3305 | **zenrows-automation** | Automate Zenrows tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3306 | **zenserp-automation** | Automate Zenserp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3307 | **zeplin-automation** | Automate Zeplin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3308 | **zero-hallucination-coder** | Runs a disciplined Discuss -> Map -> Decompose -> Execute -> Verify loop that grounds code in verified structure — no invented APIs, no assumed imports, no placeholder code — with a lazy-senior-dev... | - | agents |
-| 3309 | **zerobounce-automation** | Automate Zerobounce tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3310 | **Zoho Books Automation** | Automate Zoho Books accounting workflows including invoice creation, bill management, contact lookup, payment tracking, and multi-organization support through natural language commands | - | agents |
-| 3311 | **Zoho Desk Automation** | Zoho Desk automation via Rube MCP -- toolkit not currently available in Composio; no ZOHO_DESK_ tools found | - | agents |
-| 3312 | **zoho-automation** | Automate Zoho tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3313 | **zoho-bigin-automation** | Automate Zoho Bigin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3314 | **zoho-inventory-automation** | Automate Zoho Inventory tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3315 | **zoho-invoice-automation** | Automate Zoho Invoice tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3316 | **zoho-mail-automation** | Automate Zoho Mail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3317 | **zoho_bigin-automation** | Automate Zoho Bigin tasks via Rube MCP (Composio): pipelines, contacts, companies, products, and small business CRM. Always search tools first for current schemas. | - | agents |
-| 3318 | **zoho_books-automation** | Automate Zoho Books tasks via Rube MCP (Composio): invoices, expenses, contacts, payments, and accounting. Always search tools first for current schemas. | - | agents |
-| 3319 | **zoho_desk-automation** | Automate Zoho Desk tasks via Rube MCP (Composio): tickets, contacts, agents, departments, and help desk operations. Always search tools first for current schemas. | - | agents |
-| 3320 | **zoho_inventory-automation** | Automate Zoho Inventory tasks via Rube MCP (Composio): items, orders, warehouses, shipments, and stock management. Always search tools first for current schemas. | - | agents |
-| 3321 | **zoho_invoice-automation** | Automate Zoho Invoice tasks via Rube MCP (Composio): invoices, estimates, expenses, clients, and payment tracking. Always search tools first for current schemas. | - | agents |
-| 3322 | **zoho_mail-automation** | Automate Zoho Mail tasks via Rube MCP (Composio): email sending, folders, labels, and mailbox management. Always search tools first for current schemas. | - | agents |
-| 3323 | **zoom-out** | Provide broader context and higher-level architectural perspective. | - | claude |
-| 3324 | **zoominfo-automation** | Automate Zoominfo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3325 | **zustand-store-ts** | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reacti... | - | agents |
-| 3326 | **zylvie-automation** | Automate Zylvie tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
-| 3327 | **zyte-api-automation** | Automate Zyte API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1866 | **mobile-native** | Make a web app feel native on a phone — the small CSS and meta-tag fixes that separate "a website in a browser" from something that feels installed. Covers sticky hover states, tap highlight flashe... | https://github.com/emilkowalski/skills | agents |
+| 1867 | **mobile-testing** | Comprehensive mobile testing for iOS and Android platforms including gestures, sensors, permissions, device fragmentation, and performance. Use when testing native apps, hybrid apps, or mobile web,... | - | agents |
+| 1868 | **mocean-automation** | Automate Mocean tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1869 | **moco-automation** | Automate Moco tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1870 | **modelry-automation** | Automate Modelry tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1871 | **modo-tdah** | Modo de enfoque ejecutivo ultra-conciso: elimina explicaciones infladas, va directo a la solución y ejecuta paso a paso sin rodeos. | - | agents |
+| 1872 | **mom-test** | Talk to customers without leading them using Mom Test rules: discuss their life not your idea, ask about specifics in the past, and talk less. Use when the user mentions "customer interviews", "val... | - | agents |
+| 1873 | **monetizing-innovation** | Design products and pricing around validated willingness to pay, from Ramanujam & Tacke''s "Monetizing Innovation". Use when the user mentions "pricing", "how much should we charge", "willingness t... | - | agents |
+| 1874 | **moneybird-automation** | Automate Moneybird tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1875 | **monitoring-expert** | Configures monitoring systems, implements structured logging pipelines, creates Prometheus/Grafana dashboards, defines alerting rules, and instruments distributed tracing. Implements Prometheus/Gra... | - | agents |
+| 1876 | **monorepo-navigator** | Navigate, manage, and optimize monorepos. Covers Turborepo, Nx, pnpm workspaces, and Lerna. Cross-package impact analysis, selective builds/tests on affected packages, remote caching, dependency gr... | - | agents |
+| 1877 | **moonclerk-automation** | Automate Moonclerk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1878 | **moosend-automation** | Automate Moosend tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1879 | **mopinion-automation** | Automate Mopinion tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1880 | **more-trees-automation** | Automate More Trees tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1881 | **moxie-automation** | Automate Moxie tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1882 | **moz-automation** | Automate Moz tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1883 | **ms365-tenant-manager** | Microsoft 365 tenant administration for Global Administrators. Automate M365 tenant setup, Office 365 admin tasks, Azure AD user management, Exchange Online configuration, Teams administration, and... | - | agents |
+| 1884 | **msg91-automation** | Automate Msg91 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1885 | **mural-automation** | Automate Mural tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1886 | **mutation-testing** | Test quality validation through mutation testing, assessing test suite effectiveness by introducing code mutations and measuring kill rate. Use when evaluating test quality, identifying weak tests,... | - | agents |
+| 1887 | **mx-technologies-automation** | Automate MX Technologies tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1888 | **mx-toolbox-automation** | Automate Mx Toolbox tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1889 | **n8n-agents** | Design n8n AI agents the right way. Use when building or editing any @n8n/n8n-nodes-langchain.* AI node — an AI Agent, LLM chain, Text Classifier, or Information Extractor — and whenever the user m... | - | agents |
+| 1890 | **n8n-binary-and-data** | Handle files and binary data in n8n correctly. Use when working with files, images, PDFs, attachments, uploads or downloads, base64, vision/multimodal input, or when an AI agent needs a file as too... | - | agents |
+| 1891 | **n8n-code-javascript** | Write JavaScript code in n8n Code nodes. Use when writing JavaScript in n8n, using $input/$json/$node syntax, making HTTP requests with this.helpers / the $helpers global, working with dates using ... | - | agents |
+| 1892 | **n8n-code-python** | Write Python code in n8n Code nodes. Use when writing Python in n8n, using _input/_json/_node syntax, working with standard library, or need to understand Python limitations in n8n Code nodes. Use ... | - | agents |
+| 1893 | **n8n-code-tool** | Write JavaScript or Python for the n8n Custom Code Tool (@n8n/n8n-nodes-langchain.toolCode) — the AI-agent-callable tool, NOT the workflow Code node. Use when building a Code Tool attached to an AI... | - | agents |
+| 1894 | **n8n-error-handling** | Wire n8n error handling so failures are loud, structured, and recoverable. Use when building any webhook/API workflow, a scheduled or unattended workflow, or any path where a silent failure would d... | - | agents |
+| 1895 | **n8n-expression-syntax** | Validate n8n expression syntax and fix common errors. Use when writing n8n expressions, using {{}} syntax, accessing $json/$node variables, troubleshooting expression errors, mapping data between n... | - | agents |
+| 1896 | **n8n-expression-testing** | n8n expression syntax validation, context-aware testing, common pitfalls detection, and performance optimization. Use when validating n8n expressions and data transformations. | - | agents |
+| 1897 | **n8n-integration-testing-patterns** | API contract testing, authentication flows, rate limit handling, and error scenario coverage for n8n integrations with external services. Use when testing n8n node integrations. | - | agents |
+| 1898 | **n8n-mcp-tools-expert** | Expert guide for using n8n-mcp MCP tools effectively. Use when searching for nodes, validating configurations, accessing templates, managing workflows, organizing workflows into folders, managing c... | - | agents |
+| 1899 | **n8n-multi-instance** | Use when an n8n-mcp account targets more than one n8n instance — i.e. the `n8n_instances` tool is available, the user mentions multiple n8n instances or environments (prod vs staging, several teams... | - | agents |
+| 1900 | **n8n-node-configuration** | Operation-aware node configuration guidance. Use when configuring nodes, understanding property dependencies, determining required fields, choosing between get_node detail levels, or learning commo... | - | agents |
+| 1901 | **n8n-security-testing** | Credential exposure detection, OAuth flow validation, API key management testing, and data sanitization verification for n8n workflows. Use when validating n8n workflow security. | - | agents |
+| 1902 | **n8n-self-hosting** | Deploy a production self-hosted n8n end-to-end to a fresh Linux VM over SSH, using Docker Compose behind a Caddy reverse proxy with automatic HTTPS. Use whenever the user wants to self-host, instal... | - | agents |
+| 1903 | **n8n-subworkflows** | Build reusable, composable n8n sub-workflows. Use when extracting shared logic, building anything multi-step or reused across workflows, or any workflow over ~10 nodes — and whenever the user menti... | - | agents |
+| 1904 | **n8n-trigger-testing-strategies** | Webhook testing, schedule validation, event-driven triggers, and polling mechanism testing for n8n workflows. Use when testing how workflows are triggered. | - | agents |
+| 1905 | **n8n-validation-expert** | Interpret validation errors and guide fixing them. Use when encountering validation errors, validation warnings, false positives, operator structure issues, or need help understanding validation re... | - | agents |
+| 1906 | **n8n-workflow-patterns** | Proven workflow architectural patterns from real n8n workflows. Use when building new workflows, designing workflow structure, choosing workflow patterns, planning workflow architecture, or asking ... | - | agents |
+| 1907 | **n8n-workflow-testing-fundamentals** | Comprehensive n8n workflow testing including execution lifecycle, node connection patterns, data flow validation, and error handling strategies. Use when testing n8n workflow automation applications. | - | agents |
+| 1908 | **named-persona-adversarial-review** | Code review through the lens of real engineers' documented philosophies (Torvalds, Thompson, Carmack, Kent Beck, Jobs, Cagan). Complements abstract-role adversarial review with named, sourced persp... | - | agents |
+| 1909 | **nango-automation** | Automate Nango tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1910 | **nano-nets-automation** | Automate Nano Nets tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1911 | **nasa-automation** | Automate Nasa tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1912 | **nasdaq-automation** | Automate Nasdaq tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1913 | **ncscale-automation** | Automate Ncscale tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1914 | **needle-automation** | Automate Needle tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1915 | **negotiation** | Prepare and execute negotiations using tactical empathy, calibrated questions, and the Ackerman method. Use when the user mentions "salary negotiation", "contract terms", "handling objections", "mi... | - | agents |
+| 1916 | **nemoclaw-setup** | Install and configure NVIDIA NemoClaw (sandboxed OpenClaw agent platform) on Linux. Handles cloudflared tunnels, Docker cgroup fixes, OpenShell, sandbox creation, remote access via Cloudflare Tunne... | - | agents |
+| 1917 | **Neon Automation** | Automate Neon serverless Postgres operations -- manage projects, branches, databases, roles, and connection URIs via the Composio MCP integration. | - | agents |
+| 1918 | **nestjs-expert** | Creates and configures NestJS modules, controllers, services, DTOs, guards, and interceptors for enterprise-grade TypeScript backend applications. Use when building NestJS REST APIs or GraphQL serv... | - | agents |
+| 1919 | **nestjs-patterns** | NestJS best practices, module architecture, DTOs, Guards, Interceptors, and common patterns. Use when building or reviewing NestJS backend services. | - | agents |
+| 1920 | **netlify-deploy** | Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys. | - | agents |
+| 1921 | **NetSuite Automation** | NetSuite Automation: manage customers, sales orders, invoices, inventory, and records via Oracle NetSuite ERP with SuiteQL queries | - | agents |
+| 1922 | **neuro-persuasion-toolkit** | Aplica neurociencia del comportamiento y neuromarketing a copy, anuncios, SEO/SEM/MEO, propuestas comerciales y scripts de ventas (frías, consultivas, cierres). Úsalo siempre que el usuario esté es... | - | agents |
+| 1923 | **neuronwriter-automation** | Automate Neuronwriter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1924 | **neutrino-automation** | Automate Neutrino tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1925 | **neverbounce-automation** | Automate Neverbounce tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1926 | **New Relic Automation** | Automate New Relic observability workflows -- manage alert policies, notification channels, alert conditions, and monitor applications and browser apps via the Composio MCP integration. | - | agents |
+| 1927 | **new_relic-automation** | Automate New Relic tasks via Rube MCP (Composio): APM, alerts, dashboards, NRQL queries, and infrastructure monitoring. Always search tools first for current schemas. | - | agents |
+| 1928 | **news-api-automation** | Automate News API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1929 | **nextdns-automation** | Automate Nextdns tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1930 | **nextjs-app-router** | Next.js App Router best practices, Server Components, Server Actions, routing patterns, and data fetching strategies. Use when building Next.js applications with the App Router. | - | agents |
+| 1931 | **nextjs-developer** | Use when building Next.js 14+ applications with App Router, server components, or server actions. Invoke to configure route handlers, implement middleware, set up API routes, add streaming SSR, wri... | - | agents |
+| 1932 | **ngrok-automation** | Automate Ngrok tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1933 | **ninox-automation** | Automate Ninox tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1934 | **no-skip** | Use when you want to prevent .skip(), .only(), xit(), and xdescribe() from being committed to test files. Activate with /no-skip for session-scoped test skip prevention. | - | agents |
+| 1935 | **nocrm-io-automation** | Automate Nocrm IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1936 | **normalize** | Audits and realigns UI to match design system standards, spacing, tokens, and patterns. Use when the user mentions consistency, design drift, mismatched styles, tokens, or wants to bring a feature ... | - | agents |
+| 1937 | **notebooklm** | Use this skill to query your Google NotebookLM notebooks directly from Codex for source-grounded, citation-backed answers from Gemini. Browser automation, library management, persistent auth. Drast... | - | agents |
+| 1938 | **notion-knowledge-capture** | Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking. | - | agents |
+| 1939 | **notion-meeting-intelligence** | Prepare meeting materials with Notion context and Codex research; use when gathering context, drafting agendas/pre-reads, and tailoring materials to attendees. | - | agents |
+| 1940 | **notion-research-documentation** | Research across Notion and synthesize into structured documentation; use when gathering info from multiple Notion sources to produce briefs, comparisons, or reports with citations. | - | agents |
+| 1941 | **notion-spec-to-implementation** | Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them. | - | agents |
+| 1942 | **npm-automation** | Automate NPM tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1943 | **nz-business-english** | New Zealand business English writing style for professional communications. Warm, inclusive, EN-NZ spelling. Use when writing emails, chat messages, proposals, client communications, or any busines... | - | agents |
+| 1944 | **obra-superpowers-brainstorming** | Interactive requirements crystallization before coding. Asks targeted clarifying questions, explores edge cases, and produces a clear specification chunk by chunk. | - | agents |
+| 1945 | **obra-superpowers-code-review** | Adversarial code review and quality check covering security, performance, readability, and adherence to requirements. | - | agents |
+| 1946 | **obra-superpowers-executing-plans** | Systematic plan execution with verification loops and progress tracking across long-running development tasks. | - | agents |
+| 1947 | **obra-superpowers-subagent-driven-development** | Orchestrates parallel or modular subagent execution loops for multi-task engineering workloads. | - | agents |
+| 1948 | **obra-superpowers-systematic-debugging** | Root-cause driven debugging workflow. Inspects raw logs, forms empirical hypotheses, and verifies fixes with tests. | - | agents |
+| 1949 | **obra-superpowers-writing-plans** | Generates implementation plans designed for systematic subagent execution, stressing TDD, YAGNI, and DRY. | - | agents |
+| 1950 | **observability-and-instrumentation** | Instruments code so production behavior is visible and diagnosable. Use when adding logging, metrics, tracing, or alerting. Use when shipping any feature that runs in production and you need eviden... | - | agents |
+| 1951 | **observability-designer** | Design production-ready observability strategies combining metrics, logs, and traces. Includes SLI/SLO design, golden-signals monitoring, alert optimization. Use when adding observability to a new ... | - | agents |
+| 1952 | **observability-testing-patterns** | Observability and monitoring validation patterns for dashboards, alerting, log aggregation, APM traces, and SLA/SLO verification. Use when testing monitoring infrastructure, dashboard accuracy, ale... | - | agents |
+| 1953 | **obsidian-vault** | Search, create, and manage notes in the Obsidian vault with wikilinks and index notes. Use when user wants to find, create, or organize notes in Obsidian. | - | agents |
+| 1954 | **obviously-awesome** | Define product positioning by mapping competitive alternatives, unique attributes, and best-fit customers to the right market category. Use when the user mentions "positioning", "competitive altern... | - | agents |
+| 1955 | **ocr-web-service-automation** | Automate OCR Web Service tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1956 | **ocrspace-automation** | Automate Ocrspace tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1957 | **office-hours** | YC Office Hours — two modes. (gstack) | - | agents |
+| 1958 | **oh-my-hermes** | Multi-agent orchestration workflow (Research → Interview → Plan → Execution → Verification). Coordinates specialized sub-agents across complex phases. Use when running multi-agent tasks, swarm exec... | - | agents |
+| 1959 | **oh-my-issues** | Cluster a GitHub issue backlog by root cause into a small set of plan-master issues, redirect children with a standardized comment, and bundle architectural-fix PRs that close clusters atomically. ... | - | agents |
+| 1960 | **okf-open-knowledge-format** | Create, validate, and enrich Open Knowledge Format (OKF) bundles — the open spec for representing organizational knowledge as markdown files with YAML frontmatter. Use when the user mentions 'OKF',... | - | agents |
+| 1961 | **okr** |  | - | agents |
+| 1962 | **omc-review** | Evaluate finished work for defects, risk, and simplification before it ships | - | agents |
+| 1963 | **omc-setup** | Install or refresh oh-my-claudecode for plugin, npm, and local-dev setups from the canonical setup flow | - | agents |
+| 1964 | **omc-teams** | CLI-team runtime for claude, codex, or gemini workers in tmux panes when you need process-based parallel execution | - | agents |
+| 1965 | **Omnisend Automation** | Automate ecommerce marketing workflows including contact management, bulk operations, and subscriber segmentation through Omnisend via Composio | - | agents |
+| 1966 | **on-page-seo-auditor** | Audit on-page SEO: titles, headers, images, links with scored report and fix priorities. \"Why isn't this ranking\" / \"页面诊断\" / \"SEO评分\". 页面SEO审计/排名诊断/网页优化/H1检查 ページSEO監査 페이지SEO감사 auditoría on-page | - | agents |
+| 1967 | **onboard** | Designs and improves onboarding flows, empty states, and first-run experiences to help users reach value quickly. Use when the user mentions onboarding, first-time users, empty states, activation, ... | - | agents |
+| 1968 | **onboard-context-matic** | Interactive onboarding tour for the context-matic MCP server. | - | agents |
+| 1969 | **onboarding** | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onboarding flow," "activation rate," "user activati... | - | agents |
+| 1970 | **onboarding-cro** | When the user wants to optimize post-signup onboarding, user activation, first-run experience, or time-to-value. Also use when the user mentions "onboarding flow," "activation rate," "user activati... | - | agents |
+| 1971 | **onboarding-ux** | Audit and generate in-app user guidance — onboarding flows, empty states, tooltips, feature tours, contextual help, defaults, and inline hints. Browses the app to find where new users would get stu... | - | agents |
+| 1972 | **oncehub-automation** | Automate Oncehub tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1973 | **one-page-marketing** | Build a complete marketing plan covering the full customer journey from stranger to raving fan. Use when the user mentions "marketing plan", "marketing strategy", "target market", "USP", "lead nurt... | - | agents |
+| 1974 | **onedesk-automation** | Automate Onedesk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1975 | **onepage-automation** | Automate Onepage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1976 | **onesignal-rest-api-automation** | Automate OneSignal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1977 | **onesignal-user-auth-automation** | Automate Onesignal User Auth tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1978 | **onesignal_rest_api-automation** | Automate OneSignal tasks via Rube MCP (Composio): push notifications, segments, templates, and messaging. Always search tools first for current schemas. | - | agents |
+| 1979 | **oo-component-documentation** | Create or update standardized object-oriented component documentation. | - | agents |
+| 1980 | **open-gstack-browser** | Launch GStack Browser — AI-controlled Chromium with the sidebar extension baked in. | - | agents |
+| 1981 | **open-sea-automation** | Automate Open Sea tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1982 | **OpenAI Automation** | Automate OpenAI API operations -- generate responses with multimodal and structured output support, create embeddings, generate images, and list models via the Composio MCP integration. | - | agents |
+| 1983 | **openai-docs** | Use when the user asks how to build with OpenAI products or APIs, asks about Codex itself or choosing Codex surfaces, needs up-to-date official documentation with citations, help choosing the lates... | - | agents |
+| 1984 | **openapi-to-application-code** | Generate a complete, production-ready application from an OpenAPI specification | - | agents |
+| 1985 | **openapi-to-typescript** | Converts OpenAPI 3.0 JSON/YAML to TypeScript interfaces and type guards. | - | agents |
+| 1986 | **opencage-automation** | Automate Opencage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1987 | **openclaw** |  | - | agents |
+| 1988 | **openclaw-persona-forge** | OpenClaw AI Agent soul forge and persona definition. | - | agents |
+| 1989 | **opengraph-io-automation** | Automate Opengraph IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1990 | **openmontage** | Autonomous video production team skill for AI agents. Converts script & asset inputs into assembled video cuts, auto-subtitles, scene transitions, TTS audio generation, and media exports. Use when ... | - | agents |
+| 1991 | **openperplex-automation** | Automate Openperplex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1992 | **openrouter-automation** | Automate Openrouter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1993 | **opensource-pipeline** | Open-source pipeline: fork, sanitize, and package private projects for safe public release. | - | agents |
+| 1994 | **openweather-api-automation** | Automate Openweather API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1995 | **operator-audit** |  | - | agents |
+| 1996 | **optimize** | Diagnoses and fixes UI performance across loading speed, rendering, animations, images, and bundle size. Use when the user mentions slow, laggy, janky, performance, bundle size, load time, or wants... | - | agents |
+| 1997 | **optimize-simplicite-logs** | Capability to parse Simplicité logs from raw text to structured JSON. | - | agents |
+| 1998 | **optimoroute-automation** | Automate Optimoroute tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 1999 | **orch-add-feature** | Orchestrate building a brand-new feature end to end. | - | agents |
+| 2000 | **orch-build-mvp** | Orchestrate bootstrapping a working MVP from a design or spec document. | - | agents |
+| 2001 | **orch-change-feature** | Orchestrate altering an existing, working feature to new desired behavior. | - | agents |
+| 2002 | **orch-fix-defect** | Orchestrate fixing a bug — reproduce as failing test, fix to green. | - | agents |
+| 2003 | **orch-pipeline** | Shared orchestration engine for the orch-* skill family. | - | agents |
+| 2004 | **orch-refine-code** | Orchestrate a behavior-preserving refactor. | - | agents |
+| 2005 | **org-health-diagnostic** | Cross-functional organizational health check combining signals from all C-suite roles. Scores 8 dimensions on a traffic-light scale with drill-down recommendations. Use when assessing overall compa... | - | agents |
+| 2006 | **overdrive** | Pushes interfaces past conventional limits with technically ambitious implementations — shaders, spring physics, scroll-driven reveals, 60fps animations. Use when the user wants to wow, impress, go... | - | agents |
+| 2007 | **owasp-security** | Use when reviewing code for security vulnerabilities, implementing authentication/authorization, handling user input, or discussing web application security. Covers OWASP Top 10:2025, ASVS 5.0, LLM... | https://github.com/behisecc/claude-security-skills | agents |
+| 2008 | **owasp-top-10-testing** | Test an application against the OWASP Top 10 with Strix — autonomous AI agents that attempt real exploits for each category of the current OWASP Top 10:2025 (broken access control including SSRF, s... | https://github.com/usestrix/strix | agents |
+| 2009 | **owl-protocol-automation** | Automate Owl Protocol tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2010 | **page-cro** | When the user wants to optimize, improve, or increase conversions on any marketing page — including homepage, landing pages, pricing pages, feature pages, or blog posts. Also use when the user says... | - | agents |
+| 2011 | **page-x-automation** | Automate Page X tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2012 | **paid-ads** | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X, or other ad platforms. Also use when the user mentions 'PPC,' 'paid media,' '... | - | agents |
+| 2013 | **Pair Programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... | - | agents |
+| 2014 | **pair-agent** | Pair a remote AI agent with your browser. (gstack) | - | agents |
+| 2015 | **pair-programming** | Provides AI navigator for pair programming sessions with real-time code review, TDD guidance, and quality monitoring. Use when pair programming with AI assistance, practicing TDD with a navigator, ... | - | agents |
+| 2016 | **PandaDoc Automation** | Automate document workflows with PandaDoc -- create documents from files, manage contacts, organize folders, set up webhooks, create templates, and track document status through the Composio PandaD... | - | agents |
+| 2017 | **pandas-pro** | Performs pandas DataFrame operations for data analysis, manipulation, and transformation. Use when working with pandas DataFrames, data cleaning, aggregation, merging, or time series analysis. Invo... | - | agents |
+| 2018 | **paradym-automation** | Automate Paradym tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2019 | **parallel-automation** | Automate Parallel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2020 | **parallel-execution-optimizer** | Optimize task speed through parallel work and concurrent subagents. | - | agents |
+| 2021 | **parcel-tracking** | Track parcels and check delivery status for Australian and international couriers. Searches Gmail for dispatch/shipping emails and provides tracking links for all major Australian couriers includin... | - | agents |
+| 2022 | **parma-automation** | Automate Parma tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2023 | **parsehub-automation** | Automate Parsehub tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2024 | **parsera-automation** | Automate Parsera tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2025 | **parseur-automation** | Automate Parseur tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2026 | **partnerships-architect** | Use when a startup is approached by a prospective partner and someone has to decide should we sign this partner, at what partner tier (referral / reseller / OEM / SI-consulting / strategic alliance... | - | agents |
+| 2027 | **passcreator-automation** | Automate Passcreator tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2028 | **passslot-automation** | Automate Passslot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2029 | **patent** | Patent prior-art and landscape intelligence skill — not generic patent help. Commits to one of five sub-use-cases via forcing intake (novelty search / freedom-to-operate / competitive landscape / a... | - | agents |
+| 2030 | **pathfinder** | Map a codebase into feature-grouped flowcharts, identify duplicated concerns across features, and propose a unified architecture. Use when asked to "find the ideal path," unify duplicated systems, ... | - | agents |
+| 2031 | **payhip-automation** | Automate Payhip tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2032 | **payment-integration** | Integrate payments with SePay (VietQR), Polar, Stripe, Paddle (MoR subscriptions), Creem.io (licensing). Checkout, webhooks, subscriptions, QR codes, multi-provider orders. | - | agents |
+| 2033 | **paywall-upgrade-cro** | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions "paywall," "upgrade screen," "upgrade modal," "upsell," ... | - | agents |
+| 2034 | **paywalls** | When the user wants to create or optimize in-app paywalls, upgrade screens, upsell modals, or feature gates. Also use when the user mentions "paywall," "upgrade screen," "upgrade modal," "upsell," ... | - | agents |
+| 2035 | **pdf** | Use this skill whenever the user wants to do anything with PDF files. This includes reading or extracting text/tables from PDFs, combining or merging multiple PDFs into one, splitting PDFs apart, r... | - | agents |
+| 2036 | **pdf-api-io-automation** | Automate PDF API IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2037 | **pdf-co-automation** | Automate PDF co tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2038 | **pdf-official** | Generating PDFs with pdfkit or puppeteer in Node.js. Use when generating PDF reports, invoices, certificates, or any printable document from data or HTML templates. | - | agents |
+| 2039 | **pdf4me-automation** | Automate Pdf4me tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2040 | **pdfless-automation** | Automate Pdfless tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2041 | **pdfmonkey-automation** | Automate Pdfmonkey tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2042 | **pdftk-server** | Command-line PDFtk Server integration for PDF manipulation. | - | agents |
+| 2043 | **penetration-testing-with-strix** | Pentest a web app, API, codebase, repository, URL, domain, or IP with Strix — autonomous AI penetration testing that exploits and proves vulnerabilities (OWASP Top 10 and beyond — injection, XSS, S... | https://github.com/usestrix/strix | agents |
+| 2044 | **penpot-uiux-design** | Create professional UI/UX designs in Penpot using MCP tools. | - | agents |
+| 2045 | **pentest-validation** | Use when validating security findings from SAST/DAST scans, proving exploitability of reported vulnerabilities, eliminating false positives, or running the 4-phase pentest pipeline (recon, analysis... | - | agents |
+| 2046 | **peopledatalabs-automation** | Automate Peopledatalabs tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2047 | **performance** | Optimize UI performance against Core Web Vitals — LCP, INP, CLS — with loading/code-split strategy, layout-shift prevention, and animation performance rules. Use when the user wants to improve spee... | - | agents |
+| 2048 | **performance-optimization** | Optimizes application performance. Use when performance requirements exist, when you suspect performance regressions, or when Core Web Vitals or load times need improvement. Use when profiling reve... | - | agents |
+| 2049 | **performance-profiler** | Systematic performance profiling for Node.js, Python, and Go applications. Identifies CPU, memory, and I/O bottlenecks, generates flamegraphs, analyzes bundle sizes, optimizes database queries, run... | - | agents |
+| 2050 | **performance-reporter** | SEO/GEO dashboards: rankings, traffic, backlinks, AI visibility for stakeholders and executives. "Monthly SEO report" / "出SEO报告" / "汇报给老板". SEO报告/绩效仪表盘/流量报告 SEOレポート SEO리포트 informe SEO | - | agents |
+| 2051 | **performance-review-writer** | Draft performance reviews, self-assessments, and peer reviews. | - | agents |
+| 2052 | **performance-testing** | Profiles application performance under load using k6, Artillery, or JMeter to measure latency, throughput, and error rates. Use when planning load tests, stress tests, soak tests, benchmarking APIs... | - | agents |
+| 2053 | **perigon-automation** | Automate Perigon tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2054 | **perl-patterns** | Modern Perl 5.36+ idioms, best practices, and conventions. | - | agents |
+| 2055 | **perl-security** | Perl security covering taint mode, input validation, safe process execution. | - | agents |
+| 2056 | **perl-testing** | Perl testing patterns using Test2::V0, Test::More, prove runner. | - | agents |
+| 2057 | **perplexity** | Web search and research using Perplexity AI. | - | agents |
+| 2058 | **perplexityai-automation** | Automate Perplexityai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2059 | **persistiq-automation** | Automate Persistiq tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2060 | **persona** |  | - | agents |
+| 2061 | **personwise-community-onboarding** | Community Onboarding from supplied source materials. | - | agents |
+| 2062 | **personwise-compliance-training** | Compliance Training from supplied source materials. | - | agents |
+| 2063 | **personwise-content-repurposing** | Content Repurposing from supplied video/audio source materials. | - | agents |
+| 2064 | **personwise-create-course** | Create, refine, resume, publish polished PersonWise courses. | - | agents |
+| 2065 | **pexels-automation** | Automate Pexels tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2066 | **PhantomBuster Automation** | Automate lead generation, web scraping, and social media data extraction workflows through PhantomBuster's cloud platform via Composio | - | agents |
+| 2067 | **php-pro** | Use when building PHP applications with modern PHP 8.3+ features, Laravel, or Symfony frameworks. Invokes strict typing, PHPStan level 9, async patterns with Swoole, and PSR standards. Creates cont... | - | agents |
+| 2068 | **pi-planning-with-files** | Implements Manus-style file-based planning to organize and track progress on complex tasks. Creates task_plan.md, findings.md, and progress.md. Use when asked to plan out, break down, or organize a... | - | agents |
+| 2069 | **pick-ui-library** | Pick the right library for a given frontend task from a curated, opinionated list — numbers, OTP inputs, charts, command menus, virtualization, drag and drop, toasts, state, styling, and more. Only... | https://github.com/emilkowalski/skills | agents |
+| 2070 | **pier-cloud** | This skill should be used when the user needs to consume the Pier Cloud (Lighthouse) API for cloud cost management — including JWT authentication, listing contexts, workspaces, and FinOps data view... | - | agents |
+| 2071 | **piggy-automation** | Automate Piggy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2072 | **piloterr-automation** | Automate Piloterr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2073 | **pilvio-automation** | Automate Pilvio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2074 | **pingdom-automation** | Automate Pingdom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2075 | **pinokio** | Discover, launch, and use apps and tools for the current task. | - | agents |
+| 2076 | **pipeline** |  | - | agents |
+| 2077 | **pipeline-crm-automation** | Automate Pipeline CRM tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2078 | **placekey-automation** | Automate Placekey tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2079 | **placid-automation** | Automate Placid tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2080 | **plain-automation** | Automate Plain tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2081 | **plan-ceo-review** | CEO/founder-mode plan review. (gstack) | - | agents |
+| 2082 | **plan-design-review** | Designer's eye plan review — interactive, like CEO and Eng review. (gstack) | - | agents |
+| 2083 | **plan-devex-review** | Interactive developer experience plan review. (gstack) | - | agents |
+| 2084 | **plan-eng-review** | Eng manager-mode plan review. (gstack) | - | agents |
+| 2085 | **plan-tune** | Self-tuning question sensitivity + developer psychographic for gstack (v1: observational). (gstack) | - | agents |
+| 2086 | **planning-and-task-breakdown** | Breaks work into ordered tasks. Use when you have a spec or clear requirements and need to break work into implementable tasks. Use when a task feels too large to start, when you need to estimate s... | - | agents |
+| 2087 | **planning-with-files** | Manus-style persistent file-based planning for AI coding agents: keeps task_plan.md, findings.md, and progress.md on disk so work survives context loss and /clear. Use when asked to plan out, break... | https://github.com/OthmanAdi/planning-with-files | agents |
+| 2088 | **planning-with-files-ar** | نظام تخطيط الملفات بنمط Manus لتنظيم وتتبع تقدم المهام المعقدة. ينشئ ملفات task_plan.md و findings.md و progress.md. يُستخدم عند طلب التخطيط أو تحليل المهام أو تنظيم المشاريع أو تتبع التقدم أو الخط... | - | agents |
+| 2089 | **planning-with-files-de** | Manus-artiges Dateiplanungssystem zur Organisation und Verfolgung des Fortschritts komplexer Aufgaben. Erstellt task_plan.md, findings.md und progress.md. Wird verwendet, wenn der Benutzer plant, z... | - | agents |
+| 2090 | **planning-with-files-es** | Sistema de planificación basado en archivos estilo Manus para organizar y rastrear el progreso de tareas complejas. Crea task_plan.md, findings.md y progress.md. Cuando el usuario solicita planific... | - | agents |
+| 2091 | **planning-with-files-zh** | 基于 Manus 风格的文件规划系统，用于组织和跟踪复杂任务的进度。创建 task_plan.md、findings.md 和 progress.md 三个文件。当用户要求规划、拆解或组织多步骤项目、研究任务或需要超过5次工具调用的工作时使用。支持 /clear 后的自动会话恢复。触发词：任务规划、项目计划、制定计划、分解任务、多步骤规划、进度跟踪、文件规划、帮我规划、拆解项目 | - | agents |
+| 2092 | **planning-with-files-zht** | 基於 Manus 風格的檔案規劃系統，用於組織和追蹤複雜任務的進度。建立 task_plan.md、findings.md 和 progress.md 三個檔案。當使用者要求規劃、拆解或組織多步驟專案、研究任務或需要超過5次工具呼叫的工作時使用。支援 /clear 後的自動會話恢復。觸發詞：任務規劃、專案計畫、制定計畫、分解任務、多步驟規劃、進度追蹤、檔案規劃、幫我規劃、拆解專案 | - | agents |
+| 2093 | **plasmic-automation** | Automate Plasmic tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2094 | **platerecognizer-automation** | Automate Platerecognizer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2095 | **playwright** | Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wra... | - | agents |
+| 2096 | **playwright-expert** | Use when writing E2E tests with Playwright, setting up test infrastructure, or debugging flaky browser tests. Invoke to write test scripts, create page objects, configure test fixtures, set up repo... | - | agents |
+| 2097 | **playwright-generate-test** | Generate a Playwright test based on scenario using Playwright MCP. | - | agents |
+| 2098 | **playwright-interactive** | Persistent browser and Electron interaction through `js_repl` for fast iterative UI debugging. | - | agents |
+| 2099 | **playwright-pro** | Production-grade Playwright testing toolkit. Use when the user mentions Playwright tests, end-to-end testing, browser automation, fixing flaky tests, test migration, CI/CD testing, or test suites. ... | - | agents |
+| 2100 | **plisio-automation** | Automate Plisio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2101 | **plow-ahead** | Autonomous progress without routine clarification stops. | - | agents |
+| 2102 | **plugin-audit** |  | - | agents |
+| 2103 | **plugin-creator** | Create and scaffold plugin directories for Codex with a required `.codex-plugin/plugin.json`, optional plugin folders/files, and baseline placeholders you can edit before publishing or testing. Use... | - | agents |
+| 2104 | **plugin-forge** | Create and manage Claude Code plugins with proper manifests. | - | agents |
+| 2105 | **pm-skills** | Use when coordinating project-delivery work across the 8 project-management sub-skills — sprint/velocity analytics, portfolio health, Jira/JQL, Confluence, Atlassian admin, templates, meeting analy... | - | agents |
+| 2106 | **podcast-generation** | Generate AI-powered podcast-style audio narratives using Azure OpenAI's GPT Realtime Mini model via WebSocket. Use when building text-to-speech features, audio narrative generation, podcast creatio... | - | agents |
+| 2107 | **poka-yoke** | Mistake-proof code so misuse cannot be expressed. | - | agents |
+| 2108 | **polish** | Performs a final quality pass fixing alignment, spacing, consistency, and micro-detail issues before shipping. Use when the user mentions polish, finishing touches, pre-launch review, something loo... | - | agents |
+| 2109 | **polygon-automation** | Automate Polygon tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2110 | **polygon-io-automation** | Automate Polygon IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2111 | **ponytail** | Forces the laziest solution that actually works, simplest, shortest, most minimal. Channels a senior dev who has seen everything: question whether the task needs to exist at all (YAGNI), reach for ... | https://github.com/DietrichGebert/ponytail | agents |
+| 2112 | **ponytail-audit** | Whole-repo audit for over-engineering. Like ponytail-review, but scans the entire codebase instead of a diff: a ranked list of what to delete, simplify, or replace with stdlib/native equivalents. U... | https://github.com/DietrichGebert/ponytail | agents |
+| 2113 | **ponytail-debt** | Harvest every `ponytail:` comment in the codebase into a debt ledger, so the deliberate shortcuts and deferrals ponytail leaves behind get tracked instead of rotting into "later means never". Use w... | https://github.com/DietrichGebert/ponytail | agents |
+| 2114 | **ponytail-gain** | Show ponytail's measured impact as a compact scoreboard: less code, less cost, more speed, from the benchmark medians. One-shot display, not a persistent mode, and not a per-repo number. Trigger: /... | https://github.com/DietrichGebert/ponytail | agents |
+| 2115 | **ponytail-help** | Quick-reference card for all ponytail modes, skills, and commands. One-shot display, not a persistent mode. Trigger: /ponytail-help, "ponytail help", "what ponytail commands", "how do I use ponytail". | https://github.com/DietrichGebert/ponytail | agents |
+| 2116 | **ponytail-review** | Code review focused exclusively on over-engineering. Finds what to delete: reinvented standard library, unneeded dependencies, speculative abstractions, dead flexibility. One line per finding: loca... | https://github.com/DietrichGebert/ponytail | agents |
+| 2117 | **poptin-automation** | Automate Poptin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2118 | **popup-cro** | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions "exit intent," "popup conversions," "modal optimiz... | - | agents |
+| 2119 | **popups** | When the user wants to create or optimize popups, modals, overlays, slide-ins, or banners for conversion purposes. Also use when the user mentions "exit intent," "popup conversions," "modal optimiz... | - | agents |
+| 2120 | **pos-saas-colombia-multitenant** | Arquitecto de referencia para diseñar y mantener el backend de un POS (Punto de Venta) SaaS B2B multitenant con facturación recurrente mensual/anual, usando pasarelas de pago colombianas (Wompi, eP... | - | agents |
+| 2121 | **post-mortem** | /cs:post-mortem <decision> — Honest retrospective on an executed decision, scored against original assumptions and dissent. Closes the strategic sprint loop. Use when a decision hits its 90-day rev... | - | agents |
+| 2122 | **postgres-patterns** | PostgreSQL database patterns for query optimization and schema design. | - | agents |
+| 2123 | **postgres-pro** | Use when optimizing PostgreSQL queries, configuring replication, or implementing advanced database features. Invoke for EXPLAIN analysis, JSONB operations, extension usage, VACUUM tuning, performan... | - | agents |
+| 2124 | **postgresql-code-review** | PostgreSQL-specific code review assistant. | - | agents |
+| 2125 | **postgresql-optimization** | PostgreSQL query tuning and JSONB optimization. | - | agents |
+| 2126 | **postgrid-automation** | Automate Postgrid tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2127 | **postgrid-verify-automation** | Automate Postgrid Verify tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2128 | **postmortem** | /em:postmortem — Honest analysis of what went wrong. Use after a failed launch, missed quarter, or bad hire to run a blameless 5-Whys retrospective with a change register — e.g. dissecting why the ... | - | agents |
+| 2129 | **potato-review** | Harsh doctoral-level rigor review & submission-readiness review. | - | agents |
+| 2130 | **power-apps-code-app-scaffold** | Scaffold Power Apps Code App project with PAC CLI setup. | - | agents |
+| 2131 | **power-bi-dax-optimization** | Power BI DAX formula optimization prompt. | - | agents |
+| 2132 | **power-bi-model-design-review** | Power BI data model design review prompt. | - | agents |
+| 2133 | **power-bi-performance-troubleshooting** | Systematic Power BI performance troubleshooting. | - | agents |
+| 2134 | **power-bi-report-design-consultation** | Power BI report visualization design prompt. | - | agents |
+| 2135 | **power-platform-architect** | Transform business requirements into Power Platform solution architecture. | - | agents |
+| 2136 | **power-platform-mcp-connector-suite** | Generate complete Power Platform custom connector with MCP integration. | - | agents |
+| 2137 | **powerbi-modeling** | Power BI semantic modeling assistant for optimized data models. | - | agents |
+| 2138 | **pptx** | Use this skill any time a .pptx or .potx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting... | - | agents |
+| 2139 | **pptx-official** | Generating PowerPoint presentations with pptxgenjs in Node.js. Use when creating automated presentations, slide decks, pitch decks, or reports in .pptx format from data. | - | agents |
+| 2140 | **pr-dashboard** | Open GitHub PR dashboard in the browser. | - | agents |
+| 2141 | **pr-link-issue** | Link GitHub issue and Linear ticket in PR description. | - | agents |
+| 2142 | **pr-review** | Use when reviewing a GitHub PR for quality, scope correctness, trust tier compliance, or generating user-friendly review feedback. | - | agents |
+| 2143 | **pr-review-expert** | Use when the user asks to review pull requests, analyze code changes, check for security issues in PRs, or assess code quality of diffs. | - | agents |
+| 2144 | **pr-screenshots** | Embed before/after screenshots and annotated images in PRs. | - | agents |
+| 2145 | **pr-writer** | Create, refresh, and rewrite PR titles and descriptions. | - | agents |
+| 2146 | **pragmatic-programmer** | Apply meta-principles of software craftsmanship: DRY, orthogonality, tracer bullets, and design by contract. Use when the user mentions "best practices", "pragmatic approach", "broken windows", "tr... | - | agents |
+| 2147 | **prd** |  | - | agents |
+| 2148 | **precoro-automation** | Automate Precoro tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2149 | **predictable-revenue** | Build a scalable outbound B2B sales machine with specialized roles (SDR, AE, CSM). Use when the user mentions "outbound sales", "Cold Calling 2.0", "cold email sequences", "sales pipeline", "SDR pr... | - | agents |
+| 2150 | **prediction-market-oracle-research** | Research prediction markets as data sources & oracle signals. | - | agents |
+| 2151 | **prediction-market-risk-review** | Review prediction market workflows for compliance and execution risk. | - | agents |
+| 2152 | **premium-frontend-ui** | Immersive, high-performance web experiences with motion & craftsmanship. | - | agents |
+| 2153 | **prepare** |  | - | agents |
+| 2154 | **prerender-automation** | Automate Prerender tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2155 | **presentation-creator** | Data-driven presentation slides using React, Vite, and Recharts. | - | agents |
+| 2156 | **preset** | Intelligently deploys Azure OpenAI models to optimal regions by analyzing capacity across all available regions. Automatically checks current region first and shows alternatives if needed. USE FOR:... | - | agents |
+| 2157 | **pricing** | When the user wants help with pricing decisions, packaging, or monetization strategy. Also use when the user mentions 'pricing,' 'pricing tiers,' 'freemium,' 'free trial,' 'packaging,' 'price incre... | - | agents |
+| 2158 | **pricing-strategist** | Use when designing or revisiting product pricing — selecting a pricing model (subscription seat-based, usage-based, value-based, freemium, or hybrid), running Van Westendorp Price Sensitivity Meter... | - | agents |
+| 2159 | **pricing-strategy** | Design, optimize, and communicate SaaS pricing — tier structure, value metrics, pricing pages, and price increase strategy. Use when building a pricing model from scratch, redesigning existing pric... | - | agents |
+| 2160 | **printautopilot-automation** | Automate Printautopilot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2161 | **prisma-automation** | Automate Prisma tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2162 | **prisma-patterns** | Prisma ORM patterns for TypeScript backends — schema & query optimization. | - | agents |
+| 2163 | **prisma-workflow** | Prisma ORM best practices, schema design, migrations, seeding, and query optimization for PostgreSQL. Use when working with database schemas, migrations, or Prisma queries. | - | agents |
+| 2164 | **Prismic Automation** | Automate headless CMS operations in Prismic -- query documents, search content, retrieve custom types, and manage repository refs through the Composio Prismic integration. | - | agents |
+| 2165 | **problem-solving** | Creative problem-solving techniques for breaking through stuck points - includes collision-zone thinking, inversion, pattern recognition, and simplification | - | agents |
+| 2166 | **process-mapper** | Use when a BizOps lead, COO, or process-improvement owner needs to document an end-to-end business process (procurement, employee onboarding, incident handoff, customer-onboarding, claims adjudicat... | - | agents |
+| 2167 | **process-street-automation** | Automate Process Street tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2168 | **procfu-automation** | Automate Procfu tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2169 | **procurement-optimizer** | Use when running an annual SaaS audit, doing category-level spend review, or rationalizing the supplier base — when the user needs a spend audit, spend categorization (UNSPSC-aligned with Pareto br... | - | agents |
+| 2170 | **product-analytics** | Use when defining product KPIs, building metric dashboards, running cohort or retention analysis, or interpreting feature adoption trends across product stages. | - | agents |
+| 2171 | **product-capability** | Translate PRD intent into an implementation-ready capability plan. | - | agents |
+| 2172 | **product-discovery** | Use when validating product opportunities, mapping assumptions, planning discovery sprints, or testing problem-solution fit before committing delivery resources. | - | agents |
+| 2173 | **product-lens** | Validate the "why" before building and run product diagnostics. | - | agents |
+| 2174 | **product-manager** |  | - | agents |
+| 2175 | **product-manager-toolkit** | Comprehensive toolkit for product managers including RICE prioritization, customer interview analysis, PRD templates, discovery frameworks, and go-to-market strategies. Use when prioritizing featur... | - | agents |
+| 2176 | **product-marketing** | When the user wants to create or update their product marketing context document. Also use when the user mentions 'product context,' 'marketing context,' 'set up context,' 'positioning,' 'who is my... | - | agents |
+| 2177 | **product-marketing-context** | Product marketing context setup and maintenance. | - | agents |
+| 2178 | **product-research** | Use when planning and synthesizing product/user research as a method-and-repository discipline — selecting the right method for the goal (generative interviews vs usability test vs concept test vs ... | - | agents |
+| 2179 | **product-showcase** | Generate a comprehensive marketing website for a web app — multi-page with real screenshots, animated GIF walkthroughs, feature deep-dives, and workflow demonstrations. Browses the running app, cap... | - | agents |
+| 2180 | **product-skills** | Use when coordinating product work across the 12 bundled product sub-skills (RICE, OKRs, UX research, design tokens, competitive teardown, analytics, experiments, discovery, roadmaps, spec-to-repo,... | - | agents |
+| 2181 | **product-strategist** | Strategic product leadership toolkit for Head of Product covering OKR cascade generation, quarterly planning, competitive landscape analysis, product vision documents, and team scaling proposals. U... | - | agents |
+| 2182 | **Productboard Automation** | Automate product management workflows in Productboard -- manage features, notes, objectives, components, and releases through natural language commands. | - | agents |
+| 2183 | **production-audit** | Local-evidence production readiness audit for shipped apps. | - | agents |
+| 2184 | **production-scheduling** | Production scheduling, job sequencing & bottleneck resolution. | - | agents |
+| 2185 | **productlane-automation** | Automate Productlane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2186 | **professional-communication** | Technical communication guide for developers. | - | agents |
+| 2187 | **programmatic-seo** | When the user wants to create SEO-driven pages at scale using templates and data. Also use when the user mentions "programmatic SEO," "template pages," "pages at scale," "directory pages," "locatio... | - | agents |
+| 2188 | **project-architect** | Documentation-first project planning that produces implementation-ready blueprints and single-shot coding agent prompts. Generates 4 interconnected docs — SPECIFICATION.md, IMPLEMENTATION.md, TASKS... | - | agents |
+| 2189 | **project-bubble-automation** | Automate Project Bubble tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2190 | **project-docs** | Generate project documentation from codebase analysis — ARCHITECTURE.md, API_ENDPOINTS.md, DATABASE_SCHEMA.md. Reads source code, schema files, routes, and config to produce accurate, structured do... | - | agents |
+| 2191 | **project-flow-ops** | Operate execution flow across GitHub and Linear. | - | agents |
+| 2192 | **project-guidelines-example** | Project-specific skill template based on real production app. | - | agents |
+| 2193 | **project-health** | All-in-one project configuration and health management. Sets up new projects (settings.local.json, AGENTS.md, .gitignore), audits existing projects (permissions, context quality, MCP coverage, leak... | - | agents |
+| 2194 | **project-session-manager** | Worktree-first dev environment manager for issues & PRs. | - | agents |
+| 2195 | **project-workflow-analysis-blueprint-generator** | Technology-agnostic prompt generator for end-to-end workflows. | - | agents |
+| 2196 | **promote** | Graduate a proven pattern from auto-memory (MEMORY.md) to AGENTS.md or .Codex/rules/ for permanent enforcement. Use when the user runs /si:promote or asks to make a learned behavior permanent. | - | agents |
+| 2197 | **Prompt Coach** | Analyze your Codex session logs to improve prompt quality, optimize tool usage, and become a better AI-native engineer. | - | agents |
+| 2198 | **prompt-architect** | Analyzes and improves prompts using 27 research-backed frameworks across 7 intent categories. Use when a user wants to improve, rewrite, structure, or engineer a prompt — including requests like "h... | https://github.com/ckelsoe/claude-skill-prompt-architect | agents |
+| 2199 | **prompt-engineer** | Writes, refactors, and evaluates prompts for LLMs — generating optimized prompt templates, structured output schemas, evaluation rubrics, and test suites. Use when designing prompts for new LLM app... | - | agents |
+| 2200 | **prompt-engineer-toolkit** | Turns marketing prompts into tested, versioned production assets: A/B prompt evaluation against structured test cases, immutable prompt version history with diffs, ready-to-use marketing prompt tem... | - | agents |
+| 2201 | **prompt-engineering** | Comprehensive prompt engineering framework for designing, optimizing, and iterating LLM prompts. Use when creating prompts, optimizing existing prompts, or improving AI instructions. | - | agents |
+| 2202 | **prompt-governance** | Use when managing prompts in production at scale: versioning prompts, running A/B tests on prompts, building prompt registries, preventing prompt regressions, or creating eval pipelines for product... | - | agents |
+| 2203 | **prompt-improver** | This skill enriches vague prompts with targeted research and clarification before execution. Should be used when a prompt is determined to be vague and requires systematic research, question genera... | - | agents |
+| 2204 | **prompt-optimizer** | Optimize raw prompts into ready-to-send prompt for any LLM. | - | agents |
+| 2205 | **proofly-automation** | Automate Proofly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2206 | **proposal-writer** | Write a client proposal or quote for a service business. Covers project understanding, scope, timeline, pricing presentation, and terms. Works for web development, consulting, trades, professional ... | - | agents |
+| 2207 | **prospeccion-aiq** | Construye y ejecuta una lista de prospectos calificados en Instagram para vender servicios de IA — descubre cuentas por bola de nieve, las enriquece con email y señal de monetización, las puntúa y ... | - | agents |
+| 2208 | **prospecting** | Find, qualify, and build a list of B2B/SaaS prospects. | - | agents |
+| 2209 | **prototype** | Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like. | https://github.com/emilkowalski/skills | agents |
+| 2210 | **proxiedmail-automation** | Automate Proxiedmail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2211 | **public-relations** | Earned media, press coverage, journalist outreach. | - | agents |
+| 2212 | **publish-to-pages** | Publish presentations and web content to GitHub Pages. | - | agents |
+| 2213 | **publish-website** | Puts a web page on the internet for free, with no terminal and no paid plan — a folder of HTML/CSS/JS, or a page Claude just built. Checks the page for the things that silently break it once it's l... | https://github.com/Hainrixz/all-deploy | agents |
+| 2214 | **pubmed-database** | PubMed and NCBI E-utilities search for biomedical literature. | - | agents |
+| 2215 | **pulse** | Multi-source recency research skill that takes the pulse of any topic across Reddit, Hacker News, the open web, and optionally X/Twitter within a configurable recent window (default 30 days). Forci... | - | agents |
+| 2216 | **pushbullet-automation** | Automate Pushbullet tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2217 | **pushover-automation** | Automate Pushover tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2218 | **pw** |  | - | agents |
+| 2219 | **pydantic-models-py** | Create Pydantic models following the multi-model pattern with Base, Create, Update, Response, and InDB variants. Use when defining API request/response schemas, database models, or data validation ... | - | agents |
+| 2220 | **pytest-coverage** | Run pytest tests with coverage and target 100% coverage. | - | agents |
+| 2221 | **python-appservice-deploy** | Deploy Python (Flask/Django/FastAPI) code to Azure App Service Linux. WHEN: \"Flask App Service\", \"Django App Service\", \"FastAPI App Service\", \"deploy Python to App Service\". DO NOT USE FOR:... | - | agents |
+| 2222 | **python-azure-iot-edge-modules** | Build and operate Python Azure IoT Edge modules. | - | agents |
+| 2223 | **python-mcp-server-generator** | Generate a complete MCP server project in Python. | - | agents |
+| 2224 | **python-patterns** | Pythonic idioms, PEP 8 standards, and type hints. | - | agents |
+| 2225 | **python-pro** | Use when building Python 3.11+ applications requiring type safety, async programming, or robust error handling. Generates type-annotated Python code, configures mypy in strict mode, writes pytest t... | - | agents |
+| 2226 | **python-pypi-package-builder** | End-to-end skill for building and publishing Python libraries to PyPI. | - | agents |
+| 2227 | **python-testing** | Python testing strategies using pytest, fixtures & mocking. | - | agents |
+| 2228 | **pytorch-patterns** | PyTorch deep learning training pipelines and architectures. | - | agents |
+| 2229 | **qa** | Systematically QA test a web application and fix bugs found. (gstack) | - | agents |
+| 2230 | **qa-only** | Report-only QA testing. (gstack) | - | agents |
+| 2231 | **qa-test-planner** | Generate comprehensive test plans, test cases & bug reports. | - | agents |
+| 2232 | **qcsd-cicd-swarm** | Use when enforcing CI/CD quality gates before release, running regression analysis, detecting flaky tests, or assessing deployment readiness in the QCSD Verification phase. | - | agents |
+| 2233 | **qcsd-development-swarm** | Use when monitoring in-sprint code quality with TDD adherence checks, complexity analysis, coverage gap detection, or defect prediction in the QCSD Development phase. | - | agents |
+| 2234 | **qcsd-ideation-swarm** | Use when running Quality Criteria sessions during PI/Sprint planning with HTSM v6.3, Risk Storming, or Testability analysis in the QCSD Ideation phase. | - | agents |
+| 2235 | **qcsd-production-swarm** | Use when assessing post-release production health with DORA metrics, root cause analysis, defect prediction, or cross-phase feedback loops in the QCSD Production phase. | - | agents |
+| 2236 | **qcsd-refinement-swarm** | Use when running Sprint Refinement sessions with SFDIPOT product factors, generating BDD scenarios, or validating requirements in the QCSD Refinement phase. | - | agents |
+| 2237 | **qdrant-clients-sdk** | Integrate Qdrant vector database client SDKs. | - | agents |
+| 2238 | **qdrant-deployment-options** | Guides Qdrant deployment selection (Docker, Cloud, local, embedded). | - | agents |
+| 2239 | **qdrant-model-migration** | Embedding model migration in Qdrant without downtime. | - | agents |
+| 2240 | **qdrant-monitoring** | Qdrant monitoring and observability setup. | - | agents |
+| 2241 | **qdrant-performance-optimization** | Optimize Qdrant vector search performance and indexing. | - | agents |
+| 2242 | **qdrant-scaling** | Guides Qdrant cluster scaling decisions. | - | agents |
+| 2243 | **qdrant-search-quality** | Diagnoses and improves Qdrant vector search relevance. | - | agents |
+| 2244 | **qdrant-version-upgrade** | Upgrade Qdrant version without downtime. | - | agents |
+| 2245 | **qe-a11y-ally** | Comprehensive WCAG accessibility auditing with multi-tool testing (axe-core + pa11y + Lighthouse), TRUE PARALLEL execution with Promise.allSettled, graceful degradation, retry with backoff, context... | - | agents |
+| 2246 | **qe-accessibility-testing** | WCAG 2.2 compliance testing, screen reader validation, and inclusive design verification. Use when ensuring legal compliance (ADA, Section 508), testing for disabilities, or building accessible app... | - | agents |
+| 2247 | **qe-agentic-jujutsu** | Quantum-resistant, self-learning version control for AI agents with ReasoningBank intelligence and multi-agent coordination | - | agents |
+| 2248 | **qe-agentic-quality-engineering** | AI agents as force multipliers for quality work. Core skill for all 19 QE agents using PACTS principles. | - | agents |
+| 2249 | **qe-api-testing-patterns** | Comprehensive API testing patterns including contract testing, REST/GraphQL testing, and integration testing. Use when testing APIs or designing API test strategies. | - | agents |
+| 2250 | **qe-aqe-v2-v3-migration** | Migrate Agentic QE projects from v2 to v3 with zero data loss | - | agents |
+| 2251 | **qe-browser** | Browser automation for QE agents using Vibium (WebDriver BiDi) with assertions, batch execution, visual diff, prompt-injection scanning, and semantic intents. Use when any QE skill needs to drive a... | - | agents |
+| 2252 | **qe-brutal-honesty-review** | Unvarnished technical criticism combining Linus Torvalds' precision, Gordon Ramsay's standards, and James Bach's BS-detection. Use when code/tests need harsh reality checks, certification schemes s... | - | agents |
+| 2253 | **qe-bug-reporting-excellence** | Write high-quality bug reports that get fixed quickly. Use when reporting bugs, training teams on bug reporting, or establishing bug report standards. | - | agents |
+| 2254 | **qe-chaos-engineering-resilience** | Chaos engineering principles, controlled failure injection, resilience testing, and system recovery validation. Use when testing distributed systems, building confidence in fault tolerance, or vali... | - | agents |
+| 2255 | **qe-chaos-resilience** | Injects controlled faults (network partition, latency, process kill, disk pressure) into distributed systems and validates recovery behavior. Use when testing circuit breakers, failover paths, retr... | - | agents |
+| 2256 | **qe-cicd-pipeline-qe-orchestrator** | Orchestrate quality engineering across CI/CD pipeline phases. Use when designing test strategies, planning quality gates, or implementing shift-left/shift-right testing. | - | agents |
+| 2257 | **qe-code-intelligence** | Builds semantic code indexes, maps dependency graphs, and performs intelligent code search across large codebases. Use when understanding unfamiliar code, tracing call chains, analyzing import depe... | - | agents |
+| 2258 | **qe-code-review-quality** | Conduct context-driven code reviews focusing on quality, testability, and maintainability. Use when reviewing code, providing feedback, or establishing review practices. | - | agents |
+| 2259 | **qe-compatibility-testing** | Cross-browser, cross-platform, and cross-device compatibility testing ensuring consistent experience across environments. Use when validating browser support, testing responsive design, or ensuring... | - | agents |
+| 2260 | **qe-compliance-testing** | Regulatory compliance testing for GDPR, CCPA, HIPAA, SOC2, PCI-DSS and industry-specific regulations. Use when ensuring legal compliance, preparing for audits, or handling sensitive data. | - | agents |
+| 2261 | **qe-consultancy-practices** | Apply effective software quality consultancy practices. Use when consulting, advising clients, or establishing consultancy workflows. | - | agents |
+| 2262 | **qe-context-driven-testing** | Apply context-driven testing principles where practices are chosen based on project context, not universal 'best practices'. Use when making testing decisions, questioning dogma, or adapting approa... | - | agents |
+| 2263 | **qe-contract-testing** | Consumer-driven contract testing for APIs including REST, GraphQL, and event-driven systems with schema validation. | - | agents |
+| 2264 | **qe-coverage-analysis** | Analyzes test coverage data (Istanbul, c8, lcov) to identify uncovered lines, branches, and functions with risk-weighted gap detection. Use when analyzing coverage reports, identifying coverage gap... | - | agents |
+| 2265 | **qe-database-testing** | Database schema validation, data integrity testing, migration testing, transaction isolation, and query performance. Use when testing data persistence, ensuring referential integrity, or validating... | - | agents |
+| 2266 | **qe-debug-loop** | Hypothesis-driven autonomous debugging with real command validation | - | agents |
+| 2267 | **qe-defect-intelligence** | Predicts defect-prone code using change frequency, complexity metrics, and historical bug patterns. Use when predicting defects before they escape, analyzing root causes of test failures, learning ... | - | agents |
+| 2268 | **qe-enterprise-integration-testing** | Orchestration skill for enterprise integration testing across SAP, middleware, WMS, and backend systems. Covers E2E enterprise flows, SAP-specific patterns (RFC, BAPI, IDoc, OData, Fiori), cross-sy... | - | agents |
+| 2269 | **qe-exploratory-testing-advanced** | Advanced exploratory testing techniques with Session-Based Test Management (SBTM), RST heuristics, and test tours. Use when planning exploration sessions, investigating bugs, or discovering unknown... | - | agents |
+| 2270 | **qe-github-code-review** | Comprehensive GitHub code review with AI-powered swarm coordination | - | agents |
+| 2271 | **qe-github-multi-repo** | Multi-repository coordination, synchronization, and architecture management with AI swarm orchestration | - | agents |
+| 2272 | **qe-github-project-management** | Comprehensive GitHub project management with swarm-coordinated issue tracking, project board automation, and sprint planning | - | agents |
+| 2273 | **qe-github-release-management** | Comprehensive GitHub release orchestration with AI swarm coordination for automated versioning, testing, deployment, and rollback management | - | agents |
+| 2274 | **qe-github-workflow-automation** | Advanced GitHub Actions workflow automation with AI swarm coordination, intelligent CI/CD pipelines, and comprehensive repository management | - | agents |
+| 2275 | **qe-holistic-testing-pact** | Apply the Holistic Testing Model evolved with PACTS (Proactive, Autonomous, Collaborative, Targeted, Structured) principles. Use when designing comprehensive test strategies for Classical, AI-assis... | - | agents |
+| 2276 | **qe-iterative-loop** | Runs autonomous red-green-refactor loops to fix failing tests, reach coverage targets, and satisfy quality gates. Use when tests need to pass, coverage thresholds must be met, quality gates require... | - | agents |
+| 2277 | **qe-learning-optimization** | Optimizes QE agent performance through transfer learning, hyperparameter tuning, and pattern distillation across test domains. Use when improving agent accuracy, applying learned patterns to new pr... | - | agents |
+| 2278 | **qe-localization-testing** | Internationalization (i18n) and localization (l10n) testing for global products including translations, locale formats, RTL languages, and cultural appropriateness. Use when launching in new market... | - | agents |
+| 2279 | **qe-middleware-testing-patterns** | Enterprise middleware testing patterns for message routing, transformation, DLQ, protocol mediation, ESB error handling, and EIP patterns. Use when testing middleware layers, message brokers, ESBs,... | - | agents |
+| 2280 | **qe-mobile-testing** | Comprehensive mobile testing for iOS and Android platforms including gestures, sensors, permissions, device fragmentation, and performance. Use when testing native apps, hybrid apps, or mobile web,... | - | agents |
+| 2281 | **qe-mutation-testing** | Test quality validation through mutation testing, assessing test suite effectiveness by introducing code mutations and measuring kill rate. Use when evaluating test quality, identifying weak tests,... | - | agents |
+| 2282 | **qe-n8n-expression-testing** | n8n expression syntax validation, context-aware testing, common pitfalls detection, and performance optimization. Use when validating n8n expressions and data transformations. | - | agents |
+| 2283 | **qe-n8n-integration-testing-patterns** | API contract testing, authentication flows, rate limit handling, and error scenario coverage for n8n integrations with external services. Use when testing n8n node integrations. | - | agents |
+| 2284 | **qe-n8n-security-testing** | Credential exposure detection, OAuth flow validation, API key management testing, and data sanitization verification for n8n workflows. Use when validating n8n workflow security. | - | agents |
+| 2285 | **qe-n8n-trigger-testing-strategies** | Webhook testing, schedule validation, event-driven triggers, and polling mechanism testing for n8n workflows. Use when testing how workflows are triggered. | - | agents |
+| 2286 | **qe-n8n-workflow-testing-fundamentals** | Comprehensive n8n workflow testing including execution lifecycle, node connection patterns, data flow validation, and error handling strategies. Use when testing n8n workflow automation applications. | - | agents |
+| 2287 | **qe-observability-testing-patterns** | Observability and monitoring validation patterns for dashboards, alerting, log aggregation, APM traces, and SLA/SLO verification. Use when testing monitoring infrastructure, dashboard accuracy, ale... | - | agents |
+| 2288 | **qe-pair-programming** | AI-assisted pair programming with multiple modes (driver/navigator/switch), real-time verification, quality monitoring, and comprehensive testing. Supports TDD, debugging, refactoring, and learning... | - | agents |
+| 2289 | **qe-pentest-validation** | Orchestrate security finding validation through graduated exploitation. 4-phase pipeline: recon (SAST/DAST), analysis (code review), validation (exploit proof), report (No Exploit, No Report gate).... | - | agents |
+| 2290 | **qe-performance-analysis** | Comprehensive performance analysis, bottleneck detection, and optimization recommendations for Codex Flow swarms | - | agents |
+| 2291 | **qe-performance-testing** | Test application performance, scalability, and resilience. Use when planning load testing, stress testing, or optimizing system performance. | - | agents |
+| 2292 | **qe-pr-review** | Scope-aware GitHub PR review with user-friendly tone and trust tier validation | - | agents |
+| 2293 | **qe-quality-assessment** | Evaluates code quality through complexity analysis, lint results, code smell detection, and test health metrics. Use when assessing deployment readiness, configuring quality gates, scoring a codeba... | - | agents |
+| 2294 | **qe-quality-metrics** | Measure quality effectively with actionable metrics. Use when establishing quality dashboards, defining KPIs, or evaluating test effectiveness. | - | agents |
+| 2295 | **qe-refactoring-patterns** | Apply safe refactoring patterns to improve code structure without changing behavior. Use when cleaning up code, reducing technical debt, or improving maintainability. | - | agents |
+| 2296 | **qe-regression-testing** | Strategic regression testing with test selection, impact analysis, and continuous regression management. Use when verifying fixes don't break existing functionality, planning regression suites, or ... | - | agents |
+| 2297 | **qe-release** | End-to-end npm release workflow with verification gates and hardcoded-version protection | - | agents |
+| 2298 | **qe-requirements-validation** | Validates acceptance criteria for testability, traces requirements to test cases, and generates BDD scenarios from user stories. Use when validating acceptance criteria, building requirements trace... | - | agents |
+| 2299 | **qe-risk-based-testing** | Focus testing effort on highest-risk areas using risk assessment and prioritization. Use when planning test strategy, allocating testing resources, or making coverage decisions. | - | agents |
+| 2300 | **qe-security-compliance** | Security auditing, vulnerability scanning, and compliance validation for OWASP, SOC2, GDPR, and other standards. | - | agents |
+| 2301 | **qe-security-testing** | Test for security vulnerabilities using OWASP principles. Use when conducting security audits, testing auth, or implementing security practices. | - | agents |
+| 2302 | **qe-security-visual-testing** | Security-first visual testing combining URL validation, PII detection, and visual regression with parallel viewport support. Use when testing web applications that handle sensitive data, need visua... | - | agents |
+| 2303 | **qe-sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... | - | agents |
+| 2304 | **qe-sherlock-review** | Evidence-based investigative code review using deductive reasoning to determine what actually happened versus what was claimed. Use when verifying implementation claims, investigating bugs, validat... | - | agents |
+| 2305 | **qe-shift-left-testing** | Move testing activities earlier in the development lifecycle to catch defects when they're cheapest to fix. Use when implementing TDD, CI/CD, or early quality practices. | - | agents |
+| 2306 | **qe-shift-right-testing** | Testing in production with feature flags, canary deployments, synthetic monitoring, and chaos engineering. Use when implementing production observability or progressive delivery. | - | agents |
+| 2307 | **qe-six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... | - | agents |
+| 2308 | **qe-skill-builder** | Create new Codex Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generat... | - | agents |
+| 2309 | **qe-sparc-methodology** | SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration | - | agents |
+| 2310 | **qe-stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows | - | agents |
+| 2311 | **qe-tdd-london-chicago** | Apply London (mock-based) and Chicago (state-based) TDD schools. Use when practicing test-driven development or choosing testing style for your context. | - | agents |
+| 2312 | **qe-technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. | - | agents |
+| 2313 | **qe-test-automation-strategy** | Design and implement effective test automation with proper pyramid, patterns, and CI/CD integration. Use when building automation frameworks or improving test efficiency. | - | agents |
+| 2314 | **qe-test-data-management** | Strategic test data generation, management, and privacy compliance. Use when creating test data, handling PII, ensuring GDPR/CCPA compliance, or scaling data generation for realistic testing scenar... | - | agents |
+| 2315 | **qe-test-design-techniques** | Systematic test design with boundary value analysis, equivalence partitioning, decision tables, state transition testing, and combinatorial testing. Use when designing comprehensive test cases, red... | - | agents |
+| 2316 | **qe-test-environment-management** | Test environment provisioning, infrastructure as code for testing, Docker/Kubernetes for test environments, service virtualization, and cost optimization. Use when managing test infrastructure, ens... | - | agents |
+| 2317 | **qe-test-execution** | Orchestrates test suite execution with parallel sharding, intelligent retry, and real-time reporting across Jest, Vitest, and Playwright. Use when running test suites, optimizing execution time, ha... | - | agents |
+| 2318 | **qe-test-generation** | Generates durable-first tests — invariants, contracts, and property-based tests at boundaries that survive a reimplementation — plus unit, integration, and e2e coverage. Use when creating tests for... | - | agents |
+| 2319 | **qe-test-idea-rewriting** | Transform passive 'Verify X' test descriptions into active, observable test actions. Use when test ideas lack specificity, use vague language, or fail quality validation. Converts to action-verb fo... | - | agents |
+| 2320 | **qe-test-reporting-analytics** | Advanced test reporting, quality dashboards, predictive analytics, trend analysis, and executive reporting for QE metrics. Use when communicating quality status, tracking trends, or making data-dri... | - | agents |
+| 2321 | **qe-testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... | - | agents |
+| 2322 | **qe-verification-quality** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. | - | agents |
+| 2323 | **qe-visual-accessibility** | Captures and compares screenshots across viewports, runs axe-core accessibility scans, and detects visual regressions with pixel-diff analysis. Use when detecting UI regressions, validating respons... | - | agents |
+| 2324 | **qe-visual-testing-advanced** | Advanced visual regression testing with pixel-perfect comparison, AI-powered diff analysis, responsive design validation, and cross-browser visual consistency. Use when detecting UI regressions, va... | - | agents |
+| 2325 | **qe-wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... | - | agents |
+| 2326 | **qe-xp-practices** | Apply XP practices including pair programming, ensemble programming, continuous integration, and sustainable pace. Use when implementing agile development practices, improving team collaboration, o... | - | agents |
+| 2327 | **qms-audit-expert** | ISO 13485 internal audit expertise for medical device QMS. Covers audit planning, execution, nonconformity classification, and CAPA verification. Use when planning internal audits, executing audits... | - | agents |
+| 2328 | **quaderno-automation** | Automate Quaderno tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2329 | **qualaroo-automation** | Automate Qualaroo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2330 | **quality-documentation-manager** | Document control system management for medical device QMS. Covers document numbering, version control, change management, and 21 CFR Part 11 compliance. Use when working on document control procedu... | - | agents |
+| 2331 | **quality-manager-qmr** | Senior Quality Manager Responsible Person (QMR) for HealthTech and MedTech companies. Provides quality system governance, management review leadership, regulatory compliance oversight, and quality ... | - | agents |
+| 2332 | **quality-manager-qms-iso13485** | ISO 13485 Quality Management System implementation and maintenance for medical device organizations. Provides QMS design, documentation control, internal auditing, CAPA management, and certificatio... | - | agents |
+| 2333 | **quality-metrics** | Tracks quality metrics including defect density, test effectiveness ratio, DORA metrics, and mean time to detection. Use when establishing quality dashboards, defining KPIs, evaluating test suite e... | - | agents |
+| 2334 | **quality-nonconformance** | Quality control, non-conformance investigation & CAPA in manufacturing. | - | agents |
+| 2335 | **quality-playbook** | Run complete quality engineering audit on any codebase. | - | agents |
+| 2336 | **quarkus-patterns** | Quarkus 3.x LTS architecture patterns with Camel & Panache. | - | agents |
+| 2337 | **quarkus-security** | Quarkus Security best practices for authn/authz & OIDC. | - | agents |
+| 2338 | **quarkus-tdd** | Test-driven development for Quarkus 3.x using JUnit 5 & REST Assured. | - | agents |
+| 2339 | **quarkus-verification** | Verification loop for Quarkus projects: build, tests & native compilation. | - | agents |
+| 2340 | **quasi-coder** | Implement code from shorthand, quasi-code, and natural language. | - | agents |
+| 2341 | **quick-recap** | Status block convention for agent responses. | - | agents |
+| 2342 | **QuickBooks Automation** | QuickBooks Automation: manage invoices, customers, accounts, and payments in QuickBooks Online for streamlined bookkeeping | - | agents |
+| 2343 | **quieter** | Tones down visually aggressive or overstimulating designs, reducing intensity while preserving quality. Use when the user mentions too bold, too loud, overwhelming, aggressive, garish, or wants a c... | - | agents |
+| 2344 | **ra-qm-skills** | Router/index for the 15 regulatory & quality-management skills bundled in this plugin (ISO 13485 QMS, EU MDR 2017/745, FDA submissions under QMSR, ISO 14971 risk, CAPA, document control, ISO 27001/... | - | agents |
+| 2345 | **radar-automation** | Automate Radar tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2346 | **raffle-winner-picker** | Picks random winners from lists, spreadsheets, or Google Sheets for giveaways, raffles, and contests. Ensures fair, unbiased selection with transparency. | - | agents |
+| 2347 | **rafflys-automation** | Automate Rafflys tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2348 | **rag-architect** | Use when the user asks to design a RAG pipeline, choose a chunking strategy or embedding model, pick a vector database, or evaluate retrieval quality (precision@k, recall@k, NDCG). Examples: 'desig... | - | agents |
+| 2349 | **ragic-automation** | Automate Ragic tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2350 | **rails-expert** | Rails 7+ specialist that optimizes Active Record queries with includes/eager_load, implements Turbo Frames and Turbo Streams for partial page updates, configures Action Cable for WebSocket connecti... | - | agents |
+| 2351 | **raisely-automation** | Automate Raisely tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2352 | **ralph** | Self-referential loop until task completion with verification reviewer. | - | agents |
+| 2353 | **ralph-loop-kiro-specs** | Automated iterative agent runner for spec-based development in Kiro. Wraps kiro-cli in a self-correcting bash loop that picks up tasks from a Kiro spec, implements them one at a time, verifies agai... | - | agents |
+| 2354 | **ralphinho-rfc-pipeline** | RFC-driven multi-agent DAG execution pattern. | - | agents |
+| 2355 | **ralplan** | Consensus planning entrypoint that auto-gates vague requests. | - | agents |
+| 2356 | **Ramp Automation** | Ramp Automation: manage corporate card transactions, reimbursements, users, and expense tracking via the Ramp platform | - | agents |
+| 2357 | **rank-tracker** | Track keyword rankings and SERP changes in traditional search and AI responses over time. "How am I ranking" / "查排名" / "排名变了吗". 排名追踪/关键词排名/SERP监控/排名变化 ランキング追跡 순위추적 seguimiento rankings | - | agents |
+| 2358 | **ravenseotools-automation** | Automate Ravenseotools tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2359 | **re-amaze-automation** | Automate Re Amaze tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2360 | **react-audit-grep-patterns** | Grep scan command library for auditing React codebases before React 19. | - | agents |
+| 2361 | **react-best-practices** | React component patterns, hooks, state management, and performance best practices. Use when building or reviewing React components. | - | agents |
+| 2362 | **react-container-presentation-component** | Create React component using Container/Presentation pattern. | - | agents |
+| 2363 | **react-dev** | React components with TypeScript, hooks, React 19 & Server Components. | - | agents |
+| 2364 | **react-expert** | Use when building React 18+ applications in .jsx or .tsx files, Next.js App Router projects, or create-react-app setups. Creates components, implements custom hooks, debugs rendering issues, migrat... | - | agents |
+| 2365 | **react-flow-node-ts** | Create React Flow node components with TypeScript types, handles, and Zustand integration. Use when building custom nodes for React Flow canvas, creating visual workflow editors, or implementing no... | - | agents |
+| 2366 | **react-native** | React Native and Expo patterns for building performant mobile apps. Covers list performance, animations with Reanimated, navigation, UI patterns, state management, platform-specific code, and Expo ... | - | agents |
+| 2367 | **react-native-expert** | Builds, optimizes, and debugs cross-platform mobile applications with React Native and Expo. Implements navigation hierarchies (tabs, stacks, drawers), configures native modules, optimizes FlatList... | - | agents |
+| 2368 | **react-native-patterns** | React Native and Expo app patterns — Expo Router navigation & Query. | - | agents |
+| 2369 | **react-patterns** | React 19 performance patterns and composition architecture for Vite + Cloudflare projects. 50+ rules ranked by impact — eliminating waterfalls, bundle optimisation, re-render prevention, compositio... | - | agents |
+| 2370 | **react-performance** | React and Next.js performance optimization patterns. | - | agents |
+| 2371 | **react-testing** | React component testing with RTL, Vitest/Jest, MSW & axe. | - | agents |
+| 2372 | **react-useeffect** | React useEffect best practices from official docs. | - | agents |
+| 2373 | **react18-batching-patterns** | Diagnose and fix automatic batching regressions in React 18. | - | agents |
+| 2374 | **react18-dep-compatibility** | React 18.3.1 and React 19 dependency compatibility matrix. | - | agents |
+| 2375 | **react18-enzyme-to-rtl** | Enzyme to React Testing Library migration patterns. | - | agents |
+| 2376 | **react18-legacy-context** | Migrate React legacy context API to createContext. | - | agents |
+| 2377 | **react18-lifecycle-patterns** | Migrate unsafe class component lifecycle methods. | - | agents |
+| 2378 | **react18-string-refs** | Migrate React string refs to React.createRef(). | - | agents |
+| 2379 | **react19-concurrent-patterns** | Adopt React 19 APIs (useTransition, useDeferredValue, Actions). | - | agents |
+| 2380 | **react19-source-patterns** | React 19 source-file migration patterns. | - | agents |
+| 2381 | **react19-test-patterns** | Migrating test files to React 19 compatibility. | - | agents |
+| 2382 | **read-the-damn-docs** | Ground implementations in third-party official docs before coding. | - | agents |
+| 2383 | **README** |  | - | agents |
+| 2384 | **readme-blueprint-generator** | Intelligent README.md generation prompt. | - | agents |
+| 2385 | **realphonevalidation-automation** | Automate Realphonevalidation tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2386 | **ReasoningBank Intelligence** | Implement adaptive learning with ReasoningBank for pattern recognition, strategy optimization, and continuous improvement. Use when building self-learning agents, optimizing workflows, or implement... | - | agents |
+| 2387 | **ReasoningBank with AgentDB** | Implement ReasoningBank adaptive learning with AgentDB's 150x faster vector database. Includes trajectory tracking, verdict judgment, memory distillation, and pattern recognition. Use when building... | - | agents |
+| 2388 | **recallai-automation** | Automate Recallai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2389 | **receiving-code-review** | Evaluate code review feedback before implementing. | - | agents |
+| 2390 | **recruitee-automation** | Automate Recruitee tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2391 | **recsys-pipeline-architect** | Design recommendation, ranking, and feed pipelines. | - | agents |
+| 2392 | **recursive-decision-ledger** | Decision ledger for repeated rollouts and stochastic optimization. | - | agents |
+| 2393 | **red-team** | Use when planning or executing authorized red team engagements, attack path analysis, or offensive security simulations. Covers MITRE ATT&CK kill-chain planning, technique scoring, choke point iden... | - | agents |
+| 2394 | **redesign** | Upgrade an existing website or app to premium quality without breaking functionality — audit the current design, identify generic/AI tells, then apply taste and system rules surgically. Use when th... | - | agents |
+| 2395 | **redesign-existing-projects** | Upgrades existing websites and apps to premium quality. Audits current design, identifies generic AI patterns, and applies high-end design standards without breaking functionality. Works with any C... | - | agents |
+| 2396 | **redesign-skill** | Website & UI redesign modernization skill by Open Design (nexu-io). Transforms legacy, outdated, or template-looking interfaces into modern, high-conversion, accessible web applications. Use when r... | - | agents |
+| 2397 | **redis-patterns** | Redis data structure patterns, caching & distributed locks. | - | agents |
+| 2398 | **reducing-entropy** | Manual-only skill for minimizing total codebase size. | - | agents |
+| 2399 | **refactor** | Surgical code refactoring to improve maintainability. | - | agents |
+| 2400 | **refactor-method-complexity-reduce** | Refactor methods to reduce cognitive complexity. | - | agents |
+| 2401 | **refactor-plan** | Create concrete plan before multi-file refactor. | - | agents |
+| 2402 | **refactoring-patterns** | Apply named refactoring transformations to improve code structure without changing behavior. Use when the user mentions "refactor this", "code smells", "extract method", "replace conditional", "tec... | - | agents |
+| 2403 | **refactoring-ui** | Audit and fix visual hierarchy, spacing, color, and depth in web UIs. Use when the user mentions "my UI looks off" (or amateur/unprofessional), "fix the design", "Tailwind styling", "color palette"... | - | agents |
+| 2404 | **referral-program** | When the user wants to design, launch, or optimize a referral or affiliate program. Use when they mention 'referral program,' 'affiliate program,' 'word of mouth,' 'refer a friend,' 'incentive prog... | - | agents |
+| 2405 | **referrals** | When the user wants to create, optimize, or analyze a referral program, affiliate program, or word-of-mouth strategy. Also use when the user mentions 'referral,' 'affiliate,' 'ambassador,' 'word of... | - | agents |
+| 2406 | **refiner-automation** | Automate Refiner tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2407 | **reflect** | Mid-conversation reflection skill that pauses execution and zooms out from detail-mode to honestly reassess direction, assumptions, and bias. Use when the user says 'reflect', 'take a step back', '... | - | agents |
+| 2408 | **regex-vs-llm-structured-text** | Decision framework for regex vs LLM text parsing. | - | agents |
+| 2409 | **regression-testing** | Strategic regression testing with test selection, impact analysis, and continuous regression management. Use when verifying fixes don't break existing functionality, planning regression suites, or ... | - | agents |
+| 2410 | **regulatory-affairs-head** | Senior Regulatory Affairs Manager for HealthTech and MedTech companies. Prepares FDA 510(k), De Novo, and PMA submission packages; analyzes regulatory pathways for new medical devices; drafts respo... | - | agents |
+| 2411 | **release** | End-to-end npm release workflow with verification gates and hardcoded-version protection | - | agents |
+| 2412 | **release-it** | Build production-ready systems with stability patterns: circuit breakers, bulkheads, timeouts, and retry logic. Use when the user mentions "production outage", "circuit breaker", "deployment pipeli... | - | agents |
+| 2413 | **remarkety-automation** | Automate Remarkety tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2414 | **remember** | Explicitly save important knowledge to auto-memory with timestamp and context. Use when a discovery is too important to rely on auto-capture. | - | agents |
+| 2415 | **remember-interactive-programming** | Micro-prompt for interactive REPL-based programming. | - | agents |
+| 2416 | **remote-retrieval-automation** | Automate Remote Retrieval tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2417 | **remotion-best-practices** | Remotion video creation best practices in React. | - | agents |
+| 2418 | **remotion-to-hyperframes** | Translate an existing Remotion (React-based) video composition into a HyperFrames HTML composition. Use ONLY when the user explicitly asks to port, convert, migrate, translate, or rewrite a Remotio... | - | agents |
+| 2419 | **remotion-video-creation** | Remotion video creation rules covering 3D, audio & captions. | - | agents |
+| 2420 | **remove-bg-automation** | Automate Remove Bg tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2421 | **remove-technical-debt** | Guided journey from a large aged codebase everyone fears to touch to one that is safe to change, legible, bounded, and resilient - paid down in place without a rewrite. Orchestrates eight skills ph... | - | agents |
+| 2422 | **render-deploy** | Deploy applications to Render by analyzing codebases, generating render.yaml Blueprints, and providing Dashboard deeplinks. Use when the user wants to deploy, host, publish, or set up their applica... | - | agents |
+| 2423 | **renderform-automation** | Automate Renderform tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2424 | **repairshopr-automation** | Automate Repairshopr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2425 | **replay-ux-research** | Analyze Sentry session replays to surface UX patterns. | - | agents |
+| 2426 | **Replicate Automation** | Automate Replicate AI model operations -- run predictions, upload files, inspect model schemas, list versions, and manage prediction history via the Composio MCP integration. | - | agents |
+| 2427 | **reply-automation** | Automate Reply tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2428 | **reply-io-automation** | Automate Reply IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2429 | **repo-scan** | Cross-stack source code asset audit. | - | agents |
+| 2430 | **repo-standardizer** | Polish repository surface — labels, templates, CODEOWNERS, rules. | - | agents |
+| 2431 | **repo-story-time** | Generate repository summary and narrative story from commit history. | - | agents |
+| 2432 | **repomix** | Package entire code repositories into single AI-friendly files using Repomix. Capabilities include pack codebases with customizable include/exclude patterns, generate multiple output formats (XML, ... | - | agents |
+| 2433 | **report** | Generate test report. Use when user says "test report", "results summary", "test status", "show results", "test dashboard", or "how did tests go". | - | agents |
+| 2434 | **request-refactor-plan** | Create a detailed refactor plan with tiny commits via user interview, then file it as a GitHub issue. Use when user wants to plan a refactor, create a refactoring RFC, or break a refactor into safe... | - | agents |
+| 2435 | **requesting-code-review** | Request code review before merging major features. | - | agents |
+| 2436 | **requirements-clarity** | Clarify ambiguous requirements through focused dialogue. | - | agents |
+| 2437 | **research** | Default entry point for any research request — a hybrid router that classifies the question deterministically and either delegates to a specialist research skill (pulse for trends/sentiment, grants... | - | agents |
+| 2438 | **research-bundle** |  | - | agents |
+| 2439 | **research-finance** | Use when managing the money for an internal R&D program or portfolio — building a multi-period program budget with the F&A (indirect) split, tracking burn rate and runway against value-inflection m... | - | agents |
+| 2440 | **research-ops** | Evidence-first research workflow for current-state facts. | - | agents |
+| 2441 | **research-ops-skills** | Use when planning, funding, scoping, or synthesizing enterprise research across workstreams — clinical study design, R&D program finance, market sizing/surveys, or product/user research. Triggers o... | - | agents |
+| 2442 | **research-summarizer** | Structured research summarization agent skill for non-dev users. Handles academic papers, web articles, reports, and documentation. Extracts key findings, generates comparative analyses, and produc... | - | agents |
+| 2443 | **resemble-detect** | Detects AI-generated or synthetic audio, image, and video content using Resemble AI detection models. Use when analyzing media authenticity, content moderation pipelines, or when user mentions "res... | - | agents |
+| 2444 | **resend-automation** | Automate Resend tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2445 | **resolving-merge-conflicts** | Use when you need to resolve an in-progress git merge/rebase conflict. | - | agents |
+| 2446 | **respond-io-automation** | Automate Respond IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2447 | **responsiveness-check** | Test website responsiveness across viewport widths using browser automation. Resizes a single session through breakpoints, screenshots each width, and detects layout transitions (column changes, na... | - | agents |
+| 2448 | **resume** | Resume a paused experiment. Checkout the experiment branch, read results history, continue iterating. Use when the user runs /ar:resume or asks to pick up a previously started autoresearch experiment. | - | agents |
+| 2449 | **resume-ats-beater** | Este skill deve ser usado para reescrever currículos com foco em compatibilidade ATS e impacto para recrutadores, e/ou auditar perfis LinkedIn para maximizar visibilidade e conversão profissional. ... | - | agents |
+| 2450 | **resume-cover-letter** | Write a resume/CV or cover letter tailored to a specific role. Handles regional format differences (AU/NZ, US, UK), ATS-friendly formatting, achievement-focused bullets, and cover letter structure.... | - | agents |
+| 2451 | **resx-source-generator-migration** | Migrate .resx designer.cs files to C# source generator. | - | agents |
+| 2452 | **retailed-automation** | Automate Retailed tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2453 | **retellai-automation** | Automate Retellai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2454 | **retently-automation** | Automate Retently tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2455 | **retro** | Weekly engineering retrospective. (gstack) | - | agents |
+| 2456 | **returns-reverse-logistics** | Returns authorization, inspection, disposition & warranty claims. | - | agents |
+| 2457 | **rev-ai-automation** | Automate Rev AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2458 | **revenue-centric-design** | Revenue-Centric Design (RCD) — evidence-backed principles for making a SaaS or startup product convert, retain, and monetize. Use when the user works on a landing page or CRO ("my page isn't conver... | - | agents |
+| 2459 | **revenue-operations** | Analyzes sales pipeline health, revenue forecasting accuracy, and go-to-market efficiency metrics for SaaS revenue optimization. Use when analyzing sales pipeline coverage, forecasting revenue, eva... | - | agents |
+| 2460 | **review** | Pre-landing PR review. (gstack) | - | agents |
+| 2461 | **review-and-refactor** | Review and refactor code according to project instructions. | - | agents |
+| 2462 | **review-animations** | Reviews animation and motion code against a high craft bar derived from Emil Kowalski's design engineering philosophy. Default to flagging; approval is earned. | https://github.com/emilkowalski/skills | agents |
+| 2463 | **reviewing-oracle-to-postgres-migration** | Identify Oracle-to-PostgreSQL migration risks. | - | agents |
+| 2464 | **revolt-automation** | Automate Revolt tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2465 | **revops** | When the user wants help with revenue operations, lead lifecycle management, or marketing-to-sales handoff processes. Also use when the user mentions 'RevOps,' 'revenue operations,' 'lead scoring,'... | - | agents |
+| 2466 | **rewind** | Retrieve recent local Rewind context. | - | agents |
+| 2467 | **rfp-responder** | Use when an RFP, RFI, RFQ, security questionnaire, vendor questionnaire, or proposal request arrives and the team needs a structured response — parsing multi-section buyer-dictated requirements (MA... | - | agents |
+| 2468 | **rhino3d-scripts** | Authoring and debugging scripts for Rhinoceros 3D (Rhino 8+). | - | agents |
+| 2469 | **rice** |  | - | agents |
+| 2470 | **ring:adding-multi-tenancy** | Adding database-per-tenant isolation into a Go service end-to-end via an 11-gate cycle: detects the stack, audits compliance, then dispatches backend agents to implement tenantId-from-JWT routing t... | - | agents |
+| 2471 | **ring:adopting-lib-commons-huma-wrapper** | Adopting the lib-commons/v5 shared Huma (OAS 3.1) OpenAPI wrapper + RFC 9457 problem model (commons/net/http/{openapi,problem}) in a Lerian Go service: wire openapi.New/ServeSpec + problem.Install ... | - | agents |
+| 2472 | **ring:analyzing-options** | Analyzing different approaches for a task or problem with structured comparisons, effort estimates, and recommendations. Use when facing strategic decisions, architecture choices, or multiple viabl... | - | agents |
+| 2473 | **ring:applying-composition-patterns** | React composition patterns that scale. Avoid boolean prop proliferation by using compound components, lifting state, and composing internals. Use when refactoring components with boolean prop proli... | - | agents |
+| 2474 | **ring:applying-licenses** | Applying or switching a repository's license (Apache 2.0, Elastic License v2, or Proprietary): rewrites the LICENSE file, updates Go/TS source headers, sets SPDX identifiers, and validates consiste... | - | agents |
+| 2475 | **ring:applying-voice-and-tone** | Applying the technical-writing voice and tone style guide: second person, present tense, active voice, short sentences, sentence-case headings, product/entity capitalization, contractions, and spar... | - | agents |
+| 2476 | **ring:auditing-dependency-security** | Auditing a dependency for supply-chain risk before install (pip/npm/go/cargo): checks typosquatting, maintainer/age risk, vulnerability DBs (OSV, GHSA, Socket), and lockfile hash pinning, then emit... | - | agents |
+| 2477 | **ring:auditing-production-readiness** | Auditing a service's production readiness against Ring engineering standards across base dimensions plus a conditional multi-tenant dimension, then emitting a scored report and an HTML dashboard. U... | - | agents |
+| 2478 | **ring:checking-frontend-quality** | Checking frontend quality against changed UI via ring:qa-frontend in accessibility, visual, e2e, or performance mode and aggregating pass/fail verdicts. Use when a frontend change needs standalone ... | - | agents |
+| 2479 | **ring:cleaning-comments** | Cleaning redundant and obvious comments following clean code principles while preserving meaningful documentation. Supports git scope filtering (staged, unstaged, branch, commit-range). Use when co... | - | agents |
+| 2480 | **ring:committing-changes** | Commit changes with scope allowlist enforcement, atomic grouping, GPG-signed conventional commits, and trailer management. Detects the repo's PR-validation scope policy before proposing any message... | - | agents |
+| 2481 | **ring:creating-grafana-dashboards** | Authoring Grafana dashboards for Go services instrumented with lib-observability telemetry (tracing, metrics, log), plus a reference mode for RED/USE panel patterns and Grafonnet templates. Sweep m... | - | agents |
+| 2482 | **ring:creating-handoffs** | Creating a handoff document that captures session state (completed work, decisions, open items, next steps) and delivering it via Plan Mode so the user gets the native 'clear context and continue i... | - | agents |
+| 2483 | **ring:creating-helm-charts** | Creating Helm charts to Lerian conventions via ring:helm: standardized chart structure, full env-var coverage from .env.example, security defaults (runAsNonRoot, readOnlyRootFilesystem), ClusterIP-... | - | agents |
+| 2484 | **ring:creating-worktrees** | Creating an isolated git worktree for parallel branch work: selects the directory by priority order, verifies/adds .gitignore safety, auto-installs the detected toolchain's dependencies, runs a bas... | - | agents |
+| 2485 | **ring:designing-api-contracts** | Designing the API contract as a real OpenAPI 3.1 specification (openapi.yaml with full paths, operations, schemas, components, Lerian error envelope, and auth schemes) from the validated TRD. Gate ... | - | agents |
+| 2486 | **ring:designing-data-model** | Designing the physical data model as a real stack-native schema (schema.sql with CREATE TABLE DDL, indexes, and constraints for Postgres/Go; schema.prisma for Prisma/TS; Postgres schema.sql as fall... | - | agents |
+| 2487 | **ring:detecting-goroutine-leaks** | Detecting goroutine leaks in Go: greps for goroutine patterns, audits goleak coverage (VerifyTestMain/VerifyNone), runs goleak, and dispatches ring:backend-go to fix leaks and add regression tests.... | - | agents |
+| 2488 | **ring:dispatching-workflows** | Executing a phased plan in rolling waves where each phase runs as one multi-agent workflow harness: the supervisor elaborates the phase into tasks against the real landed code, launches a workflow ... | - | agents |
+| 2489 | **ring:engineering-prompts** | Expert prompt engineering and optimization for LLMs and AI systems. Covers core patterns (zero-shot, few-shot, CoT, role-playing, constitutional, tree-of-thoughts), common use cases, and a three-ph... | - | agents |
+| 2490 | **ring:executing-plans** | Controlled plan execution with human review checkpoints - loads plan, executes in batches, pauses for feedback. Supports one-go (autonomous) or batch modes. | - | agents |
+| 2491 | **ring:exploring-codebases** | Exploring a codebase across phases: scopes the target, detects architecture, components, and layers, deep-dives each discovered perspective, then synthesizes findings into actionable guidance with ... | - | agents |
+| 2492 | **ring:fixing-lint** | Fixing lint to a clean state: runs the linter, groups reported issues into independent streams, and dispatches one parallel fixer agent per stream (ring:backend-go for Go, ring:general-purpose othe... | - | agents |
+| 2493 | **ring:generating-llms-txt** | Generating or auditing a repository's llms.txt per the llmstxt.org spec, and creating AGENTS.md / AGENTS.md when missing, by analyzing README, build files, docs, and API surface. Use when creating ... | - | agents |
+| 2494 | **ring:generating-pr-descriptions** | Generating pull request descriptions from git branch changes with automatic title generation, change-type detection, and smart analysis. Uses branch-only scope to avoid full history analysis. Use w... | - | agents |
+| 2495 | **ring:generating-release-guides** | Generating an internal Operations-facing update/migration guide from the git diff between two refs, documenting per-change client impact, deploy ordering, monitoring, and rollback notes in English,... | - | agents |
+| 2496 | **ring:hardening-dockerfiles** | Hardening Dockerfiles to reach Docker Hub Health Score grade A: enforcing a non-root USER, minimal/distroless multi-stage base images, no fixable critical/high CVEs, no AGPL-3.0 deps, and SBOM+prov... | - | agents |
+| 2497 | **ring:implementing-readyz** | Implementing the canonical /readyz readiness-probe contract across Go, TypeScript, and Next.js via a 12-gate cycle: detects stack, audits compliance, then dispatches agents to build the dependency ... | - | agents |
+| 2498 | **ring:implementing-tasks** | Implementing a single planned task (Task N.M.T) end-to-end: selects the right backend agent by language and service type, drives one TDD RED->GREEN turn, then verifies coverage, lint, license heade... | - | agents |
+| 2499 | **ring:instrumenting-streaming-events** | Instrumenting streaming events: wires lib-streaming event emission end-to-end into a Lerian Go service via a 13-gate cycle (catalog, Builder bootstrap, Emit sites, outbox, HTTP manifest, NoopEmitte... | - | agents |
+| 2500 | **ring:managing-dev-cycle** | Managing an in-progress development cycle without driving it: status reports phase, epic/gate progress, assertiveness, and elapsed time from current-cycle.json; cancel confirms, marks the cycle can... | - | agents |
+| 2501 | **ring:mapping-feature-relationships** | Mapping how features relate and phasing the work: categorizing PRD features, grouping them into domains, charting cross-feature journeys, dependencies, and integration points, and defining the bind... | - | agents |
+| 2502 | **ring:mapping-service-resources** | Mapping a Go service's Service -> Module -> Resource hierarchy for dispatch-layer registration: detects modules and per-module PostgreSQL/MongoDB/RabbitMQ resources, database names, and shared data... | - | agents |
+| 2503 | **ring:mapping-streaming-events** | Mapping the eventable points in a Lerian Go service where lib-streaming should emit past-tense, durable, tenant-scoped business events, producing a PM-validated event catalog and instrumentation-ma... | - | agents |
+| 2504 | **ring:migrating-to-lib-observability** | Migrating a Lerian Go app off lib-commons observability imports (deprecated shims or removed APIs) to lib-observability via a fixed mapping table, then bumps go.mod and validates the build; ring:ba... | - | agents |
+| 2505 | **ring:migrating-to-lib-systemplane** | Migrating Lerian Go services from .env/YAML operational knobs (log levels, feature flags, rate limits, timeouts) to the lib-systemplane hot-reloadable runtime config client, wiring the migration-on... | - | agents |
+| 2506 | **ring:opening-pull-requests** | Open a GitHub Pull Request with automatic base branch detection, scope allowlist enforcement, PR template filling, and post-create base verification. Replaces ring:generating-pr-descriptions. Use a... | - | agents |
+| 2507 | **ring:pinning-dependency-versions** | Pinning an explicit versioned dependency manifest (dependencies.md plus PROJECT_RULES.md): exact package versions, CVE and license checks, compatibility matrices, and per-component cost analysis ag... | - | agents |
+| 2508 | **ring:planning-backend-refactor** | Planning a backend refactor: audits an existing Go or TypeScript backend against Ring/Lerian standards and produces a prioritized task list (findings.md + tasks.md) ready for ring:running-dev-cycle... | - | agents |
+| 2509 | **ring:planning-codebase-simplification** | Planning a whole-codebase simplification: audits a Go/TS codebase for needless abstraction and emits a KILL/REVIEW/KEEP plan plus a ring:running-dev-cycle task array. Plans only — no edits. Detects... | - | agents |
+| 2510 | **ring:planning-frontend-refactor** | Planning a frontend refactor: audits an existing React/Next.js frontend against Ring standards (architecture, design system, accessibility, testing) and produces a prioritized task list (findings.m... | - | agents |
+| 2511 | **ring:planning-large-features** | Planning the 8-gate Large Track pre-dev workflow (research, PRD, feature map, TRD, API contract, data model, dependency map, plan) with per-gate human approval. Use for features 2+ days that add de... | - | agents |
+| 2512 | **ring:planning-small-features** | Planning the lightweight 4-gate Small Track pre-dev workflow (research, PRD, TRD, plan) with human approval and state tracking at each gate. Use for features under 2 days that reuse existing patter... | - | agents |
+| 2513 | **ring:reconciling-predev-docs** | Reconciling pre-dev artifacts (research.md, prd.md, feature-map.md, trd.md, openapi.yaml, schema file, dependencies.md, plan.md) against each other to surface contradictions and gaps that break imp... | - | agents |
+| 2514 | **ring:researching-features** | Researching the product/feature in depth before any planning document is written: the product itself, technical approach, third-party integrations, prior art, and existing codebase grounding (file:... | - | agents |
+| 2515 | **ring:reviewing-code** | Reviewing code by dispatching the default reviewer subagents in parallel (plus conditional specialists for lib-observability, lib-systemplane, or lib-streaming when the diff triggers them), then ag... | - | agents |
+| 2516 | **ring:reviewing-docs** | Reviewing end-user and product documentation quality across voice/tone, structure, completeness, clarity, and technical accuracy; flags issues with prioritized findings and a pass/needs-revision ve... | - | agents |
+| 2517 | **ring:reviewing-operational-risk** | Reviewing a Go/TS service's operational risk by mapping integration failure points (external HTTP calls, queue consumers, outbound webhooks), simulating stuck intermediate states for each entity in... | - | agents |
+| 2518 | **ring:running-dev-cycle** | Running the backend dev cycle: implements every task in a rolling-wave plan.md (ring:writing-plans format) for a Go/TS service, driving specialist agents through Gate 0 implementation/TDD, Gate 8 p... | - | agents |
+| 2519 | **ring:running-dev-cycle-frontend** | Running the frontend (React/Next.js/TS) dev cycle from a plan.md (ring:writing-plans format; legacy tasks.md only for in-flight cycles) or backend handoff: drives frontend agents through Gate 0 TDD... | - | agents |
+| 2520 | **ring:searching-code** | Forensic code search and analysis with optional Chain of Draft (CoD) ultra-concise mode. Five-phase methodology (clarification, planning, execution, analysis, synthesis) with severity assessment. U... | - | agents |
+| 2521 | **ring:shipping-changes** | End-to-end git orchestrator: branch → commit → push → PR, with a full plan presented before any execution. Detects base branch and scope allowlist once and propagates to all phases. Use when ready ... | - | agents |
+| 2522 | **ring:structuring-documentation** | Structuring documentation: content hierarchy, overview/conceptual/task page structures, section dividers, navigation, tables-vs-lists, code placement, cross-linking, and page-length targets. Use wh... | - | agents |
+| 2523 | **ring:test-driven-development** | Enforcing the RED-GREEN-REFACTOR loop: write one failing test and watch it fail, write minimal code to pass, then refactor green. Use when starting implementation of a new feature or bugfix, or wri... | - | agents |
+| 2524 | **ring:testing-skills-with-subagents** | Hardening a skill so it resists rationalization under pressure: run combined-pressure scenarios on a subagent without the skill (RED), capture excuses verbatim, write/edit the skill (GREEN), then p... | - | agents |
+| 2525 | **ring:using-assert** | Using lib-observability/assert, Lerian's runtime assertion package, in two modes. Sweep Mode detects panic()/log.Fatal zero-panic violations, DIY invariant checks, hand-rolled domain predicates, an... | - | agents |
+| 2526 | **ring:using-dev-team** | Selecting and dispatching the right Ring developer specialist agent (backend Go/TS, frontend, UI designer/engineer, Helm, frontend QA, prompt reviewer) for a technology task. Use when you need deep... | - | agents |
+| 2527 | **ring:using-lib-commons** | Using lib-commons v5, Lerian's shared Go library (non-observability surface), in two modes. Sweep Mode detects DIY code replaceable by lib-commons at file:line. Reference Mode catalogs lifecycle (L... | - | agents |
+| 2528 | **ring:using-lib-observability** | Using lib-observability v1.1.0, Lerian's OpenTelemetry foundation (lib-commons, lib-systemplane, lib-streaming depend on it), in two modes. Sweep Mode detects DIY zap/slog logging, raw OTel metrics... | - | agents |
+| 2529 | **ring:using-lib-streaming** | Using lib-streaming, Lerian's producer-only event publication library (Kafka/SQS/RabbitMQ/EventBridge), in two modes. Sweep Mode detects DIY publishers (franz-go, sarama, amqp091, watermill, raw AW... | - | agents |
+| 2530 | **ring:using-lib-systemplane** | Using lib-systemplane, the hot-reload runtime-config plane (Postgres LISTEN/NOTIFY or MongoDB change streams), in two modes. Sweep Mode detects DIY config reload (SIGHUP, fsnotify, viper, pgx LISTE... | - | agents |
+| 2531 | **ring:using-outbox** | Using the transactional-outbox pattern across lib-streaming (writer) and lib-commons/v5/commons/outbox (repository + relay), in two modes. Sweep Mode detects DIY outbox tables, hand-rolled relay lo... | - | agents |
+| 2532 | **ring:using-pm-team** | Routing feature planning through the ring-pm-team pre-dev workflow: choosing the Small Track (4 gates, <2 days) or Large Track (8 gates, 2+ days) and entering via ring:planning-small-features or ri... | - | agents |
+| 2533 | **ring:using-ring** | Enforcing Ring's orchestrator protocol every conversation: dispatch specialist/Explore agents instead of operating tools directly, honor the >3-file hard gate, and run skill discovery before any ta... | - | agents |
+| 2534 | **ring:using-runtime** | Using lib-observability/runtime, which turns silent goroutine deaths into log/span/metric signal, in two modes. Sweep Mode detects naked goroutines, unobservable defer recover(), missing InitPanicM... | - | agents |
+| 2535 | **ring:using-tracing** | Using lib-observability/tracing for OTEL provider lifecycle, trace-context propagation across HTTP/gRPC/queues, span error/event recording, and PII redaction, in two modes. Sweep Mode detects raw O... | - | agents |
+| 2536 | **ring:using-tw-team** | Using the ring-tw-team plugin and orchestrating its documentation specialists in parallel: guide-writer (guides/concepts/tutorials), api-writer (REST API reference), and docs-reviewer (quality revi... | - | agents |
+| 2537 | **ring:validating-acceptance-criteria** | Validating a completed task against its acceptance criteria, mapping each AC to evidence, and gating completion on explicit user sign-off (self-approval prohibited). Gate 5 of ring:running-dev-cycl... | - | agents |
+| 2538 | **ring:validating-ux-completeness** | Validating that UX specifications are complete before technical design: a read-only checklist over wireframes, states, responsive behavior, accessibility, and component-library alignment, emitting ... | - | agents |
+| 2539 | **ring:verifying-code** | Verifying a Go project: runs every quality check (lint, vet, imports, format, docs, unit, integration, E2E) and returns a single MERGE_READY or NEEDS_FIX verdict. Report-only: never fixes anything.... | - | agents |
+| 2540 | **ring:visualizing** | Generating self-contained, Lerian-branded HTML artifacts — D2 diagrams, comparison tables/matrices, code diffs, dashboards, slide decks, and plan/diff/recap reviews — from mandatory templates, then... | - | agents |
+| 2541 | **ring:writing-dev-reports** | Writing a structured markdown dev report for a completed development epic: reads accumulated epic metrics (TDD, coverage, delivery, lint, file-size, license), computes a quality score with tiers, a... | - | agents |
+| 2542 | **ring:writing-plans** | Writing a rolling-wave phased implementation plan from a spec before coding: a phase-epic-task hierarchy where Phase 1 is detailed into dispatch-ready tasks and later phases stay epic-level for ela... | - | agents |
+| 2543 | **ring:writing-prds** | Writing a Product Requirements Document that explains to the squad WHAT is being built and WHY: problem, explicit scope in/out, functional requirements, and testable acceptance criteria. Gate 1 of ... | - | agents |
+| 2544 | **ring:writing-skills** | Writing or editing a Ring skill: SKILL.md structure, frontmatter and Agent-Search-Optimization rules, token-efficiency targets, and bulletproofing (Iron Law, rationalization tables, Red Flags) so d... | - | agents |
+| 2545 | **ring:writing-trds** | Writing a Technical Requirements Document that designs the technical architecture of the system or feature: components and boundaries, data flow, integration points, failure modes, and the mandator... | - | agents |
+| 2546 | **ring_central-automation** | Automate RingCentral tasks via Rube MCP (Composio): calls, messages, meetings, and unified communications. Always search tools first for current schemas. | - | agents |
+| 2547 | **RingCentral Automation** | RingCentral automation via Rube MCP -- toolkit not currently available in Composio; no RING_CENTRAL_ tools found | - | agents |
+| 2548 | **rippling-automation** | Automate Rippling tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2549 | **risk-based-testing** | Focus testing effort on highest-risk areas using risk assessment and prioritization. Use when planning test strategy, allocating testing resources, or making coverage decisions. | - | agents |
+| 2550 | **risk-management-specialist** | Medical device risk management specialist implementing ISO 14971 throughout product lifecycle. Provides risk analysis, risk evaluation, risk control, and post-production information analysis. Use w... | - | agents |
+| 2551 | **ritekit-automation** | Automate Ritekit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2552 | **rkvst-automation** | Automate Rkvst tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2553 | **roadmap** | Plan and execute entire application builds. Generates phased delivery roadmaps, then executes them autonomously — phase by phase, committing at milestones, deploying, testing, and continuing until ... | - | agents |
+| 2554 | **roadmap-communicator** | Use when preparing roadmap narratives, release notes, changelogs, or stakeholder updates tailored for executives, engineering teams, and customers. | - | agents |
+| 2555 | **roast** | Use when someone asks to roast an idea, pressure-test or stress-test an idea, validate a business idea, "convene the panel", get a brutal second opinion before building something, or says "/roast".... | - | agents |
+| 2556 | **rocketlane-automation** | Automate Rocketlane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2557 | **Root Cause Tracing** | Systematically trace bugs backward through call stack to find original trigger | - | agents |
+| 2558 | **rootly-automation** | Automate Rootly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2559 | **rosette-text-analytics-automation** | Automate Rosette Text Analytics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2560 | **roslyn-analyzers** | Build, review, debug Roslyn analyzers and source generators. | - | agents |
+| 2561 | **roundup** | Generate personalized status briefings from GitHub, Teams, Slack. | - | agents |
+| 2562 | **roundup-setup** | Onboarding to configure personalized status briefings. | - | agents |
+| 2563 | **route4me-automation** | Automate Route4me tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2564 | **rtk** | Rust Token Killer (RTK) & Runtime Token Compression skill. Provides CLI proxying, log filtering, and intelligent terminal output compression (cutting command output tokens by 60-90%). Use when runn... | - | agents |
+| 2565 | **ruby-mcp-server-generator** | Generate complete MCP server project in Ruby using official gem. | - | agents |
+| 2566 | **ruff-recursive-fix** | Run Ruff checks and apply safe/unsafe autofixes iteratively. | - | agents |
+| 2567 | **rules-distill** | Scan skills to extract cross-cutting principles into rule files. | - | agents |
+| 2568 | **run** | Run a single experiment iteration. Edit the target file, evaluate, keep or discard. Use when the user runs /ar:run or asks for one manual autoresearch iteration. | - | agents |
+| 2569 | **runbook-generator** | Generate operational runbooks from a service name — deployment, incident response, maintenance, and rollback workflows. Templated structure customizable per environment. Use when documenting on-cal... | - | agents |
+| 2570 | **rust-engineer** | Writes, reviews, and debugs idiomatic Rust code with memory safety and zero-cost abstractions. Implements ownership patterns, manages lifetimes, designs trait hierarchies, builds async applications... | - | agents |
+| 2571 | **rust-mcp-server-generator** | Generate complete Rust Model Context Protocol server project. | - | agents |
+| 2572 | **rust-patterns** | Idiomatic Rust patterns, ownership, traits & concurrency. | - | agents |
+| 2573 | **rust-testing** | Rust testing patterns: unit, integration, async, property-based. | - | agents |
+| 2574 | **saas-health** |  | - | agents |
+| 2575 | **saas-metrics-coach** | SaaS financial health advisor. Use when a user shares revenue or customer numbers, or mentions ARR, MRR, churn, LTV, CAC, NRR, or asks how their SaaS business is doing. | - | agents |
+| 2576 | **saas-scaffolder** | Generates complete, production-ready SaaS project boilerplate including authentication, database schemas, billing integration, API routes, and a working dashboard using Next.js 14+ App Router, Type... | - | agents |
+| 2577 | **safe-refactor** | Restructure code while strictly preserving behavior. | - | agents |
+| 2578 | **safety-guard** | Prevent destructive operations when working on production systems. | - | agents |
+| 2579 | **safetyculture-automation** | Automate Safetyculture tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2580 | **sage-automation** | Automate Sage tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2581 | **sales-enablement** | When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts. Also use when the user mentions 'sales deck,' 'pitch deck,' 'one-pager,' 'leave-be... | - | agents |
+| 2582 | **sales-engineer** | Analyzes RFP/RFI responses for coverage gaps, builds competitive feature comparison matrices, and plans proof-of-concept (POC) engagements for pre-sales engineering. Use when responding to RFPs, bi... | - | agents |
+| 2583 | **salesforce-apex-quality** | Apex code quality guardrails (bulk safety, FLS security). | - | agents |
+| 2584 | **salesforce-component-standards** | Salesforce Lightning Web Components (LWC) standards & WCAG. | - | agents |
+| 2585 | **salesforce-developer** | Writes and debugs Apex code, builds Lightning Web Components, optimizes SOQL queries, implements triggers, batch jobs, platform events, and integrations on the Salesforce platform. Use when develop... | - | agents |
+| 2586 | **salesforce-flow-design** | Salesforce Flow architecture decisions & fault handling. | - | agents |
+| 2587 | **salesforce-marketing-cloud-automation** | Automate Salesforce Marketing Cloud tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2588 | **salesforce-service-cloud-automation** | Automate Salesforce Service Cloud tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2589 | **salesmate-automation** | Automate Salesmate tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2590 | **sample-skill** |  | - | agents |
+| 2591 | **sandbox-npm-install** | Install npm packages in Docker sandbox environment. | - | agents |
+| 2592 | **sandbox-sdk** | Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers San... | - | agents |
+| 2593 | **santa-method** | Multi-agent adversarial verification with convergence loop. | - | agents |
+| 2594 | **sap-successfactors-automation** | Automate SAP SuccessFactors tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2595 | **satismeter-automation** | Automate Satismeter tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2596 | **scaffold** |  | - | agents |
+| 2597 | **scaffold-exercises** | Create exercise directory structures with sections, problems, solutions, and explainers that pass linting. Use when user wants to scaffold exercises, create exercise stubs, or set up a new course s... | - | agents |
+| 2598 | **scaffolding-oracle-to-postgres-migration-test-project** | Scaffold xUnit integration test project for Oracle-to-Postgres. | - | agents |
+| 2599 | **Scale Game** | Test at extremes (1000x bigger/smaller, instant/year-long) to expose fundamental truths hidden at normal scales | - | agents |
+| 2600 | **scenario-war-room** | Cross-functional what-if modeling for cascading multi-variable scenarios. Unlike single-assumption stress testing, this models compound adversity across all business functions simultaneously. Use w... | - | agents |
+| 2601 | **schema** | When the user wants to add, fix, or optimize schema markup and structured data on their site. Also use when the user mentions "schema markup," "structured data," "JSON-LD," "rich snippets," "schema... | - | agents |
+| 2602 | **schema-gen** | Generate valid JSON-LD structured data for any page type. Trigger: 'generate schema for [page type]' or 'schema [URL] | - | agents |
+| 2603 | **schema-markup** | When the user wants to implement, audit, or validate structured data (schema markup) on their website. Use when the user mentions 'structured data,' 'schema.org,' 'JSON-LD,' 'rich results,' 'rich s... | - | agents |
+| 2604 | **schema-markup-generator** | Generate JSON-LD for FAQ, HowTo, Article, Product, LocalBusiness rich results and AI understanding. "Add structured data" / "添加结构化数据" / "要星级评分". Schema标记/富摘要/JSON-LD/结构化 構造化データ 스키마마크업 datos estruct... | - | agents |
+| 2605 | **scholar-evaluation** | Structured evaluation for scholarly papers and research proposals. | - | agents |
+| 2606 | **sciomc** | Orchestrate parallel scientist agents for analysis in AUTO mode. | - | agents |
+| 2607 | **scorecard-marketing** | Build quiz and assessment funnels that generate qualified leads at 30-50% conversion. Use when the user mentions "quiz funnel", "scorecard", "lead magnet", "score-based segmentation", or "lead qual... | - | agents |
+| 2608 | **scoutqa-test** | Exploratory website QA testing & accessibility check. | - | agents |
+| 2609 | **scrape** | Pull data from a web page. (gstack) | - | agents |
+| 2610 | **scrape-do-automation** | Automate Scrape Do tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2611 | **scrapegraph-ai-automation** | Automate Scrapegraph AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2612 | **scrapfly-automation** | Automate Scrapfly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2613 | **scrapingant-automation** | Automate Scrapingant tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2614 | **scrapingbee-automation** | Automate Scrapingbee tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2615 | **screen-recording** | Create animated GIF demos and screen recordings for PRs. | - | agents |
+| 2616 | **screenshot** | Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-l... | - | agents |
+| 2617 | **screenshot-fyi-automation** | Automate Screenshot Fyi tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2618 | **screenshotone-automation** | Automate Screenshotone tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2619 | **scroll-craft** | Advanced scroll-driven animations, CSS scroll timelines, parallax, and sticky interaction skill. Use when building immersive web experiences, scroll-triggered visual reveals, or when user mentions ... | - | agents |
+| 2620 | **scrum-master** | Advanced Scrum Master skill for data-driven agile team analysis and coaching. Use when the user asks about sprint planning, velocity tracking, retrospectives, standup facilitation, backlog grooming... | - | agents |
+| 2621 | **search-first** | Research-before-coding workflow — search existing tools first. | - | agents |
+| 2622 | **seat-geek-automation** | Automate Seat Geek tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2623 | **secret-scanning** | Configure GitHub secret scanning, push protection & remediation. | - | agents |
+| 2624 | **secrets-vault-manager** | Use when the user asks to set up secret management infrastructure, integrate HashiCorp Vault, configure cloud secret stores (AWS Secrets Manager, Azure Key Vault, GCP Secret Manager), implement sec... | - | agents |
+| 2625 | **secure-code-guardian** | Use when implementing authentication/authorization, securing user input, or preventing OWASP Top 10 vulnerabilities — including custom security implementations such as hashing passwords with bcrypt... | - | agents |
+| 2626 | **security-and-hardening** | Hardens code against vulnerabilities. Use when handling user input, authentication, data storage, or external integrations. Use when building any feature that accepts untrusted data, manages user s... | - | agents |
+| 2627 | **security-best-practices** | Perform language and framework specific security best-practice reviews and suggest improvements. Trigger only when the user explicitly requests security best practices guidance, a security review/r... | - | agents |
+| 2628 | **security-bounty-hunter** | Hunt for exploitable security vulnerabilities in repos. | - | agents |
+| 2629 | **security-checklist** | OWASP Top 10, input validation, SQL injection prevention, rate limiting, CORS. Use when reviewing code for security issues, setting up a new API, or doing a pre-deploy security audit. | - | agents |
+| 2630 | **security-guidance** | PreToolUse security-anti-pattern hook for Codex. Catches 12 common security risks (command injection, XSS, SQL injection, unsafe deserialization, GitHub Actions workflow injection, eval/new Functio... | - | agents |
+| 2631 | **security-ownership-map** | Analyze git repositories to build a security ownership topology (people-to-file), compute bus factor and sensitive-code ownership, and export CSV/JSON for graph databases and visualization. Trigger... | - | agents |
+| 2632 | **security-pen-testing** | Use when the user asks to perform security audits, penetration testing, vulnerability scanning, OWASP Top 10 checks, or offensive security assessments. Covers static analysis, dependency scanning, ... | - | agents |
+| 2633 | **security-review** | AI-powered codebase security scanner. | - | agents |
+| 2634 | **security-reviewer** | Identifies security vulnerabilities, generates structured audit reports with severity ratings, and provides actionable remediation guidance. Use when conducting security audits, reviewing code for ... | - | agents |
+| 2635 | **security-scan** | Scan agent configuration for security injection risks. | - | agents |
+| 2636 | **security-specialist** | Runs security audits on codebases — full scans, diff reviews, threat models, vulnerability triage, remediation guidance, and finding tracking. Activate when the user says "security scan", "audit th... | - | agents |
+| 2637 | **security-testing** | Scans for security vulnerabilities including XSS, SQL injection, CSRF, and auth flaws using OWASP Top 10 methodology. Use when conducting SAST/DAST scans, auditing authentication flows, testing aut... | - | agents |
+| 2638 | **security-threat-model** | Repository-grounded threat modeling that enumerates trust boundaries, assets, attacker capabilities, abuse paths, and mitigations, and writes a concise Markdown threat model. Trigger only when the ... | - | agents |
+| 2639 | **security-visual-testing** | Security-first visual testing combining URL validation, PII detection, and visual regression with parallel viewport support. Use when testing web applications that handle sensitive data, need visua... | - | agents |
+| 2640 | **security-watch** | Use when working on security-sensitive code to catch secrets, eval(), innerHTML, and other dangerous patterns before they're written. Activate with /security-watch for real-time security scanning. | - | agents |
+| 2641 | **securitytrails-automation** | Automate Securitytrails tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2642 | **segmetrics-automation** | Automate Segmetrics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2643 | **seismic-automation** | Automate Seismic tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2644 | **selector-de-nicho** | Elige un nicho concreto para vender servicios de IA y lo valida con evidencia antes de invertir tiempo — cruza acceso real del usuario, dolor medible del sector y capacidad de pago, y devuelve un n... | - | agents |
+| 2645 | **self-eval** | Honestly evaluate AI work quality using a two-axis scoring system. Use after completing a task, code review, or work session to get an unbiased assessment. Detects score inflation, forces devil's a... | - | agents |
+| 2646 | **self-improve** | Autonomous evolutionary code improvement engine. | - | agents |
+| 2647 | **self-improving-agent** | Curate Codex's auto-memory into durable project knowledge. Analyze MEMORY.md for patterns, promote proven learnings to AGENTS.md and .Codex/rules/, extract recurring solutions into reusable skills.... | - | agents |
+| 2648 | **semantic-kernel** | Semantic Kernel solution guide for .NET and Python. | - | agents |
+| 2649 | **semanticscholar-automation** | Automate Semanticscholar tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2650 | **SEMrush Automation** | Automate SEO analysis with SEMrush -- research keywords, analyze domain organic rankings, audit backlinks, assess keyword difficulty, and discover related terms through the Composio SEMrush integra... | - | agents |
+| 2651 | **sendbird-ai-chabot-automation** | Automate Sendbird AI Chabot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2652 | **sendbird-automation** | Automate Sendbird tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2653 | **sendfox-automation** | Automate Sendfox tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2654 | **sendlane-automation** | Automate Sendlane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2655 | **sendloop-automation** | Automate Sendloop tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2656 | **sendspark-automation** | Automate Sendspark tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2657 | **senior-architect** | This skill should be used when the user asks to "design system architecture", "evaluate microservices vs monolith", "create architecture diagrams", "analyze dependencies", "choose a database", "pla... | - | agents |
+| 2658 | **senior-backend** | Designs and implements backend systems including REST APIs, microservices, database architectures, authentication flows, and security hardening. Use when the user asks to "design REST APIs", "optim... | - | agents |
+| 2659 | **senior-computer-vision** | Computer vision engineering skill for object detection, image segmentation, and visual AI systems. Covers CNN and Vision Transformer architectures, YOLO/Faster R-CNN/DETR detection, Mask R-CNN/SAM ... | - | agents |
+| 2660 | **senior-data-engineer** | Data engineering skill for building scalable data pipelines, ETL/ELT systems, and data infrastructure. Expertise in Python, SQL, Spark, Airflow, dbt, Kafka, and modern data stack. Includes data mod... | - | agents |
+| 2661 | **senior-data-scientist** | World-class senior data scientist skill specialising in statistical modeling, experiment design, causal inference, and predictive analytics. Covers A/B testing (sample sizing, two-proportion z-test... | - | agents |
+| 2662 | **senior-devops** | Comprehensive DevOps skill for CI/CD, infrastructure automation, containerization, and cloud platforms (AWS, GCP, Azure). Includes pipeline setup, infrastructure as code, deployment automation, and... | - | agents |
+| 2663 | **senior-frontend** | Frontend development skill for React, Next.js, TypeScript, and Tailwind CSS applications. Use when building React components, optimizing Next.js performance, analyzing bundle sizes, scaffolding fro... | - | agents |
+| 2664 | **senior-fullstack** | Fullstack development toolkit with project scaffolding for Next.js, FastAPI, MERN, and Django stacks, code quality analysis with security and complexity scoring, and stack selection guidance. Use w... | - | agents |
+| 2665 | **senior-ml-engineer** | ML engineering skill for productionizing models, building MLOps pipelines, and integrating LLMs. Covers model deployment, feature stores, drift monitoring, RAG systems, and cost optimization. Use w... | - | agents |
+| 2666 | **senior-pm** | Senior Project Manager for enterprise software, SaaS, and digital transformation projects. Specializes in portfolio management, quantitative risk analysis, resource optimization, stakeholder alignm... | - | agents |
+| 2667 | **senior-prompt-engineer** | Use when the user asks to optimize prompts, design prompt templates, evaluate LLM outputs with an eval set, measure RAG retrieval quality, validate agent/tool configurations, analyze token usage, o... | - | agents |
+| 2668 | **senior-qa** | Generates unit tests, integration tests, and E2E tests for React/Next.js applications. Scans components to create Jest + React Testing Library test stubs, analyzes Istanbul/LCOV coverage reports to... | - | agents |
+| 2669 | **senior-secops** | Senior SecOps engineer skill for application security, vulnerability management, compliance verification, and secure development practices. Runs SAST/DAST scans, generates CVE remediation plans, ch... | - | agents |
+| 2670 | **senior-security** | Use when the user asks for STRIDE threat modeling, DREAD risk scoring, data-flow-diagram threat analysis, or a quick secret scan — or when a security request needs routing to the right specialist s... | - | agents |
+| 2671 | **sensibo-automation** | Automate Sensibo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2672 | **sentry** | Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` comm... | - | agents |
+| 2673 | **seo** | Comprehensive SEO analysis for any website or business type. Full site audits, single-page analysis, technical SEO (crawlability, indexability, Core Web Vitals with INP), schema markup, content qua... | https://github.com/ccforseo/seo-claude-code-skills | agents |
+| 2674 | **seo-ahrefs** | Ahrefs API analyst (extension). Reads referring domains, backlinks, organic keywords, and content explorer data via the tested @ahrefs/mcp@0.0.11 server. Pairs with seo-backlinks for multi-source c... | - | agents |
+| 2675 | **seo-audit** | When the user wants to audit, review, or diagnose SEO issues on their site. Also use when the user mentions "SEO audit," "technical SEO," "why am I not ranking," "SEO issues," "on-page SEO," "meta ... | - | agents |
+| 2676 | **seo-auditor** |  | - | agents |
+| 2677 | **seo-backlinks** | Backlink profile analysis: referring domains, anchor text distribution, toxic link detection, competitor gap analysis. Works with free APIs (Moz, Bing Webmaster, Common Crawl) and DataForSEO extens... | - | agents |
+| 2678 | **seo-bing** | Bing Webmaster Tools + IndexNow extension. Microsoft Copilot citations are fed by the Bing index; this skill makes Bing visibility, link data, and IndexNow URL submission first-class. | - | agents |
+| 2679 | **seo-cluster** | SERP-based semantic topic clustering for content architecture planning. Groups keywords by actual Google SERP overlap (not text similarity), designs hub-and-spoke content clusters with internal lin... | - | agents |
+| 2680 | **seo-competitor-pages** | Generate SEO-optimized competitor comparison and alternatives pages. Covers "X vs Y" layouts, "alternatives to X" pages, feature matrices, schema markup, and conversion optimization. Use when user ... | - | agents |
+| 2681 | **seo-content** | Content quality and E-E-A-T analysis with AI citation readiness assessment. Use when user says "content quality", "E-E-A-T", "content analysis", "readability check", "thin content", or "content aud... | - | agents |
+| 2682 | **seo-content-brief** | Generate competitive SEO content briefs with per-section word counts, competitor scoring, keyword density guidance, and page-type templates. Supports both new page briefs and improve-existing-page ... | - | agents |
+| 2683 | **seo-content-writer** | Write SEO blog posts, articles, landing pages with keywords, headers, snippet targeting. "Write me a blog post" / "帮我写文章" / "写一篇好文章". SEO文章写作/博客创作/内容优化/排名提升 SEOライティング SEO글쓰기/블로그작성 redacción SEO | - | agents |
+| 2684 | **seo-dataforseo** | Live SEO data via DataForSEO MCP server: SERP analysis, keyword research (volume, difficulty, intent, trends), backlink profiles, on-page analysis, competitor and content analysis, business listing... | - | agents |
+| 2685 | **seo-drift** | SEO drift monitoring: capture baselines of SEO-critical elements, detect changes, and track regressions over time. Git for SEO: baseline, diff, and track changes to your on-page SEO. Use when user ... | - | agents |
+| 2686 | **seo-ecommerce** | E-commerce SEO analysis: Google Shopping visibility, Amazon marketplace intelligence, product schema validation, competitor pricing analysis, and marketplace keyword gaps. Combines on-page product ... | - | agents |
+| 2687 | **seo-firecrawl** | Full-site crawling, scraping, and site mapping via Firecrawl MCP. Use when user says "crawl site", "map site", "full crawl", "find all pages", "broken links", "site structure", "discover pages", "J... | - | agents |
+| 2688 | **seo-flow** | FLOW framework integration: evidence-led SEO using the Find → Leverage → Optimize → Win loop. Surfaces stage-specific AI prompts from the FLOW knowledge base (41 prompts, CC BY 4.0). Use when user ... | - | agents |
+| 2689 | **seo-geo** | Optimize content for AI Overviews (formerly SGE), ChatGPT web search, Perplexity, and other AI-powered search experiences. Generative Engine Optimization (GEO) analysis including brand mention sign... | https://github.com/aaron-he-zhu/seo-geo-claude-skills | agents |
+| 2690 | **seo-google** | Google SEO APIs: Search Console (Search Analytics, URL Inspection, Sitemaps), PageSpeed Insights v5, CrUX field data with 25-week history, Indexing API v3, and GA4 organic traffic. Provides real Go... | - | agents |
+| 2691 | **seo-hreflang** | Hreflang and international SEO audit, validation, and generation. Detects common mistakes, validates language/region codes, and generates correct hreflang implementations. Use when user says "hrefl... | - | agents |
+| 2692 | **seo-image-gen** | AI image generation for SEO assets: OG/social preview images, blog hero images, schema images, product photography, infographics. Powered by Gemini via nanobanana-mcp. Requires banana extension ins... | - | agents |
+| 2693 | **seo-images** | Image optimization analysis for SEO and performance. Checks alt text, file sizes, formats, responsive images, lazy loading, CLS prevention, image SERP rankings (via DataForSEO), and image file opti... | - | agents |
+| 2694 | **seo-local** | Local SEO analysis covering Google Business Profile optimization, NAP consistency, citation health, review signals, local schema markup, location page quality, multi-location SEO, and industry-spec... | - | agents |
+| 2695 | **seo-local-business** | Generate complete SEO setup for local business websites — HTML head tags, JSON-LD LocalBusiness schema, robots.txt, sitemap.xml. Australian-optimised with +61 phone, ABN, suburb patterns. | - | agents |
+| 2696 | **seo-maps** | Maps intelligence for local SEO: geo-grid rank tracking, GBP profile auditing via API, review intelligence across Google/Tripadvisor/Trustpilot, cross-platform NAP verification, competitor radius m... | - | agents |
+| 2697 | **seo-page** | Deep single-page SEO analysis covering on-page elements, content quality, technical meta tags, schema, images, and performance. Use when user says "analyze this page", "check page SEO", "single URL... | - | agents |
+| 2698 | **seo-plan** | Strategic SEO planning for new or existing websites. Industry-specific templates, competitive analysis, content strategy, and implementation roadmap. Use when user says "SEO plan", "SEO strategy", ... | - | agents |
+| 2699 | **seo-profound** | Profound LLM citation tracker (extension). Time-series brand citation rates across ChatGPT, Perplexity, and other LLMs. Pairs with seo-seranking for triangulated AI visibility coverage. | - | agents |
+| 2700 | **seo-programmatic** | Programmatic SEO planning and analysis for pages generated at scale from data sources. Covers template engines, URL patterns, internal linking automation, thin content safeguards, and index bloat p... | - | agents |
+| 2701 | **seo-schema** | Detect, validate, and generate Schema.org structured data. JSON-LD format preferred. Use when user says "schema", "structured data", "rich results", "JSON-LD", or "markup". | - | agents |
+| 2702 | **seo-seranking** | SE Ranking AI visibility analyst (extension). Tracks AI Share-of-Voice across ChatGPT, Gemini, Perplexity, AI Overviews, and AI Mode in a single query. | - | agents |
+| 2703 | **seo-sitemap** | Analyze existing XML sitemaps or generate new ones with industry templates. Validates format, URLs, and structure. Use when user says "sitemap", "generate sitemap", "sitemap issues", or "XML sitemap". | - | agents |
+| 2704 | **seo-sxo** | Search Experience Optimization: reads Google SERPs backwards to detect page-type mismatches, derives user stories from search intent signals, and scores pages from multiple persona perspectives. Id... | - | agents |
+| 2705 | **seo-technical** | Technical SEO audit across 9 categories: crawlability, indexability, security, URL structure, mobile, Core Web Vitals, structured data, JavaScript rendering, and IndexNow protocol. Use when user sa... | - | agents |
+| 2706 | **seo-unlighthouse** | Multi-page Lighthouse audit via the MIT-licensed Unlighthouse CLI. Free-tier alternative to running PageSpeed against every URL on a site, no API quota burn, runs locally. | - | agents |
+| 2707 | **seqera-automation** | Automate Seqera tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2708 | **sequential-thinking** | Use when complex problems require systematic step-by-step reasoning with ability to revise thoughts, branch into alternative approaches, or dynamically adjust scope. Ideal for multi-stage analysis,... | - | agents |
+| 2709 | **serp-analysis** | Analyze SERPs: ranking factors, features, intent, AI overviews, featured snippets, People Also Ask. "What ranks for this" / "谁排第一" / "搜索结果分析". SERP分析/搜索结果/精选摘要 検索結果チェック/リッチリザルト 검색결과분석 análisis SERP | - | agents |
+| 2710 | **serpapi-automation** | Automate Serpapi tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2711 | **serpdog-automation** | Automate Serpdog tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2712 | **serply-automation** | Automate Serply tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2713 | **server-side-conversion-tracking** | Server-side conversion tracking for Facebook, TikTok, Google Ads. | - | agents |
+| 2714 | **servicem8-automation** | Automate Servicem8 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2715 | **session-handoff** | Creates handoff documents for seamless AI agent session transfers. | - | agents |
+| 2716 | **setup** | Set up a new autoresearch experiment interactively. Collects domain, target file, eval command, metric, direction, and evaluator. Use when the user runs /ar:setup or asks to start optimizing a file... | - | agents |
+| 2717 | **setup-browser-cookies** | Import cookies from your real Chromium browser into the headless browse session. (gstack) | - | agents |
+| 2718 | **setup-deploy** | Configure deployment settings for /land-and-deploy. | - | agents |
+| 2719 | **setup-gbrain** | Set up gbrain for this coding agent: install the CLI, initialize a local PGLite or Supabase brain, register MCP, capture per-remote trust policy. (gstack) | - | agents |
+| 2720 | **setup-matt-pocock-skills** | Configure this repo for the engineering skills — set up its issue tracker, triage label vocabulary, and domain doc layout. Run once before first use of the other engineering skills. | - | agents |
+| 2721 | **setup-my-iq** | Setup personal context portfolio & work style preferences. | - | agents |
+| 2722 | **setup-pre-commit** | Set up Husky pre-commit hooks with lint-staged (Prettier), type checking, and tests in the current repo. Use when user wants to add pre-commit hooks, set up Husky, configure lint-staged, or add com... | - | agents |
+| 2723 | **setup-ts-deep-modules** | Wire dependency-cruiser into a TypeScript repo so each package is a deep module — implementation hidden in subfolders, reachable only through its entry-point files. User-invoked. | - | agents |
+| 2724 | **sevdesk-automation** | Automate Sevdesk tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2725 | **sfdipot-product-factors** | James Bach's HTSM Product Factors (SFDIPOT) analysis for comprehensive test strategy generation. Use when analyzing requirements, epics, or user stories to generate prioritized test ideas across St... | - | agents |
+| 2726 | **shadcn-ui** | Install and configure shadcn/ui components for React projects. Guides component selection, installation order, dependency management, customisation with semantic tokens, and common UI recipes (form... | - | agents |
+| 2727 | **share_point-automation** | Automate SharePoint tasks via Rube MCP (Composio): document libraries, sites, lists, and content management. Always search tools first for current schemas. | - | agents |
+| 2728 | **SharePoint Automation** | SharePoint Automation: manage sites, lists, documents, folders, pages, and search content across SharePoint and OneDrive | - | agents |
+| 2729 | **sherlock-review** | Evidence-based investigative code review using deductive reasoning to determine what actually happened versus what was claimed. Use when verifying implementation claims, investigating bugs, validat... | - | agents |
+| 2730 | **shift-left-testing** | Move testing activities earlier in the development lifecycle to catch defects when they're cheapest to fix. Use when implementing TDD, CI/CD, or early quality practices. | - | agents |
+| 2731 | **shift-right-testing** | Testing in production with feature flags, canary deployments, synthetic monitoring, and chaos engineering. Use when implementing production observability or progressive delivery. | - | agents |
+| 2732 | **ship** | Ship workflow: detect + merge base branch, run tests, review diff, bump VERSION, update CHANGELOG, commit, push, create PR. (gstack) | - | agents |
+| 2733 | **ship-gate** | Pre-production audit that scans a codebase for security, database, deployment, code quality, AI/LLM, dependency, frontend, and observability issues. Intercepts deploy commands and blocks until crit... | - | agents |
+| 2734 | **ship-learn-next** | Transform learning content into actionable implementation plans. | - | agents |
+| 2735 | **shipengine-automation** | Automate Shipengine tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2736 | **shipping-and-launch** | Prepares production launches. Use when preparing to deploy to production. Use when you need a pre-launch checklist, when setting up monitoring, when planning a staged rollout, or when you need a ro... | - | agents |
+| 2737 | **shopify** | Build Shopify applications, extensions, and themes using GraphQL/REST APIs, Shopify CLI, Polaris UI components, and Liquid templating. Capabilities include app development with OAuth authentication... | - | agents |
+| 2738 | **shopify-content** | Create and manage Shopify pages, blog posts, navigation, and SEO metadata. Workflow: determine content type, generate content, create via API or browser, verify. Use when creating pages, writing bl... | - | agents |
+| 2739 | **shopify-expert** | Builds and debugs Shopify themes (.liquid files, theme.json, sections), develops custom Shopify apps (shopify.app.toml, OAuth, webhooks), and implements Storefront API integrations for headless sto... | - | agents |
+| 2740 | **shopify-products** | Create and manage Shopify products via the Admin API. Workflow: gather product data, choose method (API or CSV), execute, verify. Use when adding products, bulk importing, updating variants, managi... | - | agents |
+| 2741 | **shopify-review-triage** | Shopify App Store reviews triage & feature prioritization. | - | agents |
+| 2742 | **shopify-setup** | Set up Shopify CLI auth and Admin API access for a store. Workflow: install CLI, authenticate, create custom app, store access token, verify. Use when connecting to a Shopify store, setting up API ... | - | agents |
+| 2743 | **short-io-automation** | Automate Short IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2744 | **short-menu-automation** | Automate Short Menu tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2745 | **Shortcut Automation** | Automate project management workflows in Shortcut -- create stories, manage tasks, track epics, and organize workflows through natural language commands. | - | agents |
+| 2746 | **shorten-rest-automation** | Automate Shorten Rest tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2747 | **shortpixel-automation** | Automate Shortpixel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2748 | **shotstack-automation** | Automate Shotstack tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2749 | **shuffle-json-data** | Shuffle repetitive JSON objects safely with schema validation. | - | agents |
+| 2750 | **sidetracker-automation** | Automate Sidetracker tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2751 | **signal-write** | Emit structured agent signals (blocked, done, checkpoint). | - | agents |
+| 2752 | **signaturely-automation** | Automate Signaturely tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2753 | **signpath-automation** | Automate Signpath tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2754 | **signup** | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions "signup conversions," "registration friction," "signup form optimi... | - | agents |
+| 2755 | **signup-flow-cro** | When the user wants to optimize signup, registration, account creation, or trial activation flows. Also use when the user mentions "signup conversions," "registration friction," "signup form optimi... | - | agents |
+| 2756 | **signwell-automation** | Automate Signwell tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2757 | **similarweb-digitalrank-api-automation** | Automate SimilarWeb tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2758 | **similarweb_digitalrank_api-automation** | Automate SimilarWeb tasks via Rube MCP (Composio): website traffic, rankings, and digital market intelligence. Always search tools first for current schemas. | - | agents |
+| 2759 | **simla-com-automation** | Automate Simla Com tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2760 | **simple-analytics-automation** | Automate Simple Analytics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2761 | **simplesat-automation** | Automate Simplesat tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2762 | **Simplification Cascades** | Find one insight that eliminates multiple components - "if this is true, we don't need X, Y, or Z | - | agents |
+| 2763 | **site-architecture** | When the user wants to audit, redesign, or plan their website's structure, URL hierarchy, navigation design, or internal linking strategy. Use when the user mentions 'site architecture,' 'URL struc... | - | agents |
+| 2764 | **sitespeakai-automation** | Automate Sitespeakai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2765 | **six-thinking-hats** | Apply Edward de Bono's Six Thinking Hats methodology to software testing for comprehensive quality analysis. Use when designing test strategies, conducting test retrospectives, analyzing test failu... | - | agents |
+| 2766 | **skill** | Manage local skills — list, add, remove, search, edit. | - | agents |
+| 2767 | **Skill Builder** | Create new Codex Skills with proper YAML frontmatter, progressive disclosure structure, and complete directory organization. Use when you need to build custom skills for specific workflows, generat... | - | agents |
+| 2768 | **skill-comply** | Visualize whether skills and rules are followed by agents. | - | agents |
+| 2769 | **skill-creator** | Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a sk... | - | agents |
+| 2770 | **skill-evaluation** | Evaluate any agent skill against a merged framework — Anthropic's Codex best practices plus Matt Pocock's writing-great-skills methodology — across 4 axes (Trigger, Structure, Steering, Pruning). P... | - | agents |
+| 2771 | **skill-inspector** | Review AI agent skills before installation using NVIDIA SkillSpector and source-aware semantic review. Use when asked whether a skill or downloaded skill folder is safe, trustworthy, installable, o... | https://github.com/NVIDIA/skillspector | agents |
+| 2772 | **skill-installer** | Install Codex skills into $CODEX_HOME/skills from a curated list or a GitHub repo path. Use when a user asks to list installable skills, install a curated skill, or install a skill from another rep... | - | agents |
+| 2773 | **skill-inventory-manager** | Meta-skill that enumerates skills & generates custom pipelines. | - | agents |
+| 2774 | **skill-judge** | Evaluate Agent Skill design quality against specification. | - | agents |
+| 2775 | **skill-scanner** | Scan agent skills for security vulnerabilities & injection risks. | - | agents |
+| 2776 | **skill-scout** | Search existing skill sources before creating a new skill. | - | agents |
+| 2777 | **skill-security-auditor** | Security audit and vulnerability scanner for AI agent skills before installation. Use when: (1) evaluating a skill from an untrusted source, (2) auditing a skill directory or git repo URL for malic... | - | agents |
+| 2778 | **skill-seekers** | Búsqueda activa, evaluación e ingesta automatizada de nuevas habilidades agenticas desde repositorios remotos. | - | agents |
+| 2779 | **skill-share** | A skill that creates new Codex skills and automatically shares them on Slack using Rube for seamless team collaboration and skill discovery. | - | agents |
+| 2780 | **skill-stats** | Use when reviewing which QE skills are being used, finding undertriggering skills, or analyzing skill effectiveness. Shows usage patterns and recommendations. | - | agents |
+| 2781 | **skill-stocktake** | Audit skills and commands for quality & effectiveness. | - | agents |
+| 2782 | **skill-tester** | Validate, test, and score the quality of skills within the Codex-skills ecosystem. Comprehensive meta-skill: structure validation, Python script testing (syntax + imports + runtime + output format)... | - | agents |
+| 2783 | **skill-vault** | Bóveda persistente de skills del repositorio para organización, versionado y almacenamiento offline. | - | agents |
+| 2784 | **skill-writer** | Create and refine agent skills following Agent Skills spec. | - | agents |
+| 2785 | **skill1ssue** | Find and discover agent skills across git forges. | - | agents |
+| 2786 | **skillclaw** | Self-improving skill infrastructure that analyzes past session transcripts and automatically sharpens, refines, and updates the local skill library. Use when maintaining high-power skill collection... | - | agents |
+| 2787 | **skillify** | Codify the most recent successful /scrape flow into a permanent browser-skill on disk. (gstack) | - | agents |
+| 2788 | **skillopt-sleep** | Use when the user wants their Codex agent to self-improve from past usage, asks about a nightly/offline 'sleep' or 'dream' cycle, memory/skill consolidation, or says things like 'make my agent bett... | - | agents |
+| 2789 | **skills-arquiteto-de-empresa** |  | - | agents |
+| 2790 | **skills-chaos-engineering** |  | - | agents |
+| 2791 | **skills-chief-ai-officer-advisor** |  | - | agents |
+| 2792 | **skills-chief-customer-officer-advisor** |  | - | agents |
+| 2793 | **skills-chief-data-officer-advisor** |  | - | agents |
+| 2794 | **skills-eu-ai-act-specialist** |  | - | agents |
+| 2795 | **skills-feature-flags-architect** |  | - | agents |
+| 2796 | **skills-general-counsel-advisor** |  | - | agents |
+| 2797 | **skills-handoff** |  | - | agents |
+| 2798 | **skills-init** |  | - | agents |
+| 2799 | **skills-iso42001-specialist** |  | - | agents |
+| 2800 | **skills-kubernetes-operator** |  | - | agents |
+| 2801 | **skills-review** |  | - | agents |
+| 2802 | **skills-run** |  | - | agents |
+| 2803 | **skills-slo-architect** |  | - | agents |
+| 2804 | **skills-status** |  | - | agents |
+| 2805 | **skills-status-2** |  | - | agents |
+| 2806 | **skills-vpe-advisor** |  | - | agents |
+| 2807 | **skyfire-automation** | Automate Skyfire tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2808 | **slack-gif-creator** | Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like "make me ... | - | agents |
+| 2809 | **slack-messaging** | Send/read Slack messages & interact with workspaces via CLI. | - | agents |
+| 2810 | **slack-to-teams** | Sub-skill of microsoft-365-agents-toolkit. Routed expert system with 100+ micro-expert files for migrating Slack bots to Teams, cross-platform bridging, and dual-platform bot development. USE FOR: ... | - | agents |
+| 2811 | **slackbot-automation** | Automate Slackbot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2812 | **slang-shader-engineer** | Slang shaders, HLSL-compatible GPU code & compute pipelines. | - | agents |
+| 2813 | **slides** | Create and edit presentation slide decks (.pptx) with PptxGenJS. | - | agents |
+| 2814 | **slo-architect** | Use when defining, reviewing, or operating SLOs/SLIs/error budgets. Triggers on "define an SLO", "what should our SLO be", "error budget", "burn rate", "SLI", "service level objective", "Google SRE... | - | agents |
+| 2815 | **slo-design** |  | - | agents |
+| 2816 | **slop-eval** | Objectively evaluate a UI/web design against the pols.dev anti-slop design law: detect catalogued slop tells with cited evidence, score 8 weighted axes (color, type, components, layout, motion, exe... | - | agents |
+| 2817 | **smart-explore** | Token-optimized structural code search using tree-sitter AST parsing. Use instead of reading full files when you need to understand code structure, find functions, or explore a codebase efficiently. | - | agents |
+| 2818 | **smartproxy-automation** | Automate Smartproxy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2819 | **smartrecruiters-automation** | Automate Smartrecruiters tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2820 | **sms** | SMS/MMS marketing flows, abandoned cart & win-back texts. | - | agents |
+| 2821 | **sms-alert-automation** | Automate SMS Alert tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2822 | **smtp2go-automation** | Automate Smtp2go tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2823 | **smugmug-automation** | Automate Smugmug tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2824 | **Snowflake Automation** | Automate Snowflake data warehouse operations -- list databases, schemas, and tables, execute SQL statements, and manage data workflows via the Composio MCP integration. | - | agents |
+| 2825 | **snowflake-development** | Use when writing Snowflake SQL, building data pipelines with Dynamic Tables or Streams/Tasks, using Cortex AI functions, creating Cortex Agents, writing Snowpark Python, configuring dbt for Snowfla... | - | agents |
+| 2826 | **snowflake-semanticview** | Create and validate Snowflake semantic views via Snow CLI. | - | agents |
+| 2827 | **soc2-audit-prep** | /cs:soc2-audit-prep <scope> — SOC 2 Type II readiness 6-question forcing interrogation. Observation-period focused. Use before Type II observation begins, mid-period checkpoint, or pre-field-test m... | - | agents |
+| 2828 | **soc2-compliance** | Use when the user asks to prepare for SOC 2 audits, map Trust Service Criteria, build control matrices, collect audit evidence, perform gap analysis, or assess SOC 2 Type I vs Type II readiness. | - | agents |
+| 2829 | **social** | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn... | - | agents |
+| 2830 | **social-content** | When the user wants help creating, scheduling, or optimizing social media content for LinkedIn, Twitter/X, Instagram, TikTok, Facebook, or other platforms. Also use when the user mentions 'LinkedIn... | - | agents |
+| 2831 | **social-graph-ranker** | Weighted social-graph ranking for warm intro discovery. | - | agents |
+| 2832 | **social-media-analyzer** | Social media campaign analysis and performance tracking. Calculates engagement rates, ROI, and benchmarks across platforms. Use when analyzing social media performance, calculating engagement rate,... | - | agents |
+| 2833 | **social-media-manager** | When the user wants to develop social media strategy, plan content calendars, manage community engagement, or grow their social presence across platforms. Also use when the user mentions 'social me... | - | agents |
+| 2834 | **social-media-posts** | Create platform-specific social media posts for LinkedIn, Facebook, Instagram, and Reddit. Handles character limits, hashtag strategies, hook placement, and image specs per platform. Works from scr... | - | agents |
+| 2835 | **social-publisher** | Publish social media posts across 13 platforms via SocialClaw. | - | agents |
+| 2836 | **software-architecture** | System design patterns, Clean Architecture, SOLID principles, domain modeling. Use when making architectural decisions, designing new modules, refactoring a tangled codebase, or reviewing system de... | - | agents |
+| 2837 | **software-design-philosophy** | Manage software complexity through deep modules, information hiding, and strategic programming. Use when the user mentions "module design", "API too complex", "shallow class", "complexity budget", ... | - | agents |
+| 2838 | **solo-founder** |  | - | agents |
+| 2839 | **sora** | Generate, edit, and poll Sora AI video generation API. | - | agents |
+| 2840 | **source-driven-development** | Grounds every implementation decision in official documentation. Use when you want authoritative, source-cited code free from outdated patterns. Use when building with any framework or library wher... | - | agents |
+| 2841 | **sourcegraph-automation** | Automate Sourcegraph tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2842 | **spanner-basics** | Provision instances, design schemas & query Google Cloud Spanner. | - | agents |
+| 2843 | **sparc-methodology** | SPARC (Specification, Pseudocode, Architecture, Refinement, Completion) comprehensive development methodology with multi-agent orchestration | - | agents |
+| 2844 | **spark-engineer** | Use when writing Spark jobs, debugging performance issues, or configuring cluster settings for Apache Spark applications, distributed data processing pipelines, or big data workloads. Invoke to wri... | - | agents |
+| 2845 | **spawn** | Launch N parallel subagents in isolated git worktrees to compete on the session task. Use when the user runs /hub:spawn or asks to start the competing agents for an initialized AgentHub session. | - | agents |
+| 2846 | **speak-summary** | Convert text/markdown summaries to listenable MP3 using neural TTS. | - | agents |
+| 2847 | **spec** | Turn vague intent into a precise, executable spec in five phases. (gstack) | - | agents |
+| 2848 | **spec-driven-development** | Creates specs before coding. Use when starting a new project, feature, or significant change and no specification exists yet. Use when requirements are unclear, ambiguous, or only exist as a vague ... | - | agents |
+| 2849 | **spec-driven-workflow** | Use when the user asks to write specs before code, define acceptance criteria, plan features before implementation, generate tests from specifications, or follow spec-first development practices. | - | agents |
+| 2850 | **spec-kit** | Spec-Driven Development (SDD) framework based on GitHub's official spec-kit (https://github.com/github/spec-kit). Enforces a specification-first approach where agents create executable specs, const... | - | agents |
+| 2851 | **spec-miner** | Reverse-engineering specialist that extracts specifications from existing codebases. Use when working with legacy or undocumented systems, inherited projects, or old codebases with no documentation... | - | agents |
+| 2852 | **spec-to-repo** | Use when the user says 'build me an app', 'create a project from this spec', 'scaffold a new repo', 'generate a starter', 'turn this idea into code', 'bootstrap a project', 'I have requirements and... | - | agents |
+| 2853 | **speech** | Use when the user asks for text-to-speech narration or voiceover, accessibility reads, audio prompts, or batch speech generation via the OpenAI Audio API; run the bundled CLI (`scripts/text_to_spee... | - | agents |
+| 2854 | **splitwise-automation** | Automate Splitwise tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2855 | **spoki-automation** | Automate Spoki tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2856 | **spondyr-automation** | Automate Spondyr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2857 | **sponsor-finder** | Find sponsorable GitHub dependencies via deps.dev. | - | agents |
+| 2858 | **Spotify Automation** | Automate Spotify workflows including playlist management, music search, playback control, and user profile access via Composio | - | agents |
+| 2859 | **spotlightr-automation** | Automate Spotlightr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2860 | **spreadsheet** | Spreadsheet creation and formula analysis (.xlsx, .csv). | - | agents |
+| 2861 | **spring-boot-engineer** | Generates Spring Boot 3.x configurations, creates REST controllers, implements Spring Security 6 authentication flows, sets up Spring Data JPA repositories, and configures reactive WebFlux endpoint... | https://github.com/affaan-m/everything-claude-code | agents |
+| 2862 | **spring-boot-testing** | Spring Boot 4 testing with JUnit 6 and AssertJ. | https://github.com/affaan-m/everything-claude-code | agents |
+| 2863 | **springboot-patterns** | Spring Boot architecture patterns, REST API design & caching. | https://github.com/affaan-m/everything-claude-code | agents |
+| 2864 | **springboot-security** | Spring Security best practices for authn/authz & CSRF. | https://github.com/affaan-m/everything-claude-code | agents |
+| 2865 | **springboot-tdd** | Test-driven development for Spring Boot using JUnit 5 & Mockito. | https://github.com/affaan-m/everything-claude-code | agents |
+| 2866 | **springboot-verification** | Verification loop for Spring Boot projects: build, tests, security. | https://github.com/affaan-m/everything-claude-code | agents |
+| 2867 | **sprint-health** |  | - | agents |
+| 2868 | **sprint-plan** |  | - | agents |
+| 2869 | **sql-code-review** | Universal SQL code review assistant. | - | agents |
+| 2870 | **sql-database-assistant** | Use when the user asks to write SQL queries, optimize database performance, generate migrations, explore database schemas, or work with ORMs like Prisma, Drizzle, TypeORM, or SQLAlchemy. | - | agents |
+| 2871 | **sql-optimization** | Universal SQL performance optimization assistant. | - | agents |
+| 2872 | **sql-pro** | Optimizes SQL queries, designs database schemas, and troubleshoots performance issues. Use when a user asks why their query is slow, needs help writing complex joins or aggregations, mentions datab... | - | agents |
+| 2873 | **sql-server-table-reconciliation** | Compare SQL Server tables across instances & ETL validation. | - | agents |
+| 2874 | **sre-engineer** | Defines service level objectives, creates error budget policies, designs incident response procedures, develops capacity models, and produces monitoring configurations and automation scripts for pr... | - | agents |
+| 2875 | **sred-project-organizer** | Organize project documentation into SR&ED tax format. | - | agents |
+| 2876 | **sred-work-summary** | Create SR&ED project summary docs from year of work. | - | agents |
+| 2877 | **sslmate-cert-spotter-api-automation** | Automate Sslmate Cert Spotter API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2878 | **ssma-console** | SSMA console operations — Oracle to SQL Server schema migration. | - | agents |
+| 2879 | **stack-exchange-automation** | Automate Stack Exchange tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2880 | **standup** | Facilitate a read-only standup across git worktrees, branches, or PRs to compare changes and produce one consolidation plan. | - | agents |
+| 2881 | **stannp-automation** | Automate Stannp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2882 | **starton-automation** | Automate Starton tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2883 | **startup-cto** |  | - | agents |
+| 2884 | **startup-idea** | Analyze startups comprehensively with a Paul Graham mindset plus monetization, | - | agents |
+| 2885 | **statistical-analyst** | Run hypothesis tests, analyze A/B experiment results, calculate sample sizes, and interpret statistical significance with effect sizes. Use when you need to validate whether observed differences ar... | - | agents |
+| 2886 | **status** | Memory health dashboard showing line counts, topic files, capacity, stale entries, and recommendations. Use when the user runs /si:status or asks how full or healthy the agent memory is. | - | agents |
+| 2887 | **statuscake-automation** | Automate Statuscake tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2888 | **stay-within-limits** | Respect agent rate limits and weekly usage caps. | - | agents |
+| 2889 | **steno-mode** | Shorthand response compression cutting ~40% response tokens. | - | agents |
+| 2890 | **steve-jobs-design-review** | Review designs, products, and features with Steve Jobs'' standards: ruthless simplicity, focus, and end-to-end excellence. Use when the user mentions "Steve Jobs review", "design review", "product ... | - | agents |
+| 2891 | **stitch-design-taste** | Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI standards — strict typography, calibrated color, asymmetric layouts, p... | - | agents |
+| 2892 | **storeganise-automation** | Automate Storeganise tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2893 | **storerocket-automation** | Automate Storerocket tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2894 | **stormglass-io-automation** | Automate Stormglass IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2895 | **storybrand-messaging** | Clarify brand messaging using narrative structure that positions the customer as hero. Use when the user mentions "brand message", "website copy", "elevator pitch", "one-liner", "brand script", "St... | - | agents |
+| 2896 | **strategic-alignment** | Cascades strategy from boardroom to individual contributor. Detects and fixes misalignment between company goals and team execution. Covers strategy articulation, cascade mapping, orphan goal detec... | - | agents |
+| 2897 | **strategic-compact** | Manual context compaction at logical task boundaries. | - | agents |
+| 2898 | **strategy-document** | Write structured strategic documents for small and medium businesses. Produces SWOT analyses, lean business plans, OKRs, and competitive analyses. Each mode has a defined structure and quality bar.... | - | agents |
+| 2899 | **strava-automation** | Automate Strava tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2900 | **stream-chain** | Stream-JSON chaining for multi-agent pipelines, data transformation, and sequential workflows | - | agents |
+| 2901 | **streamtime-automation** | Automate Streamtime tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2902 | **stress-test** | /em:stress-test — Business assumption stress testing. Use before betting on a plan whose core assumptions are unvalidated — e.g. stress-testing 'enterprise buyers will tolerate a 6-month pilot' or ... | - | agents |
+| 2903 | **strict-api** | Use when the user says 'no hallucinations', 'verify APIs', 'reality check', or 'don't invent functions'. Prevents the agent from calling methods, imports, or variables that do not provably exist in... | - | agents |
+| 2904 | **strict-tdd** | Use when enforcing TDD discipline — blocks writing production code unless a failing test exists first. Activate with /strict-tdd to enable session-scoped Red-Green-Refactor guardrail. | - | agents |
+| 2905 | **stripe-apps** | Build, modify, and review Stripe Apps. | - | agents |
+| 2906 | **stripe-best-practices** | Stripe API integration choices (Checkout vs PaymentIntents). | - | agents |
+| 2907 | **stripe-directory** | Find Stripe partners & software for workflows. | - | agents |
+| 2908 | **stripe-docs** | Search and look up official Stripe documentation. | - | agents |
+| 2909 | **stripe-integration-expert** | Production-grade Stripe integrations: subscriptions with trials and proration, one-time payments, usage-based billing, checkout sessions, idempotent webhook handlers, customer portal, and invoicing... | - | agents |
+| 2910 | **stripe-payments** | Add Stripe payments to a web app — Checkout Sessions, Payment Intents, subscriptions, webhooks, customer portal, and pricing pages. Covers the decision of which Stripe API to use, produces working ... | - | agents |
+| 2911 | **stripe-projects** | Bootstrap & manage Stripe Projects CLI. | - | agents |
+| 2912 | **structured-autonomy-generate** | Structured Autonomy Implementation Generator. | - | agents |
+| 2913 | **structured-autonomy-implement** | Structured Autonomy Implementation Prompt. | - | agents |
+| 2914 | **structured-autonomy-plan** | Structured Autonomy Planning Prompt. | - | agents |
+| 2915 | **subagent-driven-development** | Execute implementation plans using independent subagent tasks. | - | agents |
+| 2916 | **substack-expert** | This skill should be used when creating, formatting, or optimizing content for a Substack newsletter. Covers post structure, SEO metadata (titles, slugs, meta descriptions), native engagement featu... | - | agents |
+| 2917 | **suggest-awesome-github-copilot-agents** | Suggest relevant Copilot custom agents from awesome-copilot. | - | agents |
+| 2918 | **suggest-awesome-github-copilot-instructions** | Suggest Copilot instruction files from awesome-copilot. | - | agents |
+| 2919 | **suggest-awesome-github-copilot-skills** | Suggest Copilot skills from awesome-copilot repository. | - | agents |
+| 2920 | **supabase** | Use when doing ANY task involving Supabase. Triggers: Supabase products (Database, Auth, Edge Functions, Realtime, Storage, Vectors, Cron, Queues); client libraries and SSR integrations (supabase-j... | - | agents |
+| 2921 | **supabase-postgres-best-practices** | Postgres performance optimization and best practices from Supabase. Use this skill when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations. | - | agents |
+| 2922 | **supadata-automation** | Automate Supadata tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2923 | **superchat-automation** | Automate Superchat tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2924 | **supportbee-automation** | Automate Supportbee tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2925 | **supportivekoala-automation** | Automate Supportivekoala tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2926 | **surgical-patch** | Fix bugs at the narrowest responsible layer. | - | agents |
+| 2927 | **survey_monkey-automation** | Automate SurveyMonkey tasks via Rube MCP (Composio): surveys, responses, collectors, and survey analytics. Always search tools first for current schemas. | - | agents |
+| 2928 | **SurveyMonkey Automation** | Automate SurveyMonkey survey creation, response collection, collector management, and survey discovery through natural language commands | - | agents |
+| 2929 | **svix-automation** | Automate Svix tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2930 | **Swarm Orchestration** | Orchestrate multi-agent swarms with agentic-flow for parallel task execution, dynamic topology, and intelligent coordination. Use when scaling beyond single agents, implementing complex workflows, ... | - | agents |
+| 2931 | **swarm-advanced** | Advanced swarm orchestration patterns for research, development, testing, and complex distributed workflows | - | agents |
+| 2932 | **swift-actor-persistence** | Thread-safe data persistence in Swift using actors. | - | agents |
+| 2933 | **swift-concurrency-6-2** | Swift 6.2 Approachable Concurrency patterns. | - | agents |
+| 2934 | **swift-expert** | Builds iOS/macOS/watchOS/tvOS applications, implements SwiftUI views and state management, designs protocol-oriented architectures, handles async/await concurrency, implements actors for thread saf... | - | agents |
+| 2935 | **swift-mcp-server-generator** | Generate complete MCP server project in Swift. | - | agents |
+| 2936 | **swift-protocol-di-testing** | Protocol-based dependency injection for testable Swift. | - | agents |
+| 2937 | **swiftui-patterns** | SwiftUI architecture patterns and state management with @Observable. | - | agents |
+| 2938 | **syllabus** | Generates a curated supplementary reading list from any course syllabus using Consensus academic search. Grill-me intake (syllabus input format + course audience + year range) plus a grouping forci... | - | agents |
+| 2939 | **sympla-automation** | Automate Sympla tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2940 | **sync-gbrain** | Keep gbrain current with this repo's code and refresh agent search guidance in AGENTS.md. Wraps the gstack-gbrain-sync orchestrator with state (gstack) | - | agents |
+| 2941 | **synthflow-ai-automation** | Automate Synthflow AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2942 | **system-commandline-cli** | Add and review CLI commands in .NET using System.CommandLine. | - | agents |
+| 2943 | **system-design** | Design scalable distributed systems using structured approaches for load balancing, caching, database scaling, and message queues. Use when the user mentions "system design", "scale this", "high av... | - | agents |
+| 2944 | **Systematic Debugging** | Four-phase debugging framework that ensures root cause investigation before attempting fixes. Never jump to solutions. | - | agents |
+| 2945 | **systematic-debugging** | Debugging methodology, hypothesis testing, reading stack traces, isolating issues. Use when facing an unexpected bug, a flaky test, a production incident, or any situation where the cause isn't imm... | - | agents |
+| 2946 | **taggun-automation** | Automate Taggun tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2947 | **tailored-resume-generator** | Analyzes job descriptions and generates tailored resumes that highlight relevant experience, skills, and achievements to maximize interview chances | - | agents |
+| 2948 | **tailwind** | Tailwind CSS v4.2 browser-runtime patterns for HyperFrames compositions. Use when scaffolding or editing projects created with `hyperframes init --tailwind`, writing Tailwind utility classes in com... | - | agents |
+| 2949 | **tailwind-patterns** | Tailwind CSS v4 patterns, component styling, dark mode, responsive design, and design system integration. Use when styling components or reviewing CSS. | - | agents |
+| 2950 | **tailwind-theme-builder** | Set up Tailwind v4 with shadcn/ui themed UI. Workflow: install dependencies, configure CSS variables with @theme inline, set up dark mode, verify. Use when initialising React projects with Tailwind... | - | agents |
+| 2951 | **talenthr-automation** | Automate Talenthr tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2952 | **tally-automation** | Automate Tally tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2953 | **tanstack-start** | Build a full-stack TanStack Start app on Cloudflare Workers from scratch — SSR, file-based routing, server functions, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui. No template repo — Codex genera... | - | agents |
+| 2954 | **tapfiliate-automation** | Automate Tapfiliate tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2955 | **tapform-automation** | Automate Tapform tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2956 | **taste** | Creative-direction (taste) layer for music videos & hyperpop edits. | https://github.com/Leonxlnx/taste-skill | agents |
+| 2957 | **taste-skill** | Leonxlnx's Taste Skill: The Anti-Slop Frontend Framework for AI Agents. Upgrades layout, typography, motion, and spacing. | - | agents |
+| 2958 | **tasteforge-video** | Multimodal video & 3D-asset discovery with EDL/FCPXML exports. | - | agents |
+| 2959 | **tavily-automation** | Automate Tavily tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2960 | **taxjar-automation** | Automate Taxjar tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2961 | **tc** |  | - | agents |
+| 2962 | **tc-tracker** | Use when the user asks to track technical changes, create change records, manage TC lifecycles, or hand off work between AI sessions. Covers init/create/update/status/resume/close/export workflows ... | - | agents |
+| 2963 | **tdd** | Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions "red-green-refactor", or wants integration tests. | - | agents |
+| 2964 | **tdd-guide** | Test-driven development skill for writing unit tests, generating test fixtures and mocks, analyzing coverage gaps, and guiding red-green-refactor workflows across Jest, Pytest, JUnit, Vitest, and M... | - | agents |
+| 2965 | **tdd-london-chicago** | Apply London (mock-based) and Chicago (state-based) TDD schools. Use when practicing test-driven development or choosing testing style for your context. | - | agents |
+| 2966 | **tdd-workflow** | TDD workflow enforcing 80%+ test coverage. | - | agents |
+| 2967 | **teach** | Teach the user a new skill or concept, within this workspace. | - | agents |
+| 2968 | **teach-impeccable** | One-time setup that gathers design context for your project and saves it to your AI config file. Run once to establish persistent design guidelines. | - | agents |
+| 2969 | **team** | Coordinate N agents on shared task list using Claude native teams. | - | agents |
+| 2970 | **team-agent-orchestration** | Team-based agent squad orchestration & Kanban merge gates. | - | agents |
+| 2971 | **team-builder** | Interactive agent picker for dispatching parallel teams. | - | agents |
+| 2972 | **team-communications** | Write internal company communications — 3P updates (Progress/Plans/Problems), company-wide newsletters, FAQ roundups, incident reports, leadership updates, status reports, project updates, and gene... | - | agents |
+| 2973 | **team-topologies** | Organize business and technology teams for fast flow using Skelton & Pais''s "Team Topologies". Use when the user mentions "team topologies", "Conway''s law", "platform team", "stream-aligned team"... | - | agents |
+| 2974 | **team-update** | Post project updates to team chat, gather feedback, triage responses, and plan next steps. Adapts to available tools (chat, git, issues, tasks). First run discovers tools and saves a playbook; subs... | - | agents |
+| 2975 | **teamcamp-automation** | Automate Teamcamp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2976 | **teams-app-developer** | Builds, tests, and deploys Microsoft 365 apps and agents for Teams and Copilot. Includes sub-skills for project creation, local testing, cloud deployment, troubleshooting, and Slack-to-Teams migrat... | - | agents |
+| 2977 | **tech-debt** |  | - | agents |
+| 2978 | **tech-debt-tracker** | Scan codebases for technical debt, score severity, track trends, and generate prioritized remediation plans. Use when users mention tech debt, code quality, refactoring priority, debt scoring, clea... | - | agents |
+| 2979 | **tech-stack-evaluator** | Technology stack evaluation and comparison with TCO analysis, security assessment, and ecosystem health scoring. Use when comparing frameworks, evaluating technology stacks, calculating total cost ... | - | agents |
+| 2980 | **technical-documentation** | Build and review high-quality technical docs as well as agent instruction files in your repository. | - | agents |
+| 2981 | **technical-job-search** | Software engineer job search — CV tailoring & cover letters. | - | agents |
+| 2982 | **technical-seo-checker** | Technical SEO audit: Core Web Vitals, crawl, indexing, mobile, speed, architecture, redirects. \"My site is slow\" / \"Google找不到\" / \"网站打不开\". 技术SEO/网站速度/爬虫/索引/CWV テクニカルSEO/サイト速度 기술SEO/사이트속도 SEO t... | - | agents |
+| 2983 | **technical-writing** | Write clear, engaging technical content from real experience. Use when writing blog posts, documentation, tutorials, or technical articles. | - | agents |
+| 2984 | **technology-stack-blueprint-generator** | Technology stack blueprint generator from codebases. | - | agents |
+| 2985 | **telnyx-automation** | Automate Telnyx tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2986 | **teltel-automation** | Automate Teltel tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2987 | **TEMPLATE** |  | - | agents |
+| 2988 | **template-skill** | Replace with description of the skill and when Codex should use it. | - | agents |
+| 2989 | **templated-automation** | Automate Templated tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2990 | **terminal-opener** | Open executable in visible terminal window safely. | - | agents |
+| 2991 | **terminal-ops** | Evidence-first terminal execution workflow. | - | agents |
+| 2992 | **terraform-azurerm-set-diff-analyzer** | Analyze Terraform plan JSON for AzureRM provider diffs. | - | agents |
+| 2993 | **terraform-engineer** | Use when implementing infrastructure as code with Terraform across AWS, Azure, or GCP. Invoke for module development (create reusable modules, manage module versioning), state management (migrate b... | - | agents |
+| 2994 | **terraform-patterns** | Terraform infrastructure-as-code agent skill and plugin for Codex, Codex, Gemini CLI, Cursor, OpenClaw. Covers module design patterns, state management strategies, provider configuration, security ... | - | agents |
+| 2995 | **test-app-automation** | Automate Test App tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 2996 | **test-automation-strategy** | Design and implement effective test automation with proper pyramid, patterns, and CI/CD integration. Use when building automation frameworks or improving test efficiency. | - | agents |
+| 2997 | **test-data-management** | Strategic test data generation, management, and privacy compliance. Use when creating test data, handling PII, ensuring GDPR/CCPA compliance, or scaling data generation for realistic testing scenar... | - | agents |
+| 2998 | **test-design-techniques** | Systematic test design with boundary value analysis, equivalence partitioning, decision tables, state transition testing, and combinatorial testing. Use when designing comprehensive test cases, red... | - | agents |
+| 2999 | **test-driven-development** | Drives development with tests. Use when implementing any logic, fixing any bug, or changing any behavior. Use when you need to prove that code works, when a bug report arrives, or when you're about... | - | agents |
+| 3000 | **test-environment-management** | Test environment provisioning, infrastructure as code for testing, Docker/Kubernetes for test environments, service virtualization, and cost optimization. Use when managing test infrastructure, ens... | - | agents |
+| 3001 | **test-failure-investigator** | Use when a test is failing and you need to determine root cause: is it flaky, an environment issue, or a real regression? Traces failure from symptom to fix. | - | agents |
+| 3002 | **test-idea-rewriting** | Transform passive 'Verify X' test descriptions into active, observable test actions. Use when test ideas lack specificity, use vague language, or fail quality validation. Converts to action-verb fo... | - | agents |
+| 3003 | **test-master** | Generates test files, creates mocking strategies, analyzes code coverage, designs test architectures, and produces test plans and defect reports across functional, performance, and security testing... | - | agents |
+| 3004 | **test-metrics-dashboard** | Use when querying test history, analyzing flakiness rates, tracking MTTR, or building quality trend dashboards from test execution data. | - | agents |
+| 3005 | **test-reporting-analytics** | Advanced test reporting, quality dashboards, predictive analytics, trend analysis, and executive reporting for QE metrics. Use when communicating quality status, tracking trends, or making data-dri... | - | agents |
+| 3006 | **testability-scoring** | AI-powered testability assessment using 10 principles of intrinsic testability with Playwright and optional Vibium integration. Evaluates web applications against Observability, Controllability, Al... | - | agents |
+| 3007 | **testcontainers-dotnet** | A comprehensive guide for using Testcontainers for .NET (4.10.0+) to write reliable integration tests with Docker containers in .NET projects. Supports 65+ pre-configured modules for databases, mes... | - | agents |
+| 3008 | **testcontainers-go** | A comprehensive guide for using Testcontainers for Go to write reliable integration tests with Docker containers in Go projects. Supports 62+ pre-configured modules for databases, message queues, c... | - | agents |
+| 3009 | **testing-comply-quick** | Test Comply-Quick compliance wizard & paywall. | - | agents |
+| 3010 | **testrail** | Sync tests with TestRail. Use when user mentions "testrail", "test management", "test cases", "test run", "sync test cases", "push results to testrail", or "import from testrail". | - | agents |
+| 3011 | **text-to-pdf-automation** | Automate Text To PDF tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3012 | **textcortex-automation** | Automate Textcortex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3013 | **textit-automation** | Automate Textit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3014 | **textrazor-automation** | Automate Textrazor tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3015 | **thanks-io-automation** | Automate Thanks IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3016 | **the-architect** | Interviews the user about what they want to build (phased discovery Q&A), classifies the project into an archetype (SaaS webapp, marketing site, mobile app, API backend, internal tool, content plat... | - | agents |
+| 3017 | **the-fool** | Use when challenging ideas, plans, decisions, or proposals using structured critical reasoning. Invoke to play devil's advocate, run a pre-mortem, red team, or audit evidence and assumptions. | - | agents |
+| 3018 | **the-odds-api-automation** | Automate The Odds API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3019 | **theme-factory** | Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifac... | - | agents |
+| 3020 | **threat-detection** | Use when hunting for threats in an environment, analyzing IOCs, or detecting behavioral anomalies in telemetry. Covers hypothesis-driven threat hunting, IOC sweep generation, z-score anomaly detect... | - | agents |
+| 3021 | **threat-model-analyst** | STRIDE-A threat model analysis for repositories. | https://github.com/behisecc/claude-security-skills | agents |
+| 3022 | **three** | Three.js and WebGL adapter patterns for HyperFrames. Use when creating deterministic Three.js scenes, WebGL canvas layers, AnimationMixer timelines, camera motion, shader-driven visuals, or canvas ... | - | agents |
+| 3023 | **threejs** | Build 3D web apps with Three.js (WebGL/WebGPU). Use for 3D scenes, animations, custom shaders, PBR materials, VR/XR experiences, games, data visualizations, product configurators. | - | agents |
+| 3024 | **ticketmaster-automation** | Automate Ticketmaster tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3025 | **ticktick-automation** | Automate Ticktick tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3026 | **timecamp-automation** | Automate Timecamp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3027 | **timekit-automation** | Automate Timekit tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3028 | **timeline-report** | Generate a "Journey Into [Project]" narrative report analyzing a project's entire development history from Codex-mem's timeline. Use when asked for a timeline report, project history analysis, deve... | - | agents |
+| 3029 | **timelinesai-automation** | Automate Timelinesai tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3030 | **timelink-automation** | Automate Timelink tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3031 | **timely-automation** | Automate Timely tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3032 | **tiny-stepping** | Incremental development making smallest meaningful change per step. | - | agents |
+| 3033 | **tinystruct-patterns** | Developing with tinystruct Java framework. | - | agents |
+| 3034 | **tinyurl-automation** | Automate Tinyurl tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3035 | **tisane-automation** | Automate Tisane tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3036 | **tldr-prompt** | Create tldr summaries for Copilot files and MCP servers. | - | agents |
+| 3037 | **tm7-threat-model** | Create Microsoft Threat Modeling Tool (.tm7) files. | - | agents |
+| 3038 | **to-issues** | Break plan/spec into independent issues on tracker. | - | agents |
+| 3039 | **to-prd** | Turn conversation into PRD on issue tracker. | - | agents |
+| 3040 | **to-questionnaire** | Turn a decision you can't fully answer into a questionnaire for someone else to fill in. | - | agents |
+| 3041 | **to-spec** | Turn the current conversation into a spec and publish it to the project issue tracker — no interview, just synthesis of what you've already discussed. | - | agents |
+| 3042 | **to-tickets** | Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker — edges as text in one file per ticket lo... | - | agents |
+| 3043 | **tododeia-animaciones** | Colección de animaciones diarias de UI, efectos micro-interactivos y presets de movimiento. | - | agents |
+| 3044 | **Toggl Automation** | Automate time tracking workflows in Toggl Track -- create time entries, manage projects, clients, tags, and workspaces through natural language commands. | - | agents |
+| 3045 | **token-budget-advisor** | Token budget control advisor for response depth. | - | agents |
+| 3046 | **token-build** | Set up or run the token build pipeline — transform the DTCG tokens/*.json (source of truth) into platform artifacts (CSS variables, Tailwind @theme, JS/TS, iOS Asset Catalog, Android, Compose) with... | - | agents |
+| 3047 | **token-efficiency** | Use always as a background discipline to minimize token usage and API costs — controls verbosity, avoids re-reading files, prevents unnecessary tool calls | - | agents |
+| 3048 | **token-metrics-automation** | Automate Token Metrics tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3049 | **token-savings** | Confirms which skills are actually relevant to a project BEFORE work starts, instead of the model guessing, loading, or invoking skills ad-hoc — the single biggest lever for cutting wasted tokens a... | - | agents |
+| 3050 | **tokensaver** | Runtime context optimization - structured summarization, tool output pruning, importance-based retention | - | agents |
+| 3051 | **tokmax** | Compress text for maximum token efficiency & machine intent. | - | agents |
+| 3052 | **tomba-automation** | Automate Tomba tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3053 | **tomtom-automation** | Automate Tomtom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3054 | **toneden-automation** | Automate Toneden tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3055 | **top-design** | Create award-winning, immersive web experiences at the level of Awwwards-featured agencies. Use when the user mentions "Awwwards quality", "make my site stunning", "scroll animations", "parallax st... | - | agents |
+| 3056 | **tpscheck-automation** | Automate Tpscheck tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3057 | **trace** | Evidence-driven causal tracing lane with competing hypotheses. | - | agents |
+| 3058 | **traction-eos** | Implement the Entrepreneurial Operating System (EOS) to align vision and execution across a company. Use when the user mentions "EOS", "Entrepreneurial Operating System", "V/TO", "quarterly rocks",... | - | agents |
+| 3059 | **train-sentence-transformers** | Train or fine-tune SentenceTransformers bi-encoder models. | - | agents |
+| 3060 | **transcribe** | Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in inte... | - | agents |
+| 3061 | **transformers-js** | Run ML models directly in JavaScript using Transformers.js. | - | agents |
+| 3062 | **transloadit-media-processing** | Process media files (video/audio/images) using Transloadit. | - | agents |
+| 3063 | **triage** | Move issues and external PRs through a state machine of triage roles — categorise, verify, grill if needed, and write agent-ready briefs. | - | agents |
+| 3064 | **triage-frontend-issues** | Triage Sentry JavaScript frontend errors. | - | agents |
+| 3065 | **triggercmd-automation** | Automate Triggercmd tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3066 | **tripadvisor-content-api-automation** | Automate TripAdvisor tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3067 | **trl-training** | Train transformer models using TRL (SFT, DPO, GRPO, KTO). | - | agents |
+| 3068 | **tugboat** | Anxiety-aware evidence-driven collaboration for stalled work. | - | agents |
+| 3069 | **turbot-pipes-automation** | Automate Turbot Pipes tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3070 | **turnstile-spin** | Set up Cloudflare Turnstile end-to-end in a project. Scan the codebase, create the widget via the Cloudflare API, embed it where user requests need bot verification (form submissions, SPA actions, ... | - | agents |
+| 3071 | **turso-automation** | Automate Turso tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3072 | **twelve-data-automation** | Automate Twelve Data tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3073 | **twitch-automation** | Automate Twitch tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3074 | **twitter-algorithm-optimizer** | Analyze and optimize tweets for maximum reach using Twitter's open-source algorithm insights. Rewrite and edit user tweets to improve engagement and visibility based on how the recommendation syste... | - | agents |
+| 3075 | **twocaptcha-automation** | Automate Twocaptcha tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3076 | **typefully-automation** | Automate Typefully tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3077 | **typescript-mcp-server-generator** | Generate complete MCP server project in TypeScript. | - | agents |
+| 3078 | **typescript-patterns** | TypeScript type system patterns, generics, utility types, and strict mode best practices. Use when writing or reviewing TypeScript code. | - | agents |
+| 3079 | **typescript-pro** | Implements advanced TypeScript type systems, creates custom type guards, utility types, and branded types, and configures tRPC for end-to-end type safety. Use when building TypeScript applications ... | - | agents |
+| 3080 | **typeset** | Improves typography by fixing font choices, hierarchy, sizing, weight, and readability so text feels intentional. Use when the user mentions fonts, type, readability, text hierarchy, sizing looks o... | - | agents |
+| 3081 | **typespec-api-operations** | Add REST operations to TypeSpec API plugin. | - | agents |
+| 3082 | **typespec-create-agent** | Generate TypeSpec declarative agent for M365 Copilot. | - | agents |
+| 3083 | **typespec-create-api-plugin** | Generate TypeSpec API plugin for M365 Copilot. | - | agents |
+| 3084 | **typing-exclusion-worker** | Remove mypy exclusion modules in scoped batches. | - | agents |
+| 3085 | **typless-automation** | Automate Typless tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3086 | **u301-automation** | Automate U301 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3087 | **ubiquitous-language** | Extract a DDD-style ubiquitous language glossary from the current conversation, flagging ambiguities and proposing canonical terms. Saves to UBIQUITOUS_LANGUAGE.md. Use when user wants to define do... | - | agents |
+| 3088 | **ui-demo** | Record polished UI demo videos using Playwright. | - | agents |
+| 3089 | **ui-design-system** | UI design system toolkit for Senior UI Designer including design token generation, component documentation, responsive design calculations, and developer handoff tools. Use when creating design sys... | - | agents |
+| 3090 | **ui-screenshots** | Capture web app screenshots using Playwright and PIL. | - | agents |
+| 3091 | **ui-skills-root** | Use before UI-related work to select the smallest useful UI Skills context through the ui-skills CLI. | - | agents |
+| 3092 | **ui-styling** | Create beautiful, accessible user interfaces with shadcn/ui components (built on Radix UI + Tailwind), Tailwind CSS utility-first styling, and canvas-based visual designs. Use when building user in... | - | agents |
+| 3093 | **ui-to-vue** | Convert UI screenshots into Vue 3 components (Element/AntD). | - | agents |
+| 3094 | **ui-ux-pro-max** | UI/UX design intelligence for web and mobile. Includes 50+ styles, 161 color palettes, 57 font pairings, 161 product types, 99 UX guidelines, and 25 chart types across 10 stacks (React, Next.js, Vu... | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill | agents |
+| 3095 | **ui-widget-developer** | Build MCP servers for Copilot Chat using the OpenAI Apps SDK or MCP Apps SDK widget rendering support (any language). Use this skill when: - Creating MCP servers that integrate with M365 Copilot de... | - | agents |
+| 3096 | **uk-business-english** | British business English writing style for professional communications. Polished, understated, EN-GB spelling. Use when writing emails, chat messages, proposals, client communications, or any busin... | - | agents |
+| 3097 | **ultimate-design-system-master** | Create comprehensive design systems, brand identities, and UI component libraries. Use when the user says "create design system", "build brand identity", "design UI components", "generate design to... | - | agents |
+| 3098 | **ultragoal** | Multi-goal workflow persisting plan artifacts under .omc/ultragoal. | - | agents |
+| 3099 | **ultraqa** | QA cycling workflow — test, verify, fix, repeat. | - | agents |
+| 3100 | **ultrawork** | Parallel execution engine for high-throughput task completion. | - | agents |
+| 3101 | **uncloud** | Deploy and manage services on Uncloud cluster with Caddy. | - | agents |
+| 3102 | **unfreeze** | Clear the freeze boundary set by /freeze, allowing edits to all directories again. (gstack) | - | agents |
+| 3103 | **unified-memory** | Share durable context across Claude, Codex, Cursor & OpenCode. | - | agents |
+| 3104 | **unified-notifications-ops** | Operate notifications across GitHub, Linear, desktop alerts. | - | agents |
+| 3105 | **unione-automation** | Automate Unione tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3106 | **unit-test-vue-pinia** | Write unit tests for Vue 3 + Vitest + Pinia. | - | agents |
+| 3107 | **universal-scraping-architect** | Use for web scraping, crawling, document extraction, API parsing, or building validation-heavy data pipelines using Firecrawl or local Python scripts. | - | agents |
+| 3108 | **update-avm-modules-in-bicep** | Update Azure Verified Modules in Bicep files. | - | agents |
+| 3109 | **update-harness-dependencies** | Update primary SDK dependencies of harness packages. | - | agents |
+| 3110 | **update-implementation-plan** | Update existing implementation plan file. | - | agents |
+| 3111 | **update-llms** | Update root llms.txt following llmstxt.org spec. | - | agents |
+| 3112 | **update-markdown-file-index** | Update markdown section with file index. | - | agents |
+| 3113 | **update-provider-models** | Add/remove model IDs for AI SDK providers. | - | agents |
+| 3114 | **update-specification** | Update solution specification optimized for LLM consumption. | - | agents |
+| 3115 | **updown-io-automation** | Automate Updown IO tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3116 | **upgrade-stripe** | Upgrade Stripe API versions and SDKs safely. | - | agents |
+| 3117 | **Uploadcare Automation** | Automate Uploadcare file management including listing, storing, inspecting, downloading, and organizing file groups through natural language commands | - | agents |
+| 3118 | **uptimerobot-automation** | Automate Uptimerobot tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3119 | **us-business-english** | American business English writing style for professional communications. Direct, action-oriented, EN-US spelling. Use when writing emails, chat messages, proposals, client communications, or any bu... | - | agents |
+| 3120 | **user-story** |  | - | agents |
+| 3121 | **userlist-automation** | Automate Userlist tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3122 | **using-agent-skills** | Discovers and invokes agent skills. Use when starting a session or when you need to discover which skill applies to the current task. This is the meta-skill that governs how all other skills are di... | - | agents |
+| 3123 | **using-datahub** | Routing guidance for DataHub interaction skills. | - | agents |
+| 3124 | **using-git-worktrees** | Isolated worktree dev environment workflow. | - | agents |
+| 3125 | **using-n8n-mcp-skills** | Use when building, editing, validating, testing, or debugging an n8n workflow through the n8n-mcp MCP server — designing a flow, configuring a node, writing an expression or Code node, wiring crede... | - | agents |
+| 3126 | **using-superpowers** | Establishes skill invocation requirements before responding. | - | agents |
+| 3127 | **using-tmux-for-interactive-commands** | Run interactive CLI tools (vim, rebase) in tmux. | - | agents |
+| 3128 | **uspto-database** | USPTO patent and trademark data lookup. | - | agents |
+| 3129 | **ux-audit** | Dogfood web apps — browse as a real user, notice friction, document findings. Adopts a user persona, tracks emotional friction (trust, anxiety, confusion), counts click efficiency, tests resilience... | - | agents |
+| 3130 | **ux-heuristics** | Evaluate and improve interface usability using heuristic analysis. Use when the user mentions "usability audit", "users are confused", "form usability", "navigation problems", "Nielsen heuristics",... | - | agents |
+| 3131 | **ux-researcher-designer** | UX research and design toolkit for Senior UX Designer/Researcher including data-driven persona generation, journey mapping, usability testing frameworks, and research synthesis. Use when conducting... | - | agents |
+| 3132 | **ux-writing** | Write or review UI copy — buttons, errors, empty states, microcopy, notifications, labels — using the voice & tone system (clear, concise, useful, human, honest) with the what→why→how error formula... | - | agents |
+| 3133 | **v0-automation** | Automate V0 tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3134 | **V3 CLI Modernization** | CLI modernization and hooks system enhancement for Codex-flow v3. Implements interactive prompts, command decomposition, enhanced hooks integration, and intelligent workflow automation. | - | agents |
+| 3135 | **V3 Core Implementation** | Core module implementation for Codex-flow v3. Implements DDD domains, clean architecture patterns, dependency injection, and modular TypeScript codebase with comprehensive testing. | - | agents |
+| 3136 | **V3 DDD Architecture** | Domain-Driven Design architecture for Codex-flow v3. Implements modular, bounded context architecture with clean separation of concerns and microkernel pattern. | - | agents |
+| 3137 | **V3 Deep Integration** | Deep agentic-flow@alpha integration implementing ADR-001. Eliminates 10,000+ duplicate lines by building Codex-flow as specialized extension rather than parallel implementation. | - | agents |
+| 3138 | **V3 MCP Optimization** | MCP server optimization and transport layer enhancement for Codex-flow v3. Implements connection pooling, load balancing, tool registry optimization, and performance monitoring for sub-100ms respon... | - | agents |
+| 3139 | **V3 Memory Unification** | Unify 6+ memory systems into AgentDB with HNSW indexing for 150x-12,500x search improvements. Implements ADR-006 (Unified Memory Service) and ADR-009 (Hybrid Memory Backend). | - | agents |
+| 3140 | **V3 Performance Optimization** | Achieve aggressive v3 performance targets: 2.49x-7.47x Flash Attention speedup, 150x-12,500x search improvements, 50-75% memory reduction. Comprehensive benchmarking and optimization suite. | - | agents |
+| 3141 | **V3 Security Overhaul** | Complete security architecture overhaul for Codex-flow v3. Addresses critical CVEs (CVE-1, CVE-2, CVE-3) and implements secure-by-default patterns. Use for security-first v3 implementation. | - | agents |
+| 3142 | **V3 Swarm Coordination** | 15-agent hierarchical mesh coordination for v3 implementation. Orchestrates parallel execution across security, core, and integration domains following 10 ADRs with 14-week timeline. | - | agents |
+| 3143 | **validation-pipeline** | Runs multi-stage validation gates with per-step scoring, pass/fail verdicts, and aggregate quality reports. Use when validating requirements, code, or artifacts through structured gate enforcement ... | - | agents |
+| 3144 | **vardoger-analyze** | Personalize Copilot CLI assistant to user's style. | - | agents |
+| 3145 | **vcpkg** | Setting up vcpkg in C++ projects & cross-compiling. | - | agents |
+| 3146 | **vendor-management** | Use when reviewing, scoring, or auditing third-party SaaS / vendor relationships — running a vendor scorecard with industry tuning, tracking SLA compliance with credit-claim flags, classifying thir... | - | agents |
+| 3147 | **venly-automation** | Automate Venly tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3148 | **veo-automation** | Automate Veo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3149 | **vercel-composition-patterns** | React composition patterns that scale. | - | agents |
+| 3150 | **vercel-deploy** | Deploy applications and websites to Vercel. Use when the user requests deployment actions like "deploy my app", "deploy and give me the link", "push this live", or "create a preview deployment". | - | agents |
+| 3151 | **vercel-react-best-practices** | React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance pat... | - | agents |
+| 3152 | **vercel-react-native-skills** | React Native & Expo performance best practices. | - | agents |
+| 3153 | **vercel-react-view-transitions** | Implement native-feeling animations using View Transition API. | - | agents |
+| 3154 | **Verification & Quality Assurance** | Comprehensive truth scoring, code quality verification, and automatic rollback system with 0.95 accuracy threshold for ensuring high-quality agent outputs and codebase reliability. | - | agents |
+| 3155 | **Verification Before Completion** | Run verification commands and confirm output before claiming success | - | agents |
+| 3156 | **verification-before-completion** | Verification commands required before claiming completion. | - | agents |
+| 3157 | **verification-loop** | Comprehensive verification system for agent sessions. | - | agents |
+| 3158 | **verifiedemail-automation** | Automate Verifiedemail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3159 | **verify** | Verify change works before claiming completion. | - | agents |
+| 3160 | **verify-agent-action** | Review proposed AI agent action packet before execution. | - | agents |
+| 3161 | **verify-and-stop** | Prove existing work meets acceptance criteria without expanding scope. | - | agents |
+| 3162 | **veriphone-automation** | Automate Veriphone tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3163 | **vero-automation** | Automate Vero tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3164 | **version-bump** | Automated semantic versioning and release workflow for Codex plugins. Handles version increments across package.json, marketplace.json, plugin.json manifests, build verification, git tagging, GitHu... | - | agents |
+| 3165 | **vestaboard-automation** | Automate Vestaboard tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3166 | **video** | When the user wants to create, generate, or produce video content using AI tools or programmatic frameworks. Also use when the user mentions 'video production,' 'AI video,' 'Remotion,' 'Hyperframes... | - | agents |
+| 3167 | **video-content-strategist** | Use when planning video content strategy, writing video scripts, optimizing YouTube channels, building short-form video pipelines (Reels, TikTok, Shorts), or repurposing long-form content into vide... | - | agents |
+| 3168 | **video-editing** | AI-assisted video editing pipeline with FFmpeg and Remotion. | - | agents |
+| 3169 | **videodb** | Ingest, search, understand & stream video context via VideoDB. | - | agents |
+| 3170 | **virustotal-automation** | Automate Virustotal tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3171 | **visa-doc-translate** | Translate visa application document images to bilingual PDF. | - | agents |
+| 3172 | **visme-automation** | Automate Visme tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3173 | **visual-edit** | Open local app in visual edit iframe screens. | - | agents |
+| 3174 | **visual-plan** | Turn text plans into rich interactive visual plans. | - | agents |
+| 3175 | **visual-recap** | Turn PR, branch, or git diff into interactive visual recap. | - | agents |
+| 3176 | **visual-testing-advanced** | Advanced visual regression testing with pixel-perfect comparison, AI-powered diff analysis, responsive design validation, and cross-browser visual consistency. Use when detecting UI regressions, va... | - | agents |
+| 3177 | **visual-verdict** | Structured visual QA verdict for UI comparisons. | - | agents |
+| 3178 | **vite-flare-starter** | Scaffold a full-stack Cloudflare app from vite-flare-starter — React 19, Hono, D1+Drizzle, better-auth, Tailwind v4+shadcn/ui, TanStack Query, R2, Workers AI. Run setup.sh to clone, configure, and ... | - | agents |
+| 3179 | **vite-patterns** | Vite build tool patterns: config, HMR, env, SSR, pre-bundling. | - | agents |
+| 3180 | **vitest** | Set up Vitest testing in any project — detects project type (Cloudflare Workers, React, Node), generates vitest.config.ts, test setup, utilities, and sample tests. Also covers mocking patterns, cov... | - | agents |
+| 3181 | **voltagent-best-practices** | VoltAgent architectural patterns and conventions. Covers agents vs workflows, project layout, memory, servers, and observability. | - | agents |
+| 3182 | **voltagent-docs-bundle** | Look up VoltAgent documentation embedded in node_modules/@voltagent/core/docs for version-matched docs. Use for API signatures, guides, and examples. | - | agents |
+| 3183 | **vpe-advisor** | VP of Engineering advisory for startups: delivery throughput (DORA 4 metrics + bottleneck identification), engineering hiring funnel (sourcing → screen → onsite → offer conversion + time-to-fill + ... | - | agents |
+| 3184 | **vpe-review** | /cs:vpe-review <plan> — Throughput-first VP of Engineering interrogation of any plan that touches delivery, eng hiring, team structure, or production discipline. Use when cycle time balloons, DORA ... | - | agents |
+| 3185 | **vscode-ext-commands** | Guidelines for contributing commands in VS Code extensions. | - | agents |
+| 3186 | **vscode-ext-localization** | Localization patterns for VS Code extensions. | - | agents |
+| 3187 | **vue-best-practices** | Vue 3 Composition API with <script setup> and TypeScript. | - | agents |
+| 3188 | **vue-debug-guides** | Vue 3 debugging and error handling for runtime & SSR issues. | - | agents |
+| 3189 | **vue-expert** | Builds Vue 3 components with Composition API patterns, configures Nuxt 3 SSR/SSG projects, sets up Pinia stores, scaffolds Quasar/Capacitor mobile apps, implements PWA features, and optimises Vite ... | - | agents |
+| 3190 | **vue-expert-js** | Creates Vue 3 components, builds vanilla JS composables, configures Vite projects, and sets up routing and state management using JavaScript only — no TypeScript. Generates JSDoc-typed code with @t... | - | agents |
+| 3191 | **vue-jsx-best-practices** | JSX syntax in Vue 3 components. | - | agents |
+| 3192 | **vue-options-api-best-practices** | Vue 3 Options API best practices. | - | agents |
+| 3193 | **vue-patterns** | Vue.js 3 Composition API, Pinia, Vue Router & Nuxt patterns. | - | agents |
+| 3194 | **vue-pinia-best-practices** | Pinia state management setup & reactivity in Vue 3. | - | agents |
+| 3195 | **vue-router-best-practices** | Vue Router 4 patterns & navigation guards. | - | agents |
+| 3196 | **vue-testing-best-practices** | Vue.js testing with Vitest, Vue Test Utils & Playwright. | - | agents |
+| 3197 | **waapi** | Web Animations API adapter patterns for HyperFrames. Use when authoring element.animate() motion, Animation currentTime seeking, document.getAnimations(), KeyframeEffect timing, fill modes, or nati... | - | agents |
+| 3198 | **waboxapp-automation** | Automate Waboxapp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3199 | **wachete-automation** | Automate Wachete tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3200 | **wait-what** | Re-pitch message when user indicates last message missed target. | - | agents |
+| 3201 | **waiverfile-automation** | Automate Waiverfile tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3202 | **wakatime-automation** | Automate Wakatime tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3203 | **walkthrough-video** | Generate professional walkthrough videos from app screenshots or live sites using Remotion. Smooth transitions, zoom effects, text overlays, and optional voiceover narration. Produces MP4 videos fo... | - | agents |
+| 3204 | **wati-automation** | Automate Wati tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3205 | **Wave Accounting Automation** | Wave Accounting toolkit is not currently available as a native integration. No Wave-specific tools were found in the Composio platform. This skill is a placeholder pending future integration. | - | agents |
+| 3206 | **wave_accounting-automation** | Automate Wave Accounting tasks via Rube MCP (Composio): invoices, customers, payments, and small business accounting. Always search tools first for current schemas. | - | agents |
+| 3207 | **wayfinder** | Plan a huge chunk of work — more than one agent session can hold — as a shared map of decision tickets on your issue tracker, and resolve them one at a time until the way to the destination is clear. | - | agents |
+| 3208 | **weathermap-automation** | Automate Weathermap tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3209 | **web** | Builds a complete website using visual assets generated with Forkads (saved in assets/) and a brief written in content/brief.md. Use when the user writes "/web" or says "read the web skill and buil... | - | agents |
+| 3210 | **web-app-penetration-testing** | Pentest a web app or website end to end — black-box testing of a live URL, staging environment, or local dev server that finds and exploits real vulnerabilities (auth bypass, broken access control,... | - | agents |
+| 3211 | **web-artifacts-builder** | Suite of tools for creating elaborate, multi-component Codex.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state man... | - | agents |
+| 3212 | **web-design-guidelines** | Web design best practices, accessibility, responsive layout, color contrast. Use when auditing a UI for a11y compliance, designing responsive layouts, or establishing design standards across a web ... | - | agents |
+| 3213 | **web-design-reviewer** | Visual inspection of local/remote web app UI design. | - | agents |
+| 3214 | **web-frameworks** | Build modern full-stack web applications with Next.js (App Router, Server Components, RSC, PPR, SSR, SSG, ISR), Turborepo (monorepo management, task pipelines, remote caching, parallel execution), ... | - | agents |
+| 3215 | **web-perf** | Analyzes web performance using Chrome DevTools MCP. Measures Core Web Vitals (LCP, INP, CLS) and supplementary metrics (FCP, TBT, Speed Index), identifies render-blocking resources, network depende... | - | agents |
+| 3216 | **web-research** | Search public web for authoritative sources and return cited answer. | - | agents |
+| 3217 | **web-testing** | Web testing with Playwright, Vitest, k6. E2E/unit/integration/load/security/visual/a11y testing. Use for test automation, flakiness, Core Web Vitals, mobile gestures, cross-browser. | - | agents |
+| 3218 | **web-to-markdown** | Convert webpage URLs to clean markdown. | - | agents |
+| 3219 | **web-typography** | Select, pair, and implement typefaces for web projects. Use when the user mentions "font pairing", "which typeface", "line height", "responsive typography", "web font loading", "type hierarchy", "v... | - | agents |
+| 3220 | **webapp-testing** | Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browse... | - | agents |
+| 3221 | **Webex Automation** | Automate Cisco Webex messaging, rooms, teams, webhooks, and people management through natural language commands | - | agents |
+| 3222 | **webinar-marketing** | When the user wants to plan, promote, run, or improve a webinar or virtual event to generate and convert demand. Use when the user mentions 'webinar,' 'virtual event,' 'online event,' 'live demo,' ... | - | agents |
+| 3223 | **webmcpify** | Make web app agent-ready with WebMCP tool manifest. | - | agents |
+| 3224 | **webscraping-ai-automation** | Automate Webscraping AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3225 | **website-to-hyperframes** | Capture a website and create a HyperFrames video from it. Use when: (1) a user provides a URL and wants a video, (2) someone says "capture this site", "turn this into a video", "make a promo from m... | - | agents |
+| 3226 | **websocket-engineer** | Use when building real-time communication systems with WebSockets or Socket.IO. Invoke for bidirectional messaging, horizontal scaling with Redis, presence tracking, room management. | - | agents |
+| 3227 | **webvizio-automation** | Automate Webvizio tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3228 | **weekly-digests** | Generate a serial week-by-week narrative digest of a project's full Codex-mem timeline. Splits the timeline into per-ISO-week files, then runs one consecutive subagent per week — each receiving the... | - | agents |
+| 3229 | **weekly-review** | Use when someone wants to run a weekly review, close open loops, audit stalled projects and commitments, get their system back to trusted, restart a lapsed review habit, or says "/cs:weekly-review"... | - | agents |
+| 3230 | **what-context-needed** | Ask Copilot what context files it needs to see. | - | agents |
+| 3231 | **what-the** | What the? Use when the user wants a plain-English breakdown of something technical — the who, what, where, why, and when. | - | agents |
+| 3232 | **whautomate-automation** | Automate Whautomate tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3233 | **When Stuck - Problem-Solving Dispatch** | Dispatch to the right problem-solving technique based on how you're stuck | - | agents |
+| 3234 | **wiki** | LLM Wiki — persistent markdown knowledge base compounding across sessions. | - | agents |
+| 3235 | **wiki-ado-convert** | Converts VitePress/GFM wiki markdown to Azure DevOps Wiki-compatible format. Generates a Node.js build script that transforms Mermaid syntax, strips front matter, fixes links, and outputs ADO-compa... | - | agents |
+| 3236 | **wiki-agents-md** | Generates AGENTS.md files for repository folders — coding agent context files with build commands, testing instructions, code style, project structure, and boundaries. Only generates where AGENTS.m... | - | agents |
+| 3237 | **wiki-architect** | Analyzes code repositories and generates hierarchical documentation structures with onboarding guides. Use when the user wants to create a wiki, generate documentation, map a codebase structure, or... | - | agents |
+| 3238 | **wiki-changelog** | Analyzes git commit history and generates structured changelogs categorized by change type. Use when the user asks about recent changes, wants a changelog, or needs to understand what changed in th... | - | agents |
+| 3239 | **wiki-ingest** |  | - | agents |
+| 3240 | **wiki-init** |  | - | agents |
+| 3241 | **wiki-lint** |  | - | agents |
+| 3242 | **wiki-llms-txt** | Generates llms.txt and llms-full.txt files for LLM-friendly project documentation following the llms.txt specification. Use when the user wants to create LLM-readable summaries, llms.txt files, or ... | - | agents |
+| 3243 | **wiki-log** |  | - | agents |
+| 3244 | **wiki-onboarding** | Generates four audience-tailored onboarding guides in an onboarding/ folder — Contributor, Staff Engineer, Executive, and Product Manager. Use when the user wants onboarding documentation for a cod... | - | agents |
+| 3245 | **wiki-page-writer** | Generates rich technical documentation pages with dark-mode Mermaid diagrams, source code citations, and first-principles depth. Use when writing documentation, generating wiki pages, creating tech... | - | agents |
+| 3246 | **wiki-qa** | Answers questions about a code repository using source file analysis. Use when the user asks a question about how something works, wants to understand a component, or needs help navigating the code... | - | agents |
+| 3247 | **wiki-query** |  | - | agents |
+| 3248 | **wiki-researcher** | Conducts multi-turn iterative deep research on specific topics within a codebase with zero tolerance for shallow analysis. Use when the user wants an in-depth investigation, needs to understand how... | - | agents |
+| 3249 | **wiki-vitepress** | Packages generated wiki Markdown into a VitePress static site with dark theme, dark-mode Mermaid diagrams with click-to-zoom, and production build output. Use when the user wants to create a browsa... | - | agents |
+| 3250 | **windows-desktop-e2e** | E2E testing for Windows native desktop apps (WPF, WinForms, Win32). | - | agents |
+| 3251 | **windows-vm** | Manage headless Windows 11 VM running in Docker. | - | agents |
+| 3252 | **winmd-api-search** | Explore Windows desktop APIs (camera, file access, AI/ML). | - | agents |
+| 3253 | **winston-ai-automation** | Automate Winston AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3254 | **winui-app** | Bootstrap, develop, and design modern WinUI 3 desktop applications with C# and the Windows App SDK using official Microsoft guidance, WinUI Gallery patterns, Windows App SDK samples, and CommunityT... | - | agents |
+| 3255 | **winui3-migration-guide** | UWP to WinUI 3 migration reference and API mapping. | - | agents |
+| 3256 | **wit-ai-automation** | Automate Wit AI tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3257 | **wiz-automation** | Automate Wiz tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3258 | **wizard** | Generate an interactive bash wizard that walks a human through a manual procedure — third-party setup, a one-off migration, an A→B state transition — opening URLs, capturing values, confirming each... | - | agents |
+| 3259 | **wms-testing-patterns** | Warehouse Management System testing patterns for inventory operations, pick/pack/ship workflows, wave management, EDI X12/EDIFACT compliance, RF/barcode scanning, and WMS-ERP integration. Use when ... | - | agents |
+| 3260 | **wolfram-alpha-api-automation** | Automate Wolfram Alpha API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3261 | **woodpecker-co-automation** | Automate Woodpecker co tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3262 | **wordpress-content** | Create and manage WordPress posts, pages, media, categories, and menus. Workflow: determine content type, choose method (WP-CLI or REST API), execute, verify. Use when creating blog posts, updating... | - | agents |
+| 3263 | **wordpress-elementor** | Edit Elementor pages and manage templates on WordPress sites. Workflow: identify page, choose editing method (browser or WP-CLI), execute, verify. Use when editing Elementor pages, updating text in... | - | agents |
+| 3264 | **wordpress-pro** | Develops custom WordPress themes and plugins, creates and registers Gutenberg blocks and block patterns, configures WooCommerce stores, implements WordPress REST API endpoints, applies security har... | - | agents |
+| 3265 | **wordpress-setup** | Connect to a WordPress site via WP-CLI over SSH or REST API. Workflow: check CLI, test SSH connection, set up auth, verify access, save config. Use when connecting to a WordPress site, setting up W... | - | agents |
+| 3266 | **workable-automation** | Automate Workable tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3267 | **Workday Automation** | Automate HR operations in Workday -- manage workers, time off requests, absence balances, and employee data through natural language commands. | - | agents |
+| 3268 | **workers-best-practices** | Reviews and authors Cloudflare Workers code against production best practices. Load when writing new Workers, reviewing Worker code, configuring wrangler.jsonc, or checking for common Workers anti-... | - | agents |
+| 3269 | **workflow-builder** | Design and write deterministic multi-agent workflow scripts (.js files in .Codex/workflows/) for Codex's Workflow tool. Use when a user wants to build, create, author, scaffold, or run a custom Cod... | - | agents |
+| 3270 | **working-with-legacy-code** | Safely change and test untested codebases using Feathers'' "Working Effectively with Legacy Code". Use when the user mentions "legacy code", "no tests", "untested codebase", "how do I test this", "... | - | agents |
+| 3271 | **workiom-automation** | Automate Workiom tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3272 | **workiq-copilot** | Query M365 Copilot data via WorkIQ CLI/MCP server. | - | agents |
+| 3273 | **workload-manager-basics** | Manage Google Cloud Workload Manager evaluations and validation rules. | - | agents |
+| 3274 | **workshop-create** | Create or initialize a workshop directory. | - | agents |
+| 3275 | **worksnaps-automation** | Automate Worksnaps tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3276 | **workspace-surface-audit** | Audit active repo, MCP servers, plugins & recommend ECC skills. | - | agents |
+| 3277 | **wowerpoint** | Turn one document into a kawaii NotebookLM slide-deck PDF. Use for "wowerpoint this", "make a deck about <file>", "turn this report into slides", or any request to render a single document as share... | - | agents |
+| 3278 | **wrangler** | Cloudflare Workers CLI for deploying, developing, and managing Workers, KV, R2, D1, Vectorize, Hyperdrive, Workers AI, Containers, Queues, Workflows, Pipelines, and Secrets Store. Load before runni... | - | agents |
+| 3279 | **write-a-skill** | Create new agent skills with proper structure, progressive disclosure, and bundled resources. Use when user wants to create, write, build, or author a new skill. | - | agents |
+| 3280 | **write-coding-standards-from-file** | Write coding standards document from codebase files. | - | agents |
+| 3281 | **write-swift** | How to write modern Swift well — modeling with value types, Swift 6 data-race safety and approachable concurrency (@concurrent, main-actor-by-default, actors, task groups), protocols and generics (... | https://github.com/emilkowalski/skills | agents |
+| 3282 | **writer-automation** | Automate Writer tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3283 | **writer-memory** | Agentic memory system for fiction writers (characters & scenes). | - | agents |
+| 3284 | **writing-beats** | Writing, exploit — assemble raw material into a journey of beats, grounding each term before a beat leans on it. | - | agents |
+| 3285 | **writing-clearly-and-concisely** | Writing clear and concise prose for documentation & UI. | - | agents |
+| 3286 | **writing-for-agents** | Writing documents for AI agents (AGENTS.md, skills). | - | agents |
+| 3287 | **writing-fragments** | Writing, explore — mine raw fragments, no structure yet. | - | agents |
+| 3288 | **writing-great-skills** | Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable. | - | agents |
+| 3289 | **writing-plans** | Writing multi-step execution plans before touching code. | - | agents |
+| 3290 | **writing-shape** | Writing, exploit — shape raw material into an article, paragraph by paragraph. | - | agents |
+| 3291 | **writing-skills** | Creating, editing, and verifying AI agent skills. | - | agents |
+| 3292 | **x-api** | X/Twitter API integration for tweets, threads & search. | - | agents |
+| 3293 | **x-twitter-growth** | X/Twitter growth engine for building audience, crafting viral content, and analyzing engagement. Use when the user wants to grow on X/Twitter, write tweets or threads, analyze their X profile, rese... | - | agents |
+| 3294 | **x-twitter-scraper** | X (Twitter) data platform with REST endpoints & MCP tools. | - | agents |
+| 3295 | **Xero Automation** | Xero Automation: manage invoices, contacts, payments, bank transactions, and accounts in Xero for cloud-based bookkeeping | - | agents |
+| 3296 | **xlsx** | Use this skill any time a spreadsheet file is the primary input or output. This means any task where the user wants to: open, read, edit, or fix an existing .xlsx, .xlsm, .xltx, .csv, or .tsv file ... | - | agents |
+| 3297 | **xlsx-official** | Generating Excel files with xlsx/exceljs in Node.js. Use when generating .xlsx reports, data exports, dashboards, or spreadsheets from database data. | - | agents |
+| 3298 | **xp-practices** | Apply XP practices including pair programming, ensemble programming, continuous integration, and sustainable pace. Use when implementing agile development practices, improving team collaboration, o... | - | agents |
+| 3299 | **y-gy-automation** | Automate Y Gy tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3300 | **yandex-automation** | Automate Yandex tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3301 | **yeet** | Use only when the user explicitly asks to stage, commit, push, and open a GitHub pull request in one flow using the GitHub CLI (`gh`). | - | agents |
+| 3302 | **yelp-automation** | Automate Yelp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3303 | **ynab-automation** | Automate Ynab tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3304 | **yousearch-automation** | Automate Yousearch tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3305 | **youtube-downloader** | Download YouTube videos with customizable quality and format options. Use this skill when the user asks to download, save, or grab YouTube videos. Supports various quality settings (best, 1080p, 72... | - | agents |
+| 3306 | **youtube-full** | Use when the user needs YouTube transcripts, video search, channel browsing, playlist extraction, or content monitoring. Trigger phrases: 'get the transcript for', 'search YouTube for', 'what are t... | - | agents |
+| 3307 | **yuanbao** | Yuanbao (元宝) chat group management. | - | agents |
+| 3308 | **zenrows-automation** | Automate Zenrows tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3309 | **zenserp-automation** | Automate Zenserp tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3310 | **zeplin-automation** | Automate Zeplin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3311 | **zero-hallucination-coder** | Runs a disciplined Discuss -> Map -> Decompose -> Execute -> Verify loop that grounds code in verified structure — no invented APIs, no assumed imports, no placeholder code — with a lazy-senior-dev... | - | agents |
+| 3312 | **zerobounce-automation** | Automate Zerobounce tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3313 | **Zoho Books Automation** | Automate Zoho Books accounting workflows including invoice creation, bill management, contact lookup, payment tracking, and multi-organization support through natural language commands | - | agents |
+| 3314 | **Zoho Desk Automation** | Zoho Desk automation via Rube MCP -- toolkit not currently available in Composio; no ZOHO_DESK_ tools found | - | agents |
+| 3315 | **zoho-automation** | Automate Zoho tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3316 | **zoho-bigin-automation** | Automate Zoho Bigin tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3317 | **zoho-inventory-automation** | Automate Zoho Inventory tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3318 | **zoho-invoice-automation** | Automate Zoho Invoice tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3319 | **zoho-mail-automation** | Automate Zoho Mail tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3320 | **zoho_bigin-automation** | Automate Zoho Bigin tasks via Rube MCP (Composio): pipelines, contacts, companies, products, and small business CRM. Always search tools first for current schemas. | - | agents |
+| 3321 | **zoho_books-automation** | Automate Zoho Books tasks via Rube MCP (Composio): invoices, expenses, contacts, payments, and accounting. Always search tools first for current schemas. | - | agents |
+| 3322 | **zoho_desk-automation** | Automate Zoho Desk tasks via Rube MCP (Composio): tickets, contacts, agents, departments, and help desk operations. Always search tools first for current schemas. | - | agents |
+| 3323 | **zoho_inventory-automation** | Automate Zoho Inventory tasks via Rube MCP (Composio): items, orders, warehouses, shipments, and stock management. Always search tools first for current schemas. | - | agents |
+| 3324 | **zoho_invoice-automation** | Automate Zoho Invoice tasks via Rube MCP (Composio): invoices, estimates, expenses, clients, and payment tracking. Always search tools first for current schemas. | - | agents |
+| 3325 | **zoho_mail-automation** | Automate Zoho Mail tasks via Rube MCP (Composio): email sending, folders, labels, and mailbox management. Always search tools first for current schemas. | - | agents |
+| 3326 | **zoom-out** | Provide broader context and higher-level architectural perspective. | - | agents |
+| 3327 | **zoominfo-automation** | Automate Zoominfo tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3328 | **zustand-store-ts** | Create Zustand stores with TypeScript, subscribeWithSelector middleware, and proper state/action separation. Use when building React state management, creating global stores, or implementing reacti... | - | agents |
+| 3329 | **zylvie-automation** | Automate Zylvie tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |
+| 3330 | **zyte-api-automation** | Automate Zyte API tasks via Rube MCP (Composio). Always search tools first for current schemas. | - | agents |

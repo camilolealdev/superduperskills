@@ -50,6 +50,8 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | tailwind-theme-builder | `frontend-jezweb` | tailwind, css, theme, shadcn | Tailwind v4 + shadcn/ui themed setup |
 | ckm:ui-styling | `ui-ux-pro-max` | radix, tailwind, accessible | shadcn/ui + Radix accessible UIs |
 | tailwind (HF) | `skills` | tailwind, hyperframes, runtime | Tailwind v4 browser-runtime in HyperFrames |
+| ask-sonner | `emilkowalski` | sonner, toast, react | Sonner: toasts, promise/loading, theming |
+| pick-ui-library | `emilkowalski` | components, selection, criteria | Elegir librería de componentes con criterio |
 
 ### 1.3 Design Systems & Tokens
 
@@ -86,6 +88,20 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | audit (impeccable) | `impeccable` | a11y, perf, anti-patterns | WCAG a11y, perf, theming audit |
 | optimize (impeccable) | `impeccable` | perf, bundle, slow | UI perf: loading, rendering, animations |
 
+### 1.4b Motion & Interface Craft (Emil Kowalski)
+
+| Skill | Fuentes | Tags | Propósito |
+|-------|---------|------|-----------|
+| emil-design-eng | `emilkowalski` | craft, polish, detail | Filosofía de pulido de UI y craft de componentes |
+| apple-design | `emilkowalski` | apple, motion, gestures | Motion fluido y materiales estilo Apple para web |
+| animate | `emilkowalski` | motion, transitions | Construir animación desde cero (decisiones + impl.) |
+| animate-expo | `emilkowalski` | react-native, reanimated | Animación y gestos en React Native / Expo |
+| animation-vocabulary | `emilkowalski` | glossary, motion | Nombrar con precisión un efecto de movimiento |
+| review-animations | `emilkowalski` | motion, review | Revisar código de animación existente (solo lectura) |
+| improve-animations | `emilkowalski` | motion, audit, roadmap | Auditoría priorizada de motion + planes |
+| find-animation-opportunities | `emilkowalski` | motion, discovery | Detectar dónde falta animación (solo lectura) |
+| break-ui | `emilkowalski` | edge-cases, stress-test, worst-case | Romper la UI con datos extremos y reportar arreglos |
+
 ### 1.5 Brand & Visual Identity
 
 | Skill | Fuentes | Tags | Propósito |
@@ -102,6 +118,7 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | react-native | `frontend-jezweb` | rn, expo, reanimated, navigation | RN/Expo perf, animations |
 | react-native-expert | `backend-skills` | rn, expo, native, flatlist | RN/Expo, native modules, platform code |
 | flutter-expert | `backend-skills` | flutter, dart, riverpod, bloc | Flutter 3+ cross-platform |
+| mobile-native | `emilkowalski` | pwa, touch, native-feel | Que una web app se sienta nativa en móvil (CSS/meta) |
 
 ### 1.7 Vue / Angular / Alternative
 
@@ -140,6 +157,7 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | swift-expert | `backend-skills` | swift, swiftui, async, actors | SwiftUI, async/await, Vapor |
 | php-pro | `backend-skills` | php8, laravel, symfony, phpstan | PHP 8.3+, Laravel, Symfony |
 | java-architect | `backend-skills` | java, spring, jpa, webflux | Spring Boot 3.x, WebFlux |
+| write-swift | `emilkowalski` | swift, concurrency, testing | Swift moderno: value types, Swift 6, ARC, macros |
 
 ### 2.2 Arquitectura & Diseño
 
@@ -207,6 +225,13 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | monitoring-expert | `backend-skills` | prometheus, grafana, tracing | Monitoring stacks, load testing |
 | sre-engineer | `backend-skills` | slo, error-budget, incident | SLOs, error budgets, capacity |
 | chaos-engineer | `backend-skills` | chaos, resilience, game-days | Chaos experiments, failure injection |
+
+### 3.5 Deploy & Hosting
+
+| Skill | Fuentes | Tags | Propósito |
+|-------|---------|------|-----------|
+| all-deploy | `hainrixz-all-deploy` | deploy, preview, health-check | Detecta stack y despliega (Vercel/Railway/Docker/SSH) con auditoría previa |
+| publish-website | `hainrixz-all-deploy` | static-hosting, github-pages, free | Publicar una web estática gratis sin terminal |
 
 ---
 
@@ -662,6 +687,7 @@ Skills que aparecen en MÚLTIPLES repositorios:
 | find-skills | `skills` | discover, install | Skill discovery |
 | creating-skills | `git-cicd` | create, best-practices | Skill creation guide |
 | skill-creator | `skills` | create, effective | Skill authoring guide |
+| skill-inspector | `nvidia-skillspector` | skill-safety, prompt-injection, supply-chain | Revisar si un skill es seguro antes de instalarlo (SkillSpector + revisión semántica) |
 | caveman | `skills` | compression, tokens, brief | Ultra-compressed communication |
 
 ---

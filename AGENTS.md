@@ -9,6 +9,7 @@ reconstruir la lista completa de skills disponibles y entender el sistema multi-
 |---------|-----------|
 | `UNIFIED-KNOWLEDGE.md` | Taxonomía multi-conocimiento unificada con todas las skills |
 | `skills-inventory.md` | Inventario por repositorio de origen |
+| `IMPROVEMENTS.md` | Backlog de mejoras pendientes para ejecutar en sesiones futuras |
 
 ## Directorios donde buscar skills
 
@@ -67,6 +68,9 @@ alirezarezvani-skills/      # Coleccion masiva (798 SKILL.md) (★23.4k)
 claude-seo-repo/            # SEO tecnico, local, schema, GEO/AEO (★12.6k)
 microsoft-skills-repo/      # Coleccion oficial Microsoft (★2.8k)
 cloudflare-skills-repo/     # Workers, Pages, D1, R2, Durable Objects (★2.5k, oficial)
+emilkowalski-skills/        # 14 skills de motion/diseño: animate, apple-design, break-ui, mobile-native (★)
+skillspector-skills/        # NVIDIA SkillSpector: skill-inspector, revisión de seguridad pre-instalación
+all-deploy-skills/          # Hainrixz/all-deploy: all-deploy + publish-website (despliegue)
 ```
 
 Skills propias (no vienen de un repo externo, escritas para este usuario):

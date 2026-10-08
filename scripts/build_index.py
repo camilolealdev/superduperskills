@@ -5,11 +5,21 @@ Build script for superduperskills repo.
 - Bundles SKILL.md files into skills/
 - Generates SKILLS-INDEX.md with GitHub repo info
 """
-import os, re, json, shutil, stat, subprocess
+import os, re, json, shutil, stat, subprocess, argparse
 from pathlib import Path
 
 BASE = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 REPO_SKILLS = os.path.join(BASE, 'skills')
+
+# '--source repo' regenerates SKILLS-INDEX.md from the bundled skills/ tree only.
+# That keeps the index reproducible on any machine (CI, a fresh clone) instead of
+# depending on whatever happens to be installed under ~/.agents, ~/.claude and
+# ~/.config/opencode.
+_parser = argparse.ArgumentParser(description='Build the superduperskills index.')
+_parser.add_argument('--source', choices=['auto', 'repo'], default='auto',
+                     help="'auto' bundles from the installed skill dirs (default); "
+                          "'repo' rebuilds SKILLS-INDEX.md from skills/ only")
+SOURCE_MODE = _parser.parse_args().source
 
 ORDER = {'agents': 0, 'opencode': 1, 'claude': 2}
 
@@ -73,6 +83,26 @@ GITHUB_URLS = {
     # === OWASP & Threat Modeling ===
     'owasp-security': 'https://github.com/behisecc/claude-security-skills',
     'threat-model-analyst': 'https://github.com/behisecc/claude-security-skills',
+    # === NVIDIA SkillSpector (skill safety scanner) ===
+    'skill-inspector': 'https://github.com/NVIDIA/skillspector',
+    # === Emil Kowalski — design & animation skills ===
+    'animate': 'https://github.com/emilkowalski/skills',
+    'animate-expo': 'https://github.com/emilkowalski/skills',
+    'animation-vocabulary': 'https://github.com/emilkowalski/skills',
+    'apple-design': 'https://github.com/emilkowalski/skills',
+    'ask-sonner': 'https://github.com/emilkowalski/skills',
+    'break-ui': 'https://github.com/emilkowalski/skills',
+    'emil-design-eng': 'https://github.com/emilkowalski/skills',
+    'find-animation-opportunities': 'https://github.com/emilkowalski/skills',
+    'improve-animations': 'https://github.com/emilkowalski/skills',
+    'mobile-native': 'https://github.com/emilkowalski/skills',
+    'pick-ui-library': 'https://github.com/emilkowalski/skills',
+    'prototype': 'https://github.com/emilkowalski/skills',
+    'review-animations': 'https://github.com/emilkowalski/skills',
+    'write-swift': 'https://github.com/emilkowalski/skills',
+    # === Hainrixz deployment skills ===
+    'all-deploy': 'https://github.com/Hainrixz/all-deploy',
+    'publish-website': 'https://github.com/Hainrixz/all-deploy',
 }
 
 # Load skill-lock.json for agents GitHub URLs
@@ -136,7 +166,40 @@ def parse_skill(path):
 
 # Collect all skills, deduplicate by name
 skills = {}
-for repo, base_dir in SKILL_DIRS:
+
+# In repo mode, preserve the origin column recorded by the previous index build.
+_ORIGIN_MAP = {}
+if SOURCE_MODE == 'repo':
+    _index_path = os.path.join(BASE, 'SKILLS-INDEX.md')
+    if os.path.isfile(_index_path):
+        with open(_index_path, encoding='utf-8') as _f:
+            for _line in _f:
+                _m = re.match(r'\|\s*\d+\s*\|\s*\*\*(.+?)\*\*\s*\|.*\|\s*(agents|opencode|claude)\s*\|\s*$', _line)
+                if _m:
+                    _ORIGIN_MAP[_m.group(1)] = _m.group(2)
+
+    for entry in sorted(os.scandir(REPO_SKILLS), key=lambda e: e.name):
+        if not entry.is_dir():
+            continue
+        skill_md = os.path.join(entry.path, 'SKILL.md')
+        if not os.path.isfile(skill_md):
+            continue
+        name, desc, content = parse_skill(skill_md)
+        dir_name = entry.name
+        skills[name] = {
+            'name': name,
+            'dir_name': dir_name,
+            'description': desc,
+            'rel_path': f'{dir_name}/SKILL.md',
+            'repo': _ORIGIN_MAP.get(name, 'repo'),
+            'github_url': GITHUB_URLS.get(name, '') or GITHUB_URLS.get(dir_name, ''),
+            'source_dir': entry.path,
+            'richness': 0,
+            'official': 'anthropics' in dir_name,
+            'content': content,
+        }
+
+for repo, base_dir in ([] if SOURCE_MODE == 'repo' else SKILL_DIRS):
     if not os.path.isdir(base_dir):
         print(f'Warning: {base_dir} not found, skipping')
         continue
@@ -250,9 +313,9 @@ sorted_skills = sorted(skills.values(), key=lambda x: x['name'].lower())
 CATEGORIES = [
     (r'^(ab-testing|ad-creative|ads|analytics|aso|churn-prevention|co-marketing|community-marketing|cro|customer-research|emails?|free-tools|image|launch|lead-magnet|marketing-|onboarding|paywalls|popups?|pricing|product-marketing|referrals?|signup|ai-seo|app-store-optimization|paid-ads|page-cro|form-cro|paywall-upgrade-cro|^promote$|scorecard-marketing|serp-analysis|^social$|social-content|x-twitter-growth|youtube-full|substack-expert|webinar-marketing|geo-optimization|meta-tags-optimizer|local-seo-manager|directory-submissions|campaign-analytics|intl-expansion|rfp-responder|contract-and-proposal-writer|market-research|storybrand-messaging|made-to-stick|one-page-marketing|obviously-awesome|monetizing-innovation|jobs-to-be-done|hundred-million-offers|predictable-revenue|influence-psychology|cold-start-problem|^contagious$|blue-ocean-strategy|good-strategy-bad-strategy|lean-analytics|lean-startup|inspired-product|continuous-discovery|mom-test|negotiation)', 'Marketing & Growth'),
     (r'^(video|hyperframes|gsap|waapi|animejs|lottie|three|css-animations|remotion-to-hyperframes|walkthrough-video|website-to-hyperframes|hyperframes-)', 'Video & Animation'),
-    (r'^(frontend-design|design|design-taste|ui-ux|banner|brand|slides|ckm:|teach-impeccable|quieter|bolder|polish|overdrive|optimize|normalize|harden|extract|distill|delight|critique|colorize|clarify|arrange|animate|adapt|audit|typeset|onboard|color-palette|icon-set|favicon|design-system|design-review|landing-page|product-showcase|impeccable|taste-|brandkit|imagegen-|a11y-|high-end-visual|minimalist-ui|industrial-brutalist|stitch-design|ponytail|awesome-design-md|baseline-ui|canvas-design|create-design-md|drawio-skill|excalidraw-diagram|fixing-accessibility|fixing-metadata|fixing-motion-performance|frontend-dev-guidelines|frontend-ui-engineering|gpt-taste|hooked-ux|improve-ui|ios-hig-design|apple-hig-expert|^landing$|microinteractions|migrate-design-system|mermaidjs|refactoring-ui|responsiveness-check|shadcn-ui|steve-jobs-design-review|^tailwind|theme-factory|top-design|ui-design-system|ui-skills-root|ui-styling|ultimate-design-system-master|ux-audit|ux-heuristics|ux-researcher-designer|ux-writing|vercel-react-best-practices|web-artifacts-builder|web-design-guidelines|web-typography|astro|^aesthetic$|apply-aesthetic|clone-website)', 'Design & UX'),
-    (r'^(python-pro|rust-engineer|golang-pro|csharp|dotnet|java-architect|spring-boot|springboot|nestjs|nextjs|react|vue|angular|flutter|swift|kotlin|php-pro|typescript-pro|javascript-pro|nodejs|fastapi|django|laravel|rails|sql-pro|pandas|database-optimizer|postgres|microservices|api-designer|graphql|websocket|backend|fullstack|code-reviewer|debugging|test-master|spec-miner|legacy-modernizer|architecture-designer|feature-forge|cli-developer|chaos-engineer|embedded-systems|game-developer|rag-architect|ml-pipeline|fine-tuning|prompt-engineer|mcp-developer|playwright-expert|atlassian-mcp|fastapi-expert|api-|code-|cicd|ci-cd|browser-testing|frontend-engineering|fullstack-|observability|security-|database-|schema-|performance-|testing-|debug-|source-driven|doubt-driven|test-driven|incremental|spec-driven|shipping|source-code|adversarial-reviewer|interview-me|ai-security|encryption|caching-|orm-|migration-|open-source|app-development|mobile-development|game-development|engineering|cmd-|grill-|karpathy|senior-|better-auth|auth-md|auth-patterns|cpp-pro|salesforce-developer|sql-database-assistant|stripe-integration-expert|stripe-payments|^supabase|prisma-workflow|typescript-patterns|shopify|wordpress|snowflake-development|spark-engineer|feature-flags-architect|tech-stack-evaluator|deployment-guide|payment-integration|media-processing|markdown-html-orchestrator|okf-open-knowledge-format|obsidian-vault|ms365-tenant-manager|jira-expert|confluence-expert)', 'Development & Backend'),
-    (r'^(docker|devops|terraform|kubernetes|cloud-architect|sre|monitoring|cloudflare|d1-|d1-drizzle|hono-|vite-flare|tanstack-start|cloudflare-api|github-release|git-workflow|git-commit|cicd|github-|git-|container|aws-|azure-|gcp-|cloud-|deploy-|infrastructure|incident-management|disaster-recovery|load-testing|incident|helm-chart-builder|runbook-generator|coolify-operator|^bunny$|pier-cloud|env-secrets-manager|secrets-vault-manager|^deploy$|netlify-deploy|render-deploy|vercel-deploy|python-appservice-deploy|teams-app-developer|agents-sdk|sandbox-sdk|durable-objects|^wrangler$|workers-best-practices|turnstile-spin|copilot-sdk|debugview|appinsights-instrumentation|applicationinsights-web-ts|aspnet-core|winui-app|airunway-aks-setup|install-atk)', 'DevOps & Cloud'),
+    (r'^(break-ui|mobile-native|apple-design|pick-ui-library|ask-sonner|animation-vocabulary|emil-design-eng|frontend-design|design|design-taste|ui-ux|banner|brand|slides|ckm:|teach-impeccable|quieter|bolder|polish|overdrive|optimize|normalize|harden|extract|distill|delight|critique|colorize|clarify|arrange|animate|adapt|audit|typeset|onboard|color-palette|icon-set|favicon|design-system|design-review|landing-page|product-showcase|impeccable|taste-|brandkit|imagegen-|a11y-|high-end-visual|minimalist-ui|industrial-brutalist|stitch-design|ponytail|awesome-design-md|baseline-ui|canvas-design|create-design-md|drawio-skill|excalidraw-diagram|fixing-accessibility|fixing-metadata|fixing-motion-performance|frontend-dev-guidelines|frontend-ui-engineering|gpt-taste|hooked-ux|improve-ui|ios-hig-design|apple-hig-expert|^landing$|microinteractions|migrate-design-system|mermaidjs|refactoring-ui|responsiveness-check|shadcn-ui|steve-jobs-design-review|^tailwind|theme-factory|top-design|ui-design-system|ui-skills-root|ui-styling|ultimate-design-system-master|ux-audit|ux-heuristics|ux-researcher-designer|ux-writing|vercel-react-best-practices|web-artifacts-builder|web-design-guidelines|web-typography|astro|^aesthetic$|apply-aesthetic|clone-website)', 'Design & UX'),
+    (r'^(write-swift|python-pro|rust-engineer|golang-pro|csharp|dotnet|java-architect|spring-boot|springboot|nestjs|nextjs|react|vue|angular|flutter|swift|kotlin|php-pro|typescript-pro|javascript-pro|nodejs|fastapi|django|laravel|rails|sql-pro|pandas|database-optimizer|postgres|microservices|api-designer|graphql|websocket|backend|fullstack|code-reviewer|debugging|test-master|spec-miner|legacy-modernizer|architecture-designer|feature-forge|cli-developer|chaos-engineer|embedded-systems|game-developer|rag-architect|ml-pipeline|fine-tuning|prompt-engineer|mcp-developer|playwright-expert|atlassian-mcp|fastapi-expert|api-|code-|cicd|ci-cd|browser-testing|frontend-engineering|fullstack-|observability|security-|database-|schema-|performance-|testing-|debug-|source-driven|doubt-driven|test-driven|incremental|spec-driven|shipping|source-code|adversarial-reviewer|interview-me|ai-security|encryption|caching-|orm-|migration-|open-source|app-development|mobile-development|game-development|engineering|cmd-|grill-|karpathy|senior-|better-auth|auth-md|auth-patterns|cpp-pro|salesforce-developer|sql-database-assistant|stripe-integration-expert|stripe-payments|^supabase|prisma-workflow|typescript-patterns|shopify|wordpress|snowflake-development|spark-engineer|feature-flags-architect|tech-stack-evaluator|deployment-guide|payment-integration|media-processing|markdown-html-orchestrator|okf-open-knowledge-format|obsidian-vault|ms365-tenant-manager|jira-expert|confluence-expert)', 'Development & Backend'),
+    (r'^(all-deploy|publish-website|docker|devops|terraform|kubernetes|cloud-architect|sre|monitoring|cloudflare|d1-|d1-drizzle|hono-|vite-flare|tanstack-start|cloudflare-api|github-release|git-workflow|git-commit|cicd|github-|git-|container|aws-|azure-|gcp-|cloud-|deploy-|infrastructure|incident-management|disaster-recovery|load-testing|incident|helm-chart-builder|runbook-generator|coolify-operator|^bunny$|pier-cloud|env-secrets-manager|secrets-vault-manager|^deploy$|netlify-deploy|render-deploy|vercel-deploy|python-appservice-deploy|teams-app-developer|agents-sdk|sandbox-sdk|durable-objects|^wrangler$|workers-best-practices|turnstile-spin|copilot-sdk|debugview|appinsights-instrumentation|applicationinsights-web-ts|aspnet-core|winui-app|airunway-aks-setup|install-atk)', 'DevOps & Cloud'),
     (r'^(voltagent|composio|mcp-builder|elevenlabs|create-voltagent|nemoclaw|gws-|google-apps-script|google-chat|agent-browser|prompt-architect|prompt-improver|pinokio|agent-|ai-|llm|rag|chatbot|autonomous|autoresearch|google-|atlassian|agenthub|flow-nexus|swarm|sequential-thinking|mcp-management|mcp-server-builder|context-engine|docs-seeker|deep-research|research-|repomix|notebooklm|^browser$|browser-automation|chrome-devtools|high-perf-browser|claude-api|^claude-code$|claude-coach|zero-hallucination-coder|universal-scraping-architect|workflow-builder|^figma$|^linear$|^sentry$|jupyter-notebook|^kql$|pydantic-models-py|langsmith-fetch|openai-docs|chatgpt-apps|declarative-agent-developer|^openclaw$|knowledge-agent|smart-explore|continual-learning|memory-review|memory-status|mem-search|reasoningbank|agentdb)', 'AI & Agents'),
     (r'^(seo|keyword|schema|content-brief|content-gap|content-quality|content-refresher|on-page|technical-seo|meta-optimizer|rank-tracker|backlink|domain-authority|content-auditor|competitor-analysis|geo-content|ai-visibility|entity-optimizer|memory-management|alert-manager|performance-reporter|programmatic-seo|cannibalization|internal-link|site-architecture|aeo)', 'SEO & Content'),
     (r'^(cold-email|sales-enablement|proposal-writer|resume-cover-letter|award-application|strategy-document|sales-|pitch-deck|investor-|fundraising|cold-calling)', 'Sales & Comms'),
@@ -262,7 +325,7 @@ CATEGORIES = [
     (r'^(compliance|gdpr|ccpa|hippa|fda|soc-|iso-|legal-|ai-act|regulation|policy|risk-|audit-|governance|data-privacy|data-protection|eu-ai-act-specialist|isms-audit-expert|iso13485-audit-prep|iso27001-audit-prep|iso42001-specialist|soc2-audit-prep|soc2-compliance|information-security-manager-iso27001|mdr-745-specialist|qms-audit-expert|quality-manager-qmr|quality-manager-qms-iso13485|ra-qm-skills|regulatory-affairs-head|threat-detection|owasp-security|secure-code-guardian|plugin-audit|dependency-auditor|data-quality-auditor|aims-audit|clinical-research|agentshield)', 'Compliance & Legal'),
     (r'^(loop-|md-|inbox-|andreessen|behuman|full-|brainstorm|career|hiring|recruiting|hr-|people-|culture|onboarding-|training|learning-|mentoring|coaching)', 'Productivity & People'),
     (r'^(qe-|qcsd-|test-|^tdd$|tdd-guide|tdd-london-chicago|strict-tdd|mutation-testing|contract-testing|^coverage$|coverage-drop-investigator|coverage-guard|exploratory-testing|context-driven-testing|compatibility-testing|localization-testing|mobile-testing|holistic-testing|middleware-testing|visual-testing|webapp-testing|web-testing|^vitest$|playwright-pro|^pw$|skill-tester|skill-evaluation|sherlock-review|shift-left-testing|shift-right-testing|regression-testing|pentest-validation|^qa$|e2e-flow-verifier|diagnosing-bugs|systematic-debugging|root-cause|^no-skip$|freeze-tests|stress-test|testcontainers|testrail|debug-loop|n8n-.*-testing|strix|penetration-testing|ci-security-scanning|fix-security|managed-pentesting)', 'Testing & QA'),
-    (r'^(ring:|ring-|pragmatic-programmer|clean-code|clean-architecture|domain-driven-design|domain-modeling|refactoring-patterns|working-with-legacy-code|software-design-philosophy|^system-design$|codebase-design|codebase-onboarding|monorepo-navigator|^tech-debt|remove-technical-debt|improve-codebase-architecture|ubiquitous-language|team-topologies|xp-practices|sparc-methodology|^wayfinder$|^implement$|^prototype$|spec-to-repo|^to-spec$|^to-tickets$|^to-questionnaire$|request-refactor-plan|resolving-merge-conflicts|^pr-review|^handoff$|claude-handoff|batch-grill-me|^grilling$|^ask-matt$|setup-matt-pocock|writing-great-skills|write-a-skill|skill-creator|skill-builder|skill-security-auditor|skill-stats|creating-skills|find-skills|template-skill|sample-skill|^init$|^setup$|^spawn$|^run$|^execute$|^fix$|focused-fix|^decide$|^reflect$|^remember$|self-eval|self-improving-agent|^loop$|iterative-loop|^merge$|^generate$|^report$|^status$|^roast$|^teach$|^wizard$|^caveman|cavecrew|^token-build$|^token-efficiency$|^token-savings$|^tokensaver$|systematic-debugging|root-cause-tracing|collision-zone-thinking|defense-in-depth-validation|inversion-exercise|meta-pattern-recognition|simplification-cascades|scale-game|when-stuck|brutal-honesty-review|verification-before-completion|verification-.-quality-assurance|slop-eval|skillopt-sleep|ralph-loop|migrate-to-codex|migrate-to-shoehorn|learn-codebase|pathfinder|problem-solving$|what-the|yeet|hatch-pet|raffle-winner-picker|babysit)', 'Engineering Practices'),
+    (r'^(skill-inspector|ring:|ring-|pragmatic-programmer|clean-code|clean-architecture|domain-driven-design|domain-modeling|refactoring-patterns|working-with-legacy-code|software-design-philosophy|^system-design$|codebase-design|codebase-onboarding|monorepo-navigator|^tech-debt|remove-technical-debt|improve-codebase-architecture|ubiquitous-language|team-topologies|xp-practices|sparc-methodology|^wayfinder$|^implement$|^prototype$|spec-to-repo|^to-spec$|^to-tickets$|^to-questionnaire$|request-refactor-plan|resolving-merge-conflicts|^pr-review|^handoff$|claude-handoff|batch-grill-me|^grilling$|^ask-matt$|setup-matt-pocock|writing-great-skills|write-a-skill|skill-creator|skill-builder|skill-security-auditor|skill-stats|creating-skills|find-skills|template-skill|sample-skill|^init$|^setup$|^spawn$|^run$|^execute$|^fix$|focused-fix|^decide$|^reflect$|^remember$|self-eval|self-improving-agent|^loop$|iterative-loop|^merge$|^generate$|^report$|^status$|^roast$|^teach$|^wizard$|^caveman|cavecrew|^token-build$|^token-efficiency$|^token-savings$|^tokensaver$|systematic-debugging|root-cause-tracing|collision-zone-thinking|defense-in-depth-validation|inversion-exercise|meta-pattern-recognition|simplification-cascades|scale-game|when-stuck|brutal-honesty-review|verification-before-completion|verification-.-quality-assurance|slop-eval|skillopt-sleep|ralph-loop|migrate-to-codex|migrate-to-shoehorn|learn-codebase|pathfinder|problem-solving$|what-the|yeet|hatch-pet|raffle-winner-picker|babysit)', 'Engineering Practices'),
     (r'(-automation$| Automation$)|^(figma-|notion-|slack-|m365-|microsoft-|entra-|gh-|connect-apps|zapier|make-com)', 'Integrations & Automation'),
 ]
 
@@ -290,9 +353,10 @@ lines = [
     '| Repo | Location | Count |',
     '|------|----------|-------|',
 ]
-for repo_name, label in [('agents', '~/.agents/skills/'), ('opencode', '~/.config/opencode/skills/'), ('claude', '~/.claude/skills/')]:
+for repo_name, label in [('agents', '~/.agents/skills/'), ('opencode', '~/.config/opencode/skills/'), ('claude', '~/.claude/skills/'), ('repo', '`skills/` (bundled)')]:
     count = sum(1 for s in sorted_skills if s['repo'] == repo_name)
-    lines.append(f'| **{repo_name}** | `{label}` | {count} |')
+    if count:
+        lines.append(f'| **{repo_name}** | `{label}` | {count} |')
 lines.extend(['', '---', ''])
 
 lines.append('## By Category\n')
