@@ -171,11 +171,17 @@ BOX = {
 WORKSPACE_DIR = os.getcwd()
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Locate central skills vault (Repo skills/ -> Workspace skills/ -> ~/.claude/skills)
+# Vault downloaded by `sds update` when the CLI is installed without the skills (npm)
+VAULT_CACHE = os.path.join(os.path.expanduser('~'), '.superduperskills', 'repo')
+VAULT_REPO_URL = 'https://github.com/camilolealdev/superduperskills.git'
+
+# Locate central skills vault (Repo skills/ -> Workspace skills/ -> cached vault -> ~/.claude/skills)
 if os.path.isdir(os.path.join(REPO_ROOT, 'skills')):
     SKILLS_DIR = os.path.join(REPO_ROOT, 'skills')
 elif os.path.isdir(os.path.join(WORKSPACE_DIR, 'skills')):
     SKILLS_DIR = os.path.join(WORKSPACE_DIR, 'skills')
+elif os.path.isdir(os.path.join(VAULT_CACHE, 'skills')):
+    SKILLS_DIR = os.path.join(VAULT_CACHE, 'skills')
 else:
     SKILLS_DIR = os.path.join(os.path.expanduser('~'), '.claude', 'skills')
 
@@ -2164,10 +2170,18 @@ class SkillUpdateEngine:
     @staticmethod
     def update_vault() -> Tuple[bool, str]:
         try:
-            res = subprocess.run(['git', 'pull', 'origin', 'master'], cwd=REPO_ROOT, capture_output=True, text=True, timeout=15)
+            if os.path.isdir(os.path.join(REPO_ROOT, '.git')):
+                cmd, cwd = ['git', 'pull', 'origin', 'master'], REPO_ROOT
+            elif os.path.isdir(os.path.join(VAULT_CACHE, '.git')):
+                cmd, cwd = ['git', 'pull', 'origin', 'master'], VAULT_CACHE
+            else:  # npm install: no repo next to the CLI, so fetch the vault into the cache
+                os.makedirs(os.path.dirname(VAULT_CACHE), exist_ok=True)
+                cmd = ['git', '-c', 'core.longpaths=true', 'clone', '--depth', '1', VAULT_REPO_URL, VAULT_CACHE]
+                cwd = None
+            res = subprocess.run(cmd, cwd=cwd, capture_output=True, text=True, timeout=900)
             if res.returncode == 0:
                 return True, "Bóveda de skills actualizada exitosamente desde GitHub."
-            return False, f"Git pull falló: {res.stderr.strip()}"
+            return False, f"Git falló: {res.stderr.strip()}"
         except Exception as e:
             return False, f"Error al actualizar: {e}"
 

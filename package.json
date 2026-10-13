@@ -6,9 +6,7 @@
   "files": [
     "bin",
     "scripts",
-    "completions",
-    "skills",
-    "SKILLS-INDEX.md"
+    "completions"
   ],
   "bin": {
     "superduperskills": "./bin/superduperskills.js",
