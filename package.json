@@ -3,6 +3,13 @@
   "version": "6.0.0",
   "description": "The Ultimate Multi-Agent Skills Hub & Governance Suite (3,300+ Curated AI Agent Skills for Claude, Gemini, Cursor, Codex)",
   "main": "bin/superduperskills.js",
+  "files": [
+    "bin",
+    "scripts",
+    "completions",
+    "skills",
+    "SKILLS-INDEX.md"
+  ],
   "bin": {
     "superduperskills": "./bin/superduperskills.js",
     "sds": "./bin/superduperskills.js"
