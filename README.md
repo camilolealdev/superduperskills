@@ -192,31 +192,30 @@ cd superduperskills
 ### 🇬🇧 English — Run the CLI (zero install)
 
 ```bash
-npx github:camilolealdev/superduperskills        # Node runtime (anywhere)
-pnpm dlx github:camilolealdev/superduperskills   # pnpm equivalent
+npx superduperskills        # Node runtime (anywhere)
+pnpm dlx superduperskills   # pnpm equivalent
 python scripts/superduper_cli.py ui   # native Python TUI (mouse & fuzzy search)
 ```
 
 ### 🇪🇸 Español — Ejecuta el CLI (sin instalación)
 
 ```bash
-npx github:camilolealdev/superduperskills        # runtime Node (en cualquier sitio)
-pnpm dlx github:camilolealdev/superduperskills   # equivalente con pnpm
+npx superduperskills        # runtime Node (en cualquier sitio)
+pnpm dlx superduperskills   # equivalente con pnpm
 python scripts/superduper_cli.py ui   # TUI nativa Python (ratón y búsqueda fuzzy)
 ```
 
 ### 🪟 Windows PowerShell · Terminal (Linux/macOS)
 
-The package is not on the npm registry yet (`npm install -g superduperskills` returns 404). Install from the repo · El paquete aún no está en npm; instala desde el repo:
-
 ```powershell
-git clone https://github.com/camilolealdev/superduperskills.git
-cd superduperskills
-npm install -g .                              # provides `sds` and `superduperskills`
+npm install -g superduperskills               # provides `sds` and `superduperskills`
 sds                                           # interactive REPL
 sds ui                                        # web dashboard at http://localhost:4242
+sds update                                    # download the skills vault (~/.superduperskills)
 sds completions install --shell powershell    # tab completion (bash | zsh | fish | powershell)
 ```
+
+The npm package ships only the CLI; skills come from `sds update`, `~/.claude/skills`, or a clone of this repo · El paquete npm incluye solo el CLI; los skills vienen de `sds update`, `~/.claude/skills` o de un clon del repo.
 
 Requires Node ≥ 18 and Python 3 (`python`, `py -3` or `python3`). Do not type the leading `$` of docs snippets in PowerShell · No escribas el `$` inicial en PowerShell.
 
