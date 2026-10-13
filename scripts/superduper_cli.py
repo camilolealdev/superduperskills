@@ -31,13 +31,19 @@ import threading
 from pathlib import Path
 from typing import Dict, List, Set, Optional, Tuple, Any
 
+try:  # Windows-only keypress API (arrow-key navigation)
+    import msvcrt
+    HAS_MSVCRT = True
+except ImportError:
+    HAS_MSVCRT = False
+
 if hasattr(sys.stdout, 'reconfigure'):
     sys.stdout.reconfigure(encoding='utf-8')
 
 # =============================================================================
 # 1. VERSION, METADATA & CROSS-PLATFORM KEY READER
 # =============================================================================
-__version__ = "6.0.0"
+__version__ = "6.0.1"
 __codename__ = "WorldClass"
 
 
@@ -1473,6 +1479,117 @@ class StackWatcherEngine:
                 except Exception:
                     snapshot[rel_file] = 1.0
         return snapshot
+
+# =============================================================================
+# DESKTOP INTEGRATION (Electron wrapper config; used by `init` and `desktop`)
+# =============================================================================
+class DesktopIntegration:
+    """Desktop app support hooks — Electron wrapper config, tray icon, auto-scan."""
+    
+    @staticmethod
+    def generate_electron_config() -> Dict[str, Any]:
+        """Generate Electron wrapper configuration."""
+        return {
+            "name": "SuperDuperSkills Desktop",
+            "version": __version__,
+            "main": "main.js",
+            "window": {
+                "width": 1200,
+                "height": 800,
+                "title": f"SuperDuperSkills v{__version__} — Agentic CLI Hub",
+                "icon": os.path.join(WORKSPACE_DIR, "icon-512.png"),
+                "darkTheme": True
+            },
+            "tray": {
+                "enabled": True,
+                "icon": os.path.join(WORKSPACE_DIR, "icon-192.png"),
+                "tooltip": f"SuperDuperSkills v{__version__}",
+                "menu": ["Open CLI", "Scan Project", "View Active Skills", "Quit"]
+            },
+            "autoScan": {
+                "enabled": True,
+                "onLaunch": True,
+                "intervalMinutes": 30
+            },
+            "terminal": {
+                "type": "xterm",
+                "fontSize": 14,
+                "fontFamily": "JetBrains Mono, Fira Code, monospace",
+                "theme": {
+                    "background": "#0c0e13",
+                    "foreground": "#e8e6e1",
+                    "cursorAccent": "#00e5a0",
+                    "selectionBackground": "rgba(0, 229, 160, 0.3)"
+                }
+            }
+        }
+    
+    @staticmethod
+    def save_desktop_config():
+        """Save desktop integration config to .agents/desktop.json."""
+        os.makedirs(AGENTS_DIR, exist_ok=True)
+        config = DesktopIntegration.generate_electron_config()
+        with open(DESKTOP_CONFIG, 'w', encoding='utf-8') as f:
+            json.dump(config, f, indent=2, ensure_ascii=False)
+        return DESKTOP_CONFIG
+    
+    @staticmethod
+    def generate_electron_main() -> str:
+        """Generate the Electron main.js entry point."""
+        return '''// SuperDuperSkills Desktop — Electron Main Process
+const { app, BrowserWindow, Tray, Menu, shell } = require('electron');
+const path = require('path');
+const { spawn } = require('child_process');
+
+let mainWindow;
+let tray;
+
+function createWindow() {
+  mainWindow = new BrowserWindow({
+    width: 1200,
+    height: 800,
+    title: 'SuperDuperSkills Desktop',
+    icon: path.join(__dirname, '..', 'icon-512.png'),
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false
+    },
+    backgroundColor: '#0c0e13'
+  });
+
+  mainWindow.loadURL('data:text/html,<html><body style="background:#0c0e13;color:#e8e6e1;font-family:monospace;display:flex;align-items:center;justify-content:center;height:100vh;"><h1>🚀 SuperDuperSkills Desktop</h1><p>Terminal launching...</p></body></html>');
+  
+  // Open external links in browser
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    shell.openExternal(url);
+    return { action: 'deny' };
+  });
+}
+
+function createTray() {
+  tray = new Tray(path.join(__dirname, '..', 'icon-192.png'));
+  tray.setToolTip('SuperDuperSkills v4.0');
+  
+  const contextMenu = Menu.buildFromTemplate([
+    { label: 'Open CLI', click: () => mainWindow?.show() },
+    { label: 'Scan Project', click: () => { /* trigger scan */ } },
+    { type: 'separator' },
+    { label: 'Quit', click: () => app.quit() }
+  ]);
+  
+  tray.setContextMenu(contextMenu);
+  tray.on('double-click', () => mainWindow?.show());
+}
+
+app.whenReady().then(() => {
+  createWindow();
+  createTray();
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') app.quit();
+});
+'''
 
 # =============================================================================
 # 17. COMPANION WEB UI MICRO-SERVER (ZERO-DEPENDENCY)
