@@ -217,6 +217,17 @@ All housed under `backend-arch/skills-catalog/`. This is a **complete Agile deli
 ### HyperFrames (Video Compositions)
 | Skill | Source | GitHub | Purpose |
 |-------|--------|--------|---------| hyperframes | skills | https://github.com/heygen-com/hyperframes | Video compositions, captions, TTS, audio-reactive|| hyperframes-cli | skills | https://github.com/heygen-com/hyperframes | CLI: init, lint, preview, render, transcribe|| hyperframes-media | skills | https://github.com/heygen-com/hyperframes | TTS (Kokoro), transcription (Whisper), bg removal (u2net)|| hyperframes-registry | skills | https://github.com/heygen-com/hyperframes | Install registry blocks/components|| website-to-hyperframes | skills | https://github.com/heygen-com/hyperframes | Capture website â†’ video from URL|| remotion-to-hyperframes | skills | https://github.com/heygen-com/hyperframes | Port Remotion React comps to HyperFrames HTML|
+### Video: brag · HyperFrames · Remotion (synced 2026-10-12)
+| Skill | Source | GitHub | Purpose |
+|-------|--------|--------|---------|
+| brag, brag-slim | skills | https://github.com/latent-spaces/brag | Project/site → shareable launch video (music mp3s omitted) |
+| hyperframes-core, -animation, -audio, -creative, -keyframes, -studio | skills | https://github.com/heygen-com/hyperframes | HyperFrames authoring, motion, audio, studio |
+| media-use, motion-graphics, general-video, slideshow, embedded-captions | skills | https://github.com/heygen-com/hyperframes | Media, captions, decks, motion graphics |
+| faceless-explainer, music-to-video, pr-to-video, product-launch-video, talking-head-recut | skills | https://github.com/heygen-com/hyperframes | Video recipes by use case |
+| remotion-best-practices, -captions, -create, -docs, -interactivity, -maps, -markup, -multimedia, -render, -saas, -studio, -upgrade | skills | https://github.com/remotion-dev/remotion (packages/skills) | Official Remotion skills |
+
+Updated in place: hyperframes, hyperframes-cli, hyperframes-registry, remotion-to-hyperframes, remotion-best-practices. Skipped: upstream `figma` (name collides with the existing, unrelated `figma` skill).
+
 ### Animation Libraries
 | Skill | Source | GitHub | Purpose |
 |-------|--------|--------|---------| gsap | skills | https://github.com/heygen-com/hyperframes | gsap.to/from/timeline in HyperFrames|| css-animations | skills | https://github.com/heygen-com/hyperframes | CSS keyframes in HyperFrames|| waapi | skills | https://github.com/heygen-com/hyperframes | Web Animations API (element.animate) in HyperFrames|| animejs | skills | https://github.com/heygen-com/hyperframes | Anime.js in HyperFrames|| three | skills | https://github.com/heygen-com/hyperframes | Three.js/WebGL in HyperFrames|| lottie | skills | https://github.com/heygen-com/hyperframes | Lottie/dotLottie in HyperFrames|| tailwind | skills | https://github.com/heygen-com/hyperframes | Tailwind v4 browser-runtime in HyperFrames|

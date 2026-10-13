@@ -1,15 +1,45 @@
 ---
 name: remotion-to-hyperframes
-description: Translate an existing Remotion (React-based) video composition into a HyperFrames HTML composition. Use ONLY when the user explicitly asks to port, convert, migrate, translate, or rewrite a Remotion composition as HyperFrames — for example "port my Remotion project to HyperFrames", "convert this Remotion code to HyperFrames", "migrate from Remotion", "translate this Remotion comp", or "rewrite this as HyperFrames HTML". Do NOT use when (a) the user is authoring a NEW HyperFrames composition, even if they have or are A/B-testing a similar Remotion video; (b) the user mentions Remotion in passing without asking for migration; (c) the user shares Remotion code as reference material rather than asking for a translation; (d) the user asks for "the same video as my Remotion one" without explicitly asking to migrate the source — treat that as a fresh HyperFrames build. When in doubt, default to authoring a native HyperFrames composition with the `hyperframes` skill instead. Skill detects unsupported patterns (useState, useEffect with side effects, async calculateMetadata, third-party React component libraries, `@remotion/lambda` features) and recommends the runtime interop escape hatch instead of attempting a lossy translation.
+description: 'Port an existing Remotion (React) composition''s source to HyperFrames HTML. Use ONLY on an explicit ask to port/convert/migrate/translate a Remotion source — one-way, Remotion-only. A passing Remotion mention, reference-only code, or "make something like my Remotion video" is a fresh build (/general-video). Unclear → /hyperframes.'
 ---
 
+**Plugin installs:** Before setup or freshness commands, follow [plugin execution rules](../hyperframes/references/plugin-installation.md) when this skill is inside a HyperFrames plugin. Standalone installs keep the update instructions below.
+
+> **First, keep this skill fresh — confirm with the user before running:** `npx hyperframes skills update remotion-to-hyperframes`. A fast no-op when everything is current; otherwise it refreshes this skill plus the core domain skills it depends on before you rely on them.
+
 # Remotion to HyperFrames
+
+> **The front door is `/hyperframes`.** Use this **only** to port an existing **Remotion** (React) composition's source into HyperFrames, one way. Authoring a **new** composition, re-creating from a non-Remotion source (After Effects, Framer Motion, plain React / CSS — there is no Remotion source to translate), a passing Remotion mention, or any uncertainty → read `/hyperframes` first: the intent layer owns every route decision.
 
 ## Overview
 
 Translate Remotion (React-based) video compositions into HyperFrames (HTML + GSAP) compositions. Most Remotion idioms have direct HyperFrames equivalents — the translation is mechanical for ~80% of typical compositions. This skill encodes the mapping and guards against the lossy 20% by refusing to translate patterns that don't fit HF's seek-driven model and recommending the runtime interop pattern from [PR #214](https://github.com/heygen-com/hyperframes/pull/214) instead.
 
 The skill ships with a **tiered test corpus** (T1–T4, 4 fixtures total) that grades translations against measured SSIM thresholds. Don't translate without running the eval — a translation that "looks right" but renders 0.05 SSIM lower than the validated baseline is silently wrong.
+
+## When to use
+
+**Use this skill ONLY when the user explicitly asks to migrate from Remotion.** Example trigger phrases:
+
+- "port my Remotion project to HyperFrames"
+- "convert this Remotion code to HyperFrames"
+- "migrate from Remotion"
+- "translate this Remotion comp"
+- "rewrite this as HyperFrames HTML"
+
+**Do NOT use this skill when:**
+
+- (a) The user is authoring a **new** HyperFrames composition, even if they have or are A/B-testing a similar Remotion video.
+- (b) The user mentions Remotion in passing without asking for migration.
+- (c) The user shares Remotion code as reference material rather than asking for a translation.
+- (d) The user asks for "the same video as my Remotion one" without explicitly asking to migrate the source — treat that as a fresh HyperFrames build.
+
+**NOT SUPPORTED (decline — this is not what this skill does):**
+
+- **The reverse direction.** Exporting a HyperFrames composition back out _to_ Remotion (or to any other framework) is not a workflow — the translation is Remotion → HyperFrames only. Say so plainly.
+- **Non-Remotion sources.** An After Effects project (`.aep`), a Framer Motion / plain-React / CSS animation, or any other tool's source is not a Remotion composition — there is no Remotion source to translate. Re-create it natively via `/general-video`, or decline if HyperFrames can't represent it.
+
+When in doubt, return to `/hyperframes`; its intent layer picks the route.
 
 ## Workflow
 
@@ -39,15 +69,16 @@ Read [`references/api-map.md`](references/api-map.md) — the index of every Rem
 
 Don't load all of them — load only what the specific source needs.
 
+**Search the live catalog for any visual effect the table does not map.** When the source paints a look with no HF API equivalent — a scanline/CRT overlay, a glitch or chromatic-aberration pass, a shader wipe, a film-grain treatment — run `npx hyperframes catalog --query "<the effect, in plain English>" --json` before hand-writing it in GSAP. The search needs **nothing installed**: no project, no prior `add`, no account. It ranks the whole hosted registry (~400 blocks and components) from any directory, and `transitions.md` already takes this route for `clockWipe()` / `iris()` via `npx hyperframes add sdf-iris`. A real component is closer to the source than a hand-approximation, so it usually raises the SSIM rather than lowering it — but the render diff in Step 4 is still the arbiter. Hand-write the effect when a search returns nothing that fits, and record the substitution in `TRANSLATION_NOTES.md` either way.
+
 ### Step 3: Generate the HF composition
 
 Emit `index.html` with:
 
 - Root `<div id="stage">` carrying the composition's `data-composition-id`, `data-start="0"`, `data-duration` (in seconds), `data-fps`, `data-width`, `data-height`, plus one `data-*` per scalar prop.
-- A flat list of scene divs with `data-start` / `data-duration` / `data-track-index`.
-- Inline `<style>` for layout; CSS sets the `from` state of every animated property.
-- A single `<script>` tag at the bottom containing one paused `gsap.timeline({paused: true})`. Every Remotion `useCurrentFrame()` derivation becomes a tween on this timeline at the right offset.
-- `window.__timelines["<composition-id>"] = tl;` registers the timeline with HF's runtime.
+- One host `<div>` per scene with `data-composition-src="compositions/<scene>.html"` and `data-start` / `data-duration` / `data-track-index`. The root holds no nested layout.
+- One `compositions/<scene>.html` per scene (a `<template>` sub-composition): its inline `<style>` for layout (CSS sets the `from` state of every animated property), its markup, and one paused `gsap.timeline({paused: true})` in the scene's local time. Every Remotion `useCurrentFrame()` derivation becomes a tween on that timeline at the offset within the scene.
+- `window.__timelines["<scene-id>"] = tl;` in each scene file, and `window.__timelines["<composition-id>"]` for the root's own (possibly empty) timeline.
 
 Custom React subcomponents inline as repeated HTML using the prop interface as the template (see [`parameters.md`](references/parameters.md) for the per-instance `data-*` pattern).
 
@@ -60,7 +91,7 @@ Run the eval harness — [`references/eval.md`](references/eval.md) for the full
 cd remotion-src && npx remotion render <CompositionId> out/baseline.mp4
 
 # Render HF translation
-cd ../hf-src && npx hyperframes render --output ../hf.mp4
+cd ../hf-src && npx hyperframes render --skill=remotion-to-hyperframes --output ../hf.mp4
 
 # SSIM diff
 ../../scripts/render_diff.sh ./remotion-src/out/baseline.mp4 ./hf.mp4 ./diff

@@ -973,7 +973,7 @@ header {
   color: #a7f3d0;
   overflow-x: auto;
 }
-.terminal-body .prompt { color: var(--accent); }
+.terminal-body .prompt { color: var(--accent); user-select: none; -webkit-user-select: none; }
 .terminal-body .comment { color: var(--ink-muted); }
 .terminal-body .cmd { color: var(--comic-yellow); }
 .terminal-body .flag { color: var(--comic-blue); }
@@ -1242,7 +1242,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
         <p>Ejecuta el asistente interactivo o califica tu proyecto automáticamente con el CLI WorldClass v6.0.</p>
         <div class="hud-telemetry-box accent">
           <span class="box-title">▶ TERMINAL QUICKSTART</span>
-          <code>$ npx superduperskills</code><br>
+          <code>$ npx github:camilolealdev/superduperskills</code><br>
           <span style="color:var(--ink-muted); font-size:0.75rem;">o con interfaz gráfica web local:</span><br>
           <code>$ python scripts/superduper_cli.py ui</code>
         </div>
@@ -1841,7 +1841,7 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
         </div>
         <div class="terminal-body">
 <span class="comment"># Install CLI globally</span>
-<span class="prompt">$</span> <span class="cmd">npm</span> <span class="flag">install -g superduperskills</span>
+<span class="prompt">$</span> <span class="cmd">npm</span> <span class="flag">install -g github:camilolealdev/superduperskills</span>
 
 <span class="comment"># Launch interactive REPL (with mouse navigation)</span>
 <span class="prompt">$</span> <span class="cmd">sds</span>
@@ -1862,10 +1862,10 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
         </div>
         <div class="terminal-body">
 <span class="comment"># Install globally</span>
-<span class="prompt">$</span> <span class="cmd">pnpm</span> <span class="flag">add -g superduperskills</span>
+<span class="prompt">$</span> <span class="cmd">pnpm</span> <span class="flag">add -g github:camilolealdev/superduperskills</span>
 
 <span class="comment"># Or run directly via dlx</span>
-<span class="prompt">$</span> <span class="cmd">pnpm</span> <span class="flag">dlx superduperskills</span>
+<span class="prompt">$</span> <span class="cmd">pnpm</span> <span class="flag">dlx github:camilolealdev/superduperskills</span>
 
 <span class="comment"># Query Terminal Copilot</span>
 <span class="prompt">$</span> <span class="cmd">sds</span> <span class="flag">ask "how to structure nextjs app router"</span>
@@ -1883,10 +1883,10 @@ html[data-theme="light"] .theme-toggle .icon-sun { display: block; }
         </div>
         <div class="terminal-body">
 <span class="comment"># Install globally</span>
-<span class="prompt">$</span> <span class="cmd">bun</span> <span class="flag">add -g superduperskills</span>
+<span class="prompt">$</span> <span class="cmd">bun</span> <span class="flag">add -g github:camilolealdev/superduperskills</span>
 
 <span class="comment"># Or run directly</span>
-<span class="prompt">$</span> <span class="cmd">bunx</span> <span class="flag">superduperskills</span>
+<span class="prompt">$</span> <span class="cmd">bunx</span> <span class="flag">github:camilolealdev/superduperskills</span>
 
 <span class="comment"># Auto-calibrate mode from Git branch</span>
 <span class="prompt">$</span> <span class="cmd">sds</span> <span class="flag">auto-branch</span>

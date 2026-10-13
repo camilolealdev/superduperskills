@@ -1480,17 +1480,11 @@ class WebCompanionHandler(http.server.BaseHTTPRequestHandler):
     def _send_json(self, data, status=200):
         self.send_response(status)
         self.send_header('Content-Type', 'application/json; charset=utf-8')
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         self.end_headers()
         self.wfile.write(json.dumps(data, ensure_ascii=False).encode('utf-8'))
 
     def do_OPTIONS(self):
         self.send_response(200)
-        self.send_header('Access-Control-Allow-Origin', '*')
-        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
-        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
         self.end_headers()
 
     def do_GET(self):
@@ -1562,11 +1556,13 @@ class WebCompanionHandler(http.server.BaseHTTPRequestHandler):
                 self._send_json({"error": "skill_name required"}, 400)
                 return
             ok, msg = ManifestController.toggle_skill(skill_name, force_state=state)
+            msg = re.sub(r'\x1b\[[0-9;]*m', '', msg)
             self._send_json({"success": ok, "message": msg, "manifest": ManifestController.load_active_manifest()})
 
         elif path == '/api/mode':
             mode_key = payload.get('mode', '')
             ok, msg = MissionModesEngine.apply_mode(mode_key)
+            msg = re.sub(r'\x1b\[[0-9;]*m', '', msg)
             self._send_json({"success": ok, "message": msg, "manifest": ManifestController.load_active_manifest()})
 
         else:
@@ -1577,13 +1573,20 @@ class WebCompanionServer:
 
     @staticmethod
     def start(port: int = 4242, open_browser: bool = True):
-        server_address = ('', port)
-        try:
-            httpd = socketserver.TCPServer(server_address, WebCompanionHandler)
-        except OSError:
-            port = 4243
-            server_address = ('', port)
-            httpd = socketserver.TCPServer(server_address, WebCompanionHandler)
+        # Threaded + loopback-only: an idle browser socket must not freeze the
+        # server, and the toggle/mode POSTs must not be reachable from the LAN.
+        httpd = None
+        for candidate in range(port, port + 10):
+            try:
+                httpd = http.server.ThreadingHTTPServer(('127.0.0.1', candidate), WebCompanionHandler)
+                port = candidate
+                break
+            except OSError:
+                continue
+        if httpd is None:
+            print(f"  {C.ROSE}✖ No free port in {port}-{port + 9}. Use --port <n>.{C.RESET}")
+            sys.exit(1)
+        httpd.daemon_threads = True
 
         url = f"http://localhost:{port}"
         print_header("SUPERDUPERSKILLS COMPANION WEB UI")
@@ -3116,7 +3119,7 @@ def build_parser() -> argparse.ArgumentParser:
     
     sp_completions = subparsers.add_parser("completions", help="Install shell completion scripts")
     sp_completions.add_argument("completions_action", choices=["install", "uninstall", "show", "path"])
-    sp_completions.add_argument("--shell", "-s", choices=["bash", "zsh", "fish", "all"], default="all")
+    sp_completions.add_argument("--shell", "-s", choices=["bash", "zsh", "fish", "powershell", "all"], default="all")
     
     return parser
 
@@ -3130,6 +3133,105 @@ def apply_no_color():
     C.RESET = ''
     for k in BOX:
         BOX[k] = BOX[k].replace('\033', '')
+
+# =============================================================================
+# SHELL COMPLETIONS (bash, zsh, fish, PowerShell)
+# =============================================================================
+_COMPLETION_MARK = "# superduperskills completions"
+
+def _powershell_profiles() -> List[str]:
+    home = os.path.expanduser("~")
+    if os.name != 'nt':
+        return [os.path.join(home, ".config", "powershell", "Microsoft.PowerShell_profile.ps1")]
+    docs = os.path.join(home, "Documents")
+    try:  # honour OneDrive-redirected Documents
+        out = subprocess.run(["powershell", "-NoProfile", "-Command", "[Environment]::GetFolderPath('MyDocuments')"],
+                             capture_output=True, text=True, timeout=15).stdout.strip()
+        if out:
+            docs = out
+    except Exception:
+        pass
+    return [os.path.join(docs, d, "Microsoft.PowerShell_profile.ps1") for d in ("WindowsPowerShell", "PowerShell")]
+
+def _completion_plan(shell: str) -> List[Tuple[str, str, str]]:
+    """Return [(shell, profile_or_target, line_to_add)]; line is '' for copy-style targets (fish)."""
+    home = os.path.expanduser("~")
+    cdir = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'completions'))
+    plan = []
+    shells = ["bash", "zsh", "fish", "powershell"] if shell == "all" else [shell]
+    for sh in shells:
+        if sh == "bash":
+            rc = os.path.join(home, ".bashrc")
+            if shell != "all" or os.path.isfile(rc):
+                plan.append((sh, rc, f'source "{os.path.join(cdir, "sds.bash")}"'))
+        elif sh == "zsh":
+            rc = os.path.join(home, ".zshrc")
+            if shell != "all" or os.path.isfile(rc):
+                plan.append((sh, rc, f'source "{os.path.join(cdir, "sds.zsh")}"'))
+        elif sh == "fish":
+            target = os.path.join(home, ".config", "fish", "completions", "sds.fish")
+            if shell != "all" or os.path.isdir(os.path.dirname(target)):
+                plan.append((sh, target, ""))
+        elif sh == "powershell":
+            if shell != "all" or os.name == 'nt' or shutil.which("pwsh"):
+                for prof in _powershell_profiles():
+                    plan.append((sh, prof, f'. "{os.path.join(cdir, "sds.ps1")}"'))
+    return plan
+
+def run_completions(action: str, shell: str):
+    cdir = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'completions'))
+    plan = _completion_plan(shell)
+    if action == "show":
+        for sh in (["bash", "zsh", "fish", "powershell"] if shell == "all" else [shell]):
+            script = os.path.join(cdir, "sds.ps1" if sh == "powershell" else f"sds.{sh}")
+            if os.path.isfile(script):
+                with open(script, 'r', encoding='utf-8') as f:
+                    print(f.read())
+        return
+    if not plan:
+        print(f"  {C.AMBER}No matching shell found. Use --shell bash|zsh|fish|powershell.{C.RESET}")
+        return
+    for sh, target, line in plan:
+        if action == "path":
+            print(f"  {sh}: {target}")
+        elif action == "install":
+            if sh == "fish":
+                os.makedirs(os.path.dirname(target), exist_ok=True)
+                shutil.copyfile(os.path.join(cdir, "sds.fish"), target)
+                print(f"  {C.EMERALD}✓{C.RESET} fish: {target}")
+                continue
+            existing = open(target, encoding='utf-8-sig').read() if os.path.isfile(target) else ""
+            if _COMPLETION_MARK in existing:
+                print(f"  {C.SLATE_MUTED}• {sh}: already installed ({target}){C.RESET}")
+                continue
+            os.makedirs(os.path.dirname(target), exist_ok=True)
+            with open(target, 'a', encoding='utf-8') as f:
+                f.write(f"\n{_COMPLETION_MARK}\n{line}\n")
+            print(f"  {C.EMERALD}✓{C.RESET} {sh}: {target}")
+        elif action == "uninstall":
+            if sh == "fish":
+                if os.path.isfile(target):
+                    os.remove(target)
+                    print(f"  {C.EMERALD}✓{C.RESET} fish: removed {target}")
+                continue
+            if not os.path.isfile(target):
+                continue
+            lines = open(target, encoding='utf-8-sig').read().split("\n")
+            kept, skip = [], 0
+            for ln in lines:
+                if ln.strip() == _COMPLETION_MARK:
+                    skip = 1
+                    continue
+                if skip:
+                    skip = 0
+                    continue
+                kept.append(ln)
+            if len(kept) != len(lines):
+                with open(target, 'w', encoding='utf-8') as f:
+                    f.write("\n".join(kept))
+                print(f"  {C.EMERALD}✓{C.RESET} {sh}: removed from {target}")
+    if action == "install":
+        print(f"  {C.SLATE_MUTED}Restart your shell to activate tab completion.{C.RESET}")
 
 def main():
     parser = build_parser()
@@ -3368,28 +3470,7 @@ def main():
                 print("  Run 'sds desktop setup' first to generate config.")
                 
     elif args.command == "completions":
-        shell_target = args.shell
-        action = args.completions_action
-        completions_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'completions')
-        if action == "path":
-            home = os.path.expanduser("~")
-            paths = {
-                "bash": [os.path.join(home, ".bashrc"), "/etc/bash_completion.d/sds"],
-                "zsh": [os.path.join(home, ".zsh", "completions", "_sds"), os.path.join(home, ".zshrc")],
-                "fish": [os.path.join(home, ".config", "fish", "completions", "sds.fish")]
-            }
-            for sh, pts in paths.items():
-                if shell_target in (sh, 'all'):
-                    print(f"  {sh}: {', '.join(pts)}")
-        elif action == "show":
-            shells = ["bash", "zsh", "fish"] if shell_target == "all" else [shell_target]
-            for sh in shells:
-                script = os.path.join(completions_dir, f"sds.{sh}")
-                if os.path.isfile(script):
-                    with open(script, 'r', encoding='utf-8') as f:
-                        print(f.read())
-        elif action == "install":
-            print("✓ Shell completions installed.")
+        run_completions(args.completions_action, args.shell)
 
 if __name__ == '__main__':
     main()

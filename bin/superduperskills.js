@@ -31,8 +31,6 @@ const C = {
   ROSE: '\x1b[38;2;248;113;113m'
 };
 
-const pythonCmd = process.platform === 'win32' ? 'python' : 'python3';
-
 // Handle --version flag directly in Node
 if (process.argv.includes('--version') || process.argv.includes('-V')) {
   console.log(`\n  ${C.CYAN}${C.BOLD}✦ SuperDuperSkills${C.RESET} ${C.SLATE_LIGHT}v${VERSION}${C.RESET} ${C.GOLD}«${CODENAME}»${C.RESET}\n`);
@@ -101,28 +99,42 @@ if (process.argv.includes('--desktop')) {
   }
 }
 
-const args = [pythonScript, ...process.argv.slice(2)];
+const userArgs = process.argv.slice(2);
 
-const child = spawn(pythonCmd, args, {
-  stdio: 'inherit',
-  cwd: process.cwd(),
-  env: {
-    ...process.env,
-    PYTHONUNBUFFERED: '1',
-    PYTHONIOENCODING: 'utf-8'
-  }
-});
+// Windows: `python` may be the Microsoft Store stub, so fall back to the `py` launcher.
+const candidates = process.platform === 'win32'
+  ? [['python', []], ['py', ['-3']], ['python3', []]]
+  : [['python3', []], ['python', []]];
 
-child.on('error', (err) => {
-  if (err.code === 'ENOENT') {
-    console.error(`\n  ${C.ROSE}✖ Python 3 was not detected on PATH.${C.RESET}`);
-    console.error(`  ${C.SLATE_MUTED}Install Python 3 (https://www.python.org/downloads/) to run SuperDuperSkills CLI.${C.RESET}\n`);
-  } else {
-    console.error(`\n  ${C.ROSE}✖ Process error:${C.RESET}`, err.message);
-  }
-  process.exit(1);
-});
+function run(i) {
+  const [cmd, pre] = candidates[i];
+  const child = spawn(cmd, [...pre, pythonScript, ...userArgs], {
+    stdio: 'inherit',
+    cwd: process.cwd(),
+    env: {
+      ...process.env,
+      PYTHONUNBUFFERED: '1',
+      PYTHONIOENCODING: 'utf-8'
+    }
+  });
 
-child.on('close', (code) => {
-  process.exit(code ?? 0);
-});
+  child.on('error', (err) => {
+    if (err.code === 'ENOENT' && i + 1 < candidates.length) return run(i + 1);
+    if (err.code === 'ENOENT') {
+      console.error(`
+  ${C.ROSE}✖ Python 3 was not detected on PATH.${C.RESET}`);
+      console.error(`  ${C.SLATE_MUTED}Install Python 3 (https://www.python.org/downloads/) to run SuperDuperSkills CLI.${C.RESET}
+`);
+    } else {
+      console.error(`
+  ${C.ROSE}✖ Process error:${C.RESET}`, err.message);
+    }
+    process.exit(1);
+  });
+
+  child.on('close', (code) => {
+    process.exit(code ?? 0);
+  });
+}
+
+run(0);
