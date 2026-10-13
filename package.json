@@ -6,11 +6,13 @@
   "files": [
     "bin",
     "scripts",
-    "completions"
+    "completions",
+    "!**/__pycache__",
+    "!**/*.pyc"
   ],
   "bin": {
-    "superduperskills": "./bin/superduperskills.js",
-    "sds": "./bin/superduperskills.js"
+    "superduperskills": "bin/superduperskills.js",
+    "sds": "bin/superduperskills.js"
   },
   "scripts": {
     "start": "node ./bin/superduperskills.js",
