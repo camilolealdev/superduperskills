@@ -319,4 +319,6 @@ Updated in place: hyperframes, hyperframes-cli, hyperframes-registry, remotion-t
 |-------|--------|--------|---------|
 | jev-agent | upstream | https://github.com/jev-ai/jev-agent-skill | Typed decisions (choice / score / yes-no) via Jev AI API; needs `JEV_API_KEY`, sends query content to thejevai.com |
 
-Related community repos, not reviewed yet: browser-use/jev-ultrafast, tamaratran/fast-jev-compaction, jkudish/jev-mcp, qkal/Canny. Details in `docs/CORE-EXECUTION-SUITE.md` (Pillar 10).
+Related repos reviewed 2026-10-14, not vendored: browser-use/jev-ultrafast, tamaratran/fast-jev-compaction, jkudish/jev-mcp, qkal/Canny.
+Design/animation repos pending: CloudAI-X/threejs-skills (no license, link only), greensock/gsap-skills, zanwei/design-dna, lottiefiles/motion-design-skill, AThevon/genjutsu.
+Details and caveats in `docs/CORE-EXECUTION-SUITE.md` (Pillar 10).

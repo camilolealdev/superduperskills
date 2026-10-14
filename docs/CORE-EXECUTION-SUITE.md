@@ -82,14 +82,26 @@ flowchart TD
 - **Privacidad**: cada decisión envía el contenido de la consulta a `https://thejevai.com/v1/systemone`. No incluyas secretos ni datos personales en las consultas.
 - **Estado en este repo**: solo documentado. Aún no está en `skills/` ni en el manifiesto core del CLI.
 
-#### Repos relacionados de la comunidad (pendientes de revisión, no incluidos)
+#### Repos relacionados (revisados el 2026-10-14, no incluidos en `skills/`)
 
-| Repo | Notas |
-|------|-------|
-| [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | Pendiente de revisar |
-| [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | Pendiente de revisar |
-| [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp) | Pendiente de revisar |
-| [qkal/Canny](https://github.com/qkal/Canny) | Pendiente de revisar |
+Todos con licencia MIT. Revisión estática de código y README: sin patrones peligrosos (`curl | sh`, ofuscación, instrucciones ocultas). No se ejecutó ninguno.
+
+| Repo | Qué es | Cuidado |
+|------|--------|---------|
+| [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp) | Servidor MCP (TypeScript) que expone Jev como herramientas, más 2 `SKILL.md` | Necesita clave de API; el contenido de las consultas sale de tu equipo |
+| [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | Plugin de Claude Code: reemplaza el resumen de compactación puntuando cada llamada y resultado de herramienta con Jev | Envía **cada llamada y resultado de herramienta** (código y salidas) a `api.typesafe.ai` |
+| [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | Agente de navegador en Python (Browser Use × TypeSafe) con espacio de acciones indexado | Llama a `api.typesafe.ai` y `api.deepseek.com`; controla un navegador |
+| [qkal/Canny](https://github.com/qkal/Canny) | Capa de supervisión: engancha hooks de Claude Code y Codex CLI, lleva un registro de lo que el agente hizo y le impide terminar con solo una afirmación | No es un skill ni está en npm; se instala pidiéndole al agente que clone y ejecute un comando; requiere Node ≥ 22 y modifica los hooks del agente |
+
+#### Skills de diseño y animación (pendientes de incorporar, solo documentados)
+
+| Repo | Contenido | Licencia |
+|------|-----------|----------|
+| [CloudAI-X/threejs-skills](https://github.com/CloudAI-X/threejs-skills) | 10 `SKILL.md` de Three.js (3D e interactividad) | **Sin licencia**: no se puede redistribuir; solo enlazar |
+| [greensock/gsap-skills](https://github.com/greensock/gsap-skills) | 8 `SKILL.md` oficiales de GSAP (el repo ya trae un `gsap` vía hyperframes) | MIT |
+| [zanwei/design-dna](https://github.com/zanwei/design-dna) | 1 `SKILL.md`: extrae y aplica la identidad visual como tokens, estilo y reglas legibles por máquina | MIT |
+| [lottiefiles/motion-design-skill](https://github.com/lottiefiles/motion-design-skill) | 1 `SKILL.md` de diseño de movimiento y dotLottie | MIT |
+| [AThevon/genjutsu](https://github.com/AThevon/genjutsu) | 20 `SKILL.md` para Claude Code: movimiento de interfaz, identidad de producto y sitio web completo (3.7 MB) | MIT |
 
 ---
 
