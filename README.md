@@ -339,6 +339,7 @@ SuperDuperSkills organizes its **17 categories** (see `docs/assets/categories-in
 | 17 | `agentic-awesome-skills` | Curated autonomous & multi-agent patterns | Patrones multi-agente curados |
 | 18 | `gsd-core` | “Get Shit Done” progress framework | Framework de avance sin bloqueos |
 | 19 | `i-have-adhd` | Action-first formatting (no fluff, numbered steps) | Formato Action-First |
+| 20 | `jev-agent` | Typed decisions via [Jev AI](https://github.com/jev-ai/jev-agent-skill) (routing, scoring, safety gates; needs `JEV_API_KEY`; docs only for now) | Decisiones tipadas con Jev AI (enrutado, scoring, compuertas; requiere `JEV_API_KEY`; solo documentado por ahora) |
 
 > Full operating details live in [`AGENTS.md`](AGENTS.md) · Los detalles operativos completos viven en [`AGENTS.md`](AGENTS.md).
 

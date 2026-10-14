@@ -312,3 +312,11 @@ Updated in place: hyperframes, hyperframes-cli, hyperframes-registry, remotion-t
 | `~/.claude/skills/ui-ux-pro-max/` | Brand, slides, banners, UI styling |
 | `Documents/.agents/skills/` | Node.js patterns, accessibility |
 | `Documents/.opencode/skills/` | UI/UX Pro Max |
+
+## Pending core additions (documented only, not vendored)
+
+| Skill | Source | GitHub | Purpose |
+|-------|--------|--------|---------|
+| jev-agent | upstream | https://github.com/jev-ai/jev-agent-skill | Typed decisions (choice / score / yes-no) via Jev AI API; needs `JEV_API_KEY`, sends query content to thejevai.com |
+
+Related community repos, not reviewed yet: browser-use/jev-ultrafast, tamaratran/fast-jev-compaction, jkudish/jev-mcp, qkal/Canny. Details in `docs/CORE-EXECUTION-SUITE.md` (Pillar 10).

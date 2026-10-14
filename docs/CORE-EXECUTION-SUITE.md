@@ -25,7 +25,8 @@ flowchart TD
     RTK --> Caveman["7. Respuestas Concisas<br>(caveman)"]
     Caveman --> Harness["8. Verificación & Feedback<br>(harness / agent-harness)"]
     Harness --> Security["9. Seguridad Dinámica & Pentesting<br>(penetration-testing-with-strix / agentshield)"]
-    Security --> Done["Entrega Calificada"]
+    Security --> Jev["10. Decisiones Tipadas<br>(jev-agent)"]
+    Jev --> Done["Entrega Calificada"]
 ```
 
 ### Pillar 1: `mem` / `claude-mem` (Memoria Persistente)
@@ -73,6 +74,23 @@ flowchart TD
   - Escaneo continuo en CI/CD (`ci-security-scanning-with-strix`).
   - Blindaje de backend con `springboot-security` (Spring Security 6, CSRF, JWT, RBAC) y `owasp-security`.
 
+### Pillar 10: `jev-agent` (Decisiones Tipadas: enrutar, puntuar, verificar)
+- **Fuente**: [jev-ai/jev-agent-skill](https://github.com/jev-ai/jev-agent-skill) · instalación upstream: `npx skills add jev-ai/jev-agent-skill`.
+- **Propósito**: Obtener una decisión tipada (elección, puntuación o sí/no con probabilidades) desde la API de Jev AI para enrutar tickets, clasificar, verificar evidencia, comprimir contexto o poner una compuerta de seguridad antes de ejecutar una herramienta.
+- **Límites**: no sustituye reglas deterministas, búsquedas exactas, escritura abierta ni la aplicación de permisos. La lógica de negocio, los permisos y la aprobación humana siguen siendo de la aplicación.
+- **Configuración**: requiere `JEV_API_KEY` (clave `sk_…` de una cuenta Jev AI) en el entorno, y opcionalmente `JEV_LANGUAGE` (`en-US` por defecto, `zh-CN`). Nunca la subas a Git ni la pegues en la conversación. Sin clave, el skill solo guía la configuración.
+- **Privacidad**: cada decisión envía el contenido de la consulta a `https://thejevai.com/v1/systemone`. No incluyas secretos ni datos personales en las consultas.
+- **Estado en este repo**: solo documentado. Aún no está en `skills/` ni en el manifiesto core del CLI.
+
+#### Repos relacionados de la comunidad (pendientes de revisión, no incluidos)
+
+| Repo | Notas |
+|------|-------|
+| [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | Pendiente de revisar |
+| [tamaratran/fast-jev-compaction](https://github.com/tamaratran/fast-jev-compaction) | Pendiente de revisar |
+| [jkudish/jev-mcp](https://github.com/jkudish/jev-mcp) | Pendiente de revisar |
+| [qkal/Canny](https://github.com/qkal/Canny) | Pendiente de revisar |
+
 ---
 
 ## 3. Matriz de Combinación y Sinergia
@@ -99,4 +117,5 @@ Los agentes deben invocar estos skills usando las directivas estándar del entor
 - Para pentest dinámico con Strix: /penetration-testing-with-strix [target]
 - Para auditar CI/CD con Strix: /ci-security-scanning-with-strix
 - Para blindar endpoints Spring Boot: /springboot-security [module]
+- Para una decisión tipada (rutas, scoring, compuertas): "Use the Jev Agent skill to ..."
 ```
