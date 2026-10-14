@@ -93,10 +93,19 @@ Todos con licencia MIT. Revisión estática de código y README: sin patrones pe
 | [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) | Agente de navegador en Python (Browser Use × TypeSafe) con espacio de acciones indexado | Llama a `api.typesafe.ai` y `api.deepseek.com`; controla un navegador |
 | [qkal/Canny](https://github.com/qkal/Canny) | Capa de supervisión: engancha hooks de Claude Code y Codex CLI, lleva un registro de lo que el agente hizo y le impide terminar con solo una afirmación | No es un skill ni está en npm; se instala pidiéndole al agente que clone y ejecute un comando; requiere Node ≥ 22 y modifica los hooks del agente |
 
-#### Skills de diseño y animación (pendientes de incorporar, solo documentados)
+#### Skills de diseño y animación
 
-| Repo | Contenido | Licencia |
-|------|-----------|----------|
+| Repo | Contenido | Estado |
+|------|-----------|--------|
+| [greensock/gsap-skills](https://github.com/greensock/gsap-skills) | 8 skills oficiales de GSAP: `gsap-core`, `-timeline`, `-scrolltrigger`, `-plugins`, `-react`, `-frameworks`, `-performance`, `-utils` (MIT) | Incorporado en `skills/` |
+| [AThevon/genjutsu](https://github.com/AThevon/genjutsu) | `bunshin`, `cast`, `paint` y el paquete compartido `_jutsu` (movimiento de interfaz, identidad de producto, sitio web completo) (MIT) | Incorporado en `skills/` |
+| [lottiefiles/motion-design-skill](https://github.com/lottiefiles/motion-design-skill) | `motion-design`: principios de movimiento y dotLottie (MIT) | Incorporado en `skills/` |
+| [zanwei/design-dna](https://github.com/zanwei/design-dna) | Extrae y aplica la identidad visual como tokens, estilo y efectos (MIT) | Incorporado como `design-dna-tokens`: el repo ya tenía otro skill `design-dna` distinto (extracción de marca) |
+| [CloudAI-X/threejs-skills](https://github.com/CloudAI-X/threejs-skills) | 10 skills de Three.js | **No incorporado**: el repo no tiene licencia, solo se enlaza |
+
+Las licencias MIT de los cuatro repos incorporados están en [`docs/third-party-licenses/`](third-party-licenses/).
+
+------|-----------|----------|
 | [CloudAI-X/threejs-skills](https://github.com/CloudAI-X/threejs-skills) | 10 `SKILL.md` de Three.js (3D e interactividad) | **Sin licencia**: no se puede redistribuir; solo enlazar |
 | [greensock/gsap-skills](https://github.com/greensock/gsap-skills) | 8 `SKILL.md` oficiales de GSAP (el repo ya trae un `gsap` vía hyperframes) | MIT |
 | [zanwei/design-dna](https://github.com/zanwei/design-dna) | 1 `SKILL.md`: extrae y aplica la identidad visual como tokens, estilo y reglas legibles por máquina | MIT |

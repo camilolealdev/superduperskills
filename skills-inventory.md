@@ -320,5 +320,5 @@ Updated in place: hyperframes, hyperframes-cli, hyperframes-registry, remotion-t
 | jev-agent | upstream | https://github.com/jev-ai/jev-agent-skill | Typed decisions (choice / score / yes-no) via Jev AI API; needs `JEV_API_KEY`, sends query content to thejevai.com |
 
 Related repos reviewed 2026-10-14, not vendored: browser-use/jev-ultrafast, tamaratran/fast-jev-compaction, jkudish/jev-mcp, qkal/Canny.
-Design/animation repos pending: CloudAI-X/threejs-skills (no license, link only), greensock/gsap-skills, zanwei/design-dna, lottiefiles/motion-design-skill, AThevon/genjutsu.
+Design/animation repos incorporated into skills/ (MIT, licenses in docs/third-party-licenses/): greensock/gsap-skills (8), AThevon/genjutsu (bunshin, cast, paint, _jutsu), lottiefiles/motion-design-skill (motion-design), zanwei/design-dna (as design-dna-tokens; name collides with the existing design-dna). Not incorporated: CloudAI-X/threejs-skills (no license).
 Details and caveats in `docs/CORE-EXECUTION-SUITE.md` (Pillar 10).
