@@ -43,7 +43,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 # =============================================================================
 # 1. VERSION, METADATA & CROSS-PLATFORM KEY READER
 # =============================================================================
-__version__ = "6.0.1"
+__version__ = "6.0.2"
 __codename__ = "WorldClass"
 
 
@@ -394,6 +394,165 @@ CATEGORY_REGISTRY = {
             ("humanizer", "Eliminación de marcas artificiales de escritura de IA"),
             ("gtm-0-to-1-launch", "Estrategia Go-To-Market y tracción temprana"),
             ("neuro-persuasion-toolkit", "Neuromarketing y psicología de conversión")
+        ]
+    },
+    "INTEGRATIONS_AUTOMATION": {
+        "title": "Integraciones & Automatización (n8n, MCP, APIs)",
+        "icon": "🔌",
+        "skills": [
+            ("n8n-workflow-patterns", "Proven workflow architectural patterns from real n8n workflows."),
+            ("n8n-mcp-tools-expert", "Expert guide for using n8n-mcp MCP tools effectively."),
+            ("n8n-expression-syntax", "Validate n8n expression syntax and fix common errors."),
+            ("n8n-code-javascript", "Write JavaScript code in n8n Code nodes."),
+            ("mcp-builder", "Guide for creating high-quality MCP (Model Context Protocol) servers that enab…"),
+            ("composio", "Use 1000+ external apps via Composio - either directly through the CLI or by b…"),
+            ("browser-automation", "Use when the user asks to automate browser tasks, scrape websites, fill forms…"),
+            ("google-workspace", ""),
+            ("agent-browser", "Browser automation CLI for AI agents.")
+        ]
+    },
+    "ENGINEERING_PRACTICES": {
+        "title": "Prácticas de Ingeniería (Clean Code, TDD, Debugging)",
+        "icon": "🛠️",
+        "skills": [
+            ("clean-code", "Write readable, maintainable code through disciplined naming, small functions…"),
+            ("clean-architecture", "Structure software around the Dependency Rule: source code dependencies point…"),
+            ("refactoring-patterns", "Apply named refactoring transformations to improve code structure without chan…"),
+            ("systematic-debugging", "Debugging methodology, hypothesis testing, reading stack traces, isolating iss…"),
+            ("test-driven-development", "Drives development with tests."),
+            ("code-review-and-quality", "Conducts multi-axis code review."),
+            ("git-workflow-and-versioning", "Structures git workflow practices."),
+            ("incremental-implementation", "Delivers changes incrementally."),
+            ("documentation-and-adrs", "Records decisions and documentation."),
+            ("debugging-and-error-recovery", "Guides systematic root-cause debugging.")
+        ]
+    },
+    "BUSINESS_STRATEGY": {
+        "title": "Negocio & Estrategia",
+        "icon": "📈",
+        "skills": [
+            ("blue-ocean-strategy", "Create uncontested market space using value innovation instead of competing he…"),
+            ("good-strategy-bad-strategy", "Formulate and audit real strategy using Richard Rumelt''s 'Good Strategy Bad S…"),
+            ("lean-startup", "Design MVPs, validated learning experiments, and pivot-or-persevere decisions…"),
+            ("lean-analytics", "Choose and audit startup metrics using Croll and Yoskovitz''s 'Lean Analytics'…"),
+            ("jobs-to-be-done", "Discover what customers truly need by analyzing the 'job' they hire your produ…"),
+            ("crossing-the-chasm", "Navigate the technology adoption lifecycle from early adopters to mainstream m…"),
+            ("hundred-million-offers", "Create irresistible offers using the Value Equation, bonus stacking, risk-reve…"),
+            ("monetizing-innovation", "Design products and pricing around validated willingness to pay, from Ramanuja…"),
+            ("pricing-strategy", "Design, optimize, and communicate SaaS pricing — tier structure, value metrics…"),
+            ("ceo-advisor", "Executive leadership guidance for strategic decision-making, organizational de…"),
+            ("cfo-advisor", "Financial leadership for startups and scaling companies.")
+        ]
+    },
+    "PROJECT_MANAGEMENT": {
+        "title": "Gestión de Proyectos & Agile",
+        "icon": "🗂️",
+        "skills": [
+            ("scrum-master", "Advanced Scrum Master skill for data-driven agile team analysis and coaching."),
+            ("senior-pm", "Senior Project Manager for enterprise software, SaaS, and digital transformati…"),
+            ("sprint-plan", ""),
+            ("sprint-health", ""),
+            ("planning-and-task-breakdown", "Breaks work into ordered tasks."),
+            ("jira-expert", "Atlassian Jira expert for creating and managing projects, planning, product di…"),
+            ("agile-product-owner", "Agile product ownership for backlog management and sprint execution."),
+            ("roadmap", "Plan and execute entire application builds."),
+            ("user-story", "")
+        ]
+    },
+    "WRITING_CONTENT": {
+        "title": "Escritura & Contenido",
+        "icon": "✍️",
+        "skills": [
+            ("copywriting", "When the user wants to write, rewrite, or improve marketing copy for any page…"),
+            ("copy-editing", "When the user wants to edit, review, or improve existing marketing copy."),
+            ("content-strategy", "When the user wants to plan a content strategy, decide what content to create…"),
+            ("content-creator", "Deprecated redirect skill that routes legacy 'content creator' requests to the…"),
+            ("content-research-writer", "Assists in writing high-quality content by conducting research, adding citatio…"),
+            ("humanizer", "Remove signs of AI-generated writing from text."),
+            ("writing-clearly-and-concisely", "Writing clear and concise prose for documentation & UI."),
+            ("technical-writing", "Write clear, engaging technical content from real experience."),
+            ("internal-comms", "A set of resources to help me write all kinds of internal communications, usin…")
+        ]
+    },
+    "VIDEO_ANIMATION": {
+        "title": "Video, Animación & 3D",
+        "icon": "🎬",
+        "skills": [
+            ("hyperframes", "Mandatory entry point: read this first for any request to make, create, edit…"),
+            ("hyperframes-cli", "Use the HyperFrames CLI development loop: init, add, catalog, capture, lint, c…"),
+            ("hyperframes-core", "The HyperFrames composition contract — build one renderable project."),
+            ("hyperframes-media", "Asset preprocessing for HyperFrames compositions — text-to-speech narration (K…"),
+            ("remotion-best-practices", "Router for all Remotion skills"),
+            ("remotion-create", "Create a new Remotion video"),
+            ("remotion-render", "Export a Remotion video"),
+            ("motion-design", "Applies motion design principles to create emotionally-driven, technically sou…"),
+            ("gsap-core", "Official GSAP skill for the core API — gsap.to(), from(), fromTo(), easing, du…"),
+            ("gsap-timeline", "Official GSAP skill for timelines — gsap.timeline(), position parameter, nesti…"),
+            ("gsap-scrolltrigger", "Official GSAP skill for ScrollTrigger — scroll-linked animations, pinning, scr…"),
+            ("threejs", "Build 3D web apps with Three.js (WebGL/WebGPU)."),
+            ("lottie", "Lottie and dotLottie adapter patterns for HyperFrames."),
+            ("bunshin", "Summon shadow clones: genjutsu's full-scale pipeline for a whole website or we…"),
+            ("cast", "Cast genjutsu on a UI - creative coding for motion, micro-interactions, and wo…"),
+            ("paint", "Paint a complete visual universe with genjutsu - art direction brainstorm, des…"),
+            ("brag", "Turn the current project website into a short, polished, shareable launch vide…"),
+            ("brag-slim", "Turn a project directory or a website URL into a short, shareable launch video…")
+        ]
+    },
+    "PRODUCTIVITY_PEOPLE": {
+        "title": "Productividad & Personas",
+        "icon": "👥",
+        "skills": [
+            ("modo-tdah", "Modo de enfoque ejecutivo ultra-conciso: elimina explicaciones infladas, va di…"),
+            ("deep-work", "Use when someone wants to plan a deep work day, time-block their calendar or t…"),
+            ("weekly-review", "Use when someone wants to run a weekly review, close open loops, audit stalled…"),
+            ("standup", "Facilitate a read-only standup across git worktrees, branches, or PRs to compa…"),
+            ("culture-architect", "Build, measure, and evolve company culture as operational behavior — not wall…"),
+            ("performance-review-writer", "Draft performance reviews, self-assessments, and peer reviews."),
+            ("difficult-workplace-conversations", "Workplace conflict & feedback framework."),
+            ("professional-communication", "Technical communication guide for developers."),
+            ("chief-of-staff", "C-suite orchestration layer."),
+            ("team-communications", "Write internal company communications — 3P updates (Progress/Plans/Problems)…"),
+            ("founder-coach", "Personal leadership development for founders and first-time CEOs.")
+        ]
+    },
+    "SALES_COMMS": {
+        "title": "Ventas & Comunicación",
+        "icon": "🤝",
+        "skills": [
+            ("prospecting", "Find, qualify, and build a list of B2B/SaaS prospects."),
+            ("cold-email", "When the user wants to write, improve, or build a sequence of B2B cold outreac…"),
+            ("negotiation", "Prepare and execute negotiations using tactical empathy, calibrated questions…"),
+            ("revenue-operations", "Analyzes sales pipeline health, revenue forecasting accuracy, and go-to-market…"),
+            ("proposal-writer", "Write a client proposal or quote for a service business."),
+            ("competitive-intel", "Systematic competitor tracking that feeds CMO positioning, CRO battlecards, an…"),
+            ("customer-success-manager", "Monitors customer health, predicts churn risk, and identifies expansion opport…"),
+            ("public-relations", "Earned media, press coverage, journalist outreach."),
+            ("predictable-revenue", "Build a scalable outbound B2B sales machine with specialized roles (SDR, AE, C…"),
+            ("sales-enablement", "When the user wants to create sales collateral, pitch decks, one-pagers, objec…")
+        ]
+    },
+    "CORE_INVARIANTS": {
+        "title": "Core & Invariantes (suite obligatoria)",
+        "icon": "⚡",
+        "skills": [
+            ("caveman", "Ultra-compressed communication mode."),
+            ("ponytail", "Forces the laziest solution that actually works, simplest, shortest, most mini…"),
+            ("spec-kit", "Spec-Driven Development (SDD) framework based on GitHub's official spec-kit (h…"),
+            ("token-savings", "Confirms which skills are actually relevant to a project BEFORE work starts, i…"),
+            ("harness", "Test harness and continuous automated verification loop before task completion…"),
+            ("claude-mem", "Persistent architectural decisions and session memory across agent invocations…"),
+            ("rtk", "Rust Token Killer (RTK) & Runtime Token Compression skill."),
+            ("graphify", "Use for any question about a codebase, its architecture, file relationships, o…"),
+            ("archify", "Turn a codebase or system description into a polished, interactive system map…"),
+            ("skill-seekers", "Búsqueda activa, evaluación e ingesta automatizada de nuevas habilidades agent…"),
+            ("skill-vault", "Bóveda persistente de skills del repositorio para organización, versionado y a…"),
+            ("all-deploy", "Deploys any web app, API, or agent to the internet with a strict pre-deploy au…"),
+            ("context-mode", "Gestión ultra-eficiente de la ventana de contexto de sesión, compresión dinámi…"),
+            ("aprende-skill", "Metodología de aprendizaje activo y aprendizaje acelerado para asimilar rápida…"),
+            ("agentshield", "Escudo de seguridad para agentes de IA: previene prompt injection, filtrado de…"),
+            ("modo-tdah", "Modo de enfoque ejecutivo ultra-conciso: elimina explicaciones infladas, va di…"),
+            ("agentic-awesome-skills", "Directorio curado de habilidades avanzadas para agentes autónomos y sistemas m…"),
+            ("gsd-core", "Get Shit Done (GSD) Core Framework: metodología imparable para completar objet…")
         ]
     }
 }
