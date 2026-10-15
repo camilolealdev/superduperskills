@@ -221,6 +221,20 @@ Requires Node ≥ 18 and Python 3 (`python`, `py -3` or `python3`). Do not type 
 
 ---
 
+### 🦇 Nox, the CLI mascot · Nox, la mascota del CLI
+
+A block-art bat that follows what the CLI is doing · Un murciélago de bloques que refleja lo que hace el CLI:
+
+| State · Estado | Eyes · Ojos | When · Cuándo |
+|---|---|---|
+| idle | `● ●` | Menus and headers · Menús y encabezados |
+| work | `> <` | Spinners (wings flap `^v^ -v- _v_`) · Spinners (aletea) |
+| happy | `^ ^` | Task or `doctor` succeeded · Éxito |
+| error | `x x` | Task or `doctor` failed · Error |
+| sleep | `- -` | Session closed · Sesión cerrada |
+
+It appears in the banner (terminals ≥ 101 columns), every command header, spinners, the `doctor` verdict, the exit message and the web dashboard. Disable it with `SDS_NO_MASCOT=1` or `NO_COLOR=1` · Se desactiva con `SDS_NO_MASCOT=1` o `NO_COLOR=1`.
+
 ## 💻 CLI Command Center · Centro de Comando CLI (v6.0.0 «WorldClass»)
 
 | Command · Comando | 🇬🇧 Purpose | 🇪🇸 Propósito |
@@ -288,7 +302,7 @@ graph TD
 ```
 
 1. **Automatic Inspection / Socratic Interview** — detects config files (`package.json`, `requirements.txt`, `go.mod`, `pom.xml`, `build.gradle`, `Dockerfile`, `.github/workflows`).
-2. **Unconditional Core Load** — always injects the 20 infrastructure, quality & dynamic security skills (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) before any other rule.
+2. **Unconditional Core Load** — always injects the 21 infrastructure, quality & dynamic security skills (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) before any other rule.
 3. **Manifest generation (`.agents/ACTIVE-SKILLS.json`)** — records project phase, key goals and exact local skill paths.
 4. **Mandatory read gate (`view_file`)** — no AI agent writes code without first reading each qualified skill's `SKILL.md`.
 
@@ -297,7 +311,7 @@ graph TD
 El **Orquestador de Agentes** evalúa la estructura de tu proyecto y realiza una **entrevista o escaneo automático** para determinar tus objetivos reales *antes* de permitir la generación de código (ver diagrama de arriba):
 
 1. **Inspección Automática / Entrevista Socrática** — detecta archivos de configuración (`package.json`, `requirements.txt`, `go.mod`, `pom.xml`, `build.gradle`, `Dockerfile`, `.github/workflows`).
-2. **Carga Incondicional Core** — inyecta siempre las 20 skills de infraestructura, calidad y seguridad dinámica (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) antes que cualquier otra regla.
+2. **Carga Incondicional Core** — inyecta siempre las 21 skills de infraestructura, calidad y seguridad dinámica (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) antes que cualquier otra regla.
 3. **Generación del manifiesto (`.agents/ACTIVE-SKILLS.json`)** — registra la fase del proyecto, objetivos clave y rutas locales exactas.
 4. **Puerta de lectura obligatoria (`view_file`)** — ningún agente de IA escribe código sin leer antes el `SKILL.md` de cada skill cualificada.
 
@@ -339,7 +353,8 @@ SuperDuperSkills organizes its **17 categories** (see `docs/assets/categories-in
 | 17 | `agentic-awesome-skills` | Curated autonomous & multi-agent patterns | Patrones multi-agente curados |
 | 18 | `gsd-core` | “Get Shit Done” progress framework | Framework de avance sin bloqueos |
 | 19 | `i-have-adhd` | Action-first formatting (no fluff, numbered steps) | Formato Action-First |
-| 20 | `jev-agent` | Typed decisions via [Jev AI](https://github.com/jev-ai/jev-agent-skill) (routing, scoring, safety gates; needs `JEV_API_KEY`; docs only for now) | Decisiones tipadas con Jev AI (enrutado, scoring, compuertas; requiere `JEV_API_KEY`; solo documentado por ahora) |
+| 20 | `penetration-testing-with-strix` | Autonomous pentesting & PoC validation (Strix) | Pentesting autónomo y validación PoC (Strix) |
+| 21 | `jev-agent` | Typed decisions via [Jev AI](https://github.com/jev-ai/jev-agent-skill) (routing, scoring, safety gates; needs `JEV_API_KEY`; external, not bundled: `npx skills add jev-ai/jev-agent-skill`) | Decisiones tipadas con Jev AI (enrutado, scoring, compuertas; requiere `JEV_API_KEY`; externo, no incluido: `npx skills add jev-ai/jev-agent-skill`) |
 
 > Full operating details live in [`AGENTS.md`](AGENTS.md) · Los detalles operativos completos viven en [`AGENTS.md`](AGENTS.md).
 

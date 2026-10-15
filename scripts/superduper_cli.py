@@ -43,7 +43,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 # =============================================================================
 # 1. VERSION, METADATA & CROSS-PLATFORM KEY READER
 # =============================================================================
-__version__ = "6.0.2"
+__version__ = "6.0.3"
 __codename__ = "WorldClass"
 
 
@@ -198,6 +198,62 @@ PROFILES_DIR = os.path.join(AGENTS_DIR, 'profiles')
 DESKTOP_CONFIG = os.path.join(AGENTS_DIR, 'desktop.json')
 
 # =============================================================================
+# MASCOT: NOX THE BAT
+# =============================================================================
+class Bat:
+    """Nox, the SuperDuperSkills bat. Its mood follows what the CLI is doing.
+
+    Opt out with SDS_NO_MASCOT=1 (NO_COLOR also disables it).
+    """
+    ENABLED = not (os.environ.get("SDS_NO_MASCOT") or os.environ.get("NO_COLOR"))
+    WIDTH = 17
+    EYES = {"idle": "● ●", "think": "◔ ◔", "work": "> <", "happy": "^ ^", "error": "x x", "sleep": "- -"}
+    COLOR = {"idle": C.GEMINI_VIOLET, "think": C.GEMINI_CYAN, "work": C.GEMINI_BLUE,
+             "happy": C.EMERALD, "error": C.ROSE, "sleep": C.SLATE_MUTED}
+    WINGS = ["^v^", "-v-", "_v_", "-v-"]
+    state = "idle"
+
+    @classmethod
+    def set(cls, state: str) -> None:
+        cls.state = state if state in cls.EYES else "idle"
+
+    @classmethod
+    def mini(cls, state: Optional[str] = None, tick: int = 0) -> str:
+        """One-line bat for headers and spinners; the wings flap while working."""
+        if not cls.ENABLED:
+            return ""
+        s = state or cls.state
+        wings = cls.WINGS[tick % 4] if s in ("work", "think") else cls.WINGS[0]
+        return f"{cls.COLOR[s]}{wings}{C.RESET}"
+
+    @classmethod
+    def art(cls, state: Optional[str] = None, flap: int = 0) -> List[str]:
+        """Three-line block-art bat, 17 columns wide."""
+        s = state or cls.state
+        c, e = cls.COLOR[s], cls.EYES[s]
+        if flap % 2 == 0:  # wings up
+            rows = ["▄▄▄▄  ▲   ▲  ▄▄▄▄", f"█████▌ {e} ▐█████", "▀▀▀▀▀▀  v  ▀▀▀▀▀▀"]
+        else:              # wings down
+            rows = ["      ▲   ▲      ", f"  ▄▄▐█ {e} █▌▄▄  ", "  ▀▀▀▀▄ v ▄▀▀▀▀  "]
+        return [f"{c}{r}{C.RESET}" for r in rows]
+
+    @classmethod
+    def beside(cls, text: str, flap: int = 0) -> str:
+        """Put the bat to the left of a multi-line block (skipped on narrow terminals)."""
+        if not cls.ENABLED or shutil.get_terminal_size((80, 24)).columns < cls.WIDTH + 84:
+            return text
+        art, out, i = cls.art(flap=flap), [], 0
+        for ln in text.split("\n"):
+            if not ln.strip():
+                out.append(ln)
+            elif i < len(art):
+                out.append(f"  {art[i]}{ln}")
+                i += 1
+            else:
+                out.append(" " * (cls.WIDTH + 2) + ln)
+        return "\n".join(out)
+
+# =============================================================================
 # 3. TERMINAL HYPERLINKS & MOUSE TRACKING ENGINE
 # =============================================================================
 def make_clickable_link(text: str, url: str) -> str:
@@ -260,7 +316,10 @@ MANDATORY_CORE_SUITE = [
     {"name": "agentic-awesome-skills", "reason": "Catálogo de Patrones Agenticos Autónomos", "category": "CORE", "icon": "🤖"},
     {"name": "gsd-core", "reason": "Get Shit Done (GSD) Execution Framework", "category": "CORE", "icon": "💥"},
     {"name": "i-have-adhd", "reason": "Formateo de Salida Action-First", "category": "CORE", "icon": "⚡"},
-    {"name": "penetration-testing-with-strix", "reason": "Pentesting Dinámico Autónomo & PoC Exploits (Strix Core)", "category": "CORE", "icon": "🎯"}
+    {"name": "penetration-testing-with-strix", "reason": "Pentesting Dinámico Autónomo & PoC Exploits (Strix Core)", "category": "CORE", "icon": "🎯"},
+    # External: upstream has no license, so it is not vendored in skills/. Opt-in (needs JEV_API_KEY; sends query content to Jev AI).
+    {"name": "jev-agent", "reason": "Decisiones Tipadas vía Jev AI (externo: requiere JEV_API_KEY)", "category": "CORE", "icon": "⚖️",
+     "external": True, "install": "npx skills add jev-ai/jev-agent-skill"}
 ]
 
 # =============================================================================
@@ -643,12 +702,14 @@ class Spinner:
         frame = self.FRAMES[self.idx % len(self.FRAMES)]
         display = msg or self.message
         elapsed = time.time() - self.start_time
-        sys.stdout.write(f"\r  {C.GEMINI_CYAN}{frame}{C.RESET} {C.SLATE_LIGHT}{display}{C.RESET} {C.SLATE_DARK}({elapsed:.1f}s){C.RESET}\033[K")
+        glyph = Bat.mini("work", self.idx) or f"{C.GEMINI_CYAN}{frame}{C.RESET}"
+        sys.stdout.write(f"\r  {glyph} {C.SLATE_LIGHT}{display}{C.RESET} {C.SLATE_DARK}({elapsed:.1f}s){C.RESET}\033[K")
         sys.stdout.flush()
         self.idx += 1
     
     def stop(self, final_msg: str = "", success: bool = True):
         self._active = False
+        Bat.set("happy" if success else "error")
         icon = BOX["check"] if success else BOX["fail"]
         elapsed = time.time() - self.start_time
         display = final_msg or self.message
@@ -726,24 +787,43 @@ def get_git_branch() -> str:
         pass
     return "main"
 
+def vault_size() -> int:
+    """Number of skill folders in the vault (cached for the process)."""
+    if not hasattr(vault_size, "n"):
+        try:
+            vault_size.n = sum(1 for e in os.scandir(SKILLS_DIR) if e.is_dir())
+        except OSError:
+            vault_size.n = 0
+    return vault_size.n
+
 def render_gemini_banner() -> str:
     """Render the high-end Gemini / Claude style banner with TrueColor gradient & Clickable links."""
     branch = get_git_branch()
     ws_name = os.path.basename(WORKSPACE_DIR) or "root"
     
-    docs_link = make_clickable_link(f"{C.SLATE_LIGHT}3,325+ AI Agent Skills Governance Suite · {C.EMERALD}easy-marketing.xyz{C.RESET}", "https://easy-marketing.xyz")
+    docs_link = make_clickable_link(f"{C.SLATE_LIGHT}{vault_size():,}+ AI Agent Skills Governance Suite · {C.EMERALD}easy-marketing.xyz{C.RESET}", "https://easy-marketing.xyz")
     hub_link = make_clickable_link(f"{C.GEMINI_VIOLET}● Camilo Leal{C.RESET}", "https://github.com/camilolealdev")
     
     g1 = C.GEMINI_CYAN
     g2 = C.GEMINI_BLUE
     g3 = C.GEMINI_INDIGO
     
-    banner = f"""
-  {g1}╭────────────────────────────────────────────────────────────────────────╮{C.RESET}
-  {g1}│{C.RESET}  {g1}{C.BOLD}✦ SUPERDUPERSKILLS{C.RESET} {C.SLATE_MUTED}v{__version__}{C.RESET} {C.CLAUDE_GOLD}«{__codename__}»{C.RESET}                      {hub_link} {g1}│{C.RESET}
-  {g2}│{C.RESET}  {docs_link}  {g2}│{C.RESET}
-  {g3}╰────────────────────────────────────────────────────────────────────────╯{C.RESET}"""
-    return banner
+    title = f"{g1}{C.BOLD}✦ SUPERDUPERSKILLS{C.RESET} {C.SLATE_MUTED}v{__version__}{C.RESET} {C.CLAUDE_GOLD}«{__codename__}»{C.RESET}"
+    inner = 72  # visible width between the two │
+
+    def row(color: str, left: str, right: str = "") -> str:
+        pad = " " * max(1, inner - 3 - visual_len(left) - visual_len(right))
+        return f"  {color}│{C.RESET}  {left}{pad}{right} {color}│{C.RESET}"
+
+    bar = "─" * inner
+    banner = "\n".join([
+        "",
+        f"  {g1}╭{bar}╮{C.RESET}",
+        row(g1, title, hub_link),
+        row(g2, docs_link),
+        f"  {g3}╰{bar}╯{C.RESET}",
+    ])
+    return Bat.beside(banner)
 
 def render_context_bar() -> str:
     """Render the active runtime context metadata bar with clickable file links."""
@@ -780,7 +860,7 @@ def print_header(title: str, show_context: bool = True):
     if show_context:
         print(render_context_bar())
     if title:
-        print(f"\n  {C.GEMINI_CYAN}❯{C.RESET} {C.BOLD}{C.SLATE_LIGHT}{title}{C.RESET}")
+        print(f"\n  {Bat.mini()} {C.GEMINI_CYAN}❯{C.RESET} {C.BOLD}{C.SLATE_LIGHT}{title}{C.RESET}")
         print(f"  {C.SLATE_DARK}{'─' * 70}{C.RESET}\n")
 
 # =============================================================================
@@ -987,7 +1067,7 @@ class ManifestController:
                 "category": c["category"],
                 "reason": c["reason"],
                 "is_core": True,
-                "mandatory_view": True
+                "mandatory_view": not c.get("external", False)
             })
         
         return {
@@ -1010,7 +1090,7 @@ class ManifestController:
                     "category": core["category"],
                     "reason": core["reason"],
                     "is_core": True,
-                    "mandatory_view": True
+                    "mandatory_view": not core.get("external", False)
                 })
         
         with open(ACTIVE_MANIFEST, 'w', encoding='utf-8') as f:
@@ -1036,8 +1116,12 @@ class ManifestController:
                 sk_cat = sk.get("category", "CUSTOM")
                 sk_reason = sk.get("reason", "Activada manualmente por el usuario.")
                 path_local = os.path.join(SKILLS_DIR, sk_name, 'SKILL.md')
-                exists_icon = "✅ Localizada" if os.path.isfile(path_local) else "⚠️ Pendiente Ingesta"
-                link_url = f"[`skills/{sk_name}/SKILL.md`](file:///{path_local.replace(chr(92), '/')})"
+                ext = next((c for c in MANDATORY_CORE_SUITE if c["name"] == sk_name and c.get("external")), None)
+                if ext:
+                    exists_icon, link_url = "↗ Externa", f"`{ext['install']}`"
+                else:
+                    exists_icon = "✅ Localizada" if os.path.isfile(path_local) else "⚠️ Pendiente Ingesta"
+                    link_url = f"[`skills/{sk_name}/SKILL.md`](file:///{path_local.replace(chr(92), '/')})"
                 f.write(f"| {idx:02d} | {sk_cat} | `{sk_name}` | {sk_reason} | {exists_icon} | {link_url} |\n")
 
     @staticmethod
@@ -1165,8 +1249,10 @@ class MultiCLISync:
             f.write(f"---\ndescription: SuperDuperSkills Active Matrix Rules\nglobs: *\n---\n\n")
             f.write(f"# SuperDuperSkills — Active Matrix Governance\n\n")
             f.write(f"Before editing code, the Cursor Agent MUST consult and execute `view_file` on:\n")
+            external = {c["name"] for c in MANDATORY_CORE_SUITE if c.get("external")}
             for sk in active_skills:
-                f.write(f"- `skills/{sk['name']}/SKILL.md` ({sk.get('reason', '')})\n")
+                if sk["name"] not in external:  # no bundled SKILL.md to view_file
+                    f.write(f"- `skills/{sk['name']}/SKILL.md` ({sk.get('reason', '')})\n")
         results["Cursor IDE (.cursor/rules)"] = cursor_file
 
         # OpenCode / Claude compatibility
@@ -1189,16 +1275,19 @@ class MultiCLISync:
         
         missing = []
         found = []
-        
+        external = {c["name"] for c in MANDATORY_CORE_SUITE if c.get("external")}
+
         for sk in active_skills:
+            if sk["name"] in external:  # not bundled by design, so not a compliance gap
+                continue
             p = os.path.join(SKILLS_DIR, sk["name"], "SKILL.md")
             if os.path.isfile(p):
                 found.append(sk["name"])
             else:
                 missing.append(sk["name"])
-                
+
         return {
-            "total_active": len(active_skills),
+            "total_active": len(found) + len(missing),
             "found_count": len(found),
             "missing_count": len(missing),
             "missing_skills": missing,
@@ -1499,7 +1588,7 @@ class MissionModesEngine:
                     "category": "CORE",
                     "reason": c["reason"],
                     "is_core": True,
-                    "mandatory_view": True
+                    "mandatory_view": not c.get("external", False)
                 })
         
         # Build new skill list with mode skills
@@ -1778,7 +1867,7 @@ class WebCompanionHandler(http.server.BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('Content-Type', 'text/html; charset=utf-8')
             self.end_headers()
-            self.wfile.write(WebCompanionServer.get_html().encode('utf-8'))
+            self.wfile.write(WebCompanionServer.get_html().replace('__VERSION__', __version__).encode('utf-8'))
 
         elif path == '/api/manifest':
             manifest = ManifestController.load_active_manifest()
@@ -1896,6 +1985,7 @@ class WebCompanionServer:
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SuperDuperSkills — Agentic Control Center</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🦇%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -2085,7 +2175,7 @@ class WebCompanionServer:
 </head>
 <body>
   <header>
-    <div class="logo">✦ SuperDuperSkills <span class="badge">v6.0.0 «WorldClass»</span></div>
+    <div class="logo">🦇 SuperDuperSkills <span class="badge">v__VERSION__ «WorldClass»</span></div>
     <div style="display: flex; gap: 1rem; align-items: center;">
       <span id="activeCountBadge" class="badge" style="color: var(--emerald); border-color: rgba(52, 211, 153, 0.3);">-- Active</span>
       <button class="action-btn" onclick="copyPrompt()">📋 Copiar Super-Prompt</button>
@@ -2337,7 +2427,7 @@ class SkillGraphEngine:
         lines = [
             f"{C.GEMINI_CYAN}✦ SuperDuperSkills Governance Graph Architecture{C.RESET}",
             f"{C.SLATE_DARK}│{C.RESET}",
-            f"{C.SLATE_DARK}├──{C.RESET} {C.GEMINI_VIOLET}◆ Invariant Core Kernel (20 mandatory){C.RESET}",
+            f"{C.SLATE_DARK}├──{C.RESET} {C.GEMINI_VIOLET}◆ Invariant Core Kernel ({len(MANDATORY_CORE_SUITE)} mandatory){C.RESET}",
             f"{C.SLATE_DARK}│   ├──{C.RESET} Output Compression: {C.SLATE_LIGHT}rtk, caveman, modo-tdah{C.RESET}",
             f"{C.SLATE_DARK}│   ├──{C.RESET} Simplicity & Specs: {C.SLATE_LIGHT}ponytail, spec-kit, harness{C.RESET}",
             f"{C.SLATE_DARK}│   ├──{C.RESET} Dynamic Security & Pentest: {C.SLATE_LIGHT}agentshield, penetration-testing-with-strix{C.RESET}",
@@ -2468,7 +2558,7 @@ def render_main_menu_grid() -> str:
     """Render a responsive 2-column interactive menu grid with clickable button cards."""
     items = [
         ("1", "🔍", "Deep Project Scan",    "Stack & recommendations"),
-        ("2", "🔒", "Core Invariant Suite",  "20 mandatory guardrails"),
+        ("2", "🔒", "Core Invariant Suite",  f"{len(MANDATORY_CORE_SUITE)} mandatory guardrails"),
         ("3", "🎛️ ", "Category Manager",     "Interactive skill toggles"),
         ("4", "🔎", "Live Vault Search",     "Search 3,300+ skills"),
         ("5", "📥", "Skill Ingestion",       "Import remote GitHub URL"),
@@ -2530,7 +2620,7 @@ def run_interactive_tui():
         
         # Route Slash Commands & Shortcuts
         if cmd in ('0', 'q', 'exit', 'quit', '/exit', '/quit', '/q'):
-            print(f"\n  {C.EMERALD}✨ Session closed cleanly. Goodbye!{C.RESET}\n")
+            print(f"\n  {Bat.mini('sleep')} {C.EMERALD}✨ Session closed cleanly. Goodbye!{C.RESET}\n")
             break
             
         elif cmd in ('1', 'scan', '/scan'):
@@ -2677,7 +2767,7 @@ def view_project_discovery():
             print(f"\n  {BOX['check']} {C.EMERALD}All recommended skills synchronized into active manifest!{C.RESET}")
 
 def view_core_suite():
-    print_header("CORE INVARIANT SUITE — 20 MANDATORY SKILLS")
+    print_header(f"CORE INVARIANT SUITE — {len(MANDATORY_CORE_SUITE)} SKILLS")
     
     headers = ["#", "Skill Name", "Purpose & Token Governance Rationale", "Disk Status"]
     rows = []
@@ -2687,14 +2777,19 @@ def view_core_suite():
         
         if os.path.isfile(path):
             status = make_file_link(f"{C.EMERALD}✔ Verified{C.RESET}", path)
+        elif core.get("external"):
+            status = f"{C.GEMINI_CYAN}↗ External{C.RESET}"
         else:
             status = f"{C.AMBER}⚠ Ingesting{C.RESET}"
-            
+
         skill_link = make_file_link(f"{icon} {core['name']}", path) if os.path.isfile(path) else f"{icon} {core['name']}"
         rows.append([f"{idx:02d}", skill_link, core['reason'], status])
         
     print(render_table(headers, rows, border_color=C.SLATE_DARK))
-    print(f"\n  {C.GEMINI_VIOLET}◆ Core Invariant Rule:{C.RESET} {C.SLATE_MUTED}These 20 skills form the unalterable governance kernel across every agent turn.{C.RESET}")
+    print(f"\n  {C.GEMINI_VIOLET}◆ Core Invariant Rule:{C.RESET} {C.SLATE_MUTED}These {len(MANDATORY_CORE_SUITE)} skills form the unalterable governance kernel across every agent turn.{C.RESET}")
+    for core in MANDATORY_CORE_SUITE:
+        if core.get("external"):
+            print(f"  {C.SLATE_MUTED}↗ {core['name']} is not bundled (no upstream license). Install: {C.RESET}{C.GEMINI_CYAN}{core['install']}{C.RESET}")
 
 def view_category_manager():
     while True:
@@ -2890,9 +2985,11 @@ def view_doctor():
     print(render_table(headers, rows, border_color=C.SLATE_DARK))
     
     if result['all_pass']:
-        print(f"\n  {BOX['check']} {C.EMERALD}All checks passed. SuperDuperSkills workspace is 100% healthy and optimized.{C.RESET}")
+        Bat.set("happy")
+        print(f"\n  {Bat.mini('happy')} {BOX['check']} {C.EMERALD}All checks passed. SuperDuperSkills workspace is 100% healthy and optimized.{C.RESET}")
     elif result['has_failures']:
-        print(f"\n  {BOX['fail']} {C.ROSE}Critical issues detected. Run 'sds init' to fix missing directories.{C.RESET}")
+        Bat.set("error")
+        print(f"\n  {Bat.mini('error')} {BOX['fail']} {C.ROSE}Critical issues detected. Run 'sds init' to fix missing directories.{C.RESET}")
     else:
         print(f"\n  {BOX['warn']} {C.AMBER}Some warnings detected. System is operational.{C.RESET}")
 
@@ -2946,7 +3043,7 @@ def view_init_project():
     headers = ["Component", "Location", "Status"]
     rows = [
         ["Governance Root", make_file_link(".agents/", AGENTS_DIR), f"{C.EMERALD}Created{C.RESET}"],
-        ["Active Skills Manifest", make_file_link(".agents/ACTIVE-SKILLS.json", ACTIVE_MANIFEST), f"{C.EMERALD}Loaded (20 Cores){C.RESET}"],
+        ["Active Skills Manifest", make_file_link(".agents/ACTIVE-SKILLS.json", ACTIVE_MANIFEST), f"{C.EMERALD}Loaded ({len(MANDATORY_CORE_SUITE)} Cores){C.RESET}"],
         ["Project Qualification Doc", make_file_link(".agents/PROJECT-QUALIFICATION.md", QUALIFICATION_DOC), f"{C.EMERALD}Generated{C.RESET}"],
         ["Profile Presets Directory", make_file_link(".agents/profiles/", PROFILES_DIR), f"{C.EMERALD}Ready{C.RESET}"],
         ["Desktop Integration Config", make_file_link(".agents/desktop.json", DESKTOP_CONFIG), f"{C.EMERALD}Saved{C.RESET}"]
@@ -3085,7 +3182,7 @@ def view_mission_modes(mode_name: Optional[str] = None):
             f"{len(mdata['skills'])} skills"
         ])
     print(render_table(headers, rows, border_color=C.SLATE_DARK))
-    print(f"\n  {C.SLATE_MUTED}Tip: Activating a mode keeps the 20 Invariant Cores while swapping specialized skills.{C.RESET}\n")
+    print(f"\n  {C.SLATE_MUTED}Tip: Activating a mode keeps the {len(MANDATORY_CORE_SUITE)} Invariant Cores while swapping specialized skills.{C.RESET}\n")
     
     choice = read_user_choice(f"  {C.GEMINI_CYAN}❯ Select mission mode [1-{len(modes_list)}] (or 0 to cancel):{C.RESET} ")
     if choice.isdigit() and 1 <= int(choice) <= len(modes_list):

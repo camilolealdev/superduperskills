@@ -80,7 +80,7 @@ flowchart TD
 - **Límites**: no sustituye reglas deterministas, búsquedas exactas, escritura abierta ni la aplicación de permisos. La lógica de negocio, los permisos y la aprobación humana siguen siendo de la aplicación.
 - **Configuración**: requiere `JEV_API_KEY` (clave `sk_…` de una cuenta Jev AI) en el entorno, y opcionalmente `JEV_LANGUAGE` (`en-US` por defecto, `zh-CN`). Nunca la subas a Git ni la pegues en la conversación. Sin clave, el skill solo guía la configuración.
 - **Privacidad**: cada decisión envía el contenido de la consulta a `https://thejevai.com/v1/systemone`. No incluyas secretos ni datos personales en las consultas.
-- **Estado en este repo**: solo documentado. Aún no está en `skills/` ni en el manifiesto core del CLI.
+- **Estado en este repo**: skill core **externo** (n.º 21 en el CLI). No se incluye en `skills/` porque el repositorio upstream no tiene licencia; el CLI lo muestra como `↗ External`, no lo exige en `view_file`, `audit` no lo cuenta como faltante y `sync` no escribe reglas que lo referencien. Instalación: `npx skills add jev-ai/jev-agent-skill`.
 
 #### Repos relacionados (revisados el 2026-10-14, no incluidos en `skills/`)
 
