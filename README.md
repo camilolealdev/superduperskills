@@ -239,6 +239,7 @@ It appears in the banner (terminals ≥ 101 columns), every command header, spin
 
 | Command · Comando | 🇬🇧 Purpose | 🇪🇸 Propósito |
 |---|---|---|
+| `browse [category]` | 📚 Browse **all** skills by category (18 categories, paging, `--search`, `--json`); `sds` → `v` for the interactive browser | 📚 Explora **todas** las skills por categoría (18 categorías, paginado, `--search`, `--json`); `sds` → `v` para el explorador interactivo |
 | `ui` | 🖱️ Interactive TUI Dashboard (Mouse support, fuzzy search, live preview) | 🖱️ Dashboard TUI interactivo (Soporte de ratón, búsqueda fuzzy, preview) |
 | `ask "<query>"` | 🤖 Local Semantic AI Assistant with RAG & streaming | 🤖 Asistente IA semántico local con RAG y streaming |
 | `why <skill>` | 🔍 Architectural justification & token breakdown | 🔍 Justificación arquitectónica y desglose de tokens |

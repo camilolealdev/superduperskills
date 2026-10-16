@@ -43,7 +43,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 # =============================================================================
 # 1. VERSION, METADATA & CROSS-PLATFORM KEY READER
 # =============================================================================
-__version__ = "6.0.3"
+__version__ = "6.0.4"
 __codename__ = "WorldClass"
 
 
@@ -1153,6 +1153,230 @@ class ManifestController:
         return True, f"{C.EMERALD}● '{skill_name}' activated and synced to manifest.{C.RESET}"
 
 # =============================================================================
+# 10b. SKILL CATALOG: every skill in the vault, classified into the CLI categories
+# =============================================================================
+# First match wins; each regex runs on "<name> <description>" (lowercase).
+# ponytail: keyword heuristic, replace with explicit tags in SKILL.md if precision matters.
+CATEGORY_RULES = [
+    ("SECURITY_OWASP", r"secur|owasp|pentest|vulnerab|threat model|csrf|xss|secret scan|malware|exploit"),
+    ("VIDEO_ANIMATION", r"video|remotion|hyperframes|animat|motion|gsap|lottie|three\.?js|webgl|shader|\b3d\b"),
+    ("MOBILE_DESKTOP", r"\bmobile\b|\bios\b|android|swift|kotlin|flutter|react native|expo|electron|desktop|wpf|winui"),
+    ("DESIGN_UI", r"react|vue|angular|svelte|next\.?js|astro|design|\bui\b|\bux\b|css|tailwind|frontend|figma|typograph|brand|accessib|a11y|landing page"),
+    ("DEVOPS_CLOUD", r"github actions|diagram|devops|docker|kubernetes|terraform|ci/cd|\bcicd\b|deploy|cloudflare|\baws\b|azure|\bgcp\b|helm|vercel|infrastructure"),
+    ("AI_AGENTS", r"\bagents?\b|\bllm\b|prompt|\bmcp\b|\brag\b|embedding|openai|anthropic|claude|gemini|fine-tun|langchain"),
+    ("TESTING_QA", r"\btests?\b|testing|\bqa\b|playwright|\be2e\b|coverage|mutation|quality"),
+    ("INTEGRATIONS_AUTOMATION", r"n8n|zapier|webhook|automation|integrat|workflow|composio"),
+    ("BACKEND_API", r"data scien|data engineer|pandas|analytics|machine learning|ml|backend|\bapi\b|database|\bsql\b|postgres|django|fastapi|spring|graphql|redis|\borm\b|\brest\b"),
+    ("PROJECT_MANAGEMENT", r"scrum|sprint|agile|roadmap|jira|backlog|project manage|user stor"),
+    ("SALES_COMMS", r"\bsales?\b|prospect|cold email|negotiat|\bcrm\b|outreach|proposal|customer success"),
+    ("BUSINESS_STRATEGY", r"strategy|startup|pricing|financ|investor|\bceo\b|\bcfo\b|business|revenue|\bokr"),
+    ("GROWTH_SEO_LEGAL", r"\bseo\b|marketing|growth|\bads?\b|copywrit|legal|gdpr|compliance|conversion|social media"),
+    ("WRITING_CONTENT", r"writing|content|blog|editor|humaniz|documentation"),
+    ("PRODUCTIVITY_PEOPLE", r"productiv|standup|weekly|hiring|resume|culture|\bteam|meeting|focus"),
+    ("ENGINEERING_PRACTICES", r"^ring |performance|verify|audit|refactor|clean code|clean architecture|debug|\bgit\b|\btdd\b|review|architecture|\blint"),
+]
+
+
+class SkillCatalog:
+    """All vault skills with a category. Cached: scanning thousands of SKILL.md files takes seconds."""
+    OTHER = "OTHER"
+    _rules = [(k, re.compile(p)) for k, p in CATEGORY_RULES]
+
+    @staticmethod
+    def _desc(path: str) -> str:
+        try:
+            with open(path, encoding='utf-8', errors='ignore') as f:
+                head = f.read(2500).replace('\r', '')
+        except OSError:
+            return ""
+        m = re.search(r'^description:\s*(.*?)(?=^\w[\w-]*:|^---)', head, re.S | re.M)
+        raw = (m.group(1) if m else "").replace('>-', '').replace('>', '').replace('|', '')
+        return " ".join(raw.split()).strip('"\' ')
+
+    @classmethod
+    def classify(cls, name: str, desc: str, curated: Dict[str, str]) -> str:
+        if name in curated:
+            return curated[name]
+        if name.endswith("-automation"):
+            return "INTEGRATIONS_AUTOMATION"
+        label = name.replace('-', ' ').lower()
+        # the name is a stronger signal than prose: try it alone first, then name + description
+        for text in (label, f"{label} {desc.lower()}"):
+            for key, rx in cls._rules:
+                if rx.search(text):
+                    return key
+        return cls.OTHER
+
+    CATALOG_FILE = os.path.join(REPO_ROOT, 'skills-catalog.json')
+
+    @classmethod
+    def load(cls, refresh: bool = False) -> List[Dict[str, str]]:
+        """Fast path: names from the vault + categories from the shipped skills-catalog.json.
+
+        Skills missing from the catalog are classified by name only (no file reads).
+        refresh=True reads every SKILL.md (slow, minutes on a big vault) and rewrites the catalog.
+        """
+        try:
+            names = sorted(e.name for e in os.scandir(SKILLS_DIR) if e.is_dir() and not e.name.startswith('_'))
+        except OSError:
+            return []
+        known: Dict[str, Any] = {}
+        if not refresh:
+            try:
+                with open(cls.CATALOG_FILE, encoding='utf-8') as f:
+                    known = json.load(f)
+            except (OSError, ValueError):
+                pass
+        # hand-curated registry wins over the heuristic; earlier categories win ties
+        curated = {n: k for k, v in reversed(list(CATEGORY_REGISTRY.items())) for n, _ in v["skills"]}
+        skills = []
+        for name in names:
+            if name in known:
+                cat, desc = known[name]
+            else:
+                desc = cls._desc(os.path.join(SKILLS_DIR, name, 'SKILL.md')) if refresh else ""
+                cat = cls.classify(name, desc, curated)
+            skills.append({"name": name, "cat": cat, "desc": desc[:110]})
+        if refresh:
+            try:
+                with open(cls.CATALOG_FILE, 'w', encoding='utf-8') as f:
+                    json.dump({s["name"]: [s["cat"], s["desc"]] for s in skills}, f, ensure_ascii=False, separators=(',', ':'))
+            except OSError:
+                pass
+        return skills
+
+    @classmethod
+    def keys(cls, skills: List[Dict[str, str]]) -> List[str]:
+        """Category keys that have at least one skill, registry order, OTHER last."""
+        present = {s["cat"] for s in skills}
+        return [k for k in list(CATEGORY_REGISTRY) + [cls.OTHER] if k in present]
+
+    @classmethod
+    def title(cls, key: str) -> str:
+        return CATEGORY_REGISTRY[key]["title"] if key in CATEGORY_REGISTRY else "Otros / Sin clasificar"
+
+    @classmethod
+    def icon(cls, key: str) -> str:
+        return CATEGORY_REGISTRY[key]["icon"] if key in CATEGORY_REGISTRY else "📦"
+
+    @classmethod
+    def resolve(cls, text: str, skills: List[Dict[str, str]]) -> Optional[str]:
+        """Accept a category key, its number in the category table, or any part of its title."""
+        t = (text or "").strip().lower()
+        keys = cls.keys(skills)
+        if t.isdigit() and 1 <= int(t) <= len(keys):
+            return keys[int(t) - 1]
+        for k in keys:
+            if t and (t == k.lower() or t in k.lower().replace('_', ' ') or t in cls.title(k).lower()):
+                return k
+        return None
+
+    @staticmethod
+    def pool(skills: List[Dict[str, str]], cat: Optional[str] = None, query: str = "") -> List[Dict[str, str]]:
+        q = (query or "").lower().strip()
+        return [s for s in skills if (not cat or s["cat"] == cat)
+                and (not q or q in s["name"].lower() or q in s["desc"].lower())]
+
+
+def browse_categories_table(skills: List[Dict[str, str]]) -> str:
+    counts: Dict[str, int] = {}
+    for s in skills:
+        counts[s["cat"]] = counts.get(s["cat"], 0) + 1
+    rows = [[str(i), f"{SkillCatalog.icon(k)} {SkillCatalog.title(k)}", f"{counts[k]:,}"]
+            for i, k in enumerate(SkillCatalog.keys(skills), 1)]
+    return render_table(["#", "Category", "Skills"], rows, border_color=C.SLATE_DARK)
+
+
+def browse_page_table(pool: List[Dict[str, str]], page: int, per: int) -> str:
+    active = {s["name"] for s in ManifestController.load_active_manifest().get("active_skills", [])}
+    rows = [["●" if s["name"] in active else "○", s["name"], SkillCatalog.icon(s["cat"]), s["desc"][:72]]
+            for s in pool[(page - 1) * per: page * per]]
+    return render_table(["", "Skill", "Cat", "Description"], rows, border_color=C.SLATE_DARK)
+
+
+def view_browse(category: str = "", query: str = "", page: int = 1, per: int = 20,
+                refresh: bool = False, as_json: bool = False):
+    """Non-interactive: one page of the vault filtered by category and/or text (scriptable)."""
+    skills = SkillCatalog.load(refresh)
+    if not skills:
+        print(f"  {BOX['warn']} {C.AMBER}No skills found in {SKILLS_DIR}. Run 'sds update' to download the vault.{C.RESET}")
+        return
+    cat = SkillCatalog.resolve(category, skills)
+    if category and not cat:
+        print(f"  {BOX['fail']} {C.ROSE}Unknown category '{category}'. Use a number, key or part of the name:{C.RESET}")
+        print(browse_categories_table(skills))
+        return
+    if not cat and not query:
+        if as_json:
+            print(json.dumps([{"key": k, "title": SkillCatalog.title(k), "count": len(SkillCatalog.pool(skills, k))}
+                              for k in SkillCatalog.keys(skills)], ensure_ascii=False, indent=2))
+            return
+        print_header(f"SKILL BROWSER — {len(skills):,} SKILLS BY CATEGORY")
+        print(browse_categories_table(skills))
+        print(f"\n  {C.SLATE_MUTED}Filter: {C.GEMINI_CYAN}sds browse <number|name>{C.SLATE_MUTED} · search: {C.GEMINI_CYAN}sds browse --search react{C.SLATE_MUTED} · interactive: {C.GEMINI_CYAN}sds{C.SLATE_MUTED} → v{C.RESET}\n")
+        return
+    pool = SkillCatalog.pool(skills, cat, query)
+    pages = max(1, -(-len(pool) // per))
+    page = min(max(page, 1), pages)
+    if as_json:
+        print(json.dumps(pool[(page - 1) * per: page * per], ensure_ascii=False, indent=2))
+        return
+    label = SkillCatalog.title(cat) if cat else "All categories"
+    print_header(f"SKILL BROWSER — {label}" + (f" · '{query}'" if query else ""))
+    print(browse_page_table(pool, page, per))
+    nxt = f" · next: sds browse {category} --page {page + 1}".replace("  ", " ") if page < pages else ""
+    print(f"\n  {C.SLATE_MUTED}Page {page}/{pages} · {len(pool):,} skills{nxt}{C.RESET}\n")
+
+
+def view_browse_interactive(initial: str = "", refresh: bool = False):
+    """Menu: pick a category, page through its skills, search and toggle without leaving."""
+    skills = SkillCatalog.load(refresh)
+    if not skills:
+        print(f"  {BOX['warn']} {C.AMBER}No skills found in {SKILLS_DIR}. Run 'sds update' to download the vault.{C.RESET}")
+        return
+    cat = SkillCatalog.resolve(initial, skills) if initial else None
+    query, page, per = "", 1, 15
+    in_list = bool(cat)
+    while True:
+        pool = SkillCatalog.pool(skills, cat, query)
+        pages = max(1, -(-len(pool) // per))
+        page = min(max(page, 1), pages)
+        label = SkillCatalog.title(cat) if cat else "All categories"
+        print_header(f"SKILL BROWSER — {label}" + (f" · '{query}'" if query else "") if in_list
+                     else f"SKILL BROWSER — {len(skills):,} SKILLS BY CATEGORY")
+        if in_list:
+            print(browse_page_table(pool, page, per))
+            print(f"\n  {C.SLATE_MUTED}Page {page}/{pages} · {len(pool):,} skills{C.RESET}")
+            hint = "n/p page · c categories · t <skill> toggle · text = search · 0 back"
+        else:
+            print(browse_categories_table(skills))
+            hint = "number = category · a = all skills · text = search · 0 back"
+        choice = read_user_choice(f"\n  {C.SLATE_MUTED}{hint}{C.RESET}\n  {C.GEMINI_CYAN}❯{C.RESET} ").strip()
+        low = choice.lower()
+        if low in ('0', 'q', 'b', 'exit'):
+            return
+        if not in_list:
+            if low == 'a':
+                cat, query, page, in_list = None, "", 1, True
+            elif SkillCatalog.resolve(choice, skills) and (low.isdigit() or len(low) > 2):
+                cat, query, page, in_list = SkillCatalog.resolve(choice, skills), "", 1, True
+            elif choice:
+                cat, query, page, in_list = None, choice, 1, True
+        elif low == 'n':
+            page += 1
+        elif low == 'p':
+            page -= 1
+        elif low == 'c':
+            cat, query, page, in_list = None, "", 1, False
+        elif low.startswith('t '):
+            ok, msg = ManifestController.toggle_skill(choice[2:].strip())
+            print(f"  {msg}")
+            time.sleep(0.8)
+        elif choice:
+            query, page = choice, 1
+
+
+# =============================================================================
 # 11. SKILL VAULT SEARCH & REMOTE INGESTION
 # =============================================================================
 class SkillVaultEngine:
@@ -1885,11 +2109,21 @@ class WebCompanionHandler(http.server.BaseHTTPRequestHandler):
             modes = {k: {"title": v["title"], "desc": v["description"], "count": len(v["skills"])} for k, v in MissionModesEngine.MODES.items()}
             self._send_json(modes)
 
+        elif path == '/api/categories':
+            skills = SkillCatalog.load()
+            self._send_json([{"key": k, "title": SkillCatalog.title(k), "icon": SkillCatalog.icon(k),
+                              "count": len(SkillCatalog.pool(skills, k))} for k in SkillCatalog.keys(skills)])
+
         elif path == '/api/skills':
             q = qs.get('q', [''])[0]
-            limit = int(qs.get('limit', ['50'])[0])
-            skills = SkillVaultEngine.search_local(q, limit) if q else []
-            self._send_json(skills)
+            cat = qs.get('cat', [''])[0]
+            try:
+                limit = int(qs.get('limit', ['500'])[0])
+            except ValueError:
+                limit = 500
+            active = {s["name"] for s in ManifestController.load_active_manifest().get("active_skills", [])}
+            found = SkillCatalog.pool(SkillCatalog.load(), cat or None, q)[:limit] if (q or cat) else []
+            self._send_json([dict(s, active=s["name"] in active) for s in found])
 
         elif path == '/api/skill':
             name = qs.get('name', [''])[0]
@@ -2202,6 +2436,7 @@ class WebCompanionServer:
         <span style="font-size: 0.8rem; color: var(--text-muted);" id="searchCount">3,325 en bóveda</span>
       </div>
       <input type="text" id="searchInput" class="search-input" placeholder="Buscar skills (react, security, emil, tdd)..." oninput="debounceSearch()">
+      <select id="catFilter" class="search-input" onchange="doSearch()"><option value="">Todas las categorías</option></select>
       <div id="skillsList" class="scroll-list"></div>
     </div>
 
@@ -2221,6 +2456,7 @@ class WebCompanionServer:
     let searchTimeout = null;
 
     async function loadData() {
+      loadCategories();
       const mRes = await fetch('/api/manifest');
       currentManifest = await mRes.json();
       
@@ -2279,10 +2515,22 @@ class WebCompanionServer:
       searchTimeout = setTimeout(doSearch, 250);
     }
 
+    async function loadCategories() {
+      const cats = await (await fetch('/api/categories')).json();
+      const sel = document.getElementById('catFilter');
+      cats.forEach(c => {
+        const o = document.createElement('option');
+        o.value = c.key;
+        o.textContent = `${c.icon} ${c.title} (${c.count})`;
+        sel.appendChild(o);
+      });
+    }
+
     async function doSearch() {
       const q = document.getElementById('searchInput').value.trim();
-      if (!q) { renderActiveSkills(); return; }
-      const res = await fetch(`/api/skills?q=${encodeURIComponent(q)}&limit=40`);
+      const cat = document.getElementById('catFilter').value;
+      if (!q && !cat) { renderActiveSkills(); return; }
+      const res = await fetch(`/api/skills?q=${encodeURIComponent(q)}&cat=${encodeURIComponent(cat)}&limit=1000`);
       const results = await res.json();
       const list = document.getElementById('skillsList');
       list.innerHTML = '';
@@ -2560,7 +2808,8 @@ def render_main_menu_grid() -> str:
         ("1", "🔍", "Deep Project Scan",    "Stack & recommendations"),
         ("2", "🔒", "Core Invariant Suite",  f"{len(MANDATORY_CORE_SUITE)} mandatory guardrails"),
         ("3", "🎛️ ", "Category Manager",     "Interactive skill toggles"),
-        ("4", "🔎", "Live Vault Search",     "Search 3,300+ skills"),
+        ("4", "🔎", "Live Vault Search",     f"Search {vault_size():,} skills"),
+        ("v", "📚", "Browse All Skills",     f"{vault_size():,} skills by category"),
         ("5", "📥", "Skill Ingestion",       "Import remote GitHub URL"),
         ("6", "🔄", "Multi-CLI Sync",        "Cursor, Claude, OpenCode"),
         ("7", "🧪", "Compliance Audit",      "Audit SKILL.md integrity"),
@@ -2573,7 +2822,7 @@ def render_main_menu_grid() -> str:
         ("g", "🕸️ ", "Dependency Graph",     "Architecture visual tree"),
         ("c", "📋", "Copy System Prompt",    "Clipboard for Claude/GPT"),
         ("w", "👁️ ", "Stack Watcher",        "Auto-detect file changes"),
-        ("k", "🏆", "Quality Benchmark",     "Audit 3,325 skills (A+)"),
+        ("k", "🏆", "Quality Benchmark",     f"Audit {vault_size():,} skills (A+)"),
         ("d", "🩺", "Doctor Health Check",   "Environment diagnostics"),
         ("e", "📤", "Export Manifest",       "JSON / Markdown export"),
         ("i", "📦", "Initialize Project",    "Setup .agents/ workspace"),
@@ -2581,20 +2830,20 @@ def render_main_menu_grid() -> str:
         ("0", "🚪", "Exit Session",          "Return to terminal")
     ]
     
-    col1 = items[:11]
-    col2 = items[11:]
-    
+    half = (len(items) + 1) // 2  # odd count: the extra item goes in the left column
+    col1, col2 = items[:half], items[half:]
+
+    def cell(item) -> str:
+        if item is None:
+            return ""
+        num, ico, tit, desc = item
+        col = C.CLAUDE_GOLD if num.isdigit() and num != "0" else C.GEMINI_CYAN if num in ('b', 'm', 'c', 'w', 'u', 'a', 'g', 'k', 'v') else C.GEMINI_VIOLET if not num.isdigit() else C.ROSE
+        return f"{col}[{num:>1}]{C.RESET} {ico} {C.BOLD}{C.SLATE_LIGHT}{tit:<20}{C.RESET} {C.SLATE_DARK}{desc[:24]:<24}{C.RESET}"
+
     lines = []
-    for left, right in zip(col1, col2):
-        l_num, l_ico, l_tit, l_desc = left
-        r_num, r_ico, r_tit, r_desc = right
-        
-        l_col = C.CLAUDE_GOLD if l_num.isdigit() and l_num != "0" else C.GEMINI_CYAN if l_num in ('b', 'm', 'c', 'w', 'u', 'a', 'g', 'k') else C.GEMINI_VIOLET if not l_num.isdigit() else C.ROSE
-        r_col = C.CLAUDE_GOLD if r_num.isdigit() and r_num != "0" else C.GEMINI_CYAN if r_num in ('b', 'm', 'c', 'w', 'u', 'a', 'g', 'k') else C.GEMINI_VIOLET if not r_num.isdigit() else C.ROSE
-        
-        left_str = f"{l_col}[{l_num:>1}]{C.RESET} {l_ico} {C.BOLD}{C.SLATE_LIGHT}{l_tit:<20}{C.RESET} {C.SLATE_DARK}{l_desc[:24]:<24}{C.RESET}"
-        right_str = f"{r_col}[{r_num:>1}]{C.RESET} {r_ico} {C.BOLD}{C.SLATE_LIGHT}{r_tit:<20}{C.RESET} {C.SLATE_DARK}{r_desc[:24]:<24}{C.RESET}"
-        lines.append(f"{left_str}   {right_str}")
+    for i, left in enumerate(col1):
+        right = col2[i] if i < len(col2) else None
+        lines.append(f"{cell(left)}   {cell(right)}".rstrip())
         
     return "\n".join(lines)
 
@@ -2631,6 +2880,8 @@ def run_interactive_tui():
             view_category_manager()
         elif cmd in ('4', 'search', '/search', '/find'):
             view_vault_search(initial_query=arg)
+        elif cmd in ('v', 'browse', '/browse', '/skills'):
+            view_browse_interactive(initial=arg)
         elif cmd in ('5', 'ingest', '/ingest'):
             view_skill_ingestion(initial_source=arg)
         elif cmd in ('6', 'sync', '/sync'):
@@ -3479,6 +3730,13 @@ def build_parser() -> argparse.ArgumentParser:
     
     subparsers.add_parser("stats", parents=[common_parser], help="Show usage metrics and dashboard")
     
+    sp_browse = subparsers.add_parser("browse", parents=[common_parser], help="Browse all vault skills by category")
+    sp_browse.add_argument("category", nargs="?", default="", help="Category number, key or part of its name")
+    sp_browse.add_argument("--search", "-s", default="", help="Filter by text in name or description")
+    sp_browse.add_argument("--page", "-p", type=int, default=1, help="Page number")
+    sp_browse.add_argument("--per", "-n", type=int, default=20, help="Skills per page")
+    sp_browse.add_argument("--refresh", action="store_true", help="Re-read every SKILL.md and rebuild skills-catalog.json (slow)")
+
     sp_ui = subparsers.add_parser("ui", parents=[common_parser], help="Launch companion web dashboard at http://localhost:4242")
     sp_ui.add_argument("--port", "-p", type=int, default=4242, help="HTTP Port")
     sp_ui.add_argument("--no-browser", action="store_true", help="Do not open browser automatically")
@@ -3740,6 +3998,12 @@ def main():
             out(MultiCLISync.get_stats())
         else:
             view_stats_dashboard()
+
+    elif args.command == "browse":
+        if not (args.category or args.search or args.json or args.refresh) and sys.stdin.isatty():
+            view_browse_interactive()
+        else:
+            view_browse(args.category, args.search, args.page, args.per, args.refresh, as_json=args.json)
 
     elif args.command == "ui":
         view_web_companion(port=args.port, open_browser=not args.no_browser)
