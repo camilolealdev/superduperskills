@@ -43,7 +43,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 # =============================================================================
 # 1. VERSION, METADATA & CROSS-PLATFORM KEY READER
 # =============================================================================
-__version__ = "6.0.4"
+__version__ = "6.0.5"
 __codename__ = "WorldClass"
 
 
@@ -294,7 +294,7 @@ class TerminalMouseManager:
 atexit.register(TerminalMouseManager.disable)
 
 # =============================================================================
-# 4. MANDATORY INVARIANT CORE SUITE (20 SKILLS)
+# 4. MANDATORY INVARIANT CORE SUITE (27 SKILLS)
 # =============================================================================
 MANDATORY_CORE_SUITE = [
     {"name": "caveman", "reason": "Output Compression (-75% token reduction)", "category": "CORE", "icon": "🪨"},
@@ -319,7 +319,19 @@ MANDATORY_CORE_SUITE = [
     {"name": "penetration-testing-with-strix", "reason": "Pentesting Dinámico Autónomo & PoC Exploits (Strix Core)", "category": "CORE", "icon": "🎯"},
     # External: upstream has no license, so it is not vendored in skills/. Opt-in (needs JEV_API_KEY; sends query content to Jev AI).
     {"name": "jev-agent", "reason": "Decisiones Tipadas vía Jev AI (externo: requiere JEV_API_KEY)", "category": "CORE", "icon": "⚖️",
-     "external": True, "install": "npx skills add jev-ai/jev-agent-skill"}
+     "external": True, "install": "npx skills add jev-ai/jev-agent-skill"},
+    # External memory/comprehension/distribution skills (not bundled). Memory ones complement, not replace, claude-mem/graphify/context-mode.
+    {"name": "agentmemory", "reason": "Memoria Persistente de Agente (externo; complementa claude-mem)", "category": "CORE", "icon": "💾",
+     "external": True, "install": "https://github.com/rohitg00/agentmemory"},
+    {"name": "memU", "reason": "Infraestructura de Memoria (externo; complementa claude-mem/context-mode)", "category": "CORE", "icon": "🧬",
+     "external": True, "install": "https://github.com/NevaMind-AI/memU"},
+    {"name": "understand-anything", "reason": "Comprensión del Repo como Contexto (externo; complementa graphify)", "category": "CORE", "icon": "🔭",
+     "external": True, "install": "https://github.com/Egonex-AI/Understand-Anything"},
+    {"name": "skills-cli", "reason": "Instalación & Distribución de Skills (`npx skills add`, externo)", "category": "CORE", "icon": "📥",
+     "external": True, "install": "https://github.com/vercel-labs/skills"},
+    # Bundled locally (skills/skill-inspector, skills/using-superpowers + obra-superpowers-*)
+    {"name": "skill-inspector", "reason": "Revisión de Seguridad de Skills Pre-Instalación (NVIDIA SkillSpector)", "category": "CORE", "icon": "🕵️"},
+    {"name": "using-superpowers", "reason": "Disciplina de Proceso: brainstorming, debugging sistemático, verificación (obra/superpowers)", "category": "CORE", "icon": "🦸"}
 ]
 
 # =============================================================================

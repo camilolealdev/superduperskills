@@ -1,0 +1,543 @@
+# Push Notifications
+
+## Quick Reference
+
+### Rules
+- iOS: Permission prompt shown ONCE per app install - don't waste it
+- Android 13+: Requires explicit permission (like iOS)
+- Android 12 and below: Opt-out model (enabled by default)
+- Title: under 50 characters
+- Body: keep under ~100 characters for the lock-screen/banner preview (hard OS truncation is closer to 150 on both iOS and Android. See [Content Guidelines](#content-guidelines))
+- Always include deep link for navigation
+- Aggregate similar notifications with a [batch node](../guides/batching.md) rather than app-side
+- Push tokens can change - always handle token refresh
+- Store tokens with device/platform info for proper routing
+- A user with tokens on more than one provider (APNs and FCM) gets the push on only one of them, unless the send sets `channels: { push: { routing_method: "all" } }`
+
+### Common Mistakes
+- Requesting iOS permission immediately on first launch (low opt-in)
+- Not using pre-permission prompt to explain value first
+- Sending vague titles like "New notification"
+- Not handling token refresh (leads to invalid tokens)
+- Storing duplicate tokens for same device
+- Missing deep links (user taps and nothing happens)
+- Not creating Android notification channels (users can't control categories)
+
+### Templates
+
+**Register Push Token (TypeScript):**
+```typescript
+await client.users.tokens.addSingle("device-token-abc", {
+  user_id: "user-123",
+  provider_key: "apn", // or "firebase-fcm"
+  device: {
+    app_id: "com.acme.app",
+    platform: "ios" // or "android"
+  }
+});
+```
+
+**Register Push Token (Python):**
+```python
+client.users.tokens.add_single("device-token-abc",
+    user_id="user-123",
+    provider_key="apn",  # or "firebase-fcm"
+    device={"app_id": "com.acme.app", "platform": "ios"},  # or "android"
+)
+```
+
+**Basic Push (TypeScript):**
+```typescript
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    content: {
+      title: "Your order shipped",
+      body: "Arriving Thursday. Tap to track."
+    },
+    routing: {
+      method: "single",
+      channels: ["push"]
+    }
+  }
+});
+```
+
+**Basic Push (Python):**
+```python
+client.send.message(
+    message={
+        "to": {"user_id": "user-123"},
+        "content": {
+            "title": "Your order shipped",
+            "body": "Arriving Thursday. Tap to track.",
+        },
+        "routing": {"method": "single", "channels": ["push"]},
+    }
+)
+```
+
+**With Deep Link:**
+```typescript
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    template: "nt_01kmrbqf7z9dn2v6w4x8cj5ht",
+    channels: {
+      push: {
+        override: {
+          data: {
+            deepLink: "acme://orders/12345"
+          }
+        }
+      }
+    }
+  }
+});
+```
+
+---
+
+Best practices for sending push notifications that users actually want.
+
+## Platform Overview
+
+| Platform | Service | Permission Model | Rich Media |
+|----------|---------|-----------------|------------|
+| iOS | APNs (Apple Push Notification service) | Opt-in required | Images, video, custom UI |
+| Android | FCM (Firebase Cloud Messaging) | Opt-out (pre-13), Opt-in (13+) | Images, actions, styles |
+| Web | Web Push (VAPID) | Opt-in required | Limited images, actions |
+
+## iOS (APNs)
+
+### Permission Model
+
+- **One-time prompt:** The standard `.alert` authorization prompt is shown once per app install. If denied, the app cannot re-prompt, the user must re-enable in Settings > Notifications > YourApp.
+- **Provisional authorization (iOS 12+):** Request `[.provisional]` *alone* for quiet delivery to Notification Center without a system prompt. The user sees notifications arrive silently and can tap "Keep" (promotes to full authorization) or "Turn Off" from any notification. Provisional and the standard alert prompt are mutually exclusive, mixing `.provisional` with `.alert` asks for the full prompt immediately and defeats the point of provisional.
+- **Recovering from denial:** Deep-link to `UIApplication.openSettingsURLString` in your app's in-app settings so users can flip the toggle themselves; do not assume this is rare, after any denial it's the only path.
+
+### Notification Types
+
+| Type | Visibility | Use Case |
+|------|------------|----------|
+| Alert | Banner, sound, badge | User-facing notifications |
+| Silent | Background only | Data sync, content refresh |
+| Provisional | Notification Center only | Build trust before full permission |
+
+### APNs Payload
+
+```json
+{
+  "aps": {
+    "alert": {
+      "title": "Your order shipped",
+      "body": "Arriving Thursday. Tap to track.",
+      "subtitle": "Order #12345"
+    },
+    "badge": 1,
+    "sound": "default",
+    "mutable-content": 1,
+    "category": "ORDER_UPDATE"
+  },
+  "data": {
+    "orderId": "12345",
+    "deepLink": "acme://orders/12345"
+  }
+}
+```
+
+## Android (FCM)
+
+### Permission Model
+
+- **Android 12 and below:** Opt-out (notifications enabled by default)
+- **Android 13+:** Opt-in required (like iOS)
+- **Notification Channels:** Users can control categories independently
+
+### Notification Channels
+
+```kotlin
+// Create channels in your Android app
+val orderChannel = NotificationChannel(
+    "orders",
+    "Order Updates",
+    NotificationManager.IMPORTANCE_HIGH
+).apply {
+    description = "Shipping and delivery notifications"
+}
+
+val socialChannel = NotificationChannel(
+    "social",
+    "Social Activity",
+    NotificationManager.IMPORTANCE_DEFAULT
+).apply {
+    description = "Comments, likes, and mentions"
+}
+
+notificationManager.createNotificationChannels(listOf(orderChannel, socialChannel))
+```
+
+### FCM Payload
+
+```json
+{
+  "notification": {
+    "title": "Your order shipped",
+    "body": "Arriving Thursday. Tap to track.",
+    "image": "https://acme.com/images/package.png",
+    "click_action": "OPEN_ORDER"
+  },
+  "data": {
+    "orderId": "12345",
+    "type": "shipping"
+  },
+  "android": {
+    "notification": {
+      "channel_id": "orders",
+      "priority": "high"
+    }
+  }
+}
+```
+
+This is FCM's raw message shape. With Apply Recommended Courier Mobile SDK Formatting on (the default), Courier sends no notification block and moves title, body and image into data.
+
+## Web Push
+
+Web Push uses the Firebase Cloud Messaging (FCM) provider in Courier. Register the token the same way as Android:
+
+```typescript
+// After obtaining FCM token in the browser via Firebase SDK
+await client.users.tokens.addSingle(fcmToken, {
+  user_id: userId,
+  provider_key: "firebase-fcm",
+  device: {
+    app_id: "com.acme.web",
+    platform: "web",
+  },
+});
+```
+
+Web Push requires HTTPS and a service worker. Configure FCM credentials in the Courier dashboard under **Integrations → Firebase FCM**.
+
+## Expo Push Notifications
+
+For React Native apps using [Expo](https://docs.expo.dev/push-notifications/overview/), register the Expo push token:
+
+```typescript
+await client.users.tokens.addSingle(expoPushToken, {
+  user_id: userId,
+  provider_key: "expo",
+  device: {
+    app_id: "com.acme.app",
+    platform: "expo",
+  },
+});
+```
+
+Enable the Expo integration under **Integrations → Expo**. It needs no credentials. Courier sends the token to Expo's push service, and Expo delivers through APNs and FCM with your Expo project's credentials.
+
+## Permission Priming
+
+### The Problem
+
+iOS gives you **one chance**. Don't waste it.
+
+| Approach | Opt-in Rate |
+|----------|-------------|
+| Immediate prompt on launch | 30-40% |
+| Pre-permission screen | 50-60% |
+| Contextual prompt after value | 60-70%+ |
+
+### Pre-Permission Strategy
+
+```
+┌─────────────────────────────────────┐
+│                                     │
+│      🔔 Stay in the Loop            │
+│                                     │
+│   Get notified when:                │
+│   ✓ Your order ships                │
+│   ✓ Someone replies to you          │
+│   ✓ Important account updates       │
+│                                     │
+│   [ Enable Notifications ]          │
+│                                     │
+│        Maybe Later                  │
+│                                     │
+└─────────────────────────────────────┘
+```
+
+**If user taps "Enable"** → Show system prompt
+**If user taps "Maybe Later"** → Ask again after they experience value
+
+### Best Timing
+
+| Good | Bad |
+|------|-----|
+| After first purchase | Immediately on first launch |
+| After account setup | Before they understand your app |
+| When they enable a feature that needs it | Random prompt mid-flow |
+| After they've used the app for a week | During checkout |
+
+### Provisional Notifications (iOS)
+
+Request provisional authorization *alone* for quiet delivery. Do NOT combine with `.alert`, which would request the standard prompt immediately and nullify the provisional behavior:
+
+```swift
+UNUserNotificationCenter.current().requestAuthorization(
+    options: [.provisional]
+) { granted, error in
+    // Notifications delivered quietly to Notification Center
+    // User can "Keep" or "Turn Off" from the notification
+    // "Keep" promotes to full authorization (alert, sound, badge)
+}
+```
+
+## Courier Integration
+
+### Register Device Token
+
+```typescript
+// When your app receives a push token
+async function registerPushToken(userId: string, token: string, platform: 'ios' | 'android' | 'web') {
+  const providerMap = {
+    ios: 'apn',
+    android: 'firebase-fcm',
+    web: 'firebase-fcm',  // Web Push via FCM
+  } as const;
+
+  await client.users.tokens.addSingle(token, {
+    user_id: userId,
+    provider_key: providerMap[platform],
+    device: {
+      app_id: 'com.acme.app',
+      platform: platform
+    }
+  });
+}
+```
+
+### Send Push Notification
+
+```typescript
+import Courier from "@trycourier/courier";
+
+const client = new Courier();
+
+// Basic push
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    content: {
+      title: "Your order shipped",
+      body: "Arriving Thursday. Tap to track."
+    },
+    routing: {
+      method: "single",
+      channels: ["push"]
+    }
+  }
+});
+```
+
+### With Deep Link
+
+```typescript
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    template: "nt_01kmrbqf7z9dn2v6w4x8cj5ht",
+    data: {
+      orderId: "12345",
+      deliveryDate: "Thursday"
+    },
+    channels: {
+      push: {
+        override: {
+          data: {
+            deepLink: "acme://orders/12345"
+          }
+        }
+      }
+    }
+  }
+});
+```
+
+### With Image (Rich Push)
+
+```typescript
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    content: {
+      title: "New comment on your photo",
+      body: "Jane: Great shot! 📸"
+    },
+    channels: {
+      push: {
+        override: {
+          data: {
+            image: "https://acme.com/photos/12345.jpg",
+            deepLink: "acme://photos/12345"
+          }
+        }
+      }
+    }
+  }
+});
+```
+
+### With Action Buttons
+
+```typescript
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    content: {
+      title: "Delivery arriving soon",
+      body: "Your package will arrive in 30 minutes"
+    },
+    providers: {
+      // The app registers the DELIVERY category and its buttons
+      apn: { override: { body: { category: "DELIVERY" } } }
+    }
+  }
+});
+```
+
+### Silent Push (Data Only)
+
+```typescript
+// iOS: no alert, and wake the app to sync. FCM already ships data-only by
+// default (Apply Recommended Courier Mobile SDK Formatting).
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    template: "nt_01kmrbqf7z9dn2v6w4x8cj5ht",
+    data: { type: "sync", resource: "messages" },
+    providers: {
+      apn: { override: { silent: true, body: { "content-available": 1 } } },
+    },
+  },
+});
+```
+
+## Token Management
+
+### Lifecycle
+
+```
+App Launch → Check Token → Compare with Stored → Update if Changed
+              ↓
+Token Changes (OS update, reinstall, etc.)
+              ↓
+Update Courier Profile
+```
+
+### Handle Token Refresh
+
+```swift
+// iOS - AppDelegate
+func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+    let token = deviceToken.map { String(format: "%02hhx", $0) }.joined()
+    sendTokenToBackend(token, platform: "ios")
+}
+```
+
+```kotlin
+// Android - FirebaseMessagingService
+override fun onNewToken(token: String) {
+    sendTokenToBackend(token, platform = "android")
+}
+```
+
+### Multi-Device Support
+
+Users may have multiple devices. Store all tokens:
+
+```typescript
+// Register one token per device, all on the same user
+await client.users.tokens.addSingle("abc...", { user_id: "user-123", provider_key: "apn" });          // iPhone
+await client.users.tokens.addSingle("xyz...", { user_id: "user-123", provider_key: "firebase-fcm" }); // Pixel
+await client.users.tokens.addSingle("123...", { user_id: "user-123", provider_key: "firebase-fcm" }); // Samsung
+
+// The push channel stops at the first provider that works, so without this
+// the iPhone (APNs) and the Android phones (FCM) don't all get it.
+await client.send.message({
+  message: {
+    to: { user_id: "user-123" },
+    template: "nt_01kmrbvk2q5x9v1d4c7n8w6hj",
+    routing: { method: "single", channels: ["push"] },
+    channels: { push: { routing_method: "all" } },
+  },
+});
+```
+
+### Remove Invalid Tokens
+
+`data.providers[].error` is the provider's own message as a **string**, and the webhook does not
+name which token failed. The token's own `status` is the reliable signal, so read it and drop the
+dead ones.
+
+```typescript
+// Handle feedback from APNs/FCM about invalid tokens
+app.post('/webhooks/courier', async (req, res) => {
+  const { type, data } = req.body;
+
+  if (type === 'message:updated' && data.status === 'UNDELIVERABLE') {
+    const { tokens } = await client.users.tokens.list(data.recipient);
+    for (const { token } of tokens ?? []) {
+      // status is on the single-token read, not on the list rows
+      const { status } = await client.users.tokens.retrieve(token, { user_id: data.recipient });
+      if (status === 'failed' || status === 'revoked') {
+        await client.users.tokens.delete(token, { user_id: data.recipient });
+      }
+    }
+  }
+
+  res.sendStatus(200);
+});
+```
+
+Token `status` is one of `active`, `unknown`, `failed`, `revoked`, with a free-text
+`status_reason`. Delete on `failed` or `revoked`; leave `unknown` alone.
+
+### Content Guidelines
+
+| Element | iOS hard limit | Android hard limit | Best practice |
+|---------|----------------|--------------------|---------------|
+| Title | ~50 chars | ~65 chars | Keep under 50, front-load the subject |
+| Body | ~150 chars | ~150 chars | Keep under ~100 so the lock-screen/banner preview isn't truncated |
+| Image | 1024×1024 max | 1:1 or 2:1 ratio | Add value, not decoration |
+
+> The Quick Reference "under 100 characters" target matches the **preview-safe** length on both platforms, the `~150` number here is the OS truncation ceiling, not a recommendation. If your body exceeds ~100 chars, assume the tail will be cut off on the lock screen.
+
+## Troubleshooting
+
+| Issue | Cause | Solution |
+|-------|-------|----------|
+| Not delivered | Invalid/expired token | Re-register token on app launch |
+| Delayed | Low priority | Use high priority for time-sensitive |
+| Not shown (iOS) | User disabled | Check permission status, re-request |
+| Not shown (Android) | Channel disabled | Guide user to notification settings |
+| Duplicates | Multiple token registrations | Dedupe tokens by device ID |
+| No sound | Silent mode or channel settings | Respect user preference |
+
+### Debug Checklist
+
+1. Token registered correctly in Courier?
+2. User has push permission enabled?
+3. App in foreground? (may need handling)
+4. Device connected to internet?
+5. APNs/FCM credentials configured correctly?
+6. Payload format valid?
+
+## Related
+
+- [Inbox](./inbox.md) - In-app notification center as push complement
+- [Multi-Channel](../guides/multi-channel.md) - Push in escalation chains
+- [Batching](../guides/batching.md) - Notification batching strategies
+- [Throttling](../guides/throttling.md) - Push frequency limits
+- [Engagement](../lifecycle-marketing.md) - Activity notification patterns

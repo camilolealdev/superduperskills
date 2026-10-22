@@ -1,0 +1,25 @@
+issue_id: "1_7_008"
+sort_order: 5080
+change: >-
+  require_explicit_package_overrides_for_builtin_materializations defaults to True
+action: >-
+  Only for package overrides of built-in materializations: set the flag to false or update the package
+category: Breaking
+component: core
+adapter_type: null
+impact: >-
+  Installed packages can no longer silently override built-in materializations
+  (table/view/incremental); built-in takes precedence
+from_version: '1.7'
+to_version: '1.8'
+automation_type: deterministic
+out_of_repo_risk: false
+environment_change: false
+context:
+  detection: |-
+    - Inspect installed packages for table/view/incremental materialization overrides.
+    - No packages or no overrides: not applicable. A missing flag alone is not evidence.
+  fixing: |-
+    - Only for detected package overrides: set `flags.require_explicit_package_overrides_for_builtin_materializations: false`
+      in dbt_project.yml to preserve behavior, or update the package.
+    - Otherwise leave the flag unchanged, including in autofix diffs.

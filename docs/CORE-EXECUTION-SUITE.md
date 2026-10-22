@@ -1,6 +1,6 @@
 # Suite Core de Invocación Obligatoria para Agentes IA
 
-> Documentación de arquitectura, aplicabilidad y reglas de ejecución para los **7 Pilares Fundamentales** de desarrollo agéntico en `superduperskills`.
+> Documentación de arquitectura, aplicabilidad y reglas de ejecución para los **13 Pilares Fundamentales** (27 skills core) de desarrollo agéntico en `superduperskills`.
 
 ---
 
@@ -12,7 +12,7 @@ Antes de construir o modificar cualquier módulo en un proyecto, el agente debe 
 
 ---
 
-## 2. Los 7 Pilares de Ejecución
+## 2. Los Pilares de Ejecución (27 skills core)
 
 ```mermaid
 flowchart TD
@@ -26,7 +26,10 @@ flowchart TD
     Caveman --> Harness["8. Verificación & Feedback<br>(harness / agent-harness)"]
     Harness --> Security["9. Seguridad Dinámica & Pentesting<br>(penetration-testing-with-strix / agentshield)"]
     Security --> Jev["10. Decisiones Tipadas<br>(jev-agent)"]
-    Jev --> Done["Entrega Calificada"]
+    Jev --> Ext["11. Memoria & Comprensión Extendida<br>(agentmemory / memU / understand-anything)"]
+    Ext --> Dist["12. Distribución & Inspección de Skills<br>(skills-cli / skill-inspector)"]
+    Dist --> Proc["13. Disciplina de Proceso<br>(superpowers)"]
+    Proc --> Done["Entrega Calificada"]
 ```
 
 ### Pillar 1: `mem` / `claude-mem` (Memoria Persistente)
@@ -81,6 +84,19 @@ flowchart TD
 - **Configuración**: requiere `JEV_API_KEY` (clave `sk_…` de una cuenta Jev AI) en el entorno, y opcionalmente `JEV_LANGUAGE` (`en-US` por defecto, `zh-CN`). Nunca la subas a Git ni la pegues en la conversación. Sin clave, el skill solo guía la configuración.
 - **Privacidad**: cada decisión envía el contenido de la consulta a `https://thejevai.com/v1/systemone`. No incluyas secretos ni datos personales en las consultas.
 - **Estado en este repo**: skill core **externo** (n.º 21 en el CLI). No se incluye en `skills/` porque el repositorio upstream no tiene licencia; el CLI lo muestra como `↗ External`, no lo exige en `view_file`, `audit` no lo cuenta como faltante y `sync` no escribe reglas que lo referencien. Instalación: `npx skills add jev-ai/jev-agent-skill`.
+
+### Pillar 11: Memoria & Comprensión Extendida (n.º 22-24, externos)
+- `agentmemory` ([rohitg00/agentmemory](https://github.com/rohitg00/agentmemory)): memoria persistente de agente.
+- `memU` ([NevaMind-AI/memU](https://github.com/NevaMind-AI/memU)): infraestructura de memoria.
+- `understand-anything` ([Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything)): el repo como contexto comprensible.
+- **Complementan, no reemplazan**, a `claude-mem`, `graphify` y `context-mode`. Externos: no incluidos en `skills/`; el CLI los muestra como `↗ External`. Instalación desde el repo de GitHub indicado.
+
+### Pillar 12: Distribución & Inspección de Skills (n.º 25-26)
+- `skills-cli` ([vercel-labs/skills](https://github.com/vercel-labs/skills)): instala/distribuye skills con `npx skills add <repo>` (externo).
+- `skill-inspector` (NVIDIA [SkillSpector](https://github.com/NVIDIA/SkillSpector)): revisión de seguridad de un skill **antes** de instalarlo (incluido en `skills/skill-inspector`).
+
+### Pillar 13: `superpowers` (Disciplina de Proceso, n.º 27)
+- [obra/superpowers](https://github.com/obra/superpowers): brainstorming, debugging sistemático y verificación antes de dar algo por terminado. Incluido: `using-superpowers` y `obra-superpowers-*`.
 
 #### Repos relacionados (revisados el 2026-10-14, no incluidos en `skills/`)
 

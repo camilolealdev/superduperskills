@@ -1,7 +1,7 @@
 # 🚀 SuperDuperSkills
 
 > **🇬🇧 EN / 🇪🇸 ES — Bilingual documentation.**
-> The ultimate multi-agent skills vault & governance suite: **3,900+ curated `SKILL.md` files** (3,300+ bundled entries from **30+ verified source libraries**) for Claude Code, Gemini CLI, OpenAI Codex, Cursor, OpenCode and every major AI agent — with an interactive web catalog and a project-qualification engine.
+> The ultimate multi-agent skills vault & governance suite: **3,900+ curated `SKILL.md` files** (3,500+ bundled entries from **30+ verified source libraries**) for Claude Code, Gemini CLI, OpenAI Codex, Cursor, OpenCode and every major AI agent — with an interactive web catalog and a project-qualification engine.
 
 ---
 
@@ -110,7 +110,7 @@ Incluye además un **Motor Interactivo de Cualificación de Proyectos**: antes d
 | Metric · Métrica | Value · Valor |
 |---|---|
 | 🗂️ Bundled `SKILL.md` files (bóveda) | **3,900+** |
-| 📦 Bundled skill entries in `skills/` | **3,300+** |
+| 📦 Bundled skill entries in `skills/` | **3,500+** |
 | 🏷️ Skill categories | **17** |
 | 📚 Verified source libraries | **30+** |
 | 🤖 Supported AI CLIs | **8+** |
@@ -132,7 +132,7 @@ Incluye además un **Motor Interactivo de Cualificación de Proyectos**: antes d
 | [`SECURITY.md`](SECURITY.md) | Vulnerability reporting policy. | Política de reporte de vulnerabilidades. |
 | [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md) | Contributor covenant (ES/EN). | Pacto de contribución (ES/EN). |
 | [`CHANGELOG.md`](CHANGELOG.md) | Version history. | Historial de versiones. |
-| [`SKILLS-INDEX.md`](SKILLS-INDEX.md) | Deduplicated index of 3,300+ bundled skills with source repos. | Índice deduplicado de 3,300+ skills con repos de origen. |
+| [`SKILLS-INDEX.md`](SKILLS-INDEX.md) | Deduplicated index of 3,500+ bundled skills with source repos. | Índice deduplicado de 3,500+ skills con repos de origen. |
 | [`UNIFIED-KNOWLEDGE.md`](UNIFIED-KNOWLEDGE.md) | Unified multi-knowledge taxonomy & duplicate merge-map. | Taxonomía multi-conocimiento unificada y merge-map de duplicados. |
 | [`skills-inventory.md`](skills-inventory.md) | Inventory per source repository. | Inventario por repositorio de origen. |
 | [`install.sh`](install.sh) | Linux/macOS installer (multi-target, dry-run). | Instalador Linux/macOS (multi-target, dry-run). |
@@ -148,7 +148,7 @@ Incluye además un **Motor Interactivo de Cualificación de Proyectos**: antes d
 | [`docs/index.html`](docs/index.html) | Built site copy (GitHub Pages). | Copia construida del sitio (GitHub Pages). |
 | [`index.html`](index.html) | Root/Vercel site copy with extra OG meta. | Copia raíz/Vercel del sitio con OG meta extra. |
 | [`docs/assets/`](docs/assets/) | README images (hero, diagrams, infographics). | Imágenes del README (hero, diagramas, infografías). |
-| [`skills/`](skills/) | **The vault** — 3,325+ packaged skills (each `SKILL.md`). | **La bóveda** — 3,325+ skills empaquetadas (cada `SKILL.md`). |
+| [`skills/`](skills/) | **The vault** — 3,567+ packaged skills (each `SKILL.md`). | **La bóveda** — 3,567+ skills empaquetadas (cada `SKILL.md`). |
 | [`.github/workflows/`](.github/workflows/) | CI: build/minify site, GH-Pages deploy, PR previews. | CI: build/minify sitio, deploy GH-Pages, previews de PRs. |
 
 ---
@@ -303,7 +303,7 @@ graph TD
 ```
 
 1. **Automatic Inspection / Socratic Interview** — detects config files (`package.json`, `requirements.txt`, `go.mod`, `pom.xml`, `build.gradle`, `Dockerfile`, `.github/workflows`).
-2. **Unconditional Core Load** — always injects the 21 infrastructure, quality & dynamic security skills (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) before any other rule.
+2. **Unconditional Core Load** — always injects the 27 infrastructure, quality & dynamic security skills (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) before any other rule.
 3. **Manifest generation (`.agents/ACTIVE-SKILLS.json`)** — records project phase, key goals and exact local skill paths.
 4. **Mandatory read gate (`view_file`)** — no AI agent writes code without first reading each qualified skill's `SKILL.md`.
 
@@ -312,7 +312,7 @@ graph TD
 El **Orquestador de Agentes** evalúa la estructura de tu proyecto y realiza una **entrevista o escaneo automático** para determinar tus objetivos reales *antes* de permitir la generación de código (ver diagrama de arriba):
 
 1. **Inspección Automática / Entrevista Socrática** — detecta archivos de configuración (`package.json`, `requirements.txt`, `go.mod`, `pom.xml`, `build.gradle`, `Dockerfile`, `.github/workflows`).
-2. **Carga Incondicional Core** — inyecta siempre las 21 skills de infraestructura, calidad y seguridad dinámica (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) antes que cualquier otra regla.
+2. **Carga Incondicional Core** — inyecta siempre las 27 skills de infraestructura, calidad y seguridad dinámica (`caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `penetration-testing-with-strix`, etc.) antes que cualquier otra regla.
 3. **Generación del manifiesto (`.agents/ACTIVE-SKILLS.json`)** — registra la fase del proyecto, objetivos clave y rutas locales exactas.
 4. **Puerta de lectura obligatoria (`view_file`)** — ningún agente de IA escribe código sin leer antes el `SKILL.md` de cada skill cualificada.
 
@@ -356,6 +356,12 @@ SuperDuperSkills organizes its **17 categories** (see `docs/assets/categories-in
 | 19 | `i-have-adhd` | Action-first formatting (no fluff, numbered steps) | Formato Action-First |
 | 20 | `penetration-testing-with-strix` | Autonomous pentesting & PoC validation (Strix) | Pentesting autónomo y validación PoC (Strix) |
 | 21 | `jev-agent` | Typed decisions via [Jev AI](https://github.com/jev-ai/jev-agent-skill) (routing, scoring, safety gates; needs `JEV_API_KEY`; external, not bundled: `npx skills add jev-ai/jev-agent-skill`) | Decisiones tipadas con Jev AI (enrutado, scoring, compuertas; requiere `JEV_API_KEY`; externo, no incluido: `npx skills add jev-ai/jev-agent-skill`) |
+| 22 | `agentmemory` | Persistent agent memory ([rohitg00/agentmemory](https://github.com/rohitg00/agentmemory); external, not bundled; complements, does not replace, `claude-mem`) | Memoria persistente de agente ([rohitg00/agentmemory](https://github.com/rohitg00/agentmemory); externo, no incluido; complementa, no reemplaza, `claude-mem`) |
+| 23 | `memU` | Memory infrastructure ([NevaMind-AI/memU](https://github.com/NevaMind-AI/memU); external, not bundled; complements `claude-mem` / `context-mode`) | Infraestructura de memoria ([NevaMind-AI/memU](https://github.com/NevaMind-AI/memU); externo, no incluido; complementa `claude-mem` / `context-mode`) |
+| 24 | `understand-anything` | Repo-as-context comprehension ([Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything); external, not bundled; complements `graphify`) | Comprensión del repo como contexto ([Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything); externo, no incluido; complementa `graphify`) |
+| 25 | `skills-cli` | Skill install/distribution ([vercel-labs/skills](https://github.com/vercel-labs/skills); external, not bundled: `npx skills add <repo>`) | Instalación/distribución de skills ([vercel-labs/skills](https://github.com/vercel-labs/skills); externo, no incluido: `npx skills add <repo>`) |
+| 26 | `skill-inspector` | Pre-install security review of skills (NVIDIA [SkillSpector](https://github.com/NVIDIA/SkillSpector); bundled) | Revisión de seguridad de skills antes de instalar (NVIDIA [SkillSpector](https://github.com/NVIDIA/SkillSpector); incluido) |
+| 27 | `using-superpowers` (+ `obra-superpowers-*`) | Process discipline: brainstorming, systematic debugging, verification ([obra/superpowers](https://github.com/obra/superpowers); bundled) | Disciplina de proceso: brainstorming, debugging sistemático, verificación ([obra/superpowers](https://github.com/obra/superpowers); incluido) |
 
 > Full operating details live in [`AGENTS.md`](AGENTS.md) · Los detalles operativos completos viven en [`AGENTS.md`](AGENTS.md).
 
