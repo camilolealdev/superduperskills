@@ -50,7 +50,7 @@
 
 ### 🇬🇧 English
 
-**SuperDuperSkills** is a **universal, multi-CLI AI-agent skills ecosystem**. It bundles thousands of professionally maintained agent skills — reusable, self-contained instruction packages (`SKILL.md`) — from 30+ verified open-source libraries, **deduplicates them**, organizes them into **17 categories**, and installs them natively into whichever AI coding tool you use.
+**SuperDuperSkills** is a **universal, multi-CLI AI-agent skills ecosystem**. It bundles thousands of professionally maintained agent skills — reusable, self-contained instruction packages (`SKILL.md`) — from 30+ verified open-source libraries, **deduplicates them**, organizes them into **20 categories**, and installs them natively into whichever AI coding tool you use.
 
 It also ships an **Interactive Project Qualification Engine**: before any code is generated, an orchestrator inspects your repository (or interviews you) to qualify which skills actually apply to your project, so agents load only what they need — saving tokens and avoiding prompt bloat.
 
@@ -69,7 +69,7 @@ It also ships an **Interactive Project Qualification Engine**: before any code i
 
 ### 🇪🇸 Español
 
-**SuperDuperSkills** es un **ecosistema universal de skills para agentes de IA multi-CLI**. Agrupa miles de skills profesionales mantenidas por la comunidad — paquetes de instrucciones reutilizables (`SKILL.md`) — provenientes de **más de 30 librerías open-source verificadas**, las **deduplica**, las organiza en **17 categorías** y las instala de forma nativa en la herramienta de IA que uses.
+**SuperDuperSkills** es un **ecosistema universal de skills para agentes de IA multi-CLI**. Agrupa miles de skills profesionales mantenidas por la comunidad — paquetes de instrucciones reutilizables (`SKILL.md`) — provenientes de **más de 30 librerías open-source verificadas**, las **deduplica**, las organiza en **20 categorías** y las instala de forma nativa en la herramienta de IA que uses.
 
 Incluye además un **Motor Interactivo de Cualificación de Proyectos**: antes de generar código, un orquestador inspecciona tu repositorio (o te entrevista) para cualificar qué skills aplican realmente a tu proyecto, de modo que los agentes carguen solo lo necesario — ahorrando tokens y evitando inflar el prompt.
 
@@ -318,7 +318,7 @@ El **Orquestador de Agentes** evalúa la estructura de tu proyecto y realiza una
 
 ### 🎨 Skill Categories · Categorías (EN + ES)
 
-SuperDuperSkills organizes its **17 categories** (see `docs/assets/categories-infographic.jpg`) into five fundamental groups:
+SuperDuperSkills organizes its **20 categories** (see `docs/assets/categories-infographic.jpg`) into five fundamental groups:
 
 1. **Core Suite** — token-compression, YAGNI architecture, persistent memory, interactive architecture diagrams, autonomous dynamic pentesting (`usestrix/strix`).
 2. **Design & UI Craft (Anti-Slop)** — Emil Kowalski's design engineering (11 skills), Impeccable (23 commands), Taste framework, Apple HIG.

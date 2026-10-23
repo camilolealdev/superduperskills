@@ -455,16 +455,71 @@ CATEGORY_REGISTRY = {
             ("performance-benchmarking", "Métricas de estrés, carga y profiling de memoria")
         ]
     },
-    "GROWTH_SEO_LEGAL": {
-        "title": "Growth, SEO, Copywriting & Legal",
+    "MARKETING_GROWTH": {
+        "title": "Marketing & Growth (Campañas, CRO, GTM)",
         "icon": "📈",
         "skills": [
-            ("claude-seo", "SEO técnico, Schema.org markup y GEO"),
-            ("editor-pro-max", "Edición profesional de estilo y copywriting"),
-            ("claude-for-legal", "Análisis de contratos y cumplimiento normativo"),
-            ("humanizer", "Eliminación de marcas artificiales de escritura de IA"),
             ("gtm-0-to-1-launch", "Estrategia Go-To-Market y tracción temprana"),
-            ("neuro-persuasion-toolkit", "Neuromarketing y psicología de conversión")
+            ("neuro-persuasion-toolkit", "Neuromarketing y psicología de conversión"),
+            ("campaign-planner", "Planificación de campañas"),
+            ("email-marketing", "Campañas y secuencias de email"),
+            ("social-media-strategy", "Estrategia multicanal de redes"),
+            ("paid-ads", "Publicidad de pago y optimización"),
+            ("market-research", "Mercado, personas y tendencias"),
+            ("brand-voice-enforcement", "Consistencia de voz de marca")
+        ]
+    },
+    "SEO_CONTENT": {
+        "title": "SEO & Contenido (Técnico, GEO/AEO)",
+        "icon": "🔍",
+        "skills": [
+            ("claude-seo", "SEO técnico, Schema.org markup y GEO"),
+            ("seo-technical", "Crawlability, indexación y Core Web Vitals"),
+            ("seo-geo", "Visibilidad en buscadores con IA (GEO/AEO)"),
+            ("seo-schema", "Datos estructurados JSON-LD"),
+            ("seo-audit", "Auditoría SEO de sitios"),
+            ("seo-content-optimizer", "Optimización de contenido SEO"),
+            ("seo-programmatic", "SEO programático a escala")
+        ]
+    },
+    "COMPLIANCE_LEGAL": {
+        "title": "Compliance & Legal (Contratos, Riesgo, Cumplimiento)",
+        "icon": "🛡️",
+        "skills": [
+            ("claude-for-legal", "Análisis de contratos y cumplimiento normativo"),
+            ("contract-review", "Revisión de contratos por cláusula"),
+            ("nda-triage", "Clasificación y revisión inicial de NDA"),
+            ("legal-risk-assessment", "Evaluación de riesgos legales"),
+            ("compliance-tracking", "Seguimiento de obligaciones"),
+            ("contract-negotiation", "Preparación para negociación contractual"),
+            ("compliance-readiness", "Preparación para auditorías de cumplimiento")
+        ]
+    },
+    "DATA_ANALYTICS": {
+        "title": "Data & Analytics (dbt, SQL, BI, Estadística)",
+        "icon": "📊",
+        "skills": [
+            ("using-dbt-for-analytics-engineering", "Transformaciones SQL, tests y validación con dbt"),
+            ("data-validation", "Comprobaciones de calidad de datos"),
+            ("data-visualization", "Visualización y gráficos"),
+            ("statistical-analysis", "Análisis estadístico"),
+            ("sql-queries", "Generación de consultas SQL"),
+            ("data-exploration", "Análisis exploratorio"),
+            ("interactive-dashboard-builder", "Dashboards interactivos"),
+            ("csv-data-summarizer", "Resúmenes y análisis de CSV")
+        ]
+    },
+    "PERFORMANCE_OBSERVABILITY": {
+        "title": "Performance & Observabilidad (Telemetría, Latencia, Contexto)",
+        "icon": "⚡",
+        "skills": [
+            ("web-perf", "Auditoría de Core Web Vitals y recursos bloqueantes"),
+            ("observability-and-instrumentation", "Instrumentación y observabilidad"),
+            ("sentry-setup-ai-monitoring", "Monitoreo de apps con proveedores LLM (Sentry)"),
+            ("sentry-otel-exporter-setup", "OpenTelemetry Collector con exportación a Sentry"),
+            ("monitoring-expert", "Monitoreo, métricas y alertas"),
+            ("performance-profiler", "Profiling y cuellos de botella"),
+            ("performance-optimization", "Optimización de rendimiento")
         ]
     },
     "INTEGRATIONS_AUTOMATION": {
@@ -534,6 +589,8 @@ CATEGORY_REGISTRY = {
         "title": "Escritura & Contenido",
         "icon": "✍️",
         "skills": [
+            ("editor-pro-max", "Edición profesional de estilo y copywriting"),
+            ("humanizer", "Eliminación de marcas artificiales de escritura de IA"),
             ("copywriting", "When the user wants to write, rewrite, or improve marketing copy for any page…"),
             ("copy-editing", "When the user wants to edit, review, or improve existing marketing copy."),
             ("content-strategy", "When the user wants to plan a content strategy, decide what content to create…"),
@@ -623,7 +680,16 @@ CATEGORY_REGISTRY = {
             ("agentshield", "Escudo de seguridad para agentes de IA: previene prompt injection, filtrado de…"),
             ("modo-tdah", "Modo de enfoque ejecutivo ultra-conciso: elimina explicaciones infladas, va di…"),
             ("agentic-awesome-skills", "Directorio curado de habilidades avanzadas para agentes autónomos y sistemas m…"),
-            ("gsd-core", "Get Shit Done (GSD) Core Framework: metodología imparable para completar objet…")
+            ("gsd-core", "Get Shit Done (GSD) Core Framework: metodología imparable para completar objet…"),
+            ("i-have-adhd", "Formateo de salida Action-First"),
+            ("penetration-testing-with-strix", "Pentesting dinámico autónomo y validación PoC (Strix)"),
+            ("jev-agent", "Decisiones tipadas vía Jev AI (externo)"),
+            ("agentmemory", "Memoria persistente de agente (externo)"),
+            ("memU", "Infraestructura de memoria (externo)"),
+            ("understand-anything", "Comprensión del repo como contexto (externo)"),
+            ("skills-cli", "Instalación y distribución de skills (externo)"),
+            ("skill-inspector", "Revisión de seguridad de skills pre-instalación"),
+            ("using-superpowers", "Disciplina de proceso: brainstorming, debugging, verificación")
         ]
     }
 }
@@ -1170,6 +1236,10 @@ class ManifestController:
 # First match wins; each regex runs on "<name> <description>" (lowercase).
 # ponytail: keyword heuristic, replace with explicit tags in SKILL.md if precision matters.
 CATEGORY_RULES = [
+    ("SEO_CONTENT", r"seo|geo|aeo|schema markup|sitemap|backlink|serp"),
+    ("COMPLIANCE_LEGAL", r"legal|gdpr|hipaa|soc ?2|iso ?2700|compliance|nda|contract review|regulat"),
+    ("PERFORMANCE_OBSERVABILITY", r"observab|opentelemetry|otel|telemetry|core web vitals|web-perf|tracing|monitoring|latency|profil"),
+    ("DATA_ANALYTICS", r"analytics|data scien|data engineer|pandas|dbt|dashboard|statistic|data valid|data visual|data explor|csv"),
     ("SECURITY_OWASP", r"secur|owasp|pentest|vulnerab|threat model|csrf|xss|secret scan|malware|exploit"),
     ("VIDEO_ANIMATION", r"video|remotion|hyperframes|animat|motion|gsap|lottie|three\.?js|webgl|shader|\b3d\b"),
     ("MOBILE_DESKTOP", r"\bmobile\b|\bios\b|android|swift|kotlin|flutter|react native|expo|electron|desktop|wpf|winui"),
@@ -1182,7 +1252,7 @@ CATEGORY_RULES = [
     ("PROJECT_MANAGEMENT", r"scrum|sprint|agile|roadmap|jira|backlog|project manage|user stor"),
     ("SALES_COMMS", r"\bsales?\b|prospect|cold email|negotiat|\bcrm\b|outreach|proposal|customer success"),
     ("BUSINESS_STRATEGY", r"strategy|startup|pricing|financ|investor|\bceo\b|\bcfo\b|business|revenue|\bokr"),
-    ("GROWTH_SEO_LEGAL", r"\bseo\b|marketing|growth|\bads?\b|copywrit|legal|gdpr|compliance|conversion|social media"),
+    ("MARKETING_GROWTH", r"marketing|growth|ads?|copywrit|conversion|social media|campaign|cro"),
     ("WRITING_CONTENT", r"writing|content|blog|editor|humaniz|documentation"),
     ("PRODUCTIVITY_PEOPLE", r"productiv|standup|weekly|hiring|resume|culture|\bteam|meeting|focus"),
     ("ENGINEERING_PRACTICES", r"^ring |performance|verify|audit|refactor|clean code|clean architecture|debug|\bgit\b|\btdd\b|review|architecture|\blint"),
