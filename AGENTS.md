@@ -84,8 +84,8 @@ token-savings/              # Confirma skills relevantes antes de trabajar (ahor
 
 ## Core Always-First Suite (27)
 
-Cargar primero: `caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `archify`, `skill-seekers`, `skill-vault`, `all-deploy`, `context-mode`, `aprende-skill`, `agentshield`, `modo-tdah`, `agentic-awesome-skills`, `gsd-core`, `i-have-adhd`, `penetration-testing-with-strix`, `jev-agent`*, `agentmemory`*, `memU`*, `understand-anything`*, `skills-cli`*, `skill-inspector`, `using-superpowers` (obra/superpowers).
-`*` = externo, no incluido (instalar desde su repo de GitHub; `jev-agent`/`skills-cli` via `npx skills add`). `agentmemory`/`memU`/`understand-anything` complementan, no reemplazan, `claude-mem`/`graphify`/`context-mode`. Detalle: `docs/CORE-EXECUTION-SUITE.md`.
+Cargar primero: `caveman`, `ponytail`, `spec-kit`, `token-savings`, `harness`, `claude-mem`, `rtk`, `graphify`, `archify`, `skill-seekers`, `skill-vault`, `all-deploy`, `context-mode`, `aprende-skill`, `agentshield`, `modo-tdah`, `agentic-awesome-skills`, `gsd-core`, `i-have-adhd`, `penetration-testing-with-strix`, `jev-agent`, `agentmemory`, `memU`, `understand-anything`, `skills-cli`, `skill-inspector`, `using-superpowers` (obra/superpowers).
+Todas incluidas en `skills/` (`jev-agent` es un wrapper original: upstream sin licencia; `agentmemory`/`memU`/`understand-anything` traen su LICENSE y requieren instalar su runtime upstream). `agentmemory`/`memU`/`understand-anything` complementan, no reemplazan, `claude-mem`/`graphify`/`context-mode`. Detalle: `docs/CORE-EXECUTION-SUITE.md`.
 
 ## Comando para cargar skills
 

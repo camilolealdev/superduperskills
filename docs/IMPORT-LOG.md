@@ -23,3 +23,8 @@ Apache-2.0 / MPL-2.0 / CC-BY-SA repos have their LICENSE copied into each skills
 | netlify/context-and-tools (netlify-cli-and-deploy) | MIT | 0 | renamed upstream to netlify-deploy, which already exists in skills/ |
 | getsentry/skills (requested sentry skills) | Apache-2.0 | 0 | sentry skills live in getsentry/sentry-agent-skills instead (see that row) |
 | netlify/skills, SerpApi/serpapi-skill, getsentry (guessed names) | - | - | clone failed: repo not found (resolved to netlify/context-and-tools, serpapi/skills) |
+| rohitg00/agentmemory | Apache-2.0 | 1: agentmemory (wrapper SKILL.md + 17 upstream sub-skills and INSTALL_FOR_AGENTS.md under references/) | |
+| NevaMind-AI/memU | Apache-2.0 | 1: memU (upstream root SKILL.md, renamed from install-memu) | |
+| Egonex-AI/Understand-Anything | MIT | 1: understand-anything (main `understand` skill + scripts; 8 sub-skills under references/) | |
+| vercel-labs/skills | MIT | 1: skills-cli (original usage skill; LICENSE copied) | |
+| jev-ai/jev-agent-skill | none in repo | 1: jev-agent (original wrapper; no upstream text copied) | |

@@ -83,16 +83,16 @@ flowchart TD
 - **Límites**: no sustituye reglas deterministas, búsquedas exactas, escritura abierta ni la aplicación de permisos. La lógica de negocio, los permisos y la aprobación humana siguen siendo de la aplicación.
 - **Configuración**: requiere `JEV_API_KEY` (clave `sk_…` de una cuenta Jev AI) en el entorno, y opcionalmente `JEV_LANGUAGE` (`en-US` por defecto, `zh-CN`). Nunca la subas a Git ni la pegues en la conversación. Sin clave, el skill solo guía la configuración.
 - **Privacidad**: cada decisión envía el contenido de la consulta a `https://thejevai.com/v1/systemone`. No incluyas secretos ni datos personales en las consultas.
-- **Estado en este repo**: skill core **externo** (n.º 21 en el CLI). No se incluye en `skills/` porque el repositorio upstream no tiene licencia; el CLI lo muestra como `↗ External`, no lo exige en `view_file`, `audit` no lo cuenta como faltante y `sync` no escribe reglas que lo referencien. Instalación: `npx skills add jev-ai/jev-agent-skill`.
+- **Estado en este repo**: skill core **incluido** en `skills/jev-agent` (n.º 21 en el CLI). Como el repositorio upstream no tiene licencia, es un wrapper original que no copia texto upstream; el skill upstream completo se puede instalar aparte con `npx skills add jev-ai/jev-agent-skill`.
 
-### Pillar 11: Memoria & Comprensión Extendida (n.º 22-24, externos)
+### Pillar 11: Memoria & Comprensión Extendida (n.º 22-24, incluidos)
 - `agentmemory` ([rohitg00/agentmemory](https://github.com/rohitg00/agentmemory)): memoria persistente de agente.
 - `memU` ([NevaMind-AI/memU](https://github.com/NevaMind-AI/memU)): infraestructura de memoria.
 - `understand-anything` ([Egonex-AI/Understand-Anything](https://github.com/Egonex-AI/Understand-Anything)): el repo como contexto comprensible.
-- **Complementan, no reemplazan**, a `claude-mem`, `graphify` y `context-mode`. Externos: no incluidos en `skills/`; el CLI los muestra como `↗ External`. Instalación desde el repo de GitHub indicado.
+- **Complementan, no reemplazan**, a `claude-mem`, `graphify` y `context-mode`. Incluidos en `skills/agentmemory`, `skills/memU` y `skills/understand-anything` (con su LICENSE; sub-skills en `references/`). Algunos requieren instalar el runtime upstream (ver el SKILL.md de cada uno).
 
 ### Pillar 12: Distribución & Inspección de Skills (n.º 25-26)
-- `skills-cli` ([vercel-labs/skills](https://github.com/vercel-labs/skills)): instala/distribuye skills con `npx skills add <repo>` (externo).
+- `skills-cli` ([vercel-labs/skills](https://github.com/vercel-labs/skills)): instala/distribuye skills con `npx skills add <repo>` (incluido en `skills/skills-cli`).
 - `skill-inspector` (NVIDIA [SkillSpector](https://github.com/NVIDIA/SkillSpector)): revisión de seguridad de un skill **antes** de instalarlo (incluido en `skills/skill-inspector`).
 
 ### Pillar 13: `superpowers` (Disciplina de Proceso, n.º 27)
