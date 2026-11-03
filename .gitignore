@@ -48,6 +48,7 @@
 !pyproject.toml
 !setup.py
 !index.html
+!qualifier.html
 !robots.txt
 !sitemap.xml
 !og-image.png
