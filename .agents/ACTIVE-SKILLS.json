@@ -1,6 +1,6 @@
 {
   "project_name": "superduperskills",
-  "project_phase": "mvp",
+  "project_phase": "harden",
   "objectives": [
     "YAGNI Architecture",
     "UI Polish",
@@ -149,30 +149,93 @@
       "mandatory_view": true
     },
     {
-      "name": "prototype",
-      "category": "MODE_MVP",
-      "reason": "Prototipado rápido de interfaces de alta fidelidad",
+      "name": "jev-agent",
+      "category": "CORE",
+      "reason": "Decisiones Tipadas vía Jev AI (externo: requiere JEV_API_KEY)",
+      "is_core": true,
+      "mandatory_view": false
+    },
+    {
+      "name": "agentmemory",
+      "category": "CORE",
+      "reason": "Memoria Persistente de Agente (externo; complementa claude-mem)",
+      "is_core": true,
+      "mandatory_view": false
+    },
+    {
+      "name": "memU",
+      "category": "CORE",
+      "reason": "Infraestructura de Memoria (externo; complementa claude-mem/context-mode)",
+      "is_core": true,
+      "mandatory_view": false
+    },
+    {
+      "name": "understand-anything",
+      "category": "CORE",
+      "reason": "Comprensión del Repo como Contexto (externo; complementa graphify)",
+      "is_core": true,
+      "mandatory_view": false
+    },
+    {
+      "name": "skills-cli",
+      "category": "CORE",
+      "reason": "Instalación & Distribución de Skills (`npx skills add`, externo)",
+      "is_core": true,
+      "mandatory_view": false
+    },
+    {
+      "name": "skill-inspector",
+      "category": "CORE",
+      "reason": "Revisión de Seguridad de Skills Pre-Instalación (NVIDIA SkillSpector)",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "using-superpowers",
+      "category": "CORE",
+      "reason": "Disciplina de Proceso: brainstorming, debugging sistemático, verificación (obra/superpowers)",
+      "is_core": true,
+      "mandatory_view": true
+    },
+    {
+      "name": "owasp-top10",
+      "category": "MODE_HARDEN",
+      "reason": "Verificación exhaustiva de OWASP Top 10:2025",
       "is_core": false,
       "mandatory_view": true
     },
     {
-      "name": "pick-ui-library",
-      "category": "MODE_MVP",
-      "reason": "Selección inteligente de librería UI sin sobrecarga",
+      "name": "threat-model-analyst",
+      "category": "MODE_HARDEN",
+      "reason": "Modelado de amenazas STRIDE y vectores de ataque",
       "is_core": false,
       "mandatory_view": true
     },
     {
-      "name": "tailwind-theme-builder",
-      "category": "MODE_MVP",
-      "reason": "Tokens de diseño y configuración Tailwind",
+      "name": "security-auditor",
+      "category": "MODE_HARDEN",
+      "reason": "Auditoría estricta de código y sanitización de inputs",
       "is_core": false,
       "mandatory_view": true
     },
     {
-      "name": "ask-sonner",
-      "category": "MODE_MVP",
-      "reason": "Patrones y troubleshooting del sistema de toasts",
+      "name": "secret-scanner",
+      "category": "MODE_HARDEN",
+      "reason": "Detección y prevención de fuga de API keys",
+      "is_core": false,
+      "mandatory_view": true
+    },
+    {
+      "name": "systematic-debugging",
+      "category": "MODE_HARDEN",
+      "reason": "Aislamiento causal y resolución sistemática de bugs",
+      "is_core": false,
+      "mandatory_view": true
+    },
+    {
+      "name": "performance-benchmarking",
+      "category": "MODE_HARDEN",
+      "reason": "Métricas de estrés, carga y profiling",
       "is_core": false,
       "mandatory_view": true
     }

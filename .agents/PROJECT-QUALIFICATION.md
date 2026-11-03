@@ -1,7 +1,7 @@
 # 🛡️ Manifiesto de Cualificación del Proyecto — SuperDuperSkills
 
 **Proyecto:** `superduperskills`
-**Fase Actual:** mvp
+**Fase Actual:** harden
 **Objetivos Clave:** YAGNI Architecture, UI Polish, Automated Testing, Security Compliance
 
 ## ⛔ Protocolo de Seguridad y Lectura Mandatoria
@@ -29,7 +29,17 @@
 | 17 | CORE | `agentic-awesome-skills` | Catálogo de Patrones Agenticos Autónomos | ✅ Localizada | [`skills/agentic-awesome-skills/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/agentic-awesome-skills/SKILL.md) |
 | 18 | CORE | `gsd-core` | Get Shit Done (GSD) Execution Framework | ✅ Localizada | [`skills/gsd-core/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/gsd-core/SKILL.md) |
 | 19 | CORE | `i-have-adhd` | Formateo de Salida Action-First | ✅ Localizada | [`skills/i-have-adhd/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/i-have-adhd/SKILL.md) |
-| 20 | MODE_MVP | `prototype` | Prototipado rápido de interfaces de alta fidelidad | ✅ Localizada | [`skills/prototype/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/prototype/SKILL.md) |
-| 21 | MODE_MVP | `pick-ui-library` | Selección inteligente de librería UI sin sobrecarga | ✅ Localizada | [`skills/pick-ui-library/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/pick-ui-library/SKILL.md) |
-| 22 | MODE_MVP | `tailwind-theme-builder` | Tokens de diseño y configuración Tailwind | ✅ Localizada | [`skills/tailwind-theme-builder/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/tailwind-theme-builder/SKILL.md) |
-| 23 | MODE_MVP | `ask-sonner` | Patrones y troubleshooting del sistema de toasts | ✅ Localizada | [`skills/ask-sonner/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/ask-sonner/SKILL.md) |
+| 20 | CORE | `penetration-testing-with-strix` | Autonomous AI Penetration Testing & PoC Exploit Validation | ✅ Localizada | [`skills/penetration-testing-with-strix/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/penetration-testing-with-strix/SKILL.md) |
+| 21 | CORE | `jev-agent` | Decisiones Tipadas vía Jev AI (externo: requiere JEV_API_KEY) | ↗ Externa | `npx skills add jev-ai/jev-agent-skill` |
+| 22 | CORE | `agentmemory` | Memoria Persistente de Agente (externo; complementa claude-mem) | ↗ Externa | `https://github.com/rohitg00/agentmemory` |
+| 23 | CORE | `memU` | Infraestructura de Memoria (externo; complementa claude-mem/context-mode) | ↗ Externa | `https://github.com/NevaMind-AI/memU` |
+| 24 | CORE | `understand-anything` | Comprensión del Repo como Contexto (externo; complementa graphify) | ↗ Externa | `https://github.com/Egonex-AI/Understand-Anything` |
+| 25 | CORE | `skills-cli` | Instalación & Distribución de Skills (`npx skills add`, externo) | ↗ Externa | `https://github.com/vercel-labs/skills` |
+| 26 | CORE | `skill-inspector` | Revisión de Seguridad de Skills Pre-Instalación (NVIDIA SkillSpector) | ✅ Localizada | [`skills/skill-inspector/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/skill-inspector/SKILL.md) |
+| 27 | CORE | `using-superpowers` | Disciplina de Proceso: brainstorming, debugging sistemático, verificación (obra/superpowers) | ✅ Localizada | [`skills/using-superpowers/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/using-superpowers/SKILL.md) |
+| 28 | MODE_HARDEN | `owasp-top10` | Verificación exhaustiva de OWASP Top 10:2025 | ⚠️ Pendiente Ingesta | [`skills/owasp-top10/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/owasp-top10/SKILL.md) |
+| 29 | MODE_HARDEN | `threat-model-analyst` | Modelado de amenazas STRIDE y vectores de ataque | ✅ Localizada | [`skills/threat-model-analyst/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/threat-model-analyst/SKILL.md) |
+| 30 | MODE_HARDEN | `security-auditor` | Auditoría estricta de código y sanitización de inputs | ⚠️ Pendiente Ingesta | [`skills/security-auditor/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/security-auditor/SKILL.md) |
+| 31 | MODE_HARDEN | `secret-scanner` | Detección y prevención de fuga de API keys | ⚠️ Pendiente Ingesta | [`skills/secret-scanner/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/secret-scanner/SKILL.md) |
+| 32 | MODE_HARDEN | `systematic-debugging` | Aislamiento causal y resolución sistemática de bugs | ✅ Localizada | [`skills/systematic-debugging/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/systematic-debugging/SKILL.md) |
+| 33 | MODE_HARDEN | `performance-benchmarking` | Métricas de estrés, carga y profiling | ⚠️ Pendiente Ingesta | [`skills/performance-benchmarking/SKILL.md`](file:///G:/Nueva carpeta/Documentos/superduperskills/skills/performance-benchmarking/SKILL.md) |
