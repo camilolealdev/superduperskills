@@ -43,7 +43,7 @@ if hasattr(sys.stdout, 'reconfigure'):
 # =============================================================================
 # 1. VERSION, METADATA & CROSS-PLATFORM KEY READER
 # =============================================================================
-__version__ = "6.0.6"
+__version__ = "6.0.7"
 __codename__ = "WorldClass"
 
 

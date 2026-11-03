@@ -148,7 +148,7 @@ Incluye además un **Motor Interactivo de Cualificación de Proyectos**: antes d
 | [`docs/index.html`](docs/index.html) | Built site copy (GitHub Pages). | Copia construida del sitio (GitHub Pages). |
 | [`index.html`](index.html) | Root/Vercel site copy with extra OG meta. | Copia raíz/Vercel del sitio con OG meta extra. |
 | [`docs/assets/`](docs/assets/) | README images (hero, diagrams, infographics). | Imágenes del README (hero, diagramas, infografías). |
-| [`skills/`](skills/) | **The vault** — 3,567+ packaged skills (each `SKILL.md`). | **La bóveda** — 3,567+ skills empaquetadas (cada `SKILL.md`). |
+| [`skills/`](skills/) | **The vault** — 3,572+ packaged skills (each `SKILL.md`). | **La bóveda** — 3,572+ skills empaquetadas (cada `SKILL.md`). |
 | [`.github/workflows/`](.github/workflows/) | CI: build/minify site, GH-Pages deploy, PR previews. | CI: build/minify sitio, deploy GH-Pages, previews de PRs. |
 
 ---
@@ -235,7 +235,7 @@ A block-art bat that follows what the CLI is doing · Un murciélago de bloques 
 
 It appears in the banner (terminals ≥ 101 columns), every command header, spinners, the `doctor` verdict, the exit message and the web dashboard. Disable it with `SDS_NO_MASCOT=1` or `NO_COLOR=1` · Se desactiva con `SDS_NO_MASCOT=1` o `NO_COLOR=1`.
 
-## 💻 CLI Command Center · Centro de Comando CLI (v6.0.0 «WorldClass»)
+## 💻 CLI Command Center · Centro de Comando CLI (v6.0.7 «WorldClass»)
 
 | Command · Comando | 🇬🇧 Purpose | 🇪🇸 Propósito |
 |---|---|---|
@@ -327,6 +327,11 @@ SuperDuperSkills organizes its **20 categories** (see `docs/assets/categories-in
 5. **GenAI & Testing** — TDD workflows, Playwright E2E, Gemini SDK, HuggingFace, model evaluators.
 
 ---
+
+## 🆕 What's New in 6.0.7 · Novedades 6.0.7
+
+- 🇬🇧 All 27 core skills now ship inside `skills/` and work from the project: `agentmemory`, `memU`, `understand-anything`, `skills-cli` and `jev-agent` are bundled (the first three keep their upstream LICENSE; `jev-agent` is an original wrapper because upstream has no licence). Some need their upstream runtime installed (see each `SKILL.md`). Catalog: 3,572 skills.
+- 🇪🇸 Las 27 skills core ya viajan dentro de `skills/` y funcionan desde el proyecto: `agentmemory`, `memU`, `understand-anything`, `skills-cli` y `jev-agent` están incluidas (las tres primeras con su LICENSE upstream; `jev-agent` es un wrapper propio porque el upstream no tiene licencia). Algunas requieren instalar su runtime upstream (ver cada `SKILL.md`). Catálogo: 3.572 skills.
 
 ## ⚡ Core Always-First Suite · Suite Core Obligatoria
 

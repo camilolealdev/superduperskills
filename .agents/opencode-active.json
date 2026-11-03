@@ -1,7 +1,7 @@
 {
   "source": "superduperskills",
-  "version": "6.0.0",
-  "active_count": 23,
+  "version": "6.0.7",
+  "active_count": 33,
   "skills": [
     "caveman",
     "ponytail",
@@ -22,9 +22,19 @@
     "agentic-awesome-skills",
     "gsd-core",
     "i-have-adhd",
-    "prototype",
-    "pick-ui-library",
-    "tailwind-theme-builder",
-    "ask-sonner"
+    "penetration-testing-with-strix",
+    "jev-agent",
+    "agentmemory",
+    "memU",
+    "understand-anything",
+    "skills-cli",
+    "skill-inspector",
+    "using-superpowers",
+    "owasp-top10",
+    "threat-model-analyst",
+    "security-auditor",
+    "secret-scanner",
+    "systematic-debugging",
+    "performance-benchmarking"
   ]
 }

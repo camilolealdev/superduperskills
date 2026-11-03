@@ -12,7 +12,7 @@ const fs = require('fs');
 const rootDir = path.resolve(__dirname, '..');
 const pythonScript = path.join(rootDir, 'scripts', 'superduper_cli.py');
 
-const VERSION = '6.0.6';
+const VERSION = '6.0.7';
 const CODENAME = 'WorldClass';
 
 // TrueColor / ANSI Styling
